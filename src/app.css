@@ -1,0 +1,373 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   app.css — global styles for svelte-test
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Design tokens ────────────────────────────────────────────────────────── */
+:root {
+	--blue:           #3b82f6;
+	--blue-dark:      #2563eb;
+	--green:          #22c55e;
+	--green-bg:       #f0fdf4;
+	--green-text:     #15803d;
+	--green-border:   #bbf7d0;
+	--red:            #ef4444;
+	--red-dark:       #dc2626;
+	--red-bg:         #fef2f2;
+	--red-text:       #b91c1c;
+	--red-border:     #fecaca;
+
+	--surface:        #ffffff;
+	--bg:             #f0f2f5;
+	--border:         #e5e7eb;
+	--border-input:   #d1d5db;
+
+	--text:           #111827;
+	--text-body:      #374151;
+	--text-muted:     #6b7280;
+	--text-faint:     #9ca3af;
+
+	--radius:         12px;
+	--radius-sm:      8px;
+	--shadow:         0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* ── Reset ────────────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	font-family: 'Segoe UI', system-ui, sans-serif;
+	background: var(--bg);
+	min-height: 100vh;
+}
+
+/* ── Layout ───────────────────────────────────────────────────────────────── */
+.wrapper {
+	max-width: 620px;
+	margin: 3rem auto;
+	padding: 0 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.card {
+	background: var(--surface);
+	border-radius: var(--radius);
+	padding: 1.5rem;
+	box-shadow: var(--shadow);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+/* ── Typography ───────────────────────────────────────────────────────────── */
+.page-title {
+	font-size: 1.8rem;
+	margin: 0 0 0.25rem;
+	color: var(--text);
+}
+
+.page-subtitle {
+	color: var(--text-muted);
+	margin: 0 0 1.5rem;
+	font-size: 0.95rem;
+	line-height: 1.6;
+}
+
+.page-subtitle code {
+	background: var(--border);
+	border-radius: 4px;
+	padding: 0.1em 0.35em;
+	font-size: 0.9em;
+}
+
+/* ── Shared form elements ─────────────────────────────────────────────────── */
+.field-label {
+	font-size: 0.75rem;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: var(--text-muted);
+}
+
+.roman-input {
+	width: 100%;
+	font-size: 1.25rem;
+	padding: 0.5rem 0.75rem;
+	border: 2px solid var(--border-input);
+	border-radius: var(--radius-sm);
+	outline: none;
+	box-sizing: border-box;
+	font-family: inherit;
+	transition: border-color 0.2s;
+	background: var(--surface);
+}
+
+.roman-input:focus {
+	border-color: var(--blue);
+}
+
+.roman-input:disabled {
+	background: #f9fafb;
+	color: var(--text-muted);
+	cursor: not-allowed;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────────── */
+.btn {
+	padding: 0.5rem 1.25rem;
+	border-radius: var(--radius-sm);
+	font-size: 0.95rem;
+	font-weight: 600;
+	cursor: pointer;
+	border: none;
+	font-family: inherit;
+	transition: background 0.15s, opacity 0.15s;
+}
+
+.btn--primary {
+	background: var(--blue);
+	color: #fff;
+}
+
+.btn--primary:hover:not(:disabled) {
+	background: var(--blue-dark);
+}
+
+.btn--primary:disabled {
+	opacity: 0.45;
+	cursor: not-allowed;
+}
+
+.btn--secondary {
+	background: var(--border);
+	color: var(--text-body);
+}
+
+.btn--secondary:hover {
+	background: var(--border-input);
+}
+
+/* ── Romanization guide (layout footer) ───────────────────────────────────── */
+.roman-guide {
+	max-width: 620px;
+	margin: 1.5rem auto 3rem;
+	padding: 0 1rem;
+}
+
+.roman-guide details > summary {
+	cursor: pointer;
+	color: var(--text-muted);
+	font-size: 0.82rem;
+	user-select: none;
+	list-style: none;
+}
+
+.roman-guide details > summary::before {
+	content: '▶ ';
+	font-size: 0.7rem;
+	display: inline-block;
+	transition: transform 0.15s;
+}
+
+.roman-guide details[open] > summary::before {
+	transform: rotate(90deg);
+}
+
+.roman-guide table {
+	margin-top: 0.75rem;
+	border-collapse: collapse;
+	font-size: 0.82rem;
+	width: 100%;
+}
+
+.roman-guide th,
+.roman-guide td {
+	border: 1px solid var(--border);
+	padding: 0.3rem 0.55rem;
+	text-align: center;
+}
+
+.roman-guide th {
+	background: #f3f4f6;
+	font-weight: 600;
+}
+
+.roman-guide td.section {
+	background: #f9fafb;
+	font-weight: 600;
+	color: var(--text-muted);
+	text-align: left;
+}
+
+/* ── Hangul converter page ────────────────────────────────────────────────── */
+.hangul-output {
+	font-size: 2.4rem;
+	padding: 0.4rem 0.75rem;
+	min-height: 3.5rem;
+	border: 2px solid var(--border);
+	border-radius: var(--radius-sm);
+	background: #fafafa;
+	color: var(--text);
+	letter-spacing: 0.05em;
+	margin-bottom: 0.5rem;
+}
+
+/* ── Cloze: grammar card ──────────────────────────────────────────────────── */
+.grammar-card {
+	background: var(--surface);
+	border-radius: var(--radius);
+	overflow: hidden;
+	box-shadow: var(--shadow);
+}
+
+.grammar-header {
+	background: var(--blue);
+	color: #fff;
+	padding: 0.65rem 1.25rem;
+	display: flex;
+	align-items: baseline;
+	gap: 0.75rem;
+}
+
+.grammar-label {
+	font-size: 0.7rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	opacity: 0.8;
+	flex-shrink: 0;
+}
+
+.grammar-title {
+	font-size: 1rem;
+	font-weight: 700;
+}
+
+.grammar-desc {
+	margin: 0;
+	padding: 0.9rem 1.25rem;
+	font-size: 0.9rem;
+	line-height: 1.65;
+	color: var(--text-body);
+}
+
+/* ── Cloze: sentence + blanks ─────────────────────────────────────────────── */
+.cloze-card {
+	background: var(--surface);
+	border-radius: var(--radius);
+	padding: 1.5rem;
+	box-shadow: var(--shadow);
+	display: flex;
+	flex-direction: column;
+	gap: 1.1rem;
+}
+
+.sentence {
+	font-size: 1.75rem;
+	line-height: 1.5;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.1rem;
+	color: var(--text);
+}
+
+.sentence-text {
+	white-space: pre-wrap;
+}
+
+.blank {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 3.5rem;
+	padding: 0.1rem 0.5rem;
+	border-bottom: 3px solid var(--blue);
+	font-size: 1.75rem;
+	font-weight: 600;
+	background: #eff6ff;
+	border-radius: 4px 4px 0 0;
+	transition: background 0.2s, border-color 0.2s;
+	white-space: nowrap;
+}
+
+.blank--placeholder {
+	color: var(--text-faint);
+	font-weight: 400;
+	font-size: 1.1rem;
+}
+
+.blank--correct {
+	background: var(--green-bg);
+	border-color: var(--green);
+	color: var(--green-text);
+}
+
+.blank--incorrect {
+	background: var(--red-bg);
+	border-color: var(--red);
+	color: var(--red-text);
+}
+
+/* ── Cloze: English hint ──────────────────────────────────────────────────── */
+.english-hint {
+	margin: 0;
+	font-size: 1rem;
+	color: var(--text-muted);
+	font-style: italic;
+}
+
+.english-highlight {
+	color: var(--red-dark);
+	font-style: italic;
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-style: dotted;
+	text-underline-offset: 3px;
+}
+
+/* ── Cloze: inputs ────────────────────────────────────────────────────────── */
+.inputs-area {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+
+/* ── Cloze: result message ────────────────────────────────────────────────── */
+.result-message {
+	padding: 0.65rem 1rem;
+	border-radius: var(--radius-sm);
+	font-size: 0.95rem;
+	font-weight: 500;
+}
+
+.result--correct {
+	background: var(--green-bg);
+	color: var(--green-text);
+	border: 1px solid var(--green-border);
+}
+
+.result--incorrect {
+	background: var(--red-bg);
+	color: var(--red-text);
+	border: 1px solid var(--red-border);
+}
+
+/* ── Cloze: controls ──────────────────────────────────────────────────────── */
+.controls {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: flex-end;
+}
