@@ -42,13 +42,20 @@ interface EnglishHintPart {
 
 interface GrammarPoint {
   title: string;
-  description: string;
-  hint: string;        // e.g. "topic particle" — shown in blank before typing
+  // Shown during review — no hangul, no romanised answer, no spoilers
+  hint: string;               // e.g. "topic particle" — shown inside the blank
+  category: string;           // e.g. "particle"
+  tense: string | null;       // e.g. "present" | "past" | null
+  register: string | null;    // e.g. "polite" | "formal" | "informal" | null
+  // Only revealed after answering correctly / on failure / in DB browser
+  description: string;        // full explanation, may include hangul
 }
 
 interface ClozeCard {
-  sentence: string;           // "저___한국어를 공부해요." — ___ marks blanks
-  answers: string[][];        // [["는"]] — accepted hangul per blank
+  fullSentence:      string;   // "저는 한국어를 공부해요." — complete, no blank markers
+  sentenceWithBlank: string;   // "저___ 한국어를 공부해요." — ___ marks the blank
+  vocabBaseForm:     string;   // dictionary / base form, e.g. "은/는"
+  answers:           string[]; // all accepted forms, primary first: ["는", …]
   grammar: GrammarPoint;
   englishHint: EnglishHintPart[];
 }
@@ -164,12 +171,16 @@ model Session {
 // ══════════════════════════════════════════════════════════════════════════════
 
 model GrammarPoint {
-  id          String @id @default(cuid())
-  title       String              // "은/는 — Topic Particle (주제 조사)"
-  description String              // full explanation text
-  hint        String              // short label: "topic particle"
-  level       Int    @default(1)  // TOPIK level or custom ordering
-  tags        String[]            // e.g. ["particle", "N5", "beginner"]
+  id          String   @id @default(cuid())
+  title       String              // "Topic Particle" — no hangul, spoiler-free
+  category    String              // "particle", "verb ending", "conjunction", …
+  tense       String?             // "present" | "past" | "future" | null
+  register    String?             // "polite" | "formal" | "informal" | null
+  hint        String              // in-blank label shown during review: "topic particle"
+  // Full explanation shown only after answering or outside review
+  description String              // may include hangul and full grammatical detail
+  level       Int      @default(1)  // TOPIK level or custom ordering
+  tags        String[]            // e.g. ["particle", "beginner", "TOPIK1"]
   createdAt   DateTime @default(now()) @map("created_at")
 
   clozeCards ClozeCard[]
@@ -178,29 +189,20 @@ model GrammarPoint {
 }
 
 model ClozeCard {
-  id             String @id @default(cuid())
-  grammarPointId String @map("grammar_point_id")
-  sentence       String        // "저___한국어를 공부해요." (___ = blank)
-  englishHint    Json          // [{text:"I",highlight:true},{text:" study Korean.",highlight:false}]
-  createdAt      DateTime @default(now()) @map("created_at")
+  id                String   @id @default(cuid())
+  grammarPointId    String   @map("grammar_point_id")
+  fullSentence      String              // "저는 한국어를 공부해요." — no blank markers
+  sentenceWithBlank String   @map("sentence_with_blank")  // "저___ 한국어를 공부해요."
+  vocabBaseForm     String   @map("vocab_base_form")       // "은/는" — dictionary/base form
+  answer            String              // canonical accepted answer: "는"
+  alternateAnswers  String[] @map("alternate_answers")     // other accepted forms e.g. ["는요"]
+  englishHint       Json                // [{text:"I",highlight:true},{text:" study Korean.",highlight:false}]
+  createdAt         DateTime @default(now()) @map("created_at")
 
   grammarPoint GrammarPoint @relation(fields: [grammarPointId], references: [id], onDelete: Cascade)
-  blanks       ClozeBlank[]
   reviewCards  ReviewCard[]
 
   @@map("cloze_cards")
-}
-
-model ClozeBlank {
-  id          String   @id @default(cuid())
-  clozeCardId String   @map("cloze_card_id")
-  position    Int                  // 0-based index of the blank in the sentence
-  answers     String[]             // ["는"] — all accepted hangul answers
-
-  clozeCard ClozeCard @relation(fields: [clozeCardId], references: [id], onDelete: Cascade)
-
-  @@unique([clozeCardId, position])
-  @@map("cloze_blanks")
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -255,8 +257,11 @@ model ReviewLog {
 ```
 
 **Design decisions**:
+- `GrammarPoint` splits the description into two layers: spoiler-free metadata (`title`, `category`, `tense`, `register`, `hint`) shown at review time, and `description` (which may contain hangul) revealed only after answering or outside reviews. The `hint` field is the shortest possible label (e.g. `"topic particle"`) placed inside the blank itself; the other fields let the UI assemble a clean preview like *"topic particle · particle · polite · present"* without leaking the answer.
+- `ClozeCard` stores example sentences. The `grammarPointId` foreign key links each example to exactly one grammar point; a single grammar point has many example cards (`GrammarPoint → ClozeCard[]`).
 - `englishHint` is `Json` — matches the `EnglishHintPart[]` shape, avoids a join for what is always fetched as a unit.
-- `ClozeBlank` is a separate table because a card can have multiple blanks, each with its own accepted answers.
+- `ClozeCard` stores `answer` (canonical) and `alternateAnswers` directly — no join needed. A separate blanks table would only be warranted for multi-blank cards, which are not required here.
+- `ClozeCard` also stores `fullSentence` (complete, no markers), `sentenceWithBlank` (`___` marking the gap), and `vocabBaseForm` (dictionary form, e.g. `은/는`) for display and future indexing.
 - `ReviewCard` FSRS fields follow the ts-fsrs library's `Card` interface (stability, difficulty, reps, lapses, state, due, lastReview).
 - `ReviewLog` is append-only and stores a post-review FSRS snapshot for analytics/debugging.
 - All tables map to snake_case via `@@map` / `@map`.
@@ -275,13 +280,17 @@ async function main() {
     update: {},
     create: {
       id: 'gp_topic_particle',
-      title: '은/는 — Topic Particle (주제 조사)',
+      title: 'Topic Particle',          // spoiler-free, no hangul
+      category: 'particle',
+      tense: 'present',
+      register: 'polite',
+      hint: 'topic particle',           // shown inside the blank during review
+      // Revealed only after answering or outside of review:
       description:
         'Attaches directly after a noun to mark it as the sentence topic. ' +
         'Use 은 after a noun ending in a consonant (받침), ' +
         '는 after a noun ending in a vowel. ' +
-        'The topic particle sets contrast or emphasis relative to other things.',
-      hint: 'topic particle',
+        'Sets contrast or emphasis relative to other things in the sentence.',
       level: 1,
       tags: ['particle', 'beginner', 'TOPIK1'],
     },
@@ -294,26 +303,15 @@ async function main() {
     create: {
       id: 'cc_topic_01',
       grammarPointId: topicParticle.id,
-      sentence: '저___한국어를 공부해요.',
+      fullSentence:      '저는 한국어를 공부해요.',
+      sentenceWithBlank: '저___ 한국어를 공부해요.',
+      vocabBaseForm:     '은/는',
+      answer:            '는',
+      alternateAnswers:  [],
       englishHint: [
         { text: 'I', highlight: true },
         { text: ' study Korean.', highlight: false },
       ],
-    },
-  });
-
-  await prisma.clozeBlank.upsert({
-    where: {
-      clozeCardId_position: {
-        clozeCardId: card1.id,
-        position: 0,
-      },
-    },
-    update: {},
-    create: {
-      clozeCardId: card1.id,
-      position: 0,
-      answers: ['는'],
     },
   });
 
@@ -380,23 +378,24 @@ import { prisma } from '$lib/server/db';
 export const load: PageServerLoad = async () => {
   // For now: grab the first card. Later: FSRS picks the next due card.
   const card = await prisma.clozeCard.findFirstOrThrow({
-    include: {
-      grammarPoint: true,
-      blanks: {
-        orderBy: { position: 'asc' },
-      },
-    },
+    include: { grammarPoint: true },
   });
 
   return {
     card: {
-      id: card.id,
-      sentence: card.sentence,
-      answers: card.blanks.map((b) => b.answers),
+      id:                card.id,
+      fullSentence:      card.fullSentence,
+      sentenceWithBlank: card.sentenceWithBlank,
+      vocabBaseForm:     card.vocabBaseForm,
+      answers:           [card.answer, ...card.alternateAnswers],
       grammar: {
-        title: card.grammarPoint.title,
+        title:       card.grammarPoint.title,
+        category:    card.grammarPoint.category,
+        tense:       card.grammarPoint.tense,
+        register:    card.grammarPoint.register,
+        hint:        card.grammarPoint.hint,
+        // Only send description after the user has answered (handle in the route)
         description: card.grammarPoint.description,
-        hint: card.grammarPoint.hint,
       },
       englishHint: card.englishHint as { text: string; highlight: boolean }[],
     },
@@ -412,12 +411,20 @@ Replace the hardcoded `const card` block with:
 <script lang="ts">
   import { romanToHangul } from '$lib/romanToHangul';
 
-  // Interfaces stay the same
   interface EnglishHintPart { text: string; highlight: boolean; }
-  interface GrammarPoint    { title: string; description: string; hint: string; }
+  interface GrammarPoint {
+    title: string;
+    category: string;
+    tense: string | null;
+    register: string | null;
+    hint: string;        // shown in blank during review
+    description: string; // revealed post-answer only
+  }
   interface ClozeCard {
-    sentence: string;
-    answers: string[][];
+    fullSentence:      string;
+    sentenceWithBlank: string;
+    vocabBaseForm:     string;
+    answers:           string[];  // all accepted forms, primary first
     grammar: GrammarPoint;
     englishHint: EnglishHintPart[];
   }
@@ -464,9 +471,9 @@ Step  Command / Action                              Verify
 ## 4. Verification Checklist
 
 - [ ] `podman ps` shows `hangul-postgres` running on port 5432
-- [ ] `bunx prisma migrate dev` succeeds with tables: `users`, `sessions`, `grammar_points`, `cloze_cards`, `cloze_blanks`, `review_cards`, `review_logs`
+- [ ] `bunx prisma migrate dev` succeeds with tables: `users`, `sessions`, `grammar_points`, `cloze_cards`, `review_cards`, `review_logs`
 - [ ] `bunx prisma db seed` → "✓ Seed complete"
-- [ ] `bunx prisma studio` → grammar_points has 1 row, cloze_cards has 1 row, cloze_blanks has 1 row
+- [ ] `bunx prisma studio` → grammar_points has 1 row, cloze_cards has 1 row
 - [ ] `bun run dev` → cloze page loads the topic particle card from DB
 - [ ] Typing "neun" into the input shows 는 in the blank
 - [ ] Clicking Check → "✓ Correct!"
