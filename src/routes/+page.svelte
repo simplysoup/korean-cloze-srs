@@ -3,56 +3,44 @@
 
 	interface EnglishHintPart {
 		text: string;
-		highlight: boolean; // highlight in red — marks what the blank corresponds to
+		highlight: boolean;
 	}
 
 	interface GrammarPoint {
 		title: string;
+		category: string;
+		tense: string | null;
+		register: string | null;
+		hint: string;
 		description: string;
-		hint: string; // generic label shown inside the blank before typing
 	}
 
 	interface ClozeCard {
-		sentence: string;           // ___ marks each blank
-		answers: string[][];        // answers[i] = accepted hangul strings for blank i
+		id: string;
+		fullSentence: string;
+		sentenceWithBlank: string;
+		vocabBaseForm: string;
+		answers: string[];
 		grammar: GrammarPoint;
-		englishHint: EnglishHintPart[]; // translation with blank's equivalent highlighted
+		englishHint: EnglishHintPart[];
 	}
 
-	// ── Hardcoded card — future: Prisma 7 + PostgreSQL ───────────────────────
-	const card: ClozeCard = {
-		sentence: '저___한국어를 공부해요.',
-		answers: [['는']],
-		grammar: {
-			title: '은/는 — Topic Particle (주제 조사)',
-			description:
-				'Attaches directly after a noun to mark it as the sentence topic. ' +
-				'Use 은 after a noun ending in a consonant (받침), ' +
-				'는 after a noun ending in a vowel. ' +
-				'The topic particle sets contrast or emphasis relative to other things.',
-			hint: 'topic particle',
-		},
-		// 저는 한국어를 공부해요 → "I study Korean."
-		// The topic particle 는 is what makes 저 the sentence topic — equivalent to "I" in English.
-		englishHint: [
-			{ text: 'I', highlight: true },
-			{ text: ' study Korean.', highlight: false },
-		],
-	};
+	// ── Receive from +page.server.ts ─────────────────────────────────────
+	let { data } = $props();
 
-	// ── Sentence parts split at each ___ ─────────────────────────────────────
-	const parts: string[] = card.sentence.split('___');
-	const blankCount = parts.length - 1;
+	// ── Sentence parts split at each ___ ─────────────────────────────────
+	const parts = $derived(data.card.sentenceWithBlank.split('___'));
+	const blankCount = $derived(parts.length - 1);
 
 	// ── Per-blank roman input ─────────────────────────────────────────────────
-	let romanInputs = $state<string[]>(Array.from({ length: blankCount }, () => ''));
+	let romanInputs = $state<string[]>(['']);
 	let hangulValues = $derived(romanInputs.map((r) => romanToHangul(r)));
 
 	// ── Submission / result state ─────────────────────────────────────────────
 	let submitted = $state(false);
 	let correct = $derived(
 		submitted
-			? hangulValues.map((h, i) => (card.answers[i] ?? []).includes(h))
+			? hangulValues.map((h) => data.card.answers.includes(h))
 			: ([] as boolean[]),
 	);
 	let allCorrect = $derived(submitted && correct.length > 0 && correct.every(Boolean));
@@ -65,7 +53,7 @@
 
 	function reset() {
 		submitted = false;
-		romanInputs = Array.from({ length: blankCount }, () => '');
+		romanInputs = [''];
 		setTimeout(() => (document.querySelector('.roman-input') as HTMLInputElement)?.focus(), 0);
 	}
 
@@ -79,9 +67,9 @@
 	<div class="grammar-card">
 		<div class="grammar-header">
 			<span class="grammar-label">Grammar Point</span>
-			<span class="grammar-title">{card.grammar.title}</span>
+			<span class="grammar-title">{data.card.grammar.title}</span>
 		</div>
-		<p class="grammar-desc">{card.grammar.description}</p>
+		<p class="grammar-desc">{data.card.grammar.description}</p>
 	</div>
 
 	<!-- Cloze card -->
@@ -99,7 +87,7 @@
 						aria-label="Blank {i + 1}"
 						class:blank--placeholder={isEmpty}
 					>
-						{isEmpty ? card.grammar.hint : h}
+						{isEmpty ? data.card.grammar.hint : h}
 					</span>
 				{/if}
 			{/each}
@@ -107,7 +95,7 @@
 
 		<!-- English translation hint -->
 		<p class="english-hint" aria-label="English translation hint">
-			{#each card.englishHint as part}
+			{#each data.card.englishHint as part}
 				{#if part.highlight}
 					<span class="english-highlight">{part.text}</span>
 				{:else}
@@ -146,10 +134,8 @@
 				{#if allCorrect}
 					✓ Correct!
 				{:else}
-					✗ Not quite — correct answer{card.answers.length > 1 ? 's' : ''}:
-					{#each card.answers as answerSet, i}
-						<strong>{answerSet.join(' / ')}</strong>{i < card.answers.length - 1 ? ', ' : ''}
-					{/each}
+					✗ Not quite — correct answer{data.card.answers.length > 1 ? 's' : ''}:
+				<strong>{data.card.answers.join(' / ')}</strong>
 				{/if}
 			</div>
 		{/if}

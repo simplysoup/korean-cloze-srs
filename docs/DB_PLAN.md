@@ -14,6 +14,7 @@
 ```
 svelte-test/
 ├── package.json            ← prisma 7.4.1 already in dependencies
+├── prisma.config.ts        ← Prisma 7 config (project root, auto-detected by CLI)
 ├── tsconfig.json           ← strict, moduleResolution: bundler
 ├── svelte.config.js        ← adapter-auto
 ├── .gitignore              ← already ignores .env / .env.* (but allows .env.example)
@@ -128,12 +129,14 @@ volumes:
 
 ```prisma
 generator client {
-  provider = "prisma-client-js"
+  provider = "prisma-client"            // Required — the new default generator in Prisma 7 (prisma-client-js is deprecated)
+  output   = "../src/generated/prisma"  // Required — Prisma 7 no longer generates into node_modules
 }
 
 datasource db {
   provider = "postgresql"
-  url      = env("DATABASE_URL")
+  // NOTE: In Prisma 7 the connection URL is configured in prisma.config.ts, NOT here.
+  // The schema datasource block only declares the provider.
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -269,9 +272,11 @@ model ReviewLog {
 ### 1.5 `prisma/seed.ts`
 
 ```ts
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../src/generated/prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
 
-const prisma = new PrismaClient();
+const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+const prisma = new PrismaClient({ adapter });
 
 async function main() {
   // ── Grammar Point: Topic Particle ──────────────────────────────────────
@@ -329,47 +334,76 @@ main()
 ### 1.6 `src/lib/server/db.ts` — Prisma singleton
 
 ```ts
-import { PrismaClient } from '@prisma/client';
+import { PrismaClient } from '../../generated/prisma/client';
+import { PrismaPg } from '@prisma/adapter-pg';
+
+function makeClient() {
+  const adapter = new PrismaPg({ connectionString: process.env.DATABASE_URL! });
+  return new PrismaClient({ adapter });
+}
 
 const globalForPrisma = globalThis as unknown as { prisma: PrismaClient };
 
-export const prisma = globalForPrisma.prisma ?? new PrismaClient();
+export const prisma = globalForPrisma.prisma ?? makeClient();
 
 if (process.env.NODE_ENV !== 'production') globalForPrisma.prisma = prisma;
 ```
 
 **Why**: SvelteKit's dev server hot-reloads modules. Without a singleton, each reload creates a new PrismaClient and exhausts connections.
 
+**Prisma 7 notes**:
+- Import path points to the generated output directory (`src/generated/prisma/client`), not `@prisma/client`.
+- A **driver adapter** (`@prisma/adapter-pg`) is required in Prisma 7 for all database connections. The adapter wraps the `pg` driver and is passed to `PrismaClient({ adapter })`.
+- The `prisma-client-js` generator (which generated into `node_modules/@prisma/client`) is deprecated.
+
 ---
 
 ## 2. Files to Modify
 
-### 2.1 `package.json` — add scripts and @prisma/client
+### 2.1 `package.json` — add scripts and dependencies
 
-Add `@prisma/client` to dependencies and seed/db scripts:
+Add `@prisma/client` and `@prisma/adapter-pg` to dependencies. **Note**: In Prisma 7, the seed command is configured in `prisma.config.ts` under `migrations.seed`, NOT in `package.json`. The `--bun` flag is required when running Prisma CLI via `bunx` to ensure Bun runtime (without it, Prisma falls back to Node.js due to the CLI's `#!/usr/bin/env node` shebang).
 
 ```jsonc
 {
   "dependencies": {
     // existing...
-    "@prisma/client": "^7.4.1"    // ADD — the runtime client
-  },
-  "prisma": {
-    "seed": "bun run prisma/seed.ts"
+    "@prisma/client": "^7.4.1",       // ADD — runtime client (still needed as a dependency)
+    "@prisma/adapter-pg": "^7.4.1"    // ADD — required driver adapter for PostgreSQL in Prisma 7
   },
   "scripts": {
     // existing...
     "db:up":       "podman-compose up -d",
     "db:down":     "podman-compose down",
-    "db:migrate":  "bunx prisma migrate dev",
-    "db:seed":     "bunx prisma db seed",
-    "db:studio":   "bunx prisma studio",
-    "db:reset":    "bunx prisma migrate reset"
+    "db:migrate":  "bunx --bun prisma migrate dev",
+    "db:seed":     "bunx --bun prisma db seed",
+    "db:studio":   "bunx --bun prisma studio",
+    "db:reset":    "bunx --bun prisma migrate reset",
+    "db:generate": "bunx --bun prisma generate"
   }
 }
 ```
 
-### 2.2 `src/routes/+page.server.ts` — NEW file, load card from DB
+### 2.2 `prisma.config.ts` — Prisma 7 config file (project root)
+
+In Prisma 7, the `prisma.config.ts` file lives at the **project root** (next to `package.json`). The Prisma CLI auto-detects it there. The `defineConfig` and `env` helpers are imported from `"prisma/config"` (NOT from `"@prisma/internals"`). Bun automatically loads `.env` files, so no `import "dotenv/config"` is needed.
+
+```ts
+import { defineConfig, env } from 'prisma/config';
+
+export default defineConfig({
+  schema: './prisma/schema.prisma',
+  migrations: {
+    path: './prisma/migrations',
+    seed: 'bun prisma/seed.ts',          // Prisma 7: seed is configured HERE, not in package.json
+  },
+  datasource: {
+    url: env('DATABASE_URL'),             // type-safe env() helper from prisma/config
+  },
+});
+```
+
+### 2.3 `src/routes/+page.server.ts` — NEW file, load card from DB
 
 ```ts
 import type { PageServerLoad } from './$types';
@@ -403,7 +437,7 @@ export const load: PageServerLoad = async () => {
 };
 ```
 
-### 2.3 `src/routes/+page.svelte` — consume server data instead of hardcoded card
+### 2.4 `src/routes/+page.svelte` — consume server data instead of hardcoded card
 
 Replace the hardcoded `const card` block with:
 
@@ -448,22 +482,25 @@ All template markup remains unchanged.
 ## 3. Execution Order
 
 ```
-Step  Command / Action                              Verify
-────  ──────────────────────────────────────────────  ────────────────────────────
- 1    Create .env.example                            cat .env.example
- 2    Copy  .env.example → .env, set real password   .env is gitignored ✓
- 3    Create docker-compose.yml                      podman-compose config
- 4    bun add @prisma/client                         package.json updated
- 5    Create prisma/schema.prisma                    bunx prisma validate
- 6    Add scripts to package.json                    bun run db:up
- 7    bun run db:up                                  podman ps → hangul-postgres running
- 8    bun run db:migrate  (name: "init")             prisma/migrations/ created
- 9    Create prisma/seed.ts                          —
-10    bun run db:seed                                ✓ Seed complete
-11    bun run db:studio                              browse localhost:5555 → verify data
-12    Create src/lib/server/db.ts                    —
-13    Create src/routes/+page.server.ts              —
-14    Edit   src/routes/+page.svelte                 bun run dev → card loads from DB
+Step  Command / Action                                        Verify
+────  ────────────────────────────────────────────────────────  ────────────────────────────────
+ 1    Create .env.example                                      cat .env.example
+ 2    Copy  .env.example → .env, set real password             .env is gitignored ✓
+ 3    Create docker-compose.yml                                podman-compose config
+ 4    bun add @prisma/client @prisma/adapter-pg                package.json updated
+ 5    Create prisma/schema.prisma (prisma-client generator)    bunx --bun prisma validate
+ 6    Create/update prisma.config.ts (defineConfig from        bunx --bun prisma validate
+      "prisma/config", datasource.url, migrations.seed)
+ 7    Add scripts to package.json (bunx --bun prisma …)        bun run db:up
+ 8    bun run db:up                                            podman ps → hangul-postgres running
+ 9    bun run db:migrate  (name: "init")                       prisma/migrations/ created
+10    bunx --bun prisma generate                               src/generated/prisma/ created
+11    Create prisma/seed.ts (uses PrismaPg adapter)            —
+12    bun run db:seed                                          ✓ Seed complete
+13    bun run db:studio                                        browse localhost:5555 → verify data
+14    Create src/lib/server/db.ts (PrismaPg adapter)           —
+15    Create src/routes/+page.server.ts                        —
+16    Edit   src/routes/+page.svelte                           bun run dev → card loads from DB
 ```
 
 ---
@@ -471,9 +508,10 @@ Step  Command / Action                              Verify
 ## 4. Verification Checklist
 
 - [ ] `podman ps` shows `hangul-postgres` running on port 5432
-- [ ] `bunx prisma migrate dev` succeeds with tables: `users`, `sessions`, `grammar_points`, `cloze_cards`, `review_cards`, `review_logs`
-- [ ] `bunx prisma db seed` → "✓ Seed complete"
-- [ ] `bunx prisma studio` → grammar_points has 1 row, cloze_cards has 1 row
+- [ ] `bunx --bun prisma generate` creates `src/generated/prisma/` with `client.ts`, `models.ts`, etc.
+- [ ] `bunx --bun prisma migrate dev` succeeds with tables: `users`, `sessions`, `grammar_points`, `cloze_cards`, `review_cards`, `review_logs`
+- [ ] `bunx --bun prisma db seed` → "✓ Seed complete"
+- [ ] `bunx --bun prisma studio` → grammar_points has 1 row, cloze_cards has 1 row
 - [ ] `bun run dev` → cloze page loads the topic particle card from DB
 - [ ] Typing "neun" into the input shows 는 in the blank
 - [ ] Clicking Check → "✓ Correct!"
@@ -484,5 +522,24 @@ Step  Command / Action                              Verify
 
 - **FSRS integration**: Install `ts-fsrs`, add a `POST /api/review` endpoint that takes `{ cardId, rating }`, computes next schedule, upserts `ReviewCard`, appends `ReviewLog`.
 - **Auth**: Likely Lucia v3 or a custom session-based flow. `User` / `Session` tables are already in the schema.
-- **AI card generation**: A script or API route that calls an LLM, parses output into `GrammarPoint` + `ClozeCard` + `ClozeBlank` records, and inserts via Prisma.
+- **AI card generation**: A script or API route that calls an LLM, parses output into `GrammarPoint` + `ClozeCard` records, and inserts via Prisma.
 - **Card selection**: Replace `findFirstOrThrow` with FSRS-based `findFirst({ where: { reviewCards: { some: { userId, due: { lte: now } } } }, orderBy: ... })`.
+
+---
+
+## 6. Prisma 7 Migration Notes
+
+This plan targets **Prisma 7.4+**. Key differences from Prisma 5/6 that are reflected above:
+
+| Change | Old (Prisma 5/6) | New (Prisma 7) |
+|--------|-------------------|----------------|
+| Generator provider | `"prisma-client-js"` | `"prisma-client"` (default, old is deprecated) |
+| Generator output | Auto into `node_modules` | **Required** `output` field (e.g. `"../src/generated/prisma"`) |
+| PrismaClient import | `from '@prisma/client'` | `from './generated/prisma/client'` (relative to generated output) |
+| Database connection | Built-in engine | **Driver adapter required** (e.g. `@prisma/adapter-pg` for PostgreSQL) |
+| Config file | `prisma` key in `package.json` | `prisma.config.ts` with `defineConfig` from `"prisma/config"` |
+| Datasource URL | `url = env("DATABASE_URL")` in schema | `datasource.url` in `prisma.config.ts` only; schema just declares `provider` |
+| Seed config | `prisma.seed` in `package.json` | `migrations.seed` in `prisma.config.ts` |
+| Bun CLI | `bunx prisma ...` | `bunx --bun prisma ...` (ensures Bun runtime, not Node.js fallback) |
+| `.env` loading | Auto-loaded at runtime | Must use `dotenv/config` import OR Bun (which auto-loads `.env`) |
+| `Prisma.validator` | Available | **Removed** — use TypeScript `satisfies` instead |

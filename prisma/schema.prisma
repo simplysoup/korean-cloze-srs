@@ -1,0 +1,124 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Auth domain
+// ══════════════════════════════════════════════════════════════════════════════
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt      @map("updated_at")
+
+  sessions    Session[]
+  reviewCards ReviewCard[]
+  reviewLogs  ReviewLog[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id @default(cuid())
+  userId    String   @map("user_id")
+  token     String   @unique
+  expiresAt DateTime @map("expires_at")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Grammar domain
+// ══════════════════════════════════════════════════════════════════════════════
+
+model GrammarPoint {
+  id          String   @id @default(cuid())
+  title       String
+  category    String
+  tense       String?
+  register    String?
+  hint        String
+  description String
+  level       Int      @default(1)
+  tags        String[]
+  createdAt   DateTime @default(now()) @map("created_at")
+
+  clozeCards ClozeCard[]
+
+  @@map("grammar_points")
+}
+
+model ClozeCard {
+  id                String   @id @default(cuid())
+  grammarPointId    String   @map("grammar_point_id")
+  fullSentence      String
+  sentenceWithBlank String   @map("sentence_with_blank")
+  vocabBaseForm     String   @map("vocab_base_form")
+  answer            String
+  alternateAnswers  String[] @map("alternate_answers")
+  englishHint       Json
+  createdAt         DateTime @default(now()) @map("created_at")
+
+  grammarPoint GrammarPoint @relation(fields: [grammarPointId], references: [id], onDelete: Cascade)
+  reviewCards  ReviewCard[]
+
+  @@map("cloze_cards")
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// FSRS domain (spaced repetition)
+// ══════════════════════════════════════════════════════════════════════════════
+
+/// One ReviewCard per (User, ClozeCard) pair — tracks FSRS state.
+model ReviewCard {
+  id          String    @id @default(cuid())
+  userId      String    @map("user_id")
+  clozeCardId String    @map("cloze_card_id")
+
+  stability   Float     @default(0)
+  difficulty  Float     @default(0)
+  reps        Int       @default(0)
+  lapses      Int       @default(0)
+  state       Int       @default(0)
+  due         DateTime  @default(now())
+  lastReview  DateTime? @map("last_review")
+
+  createdAt   DateTime  @default(now()) @map("created_at")
+  updatedAt   DateTime  @updatedAt      @map("updated_at")
+
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  clozeCard ClozeCard @relation(fields: [clozeCardId], references: [id], onDelete: Cascade)
+  logs      ReviewLog[]
+
+  @@unique([userId, clozeCardId])
+  @@map("review_cards")
+}
+
+/// Individual review events — append-only log.
+model ReviewLog {
+  id            String   @id @default(cuid())
+  reviewCardId  String   @map("review_card_id")
+  userId        String   @map("user_id")
+  rating        Int
+  reviewedAt    DateTime @default(now()) @map("reviewed_at")
+
+  stability     Float
+  difficulty    Float
+  elapsedDays   Float    @map("elapsed_days")
+  scheduledDays Float    @map("scheduled_days")
+
+  reviewCard ReviewCard @relation(fields: [reviewCardId], references: [id], onDelete: Cascade)
+  user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("review_logs")
+}
