@@ -1,21 +1,21 @@
 # Korean Cloze SRS
 
-A spaced-repetition app for learning Korean grammar through cloze (fill-in-the-blank) exercises. Type romanized Korean, see it convert to Hangul in real time, and check your answer against the database.
+A spaced-repetition web app for learning Korean grammar through cloze-deletion (fill-in-the-blank) exercises. Type romanized Korean, see it convert to Hangul in real time, and review with FSRS-scheduled spacing.
 
-**Stack:** SvelteKit 2 · Svelte 5 · TypeScript · Prisma 7 · PostgreSQL 16 · Bun
+**Stack:** SvelteKit 2 · Svelte 5 · TypeScript · Prisma 7 · PostgreSQL 16 · BetterAuth · Bun
 
 ---
 
 ## Features
 
+- **Authentication** — email/password sign-up and sign-in via BetterAuth with Argon2id hashing
 - **Review queue** — loads up to 10 due cards per session from the FSRS scheduler, presented one at a time
-- **Cloze cards from the database** — each card shows a Korean sentence with a blank, a grammar hint, and an English translation with highlighted words (direct + related highlighting)
+- **Cloze cards** — Korean sentences with blanks, grammar hints, and English translations with syntax highlighting (direct + related)
 - **Romanization → Hangul** — type `neun` and see `는` appear live in the blank (via `hangul-js`)
-- **FSRS spaced repetition** — `POST /api/reviews` accepts a rating (1–4), computes the next schedule via `ts-fsrs`, updates `ReviewCard` state, and appends a `ReviewLog` entry
-- **11 grammar points seeded** — all Part 3 Korean particles (은/는, 이/가, 을/를, 에, 에서, 에서~까지, 부터~까지, 도, 만, 하고/와/과, (이)랑) with 36 cloze cards total
-- **Grammar metadata** — title, category, tense, register, and a spoiler-free hint shown during review; full description revealed after answering
-- **Prisma 7 + PostgreSQL** — cards and grammar points stored in Postgres, queried via Prisma with the `@prisma/adapter-pg` driver adapter
-- **Argon2id password hashing** — test user seeded with `@node-rs/argon2` (Argon2id), ready for BetterAuth integration
+- **FSRS spaced repetition** — `POST /api/reviews` accepts a rating (1–4), computes the next schedule via `ts-fsrs`, updates card state and logs the review
+- **11 grammar points** — all Part 3 Korean particles (은/는, 이/가, 을/를, 에, 에서, 에서~까지, 부터~까지, 도, 만, 하고/와/과, (이)랑) with 36 cloze cards
+- **Interaction states** — incorrect answer shake + undo + show answer, correct answer green highlight + alt cycling, reveal-info toggle with auto-fail penalty
+- **Home page** — grammar point browser with search and review stats
 
 ## Prerequisites
 
