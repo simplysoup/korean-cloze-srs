@@ -83,7 +83,14 @@ bun run db:seed        # inserts 11 grammar points, 36 cloze cards, test user, a
 bun run dev            # http://localhost:5173
 ```
 
-Navigate to `http://localhost:5173/reviews` to start the review queue. You'll see 5 due cards. Type the romanized particle (e.g. `neun` → `는`) and click **Check**.
+Sign in with the seeded test account:
+
+| Field | Value |
+|-------|-------|
+| Email | `test@example.com` |
+| Password | `testpassword123` |
+
+Then navigate to `/reviews` to start the review queue. You'll see 5 due cards. Type the romanized particle (e.g. `neun` → `는`) and click **Check**.
 
 ---
 
@@ -122,43 +129,62 @@ korean-cloze-srs/
 │   ├── seed.ts                   # Seed script (11 grammar points, 36 cards, test user, 5 reviews)
 │   └── migrations/               # Prisma Migrate history
 ├── src/
-│   ├── generated/prisma/         # Auto-generated Prisma Client (gitignored)
+│   ├── hooks.server.ts               # BetterAuth request handler hook
+│   ├── generated/prisma/             # Auto-generated Prisma Client (gitignored)
 │   ├── lib/
-│   │   ├── index.ts              # Library barrel export
-│   │   ├── romanToHangul.ts      # Romanized text → Hangul conversion
+│   │   ├── index.ts                  # Library barrel export
+│   │   ├── romanToHangul.ts          # Romanized text → Hangul conversion
+│   │   ├── auth-client.ts            # BetterAuth client (sign-in/up/out helpers)
 │   │   └── server/
-│   │       ├── db.ts             # PrismaClient singleton (with PrismaPg adapter)
-│   │       └── password.ts       # Argon2id hash/verify (for BetterAuth)
+│   │       ├── db.ts                 # PrismaClient singleton (with PrismaPg adapter)
+│   │       └── auth.ts               # BetterAuth server config (Prisma adapter)
 │   ├── routes/
-│   │   ├── +layout.svelte        # App shell + romanization reference sidebar
-│   │   ├── +page.server.ts       # Server load: fetches first cloze card from DB
-│   │   ├── +page.svelte          # Cloze card UI (original single-card view)
+│   │   ├── +layout.svelte            # App shell with nav bar (login/logout)
+│   │   ├── +page.server.ts           # Home page: grammar points + review stats
+│   │   ├── +page.svelte              # Home page UI: search + grammar browser
+│   │   ├── login/
+│   │   │   └── +page.svelte          # Login / sign-up form
 │   │   ├── reviews/
-│   │   │   ├── +page.server.ts   # Loads review queue (up to 10 due cards for user)
-│   │   │   └── +page.svelte      # Review UI with queue navigation + answer checking
+│   │   │   ├── +page.server.ts       # Loads review queue (up to 10 due cards)
+│   │   │   └── +page.svelte          # Review UI with queue + answer checking
 │   │   ├── api/
+│   │   │   ├── auth/[...all]/
+│   │   │   │   └── +server.ts        # BetterAuth catch-all API route
 │   │   │   └── reviews/
-│   │   │       └── +server.ts    # POST: submit FSRS review rating
+│   │   │       └── +server.ts        # POST: submit FSRS review rating
 │   │   └── roman-to-hangul/
-│   │       └── +page.svelte      # Standalone romanization tool
-│   ├── app.css                   # Global styles (CSS custom properties)
-│   ├── app.html                  # HTML shell
-│   └── app.d.ts                  # SvelteKit type augmentations
+│   │       └── +page.svelte          # Standalone romanization tool
+│   ├── app.css                       # Global styles (CSS custom properties)
+│   ├── app.html                      # HTML shell
+│   └── app.d.ts                      # SvelteKit type augmentations
 ├── docs/
-│   ├── DB_PLAN.md                # Full database implementation plan
-│   ├── PRISMA7_NOTES.md          # Prisma 7 reference / migration notes
-│   └── LLM_CONTEXT.md           # Architecture context for AI-assisted development
+│   ├── planning/                     # Roadmap & future phase specs
+│   │   ├── master-plan.md
+│   │   ├── phase-6-hardening.md
+│   │   ├── phase-7-content.md
+│   │   └── phase-8-admin.md
+│   ├── devlog/                       # Completed phase write-ups
+│   │   ├── phase-2-ui-polish.md
+│   │   ├── phase-3-interactions.md
+│   │   ├── phase-4-database.md
+│   │   └── phase-5-auth-routing.md
+│   └── context/                      # Reference docs for AI-assisted dev
+│       ├── LLM_CONTEXT.md
+│       ├── DB_PLAN.md
+│       └── PRISMA7_NOTES.md
 └── static/
     └── robots.txt
 ```
 
 ## Database Schema
 
-Six tables across three domains:
+Eight tables across three domains:
 
-**Auth** (schema ready, wiring in Phase 5)
-- `users` — email, name, `password_hash` (Argon2id), timestamps
+**Auth** (BetterAuth — active)
+- `users` — email, name, image, timestamps (managed by BetterAuth)
 - `sessions` — token-based sessions linked to users
+- `accounts` — OAuth/credential provider records
+- `verifications` — email verification tokens
 
 **Grammar**
 - `grammar_points` — title, category, tense, register, hint (spoiler-free), description (full), level, tags
@@ -182,19 +208,29 @@ All column names use `snake_case` via `@@map`/`@map`. See [prisma/schema.prisma]
 | Runtime | Bun |
 | Testing | Vitest |
 | SRS | ts-fsrs |
-| Auth (planned) | BetterAuth + @node-rs/argon2 |
+| Auth | BetterAuth 1.4 + @node-rs/argon2 |
 | Utilities | hangul-js |
 
 ## Roadmap
 
+- [x] **UI polish** — remove bounding boxes, center layout, syntax highlighting (Phase 2)
+- [x] **Interaction states** — incorrect/correct answer flows, undo, reveal info (Phase 3)
 - [x] **FSRS integration** — `ts-fsrs` scheduling via `POST /api/reviews` (Phase 3)
 - [x] **Review queue** — loads due cards per user, queue navigation (Phase 3)
 - [x] **Seed data** — 11 grammar points, 36 cloze cards, test user, 5 review cards (Phase 4)
 - [x] **Password hashing** — Argon2id via `@node-rs/argon2` (Phase 4)
-- [ ] **Authentication** — BetterAuth with email/password + session management (Phase 5)
-- [ ] **Routing restructure** — home page, login page, auth API routes (Phase 5)
-- [ ] **UI polish** — remove bounding boxes, center layout, syntax highlighting (Phase 2)
-- [ ] **Interaction states** — incorrect/correct answer flows, undo, reveal info (Phase 3)
-- [ ] **AI card generation** — LLM-powered grammar point + cloze card creation
-- [ ] **Multi-blank cards** — sentences with more than one blank
-- [ ] **Card browser** — admin UI to view/edit all cards and grammar points
+- [x] **Authentication** — BetterAuth with email/password + session management (Phase 5)
+- [x] **Routing restructure** — home page, login page, auth API routes (Phase 5)
+- [ ] **Hardening** — auth-gate API, server-side answer checks, error handling (Phase 6)
+- [ ] **AI card generation** — LLM-powered grammar point + cloze card creation (Phase 7)
+- [ ] **Multi-blank cards** — sentences with more than one blank (Phase 7)
+- [ ] **Card browser** — admin UI to view/edit all cards and grammar points (Phase 8)
+
+## Documentation
+
+| Path | Content |
+|------|---------|
+| [docs/planning/master-plan.md](docs/planning/master-plan.md) | Executive summary, phase status, architecture overview |
+| [docs/planning/](docs/planning/) | Future phase specs (6–8) |
+| [docs/devlog/](docs/devlog/) | Completed phase write-ups (2–5) |
+| [docs/context/](docs/context/) | LLM context, DB plan, Prisma 7 notes |
