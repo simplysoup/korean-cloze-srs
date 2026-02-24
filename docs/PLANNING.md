@@ -1,6 +1,7 @@
 # PLANNING.md — Review Card Overhaul, FSRS Integration, Auth & Routing
 
 > **Created:** 2026-02-23
+> **Updated:** 2026-02-24
 > **Scope:** Phases 2–5 of the Korean Cloze SRS update
 > **Prerequisites:** Current MVP state with one seeded grammar point, Prisma 7.4 + PostgreSQL 16, Svelte 5 runes
 
@@ -296,7 +297,9 @@ A "close" answer has the right meaning but wrong register, tense, or particles.
 
 ---
 
-## Phase 4 — Database & Seeding
+## Phase 4 — Database & Seeding ✅ COMPLETE
+
+> **Completed:** 2026-02-24. All steps implemented and verified.
 
 ### 4.1 Schema Changes
 
@@ -307,7 +310,7 @@ model User {
   id           String   @id @default(cuid())
   email        String   @unique
   name         String?
-  passwordHash String?  @map("password_hash")  // BetterAuth bcrypt hash
+  passwordHash String?  @map("password_hash")  // Argon2id hash (via @node-rs/argon2)
   createdAt    DateTime @default(now()) @map("created_at")
   updatedAt    DateTime @updatedAt      @map("updated_at")
 
@@ -376,26 +379,52 @@ Each grammar point will have 3–5 cloze cards. Example structure for 3.1 은/�
 
 #### 4.3.1 BetterAuth Password Hashing
 
-BetterAuth uses `bcrypt` for password hashing. The seed script will use `bcryptjs` (or the `better-auth` utility) to hash a known password.
+BetterAuth supports custom password hashing. We use **Argon2id** via `@node-rs/argon2` (native Rust bindings) instead of bcrypt/scrypt.
+
+Password utility module at `src/lib/server/password.ts`:
 
 ```ts
-import { hash } from 'bcryptjs';  // or: import { hashPassword } from 'better-auth/utils';
+import { hash, type Options, verify } from '@node-rs/argon2';
 
-const passwordHash = await hash('testpassword123', 10);
+const opts: Options = {
+  memoryCost: 65536,  // 64 MiB
+  timeCost: 3,        // 3 iterations
+  parallelism: 4,     // 4 lanes
+  outputLen: 32,      // 32 bytes
+  algorithm: 2        // Argon2id
+};
 
-await prisma.user.upsert({
-  where: { id: 'user_test' },
-  update: {},
-  create: {
-    id: 'user_test',
-    email: 'test@example.com',
-    name: 'Test User',
-    passwordHash,
+export async function hashPassword(password: string): Promise<string> {
+  return hash(password, opts);
+}
+
+export async function verifyPassword(data: { password: string; hash: string }): Promise<boolean> {
+  return verify(data.hash, data.password, opts);
+}
+```
+
+BetterAuth integration (Phase 5):
+
+```ts
+export const auth = betterAuth({
+  emailAndPassword: {
+    enabled: true,
+    password: {
+      hash: hashPassword,
+      verify: verifyPassword,
+    },
   },
 });
 ```
 
-**Dependencies to add:** `better-auth`, `bcryptjs` (or use better-auth's built-in hash).
+Seed script uses the same argon2 options directly:
+
+```ts
+import { hash, type Options } from '@node-rs/argon2';
+const passwordHash = await hash('testpassword123', argon2Opts);
+```
+
+**Dependencies added:** `@node-rs/argon2` (NOT `bcryptjs`).
 
 #### 4.3.2 Auto-login for Development
 
@@ -566,7 +595,7 @@ export const load: LayoutServerLoad = async ({ request }) => {
 
 | Table | Column | Type | Notes |
 |-------|--------|------|-------|
-| `users` | `password_hash` | `String?` | BetterAuth bcrypt hash |
+| `users` | `password_hash` | `String?` | Argon2id hash (via @node-rs/argon2) |
 | `users` | `email_verified` | `Boolean` | BetterAuth requirement (default false) |
 
 ### Potential BetterAuth Columns
@@ -617,29 +646,29 @@ BetterAuth may require additional columns. During implementation, run `npx bette
 Implementation should proceed in dependency order:
 
 ```
-Step  Phase  Task                                                    Depends On
-────  ─────  ──────────────────────────────────────────────────────  ──────────
- 1    4.1    Add passwordHash to User schema, run migration          —
- 2    4.2    Write full seed.ts with 11 grammar points + cards       Step 1
- 3    4.3    Add test user with hashed password to seed              Step 2
- 4    4.4    Seed 5 ReviewCards for test user                        Step 3
- 5    —      Run: bunx --bun prisma migrate dev --name auth_update   Step 1
- 6    —      Run: bunx --bun prisma db seed                          Step 4
- 7    5.1    Create route folder structure (reviews/, login/, api/)   —
- 8    5.2    Build home page (/, search bar, login button)            Step 7
- 9    5.4    Set up BetterAuth server + client + API route            Step 7
-10    5.3    Build login page                                         Step 9
-11    5.1    Move roman-to-hangul into reviews/                       Step 7
-12    2.1    Remove grammar header from review page                   Step 7
-13    2.2    Implement placeholder text (tense/register)              Step 12
-14    2.3    Remove bounding boxes, center layout                     Step 12
-15    2.4    Implement syntax highlighting (highlightType)            Step 12
-16    3.1    Implement review queue loading                           Steps 6, 9
-17    3.2    Implement incorrect answer flow (shake, undo, show)      Step 16
-18    3.3    (Plan only — no implementation)                          —
-19    3.4    Implement correct answer flow (green, alt cycling)       Step 16
-20    3.5    Implement reveal info toggle                             Step 16
-21    3.6    Implement POST /api/reviews (FSRS update)                Step 16
+Step  Phase  Task                                                    Depends On   Status
+────  ─────  ──────────────────────────────────────────────────────  ──────────  ───────
+ 1    4.1    Add passwordHash to User schema, run migration          —            ✅ Done
+ 2    4.2    Write full seed.ts with 11 grammar points + cards       Step 1       ✅ Done
+ 3    4.3    Add test user with hashed password to seed              Step 2       ✅ Done
+ 4    4.4    Seed 5 ReviewCards for test user                        Step 3       ✅ Done
+ 5    —      Run: bunx --bun prisma migrate dev --name auth_update   Step 1       ✅ Done
+ 6    —      Run: bunx --bun prisma db seed                          Step 4       ✅ Done
+ 7    5.1    Create route folder structure (reviews/, login/, api/)   —            ✅ Done
+ 8    5.2    Build home page (/, search bar, login button)            Step 7       ✅ Done
+ 9    5.4    Set up BetterAuth server + client + hooks                Step 7       ✅ Done
+10    5.3    Build login page                                         Step 9       ✅ Done
+11    5.1    Move roman-to-hangul into reviews/                       Step 7       ✅ Done
+12    2.1    Remove grammar header from review page                   Step 7       ✅ Done
+13    2.2    Implement placeholder text (tense/register)              Step 12      ✅ Done
+14    2.3    Remove bounding boxes, center layout                     Step 12      ✅ Done
+15    2.4    Implement syntax highlighting (highlightType)            Step 12      ✅ Done
+16    3.1    Implement review queue loading                           Steps 6, 9   ✅ Done
+17    3.2    Implement incorrect answer flow (shake, undo, show)      Step 16      ✅ Done
+18    3.3    (Plan only — no implementation)                          —            ✅ Done
+19    3.4    Implement correct answer flow (green, alt cycling)       Step 16      ✅ Done
+20    3.5    Implement reveal info toggle                             Step 16      ✅ Done
+21    3.6    Implement POST /api/reviews (FSRS update)                Step 16      ✅ Done
 22    —      End-to-end test: login → review queue → answer → FSRS   All
 ```
 
@@ -648,15 +677,17 @@ Step  Phase  Task                                                    Depends On
 ## Dependencies to Add
 
 ```bash
-bun add better-auth ts-fsrs bcryptjs
-bun add -d @types/bcryptjs
+# Already installed (Phase 3-5):
+# ts-fsrs (FSRS scheduling)
+# @node-rs/argon2 (Argon2id password hashing)
+# better-auth (authentication framework)
 ```
 
 ---
 
 ## Open Questions & Future Work
 
-1. **BetterAuth schema alignment:** BetterAuth may expect specific table/column names. Run `npx better-auth generate` during implementation to check compatibility with our existing `User`/`Session` models. May need to add columns or rename tables.
+1. **BetterAuth schema alignment:** ✅ Resolved. BetterAuth uses `Account` and `Verification` tables. Passwords stored in `Account.password` with `providerId: "credential"`. Schema uses `@@map()` for snake_case table names. Uses `svelteKitHandler` in `hooks.server.ts` (not API catch-all routes). Custom Argon2id hashing via `password.hash`/`password.verify` options.
 
 2. **Close answers (Phase 3.3):** Deferred. Will need:
    - `closeAnswers Json?` column on `ClozeCard`

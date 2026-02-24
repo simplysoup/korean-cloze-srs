@@ -1,172 +1,207 @@
 <script lang="ts">
-	import { romanToHangul } from '$lib/romanToHangul';
-
-	interface EnglishHintPart {
-		text: string;
-		highlightType: 'none' | 'direct' | 'related';
-	}
-
-	interface GrammarPoint {
-		title: string;
-		category: string;
-		tense: string | null;
-		register: string | null;
-		hint: string;
-		description: string;
-	}
-
-	interface ClozeCard {
-		id: string;
-		fullSentence: string;
-		sentenceWithBlank: string;
-		vocabBaseForm: string;
-		answers: string[];
-		grammar: GrammarPoint;
-		englishHint: EnglishHintPart[];
-	}
-
-	/** Normalize legacy { highlight: boolean } to { highlightType } */
-	function normalizeHint(part: any): EnglishHintPart {
-		if (typeof part.highlight === 'boolean') {
-			return { text: part.text, highlightType: part.highlight ? 'direct' : 'none' };
-		}
-		return part;
-	}
-
-	// ── Receive from +page.server.ts ─────────────────────────────────────
 	let { data } = $props();
 
-	// ── Normalize english hint parts (backward compat) ───────────────────
-	const englishHint = $derived(data.card.englishHint.map(normalizeHint));
-
-	// ── Sentence parts split at each ___ ─────────────────────────────────
-	const parts = $derived(data.card.sentenceWithBlank.split('___'));
-	const blankCount = $derived(parts.length - 1);
-
-	// ── Placeholder: tense/register metadata, fallback to hint ───────────
-	const placeholderText = $derived(
-		[data.card.grammar.tense, data.card.grammar.register]
-			.filter(Boolean)
-			.join(', ') || data.card.grammar.hint
+	let search = $state('');
+	const filtered = $derived(
+		data.grammarPoints.filter(
+			(gp) =>
+				gp.title.toLowerCase().includes(search.toLowerCase()) ||
+				gp.hint.toLowerCase().includes(search.toLowerCase()) ||
+				gp.tags.some((t: string) => t.toLowerCase().includes(search.toLowerCase()))
+		)
 	);
-
-	// ── Per-blank roman input ─────────────────────────────────────────────────
-	let romanInputs = $state<string[]>(['']);
-	let hangulValues = $derived(romanInputs.map((r) => romanToHangul(r)));
-
-	// ── Submission / result state ─────────────────────────────────────────────
-	let submitted = $state(false);
-	let correct = $derived(
-		submitted
-			? hangulValues.map((h) => data.card.answers.includes(h))
-			: ([] as boolean[]),
-	);
-	let allCorrect = $derived(submitted && correct.length > 0 && correct.every(Boolean));
-
-	// ── Handlers ──────────────────────────────────────────────────────────────
-	function submit() {
-		if (hangulValues.some((h) => h.trim() === '')) return;
-		submitted = true;
-	}
-
-	function reset() {
-		submitted = false;
-		romanInputs = [''];
-		setTimeout(() => (document.querySelector('.roman-input') as HTMLInputElement)?.focus(), 0);
-	}
-
-	function handleKeydown(e: KeyboardEvent) {
-		if (e.key === 'Enter') submit();
-	}
 </script>
 
-<div class="review-wrapper">
-	<!-- Cloze card -->
-	<div class="cloze-card">
-		<!-- Sentence with inline blanks -->
-		<div class="sentence" aria-label="Cloze sentence">
-			{#each parts as part, i}
-				<span class="sentence-text">{part}</span>
-				{#if i < blankCount}
-					{@const h = hangulValues[i]}
-					{@const isEmpty = h === ''}
-					{@const blankState = !submitted ? 'idle' : correct[i] ? 'correct' : 'incorrect'}
-					<span
-						class="blank blank--{blankState}"
-						aria-label="Blank {i + 1}"
-						class:blank--placeholder={isEmpty}
-					>
-						{isEmpty ? placeholderText : h}
-					</span>
-				{/if}
-			{/each}
-		</div>
+<div class="home-wrapper">
+	<h1 class="home-title">Korean Cloze SRS</h1>
+	<p class="home-subtitle">Learn Korean grammar through spaced-repetition cloze exercises.</p>
 
-		<!-- English translation hint -->
-		<p class="english-hint" aria-label="English translation hint">
-			{#each englishHint as part}
-				{#if part.highlightType === 'direct'}
-					<span class="english-highlight english-highlight--direct">{part.text}</span>
-				{:else if part.highlightType === 'related'}
-					<span class="english-highlight english-highlight--related">{part.text}</span>
-				{:else}
-					{part.text}
-				{/if}
-			{/each}
-		</p>
-
-		<!-- Roman inputs -->
-		<div class="inputs-area">
-			{#each romanInputs as _, i}
-				<div class="input-group">
-					<label for="roman-{i}" class="field-label">
-						{blankCount === 1 ? 'Your answer (romanized)' : `Blank ${i + 1} (romanized)`}
-					</label>
-					<!-- svelte-ignore a11y_autofocus -->
-					<input
-						id="roman-{i}"
-						type="text"
-						class="roman-input"
-						bind:value={romanInputs[i]}
-						disabled={submitted}
-						onkeydown={handleKeydown}
-						placeholder="e.g. neun"
-						autofocus={i === 0}
-						spellcheck={false}
-						autocomplete="off"
-					/>
-				</div>
-			{/each}
-		</div>
-
-		<!-- Result message -->
-		{#if submitted}
-			<div class="result-message" class:result--correct={allCorrect} class:result--incorrect={!allCorrect}>
-				{#if allCorrect}
-					✓ Correct!
-				{:else}
-					✗ Not quite — correct answer{data.card.answers.length > 1 ? 's' : ''}:
-				<strong>{data.card.answers.join(' / ')}</strong>
-				{/if}
+	{#if data.user}
+		<div class="stats-row">
+			<div class="stat">
+				<span class="stat-value">{data.reviewsDue}</span>
+				<span class="stat-label">Reviews Due</span>
 			</div>
-		{/if}
-
-		<!-- Controls -->
-		<div class="controls">
-			{#if !submitted}
-				<button
-					class="btn btn--primary"
-					onclick={submit}
-					disabled={hangulValues.some((h) => h.trim() === '')}
-				>
-					Check
-				</button>
-			{:else}
-				<button class="btn btn--secondary" onclick={reset}>Try Again</button>
-				<button class="btn btn--primary" onclick={reset}>Next →</button>
-			{/if}
+			<div class="stat">
+				<span class="stat-value">{data.totalReviewed}</span>
+				<span class="stat-label">Total Reviewed</span>
+			</div>
+			<div class="stat">
+				<span class="stat-value">{data.grammarPoints.length}</span>
+				<span class="stat-label">Grammar Points</span>
+			</div>
 		</div>
 
+		{#if data.reviewsDue > 0}
+			<a href="/reviews" class="btn btn--primary btn--lg">
+				Start Reviews ({data.reviewsDue} due)
+			</a>
+		{:else}
+			<p class="home-done">No reviews due — come back later!</p>
+		{/if}
+	{:else}
+		<div class="home-cta">
+			<a href="/login" class="btn btn--primary btn--lg">Login to Start</a>
+		</div>
+	{/if}
+
+	<div class="search-section">
+		<input
+			type="text"
+			class="roman-input"
+			placeholder="Search grammar points…"
+			bind:value={search}
+			spellcheck={false}
+			autocomplete="off"
+		/>
+	</div>
+
+	<div class="grammar-list">
+		{#each filtered as gp (gp.id)}
+			<div class="grammar-item">
+				<div class="grammar-item-header">
+					<span class="grammar-item-title">{gp.title}</span>
+					<span class="grammar-item-count">{gp.cardCount} card{gp.cardCount === 1 ? '' : 's'}</span>
+				</div>
+				<div class="grammar-item-meta">
+					<span class="grammar-item-hint">{gp.hint}</span>
+					{#each gp.tags as tag}
+						<span class="grammar-tag">{tag}</span>
+					{/each}
+				</div>
+			</div>
+		{:else}
+			<p class="grammar-empty">No grammar points match your search.</p>
+		{/each}
 	</div>
 </div>
+
+<style>
+	.home-wrapper {
+		max-width: 620px;
+		margin: 2rem auto;
+		padding: 0 1rem;
+		display: flex;
+		flex-direction: column;
+		gap: 1.25rem;
+	}
+
+	.home-title {
+		font-size: 2rem;
+		margin: 0;
+		color: var(--text);
+		text-align: center;
+	}
+
+	.home-subtitle {
+		text-align: center;
+		color: var(--text-muted);
+		margin: 0;
+		font-size: 1rem;
+	}
+
+	.stats-row {
+		display: flex;
+		justify-content: center;
+		gap: 2rem;
+	}
+
+	.stat {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.15rem;
+	}
+
+	.stat-value {
+		font-size: 1.75rem;
+		font-weight: 700;
+		color: var(--text);
+	}
+
+	.stat-label {
+		font-size: 0.75rem;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		color: var(--text-muted);
+	}
+
+	.home-done {
+		text-align: center;
+		color: var(--green-text);
+		font-weight: 500;
+	}
+
+	.home-cta {
+		text-align: center;
+	}
+
+	:global(.btn--lg) {
+		display: inline-block;
+		padding: 0.65rem 1.75rem;
+		font-size: 1.05rem;
+		text-decoration: none;
+		text-align: center;
+	}
+
+	.search-section {
+		margin-top: 0.5rem;
+	}
+
+	.grammar-list {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.grammar-item {
+		background: var(--surface);
+		border: 1px solid var(--border);
+		border-radius: var(--radius-sm);
+		padding: 0.75rem 1rem;
+	}
+
+	.grammar-item-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.grammar-item-title {
+		font-weight: 600;
+		color: var(--text);
+	}
+
+	.grammar-item-count {
+		font-size: 0.8rem;
+		color: var(--text-muted);
+	}
+
+	.grammar-item-meta {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+		margin-top: 0.25rem;
+	}
+
+	.grammar-item-hint {
+		font-size: 0.85rem;
+		color: var(--text-muted);
+		font-style: italic;
+	}
+
+	.grammar-tag {
+		font-size: 0.7rem;
+		padding: 0.1rem 0.4rem;
+		background: #f3f4f6;
+		border-radius: 4px;
+		color: var(--text-muted);
+	}
+
+	.grammar-empty {
+		text-align: center;
+		color: var(--text-faint);
+		padding: 1rem;
+	}
+</style>
 

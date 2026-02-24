@@ -8,7 +8,7 @@
 
 - **Name:** Korean Cloze SRS
 - **Purpose:** A spaced-repetition web app for learning Korean grammar through cloze-deletion (fill-in-the-blank) exercises.
-- **Current state:** MVP — single seeded card loads from the database and renders correctly. Auth, FSRS scheduling, card creation, and multi-card flows are not yet implemented.
+- **Current state:** Fully functional with authentication. BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded, FSRS scheduling active via `POST /api/reviews`, review page at `/reviews` requires auth. Home page (`/`) shows grammar list with search + stats. Login page at `/login`. Phases 2–4 complete, Phase 5 (auth + routing) complete.
 
 ---
 
@@ -24,6 +24,10 @@
 | Bun | 1.x | Package manager AND runtime — scripts use `bunx --bun` for Prisma CLI |
 | Vite | 7.x | Dev server and build tool |
 | Vitest | 4.x | Test runner (no tests written yet) |
+| ts-fsrs | 5.2.3 | Spaced-repetition scheduling (FSRS algorithm) |
+| better-auth | 1.4.19 | Authentication framework (email/password, Prisma adapter) |
+| @node-rs/argon2 | 2.0.2 | Native Argon2id password hashing (plugged into BetterAuth) |
+| hangul-js | 0.2.6 | Romanized text → Hangul conversion |
 
 ---
 
@@ -103,10 +107,13 @@ Bun auto-loads `.env` files. No `import 'dotenv/config'` is needed in `prisma.co
 
 Six models across three domains. All use `cuid()` IDs and `snake_case` column mapping.
 
-### Auth domain (not yet wired up)
+### Auth domain (BetterAuth — fully wired)
 
-- **User** (`users`) — `id`, `email` (unique), `name?`, timestamps
-- **Session** (`sessions`) — `id`, `userId`, `token` (unique), `expiresAt`, `createdAt`
+- **User** (`users`) — `id`, `email` (unique), `name?`, `emailVerified` (bool), `image?`, timestamps
+- **Session** (`sessions`) — `id`, `userId`, `token` (unique), `expiresAt`, `ipAddress?`, `userAgent?`, timestamps
+- **Account** (`accounts`) — `id`, `userId`, `accountId`, `providerId`, `password?`, OAuth tokens, timestamps
+  - Passwords stored here (not on User) with `providerId: "credential"`
+- **Verification** (`verifications`) — `id`, `identifier`, `value`, `expiresAt`, timestamps
 
 ### Grammar domain (active)
 
@@ -125,10 +132,10 @@ Six models across three domains. All use `cuid()` IDs and `snake_case` column ma
   - `vocabBaseForm` — dictionary form (e.g. "은/는")
   - `answer` — canonical correct answer (e.g. "는")
   - `alternateAnswers` — string array of other accepted forms
-  - `englishHint` — `Json` field storing `{text: string, highlight: boolean}[]`
+  - `englishHint` — `Json` field storing `{text: string, highlightType: 'none' | 'direct' | 'related'}[]`
   - Belongs to one `GrammarPoint`
 
-### FSRS domain (schema exists, not yet wired up)
+### FSRS domain (active — scheduling via `POST /api/reviews`)
 
 - **ReviewCard** (`review_cards`) — per-(User, ClozeCard) FSRS state
   - `stability`, `difficulty`, `reps`, `lapses`, `state` (0=New, 1=Learning, 2=Review, 3=Relearning), `due`, `lastReview?`
@@ -145,20 +152,65 @@ Six models across three domains. All use `cuid()` IDs and `snake_case` column ma
 
 PrismaClient singleton. Uses `globalThis` caching to survive SvelteKit HMR in dev. Creates a `PrismaPg` adapter with the `DATABASE_URL` env var.
 
+### `src/lib/server/auth.ts`
+
+BetterAuth server configuration. Uses `prismaAdapter(prisma, { provider: 'postgresql' })` for database access. Custom Argon2id password hashing via `hashPassword`/`verifyPassword` from `password.ts`. 7-day sessions, daily session age updates.
+
+### `src/lib/auth-client.ts`
+
+BetterAuth Svelte client. Exports `authClient` created via `createAuthClient()` from `better-auth/svelte`.
+
+### `src/hooks.server.ts`
+
+SvelteKit server hooks. Calls `auth.api.getSession()` to populate `event.locals.session` and `event.locals.user` on every request. Returns `svelteKitHandler()` which intercepts `/api/auth/*` routes for BetterAuth.
+
+### `src/routes/+layout.server.ts`
+
+Passes `session` and `user` from `event.locals` to all pages via layout data.
+
+### `src/routes/+layout.svelte`
+
+App shell with navigation bar. Shows brand link, Reviews link (if authenticated), user name, and logout button. Uses `authClient.signOut()` for logout.
+
 ### `src/routes/+page.server.ts`
 
-Server load function. Currently fetches the first `ClozeCard` (with its `GrammarPoint`) and reshapes it for the frontend. The `answers` array is constructed as `[card.answer, ...card.alternateAnswers]`. The `englishHint` JSON is cast to the typed array.
+Home page server load. Fetches all grammar points with card counts. For authenticated users, also loads reviews-due count and total-reviewed count.
 
 ### `src/routes/+page.svelte`
 
-The main cloze card UI. Key patterns:
+Home page. Shows grammar point list with search filter, quick stats (reviews due, total reviewed, grammar count), login CTA for unauthenticated users, "Start Reviews" button for authenticated users.
+
+### `src/routes/login/+page.svelte`
+
+Login/signup form. Toggles between login and signup modes. Uses `authClient.signIn.email()` / `authClient.signUp.email()`. Redirects to `/reviews` on success.
+
+### `src/routes/login/+page.server.ts`
+
+Redirects authenticated users away from login page to `/reviews`.
+
+### `src/routes/reviews/+page.server.ts`
+
+Loads the review queue. Redirects to `/login` if not authenticated. Queries up to 10 due `ReviewCard` records for `locals.user.id`, ordered by `due ASC`, including the associated `ClozeCard` and `GrammarPoint`. Returns `data.queue` — an array of shaped card objects with `reviewCardId`.
+
+### `src/routes/reviews/+page.svelte`
+
+The main review UI. Key patterns:
 - Uses `$props()` to receive `data` from the server load
-- All references to card data go through `data.card.*` (NOT a local variable) to satisfy Svelte 5 reactivity rules
+- `queueIndex` is `$state(0)`, `currentCard` is `$derived(data.queue[queueIndex])`
+- Normalizes legacy `{ highlight: boolean }` to `{ highlightType }` via `normalizeHint()`
 - `romanInputs` is `$state<string[]>([''])` — initialized with one empty string for the single blank
 - `hangulValues` is `$derived` from `romanInputs` via `romanToHangul()`
-- Answer checking: `data.card.answers.includes(hangulValue)`
-- The grammar `hint` field appears inside the blank when the input is empty
-- The grammar `description` is shown in the grammar card header (currently always visible — future: hide until answer)
+- Answer checking: `currentCard.answers.includes(hangulValue)`
+- Queue "empty" state shown when all cards are reviewed
+- On "Next", sends `POST /api/reviews` with the review rating, then advances `queueIndex`
+
+### `src/routes/api/reviews/+server.ts`
+
+POST endpoint for FSRS review submission. Accepts `{ reviewCardId, rating }` (rating 1–4). Builds a `ts-fsrs` Card from the stored `ReviewCard` state, calls `fsrs.repeat()` to compute the next schedule, updates the `ReviewCard`, and appends a `ReviewLog` entry.
+
+### `src/lib/server/password.ts`
+
+Argon2id password hashing utility. Exports `hashPassword(password)` and `verifyPassword({ password, hash })` using `@node-rs/argon2` with Argon2id settings (64 MiB memory, 3 iterations, 4 lanes, 32-byte output). These functions are designed to plug directly into BetterAuth's `emailAndPassword.password` configuration.
 
 ### `src/lib/romanToHangul.ts`
 
@@ -166,7 +218,13 @@ Converts romanized text to Hangul using the `hangul-js` library. Input like `neu
 
 ### `prisma/seed.ts`
 
-Upserts one `GrammarPoint` ("Topic Particle") and one `ClozeCard` (저___한국어를 공부해요). Uses stable IDs (`gp_topic_particle`, `cc_topic_01`) for idempotent re-runs.
+Seeds the full database with:
+- **1 test user** (`user_test` / `test@example.com` / `testpassword123`) with BetterAuth Account (Argon2id-hashed password in Account table)
+- **11 grammar points** (all Part 3 Korean particles: 은/는, 이/가, 을/를, 에, 에서, 에서~까지, 부터~까지, 도, 만, 하고/와/과, (이)랑)
+- **36 cloze cards** (3–4 per grammar point) with `highlightType` enum
+- **5 ReviewCards** for `user_test` (due now, state=New)
+
+Uses stable IDs (`gp_topic`, `cc_topic_01`, etc.) for idempotent re-runs. All `englishHint` data uses the new `highlightType: 'none' | 'direct' | 'related'` format.
 
 ---
 
@@ -187,18 +245,23 @@ This project uses Svelte 5 **runes** exclusively. Key rules:
 ```
 [PostgreSQL] → [Prisma Client + PrismaPg adapter]
                         ↓
-            [+page.server.ts load()]
-                        ↓ (serialized JSON)
-            [+page.svelte $props()]
+            [reviews/+page.server.ts load()]
+            Queries ReviewCard (due ≤ now, userId) → includes ClozeCard + GrammarPoint
+                        ↓ (serialized JSON: data.queue)
+            [reviews/+page.svelte $props()]
                         ↓
-            [Svelte 5 reactive UI]
+            [Svelte 5 reactive UI: queueIndex, currentCard]
                         ↓ (user types romanized text)
             [romanToHangul()] → Hangul in blank
                         ↓ (submit)
-            [Client-side answer check against data.card.answers]
+            [Client-side answer check against currentCard.answers]
+                        ↓ (next card)
+            [POST /api/reviews { reviewCardId, rating }]
+                        ↓
+            [ts-fsrs: fsrs.repeat(card, now)[rating]]
+                        ↓
+            [Update ReviewCard + append ReviewLog in DB]
 ```
-
-Currently there is no server-side answer verification or POST endpoint. The check is purely client-side.
 
 ---
 
@@ -215,26 +278,21 @@ Currently there is no server-side answer verification or POST endpoint. The chec
 
 ## 9. Known Issues & Limitations
 
-1. **Single card only** — `findFirstOrThrow` returns the first card; no card rotation or selection logic yet
-2. **No auth** — User/Session tables exist but have no registration, login, or session management
-3. **No FSRS** — ReviewCard/ReviewLog tables exist but `ts-fsrs` is not installed and no review endpoint exists
-4. **Client-side checking only** — answers are shipped to the client; a determined user could inspect them
-5. **Grammar description always visible** — the `description` field should ideally be hidden until the user answers correctly
-6. **Single blank assumption** — `romanInputs` is hardcoded to `['']`; multi-blank cards would need the initializer to match `blankCount`
-7. **No error handling** — if the database has no cards, `findFirstOrThrow` will 500
+1. **Client-side checking only** — answers are shipped to the client; a determined user could inspect them
+2. **Single blank assumption** — `romanInputs` is hardcoded to `['']`; multi-blank cards would need the initializer to match `blankCount`
+3. **No error handling on queue empty** — if the database has no due cards, the queue shows an empty state but UX could be improved
+4. **Reviews API not auth-gated** — `POST /api/reviews` does not yet verify the session; it trusts the `reviewCardId` payload. Should add auth check.
 
 ---
 
 ## 10. Planned Next Steps (Priority Order)
 
-1. **FSRS integration** — Install `ts-fsrs`, create `POST /api/review` that accepts `{ cardId, rating }`, computes next schedule, upserts ReviewCard, appends ReviewLog
-2. **Card selection** — Replace `findFirstOrThrow` with a query that selects the next due card for the user
-3. **Auth** — Session-based authentication using the existing User/Session tables
-4. **Hide description until answered** — only reveal `grammar.description` after correct answer or failure
-5. **Server-side answer verification** — POST to verify answer, preventing client inspection
-6. **Seed more cards** — expand seed.ts with additional grammar points and cloze cards
-7. **AI card generation** — script or API route that uses an LLM to generate GrammarPoint + ClozeCard records
-8. **Card browser / admin** — CRUD UI for managing cards outside of the review flow
+1. **End-to-end testing** — Full flow: login → review queue → answer → FSRS scheduling
+2. **Auth-gate the reviews API** — Add session verification to `POST /api/reviews`
+3. **Server-side answer verification** — POST to verify answer, preventing client inspection
+4. **Close answers (Phase 3.3)** — Character-level diff for near-miss feedback
+5. **AI card generation** — script or API route that uses an LLM to generate GrammarPoint + ClozeCard records
+6. **Card browser / admin** — CRUD UI for managing cards outside of the review flow
 
 ---
 
@@ -271,15 +329,17 @@ await prisma.clozeCard.upsert({
     answer: '정답',
     alternateAnswers: ['대체답'],
     englishHint: [
-      { text: 'The ', highlight: false },
-      { text: 'answer', highlight: true },
-      { text: ' is here.', highlight: false },
+      { text: 'The ', highlightType: 'none' },
+      { text: 'answer', highlightType: 'direct' },
+      { text: ' is here.', highlightType: 'none' },
     ],
   },
 });
 ```
 
 Then run `bun run db:seed`.
+
+**Note:** `englishHint` uses `highlightType: 'none' | 'direct' | 'related'` (NOT the old `highlight: boolean` format).
 
 ---
 
@@ -288,4 +348,5 @@ Then run `bun run db:seed`.
 - **Container runtime:** Podman (rootless) with `podman-compose`
 - **Database volume:** Named volume `korean-cloze-srs_pgdata` persists data across container restarts
 - **Port:** Postgres on `localhost:5432` (configurable via `POSTGRES_PORT` in `.env`)
+- **Auth environment:** `BETTER_AUTH_SECRET` (signing key) and `BETTER_AUTH_URL` (`http://localhost:5173`) in `.env`
 - **No Docker required** — the project uses Podman but `docker compose` works as a drop-in replacement if you alias the commands

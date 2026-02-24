@@ -1,13 +1,32 @@
 <script lang="ts">
-	import favicon from '$lib/assets/favicon.svg';
+	import { authClient } from '$lib/auth-client';
 	import '../app.css';
 
-	let { children } = $props();
+	let { data, children } = $props();
+
+	async function handleLogout() {
+		await authClient.signOut({
+			fetchOptions: {
+				onSuccess: () => {
+					window.location.href = '/login';
+				}
+			}
+		});
+	}
 </script>
 
-<svelte:head>
-	<link rel="icon" href={favicon} />
-</svelte:head>
+<nav class="nav-bar">
+	<a href="/" class="nav-brand">Korean Cloze SRS</a>
+	<div class="nav-links">
+		{#if data.user}
+			<a href="/reviews" class="nav-link">Reviews</a>
+			<span class="nav-user">{data.user.name ?? data.user.email}</span>
+			<button class="btn btn--secondary btn--sm" onclick={handleLogout}>Logout</button>
+		{:else}
+			<a href="/login" class="nav-link">Login</a>
+		{/if}
+	</div>
+</nav>
 
 {@render children()}
 

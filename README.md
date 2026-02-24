@@ -8,11 +8,14 @@ A spaced-repetition app for learning Korean grammar through cloze (fill-in-the-b
 
 ## Features
 
-- **Cloze cards from the database** — each card shows a Korean sentence with a blank, a grammar hint, and an English translation with the relevant word highlighted
+- **Review queue** — loads up to 10 due cards per session from the FSRS scheduler, presented one at a time
+- **Cloze cards from the database** — each card shows a Korean sentence with a blank, a grammar hint, and an English translation with highlighted words (direct + related highlighting)
 - **Romanization → Hangul** — type `neun` and see `는` appear live in the blank (via `hangul-js`)
+- **FSRS spaced repetition** — `POST /api/reviews` accepts a rating (1–4), computes the next schedule via `ts-fsrs`, updates `ReviewCard` state, and appends a `ReviewLog` entry
+- **11 grammar points seeded** — all Part 3 Korean particles (은/는, 이/가, 을/를, 에, 에서, 에서~까지, 부터~까지, 도, 만, 하고/와/과, (이)랑) with 36 cloze cards total
 - **Grammar metadata** — title, category, tense, register, and a spoiler-free hint shown during review; full description revealed after answering
 - **Prisma 7 + PostgreSQL** — cards and grammar points stored in Postgres, queried via Prisma with the `@prisma/adapter-pg` driver adapter
-- **FSRS-ready schema** — `ReviewCard` and `ReviewLog` tables are in place for future spaced-repetition scheduling
+- **Argon2id password hashing** — test user seeded with `@node-rs/argon2` (Argon2id), ready for BetterAuth integration
 
 ## Prerequisites
 
@@ -71,7 +74,7 @@ bun run db:migrate     # creates tables (users, sessions, grammar_points, cloze_
 ### 5. Seed the database
 
 ```sh
-bun run db:seed        # inserts the Topic Particle grammar point + example cloze card
+bun run db:seed        # inserts 11 grammar points, 36 cloze cards, test user, and 5 review cards
 ```
 
 ### 6. Start developing
@@ -80,7 +83,7 @@ bun run db:seed        # inserts the Topic Particle grammar point + example cloz
 bun run dev            # http://localhost:5173
 ```
 
-You should see the cloze card loaded from the database. Type `neun` in the input to fill `는` into the blank, then click **Check**.
+Navigate to `http://localhost:5173/reviews` to start the review queue. You'll see 5 due cards. Type the romanized particle (e.g. `neun` → `는`) and click **Check**.
 
 ---
 
@@ -116,7 +119,7 @@ korean-cloze-srs/
 ├── package.json
 ├── prisma/
 │   ├── schema.prisma             # Data models (6 tables)
-│   ├── seed.ts                   # Seed script (Topic Particle + cloze card)
+│   ├── seed.ts                   # Seed script (11 grammar points, 36 cards, test user, 5 reviews)
 │   └── migrations/               # Prisma Migrate history
 ├── src/
 │   ├── generated/prisma/         # Auto-generated Prisma Client (gitignored)
@@ -124,11 +127,18 @@ korean-cloze-srs/
 │   │   ├── index.ts              # Library barrel export
 │   │   ├── romanToHangul.ts      # Romanized text → Hangul conversion
 │   │   └── server/
-│   │       └── db.ts             # PrismaClient singleton (with PrismaPg adapter)
+│   │       ├── db.ts             # PrismaClient singleton (with PrismaPg adapter)
+│   │       └── password.ts       # Argon2id hash/verify (for BetterAuth)
 │   ├── routes/
 │   │   ├── +layout.svelte        # App shell + romanization reference sidebar
-│   │   ├── +page.server.ts       # Server load: fetches cloze card from DB
-│   │   ├── +page.svelte          # Cloze card UI (consumes server data)
+│   │   ├── +page.server.ts       # Server load: fetches first cloze card from DB
+│   │   ├── +page.svelte          # Cloze card UI (original single-card view)
+│   │   ├── reviews/
+│   │   │   ├── +page.server.ts   # Loads review queue (up to 10 due cards for user)
+│   │   │   └── +page.svelte      # Review UI with queue navigation + answer checking
+│   │   ├── api/
+│   │   │   └── reviews/
+│   │   │       └── +server.ts    # POST: submit FSRS review rating
 │   │   └── roman-to-hangul/
 │   │       └── +page.svelte      # Standalone romanization tool
 │   ├── app.css                   # Global styles (CSS custom properties)
@@ -146,15 +156,15 @@ korean-cloze-srs/
 
 Six tables across three domains:
 
-**Auth** (future use)
-- `users` — email, name, timestamps
+**Auth** (schema ready, wiring in Phase 5)
+- `users` — email, name, `password_hash` (Argon2id), timestamps
 - `sessions` — token-based sessions linked to users
 
 **Grammar**
 - `grammar_points` — title, category, tense, register, hint (spoiler-free), description (full), level, tags
 - `cloze_cards` — sentence with blank, answer(s), english hint (JSON), linked to a grammar point
 
-**FSRS** (future spaced-repetition)
+**FSRS** (active — `POST /api/reviews`)
 - `review_cards` — per-user card state (stability, difficulty, reps, lapses, due date)
 - `review_logs` — append-only review event history with FSRS snapshots
 
@@ -171,13 +181,20 @@ All column names use `snake_case` via `@@map`/`@map`. See [prisma/schema.prisma]
 | Build | Vite 7 |
 | Runtime | Bun |
 | Testing | Vitest |
+| SRS | ts-fsrs |
+| Auth (planned) | BetterAuth + @node-rs/argon2 |
 | Utilities | hangul-js |
 
 ## Roadmap
 
-- [ ] **FSRS integration** — `ts-fsrs` for spaced-repetition scheduling via `POST /api/review`
-- [ ] **Authentication** — session-based auth (User/Session tables already in schema)
-- [ ] **Card selection** — replace `findFirstOrThrow` with FSRS-based due-card query
+- [x] **FSRS integration** — `ts-fsrs` scheduling via `POST /api/reviews` (Phase 3)
+- [x] **Review queue** — loads due cards per user, queue navigation (Phase 3)
+- [x] **Seed data** — 11 grammar points, 36 cloze cards, test user, 5 review cards (Phase 4)
+- [x] **Password hashing** — Argon2id via `@node-rs/argon2` (Phase 4)
+- [ ] **Authentication** — BetterAuth with email/password + session management (Phase 5)
+- [ ] **Routing restructure** — home page, login page, auth API routes (Phase 5)
+- [ ] **UI polish** — remove bounding boxes, center layout, syntax highlighting (Phase 2)
+- [ ] **Interaction states** — incorrect/correct answer flows, undo, reveal info (Phase 3)
 - [ ] **AI card generation** — LLM-powered grammar point + cloze card creation
 - [ ] **Multi-blank cards** — sentences with more than one blank
 - [ ] **Card browser** — admin UI to view/edit all cards and grammar points
