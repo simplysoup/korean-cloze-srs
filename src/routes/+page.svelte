@@ -3,7 +3,7 @@
 
 	interface EnglishHintPart {
 		text: string;
-		highlight: boolean;
+		highlightType: 'none' | 'direct' | 'related';
 	}
 
 	interface GrammarPoint {
@@ -25,12 +25,30 @@
 		englishHint: EnglishHintPart[];
 	}
 
+	/** Normalize legacy { highlight: boolean } to { highlightType } */
+	function normalizeHint(part: any): EnglishHintPart {
+		if (typeof part.highlight === 'boolean') {
+			return { text: part.text, highlightType: part.highlight ? 'direct' : 'none' };
+		}
+		return part;
+	}
+
 	// ── Receive from +page.server.ts ─────────────────────────────────────
 	let { data } = $props();
+
+	// ── Normalize english hint parts (backward compat) ───────────────────
+	const englishHint = $derived(data.card.englishHint.map(normalizeHint));
 
 	// ── Sentence parts split at each ___ ─────────────────────────────────
 	const parts = $derived(data.card.sentenceWithBlank.split('___'));
 	const blankCount = $derived(parts.length - 1);
+
+	// ── Placeholder: tense/register metadata, fallback to hint ───────────
+	const placeholderText = $derived(
+		[data.card.grammar.tense, data.card.grammar.register]
+			.filter(Boolean)
+			.join(', ') || data.card.grammar.hint
+	);
 
 	// ── Per-blank roman input ─────────────────────────────────────────────────
 	let romanInputs = $state<string[]>(['']);
@@ -62,16 +80,7 @@
 	}
 </script>
 
-<div class="wrapper">
-	<!-- Grammar point card -->
-	<div class="grammar-card">
-		<div class="grammar-header">
-			<span class="grammar-label">Grammar Point</span>
-			<span class="grammar-title">{data.card.grammar.title}</span>
-		</div>
-		<p class="grammar-desc">{data.card.grammar.description}</p>
-	</div>
-
+<div class="review-wrapper">
 	<!-- Cloze card -->
 	<div class="cloze-card">
 		<!-- Sentence with inline blanks -->
@@ -87,7 +96,7 @@
 						aria-label="Blank {i + 1}"
 						class:blank--placeholder={isEmpty}
 					>
-						{isEmpty ? data.card.grammar.hint : h}
+						{isEmpty ? placeholderText : h}
 					</span>
 				{/if}
 			{/each}
@@ -95,9 +104,11 @@
 
 		<!-- English translation hint -->
 		<p class="english-hint" aria-label="English translation hint">
-			{#each data.card.englishHint as part}
-				{#if part.highlight}
-					<span class="english-highlight">{part.text}</span>
+			{#each englishHint as part}
+				{#if part.highlightType === 'direct'}
+					<span class="english-highlight english-highlight--direct">{part.text}</span>
+				{:else if part.highlightType === 'related'}
+					<span class="english-highlight english-highlight--related">{part.text}</span>
 				{:else}
 					{part.text}
 				{/if}
@@ -158,5 +169,4 @@
 
 	</div>
 </div>
-
 
