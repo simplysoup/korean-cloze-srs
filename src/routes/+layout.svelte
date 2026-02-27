@@ -32,7 +32,7 @@
 	<header class="header">
 		<nav class="header__inner">
 			<!-- Brand -->
-			<a class="header__brand" href="/">
+			<a class="header__brand" href="/dashboard">
 				<span class="header__brand-icon">한</span>
 				<span class="header__brand-text">Korean Cloze</span>
 			</a>
@@ -40,9 +40,8 @@
 			<!-- Main nav links -->
 			<ul class="header__nav">
 				<li>
-					<a href="/" class="header__nav-btn">
-						<span class="header__nav-label">Learn</span>
-						<span class="header__badge">{data.learnableCount}</span>
+					<a href="/dashboard" class="header__nav-btn">
+						<span class="header__nav-label">Dashboard</span>
 					</a>
 				</li>
 				<li>

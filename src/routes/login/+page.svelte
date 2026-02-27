@@ -37,7 +37,7 @@
 				if (result.error) {
 					error = result.error.message ?? 'Login failed';
 				} else {
-					window.location.href = '/';
+					window.location.href = '/dashboard';
 				}
 			} else {
 				const result = await authClient.signUp.email({
@@ -48,7 +48,7 @@
 				if (result.error) {
 					error = result.error.message ?? 'Sign up failed';
 				} else {
-					window.location.href = '/';
+					window.location.href = '/dashboard';
 				}
 			}
 		} catch (e) {

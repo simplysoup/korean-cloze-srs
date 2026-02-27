@@ -10,6 +10,9 @@ A spaced-repetition web app for learning Korean grammar through cloze-deletion (
 
 - **Authentication** — email/password sign-up and sign-in via BetterAuth with Argon2id hashing, rate limiting on auth endpoints
 - **Centralized auth guard** — all routes protected via `hooks.server.ts`; API routes get JSON 401, pages redirect to `/login`
+- **Dashboard** — Bunpro-inspired `/dashboard` with learn/review action cards, Chart.js review history (hourly/daily toggle), SRS level distribution, profile sidebar with XP bar and 7-day streak calendar, TOPIK progress bars, and quick stats
+- **Study streaks** — `UserStreak` model tracks current/longest streak; updated on every review submission
+- **Deck system** — TOPIK-levelled grammar decks; users enroll and progress through lessons; deck detail pages at `/decks/[slug]` show grammar points grouped by lesson
 - **Review queue** — loads up to 10 due cards per session from the FSRS scheduler, presented one at a time
 - **Cloze cards** — Korean sentences with blanks, grammar hints, and English translations with syntax highlighting (direct + related)
 - **Romanization → Hangul** — type `neun` and see `는` appear live in the blank (via `hangul-js`)
@@ -19,8 +22,8 @@ A spaced-repetition web app for learning Korean grammar through cloze-deletion (
 - **Interaction states** — incorrect answer shake + undo + show answer, correct answer green highlight + alt cycling, reveal-info toggle with auto-fail penalty
 - **Error handling** — network error retry banners, next-review countdown on empty queue, login form validation
 - **User levelling** — XP system (10 XP per review, level N needs N×100 XP) displayed in the header
-- **Bunpro-inspired header** — dark sticky nav bar with Learn/Review badges, Content/Practice dropdowns, user profile chip with XP progress bar
-- **Home page** — grammar point browser with search and review stats
+- **Bunpro-inspired header** — dark sticky nav bar with Review badge, Content/Practice dropdowns, user profile chip with XP progress bar
+- **Landing page** — unauthenticated users see available decks; authenticated users are redirected to `/dashboard`
 
 ## Prerequisites
 
@@ -87,8 +90,10 @@ bun run db:seed        # inserts 11 grammar points, 36 cloze cards, test user, a
 ### 6. Start developing
 
 ```sh
-bun run dev            # http://localhost:5173
+./start.sh             # http://localhost:5173
 ```
+
+`start.sh` kills any existing process on port 5173, ensures `hangul-postgres` is running, waits for Postgres to be ready, then starts the Vite dev server. To stop it, press `Ctrl+C`. Alternatively, run `bun run dev` directly if the database is already up.
 
 Sign in with the seeded test account:
 
@@ -105,7 +110,8 @@ Then navigate to `/reviews` to start the review queue. You'll see 5 due cards. T
 
 | Script | Command | Description |
 |--------|---------|-------------|
-| `dev` | `vite dev` | Start dev server with HMR |
+| *(shell)* | `./start.sh` | **Recommended:** kill port 5173, ensure DB running, start dev server |
+| `dev` | `vite dev` | Start dev server with HMR (DB must already be running) |
 | `build` | `vite build` | Production build |
 | `preview` | `vite preview` | Preview production build |
 | `check` | `svelte-check` | TypeScript + Svelte validation |
@@ -126,13 +132,14 @@ Then navigate to `/reviews` to start the review queue. You'll see 5 due cards. T
 
 ```
 korean-cloze-srs/
+├── start.sh                      # Bootstrap script: kill stale server, ensure DB, start dev
 ├── prisma.config.ts              # Prisma 7 CLI config (schema path, seed command, DB URL)
 ├── docker-compose.yml            # Postgres 16 container definition
 ├── .env.example                  # Environment variable template (committed)
 ├── .env                          # Local env values (gitignored)
 ├── package.json
 ├── prisma/
-│   ├── schema.prisma             # Data models (8 tables)
+│   ├── schema.prisma             # Data models (10 tables)
 │   ├── seed.ts                   # Seed script (11 grammar points, 36 cards, test user, 5 review cards)
 │   └── migrations/               # Prisma Migrate history
 ├── src/
@@ -145,17 +152,27 @@ korean-cloze-srs/
 │   │   ├── auth-client.ts            # BetterAuth client (sign-in/up/out helpers)
 │   │   ├── assets/
 │   │   │   └── favicon.svg           # Favicon asset
+│   │   ├── components/
+│   │   │   ├── ReviewHistoryChart.svelte  # Chart.js stacked bar chart (hourly/daily toggle)
+│   │   │   ├── ProfileSidebar.svelte      # User info, XP, streak calendar, TOPIK progress
+│   │   │   └── SrsDistribution.svelte     # SRS level distribution cards
 │   │   └── server/
 │   │       ├── db.ts                 # PrismaClient singleton (with PrismaPg adapter)
 │   │       ├── auth.ts               # BetterAuth server config (Prisma adapter, rate limiting)
 │   │       └── password.ts           # Argon2id hash/verify for BetterAuth
 │   ├── routes/
-│   │   ├── +layout.server.ts         # Layout data: session, user, reviewsDue, levelInfo
+│   │   ├── +layout.server.ts         # Layout data: session, user, reviewsDue, levelInfo, enrolledDeckSlugs
 │   │   ├── +layout.svelte            # App shell with Bunpro-inspired sticky header
-│   │   ├── +page.server.ts           # Home page: grammar points + review stats
-│   │   ├── +page.svelte              # Home page UI: search + grammar browser
+│   │   ├── +page.server.ts           # Landing page (unauth only — redirects auth users to /dashboard)
+│   │   ├── +page.svelte              # Landing page UI: available decks + login CTA
+│   │   ├── dashboard/
+│   │   │   ├── +page.server.ts       # Dashboard data: decks, streaks, SRS distribution, TOPIK progress
+│   │   │   └── +page.svelte          # Dashboard grid layout
+│   │   ├── decks/[slug]/
+│   │   │   ├── +page.server.ts       # Deck detail data: grammar points by lesson, per-point status
+│   │   │   └── +page.svelte          # Deck detail UI: lesson-grouped grammar points
 │   │   ├── login/
-│   │   │   ├── +page.server.ts       # Redirect authenticated users away from login
+│   │   │   ├── +page.server.ts       # Redirect authenticated users to /dashboard
 │   │   │   └── +page.svelte          # Login / sign-up form with validation
 │   │   ├── reviews/
 │   │   │   ├── +page.server.ts       # Loads review queue (up to 10 due cards) + nextReviewAt
@@ -163,17 +180,21 @@ korean-cloze-srs/
 │   │   │   └── roman-to-hangul/
 │   │   │       └── +page.svelte      # Standalone romanization tool
 │   │   └── api/
-│   │       └── reviews/
-│   │           ├── +server.ts        # POST: submit FSRS review rating (auth-gated)
-│   │           └── check/
-│   │               └── +server.ts    # POST: server-side answer verification
-│   ├── app.css                       # Global styles (CSS custom properties)
+│   │       ├── reviews/
+│   │       │   ├── +server.ts        # POST: submit FSRS review rating + streak update
+│   │       │   └── check/
+│   │       │       └── +server.ts    # POST: server-side answer verification
+│   │       ├── decks/[deckId]/enroll/
+│   │       │   └── +server.ts        # POST: enroll user in a deck
+│   │       └── stats/
+│   │           └── review-history/
+│   │               └── +server.ts    # GET: review history for chart (hourly/daily)
+│   ├── app.css                       # Global styles (CSS custom properties + dashboard styles)
 │   ├── app.html                      # HTML shell
 │   └── app.d.ts                      # SvelteKit type augmentations
 ├── docs/
 │   ├── planning/                     # Roadmap & future phase specs
 │   │   ├── master-plan.md
-│   │   ├── phase-7-deck-system.md
 │   │   ├── phase-8-dashboard.md
 │   │   ├── phase-9-grammar-pages.md
 │   │   ├── phase-10-learn-review-flow.md
@@ -184,7 +205,9 @@ korean-cloze-srs/
 │   │   ├── phase-4-database.md
 │   │   ├── phase-5-auth-routing.md
 │   │   ├── phase-5.1-header-levels.md
-│   │   └── phase-6-hardening.md
+│   │   ├── phase-6-hardening.md
+│   │   ├── phase-7-deck-system.md
+│   │   └── phase-8-dashboard.md
 │   └── context/                      # Reference docs for AI-assisted dev
 │       ├── LLM_CONTEXT.md
 │       ├── DB_PLAN.md

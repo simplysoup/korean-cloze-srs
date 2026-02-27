@@ -889,6 +889,21 @@ async function main() {
 	});
 	console.log('✓ Test user enrolled in TOPIK Level 1 deck');
 
+	// ── 7. Seed UserStreak for test user ─────────────────────────────────
+	const today = new Date();
+	today.setHours(0, 0, 0, 0);
+	await prisma.userStreak.upsert({
+		where: { userId: 'user_test' },
+		update: {},
+		create: {
+			userId: 'user_test',
+			currentStreak: 3,
+			longestStreak: 5,
+			lastStudiedDate: today
+		}
+	});
+	console.log('✓ Test user streak seeded');
+
 	console.log('\n✓ Seed complete');
 }
 

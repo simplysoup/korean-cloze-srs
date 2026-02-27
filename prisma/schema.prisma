@@ -25,6 +25,7 @@ model User {
   reviewCards  ReviewCard[]
   reviewLogs   ReviewLog[]
   deckProgress UserDeckProgress[]
+  streak       UserStreak?
 
   @@map("users")
 }
@@ -212,4 +213,22 @@ model UserDeckProgress {
 
   @@unique([userId, deckId])
   @@map("user_deck_progress")
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Streak domain
+// ══════════════════════════════════════════════════════════════════════════════
+
+model UserStreak {
+  id              String    @id @default(cuid())
+  userId          String    @unique @map("user_id")
+  currentStreak   Int       @default(0) @map("current_streak")
+  longestStreak   Int       @default(0) @map("longest_streak")
+  lastStudiedDate DateTime? @map("last_studied_date")
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt      @map("updated_at")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("user_streaks")
 }

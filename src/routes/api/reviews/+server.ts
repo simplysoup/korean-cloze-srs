@@ -82,6 +82,52 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 		}
 	});
 
+	// Update streak
+	const todayStart = new Date(now);
+	todayStart.setHours(0, 0, 0, 0);
+
+	const existingStreak = await prisma.userStreak.findUnique({
+		where: { userId: user.id }
+	});
+
+	if (existingStreak) {
+		const lastDate = existingStreak.lastStudiedDate;
+		if (!lastDate || lastDate.getTime() < todayStart.getTime()) {
+			// Check if yesterday
+			const yesterdayStart = new Date(todayStart);
+			yesterdayStart.setDate(yesterdayStart.getDate() - 1);
+
+			let newStreak: number;
+			if (lastDate && lastDate.getTime() >= yesterdayStart.getTime()) {
+				// Studied yesterday — increment
+				newStreak = existingStreak.currentStreak + 1;
+			} else {
+				// Gap — reset to 1
+				newStreak = 1;
+			}
+
+			await prisma.userStreak.update({
+				where: { userId: user.id },
+				data: {
+					currentStreak: newStreak,
+					longestStreak: Math.max(newStreak, existingStreak.longestStreak),
+					lastStudiedDate: todayStart
+				}
+			});
+		}
+		// If lastStudiedDate is today, no change needed
+	} else {
+		// First review ever — create streak
+		await prisma.userStreak.create({
+			data: {
+				userId: user.id,
+				currentStreak: 1,
+				longestStreak: 1,
+				lastStudiedDate: todayStart
+			}
+		});
+	}
+
 	return json({
 		success: true,
 		nextDue: updatedCard.due,

@@ -6,6 +6,9 @@ import { redirect } from '@sveltejs/kit';
 /** Paths that don't require authentication */
 const PUBLIC_PATHS = ['/login', '/api/auth'];
 
+/** Exact paths that don't require authentication */
+const PUBLIC_EXACT = ['/'];
+
 export async function handle({ event, resolve }) {
 	const session = await auth.api.getSession({ headers: event.request.headers });
 
@@ -16,7 +19,7 @@ export async function handle({ event, resolve }) {
 
 	// Auth guard: redirect unauthenticated users to /login (or 401 for API routes)
 	const { pathname } = event.url;
-	const isPublic = PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + '/'));
+	const isPublic = PUBLIC_EXACT.includes(pathname) || PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + '/'));
 
 	if (!session && !isPublic) {
 		// API routes should get a JSON 401, not a redirect

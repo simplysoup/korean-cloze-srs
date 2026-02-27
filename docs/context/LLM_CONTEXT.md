@@ -8,7 +8,7 @@
 
 - **Name:** Korean Cloze SRS
 - **Purpose:** A spaced-repetition web app for learning Korean grammar through cloze-deletion (fill-in-the-blank) exercises, modelled after Bunpro's deck-based study system. Users progress through TOPIK-levelled grammar decks, study individual grammar point learning pages, and review via cloze cards with romanized Korean input → live Hangul conversion.
-- **Current state:** Fully functional with authentication, FSRS scheduling, server-side hardening, and deck-based navigation (Phase 7 complete). BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded in TOPIK Level 1 Grammar deck, FSRS scheduling active via `POST /api/reviews`, server-side answer verification via `POST /api/reviews/check`, review page at `/reviews` requires auth, rate limiting on auth endpoints. Home page (`/`) shows enrolled deck cards with progress. Deck detail page at `/decks/[slug]` shows grammar points grouped by lesson. Login page at `/login`. Phases 1–7 complete. **Next: Phase 8 (Dashboard) → Phase 9 (Grammar Pages) → Phase 10 (Learn Flow) → Phase 11 (Polish & Content).**
+- **Current state:** Fully functional with authentication, FSRS scheduling, server-side hardening, deck-based navigation, and a Bunpro-inspired dashboard (Phases 1–8 complete). BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded in TOPIK Level 1 Grammar deck, FSRS scheduling active via `POST /api/reviews` (with streak tracking), server-side answer verification via `POST /api/reviews/check`. Dashboard at `/dashboard` (auth redirect target) shows learn/review cards, Chart.js review history, SRS distribution, profile sidebar with streak calendar. Deck detail page at `/decks/[slug]` shows grammar points grouped by lesson. Landing page (`/`) is unauthenticated-only. Login page at `/login`. `start.sh` at project root for idempotent server bootstrapping. **Next: Phase 9 (Grammar Pages) → Phase 10 (Learn Flow) → Phase 11 (Polish & Content).**
 
 ---
 
@@ -25,6 +25,7 @@
 | Vite | 7.x | Dev server and build tool |
 | Vitest | 4.x | Test runner (no tests written yet) |
 | ts-fsrs | 5.2.3 | Spaced-repetition scheduling (FSRS algorithm) |
+| chart.js | 4.5.1 | Client-side canvas charting for review history dashboard widget |
 | better-auth | 1.4.19 | Authentication framework (email/password, Prisma adapter) |
 | @node-rs/argon2 | 2.0.2 | Native Argon2id password hashing (plugged into BetterAuth) |
 | hangul-js | 0.2.6 | Romanized text → Hangul conversion |
@@ -155,6 +156,12 @@ Eleven models across four domains. All use `cuid()` IDs and `snake_case` column 
   - `lastLearnedIndex` (-1 = enrolled but not started), `enrolledAt`, `lastStudiedAt?`
   - Unique on `[userId, deckId]`
 
+### Streak domain (active)
+
+- **UserStreak** (`user_streaks`) — Per-user study streak tracking
+  - `userId` (unique FK → User), `currentStreak` (days), `longestStreak` (days), `lastStudiedDate?`
+  - Upserted on every `POST /api/reviews`: increments if last studied yesterday, resets if gap > 1 day, no-ops if already studied today
+
 ---
 
 ## 5. File-by-File Guide
@@ -185,11 +192,31 @@ App shell with navigation bar. Shows brand link, Reviews link (if authenticated)
 
 ### `src/routes/+page.server.ts`
 
-Home page server load. Fetches all published decks. For authenticated users, separates into enrolled vs available decks with per-deck learned count and reviews due. Returns `enrolledDecks`, `availableDecks`, global `reviewsDue`, `totalReviewed`.
+Landing page server load. Redirects authenticated users to `/dashboard`. For unauthenticated users, fetches published decks and returns `{ availableDecks }` only.
 
 ### `src/routes/+page.svelte`
 
-Home page. Shows enrolled deck cards with progress bars and "Continue →" links to `/decks/[slug]`. Available decks show "Start Learning" button (calls enrollment API). Unauthenticated users see available decks with login CTA.
+Unauthenticated landing page only. Shows available decks and a login CTA. Authenticated users never see this page (redirected to `/dashboard` server-side).
+
+### `src/routes/dashboard/+page.server.ts`
+
+Dashboard data loader. Redirects to `/login` if unauthenticated. Runs enrolled decks query first, then parallelizes 7 remaining queries (`Promise.all`): reviewsDue, totalReviewed, streakData, reviewCardsForSrs, totalGrammarInDecks, allUserLogs, lastSessionLogs. Computes: levelInfo, per-deck learnable count, SRS distribution (New/Learning/Review/Relearning/Unstudied), streak calendar (last 7 days, Korean day abbreviations), TOPIK progress per-deck, quick stats (daysStudied, lastSessionAccuracy, itemsStudied).
+
+### `src/routes/dashboard/+page.svelte`
+
+Dashboard grid layout (3-column on desktop, single-column on mobile). Renders: Learn action card (links to primary enrolled deck), Review action card (links to `/reviews`), `ProfileSidebar`, `ReviewHistoryChart`, `SrsDistribution`.
+
+### `src/lib/components/ReviewHistoryChart.svelte`
+
+Chart.js stacked bar chart. Fetches `/api/stats/review-history?period=hourly|daily` on mount and on period toggle via `$effect`. Rating ≥ 2 = correct (green), < 2 = incorrect (red). Uses `Chart.register(...registerables)` at module scope.
+
+### `src/lib/components/ProfileSidebar.svelte`
+
+Right sidebar component. Props: `userName`, `userEmail`, `levelInfo`, `streakData`, `streakDays`, `topikProgress`, `quickStats`. Renders: avatar + name, XP progress bar, 7-day streak calendar, TOPIK progress bars (per-deck SRS state colours), quick stats (days studied, accuracy, items).
+
+### `src/lib/components/SrsDistribution.svelte`
+
+SRS level distribution cards. Props: `distribution` (`{ new, learning, review, relearning, unstudied }`). Uses `--srs-*` CSS custom properties for colours.
 
 ### `src/routes/decks/[slug]/+page.server.ts`
 
@@ -205,11 +232,19 @@ POST endpoint for deck enrollment. Auth-gated. Validates deck exists and is publ
 
 ### `src/routes/login/+page.svelte`
 
-Login/signup form. Toggles between login and signup modes. Uses `authClient.signIn.email()` / `authClient.signUp.email()`. Redirects to `/reviews` on success.
+Login/signup form. Toggles between login and signup modes. Uses `authClient.signIn.email()` / `authClient.signUp.email()`. Redirects to `/dashboard` on success.
 
 ### `src/routes/login/+page.server.ts`
 
-Redirects authenticated users away from login page to `/reviews`.
+Redirects authenticated users away from login page to `/dashboard`.
+
+### `src/routes/api/stats/review-history/+server.ts`
+
+GET endpoint. Auth-gated (returns 401 JSON if unauthenticated). Accepts `?period=hourly|daily`. Hourly = last 24 hours in 1-hour buckets; Daily = last 30 days in 1-day buckets. Queries `ReviewLog`, groups by bucket, counts correct (rating ≥ 2) vs incorrect. Returns `{ labels: string[], correct: number[], incorrect: number[] }`.
+
+### `src/routes/api/reviews/+server.ts`
+
+POST endpoint for FSRS review submission. Accepts `{ reviewCardId, rating }` (rating 1–4). Builds a `ts-fsrs` Card from stored state, calls `fsrs.repeat()`, updates `ReviewCard`, appends `ReviewLog`. Also upserts `UserStreak`: increments if last studied yesterday, resets if gap > 1 day, no-ops if already studied today.
 
 ### `src/routes/reviews/+page.server.ts`
 
@@ -310,10 +345,9 @@ This project uses Svelte 5 **runes** exclusively. Key rules:
 
 ## 10. Planned Next Steps (Priority Order)
 
-1. **Phase 8 — Dashboard Redesign** — Bunpro-inspired dashboard at `/dashboard` with review history chart (Chart.js), deck progress cards, profile sidebar, streak calendar, SRS distribution, `UserStreak` model
-2. **Phase 9 — Grammar Learning Pages** — `/grammar/[id]` route with Details/Examples tabs; hero header, structure card, metadata, about section with embedded example sentences, progress pellets nav; `structurePattern` and `notes` fields on GrammarPoint
-3. **Phase 10 — Learn Flow & Review Integration** — `/learn?deck_id=[id]` lesson flow; auto-enroll, auto-create ReviewCards on lesson completion; deck-scoped reviews (`/reviews?deck_id=[id]`); "View Grammar" link from review reveal
-4. **Phase 11 — Polish & Content** — Expand to 35–45 TOPIK 1 grammar points; close-answer detection (character-level diff); self-rating UI (Hard/Good/Easy); keyboard shortcuts; skeleton loading states; mobile optimisation; accessibility
+1. **Phase 9 — Grammar Learning Pages** — `/grammar/[id]` route with Details/Examples tabs; hero header, structure card, metadata, about section with embedded example sentences, progress pellets nav; `structurePattern` and `notes` fields on GrammarPoint
+2. **Phase 10 — Learn Flow & Review Integration** — `/learn?deck_id=[id]` lesson flow; auto-enroll, auto-create ReviewCards on lesson completion; deck-scoped reviews (`/reviews?deck_id=[id]`); "View Grammar" link from review reveal
+3. **Phase 11 — Polish & Content** — Expand to 35–45 TOPIK 1 grammar points; close-answer detection (character-level diff); self-rating UI (Hard/Good/Easy); keyboard shortcuts; skeleton loading states; mobile optimisation; accessibility
 
 ---
 
@@ -371,3 +405,4 @@ Then run `bun run db:seed`.
 - **Port:** Postgres on `localhost:5432` (configurable via `POSTGRES_PORT` in `.env`)
 - **Auth environment:** `BETTER_AUTH_SECRET` (signing key) and `BETTER_AUTH_URL` (`http://localhost:5173`) in `.env`
 - **No Docker required** — the project uses Podman but `docker compose` works as a drop-in replacement if you alias the commands
+- **`start.sh`** — preferred way to start the dev environment. Kills any existing process on port 5173 (handles multiple PIDs via `mapfile -t` array iteration), checks `hangul-postgres` container state and starts/restarts as needed, waits for `pg_isready`, then `exec bun run dev`. Stop with `Ctrl+C`.

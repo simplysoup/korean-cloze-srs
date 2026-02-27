@@ -35,6 +35,7 @@
 		"@prisma/adapter-pg": "^7.4.1",
 		"@prisma/client": "^7.4.1",
 		"better-auth": "^1.4.19",
+		"chart.js": "^4.5.1",
 		"hangul-js": "^0.2.6",
 		"prisma": "^7.4.1",
 		"ts-fsrs": "^5.2.3"
