@@ -8,7 +8,7 @@
 
 - **Name:** Korean Cloze SRS
 - **Purpose:** A spaced-repetition web app for learning Korean grammar through cloze-deletion (fill-in-the-blank) exercises, modelled after Bunpro's deck-based study system. Users progress through TOPIK-levelled grammar decks, study individual grammar point learning pages, and review via cloze cards with romanized Korean input → live Hangul conversion.
-- **Current state:** Fully functional with authentication, FSRS scheduling, and server-side hardening (Phase 6 complete). BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded, FSRS scheduling active via `POST /api/reviews`, server-side answer verification via `POST /api/reviews/check`, review page at `/reviews` requires auth, rate limiting on auth endpoints. Home page (`/`) shows grammar list with search + stats. Login page at `/login`. Phases 1–6 complete. **Next: Phase 7 (Deck System) → Phase 8 (Dashboard) → Phase 9 (Grammar Pages) → Phase 10 (Learn Flow) → Phase 11 (Polish & Content).**
+- **Current state:** Fully functional with authentication, FSRS scheduling, server-side hardening, and deck-based navigation (Phase 7 complete). BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded in TOPIK Level 1 Grammar deck, FSRS scheduling active via `POST /api/reviews`, server-side answer verification via `POST /api/reviews/check`, review page at `/reviews` requires auth, rate limiting on auth endpoints. Home page (`/`) shows enrolled deck cards with progress. Deck detail page at `/decks/[slug]` shows grammar points grouped by lesson. Login page at `/login`. Phases 1–7 complete. **Next: Phase 8 (Dashboard) → Phase 9 (Grammar Pages) → Phase 10 (Learn Flow) → Phase 11 (Polish & Content).**
 
 ---
 
@@ -105,7 +105,7 @@ Bun auto-loads `.env` files. No `import 'dotenv/config'` is needed in `prisma.co
 
 ## 4. Database Schema Summary
 
-Six models across three domains. All use `cuid()` IDs and `snake_case` column mapping.
+Eleven models across four domains. All use `cuid()` IDs and `snake_case` column mapping.
 
 ### Auth domain (BetterAuth — fully wired)
 
@@ -144,6 +144,17 @@ Six models across three domains. All use `cuid()` IDs and `snake_case` column ma
   - `rating` (1=Again, 2=Hard, 3=Good, 4=Easy)
   - Post-review FSRS snapshot: `stability`, `difficulty`, `elapsedDays`, `scheduledDays`
 
+### Deck domain (active — deck-based study paths)
+
+- **Deck** (`decks`) — `title` (unique), `slug` (unique), `description`, `level` (TOPIK 1–6), `icon?`, `isPublished`, `sortOrder`, timestamps
+  - Has many `DeckGrammarPoint[]`, `UserDeckProgress[]`
+- **DeckGrammarPoint** (`deck_grammar_points`) — Join table linking deck ↔ grammar point
+  - `sortOrder` (0-indexed position in deck), `lessonNumber` (1-based lesson batch)
+  - Unique on `[deckId, grammarPointId]` and `[deckId, sortOrder]`
+- **UserDeckProgress** (`user_deck_progress`) — Per-user enrollment and progress
+  - `lastLearnedIndex` (-1 = enrolled but not started), `enrolledAt`, `lastStudiedAt?`
+  - Unique on `[userId, deckId]`
+
 ---
 
 ## 5. File-by-File Guide
@@ -174,11 +185,23 @@ App shell with navigation bar. Shows brand link, Reviews link (if authenticated)
 
 ### `src/routes/+page.server.ts`
 
-Home page server load. Fetches all grammar points with card counts. For authenticated users, also loads reviews-due count and total-reviewed count.
+Home page server load. Fetches all published decks. For authenticated users, separates into enrolled vs available decks with per-deck learned count and reviews due. Returns `enrolledDecks`, `availableDecks`, global `reviewsDue`, `totalReviewed`.
 
 ### `src/routes/+page.svelte`
 
-Home page. Shows grammar point list with search filter, quick stats (reviews due, total reviewed, grammar count), login CTA for unauthenticated users, "Start Reviews" button for authenticated users.
+Home page. Shows enrolled deck cards with progress bars and "Continue →" links to `/decks/[slug]`. Available decks show "Start Learning" button (calls enrollment API). Unauthenticated users see available decks with login CTA.
+
+### `src/routes/decks/[slug]/+page.server.ts`
+
+Deck detail page server load. Fetches deck by slug with grammar points ordered by `sortOrder`. For authenticated users, computes per-grammar-point status (learned/current/locked) and reviews due. Returns lesson-grouped grammar point list.
+
+### `src/routes/decks/[slug]/+page.svelte`
+
+Deck detail page UI. Header with icon, title, description, progress bar. Grammar points grouped by lesson number with status indicators (✅/📖/🔒). Action buttons for learning and reviewing.
+
+### `src/routes/api/decks/[deckId]/enroll/+server.ts`
+
+POST endpoint for deck enrollment. Auth-gated. Validates deck exists and is published. Upserts `UserDeckProgress` (idempotent). Returns `{ enrolled: true, deckId }`.
 
 ### `src/routes/login/+page.svelte`
 
@@ -287,11 +310,10 @@ This project uses Svelte 5 **runes** exclusively. Key rules:
 
 ## 10. Planned Next Steps (Priority Order)
 
-1. **Phase 7 — Deck System & Schema** — `Deck`, `DeckGrammarPoint`, `UserDeckProgress` models; "TOPIK Level 1 Grammar" deck; deck detail page at `/decks/[slug]`; home page shows deck cards instead of flat grammar list
-2. **Phase 8 — Dashboard Redesign** — Bunpro-inspired dashboard at `/dashboard` with review history chart (Chart.js), deck progress cards, profile sidebar, streak calendar, SRS distribution, `UserStreak` model
-3. **Phase 9 — Grammar Learning Pages** — `/grammar/[id]` route with Details/Examples tabs; hero header, structure card, metadata, about section with embedded example sentences, progress pellets nav; `structurePattern` and `notes` fields on GrammarPoint
-4. **Phase 10 — Learn Flow & Review Integration** — `/learn?deck_id=[id]` lesson flow; auto-enroll, auto-create ReviewCards on lesson completion; deck-scoped reviews (`/reviews?deck_id=[id]`); "View Grammar" link from review reveal
-5. **Phase 11 — Polish & Content** — Expand to 35–45 TOPIK 1 grammar points; close-answer detection (character-level diff); self-rating UI (Hard/Good/Easy); keyboard shortcuts; skeleton loading states; mobile optimisation; accessibility
+1. **Phase 8 — Dashboard Redesign** — Bunpro-inspired dashboard at `/dashboard` with review history chart (Chart.js), deck progress cards, profile sidebar, streak calendar, SRS distribution, `UserStreak` model
+2. **Phase 9 — Grammar Learning Pages** — `/grammar/[id]` route with Details/Examples tabs; hero header, structure card, metadata, about section with embedded example sentences, progress pellets nav; `structurePattern` and `notes` fields on GrammarPoint
+3. **Phase 10 — Learn Flow & Review Integration** — `/learn?deck_id=[id]` lesson flow; auto-enroll, auto-create ReviewCards on lesson completion; deck-scoped reviews (`/reviews?deck_id=[id]`); "View Grammar" link from review reveal
+4. **Phase 11 — Polish & Content** — Expand to 35–45 TOPIK 1 grammar points; close-answer detection (character-level diff); self-rating UI (Hard/Good/Easy); keyboard shortcuts; skeleton loading states; mobile optimisation; accessibility
 
 ---
 

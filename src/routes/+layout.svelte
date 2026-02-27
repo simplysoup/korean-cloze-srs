@@ -66,7 +66,12 @@
 					{#if openMenu === 'content'}
 						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div class="header__menu" role="menu" tabindex="-1" onclick={(e) => e.stopPropagation()} onkeydown={(e) => { if (e.key === 'Escape') closeMenus(); }}>
-							<a href="/" class="header__menu-item" role="menuitem">Grammar Points</a>
+							{#each data.enrolledDeckSlugs as deck}
+								<a href="/decks/{deck.slug}" class="header__menu-item" role="menuitem">{deck.title}</a>
+							{/each}
+							{#if data.enrolledDeckSlugs.length === 0}
+								<a href="/" class="header__menu-item" role="menuitem">Browse Decks</a>
+							{/if}
 							<a href="/" class="header__menu-item header__menu-item--disabled" role="menuitem">Vocabulary (soon)</a>
 						</div>
 					{/if}

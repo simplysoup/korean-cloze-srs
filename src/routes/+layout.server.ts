@@ -6,6 +6,7 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 	let reviewsDue = 0;
 	let totalReviewed = 0;
 	let learnableCount = 0;
+	let enrolledDeckSlugs: { slug: string; title: string }[] = [];
 
 	if (locals.user) {
 		const userId = locals.user.id;
@@ -20,16 +21,28 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 			where: { userId }
 		});
 
-		// Grammar points the user hasn't started yet
-		// (no ReviewCard exists for any of the grammar point's cloze cards)
-		const startedGrammarIds = await prisma.reviewCard.findMany({
+		// Enrolled decks — compute learnable count from deck progress
+		const enrollments = await prisma.userDeckProgress.findMany({
 			where: { userId },
-			select: { clozeCard: { select: { grammarPointId: true } } },
-			distinct: ['clozeCardId']
+			include: {
+				deck: {
+					include: {
+						grammarPoints: { select: { id: true } }
+					}
+				}
+			}
 		});
-		const startedSet = new Set(startedGrammarIds.map((r) => r.clozeCard.grammarPointId));
-		const totalGrammar = await prisma.grammarPoint.count();
-		learnableCount = totalGrammar - startedSet.size;
+
+		for (const enrollment of enrollments) {
+			enrolledDeckSlugs.push({
+				slug: enrollment.deck.slug,
+				title: enrollment.deck.title
+			});
+			// Learnable = total grammar in deck minus what the user has learned (lastLearnedIndex + 1)
+			const totalInDeck = enrollment.deck.grammarPoints.length;
+			const learnedInDeck = enrollment.lastLearnedIndex + 1;
+			learnableCount += Math.max(0, totalInDeck - learnedInDeck);
+		}
 	}
 
 	const levelInfo = calculateLevel(totalReviewed);
@@ -40,6 +53,7 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 		reviewsDue,
 		totalReviewed,
 		learnableCount,
-		levelInfo
+		levelInfo,
+		enrolledDeckSlugs
 	};
 };

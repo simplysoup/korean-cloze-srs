@@ -30,7 +30,7 @@ A spaced-repetition web app for learning Korean grammar through cloze-deletion (
 | 4 | Database & Seeding | ✅ Done | Prisma schema, 11 grammar points, 36 cards, test user, Argon2id |
 | 5 | Auth & Routing | ✅ Done | BetterAuth integration, login/signup, home page, route restructure |
 | 6 | Hardening | ✅ Done | Auth-gate API, server-side answer verification, error handling, rate limiting |
-| 7 | Deck System & Schema | 📋 Planned | Deck model, TOPIK Level 1 Grammar deck, deck-based learning/review flow |
+| 7 | Deck System & Schema | ✅ Done | Deck model, TOPIK Level 1 Grammar deck, deck-based learning/review flow |
 | 8 | Dashboard Redesign | 📋 Planned | Bunpro-inspired dashboard with review graph, deck progress, streak, SRS distribution |
 | 9 | Grammar Learning Pages | 📋 Planned | Per-grammar-point learning page with Details/Examples tabs, lesson queue |
 | 10 | Learn Flow & Review Integration | 📋 Planned | Lesson queue navigation, "learn then review" flow, deck-scoped reviews |
@@ -38,17 +38,19 @@ A spaced-repetition web app for learning Korean grammar through cloze-deletion (
 
 ---
 
-## Current State (Post-Phase 6)
+## Current State (Post-Phase 7)
 
-- **8 database tables:** User, Session, Account, Verification, GrammarPoint, ClozeCard, ReviewCard, ReviewLog
-- **11 grammar points** (Part 3 Korean particles) with **36 cloze cards**
+- **11 database tables:** User, Session, Account, Verification, GrammarPoint, ClozeCard, ReviewCard, ReviewLog, Deck, DeckGrammarPoint, UserDeckProgress
+- **11 grammar points** (Part 3 Korean particles) with **36 cloze cards** in **1 deck** (TOPIK Level 1 Grammar, 4 lessons)
 - **Authentication:** Email/password sign-up and sign-in via BetterAuth with rate limiting
 - **FSRS scheduling:** Active via `POST /api/reviews` with rating 1–4, server-side answer verification
-- **Routes:** `/` (home + grammar list), `/login`, `/reviews` (auth-gated), `/reviews/roman-to-hangul`
-- **Auth-gated API:** `POST /api/reviews` and `POST /api/reviews/check` require auth + ownership
+- **Deck system:** Deck model with grammar point ordering, lesson grouping, enrollment API, progress tracking
+- **Routes:** `/` (deck cards), `/login`, `/reviews` (auth-gated), `/reviews/roman-to-hangul`, `/decks/[slug]` (deck detail)
+- **APIs:** `POST /api/reviews`, `POST /api/reviews/check`, `POST /api/decks/[deckId]/enroll`
+- **Auth-gated API:** Reviews + enrollment require auth; reviews enforce ownership
 - **Error handling:** Network error retry, next-review countdown, login validation
 - **Levelling:** XP system based on total reviews (10 XP per review, level N needs N×100 XP)
-- **Test user:** `test@example.com` / `testpassword123` (5 review cards seeded)
+- **Test user:** `test@example.com` / `testpassword123` (enrolled in TOPIK 1 deck, 5 review cards seeded)
 
 ---
 

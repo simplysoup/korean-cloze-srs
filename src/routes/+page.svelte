@@ -1,15 +1,12 @@
 <script lang="ts">
 	let { data } = $props();
 
-	let search = $state('');
-	const filtered = $derived(
-		data.grammarPoints.filter(
-			(gp) =>
-				gp.title.toLowerCase().includes(search.toLowerCase()) ||
-				gp.hint.toLowerCase().includes(search.toLowerCase()) ||
-				gp.tags.some((t: string) => t.toLowerCase().includes(search.toLowerCase()))
-		)
-	);
+	async function enrollDeck(deckId: string) {
+		const res = await fetch(`/api/decks/${deckId}/enroll`, { method: 'POST' });
+		if (res.ok) {
+			window.location.reload();
+		}
+	}
 </script>
 
 <div class="home-wrapper">
@@ -17,6 +14,7 @@
 	<p class="home-subtitle">Learn Korean grammar through spaced-repetition cloze exercises.</p>
 
 	{#if data.user}
+		<!-- Quick stats -->
 		<div class="stats-row">
 			<div class="stat">
 				<span class="stat-value">{data.reviewsDue}</span>
@@ -26,59 +24,94 @@
 				<span class="stat-value">{data.totalReviewed}</span>
 				<span class="stat-label">Total Reviewed</span>
 			</div>
-			<div class="stat">
-				<span class="stat-value">{data.grammarPoints.length}</span>
-				<span class="stat-label">Grammar Points</span>
-			</div>
 		</div>
 
 		{#if data.reviewsDue > 0}
-			<a href="/reviews" class="btn btn--primary btn--lg">
+			<a href="/reviews" class="btn btn--primary btn--lg btn--center">
 				Start Reviews ({data.reviewsDue} due)
 			</a>
-		{:else}
-			<p class="home-done">No reviews due — come back later!</p>
+		{/if}
+
+		<!-- Enrolled decks -->
+		{#if data.enrolledDecks.length > 0}
+			<section class="deck-section">
+				<h2 class="section-title">Your Decks</h2>
+				<div class="deck-grid">
+					{#each data.enrolledDecks as deck (deck.id)}
+						<a href="/decks/{deck.slug}" class="deck-card deck-card--enrolled">
+							<div class="deck-card__header">
+								{#if deck.icon}<span class="deck-card__icon">{deck.icon}</span>{/if}
+								<span class="deck-card__title">{deck.title}</span>
+							</div>
+							<div class="deck-card__progress">
+								<div class="deck-card__bar">
+									<div
+										class="deck-card__bar-fill"
+										style="width: {deck.totalGrammar > 0 ? Math.round((deck.learnedCount / deck.totalGrammar) * 100) : 0}%"
+									></div>
+								</div>
+								<span class="deck-card__stat">{deck.learnedCount}/{deck.totalGrammar} learned</span>
+							</div>
+							{#if deck.reviewsDue > 0}
+								<span class="deck-card__reviews">{deck.reviewsDue} reviews due</span>
+							{/if}
+							<span class="deck-card__action">Continue →</span>
+						</a>
+					{/each}
+				</div>
+			</section>
+		{/if}
+
+		<!-- Available decks to enroll in -->
+		{#if data.availableDecks.length > 0}
+			<section class="deck-section">
+				<h2 class="section-title">Available Decks</h2>
+				<div class="deck-grid">
+					{#each data.availableDecks as deck (deck.id)}
+						<div class="deck-card">
+							<div class="deck-card__header">
+								{#if deck.icon}<span class="deck-card__icon">{deck.icon}</span>{/if}
+								<span class="deck-card__title">{deck.title}</span>
+							</div>
+							<p class="deck-card__desc">{deck.description}</p>
+							<span class="deck-card__meta">{deck.totalGrammar} grammar points · TOPIK {deck.level}</span>
+							<button class="btn btn--primary btn--sm" onclick={() => enrollDeck(deck.id)}>
+								Start Learning
+							</button>
+						</div>
+					{/each}
+				</div>
+			</section>
 		{/if}
 	{:else}
+		<!-- Unauthenticated view -->
 		<div class="home-cta">
 			<a href="/login" class="btn btn--primary btn--lg">Login to Start</a>
 		</div>
-	{/if}
 
-	<div class="search-section">
-		<input
-			type="text"
-			class="roman-input"
-			placeholder="Search grammar points…"
-			bind:value={search}
-			spellcheck={false}
-			autocomplete="off"
-		/>
-	</div>
-
-	<div class="grammar-list">
-		{#each filtered as gp (gp.id)}
-			<div class="grammar-item">
-				<div class="grammar-item-header">
-					<span class="grammar-item-title">{gp.title}</span>
-					<span class="grammar-item-count">{gp.cardCount} card{gp.cardCount === 1 ? '' : 's'}</span>
-				</div>
-				<div class="grammar-item-meta">
-					<span class="grammar-item-hint">{gp.hint}</span>
-					{#each gp.tags as tag}
-						<span class="grammar-tag">{tag}</span>
+		{#if data.availableDecks.length > 0}
+			<section class="deck-section">
+				<h2 class="section-title">Available Decks</h2>
+				<div class="deck-grid">
+					{#each data.availableDecks as deck (deck.id)}
+						<div class="deck-card">
+							<div class="deck-card__header">
+								{#if deck.icon}<span class="deck-card__icon">{deck.icon}</span>{/if}
+								<span class="deck-card__title">{deck.title}</span>
+							</div>
+							<p class="deck-card__desc">{deck.description}</p>
+							<span class="deck-card__meta">{deck.totalGrammar} grammar points · TOPIK {deck.level}</span>
+						</div>
 					{/each}
 				</div>
-			</div>
-		{:else}
-			<p class="grammar-empty">No grammar points match your search.</p>
-		{/each}
-	</div>
+			</section>
+		{/if}
+	{/if}
 </div>
 
 <style>
 	.home-wrapper {
-		max-width: 620px;
+		max-width: 680px;
 		margin: 2rem auto;
 		padding: 0 1rem;
 		display: flex;
@@ -126,12 +159,6 @@
 		color: var(--text-muted);
 	}
 
-	.home-done {
-		text-align: center;
-		color: var(--green-text);
-		font-weight: 500;
-	}
-
 	.home-cta {
 		text-align: center;
 	}
@@ -144,64 +171,120 @@
 		text-align: center;
 	}
 
-	.search-section {
-		margin-top: 0.5rem;
+	:global(.btn--sm) {
+		padding: 0.35rem 0.9rem;
+		font-size: 0.85rem;
 	}
 
-	.grammar-list {
+	.btn--center {
+		text-align: center;
+		align-self: center;
+	}
+
+	/* ── Deck sections ───────────────────────────────────────── */
+	.deck-section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.section-title {
+		font-size: 1.1rem;
+		color: var(--text);
+		margin: 0;
+		font-weight: 600;
+	}
+
+	.deck-grid {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
 	}
 
-	.grammar-item {
+	/* ── Deck cards ──────────────────────────────────────────── */
+	.deck-card {
 		background: var(--surface);
 		border: 1px solid var(--border);
 		border-radius: var(--radius-sm);
-		padding: 0.75rem 1rem;
-	}
-
-	.grammar-item-header {
+		padding: 1rem 1.25rem;
 		display: flex;
-		justify-content: space-between;
-		align-items: center;
+		flex-direction: column;
+		gap: 0.5rem;
+		text-decoration: none;
+		color: inherit;
+		transition: border-color 0.15s, box-shadow 0.15s;
 	}
 
-	.grammar-item-title {
-		font-weight: 600;
-		color: var(--text);
+	a.deck-card:hover {
+		border-color: var(--blue);
+		box-shadow: 0 2px 8px rgba(59, 130, 246, 0.1);
 	}
 
-	.grammar-item-count {
-		font-size: 0.8rem;
-		color: var(--text-muted);
-	}
-
-	.grammar-item-meta {
+	.deck-card__header {
 		display: flex;
 		align-items: center;
 		gap: 0.5rem;
-		margin-top: 0.25rem;
 	}
 
-	.grammar-item-hint {
+	.deck-card__icon {
+		font-size: 1.5rem;
+	}
+
+	.deck-card__title {
+		font-weight: 600;
+		font-size: 1.05rem;
+		color: var(--text);
+	}
+
+	.deck-card__desc {
+		margin: 0;
 		font-size: 0.85rem;
 		color: var(--text-muted);
-		font-style: italic;
+		line-height: 1.4;
 	}
 
-	.grammar-tag {
-		font-size: 0.7rem;
-		padding: 0.1rem 0.4rem;
-		background: #f3f4f6;
-		border-radius: 4px;
-		color: var(--text-muted);
-	}
-
-	.grammar-empty {
-		text-align: center;
+	.deck-card__meta {
+		font-size: 0.8rem;
 		color: var(--text-faint);
-		padding: 1rem;
+	}
+
+	.deck-card__progress {
+		display: flex;
+		align-items: center;
+		gap: 0.5rem;
+	}
+
+	.deck-card__bar {
+		flex: 1;
+		height: 6px;
+		background: var(--border);
+		border-radius: 3px;
+		overflow: hidden;
+	}
+
+	.deck-card__bar-fill {
+		height: 100%;
+		background: var(--green);
+		border-radius: 3px;
+		transition: width 0.3s ease;
+	}
+
+	.deck-card__stat {
+		font-size: 0.8rem;
+		color: var(--text-muted);
+		white-space: nowrap;
+	}
+
+	.deck-card__reviews {
+		font-size: 0.8rem;
+		color: var(--blue);
+		font-weight: 500;
+	}
+
+	.deck-card__action {
+		font-size: 0.85rem;
+		color: var(--blue);
+		font-weight: 500;
 	}
 </style>
 

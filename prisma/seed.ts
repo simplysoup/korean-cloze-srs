@@ -823,6 +823,72 @@ async function main() {
 	}
 	console.log(`✓ ${reviewClozeIds.length} review cards seeded for test user`);
 
+	// ── 4. Seed TOPIK Level 1 Grammar deck ───────────────────────────────
+	await prisma.deck.upsert({
+		where: { id: 'deck_topik1_grammar' },
+		update: {},
+		create: {
+			id: 'deck_topik1_grammar',
+			title: 'TOPIK Level 1 Grammar',
+			slug: 'topik-1-grammar',
+			description:
+				'Essential Korean grammar patterns for TOPIK Level 1. Covers basic particles, verb endings, and sentence connectors.',
+			level: 1,
+			icon: '📘',
+			isPublished: true,
+			sortOrder: 0
+		}
+	});
+	console.log('✓ TOPIK Level 1 Grammar deck seeded');
+
+	// ── 5. Link grammar points to deck with lesson ordering ──────────────
+	const deckGrammarOrder: { grammarPointId: string; sortOrder: number; lessonNumber: number }[] = [
+		{ grammarPointId: 'gp_topic', sortOrder: 0, lessonNumber: 1 },
+		{ grammarPointId: 'gp_subject', sortOrder: 1, lessonNumber: 1 },
+		{ grammarPointId: 'gp_object', sortOrder: 2, lessonNumber: 1 },
+		{ grammarPointId: 'gp_time_place', sortOrder: 3, lessonNumber: 2 },
+		{ grammarPointId: 'gp_place_at', sortOrder: 4, lessonNumber: 2 },
+		{ grammarPointId: 'gp_from_to_place', sortOrder: 5, lessonNumber: 2 },
+		{ grammarPointId: 'gp_from_to_time', sortOrder: 6, lessonNumber: 3 },
+		{ grammarPointId: 'gp_also', sortOrder: 7, lessonNumber: 3 },
+		{ grammarPointId: 'gp_only', sortOrder: 8, lessonNumber: 3 },
+		{ grammarPointId: 'gp_and_with', sortOrder: 9, lessonNumber: 4 },
+		{ grammarPointId: 'gp_and_casual', sortOrder: 10, lessonNumber: 4 }
+	];
+
+	for (const entry of deckGrammarOrder) {
+		const dgpId = `dgp_topik1_${entry.sortOrder}`;
+		await prisma.deckGrammarPoint.upsert({
+			where: { id: dgpId },
+			update: {},
+			create: {
+				id: dgpId,
+				deckId: 'deck_topik1_grammar',
+				grammarPointId: entry.grammarPointId,
+				sortOrder: entry.sortOrder,
+				lessonNumber: entry.lessonNumber
+			}
+		});
+	}
+	console.log(`✓ ${deckGrammarOrder.length} deck grammar points linked`);
+
+	// ── 6. Enroll test user in deck ──────────────────────────────────────
+	await prisma.userDeckProgress.upsert({
+		where: {
+			userId_deckId: {
+				userId: 'user_test',
+				deckId: 'deck_topik1_grammar'
+			}
+		},
+		update: {},
+		create: {
+			userId: 'user_test',
+			deckId: 'deck_topik1_grammar',
+			lastLearnedIndex: 4 // learned first 5 grammar points (0-4)
+		}
+	});
+	console.log('✓ Test user enrolled in TOPIK Level 1 deck');
+
 	console.log('\n✓ Seed complete');
 }
 

@@ -20,10 +20,11 @@ model User {
   createdAt     DateTime @default(now()) @map("created_at")
   updatedAt     DateTime @updatedAt      @map("updated_at")
 
-  sessions    Session[]
-  accounts    Account[]
-  reviewCards ReviewCard[]
-  reviewLogs  ReviewLog[]
+  sessions     Session[]
+  accounts     Account[]
+  reviewCards  ReviewCard[]
+  reviewLogs   ReviewLog[]
+  deckProgress UserDeckProgress[]
 
   @@map("users")
 }
@@ -91,6 +92,7 @@ model GrammarPoint {
   createdAt   DateTime @default(now()) @map("created_at")
 
   clozeCards ClozeCard[]
+  decks      DeckGrammarPoint[]
 
   @@map("grammar_points")
 }
@@ -158,4 +160,56 @@ model ReviewLog {
   user       User       @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@map("review_logs")
+}
+
+// ══════════════════════════════════════════════════════════════════════════════
+// Deck domain
+// ══════════════════════════════════════════════════════════════════════════════
+
+model Deck {
+  id          String   @id @default(cuid())
+  title       String   @unique
+  slug        String   @unique
+  description String
+  level       Int      @default(1)
+  icon        String?
+  isPublished Boolean  @default(true)  @map("is_published")
+  sortOrder   Int      @default(0)     @map("sort_order")
+  createdAt   DateTime @default(now()) @map("created_at")
+  updatedAt   DateTime @updatedAt      @map("updated_at")
+
+  grammarPoints DeckGrammarPoint[]
+  userProgress  UserDeckProgress[]
+
+  @@map("decks")
+}
+
+model DeckGrammarPoint {
+  id             String @id @default(cuid())
+  deckId         String @map("deck_id")
+  grammarPointId String @map("grammar_point_id")
+  sortOrder      Int    @map("sort_order")
+  lessonNumber   Int    @map("lesson_number")
+
+  deck         Deck         @relation(fields: [deckId], references: [id], onDelete: Cascade)
+  grammarPoint GrammarPoint @relation(fields: [grammarPointId], references: [id], onDelete: Cascade)
+
+  @@unique([deckId, grammarPointId])
+  @@unique([deckId, sortOrder])
+  @@map("deck_grammar_points")
+}
+
+model UserDeckProgress {
+  id               String    @id @default(cuid())
+  userId           String    @map("user_id")
+  deckId           String    @map("deck_id")
+  enrolledAt       DateTime  @default(now()) @map("enrolled_at")
+  lastStudiedAt    DateTime? @map("last_studied_at")
+  lastLearnedIndex Int       @default(-1) @map("last_learned_index")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  deck Deck @relation(fields: [deckId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, deckId])
+  @@map("user_deck_progress")
 }
