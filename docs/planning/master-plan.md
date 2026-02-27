@@ -32,7 +32,7 @@ A spaced-repetition web app for learning Korean grammar through cloze-deletion (
 | 6 | Hardening | ✅ Done | Auth-gate API, server-side answer verification, error handling, rate limiting |
 | 7 | Deck System & Schema | ✅ Done | Deck model, TOPIK Level 1 Grammar deck, deck-based learning/review flow |
 | 8 | Dashboard Redesign | ✅ Done | Bunpro-inspired dashboard with review graph, deck progress, streak, SRS distribution |
-| 9 | Grammar Learning Pages | 📋 Planned | Per-grammar-point learning page with Details/Examples tabs, lesson queue |
+| 9 | Grammar Learning Pages | ✅ Done | Per-grammar-point learning page with Details/Examples tabs, lesson queue |
 | 10 | Learn Flow & Review Integration | 📋 Planned | Lesson queue navigation, "learn then review" flow, deck-scoped reviews |
 | 11 | Polish & Content | 📋 Planned | Full TOPIK 1 grammar content, close-answer detection, UI refinements |
 

@@ -18,6 +18,7 @@
 	interface ClozeCard {
 		reviewCardId: string;
 		id: string;
+		grammarPointId: string;
 		fullSentence: string;
 		sentenceWithBlank: string;
 		vocabBaseForm: string;
@@ -382,6 +383,14 @@
 							{#if currentCard.grammar.register} · {currentCard.grammar.register}{/if}
 						</p>
 						<p>{currentCard.grammar.description}</p>
+						<a
+							href="/grammar/{currentCard.grammarPointId}"
+							class="btn btn--secondary view-grammar-link"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							View Grammar →
+						</a>
 					</div>
 				{/if}
 			</div>
@@ -647,6 +656,13 @@
 	.grammar-description p:last-child {
 		margin: 0;
 		line-height: 1.6;
+	}
+
+	.view-grammar-link {
+		display: inline-flex;
+		margin-top: 0.75rem;
+		font-size: 0.85rem;
+		text-decoration: none;
 	}
 
 	.queue-progress {

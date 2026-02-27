@@ -81,7 +81,10 @@
 				</h2>
 				<div class="lesson-group__list">
 					{#each lesson.grammarPoints as gp (gp.id)}
-						<div class="grammar-row grammar-row--{gp.status}">
+						<a
+							href="/grammar/{gp.id}?deck_id={data.deck.id}&lesson={lesson.lessonNumber}"
+							class="grammar-row grammar-row--{gp.status}"
+						>
 							<span class="grammar-row__index">{gp.sortOrder + 1}.</span>
 							<div class="grammar-row__info">
 								<span class="grammar-row__title">{gp.title}</span>
@@ -93,7 +96,7 @@
 								{/if}
 								<span class="grammar-row__status">{statusIcon(gp.status)}</span>
 							</div>
-						</div>
+						</a>
 					{/each}
 				</div>
 			</div>
@@ -210,6 +213,13 @@
 		border: 1px solid var(--border);
 		border-radius: var(--radius-sm);
 		transition: background 0.15s;
+		text-decoration: none;
+		color: inherit;
+		cursor: pointer;
+	}
+
+	.grammar-row:hover {
+		background: var(--bg);
 	}
 
 	.grammar-row--learned {

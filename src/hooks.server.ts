@@ -4,7 +4,7 @@ import { building } from '$app/environment';
 import { redirect } from '@sveltejs/kit';
 
 /** Paths that don't require authentication */
-const PUBLIC_PATHS = ['/login', '/api/auth'];
+const PUBLIC_PATHS = ['/login', '/api/auth', '/grammar'];
 
 /** Exact paths that don't require authentication */
 const PUBLIC_EXACT = ['/'];

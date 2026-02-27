@@ -8,7 +8,7 @@
 
 - **Name:** Korean Cloze SRS
 - **Purpose:** A spaced-repetition web app for learning Korean grammar through cloze-deletion (fill-in-the-blank) exercises, modelled after Bunpro's deck-based study system. Users progress through TOPIK-levelled grammar decks, study individual grammar point learning pages, and review via cloze cards with romanized Korean input → live Hangul conversion.
-- **Current state:** Fully functional with authentication, FSRS scheduling, server-side hardening, deck-based navigation, and a Bunpro-inspired dashboard (Phases 1–8 complete). BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded in TOPIK Level 1 Grammar deck, FSRS scheduling active via `POST /api/reviews` (with streak tracking), server-side answer verification via `POST /api/reviews/check`. Dashboard at `/dashboard` (auth redirect target) shows learn/review cards, Chart.js review history, SRS distribution, profile sidebar with streak calendar. Deck detail page at `/decks/[slug]` shows grammar points grouped by lesson. Landing page (`/`) is unauthenticated-only. Login page at `/login`. `start.sh` at project root for idempotent server bootstrapping. **Next: Phase 9 (Grammar Pages) → Phase 10 (Learn Flow) → Phase 11 (Polish & Content).**
+- **Current state:** Fully functional with authentication, FSRS scheduling, server-side hardening, deck-based navigation, Bunpro-inspired dashboard, and per-grammar-point learning pages (Phases 1–9 complete). BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded in TOPIK Level 1 Grammar deck with structure patterns and notes, FSRS scheduling active via `POST /api/reviews` (with streak tracking), server-side answer verification via `POST /api/reviews/check`. Dashboard at `/dashboard` (auth redirect target) shows learn/review cards, Chart.js review history, SRS distribution, profile sidebar with streak calendar. Deck detail page at `/decks/[slug]` shows grammar points grouped by lesson with links to grammar pages. Grammar learning pages at `/grammar/[id]` (publicly accessible) with Details/Examples tabs, hero header, structure card, metadata, about section with embedded examples and notes, sidebar actions (Mark as Learned), and lesson navigation footer. Landing page (`/`) is unauthenticated-only. Login page at `/login`. `start.sh` at project root for idempotent server bootstrapping. **Next: Phase 10 (Learn Flow) → Phase 11 (Polish & Content).**
 
 ---
 
@@ -125,6 +125,8 @@ Eleven models across four domains. All use `cuid()` IDs and `snake_case` column 
   - `description` — full explanation, may contain Hangul (revealed post-answer)
   - `level` — TOPIK level or ordering (default 1)
   - `tags` — string array (e.g. `["particle", "beginner", "TOPIK1"]`)
+  - `structurePattern?` — grammar formula string (e.g. "Noun + 은/는"), shown on grammar page
+  - `notes?` — `Json` field storing `{type: 'caution' | 'funfact' | 'tip', text: string}[]`
   - Has many `ClozeCard[]`
 
 - **ClozeCard** (`cloze_cards`)
@@ -226,6 +228,50 @@ Deck detail page server load. Fetches deck by slug with grammar points ordered b
 
 Deck detail page UI. Header with icon, title, description, progress bar. Grammar points grouped by lesson number with status indicators (✅/📖/🔒). Action buttons for learning and reviewing.
 
+### `src/routes/grammar/[id]/+page.server.ts`
+
+Grammar learning page server loader. Fetches grammar point by ID with all cloze cards and deck relations. Accepts optional query params `?deck_id` and `?lesson` for lesson navigation context. Computes `isLearned` by checking if any `ReviewCard` exists for this grammar point's cloze cards. Returns `{ grammarPoint, lessonContext, deckContext, isLearned }`. Returns 404 if grammar point not found. Publicly accessible (no auth required, but uses session if available).
+
+### `src/routes/grammar/[id]/+page.svelte`
+
+Main grammar page component. Orchestrates all grammar sub-components. Uses `$state` for `activeTab` ('details' | 'examples'), `$derived` for `grammarPoint`, `lessonContext`, `heroDeckContext`, and parsed `notes`. Renders: `GrammarHero` (header), `GrammarTabs` (tab bar), then conditionally `StructureCard` + `MetadataCard` + `GrammarAbout` (Details tab) or `GrammarExamples` (Examples tab), with `GrammarActions` (sidebar) and `LessonNav` (footer).
+
+### `src/routes/api/grammar/[id]/learn/+server.ts`
+
+POST endpoint for "Mark as Learned". Auth-gated (returns 401 if unauthenticated). Creates `ReviewCard` records (state=0/New, due=now) for all cloze cards of the grammar point using `createManyAndReturn` with `skipDuplicates`. Updates `UserDeckProgress.lastLearnedIndex` if the grammar point belongs to an enrolled deck. Returns `{ learned: true, cardsCreated }`.
+
+### `src/lib/components/GrammarHero.svelte`
+
+Gradient header for grammar pages. Props: `title` (Korean name), `name` (English name), `hint`, `deckContext?` (deck title + lesson number for breadcrumb). Renders breadcrumb trail (Deck → Lesson → Grammar), large Hangul title with English subtitle, and hint pill.
+
+### `src/lib/components/GrammarTabs.svelte`
+
+Tab bar component for Details/Examples toggle. Props: `activeTab`, `onTabChange` callback. Uses ARIA `role="tablist"` / `role="tab"` with `aria-selected`. Styled with animated active indicator.
+
+### `src/lib/components/StructureCard.svelte`
+
+Displays the grammar structure pattern formula. Props: `structurePattern?`, `vocabBaseForm` (fallback). Renders pattern in a styled card with "Structure" header. Falls back to first cloze card's `vocabBaseForm` if no `structurePattern` on grammar point.
+
+### `src/lib/components/MetadataCard.svelte`
+
+Grammar metadata display grid. Props: `category`, `register`, `tense`, `level`, `tags`. Renders 2×2 grid of Category/Register/Tense/Level values, plus tag pills below. Uses "—" for null values.
+
+### `src/lib/components/GrammarAbout.svelte`
+
+Description + embedded example sentences + notes. Props: `description`, `clozeCards` (first 3 shown), `notes?` (array of `{type, text}`). Example sentences show `fullSentence` with highlighted answer, `vocabBaseForm` label, and English hint with `highlightType`-based styling. Notes render with type-specific icons/colours: caution (⚠️ amber), funfact (💡 blue), tip (✅ green).
+
+### `src/lib/components/GrammarExamples.svelte`
+
+Full cloze card list for Examples tab. Props: `clozeCards`. Renders all cards as numbered list with `fullSentence` (answer highlighted), `vocabBaseForm`, English hint with `highlightType` styling, and `alternateAnswers` if any.
+
+### `src/lib/components/GrammarActions.svelte`
+
+Sidebar actions card. Props: `grammarPointId`, `isLearned`, `userId?`. "Mark as Learned" button POSTs to `/api/grammar/[id]/learn`. Uses `$derived` for learned state (combines prop + local mutation to avoid Svelte 5 capture warning). Disabled "Add Note" placeholder button for future feature.
+
+### `src/lib/components/LessonNav.svelte`
+
+Fixed footer navigation bar. Props: `lessonContext?` (previous/next grammar point IDs + names, current index/total, deck slug + lesson number). Renders Previous/Next buttons, progress pellets (filled for visited), and progress counter. Adapts display for direct-access (no lesson context) vs lesson-navigation modes.
+
 ### `src/routes/api/decks/[deckId]/enroll/+server.ts`
 
 POST endpoint for deck enrollment. Auth-gated. Validates deck exists and is published. Upserts `UserDeckProgress` (idempotent). Returns `{ enrolled: true, deckId }`.
@@ -278,7 +324,7 @@ Converts romanized text to Hangul using the `hangul-js` library. Input like `neu
 
 Seeds the full database with:
 - **1 test user** (`user_test` / `test@example.com` / `testpassword123`) with BetterAuth Account (Argon2id-hashed password in Account table)
-- **11 grammar points** (all Part 3 Korean particles: 은/는, 이/가, 을/를, 에, 에서, 에서~까지, 부터~까지, 도, 만, 하고/와/과, (이)랑)
+- **11 grammar points** (all Part 3 Korean particles: 은/는, 이/가, 을/를, 에, 에서, 에서~까지, 부터~까지, 도, 만, 하고/와/과, (이)랑) — each with `structurePattern` (e.g. "Noun + 은/는") and `notes` (1–2 per grammar point, typed as caution/funfact/tip)
 - **36 cloze cards** (3–4 per grammar point) with `highlightType` enum
 - **5 ReviewCards** for `user_test` (due now, state=New)
 
@@ -345,9 +391,8 @@ This project uses Svelte 5 **runes** exclusively. Key rules:
 
 ## 10. Planned Next Steps (Priority Order)
 
-1. **Phase 9 — Grammar Learning Pages** — `/grammar/[id]` route with Details/Examples tabs; hero header, structure card, metadata, about section with embedded example sentences, progress pellets nav; `structurePattern` and `notes` fields on GrammarPoint
-2. **Phase 10 — Learn Flow & Review Integration** — `/learn?deck_id=[id]` lesson flow; auto-enroll, auto-create ReviewCards on lesson completion; deck-scoped reviews (`/reviews?deck_id=[id]`); "View Grammar" link from review reveal
-3. **Phase 11 — Polish & Content** — Expand to 35–45 TOPIK 1 grammar points; close-answer detection (character-level diff); self-rating UI (Hard/Good/Easy); keyboard shortcuts; skeleton loading states; mobile optimisation; accessibility
+1. **Phase 10 — Learn Flow & Review Integration** — `/learn?deck_id=[id]` lesson flow; auto-enroll, auto-create ReviewCards on lesson completion; deck-scoped reviews (`/reviews?deck_id=[id]`); progression through lesson grammar points
+2. **Phase 11 — Polish & Content** — Expand to 35–45 TOPIK 1 grammar points; close-answer detection (character-level diff); self-rating UI (Hard/Good/Easy); keyboard shortcuts; skeleton loading states; mobile optimisation; accessibility
 
 ---
 

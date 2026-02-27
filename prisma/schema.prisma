@@ -81,16 +81,25 @@ model Verification {
 // ══════════════════════════════════════════════════════════════════════════════
 
 model GrammarPoint {
-  id          String   @id @default(cuid())
-  title       String
-  category    String
-  tense       String?
-  register    String?
-  hint        String
-  description String
-  level       Int      @default(1)
-  tags        String[]
-  createdAt   DateTime @default(now()) @map("created_at")
+  id               String   @id @default(cuid())
+  title            String
+  category         String
+  tense            String?
+  register         String?
+  hint             String
+  description      String
+  level            Int      @default(1)
+  tags             String[]
+
+  /// Grammar pattern formula shown in Structure card.
+  /// e.g. "Noun + 은/는" or "Verb[stem] + 아/어요"
+  structurePattern String?  @map("structure_pattern")
+
+  /// JSON array of note sections displayed after the description.
+  /// Shape: [{ type: 'caution' | 'funfact' | 'tip', title: string, content: string }]
+  notes            Json?
+
+  createdAt        DateTime @default(now()) @map("created_at")
 
   clozeCards ClozeCard[]
   decks      DeckGrammarPoint[]

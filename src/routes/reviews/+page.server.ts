@@ -24,6 +24,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 		return {
 			reviewCardId: rc.id,
 			id: card.id,
+			grammarPointId: card.grammarPointId,
 			fullSentence: card.fullSentence,
 			sentenceWithBlank: card.sentenceWithBlank,
 			vocabBaseForm: card.vocabBaseForm,

@@ -33,6 +33,12 @@ interface ClozeCardSeed {
 	englishHint: EnglishHintPart[];
 }
 
+interface NoteSeed {
+	type: 'caution' | 'funfact' | 'tip';
+	title: string;
+	content: string;
+}
+
 interface GrammarPointSeed {
 	id: string;
 	title: string;
@@ -43,6 +49,8 @@ interface GrammarPointSeed {
 	description: string;
 	level: number;
 	tags: string[];
+	structurePattern: string | null;
+	notes: NoteSeed[] | null;
 	cards: ClozeCardSeed[];
 }
 
@@ -66,6 +74,11 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Sets contrast or emphasis relative to other things in the sentence.',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 은/는',
+		notes: [
+			{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 은 after consonant-ending nouns (받침) and 는 after vowel-ending nouns.' },
+			{ type: 'funfact', title: 'Topic vs Subject', content: 'The topic particle sets contrast or emphasis relative to other things — "As for X..." — while the subject particle 이/가 simply identifies the grammatical subject.' }
+		],
 		cards: [
 			{
 				id: 'cc_topic_01',
@@ -133,6 +146,11 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Often used for new information or emphasis on who/what does the action.',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 이/가',
+		notes: [
+			{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 이 after consonant-ending nouns and 가 after vowel-ending nouns.' },
+			{ type: 'caution', title: 'Subject vs Topic', content: '이/가 marks new or emphasized information, while 은/는 marks the general topic of the sentence.' }
+		],
 		cards: [
 			{
 				id: 'cc_subject_01',
@@ -201,6 +219,10 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Indicates what the action is being done to.',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 을/를',
+		notes: [
+			{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 을 after consonant-ending nouns and 를 after vowel-ending nouns.' }
+		],
 		cards: [
 			{
 				id: 'cc_object_01',
@@ -271,6 +293,11 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Does not change form based on the preceding syllable.',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 에',
+		notes: [
+			{ type: 'tip', title: 'Time & Place', content: '에 marks both time (월요일에 "on Monday") and location/destination (학교에 "at/to school").' },
+			{ type: 'caution', title: '에 vs 에서', content: '에 marks destination or existence. 에서 marks where an action takes place.' }
+		],
 		cards: [
 			{
 				id: 'cc_time_place_01',
@@ -328,6 +355,10 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Contrast with 에 which marks destination/existence.',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 에서',
+		notes: [
+			{ type: 'caution', title: '에서 vs 에', content: 'Use 에서 for the location of an action (에서 공부해요). Use 에 for destination or static existence (에 가요, 에 있어요).' }
+		],
 		cards: [
 			{
 				id: 'cc_place_at_01',
@@ -385,6 +416,10 @@ const grammarPoints: GrammarPointSeed[] = [
 			'에서 here means "from" (not "at"), 까지 means "to/until".',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Place + 에서 ~ Place + 까지',
+		notes: [
+			{ type: 'funfact', title: 'Two Meanings of 에서', content: '에서 means "at" (location of action) when used alone, but "from" when paired with 까지.' }
+		],
 		cards: [
 			{
 				id: 'cc_from_to_place_01',
@@ -442,6 +477,10 @@ const grammarPoints: GrammarPointSeed[] = [
 			'부터 means "from/since" (time), 까지 means "to/until".',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Time + 부터 ~ Time + 까지',
+		notes: [
+			{ type: 'tip', title: 'Time Only', content: '부터 is used exclusively for time ranges (not places). For places, use 에서~까지 instead.' }
+		],
 		cards: [
 			{
 				id: 'cc_from_to_time_01',
@@ -499,6 +538,10 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Does not change form based on the preceding syllable.',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 도',
+		notes: [
+			{ type: 'tip', title: 'Replaces Other Particles', content: '도 replaces 은/는, 이/가, or 을/를 — you don\'t stack them (✗ 저는도, ✓ 저도).' }
+		],
 		cards: [
 			{
 				id: 'cc_also_01',
@@ -558,6 +601,11 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Does not change form based on the preceding syllable.',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 만',
+		notes: [
+			{ type: 'tip', title: 'Replaces Other Particles', content: '만 replaces 은/는, 이/가, or 을/를 — you don\'t stack them (✗ 물을만, ✓ 물만).' },
+			{ type: 'funfact', title: 'Emphasis', content: '만 can also emphasize limits: 조금만 "just a little", 한 번만 "just once".' }
+		],
 		cards: [
 			{
 				id: 'cc_only_01',
@@ -616,6 +664,10 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Example: 친구하고 "with a friend", 커피와 차 "coffee and tea".',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + 하고 / 와 / 과',
+		notes: [
+			{ type: 'tip', title: 'Three Forms', content: '하고 works with any noun in speech. 와 follows vowels, 과 follows consonants — these are more formal/written.' }
+		],
 		cards: [
 			{
 				id: 'cc_and_with_01',
@@ -674,6 +726,11 @@ const grammarPoints: GrammarPointSeed[] = [
 			'Example: 친구랑 "with a friend (casual)", 빵이랑 "bread and (casual)".',
 		level: 1,
 		tags: ['particle', 'beginner', 'TOPIK1'],
+		structurePattern: 'Noun + (이)랑',
+		notes: [
+			{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 이랑 after consonant-ending nouns and 랑 after vowel-ending nouns.' },
+			{ type: 'caution', title: 'Register', content: '(이)랑 is casual/spoken. Use 하고 or 와/과 in formal writing or polite speech.' }
+		],
 		cards: [
 			{
 				id: 'cc_and_casual_01',
@@ -765,7 +822,9 @@ async function main() {
 				hint: gp.hint,
 				description: gp.description,
 				level: gp.level,
-				tags: gp.tags
+				tags: gp.tags,
+				structurePattern: gp.structurePattern,
+				notes: gp.notes as unknown as Prisma.InputJsonValue ?? undefined
 			}
 		});
 
