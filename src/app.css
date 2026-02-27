@@ -45,7 +45,323 @@ body {
 	min-height: 100vh;
 }
 
-/* ── Navigation bar ────────────────────────────────────────────────────────── */
+/* ── Header ─────────────────────────────────────────────────────────────── */
+.header {
+	background: #1a1a2e;
+	color: #fff;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header__inner {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+	height: 3.5rem;
+}
+
+/* Brand */
+.header__brand {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	text-decoration: none;
+	color: #fff;
+	flex-shrink: 0;
+	margin-right: 0.5rem;
+}
+
+.header__brand:hover {
+	color: var(--blue);
+}
+
+.header__brand-icon {
+	font-size: 1.35rem;
+	font-weight: 800;
+	background: var(--blue);
+	color: #fff;
+	width: 2rem;
+	height: 2rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 6px;
+	line-height: 1;
+}
+
+.header__brand-text {
+	font-weight: 700;
+	font-size: 1rem;
+	white-space: nowrap;
+}
+
+/* Nav links */
+.header__nav {
+	display: flex;
+	align-items: center;
+	gap: 0.25rem;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.header__nav-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	padding: 0.4rem 0.75rem;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	color: #e0e0e0;
+	font-weight: 600;
+	font-size: 0.9rem;
+	font-family: inherit;
+	cursor: pointer;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: background 0.15s, color 0.15s;
+}
+
+.header__nav-btn:hover {
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+
+.header__nav-label {
+	font-weight: 700;
+}
+
+/* Badges */
+.header__badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 1.5rem;
+	padding: 0.1rem 0.45rem;
+	border-radius: 999px;
+	font-size: 0.75rem;
+	font-weight: 700;
+	line-height: 1;
+	background: rgba(255, 255, 255, 0.15);
+	color: #ccc;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.header__badge--accent {
+	background: var(--blue);
+	color: #fff;
+	border-color: var(--blue-dark);
+}
+
+/* Chevron icon */
+.header__chevron {
+	width: 1.25rem;
+	height: 1.25rem;
+	flex-shrink: 0;
+}
+
+/* Dropdown */
+.header__dropdown {
+	position: relative;
+}
+
+.header__menu {
+	position: absolute;
+	top: calc(100% + 0.35rem);
+	left: 0;
+	min-width: 180px;
+	background: #fff;
+	color: var(--text);
+	border-radius: var(--radius-sm);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+	list-style: none;
+	margin: 0;
+	padding: 0.35rem 0;
+	z-index: 200;
+	animation: menu-fade 0.12s ease-out;
+}
+
+.header__menu--right {
+	left: auto;
+	right: 0;
+}
+
+@keyframes menu-fade {
+	from { opacity: 0; transform: translateY(-4px); }
+	to   { opacity: 1; transform: translateY(0); }
+}
+
+.header__menu-item {
+	display: block;
+	width: 100%;
+	padding: 0.55rem 1rem;
+	text-decoration: none;
+	color: var(--text-body);
+	font-size: 0.88rem;
+	font-weight: 500;
+	border: none;
+	background: none;
+	text-align: left;
+	font-family: inherit;
+	cursor: pointer;
+	transition: background 0.1s;
+}
+
+.header__menu-item:hover {
+	background: var(--bg);
+}
+
+.header__menu-item--disabled {
+	color: var(--text-faint);
+	pointer-events: none;
+}
+
+.header__menu-item--danger {
+	color: var(--red);
+}
+
+.header__menu-item--danger:hover {
+	background: var(--red-bg);
+}
+
+.header__menu-header {
+	padding: 0.5rem 1rem 0.4rem;
+	border-bottom: 1px solid var(--border);
+	margin-bottom: 0.25rem;
+}
+
+.header__menu-username {
+	display: block;
+	font-weight: 700;
+	font-size: 0.9rem;
+	color: var(--text);
+}
+
+.header__menu-xp {
+	display: block;
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	margin-top: 0.1rem;
+}
+
+/* Utility icons */
+.header__right {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-left: auto;
+}
+
+.header__icons {
+	display: flex;
+	align-items: center;
+	gap: 0.15rem;
+}
+
+.header__icon-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2.25rem;
+	height: 2.25rem;
+	border: none;
+	border-radius: 6px;
+	background: transparent;
+	color: #ccc;
+	cursor: pointer;
+	text-decoration: none;
+	transition: background 0.15s, color 0.15s;
+}
+
+.header__icon-btn:hover {
+	background: rgba(255, 255, 255, 0.1);
+	color: #fff;
+}
+
+.header__icon-btn svg {
+	width: 1.2rem;
+	height: 1.2rem;
+}
+
+/* User profile chip */
+.header__profile {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.3rem 0.6rem 0.3rem 0.3rem;
+	border: none;
+	border-radius: 8px;
+	background: transparent;
+	color: #fff;
+	cursor: pointer;
+	font-family: inherit;
+	transition: background 0.15s;
+}
+
+.header__profile:hover {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.header__avatar {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background: var(--blue);
+	color: #fff;
+	font-weight: 700;
+	font-size: 0.9rem;
+	flex-shrink: 0;
+}
+
+.header__profile-info {
+	display: grid;
+	gap: 0.15rem;
+	text-align: left;
+	min-width: 5.5rem;
+}
+
+.header__username {
+	font-size: 0.82rem;
+	font-weight: 600;
+	line-height: 1.2;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 8rem;
+}
+
+.header__level-label {
+	font-size: 0.7rem;
+	font-weight: 700;
+	color: #aaa;
+}
+
+/* XP progress bar */
+.header__xp-bar {
+	width: 100%;
+	height: 4px;
+	border-radius: 999px;
+	background: rgba(255, 255, 255, 0.15);
+	overflow: hidden;
+}
+
+.header__xp-fill {
+	height: 100%;
+	border-radius: 999px;
+	background: var(--blue);
+	transition: width 0.4s ease;
+}
+
+/* ── Old nav (kept for login page fallback) ───────────────────────────────── */
 .nav-bar {
 	display: flex;
 	align-items: center;

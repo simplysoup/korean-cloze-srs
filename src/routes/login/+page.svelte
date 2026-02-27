@@ -7,7 +7,28 @@
 	let loading = $state(false);
 	let mode = $state<'login' | 'signup'>('login');
 
+	// 6.3 — Client-side validation before hitting the auth API
+	function validate(): string | null {
+		const trimmedEmail = email.trim();
+		if (!trimmedEmail.includes('@') || !trimmedEmail.includes('.')) {
+			return 'Please enter a valid email address.';
+		}
+		if (mode === 'signup' && password.length < 8) {
+			return 'Password must be at least 8 characters.';
+		}
+		if (!password) {
+			return 'Password is required.';
+		}
+		return null;
+	}
+
 	async function handleSubmit() {
+		const validationError = validate();
+		if (validationError) {
+			error = validationError;
+			return;
+		}
+
 		error = '';
 		loading = true;
 		try {
@@ -16,7 +37,7 @@
 				if (result.error) {
 					error = result.error.message ?? 'Login failed';
 				} else {
-					window.location.href = '/reviews';
+					window.location.href = '/';
 				}
 			} else {
 				const result = await authClient.signUp.email({
@@ -27,7 +48,7 @@
 				if (result.error) {
 					error = result.error.message ?? 'Sign up failed';
 				} else {
-					window.location.href = '/reviews';
+					window.location.href = '/';
 				}
 			}
 		} catch (e) {

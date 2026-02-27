@@ -1,12 +1,9 @@
 import type { PageServerLoad } from './$types';
-import { redirect } from '@sveltejs/kit';
 import { prisma } from '$lib/server/db';
 
 export const load: PageServerLoad = async ({ locals }) => {
-	if (!locals.user) {
-		redirect(302, '/login');
-	}
-	const userId = locals.user.id;
+	// Auth is enforced centrally in hooks.server.ts
+	const userId = locals.user!.id;
 
 	const reviewCards = await prisma.reviewCard.findMany({
 		where: {
@@ -43,5 +40,16 @@ export const load: PageServerLoad = async ({ locals }) => {
 		};
 	});
 
-	return { queue };
+	// 6.3 — Expose next upcoming review time for the empty-state UI
+	let nextReviewAt: Date | null = null;
+	if (reviewCards.length === 0) {
+		const next = await prisma.reviewCard.findFirst({
+			where: { userId },
+			orderBy: { due: 'asc' },
+			select: { due: true }
+		});
+		nextReviewAt = next?.due ?? null;
+	}
+
+	return { queue, nextReviewAt };
 };

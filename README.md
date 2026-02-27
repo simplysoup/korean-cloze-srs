@@ -8,13 +8,18 @@ A spaced-repetition web app for learning Korean grammar through cloze-deletion (
 
 ## Features
 
-- **Authentication** — email/password sign-up and sign-in via BetterAuth with Argon2id hashing
+- **Authentication** — email/password sign-up and sign-in via BetterAuth with Argon2id hashing, rate limiting on auth endpoints
+- **Centralized auth guard** — all routes protected via `hooks.server.ts`; API routes get JSON 401, pages redirect to `/login`
 - **Review queue** — loads up to 10 due cards per session from the FSRS scheduler, presented one at a time
 - **Cloze cards** — Korean sentences with blanks, grammar hints, and English translations with syntax highlighting (direct + related)
 - **Romanization → Hangul** — type `neun` and see `는` appear live in the blank (via `hangul-js`)
 - **FSRS spaced repetition** — `POST /api/reviews` accepts a rating (1–4), computes the next schedule via `ts-fsrs`, updates card state and logs the review
+- **Server-side answer verification** — `POST /api/reviews/check` verifies answers server-side before FSRS rating is persisted
 - **11 grammar points** — all Part 3 Korean particles (은/는, 이/가, 을/를, 에, 에서, 에서~까지, 부터~까지, 도, 만, 하고/와/과, (이)랑) with 36 cloze cards
 - **Interaction states** — incorrect answer shake + undo + show answer, correct answer green highlight + alt cycling, reveal-info toggle with auto-fail penalty
+- **Error handling** — network error retry banners, next-review countdown on empty queue, login form validation
+- **User levelling** — XP system (10 XP per review, level N needs N×100 XP) displayed in the header
+- **Bunpro-inspired header** — dark sticky nav bar with Learn/Review badges, Content/Practice dropdowns, user profile chip with XP progress bar
 - **Home page** — grammar point browser with search and review stats
 
 ## Prerequisites
@@ -50,6 +55,8 @@ POSTGRES_PASSWORD=changeme
 POSTGRES_DB=hangul_dev
 POSTGRES_PORT=5432
 DATABASE_URL="postgresql://hangul:changeme@localhost:5432/hangul_dev?schema=public"
+BETTER_AUTH_SECRET="change-me-to-a-random-secret"
+BETTER_AUTH_URL="http://localhost:5173"
 ```
 
 ### 3. Start the database
@@ -68,7 +75,7 @@ podman ps              # should show hangul-postgres on port 5432
 
 ```sh
 bun run db:generate    # generates typed client into src/generated/prisma/
-bun run db:migrate     # creates tables (users, sessions, grammar_points, cloze_cards, review_cards, review_logs)
+bun run db:migrate     # creates tables (users, sessions, accounts, verifications, grammar_points, cloze_cards, review_cards, review_logs)
 ```
 
 ### 5. Seed the database
@@ -125,49 +132,59 @@ korean-cloze-srs/
 ├── .env                          # Local env values (gitignored)
 ├── package.json
 ├── prisma/
-│   ├── schema.prisma             # Data models (6 tables)
-│   ├── seed.ts                   # Seed script (11 grammar points, 36 cards, test user, 5 reviews)
+│   ├── schema.prisma             # Data models (8 tables)
+│   ├── seed.ts                   # Seed script (11 grammar points, 36 cards, test user, 5 review cards)
 │   └── migrations/               # Prisma Migrate history
 ├── src/
-│   ├── hooks.server.ts               # BetterAuth request handler hook
+│   ├── hooks.server.ts               # Auth guard, session resolution, BetterAuth handler, Cache-Control
 │   ├── generated/prisma/             # Auto-generated Prisma Client (gitignored)
 │   ├── lib/
 │   │   ├── index.ts                  # Library barrel export
 │   │   ├── romanToHangul.ts          # Romanized text → Hangul conversion
+│   │   ├── levels.ts                 # XP / user level calculation
 │   │   ├── auth-client.ts            # BetterAuth client (sign-in/up/out helpers)
+│   │   ├── assets/
+│   │   │   └── favicon.svg           # Favicon asset
 │   │   └── server/
 │   │       ├── db.ts                 # PrismaClient singleton (with PrismaPg adapter)
-│   │       └── auth.ts               # BetterAuth server config (Prisma adapter)
+│   │       ├── auth.ts               # BetterAuth server config (Prisma adapter, rate limiting)
+│   │       └── password.ts           # Argon2id hash/verify for BetterAuth
 │   ├── routes/
-│   │   ├── +layout.svelte            # App shell with nav bar (login/logout)
+│   │   ├── +layout.server.ts         # Layout data: session, user, reviewsDue, levelInfo
+│   │   ├── +layout.svelte            # App shell with Bunpro-inspired sticky header
 │   │   ├── +page.server.ts           # Home page: grammar points + review stats
 │   │   ├── +page.svelte              # Home page UI: search + grammar browser
 │   │   ├── login/
-│   │   │   └── +page.svelte          # Login / sign-up form
+│   │   │   ├── +page.server.ts       # Redirect authenticated users away from login
+│   │   │   └── +page.svelte          # Login / sign-up form with validation
 │   │   ├── reviews/
-│   │   │   ├── +page.server.ts       # Loads review queue (up to 10 due cards)
-│   │   │   └── +page.svelte          # Review UI with queue + answer checking
-│   │   ├── api/
-│   │   │   ├── auth/[...all]/
-│   │   │   │   └── +server.ts        # BetterAuth catch-all API route
-│   │   │   └── reviews/
-│   │   │       └── +server.ts        # POST: submit FSRS review rating
-│   │   └── roman-to-hangul/
-│   │       └── +page.svelte          # Standalone romanization tool
+│   │   │   ├── +page.server.ts       # Loads review queue (up to 10 due cards) + nextReviewAt
+│   │   │   ├── +page.svelte          # Review UI with queue, answer checking, error recovery
+│   │   │   └── roman-to-hangul/
+│   │   │       └── +page.svelte      # Standalone romanization tool
+│   │   └── api/
+│   │       └── reviews/
+│   │           ├── +server.ts        # POST: submit FSRS review rating (auth-gated)
+│   │           └── check/
+│   │               └── +server.ts    # POST: server-side answer verification
 │   ├── app.css                       # Global styles (CSS custom properties)
 │   ├── app.html                      # HTML shell
 │   └── app.d.ts                      # SvelteKit type augmentations
 ├── docs/
 │   ├── planning/                     # Roadmap & future phase specs
 │   │   ├── master-plan.md
-│   │   ├── phase-6-hardening.md
-│   │   ├── phase-7-content.md
-│   │   └── phase-8-admin.md
+│   │   ├── phase-7-deck-system.md
+│   │   ├── phase-8-dashboard.md
+│   │   ├── phase-9-grammar-pages.md
+│   │   ├── phase-10-learn-review-flow.md
+│   │   └── phase-11-polish-content.md
 │   ├── devlog/                       # Completed phase write-ups
 │   │   ├── phase-2-ui-polish.md
 │   │   ├── phase-3-interactions.md
 │   │   ├── phase-4-database.md
-│   │   └── phase-5-auth-routing.md
+│   │   ├── phase-5-auth-routing.md
+│   │   ├── phase-5.1-header-levels.md
+│   │   └── phase-6-hardening.md
 │   └── context/                      # Reference docs for AI-assisted dev
 │       ├── LLM_CONTEXT.md
 │       ├── DB_PLAN.md
@@ -221,16 +238,19 @@ All column names use `snake_case` via `@@map`/`@map`. See [prisma/schema.prisma]
 - [x] **Password hashing** — Argon2id via `@node-rs/argon2` (Phase 4)
 - [x] **Authentication** — BetterAuth with email/password + session management (Phase 5)
 - [x] **Routing restructure** — home page, login page, auth API routes (Phase 5)
-- [ ] **Hardening** — auth-gate API, server-side answer checks, error handling (Phase 6)
-- [ ] **AI card generation** — LLM-powered grammar point + cloze card creation (Phase 7)
-- [ ] **Multi-blank cards** — sentences with more than one blank (Phase 7)
-- [ ] **Card browser** — admin UI to view/edit all cards and grammar points (Phase 8)
+- [x] **Header redesign** — Bunpro-inspired sticky header, user levelling, centralized auth guard (Phase 5.1)
+- [x] **Hardening** — auth-gated API, server-side answer verification, error handling, rate limiting (Phase 6)
+- [ ] **Deck system** — Deck model, TOPIK Level 1 Grammar deck, deck-based navigation (Phase 7)
+- [ ] **Dashboard** — Bunpro-inspired dashboard with review chart, deck progress, streak (Phase 8)
+- [ ] **Grammar learning pages** — per-grammar-point pages with Details/Examples tabs (Phase 9)
+- [ ] **Learn flow** — lesson queue, deck-scoped reviews, learn-then-review pipeline (Phase 10)
+- [ ] **Polish & content** — full TOPIK 1 content, close-answer detection, self-rating, accessibility (Phase 11)
 
 ## Documentation
 
 | Path | Content |
 |------|---------|
 | [docs/planning/master-plan.md](docs/planning/master-plan.md) | Executive summary, phase status, architecture overview |
-| [docs/planning/](docs/planning/) | Future phase specs (6–8) |
-| [docs/devlog/](docs/devlog/) | Completed phase write-ups (2–5) |
+| [docs/planning/](docs/planning/) | Future phase specs (7–11) |
+| [docs/devlog/](docs/devlog/) | Completed phase write-ups (2–6) |
 | [docs/context/](docs/context/) | LLM context, DB plan, Prisma 7 notes |

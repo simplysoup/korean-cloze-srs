@@ -7,8 +7,8 @@
 ## 1. Project Identity
 
 - **Name:** Korean Cloze SRS
-- **Purpose:** A spaced-repetition web app for learning Korean grammar through cloze-deletion (fill-in-the-blank) exercises.
-- **Current state:** Fully functional with authentication. BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded, FSRS scheduling active via `POST /api/reviews`, review page at `/reviews` requires auth. Home page (`/`) shows grammar list with search + stats. Login page at `/login`. Phases 2–4 complete, Phase 5 (auth + routing) complete.
+- **Purpose:** A spaced-repetition web app for learning Korean grammar through cloze-deletion (fill-in-the-blank) exercises, modelled after Bunpro's deck-based study system. Users progress through TOPIK-levelled grammar decks, study individual grammar point learning pages, and review via cloze cards with romanized Korean input → live Hangul conversion.
+- **Current state:** Fully functional with authentication, FSRS scheduling, and server-side hardening (Phase 6 complete). BetterAuth (email/password + Argon2id) handles sign-up, sign-in, and session management via `hooks.server.ts`. 11 grammar points (36 cloze cards) seeded, FSRS scheduling active via `POST /api/reviews`, server-side answer verification via `POST /api/reviews/check`, review page at `/reviews` requires auth, rate limiting on auth endpoints. Home page (`/`) shows grammar list with search + stats. Login page at `/login`. Phases 1–6 complete. **Next: Phase 7 (Deck System) → Phase 8 (Dashboard) → Phase 9 (Grammar Pages) → Phase 10 (Learn Flow) → Phase 11 (Polish & Content).**
 
 ---
 
@@ -287,12 +287,11 @@ This project uses Svelte 5 **runes** exclusively. Key rules:
 
 ## 10. Planned Next Steps (Priority Order)
 
-1. **End-to-end testing** — Full flow: login → review queue → answer → FSRS scheduling
-2. **Auth-gate the reviews API** — Add session verification to `POST /api/reviews`
-3. **Server-side answer verification** — POST to verify answer, preventing client inspection
-4. **Close answers (Phase 3.3)** — Character-level diff for near-miss feedback
-5. **AI card generation** — script or API route that uses an LLM to generate GrammarPoint + ClozeCard records
-6. **Card browser / admin** — CRUD UI for managing cards outside of the review flow
+1. **Phase 7 — Deck System & Schema** — `Deck`, `DeckGrammarPoint`, `UserDeckProgress` models; "TOPIK Level 1 Grammar" deck; deck detail page at `/decks/[slug]`; home page shows deck cards instead of flat grammar list
+2. **Phase 8 — Dashboard Redesign** — Bunpro-inspired dashboard at `/dashboard` with review history chart (Chart.js), deck progress cards, profile sidebar, streak calendar, SRS distribution, `UserStreak` model
+3. **Phase 9 — Grammar Learning Pages** — `/grammar/[id]` route with Details/Examples tabs; hero header, structure card, metadata, about section with embedded example sentences, progress pellets nav; `structurePattern` and `notes` fields on GrammarPoint
+4. **Phase 10 — Learn Flow & Review Integration** — `/learn?deck_id=[id]` lesson flow; auto-enroll, auto-create ReviewCards on lesson completion; deck-scoped reviews (`/reviews?deck_id=[id]`); "View Grammar" link from review reveal
+5. **Phase 11 — Polish & Content** — Expand to 35–45 TOPIK 1 grammar points; close-answer detection (character-level diff); self-rating UI (Hard/Good/Easy); keyboard shortcuts; skeleton loading states; mobile optimisation; accessibility
 
 ---
 

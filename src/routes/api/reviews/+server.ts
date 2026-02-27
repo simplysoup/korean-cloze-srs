@@ -5,7 +5,13 @@ import { fsrs, type Card, type Grade } from 'ts-fsrs';
 
 const f = fsrs();
 
-export const POST: RequestHandler = async ({ request }) => {
+export const POST: RequestHandler = async ({ request, locals }) => {
+	// 6.1 — Auth guard (hook already handles unauthenticated, but double-check for ownership)
+	const user = locals.user;
+	if (!user) {
+		throw error(401, 'Unauthorized');
+	}
+
 	const body = await request.json();
 	const { reviewCardId, rating } = body as { reviewCardId: string; rating: number };
 
@@ -20,6 +26,11 @@ export const POST: RequestHandler = async ({ request }) => {
 
 	if (!reviewCard) {
 		throw error(404, 'Review card not found');
+	}
+
+	// 6.1 — Ownership check
+	if (reviewCard.userId !== user.id) {
+		throw error(403, 'Forbidden');
 	}
 
 	// Build the ts-fsrs Card from stored state

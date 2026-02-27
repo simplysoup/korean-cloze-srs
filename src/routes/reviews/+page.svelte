@@ -84,7 +84,8 @@
 
 	// ── FSRS posting state ───────────────────────────────────────────────
 	let posting = $state(false);
-
+	// ── Network error state ──────────────────────────────────────────────
+	let networkError = $state<string | null>(null);
 	// ── Shake animation ──────────────────────────────────────────────────
 	let shaking = $state(false);
 
@@ -137,21 +138,46 @@
 	async function next() {
 		if (!currentCard) return;
 		posting = true;
-
-		// Determine rating: 1 (Again) if incorrect/autoFailed, 3 (Good) if correct
-		const rating = allCorrect && !autoFailed ? 3 : 1;
+		networkError = null;
 
 		try {
-			await fetch('/api/reviews', {
+			// 6.2 — Server-side answer verification before FSRS update
+			const checkRes = await fetch('/api/reviews/check', {
 				method: 'POST',
 				headers: { 'Content-Type': 'application/json' },
 				body: JSON.stringify({
 					reviewCardId: currentCard.reviewCardId,
-					rating
+					answers: hangulValues
 				})
 			});
+
+			let serverRating: number;
+			if (checkRes.ok) {
+				const checkData = await checkRes.json();
+				serverRating = checkData.rating;
+			} else {
+				// If reveal-penalty was applied, force Again regardless
+				serverRating = autoFailed ? 1 : (allCorrect ? 3 : 1);
+			}
+
+			// autoFailed (reveal-info penalty) always overrides server rating
+			const rating = autoFailed ? 1 : serverRating;
+
+			const fsrsRes = await fetch('/api/reviews', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ reviewCardId: currentCard.reviewCardId, rating })
+			});
+
+			if (!fsrsRes.ok) {
+				const body = await fsrsRes.json().catch(() => ({}));
+				throw new Error(body?.message ?? `Server error ${fsrsRes.status}`);
+			}
 		} catch (e) {
-			console.error('Failed to post review:', e);
+			// 6.3 — Network error: show retry instead of silently advancing
+			networkError = e instanceof Error ? e.message : 'Network error — please try again.';
+			posting = false;
+			return;
 		}
 
 		posting = false;
@@ -170,6 +196,21 @@
 		revealState = 'hidden';
 		autoFailed = false;
 		shaking = false;
+		networkError = null;
+	}
+
+	// ── Next review time formatting ───────────────────────────────────────
+	function formatNextReview(date: Date | string | null): string {
+		if (!date) return '';
+		const d = new Date(date);
+		const diffMs = d.getTime() - Date.now();
+		const diffMin = Math.round(diffMs / 60_000);
+		if (diffMin < 1) return 'less than a minute';
+		if (diffMin < 60) return `${diffMin} minute${diffMin === 1 ? '' : 's'}`;
+		const diffHr = Math.round(diffMin / 60);
+		if (diffHr < 24) return `${diffHr} hour${diffHr === 1 ? '' : 's'}`;
+		const diffDay = Math.round(diffHr / 24);
+		return `${diffDay} day${diffDay === 1 ? '' : 's'}`;
 	}
 </script>
 
@@ -177,7 +218,11 @@
 	{#if !currentCard}
 		<div class="empty-state">
 			<h2>🎉 All caught up!</h2>
-			<p>No reviews due right now. Check back later.</p>
+			{#if data.nextReviewAt}
+				<p>Next review in <strong>{formatNextReview(data.nextReviewAt)}</strong>.</p>
+			{:else}
+				<p>No reviews scheduled yet. Start learning from the home page!</p>
+			{/if}
 			<a href="/" class="btn btn--primary">Home</a>
 		</div>
 	{:else}
@@ -259,6 +304,16 @@
 					{:else}
 						✗ Incorrect
 					{/if}
+				</div>
+			{/if}
+
+			<!-- Network error + retry -->
+			{#if networkError}
+				<div class="network-error">
+					⚠️ {networkError}
+					<button class="btn btn--secondary" onclick={next} disabled={posting}>
+						{posting ? 'Retrying…' : 'Retry'}
+					</button>
 				</div>
 			{/if}
 
@@ -598,5 +653,17 @@
 		margin-top: 1rem;
 		font-size: 0.85rem;
 		color: var(--text-muted, #6b7280);
+	}
+
+	.network-error {
+		display: flex;
+		align-items: center;
+		gap: 0.75rem;
+		background: var(--red-bg, #fef2f2);
+		color: var(--red-text, #991b1b);
+		border: 1px solid var(--red-border, #fecaca);
+		border-radius: 0.5rem;
+		padding: 0.6rem 1rem;
+		font-size: 0.9rem;
 	}
 </style>
