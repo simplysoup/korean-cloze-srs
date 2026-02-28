@@ -42,7 +42,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 		const userReviewCards = await prisma.reviewCard.findMany({
 			where: { userId },
 			select: {
-				clozeCard: { select: { grammarPointId: true } },
+				grammarPointId: true,
 				due: true,
 				streakCorrect: true,
 				masteredAt: true,
@@ -52,7 +52,7 @@ export const load: PageServerLoad = async ({ params, locals }) => {
 
 		const now = new Date();
 		for (const rc of userReviewCards) {
-			const gpId = rc.clozeCard.grammarPointId;
+			const gpId = rc.grammarPointId;
 			learnedGrammarIds.add(gpId);
 			if (rc.due <= now) {
 				reviewsDueByGrammar.set(gpId, (reviewsDueByGrammar.get(gpId) ?? 0) + 1);

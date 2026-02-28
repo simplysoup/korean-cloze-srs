@@ -27,32 +27,22 @@ export const load: PageServerLoad = async ({ locals }) => {
 				continue;
 			}
 
-			// Count grammar points that have all cloze cards mastered
+			// Count grammar points that are mastered (ReviewCard keyed by grammarPointId directly)
 			const reviewCards = await prisma.reviewCard.findMany({
 				where: {
 					userId: locals.user.id,
-					clozeCard: { grammarPointId: { in: gpIds } }
+					grammarPointId: { in: gpIds }
 				},
 				select: {
 					masteredAt: true,
-					clozeCard: { select: { grammarPointId: true } }
+					grammarPointId: true
 				}
 			});
 
-			// Group by grammar point
-			const byGP = new Map<string, { total: number; mastered: number }>();
-			for (const rc of reviewCards) {
-				const gpId = rc.clozeCard.grammarPointId;
-				const entry = byGP.get(gpId) ?? { total: 0, mastered: 0 };
-				entry.total++;
-				if (rc.masteredAt) entry.mastered++;
-				byGP.set(gpId, entry);
-			}
-
-			// A grammar point is "mastered" if ALL its review cards are mastered
+			// With 1:1 ReviewCard:GP, each RC directly represents one GP
 			let masteredCount = 0;
-			for (const [, counts] of byGP) {
-				if (counts.total > 0 && counts.mastered === counts.total) masteredCount++;
+			for (const rc of reviewCards) {
+				if (rc.masteredAt) masteredCount++;
 			}
 
 			masteryByDeck.set(deck.id, { mastered: masteredCount, total: gpIds.length });

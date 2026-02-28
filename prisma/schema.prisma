@@ -99,10 +99,17 @@ model GrammarPoint {
   /// Shape: [{ type: 'caution' | 'funfact' | 'tip', title: string, content: string }]
   notes            Json?
 
+  /// IDs of grammar points that are register/meaning variants of this one.
+  /// e.g., -에요 (polite informal) links to -이다 (plain/copula).
+  relatedPointIds  String[] @default([]) @map("related_point_ids")
+
   createdAt        DateTime @default(now()) @map("created_at")
 
-  clozeCards ClozeCard[]
-  decks      DeckGrammarPoint[]
+  clozeCards       ClozeCard[]
+  lessonExamples   LessonExample[]
+  grammarTargets   ClozeCardGrammarTarget[]
+  decks            DeckGrammarPoint[]
+  reviewCards      ReviewCard[]
 
   @@map("grammar_points")
 }
@@ -118,42 +125,93 @@ model ClozeCard {
   englishHint       Json
   createdAt         DateTime @default(now()) @map("created_at")
 
-  grammarPoint GrammarPoint @relation(fields: [grammarPointId], references: [id], onDelete: Cascade)
-  reviewCards  ReviewCard[]
+  /// Curriculum position of the "latest" grammar point in grammarTargets.
+  /// Cached for efficient queue ordering — recomputed on seed/upsert.
+  introducedAtPosition Int  @default(0) @map("introduced_at_position")
+
+  grammarPoint   GrammarPoint             @relation(fields: [grammarPointId], references: [id], onDelete: Cascade)
+  grammarTargets ClozeCardGrammarTarget[]
+  lastShownIn    ReviewCard[]             @relation("LastClozeCard")
 
   @@map("cloze_cards")
+}
+
+/// Sentences shown during the learn phase while studying a grammar point.
+/// Never surfaced in the FSRS review queue.
+model LessonExample {
+  id             String       @id @default(cuid())
+  grammarPointId String       @map("grammar_point_id")
+  grammarPoint   GrammarPoint @relation(fields: [grammarPointId], references: [id], onDelete: Cascade)
+  fullSentence   String       @map("full_sentence")
+  sentenceWithBlank String    @map("sentence_with_blank")
+  answer         String
+  englishHint    Json         @map("english_hint")
+  order          Int          @default(0)
+  notes          String?
+  createdAt      DateTime     @default(now()) @map("created_at")
+  updatedAt      DateTime     @updatedAt      @map("updated_at")
+
+  @@map("lesson_examples")
+}
+
+/// Join table: ClozeCard ↔ GrammarPoint (many-to-many with payload).
+/// Each row declares which word/morpheme becomes blank when testing a specific GP.
+model ClozeCardGrammarTarget {
+  id              String       @id @default(cuid())
+  clozeCardId     String       @map("cloze_card_id")
+  clozeCard       ClozeCard    @relation(fields: [clozeCardId], references: [id], onDelete: Cascade)
+  grammarPointId  String       @map("grammar_point_id")
+  grammarPoint    GrammarPoint @relation(fields: [grammarPointId], references: [id], onDelete: Restrict)
+  wordReplacement String       @map("word_replacement")
+  blankIndex      Int          @default(0) @map("blank_index")
+  createdAt       DateTime     @default(now()) @map("created_at")
+
+  @@unique([clozeCardId, grammarPointId])
+  @@map("cloze_card_grammar_targets")
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
 // FSRS domain (spaced repetition)
 // ══════════════════════════════════════════════════════════════════════════════
 
-/// One ReviewCard per (User, ClozeCard) pair — tracks FSRS state.
+/// One ReviewCard per (User, GrammarPoint) pair — tracks FSRS state.
+/// The grammar point is the scheduling unit; the specific ClozeCard shown
+/// during a review session is chosen dynamically at queue-build time.
 model ReviewCard {
-  id          String    @id @default(cuid())
-  userId      String    @map("user_id")
-  clozeCardId String    @map("cloze_card_id")
+  id              String    @id @default(cuid())
+  userId          String    @map("user_id")
 
-  stability   Float     @default(0)
-  difficulty  Float     @default(0)
-  reps        Int       @default(0)
-  lapses      Int       @default(0)
-  state       Int       @default(0)
-  due         DateTime  @default(now())
-  lastReview  DateTime? @map("last_review")
+  /// The grammar point this FSRS record tracks.
+  grammarPointId  String    @map("grammar_point_id")
+
+  stability       Float     @default(0)
+  difficulty      Float     @default(0)
+  reps            Int       @default(0)
+  lapses          Int       @default(0)
+  state           Int       @default(0)
+  due             DateTime  @default(now())
+  lastReview      DateTime? @map("last_review")
 
   /// Mastery layer (non-breaking addition on top of FSRS)
-  streakCorrect Int       @default(0)    @map("streak_correct")
-  masteredAt    DateTime? @map("mastered_at")
+  streakCorrect   Int       @default(0)    @map("streak_correct")
+  masteredAt      DateTime? @map("mastered_at")
 
-  createdAt   DateTime  @default(now()) @map("created_at")
-  updatedAt   DateTime  @updatedAt      @map("updated_at")
+  /// Max stability ever achieved for this GP — for display-level mapping
+  peakStability   Float     @default(0)    @map("peak_stability")
 
-  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
-  clozeCard ClozeCard @relation(fields: [clozeCardId], references: [id], onDelete: Cascade)
-  logs      ReviewLog[]
+  /// Informational: which ClozeCard was shown in the most recent review session.
+  /// Not used for scheduling — the next session re-selects dynamically.
+  lastClozeCardId String?   @map("last_cloze_card_id")
 
-  @@unique([userId, clozeCardId])
+  createdAt       DateTime  @default(now()) @map("created_at")
+  updatedAt       DateTime  @updatedAt      @map("updated_at")
+
+  user          User       @relation(fields: [userId], references: [id], onDelete: Cascade)
+  grammarPoint  GrammarPoint @relation(fields: [grammarPointId], references: [id], onDelete: Cascade)
+  lastClozeCard ClozeCard? @relation("LastClozeCard", fields: [lastClozeCardId], references: [id], onDelete: SetNull)
+  logs          ReviewLog[]
+
+  @@unique([userId, grammarPointId])
   @@map("review_cards")
 }
 

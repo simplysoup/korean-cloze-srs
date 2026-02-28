@@ -13,7 +13,11 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 	}
 
 	const body = await request.json();
-	const { reviewCardId, rating } = body as { reviewCardId: string; rating: number };
+	const { reviewCardId, rating, clozeCardId } = body as {
+		reviewCardId: string;
+		rating: number;
+		clozeCardId?: string;
+	};
 
 	if (!reviewCardId || ![1, 2, 3, 4].includes(rating)) {
 		throw error(400, 'Invalid request: reviewCardId and rating (1-4) required');
@@ -59,7 +63,8 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 	let newStreak = isCorrect ? reviewCard.streakCorrect + 1 : 0;
 	const shouldMaster = newStreak >= 8 && reviewCard.masteredAt === null;
 
-	// Update ReviewCard with new FSRS state + mastery
+	// Update ReviewCard with new FSRS state + mastery + peakStability
+	const newPeakStability = Math.max(reviewCard.peakStability, updatedCard.stability);
 	await prisma.reviewCard.update({
 		where: { id: reviewCardId },
 		data: {
@@ -71,7 +76,9 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 			due: updatedCard.due,
 			lastReview: now,
 			streakCorrect: newStreak,
-			...(shouldMaster ? { masteredAt: now } : {})
+			peakStability: newPeakStability,
+			...(shouldMaster ? { masteredAt: now } : {}),
+			...(clozeCardId ? { lastClozeCardId: clozeCardId } : {})
 		}
 	});
 

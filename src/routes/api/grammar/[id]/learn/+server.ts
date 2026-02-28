@@ -12,38 +12,36 @@ export const POST: RequestHandler = async ({ params, locals }) => {
 
 	// Verify grammar point exists
 	const grammarPoint = await prisma.grammarPoint.findUnique({
-		where: { id: grammarPointId },
-		include: { clozeCards: { select: { id: true } } }
+		where: { id: grammarPointId }
 	});
 
 	if (!grammarPoint) {
 		throw error(404, 'Grammar point not found');
 	}
 
-	// Create ReviewCards for all cloze cards (skip if already exists)
+	// Create ONE ReviewCard per grammar point (one per GP per user)
 	let created = 0;
-	for (const card of grammarPoint.clozeCards) {
-		const existing = await prisma.reviewCard.findUnique({
-			where: {
-				userId_clozeCardId: { userId, clozeCardId: card.id }
+	const existing = await prisma.reviewCard.findUnique({
+		where: {
+			userId_grammarPointId: { userId, grammarPointId }
+		}
+	});
+
+	if (!existing) {
+		await prisma.reviewCard.create({
+			data: {
+				userId,
+				grammarPointId,
+				state: 0, // New
+				due: new Date(),
+				stability: 0,
+				difficulty: 0,
+				reps: 0,
+				lapses: 0,
+				peakStability: 0
 			}
 		});
-
-		if (!existing) {
-			await prisma.reviewCard.create({
-				data: {
-					userId,
-					clozeCardId: card.id,
-					state: 0, // New
-					due: new Date(),
-					stability: 0,
-					difficulty: 0,
-					reps: 0,
-					lapses: 0
-				}
-			});
-			created++;
-		}
+		created++;
 	}
 
 	// Update UserDeckProgress if this grammar point is in any enrolled deck

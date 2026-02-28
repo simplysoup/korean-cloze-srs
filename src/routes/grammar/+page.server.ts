@@ -26,14 +26,13 @@ export const load: PageServerLoad = async ({ locals, url }) => {
 			select: {
 				streakCorrect: true,
 				masteredAt: true,
-				clozeCard: { select: { grammarPointId: true } }
+				grammarPointId: true
 			}
 		});
 
-		// Aggregate per grammar point: use max streakCorrect across cloze cards,
-		// and earliest masteredAt
+		// Aggregate per grammar point (now 1:1, but keep aggregation logic for safety)
 		for (const rc of reviewCards) {
-			const gpId = rc.clozeCard.grammarPointId;
+			const gpId = rc.grammarPointId;
 			const existing = masteryMap.get(gpId);
 			if (!existing) {
 				masteryMap.set(gpId, {

@@ -10,16 +10,20 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 	}
 
 	const body = await request.json();
-	const { reviewCardId, answers } = body as { reviewCardId: string; answers: string[] };
+	const { reviewCardId, clozeCardId, answers } = body as {
+		reviewCardId: string;
+		clozeCardId?: string;
+		answers: string[];
+	};
 
 	if (!reviewCardId || !Array.isArray(answers) || answers.length === 0) {
 		throw error(400, 'Invalid request: reviewCardId and answers[] required');
 	}
 
-	// Fetch ReviewCard + ClozeCard for correct answers
+	// Fetch ReviewCard (now keyed by grammarPointId, not clozeCardId)
 	const reviewCard = await prisma.reviewCard.findUnique({
 		where: { id: reviewCardId },
-		include: { clozeCard: true }
+		select: { userId: true, grammarPointId: true }
 	});
 
 	if (!reviewCard) {
@@ -31,10 +35,41 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 		throw error(403, 'Forbidden');
 	}
 
-	const correctAnswers = [
-		reviewCard.clozeCard.answer,
-		...reviewCard.clozeCard.alternateAnswers
-	];
+	// If a clozeCardId was provided, look up the word replacement from the grammar target.
+	// Otherwise fall back to the first cloze card for this grammar point.
+	let correctAnswers: string[];
+
+	if (clozeCardId) {
+		const target = await prisma.clozeCardGrammarTarget.findUnique({
+			where: {
+				clozeCardId_grammarPointId: {
+					clozeCardId,
+					grammarPointId: reviewCard.grammarPointId
+				}
+			},
+			include: { clozeCard: { select: { answer: true, alternateAnswers: true } } }
+		});
+
+		if (target) {
+			correctAnswers = [
+				target.wordReplacement,
+				target.clozeCard.answer,
+				...target.clozeCard.alternateAnswers
+			];
+			// Deduplicate
+			correctAnswers = [...new Set(correctAnswers)];
+		} else {
+			throw error(404, 'Grammar target not found for this card');
+		}
+	} else {
+		// Fallback: find any cloze card for this grammar point
+		const card = await prisma.clozeCard.findFirst({
+			where: { grammarPointId: reviewCard.grammarPointId },
+			select: { answer: true, alternateAnswers: true }
+		});
+		if (!card) throw error(404, 'No cloze card found for this grammar point');
+		correctAnswers = [card.answer, ...card.alternateAnswers];
+	}
 
 	// All submitted blanks must match one of the correct answers
 	const correct = answers.every((a) => correctAnswers.some((ca) => ca === a.trim()));

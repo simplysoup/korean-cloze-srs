@@ -75,12 +75,12 @@
 					<GrammarAbout
 						title={gp.title}
 						description={gp.description}
-						clozeCards={gp.clozeCards}
+						clozeCards={gp.clozeCards as any}
 						{notes}
 					/>
 				</div>
 			{:else}
-				<GrammarExamples clozeCards={gp.clozeCards} />
+				<GrammarExamples clozeCards={gp.clozeCards as any} />
 			{/if}
 		</div>
 

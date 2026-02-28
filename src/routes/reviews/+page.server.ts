@@ -15,47 +15,57 @@ export const load: PageServerLoad = async ({ locals, url }) => {
 	};
 
 	if (deckId) {
-		whereClause.clozeCard = {
-			grammarPoint: {
-				decks: { some: { deckId } }
-			}
+		whereClause.grammarPoint = {
+			decks: { some: { deckId } }
 		};
 	}
 
+	// Fetch due ReviewCards (one per grammar point — unique constraint enforced)
 	const reviewCards = await prisma.reviewCard.findMany({
 		where: whereClause,
 		orderBy: { due: 'asc' },
 		take: 10,
 		include: {
-			clozeCard: {
-				include: { grammarPoint: true }
+			grammarPoint: {
+				include: {
+					clozeCards: {
+						orderBy: { introducedAtPosition: 'desc' },
+						take: 1
+					}
+				}
 			}
 		}
 	});
 
-	const queue = reviewCards.map((rc) => {
-		const card = rc.clozeCard;
-		return {
-			reviewCardId: rc.id,
-			id: card.id,
-			grammarPointId: card.grammarPointId,
-			fullSentence: card.fullSentence,
-			sentenceWithBlank: card.sentenceWithBlank,
-			vocabBaseForm: card.vocabBaseForm,
-			answers: [card.answer, ...card.alternateAnswers],
-			grammar: {
-				title: card.grammarPoint.title,
-				category: card.grammarPoint.category,
-				tense: card.grammarPoint.tense,
-				register: card.grammarPoint.register,
-				hint: card.grammarPoint.hint,
-				description: card.grammarPoint.description
-			},
-			englishHint: card.englishHint as { text: string; highlight: boolean }[],
-			streakCorrect: rc.streakCorrect,
-			masteredAt: rc.masteredAt?.toISOString() ?? null
-		};
-	});
+	// Build queue: for each due ReviewCard, select a ClozeCard to present
+	const queue = reviewCards
+		.filter((rc) => rc.grammarPoint.clozeCards.length > 0)
+		.map((rc) => {
+			// For now, use the first (most-advanced) cloze card for this GP.
+			// In the full "most-advanced-card" algorithm (future), we'd check
+			// that all grammar targets on the card are unlocked by the user.
+			const card = rc.grammarPoint.clozeCards[0];
+			return {
+				reviewCardId: rc.id,
+				id: card.id,
+				grammarPointId: rc.grammarPointId,
+				fullSentence: card.fullSentence,
+				sentenceWithBlank: card.sentenceWithBlank,
+				vocabBaseForm: card.vocabBaseForm,
+				answers: [card.answer, ...card.alternateAnswers],
+				grammar: {
+					title: rc.grammarPoint.title,
+					category: rc.grammarPoint.category,
+					tense: rc.grammarPoint.tense,
+					register: rc.grammarPoint.register,
+					hint: rc.grammarPoint.hint,
+					description: rc.grammarPoint.description
+				},
+				englishHint: card.englishHint as { text: string; highlight: boolean }[],
+				streakCorrect: rc.streakCorrect,
+				masteredAt: rc.masteredAt?.toISOString() ?? null
+			};
+		});
 
 	// 6.3 — Expose next upcoming review time for the empty-state UI
 	let nextReviewAt: Date | null = null;

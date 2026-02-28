@@ -33,6 +33,16 @@ interface ClozeCardSeed {
 	englishHint: EnglishHintPart[];
 }
 
+interface LessonExampleSeed {
+	id: string;
+	fullSentence: string;
+	sentenceWithBlank: string;
+	answer: string;
+	englishHint: EnglishHintPart[];
+	order: number;
+	notes?: string;
+}
+
 interface NoteSeed {
 	type: 'caution' | 'funfact' | 'tip';
 	title: string;
@@ -51,7 +61,9 @@ interface GrammarPointSeed {
 	tags: string[];
 	structurePattern: string | null;
 	notes: NoteSeed[] | null;
+	relatedPointIds?: string[];
 	cards: ClozeCardSeed[];
+	lessonExamples?: LessonExampleSeed[];
 }
 
 // ══════════════════════════════════════════════════════════════════════════════
@@ -808,11 +820,13 @@ async function main() {
 	});
 	console.log('✓ Test user + account seeded');
 
-	// ── 2. Seed grammar points and cloze cards ───────────────────────────
+	// ── 2. Seed grammar points, cloze cards, grammar targets, and lesson examples ──
 	for (const gp of grammarPoints) {
 		await prisma.grammarPoint.upsert({
 			where: { id: gp.id },
-			update: {},
+			update: {
+				relatedPointIds: gp.relatedPointIds ?? []
+			},
 			create: {
 				id: gp.id,
 				title: gp.title,
@@ -824,7 +838,8 @@ async function main() {
 				level: gp.level,
 				tags: gp.tags,
 				structurePattern: gp.structurePattern,
-				notes: gp.notes as unknown as Prisma.InputJsonValue ?? undefined
+				notes: gp.notes as unknown as Prisma.InputJsonValue ?? undefined,
+				relatedPointIds: gp.relatedPointIds ?? []
 			}
 		});
 
@@ -840,7 +855,51 @@ async function main() {
 					vocabBaseForm: card.vocabBaseForm,
 					answer: card.answer,
 					alternateAnswers: card.alternateAnswers,
-					englishHint: card.englishHint as unknown as Prisma.InputJsonValue
+					englishHint: card.englishHint as unknown as Prisma.InputJsonValue,
+					introducedAtPosition: 0 // single-GP cards: position filled from deck sort order
+				}
+			});
+
+			// Create ClozeCardGrammarTarget (the M:N join row)
+			const targetId = `cgt_${card.id}_${gp.id}`;
+			await prisma.clozeCardGrammarTarget.upsert({
+				where: { clozeCardId_grammarPointId: { clozeCardId: card.id, grammarPointId: gp.id } },
+				update: {},
+				create: {
+					id: targetId,
+					clozeCardId: card.id,
+					grammarPointId: gp.id,
+					wordReplacement: card.answer,
+					blankIndex: 0
+				}
+			});
+		}
+
+		// Create LessonExamples from the first 2 cloze cards of each GP
+		// (In 11b/11c, dedicated lesson examples will be authored. For now,
+		// auto-generate from existing cloze cards to maintain learn page functionality.)
+		const exampleCards = gp.lessonExamples ?? gp.cards.slice(0, 2).map((card, i) => ({
+			id: `le_${gp.id}_${i}`,
+			fullSentence: card.fullSentence,
+			sentenceWithBlank: card.sentenceWithBlank,
+			answer: card.answer,
+			englishHint: card.englishHint,
+			order: i,
+		}));
+
+		for (const example of exampleCards) {
+			await prisma.lessonExample.upsert({
+				where: { id: example.id },
+				update: {},
+				create: {
+					id: example.id,
+					grammarPointId: gp.id,
+					fullSentence: example.fullSentence,
+					sentenceWithBlank: example.sentenceWithBlank,
+					answer: example.answer,
+					englishHint: example.englishHint as unknown as Prisma.InputJsonValue,
+					order: example.order,
+					notes: example.notes ?? null
 				}
 			});
 		}
@@ -849,38 +908,40 @@ async function main() {
 
 	const totalCards = grammarPoints.reduce((sum, gp) => sum + gp.cards.length, 0);
 	console.log(`✓ ${totalCards} cloze cards seeded`);
+	console.log(`✓ Grammar targets and lesson examples seeded`);
 
-	// ── 3. Seed 5 ReviewCards for test user (all due now) ────────────────
-	const reviewClozeIds = [
-		'cc_topic_01',
-		'cc_subject_01',
-		'cc_object_01',
-		'cc_time_place_01',
-		'cc_place_at_01'
+	// ── 3. Seed 5 ReviewCards for test user (one per grammar point, all due now) ──
+	const reviewGrammarPointIds = [
+		'gp_topic',
+		'gp_subject',
+		'gp_object',
+		'gp_time_place',
+		'gp_place_at'
 	];
 
-	for (const clozeCardId of reviewClozeIds) {
+	for (const grammarPointId of reviewGrammarPointIds) {
 		await prisma.reviewCard.upsert({
 			where: {
-				userId_clozeCardId: {
+				userId_grammarPointId: {
 					userId: 'user_test',
-					clozeCardId
+					grammarPointId
 				}
 			},
 			update: {},
 			create: {
 				userId: 'user_test',
-				clozeCardId,
+				grammarPointId,
 				state: 0, // New
 				due: new Date(),
 				stability: 0,
 				difficulty: 0,
 				reps: 0,
-				lapses: 0
+				lapses: 0,
+				peakStability: 0
 			}
 		});
 	}
-	console.log(`✓ ${reviewClozeIds.length} review cards seeded for test user`);
+	console.log(`✓ ${reviewGrammarPointIds.length} review cards seeded for test user (one per GP)`);
 
 	// ── 4. Seed TOPIK Level 1 Grammar deck ───────────────────────────────
 	await prisma.deck.upsert({

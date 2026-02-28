@@ -35,7 +35,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 			prisma.userStreak.findUnique({ where: { userId } }),
 			prisma.reviewCard.findMany({
 				where: { userId },
-				select: { state: true, masteredAt: true, streakCorrect: true, clozeCard: { select: { grammarPointId: true } } }
+				select: { state: true, masteredAt: true, streakCorrect: true, grammarPointId: true }
 			}),
 			prisma.deckGrammarPoint.findMany({
 				where: { deck: { userProgress: { some: { userId } } } },
@@ -63,12 +63,12 @@ export const load: PageServerLoad = async ({ locals }) => {
 
 		// Filter the already-fetched review cards to this deck's grammar points
 		const deckReviewCards = reviewCardsForSrs.filter((rc) =>
-			deckGrammarPointIds.has(rc.clozeCard.grammarPointId)
+			deckGrammarPointIds.has(rc.grammarPointId)
 		);
 
 		// Learned grammar count: unique grammar points with review cards in this deck
 		const uniqueLearnedGrammarIds = new Set(
-			deckReviewCards.map((rc) => rc.clozeCard.grammarPointId)
+			deckReviewCards.map((rc) => rc.grammarPointId)
 		);
 
 		// Reviews due for this deck (exclude mastered) — count from already-fetched data
@@ -79,7 +79,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 		// Mastered grammar count: a grammar point is mastered when ALL its review cards are mastered
 		const masteredByGP = new Map<string, { total: number; mastered: number }>();
 		for (const rc of deckReviewCards) {
-			const gpId = rc.clozeCard.grammarPointId;
+			const gpId = rc.grammarPointId;
 			const e = masteredByGP.get(gpId) ?? { total: 0, mastered: 0 };
 			e.total++;
 			if (rc.masteredAt) e.mastered++;
@@ -122,19 +122,13 @@ export const load: PageServerLoad = async ({ locals }) => {
 			userId,
 			due: { lte: now },
 			masteredAt: null,
-			clozeCard: {
-				grammarPoint: {
-					decks: { some: { deckId: { in: enrolledDecks.map((d) => d.id) } } }
-				}
+			grammarPoint: {
+				decks: { some: { deckId: { in: enrolledDecks.map((d) => d.id) } } }
 			}
 		},
 		select: {
-			clozeCard: {
-				select: {
-					grammarPoint: {
-						select: { decks: { select: { deckId: true } } }
-					}
-				}
+			grammarPoint: {
+				select: { decks: { select: { deckId: true } } }
 			}
 		}
 	});
@@ -142,7 +136,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 	// Count due cards per deck
 	const dueCountByDeck = new Map<string, number>();
 	for (const card of allDueCards) {
-		for (const dg of card.clozeCard.grammarPoint.decks) {
+		for (const dg of card.grammarPoint.decks) {
 			dueCountByDeck.set(dg.deckId, (dueCountByDeck.get(dg.deckId) ?? 0) + 1);
 		}
 	}
@@ -155,7 +149,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 	const studiedGrammarIds = new Set<string>();
 
 	for (const rc of reviewCardsForSrs) {
-		studiedGrammarIds.add(rc.clozeCard.grammarPointId);
+		studiedGrammarIds.add(rc.grammarPointId);
 		if (rc.masteredAt) {
 			srsDistribution.mastered++;
 		} else {
@@ -222,7 +216,7 @@ export const load: PageServerLoad = async ({ locals }) => {
 			enrollment.deck.grammarPoints.map((gp) => gp.grammarPointId)
 		);
 		const deckReviewCards = reviewCardsForSrs.filter((rc) =>
-			deckGrammarPointIds.has(rc.clozeCard.grammarPointId)
+			deckGrammarPointIds.has(rc.grammarPointId)
 		);
 
 		const states = { new: 0, learning: 0, review: 0, relearning: 0, mastered: 0 };

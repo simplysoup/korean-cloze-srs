@@ -65,13 +65,15 @@ export const load: PageServerLoad = async ({ params, locals, url }) => {
 	// User's learning status for this grammar point
 	let isLearned = false;
 	if (locals.user) {
-		const reviewCardCount = await prisma.reviewCard.count({
+		const reviewCard = await prisma.reviewCard.findUnique({
 			where: {
-				userId: locals.user.id,
-				clozeCard: { grammarPointId: params.id }
+				userId_grammarPointId: {
+					userId: locals.user.id,
+					grammarPointId: params.id
+				}
 			}
 		});
-		isLearned = reviewCardCount > 0;
+		isLearned = reviewCard !== null;
 	}
 
 	return { grammarPoint, lessonContext, deckContext, isLearned };

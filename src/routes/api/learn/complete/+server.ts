@@ -17,40 +17,34 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 
 	// Verify the grammar point belongs to this deck
 	const deckGP = await prisma.deckGrammarPoint.findFirst({
-		where: { deckId, grammarPointId },
-		include: {
-			grammarPoint: {
-				include: { clozeCards: { select: { id: true } } }
-			}
-		}
+		where: { deckId, grammarPointId }
 	});
 
 	if (!deckGP) {
 		throw error(404, 'Grammar point not found in this deck');
 	}
 
-	// Create ReviewCards for all cloze cards (skip duplicates)
+	// Create ONE ReviewCard per grammar point (skip if already exists)
 	let created = 0;
-	for (const card of deckGP.grammarPoint.clozeCards) {
-		const existing = await prisma.reviewCard.findUnique({
-			where: { userId_clozeCardId: { userId, clozeCardId: card.id } }
-		});
+	const existing = await prisma.reviewCard.findUnique({
+		where: { userId_grammarPointId: { userId, grammarPointId } }
+	});
 
-		if (!existing) {
-			await prisma.reviewCard.create({
-				data: {
-					userId,
-					clozeCardId: card.id,
-					state: 0, // New
-					due: new Date(),
-					stability: 0,
-					difficulty: 0,
-					reps: 0,
-					lapses: 0
-				}
-			});
-			created++;
-		}
+	if (!existing) {
+		await prisma.reviewCard.create({
+			data: {
+				userId,
+				grammarPointId,
+				state: 0, // New
+				due: new Date(),
+				stability: 0,
+				difficulty: 0,
+				reps: 0,
+				lapses: 0,
+				peakStability: 0
+			}
+		});
+		created++;
 	}
 
 	// Update UserDeckProgress: advance lastLearnedIndex
