@@ -54,7 +54,12 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 	const updatedCard = result.card;
 	const reviewLog = result.log;
 
-	// Update ReviewCard with new FSRS state
+	// ── Mastery tracking (non-breaking layer on top of FSRS) ─────────────
+	const isCorrect = rating >= 3; // Good or Easy
+	let newStreak = isCorrect ? reviewCard.streakCorrect + 1 : 0;
+	const shouldMaster = newStreak >= 8 && reviewCard.masteredAt === null;
+
+	// Update ReviewCard with new FSRS state + mastery
 	await prisma.reviewCard.update({
 		where: { id: reviewCardId },
 		data: {
@@ -64,7 +69,9 @@ export const POST: RequestHandler = async ({ request, locals }) => {
 			lapses: updatedCard.lapses,
 			state: updatedCard.state,
 			due: updatedCard.due,
-			lastReview: now
+			lastReview: now,
+			streakCorrect: newStreak,
+			...(shouldMaster ? { masteredAt: now } : {})
 		}
 	});
 

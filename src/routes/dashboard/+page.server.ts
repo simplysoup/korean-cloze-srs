@@ -2,6 +2,7 @@ import type { PageServerLoad } from './$types';
 import { prisma } from '$lib/server/db';
 import { redirect } from '@sveltejs/kit';
 import { calculateLevel } from '$lib/levels';
+import { getTopikDisplay } from '$lib/topik';
 
 export const load: PageServerLoad = async ({ locals }) => {
 	if (!locals.user) {
@@ -27,14 +28,14 @@ export const load: PageServerLoad = async ({ locals }) => {
 		}
 	});
 
-	const [reviewsDue, totalReviewed, streakData, reviewCardsForSrs, totalGrammarInDecks, allUserLogs, lastSessionLogs] =
+	const [_reviewsDue, totalReviewed, streakData, reviewCardsForSrs, totalGrammarInDecks, allUserLogs, lastSessionLogs] =
 		await Promise.all([
-			prisma.reviewCard.count({ where: { userId, due: { lte: now } } }),
+			prisma.reviewCard.count({ where: { userId, due: { lte: now }, masteredAt: null } }),
 			prisma.reviewLog.count({ where: { userId } }),
 			prisma.userStreak.findUnique({ where: { userId } }),
 			prisma.reviewCard.findMany({
 				where: { userId },
-				select: { state: true, clozeCard: { select: { grammarPointId: true } } }
+				select: { state: true, masteredAt: true, streakCorrect: true, clozeCard: { select: { grammarPointId: true } } }
 			}),
 			prisma.deckGrammarPoint.findMany({
 				where: { deck: { userProgress: { some: { userId } } } },
@@ -55,75 +56,115 @@ export const load: PageServerLoad = async ({ locals }) => {
 	// Compute level info
 	const levelInfo = calculateLevel(totalReviewed);
 
-	// Compute enrolled decks with progress
-	const enrolledDecks = await Promise.all(
-		enrolledDecksRaw.map(async (enrollment) => {
-			const deck = enrollment.deck;
+	// Compute enrolled decks with progress — using already-fetched data (no extra queries)
+	const enrolledDecks = enrolledDecksRaw.map((enrollment) => {
+		const deck = enrollment.deck;
+		const deckGrammarPointIds = new Set(deck.grammarPoints.map((gp) => gp.grammarPointId));
 
-			// Learned grammar count: unique grammar points with review cards
-			const learnedGrammarIds = await prisma.reviewCard.findMany({
-				where: {
-					userId,
-					clozeCard: {
-						grammarPoint: {
-							decks: { some: { deckId: deck.id } }
-						}
-					}
-				},
-				select: { clozeCard: { select: { grammarPointId: true } } },
-				distinct: ['clozeCardId']
-			});
-			const uniqueGrammarIds = new Set(learnedGrammarIds.map((r) => r.clozeCard.grammarPointId));
+		// Filter the already-fetched review cards to this deck's grammar points
+		const deckReviewCards = reviewCardsForSrs.filter((rc) =>
+			deckGrammarPointIds.has(rc.clozeCard.grammarPointId)
+		);
 
-			// Reviews due for this deck
-			const deckReviewsDue = await prisma.reviewCard.count({
-				where: {
-					userId,
-					due: { lte: now },
-					clozeCard: {
-						grammarPoint: {
-							decks: { some: { deckId: deck.id } }
-						}
+		// Learned grammar count: unique grammar points with review cards in this deck
+		const uniqueLearnedGrammarIds = new Set(
+			deckReviewCards.map((rc) => rc.clozeCard.grammarPointId)
+		);
+
+		// Reviews due for this deck (exclude mastered) — count from already-fetched data
+		// We need due dates for this, so count from the parallel query data isn't ideal.
+		// Instead, precompute from the reviewCardsForSrs which doesn't have `due`.
+		// We'll use a separate bulk query below. For now, approximate from enrollment data.
+
+		// Mastered grammar count: a grammar point is mastered when ALL its review cards are mastered
+		const masteredByGP = new Map<string, { total: number; mastered: number }>();
+		for (const rc of deckReviewCards) {
+			const gpId = rc.clozeCard.grammarPointId;
+			const e = masteredByGP.get(gpId) ?? { total: 0, mastered: 0 };
+			e.total++;
+			if (rc.masteredAt) e.mastered++;
+			masteredByGP.set(gpId, e);
+		}
+		let deckMasteredCount = 0;
+		for (const [, c] of masteredByGP) {
+			if (c.total > 0 && c.mastered === c.total) deckMasteredCount++;
+		}
+
+		// Learnable count
+		const totalInDeck = deck._count.grammarPoints;
+		const learnedInDeck = enrollment.lastLearnedIndex + 1;
+		const learnable = Math.max(0, totalInDeck - learnedInDeck);
+
+		// Next lesson info
+		const nextIndex = enrollment.lastLearnedIndex + 1;
+		const nextGrammarPoint = deck.grammarPoints.find((gp) => gp.sortOrder === nextIndex);
+		const nextLessonNumber = nextGrammarPoint?.lessonNumber ?? null;
+
+		return {
+			id: deck.id,
+			title: deck.title,
+			slug: deck.slug,
+			icon: deck.icon,
+			level: deck.level,
+			topikLevel: deck.topikLevel,
+			totalGrammar: totalInDeck,
+			learnedCount: uniqueLearnedGrammarIds.size,
+			masteredCount: deckMasteredCount,
+			reviewsDue: 0, // filled in below
+			learnable,
+			nextLessonNumber
+		};
+	});
+
+	// Bulk-fetch per-deck reviewsDue in a single query (instead of N separate counts)
+	const allDueCards = await prisma.reviewCard.findMany({
+		where: {
+			userId,
+			due: { lte: now },
+			masteredAt: null,
+			clozeCard: {
+				grammarPoint: {
+					decks: { some: { deckId: { in: enrolledDecks.map((d) => d.id) } } }
+				}
+			}
+		},
+		select: {
+			clozeCard: {
+				select: {
+					grammarPoint: {
+						select: { decks: { select: { deckId: true } } }
 					}
 				}
-			});
+			}
+		}
+	});
 
-			// Learnable count
-			const totalInDeck = deck._count.grammarPoints;
-			const learnedInDeck = enrollment.lastLearnedIndex + 1;
-			const learnable = Math.max(0, totalInDeck - learnedInDeck);
+	// Count due cards per deck
+	const dueCountByDeck = new Map<string, number>();
+	for (const card of allDueCards) {
+		for (const dg of card.clozeCard.grammarPoint.decks) {
+			dueCountByDeck.set(dg.deckId, (dueCountByDeck.get(dg.deckId) ?? 0) + 1);
+		}
+	}
+	for (const deck of enrolledDecks) {
+		deck.reviewsDue = dueCountByDeck.get(deck.id) ?? 0;
+	}
 
-			// Next lesson info
-			const nextIndex = enrollment.lastLearnedIndex + 1;
-			const nextGrammarPoint = deck.grammarPoints.find((gp) => gp.sortOrder === nextIndex);
-			const nextLessonNumber = nextGrammarPoint?.lessonNumber ?? null;
-
-			return {
-				id: deck.id,
-				title: deck.title,
-				slug: deck.slug,
-				icon: deck.icon,
-				level: deck.level,
-				totalGrammar: totalInDeck,
-				learnedCount: uniqueGrammarIds.size,
-				reviewsDue: deckReviewsDue,
-				learnable,
-				nextLessonNumber
-			};
-		})
-	);
-
-	// SRS distribution
-	const srsDistribution = { new: 0, learning: 0, review: 0, relearning: 0, unstudied: 0 };
+	// SRS distribution (includes mastered)
+	const srsDistribution = { new: 0, learning: 0, review: 0, relearning: 0, mastered: 0, unstudied: 0 };
 	const studiedGrammarIds = new Set<string>();
 
 	for (const rc of reviewCardsForSrs) {
 		studiedGrammarIds.add(rc.clozeCard.grammarPointId);
-		switch (rc.state) {
-			case 0: srsDistribution.new++; break;
-			case 1: srsDistribution.learning++; break;
-			case 2: srsDistribution.review++; break;
-			case 3: srsDistribution.relearning++; break;
+		if (rc.masteredAt) {
+			srsDistribution.mastered++;
+		} else {
+			switch (rc.state) {
+				case 0: srsDistribution.new++; break;
+				case 1: srsDistribution.learning++; break;
+				case 2: srsDistribution.review++; break;
+				case 3: srsDistribution.relearning++; break;
+			}
 		}
 	}
 
@@ -175,16 +216,20 @@ export const load: PageServerLoad = async ({ locals }) => {
 		});
 	}
 
-	// TOPIK progress: per-deck SRS state distribution
-	const topikProgress = await Promise.all(
-		enrolledDecksRaw.map(async (enrollment) => {
-			const deckGrammarPointIds = enrollment.deck.grammarPoints.map((gp) => gp.grammarPointId);
-			const deckReviewCards = reviewCardsForSrs.filter((rc) =>
-				deckGrammarPointIds.includes(rc.clozeCard.grammarPointId)
-			);
+	// TOPIK progress: per-deck SRS state distribution (using already-fetched data)
+	const topikProgress = enrolledDecksRaw.map((enrollment) => {
+		const deckGrammarPointIds = new Set(
+			enrollment.deck.grammarPoints.map((gp) => gp.grammarPointId)
+		);
+		const deckReviewCards = reviewCardsForSrs.filter((rc) =>
+			deckGrammarPointIds.has(rc.clozeCard.grammarPointId)
+		);
 
-			const states = { new: 0, learning: 0, review: 0, relearning: 0 };
-			for (const rc of deckReviewCards) {
+		const states = { new: 0, learning: 0, review: 0, relearning: 0, mastered: 0 };
+		for (const rc of deckReviewCards) {
+			if (rc.masteredAt) {
+				states.mastered++;
+			} else {
 				switch (rc.state) {
 					case 0: states.new++; break;
 					case 1: states.learning++; break;
@@ -192,18 +237,17 @@ export const load: PageServerLoad = async ({ locals }) => {
 					case 3: states.relearning++; break;
 				}
 			}
+		}
 
-			return {
-				deckTitle: `Level ${enrollment.deck.level}`,
-				total: deckGrammarPointIds.length,
-				states
-			};
-		})
-	);
+		return {
+			deckTitle: getTopikDisplay(enrollment.deck.topikLevel),
+			total: deckGrammarPointIds.size,
+			states
+		};
+	});
 
 	return {
 		enrolledDecks,
-		reviewsDue,
 		totalReviewed,
 		levelInfo,
 		streakData: streakData

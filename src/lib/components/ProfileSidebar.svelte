@@ -15,7 +15,7 @@
 		levelInfo: UserLevel;
 		streakData: { currentStreak: number; longestStreak: number; lastStudiedDate: string | null };
 		streakDays: { label: string; active: boolean; isToday: boolean }[];
-		topikProgress: { deckTitle: string; total: number; states: { new: number; learning: number; review: number; relearning: number } }[];
+		topikProgress: { deckTitle: string; total: number; states: { new: number; learning: number; review: number; relearning: number; mastered: number } }[];
 		quickStats: { daysStudied: number; lastSessionAccuracy: number | null; itemsStudied: number };
 	} = $props();
 
@@ -78,15 +78,16 @@
 				<div class="topik-progress__item">
 					<div class="topik-progress__label">
 						<span>{tp.deckTitle}</span>
-						<span>{tp.states.new + tp.states.learning + tp.states.review + tp.states.relearning}/{tp.total}</span>
+						<span>{tp.states.new + tp.states.learning + tp.states.review + tp.states.relearning + tp.states.mastered}/{tp.total}</span>
 					</div>
 					<div class="topik-progress__bar">
 						{#if tp.total > 0}
-							{@const totalStudied = tp.states.new + tp.states.learning + tp.states.review + tp.states.relearning}
-							<div class="topik-progress__segment" style="width: {(tp.states.new / tp.total) * 100}%; background: var(--srs-new);"></div>
-							<div class="topik-progress__segment" style="width: {(tp.states.learning / tp.total) * 100}%; background: var(--srs-learning);"></div>
+							{@const totalStudied = tp.states.new + tp.states.learning + tp.states.review + tp.states.relearning + tp.states.mastered}
+							<div class="topik-progress__segment" style="width: {(tp.states.mastered / tp.total) * 100}%; background: var(--green);"></div>
 							<div class="topik-progress__segment" style="width: {(tp.states.review / tp.total) * 100}%; background: var(--srs-review);"></div>
+							<div class="topik-progress__segment" style="width: {(tp.states.learning / tp.total) * 100}%; background: var(--srs-learning);"></div>
 							<div class="topik-progress__segment" style="width: {(tp.states.relearning / tp.total) * 100}%; background: var(--srs-relearning);"></div>
+							<div class="topik-progress__segment" style="width: {(tp.states.new / tp.total) * 100}%; background: var(--srs-new);"></div>
 						{/if}
 					</div>
 				</div>

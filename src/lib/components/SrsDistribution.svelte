@@ -1,6 +1,6 @@
 <script lang="ts">
 	let { distribution }: {
-		distribution: { new: number; learning: number; review: number; relearning: number; unstudied: number };
+		distribution: { new: number; learning: number; review: number; relearning: number; mastered: number; unstudied: number };
 	} = $props();
 
 	const cards = $derived([
@@ -8,6 +8,7 @@
 		{ name: 'Learning', count: distribution.learning, color: 'var(--srs-learning)' },
 		{ name: 'Review', count: distribution.review, color: 'var(--srs-review)' },
 		{ name: 'Relearning', count: distribution.relearning, color: 'var(--srs-relearning)' },
+		{ name: 'Mastered', count: distribution.mastered, color: 'var(--srs-mastered)' },
 		{ name: 'Unstudied', count: distribution.unstudied, color: 'var(--text-faint)' }
 	]);
 </script>

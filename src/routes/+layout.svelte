@@ -40,9 +40,16 @@
 			<!-- Main nav links -->
 			<ul class="header__nav">
 				<li>
-					<a href="/dashboard" class="header__nav-btn">
-						<span class="header__nav-label">Dashboard</span>
-					</a>
+					{#if data.primaryLearnDeckId && data.learnableCount > 0}
+						<a href="/learn?deck_id={data.primaryLearnDeckId}" class="header__nav-btn header__nav-btn--learn">
+							<span class="header__nav-label">Learn</span>
+							<span class="header__badge header__badge--learn">{data.learnableCount}</span>
+						</a>
+					{:else}
+						<a href="/decks" class="header__nav-btn header__nav-btn--learn">
+							<span class="header__nav-label">Learn</span>
+						</a>
+					{/if}
 				</li>
 				<li>
 					<a href="/reviews" class="header__nav-btn">
@@ -65,12 +72,11 @@
 					{#if openMenu === 'content'}
 						<!-- svelte-ignore a11y_no_static_element_interactions -->
 						<div class="header__menu" role="menu" tabindex="-1" onclick={(e) => e.stopPropagation()} onkeydown={(e) => { if (e.key === 'Escape') closeMenus(); }}>
+							<a href="/grammar" class="header__menu-item" role="menuitem">Grammar Library</a>
+							<a href="/decks" class="header__menu-item" role="menuitem">Decks</a>
 							{#each data.enrolledDeckSlugs as deck}
-								<a href="/decks/{deck.slug}" class="header__menu-item" role="menuitem">{deck.title}</a>
+								<a href="/decks/{deck.slug}" class="header__menu-item header__menu-item--sub" role="menuitem">{deck.title}</a>
 							{/each}
-							{#if data.enrolledDeckSlugs.length === 0}
-								<a href="/" class="header__menu-item" role="menuitem">Browse Decks</a>
-							{/if}
 							<a href="/" class="header__menu-item header__menu-item--disabled" role="menuitem">Vocabulary (soon)</a>
 						</div>
 					{/if}

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { romanToHangul } from '$lib/romanToHangul';
+	import MasteryPips from '$lib/components/MasteryPips.svelte';
 
 	interface EnglishHintPart {
 		text: string;
@@ -25,6 +26,8 @@
 		answers: string[];
 		grammar: GrammarPoint;
 		englishHint: EnglishHintPart[];
+		streakCorrect: number;
+		masteredAt: string | null;
 	}
 
 	/** Normalize legacy { highlight: boolean } to { highlightType } */
@@ -200,6 +203,23 @@
 		networkError = null;
 	}
 
+	// ── Global Enter-key handler for review flow ─────────────────────────
+	// Two-enter flow: Enter 1 = submit, Enter 2 = advance to next card
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key !== 'Enter' || !currentCard || posting) return;
+
+		// Let the input's own onkeydown handle the first Enter (submit)
+		if (!submitted) return;
+
+		e.preventDefault();
+		next();
+	}
+
+	// ── Auto-focus action for inputs ────────────────────────────────────
+	function autofocus(node: HTMLInputElement) {
+		node.focus();
+	}
+
 	// ── Next review time formatting ───────────────────────────────────────
 	function formatNextReview(date: Date | string | null): string {
 		if (!date) return '';
@@ -215,16 +235,31 @@
 	}
 </script>
 
+<svelte:window onkeydown={handleKeydown} />
+
 <div class="review-wrapper">
+	{#if data.deckContext}
+		<div class="review-deck-header">
+			Reviewing: <a href="/decks/{data.deckContext.slug}">{data.deckContext.title}</a>
+		</div>
+	{/if}
+
 	{#if !currentCard}
 		<div class="empty-state">
 			<h2>🎉 All caught up!</h2>
-			{#if data.nextReviewAt}
+			{#if data.deckContext}
+				<p>No reviews due for <strong>{data.deckContext.title}</strong>.</p>
+				<div class="empty-state__actions">
+					<a href="/decks/{data.deckContext.slug}" class="btn btn--primary">Back to Deck</a>
+					<a href="/dashboard" class="btn btn--secondary">Dashboard</a>
+				</div>
+			{:else if data.nextReviewAt}
 				<p>Next review in <strong>{formatNextReview(data.nextReviewAt)}</strong>.</p>
+				<a href="/dashboard" class="btn btn--primary">Dashboard</a>
 			{:else}
 				<p>No reviews scheduled yet. Start learning from the home page!</p>
+				<a href="/dashboard" class="btn btn--primary">Dashboard</a>
 			{/if}
-			<a href="/" class="btn btn--primary">Home</a>
 		</div>
 	{:else}
 		<div class="cloze-card">
@@ -274,6 +309,9 @@
 				{/each}
 			</div>
 
+			<!-- Mastery pips -->
+			<MasteryPips streakCorrect={currentCard.streakCorrect} masteredAt={currentCard.masteredAt} size="md" />
+
 			<!-- Romanized input -->
 			{#if !submitted && !answerRevealed}
 				<div class="input-group">
@@ -283,8 +321,12 @@
 							class="roman-input"
 							placeholder="Type romanized Korean…"
 							bind:value={romanInputs[i]}
+							use:autofocus
 							onkeydown={(e) => {
-								if (e.key === 'Enter') submit();
+								if (e.key === 'Enter') {
+									e.stopPropagation();
+									submit();
+								}
 							}}
 						/>
 					{/each}

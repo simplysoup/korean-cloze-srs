@@ -1,15 +1,29 @@
 import type { PageServerLoad } from './$types';
 import { prisma } from '$lib/server/db';
 
-export const load: PageServerLoad = async ({ locals }) => {
+export const load: PageServerLoad = async ({ locals, url }) => {
 	// Auth is enforced centrally in hooks.server.ts
 	const userId = locals.user!.id;
 
+	// 10.5 — Optional deck_id for deck-scoped reviews
+	const deckId = url.searchParams.get('deck_id');
+
+	const whereClause: Record<string, unknown> = {
+		userId,
+		due: { lte: new Date() },
+		masteredAt: null
+	};
+
+	if (deckId) {
+		whereClause.clozeCard = {
+			grammarPoint: {
+				decks: { some: { deckId } }
+			}
+		};
+	}
+
 	const reviewCards = await prisma.reviewCard.findMany({
-		where: {
-			userId,
-			due: { lte: new Date() }
-		},
+		where: whereClause,
 		orderBy: { due: 'asc' },
 		take: 10,
 		include: {
@@ -37,7 +51,9 @@ export const load: PageServerLoad = async ({ locals }) => {
 				hint: card.grammarPoint.hint,
 				description: card.grammarPoint.description
 			},
-			englishHint: card.englishHint as { text: string; highlight: boolean }[]
+			englishHint: card.englishHint as { text: string; highlight: boolean }[],
+			streakCorrect: rc.streakCorrect,
+			masteredAt: rc.masteredAt?.toISOString() ?? null
 		};
 	});
 
@@ -52,5 +68,15 @@ export const load: PageServerLoad = async ({ locals }) => {
 		nextReviewAt = next?.due ?? null;
 	}
 
-	return { queue, nextReviewAt };
+	// Deck context for scoped reviews
+	let deckContext: { title: string; slug: string } | null = null;
+	if (deckId) {
+		const deck = await prisma.deck.findUnique({
+			where: { id: deckId },
+			select: { title: true, slug: true }
+		});
+		deckContext = deck;
+	}
+
+	return { queue, nextReviewAt, deckId, deckContext };
 };

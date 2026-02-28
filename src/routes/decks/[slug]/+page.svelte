@@ -1,4 +1,7 @@
 <script lang="ts">
+	import MasteryPips from '$lib/components/MasteryPips.svelte';
+	import { getTopikDisplay, getTopikShort } from '$lib/topik';
+
 	let { data } = $props();
 
 	const progressPercent = $derived(
@@ -11,6 +14,11 @@
 		3: 'Inclusion & Limitation',
 		4: 'Connecting Nouns'
 	};
+
+	function srsStatusClass(srsStatus: string | null): string {
+		if (!srsStatus) return '';
+		return `srs-badge--${srsStatus.toLowerCase()}`;
+	}
 
 	function statusIcon(status: 'learned' | 'current' | 'locked') {
 		if (status === 'learned') return '✅';
@@ -34,7 +42,10 @@
 				<span class="deck-header__icon">{data.deck.icon}</span>
 			{/if}
 			<div>
-				<h1 class="deck-header__title">{data.deck.title}</h1>
+				<div class="deck-header__title-row">
+					<h1 class="deck-header__title">{data.deck.title}</h1>
+					<span class="deck-header__topik-badge">{getTopikDisplay(data.deck.topikLevel)}</span>
+				</div>
 				<p class="deck-header__desc">{data.deck.description}</p>
 			</div>
 		</div>
@@ -75,10 +86,21 @@
 	<!-- Lessons -->
 	<div class="deck-lessons">
 		{#each data.lessons as lesson (lesson.lessonNumber)}
+			{@const lessonLearned = lesson.grammarPoints.filter((g) => g.status === 'learned').length}
+			{@const lessonTotal = lesson.grammarPoints.length}
+			{@const lessonPercent = lessonTotal > 0 ? Math.round((lessonLearned / lessonTotal) * 100) : 0}
 			<div class="lesson-group">
 				<h2 class="lesson-group__title">
 					Lesson {lesson.lessonNumber}{#if lessonNames[lesson.lessonNumber]}: {lessonNames[lesson.lessonNumber]}{/if}
 				</h2>
+				{#if data.enrolled}
+					<div class="lesson-group__progress">
+						<div class="lesson-group__progress-bar">
+							<div class="lesson-group__progress-fill" style="width: {lessonPercent}%"></div>
+						</div>
+						<span class="lesson-group__progress-text">{lessonLearned}/{lessonTotal}</span>
+					</div>
+				{/if}
 				<div class="lesson-group__list">
 					{#each lesson.grammarPoints as gp (gp.id)}
 						<a
@@ -91,6 +113,14 @@
 								<span class="grammar-row__hint">{gp.hint}</span>
 							</div>
 							<div class="grammar-row__right">
+								{#if data.enrolled && gp.status === 'learned'}
+									<div class="grammar-row__pips">
+										<MasteryPips streakCorrect={gp.streakCorrect} masteredAt={gp.masteredAt} size="sm" />
+									</div>
+								{/if}
+								{#if gp.srsStatus}
+									<span class="srs-badge {srsStatusClass(gp.srsStatus)}">{gp.srsStatus}</span>
+								{/if}
 								{#if gp.reviewsDue > 0}
 									<span class="grammar-row__reviews">{gp.reviewsDue} due</span>
 								{/if}

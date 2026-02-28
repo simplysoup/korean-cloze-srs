@@ -117,7 +117,7 @@ body {
 	align-items: center;
 	gap: 0.25rem;
 	list-style: none;
-	margin: 0;
+	margin-left: auto;
 	padding: 0;
 }
 
@@ -231,6 +231,12 @@ body {
 .header__menu-item--disabled {
 	color: var(--text-faint);
 	pointer-events: none;
+}
+
+.header__menu-item--sub {
+	padding-left: 1.5rem;
+	font-size: 0.8rem;
+	color: var(--text-muted);
 }
 
 .header__menu-item--danger {
@@ -824,6 +830,101 @@ body {
 	font-weight: 800;
 	background: rgba(255, 255, 255, 0.2);
 	backdrop-filter: blur(4px);
+}
+
+/* ── Mastery overview widget ──────────────────────────────────────────────── */
+.mastery-overview {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.25rem;
+	grid-column: 1 / -1;
+}
+
+@media (min-width: 1024px) {
+	.mastery-overview {
+		grid-column: 1 / 3;
+	}
+}
+
+.mastery-overview__title {
+	margin: 0 0 0.75rem;
+	font-size: 1rem;
+	font-weight: 700;
+	color: var(--text);
+}
+
+.mastery-overview__bar-wrapper {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	margin-bottom: 0.75rem;
+}
+
+.mastery-overview__bar {
+	flex: 1;
+	height: 10px;
+	background: var(--border);
+	border-radius: 5px;
+	overflow: hidden;
+}
+
+.mastery-overview__fill {
+	height: 100%;
+	background: var(--green);
+	border-radius: 5px;
+	transition: width 0.3s ease;
+}
+
+.mastery-overview__text {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+	white-space: nowrap;
+	font-weight: 600;
+}
+
+.mastery-overview__decks {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+}
+
+.mastery-overview__deck {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	padding: 0.4rem 0.6rem;
+	border-radius: var(--radius-sm);
+	text-decoration: none;
+	color: inherit;
+	transition: background 0.15s;
+}
+
+.mastery-overview__deck:hover {
+	background: var(--bg);
+}
+
+.mastery-overview__deck-name {
+	font-weight: 600;
+	font-size: 0.85rem;
+	color: var(--text);
+	flex: 1;
+}
+
+.mastery-overview__deck-badge {
+	font-size: 0.65rem;
+	font-weight: 600;
+	padding: 0.1rem 0.35rem;
+	border-radius: 4px;
+	background: var(--srs-new);
+	color: #fff;
+	white-space: nowrap;
+}
+
+.mastery-overview__deck-stats {
+	font-size: 0.8rem;
+	color: var(--text-muted);
+	font-weight: 500;
 }
 
 /* ── Profile sidebar ──────────────────────────────────────────────────────── */
@@ -1808,5 +1909,823 @@ body {
 		margin: 0 -1rem;
 		border-radius: 0;
 	}
+}
+
+/* ══════════════════════════════════════════════════════════════════════════════
+   Learn Flow (Phase 10)
+   ══════════════════════════════════════════════════════════════════════════════ */
+
+/* ── Learn page: no sidebar, full-width grammar content ───────────────────── */
+.learn-page .grammar-page__body {
+	grid-template-columns: 1fr;
+}
+
+.learn-page .grammar-page__sidebar {
+	display: none;
+}
+
+/* ── Learn Navigation overrides ───────────────────────────────────────────── */
+.learn-nav {
+	position: sticky;
+	bottom: 0;
+	background: var(--bg, #ffffff);
+	border-top: 1px solid var(--border, #e5e7eb);
+	z-index: 10;
+}
+
+.learn-nav button {
+	cursor: pointer;
+}
+
+.learn-nav button:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.lesson-nav__btn--complete {
+	background: var(--green, #16a34a);
+	color: white;
+	border: none;
+	padding: 0.6rem 1.5rem;
+	border-radius: 0.5rem;
+	font-size: 0.95rem;
+	font-weight: 600;
+	transition: background-color 0.15s, opacity 0.15s;
+}
+
+.lesson-nav__btn--complete:hover:not(:disabled) {
+	background: #15803d;
+}
+
+.learn-nav__error {
+	grid-column: 1 / -1;
+	text-align: center;
+	color: var(--red, #dc2626);
+	font-size: 0.85rem;
+	padding: 0.25rem 0;
+}
+
+/* ── Lesson Completion Screen ─────────────────────────────────────────────── */
+.learn-completion {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 4rem);
+	padding: 2rem 1rem;
+}
+
+.learn-completion__card {
+	background: var(--bg-secondary, #f9fafb);
+	border: 1px solid var(--border, #e5e7eb);
+	border-radius: 1rem;
+	padding: 2.5rem 2rem;
+	max-width: 32rem;
+	width: 100%;
+	text-align: center;
+}
+
+.learn-completion__title {
+	font-size: 1.75rem;
+	font-weight: 700;
+	margin: 0 0 0.75rem;
+}
+
+.learn-completion__message {
+	font-size: 1.05rem;
+	color: var(--text-muted, #6b7280);
+	margin: 0 0 1rem;
+}
+
+.learn-completion__list {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 1.25rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+
+.learn-completion__list li {
+	font-size: 1rem;
+	color: var(--text, #1f2937);
+}
+
+.learn-completion__list li strong {
+	color: var(--primary, #3b82f6);
+}
+
+.learn-completion__cards-added {
+	font-size: 0.95rem;
+	color: var(--text-muted, #6b7280);
+	margin: 0 0 1.5rem;
+}
+
+.learn-completion__actions {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+.learn-completion__actions .btn {
+	padding: 0.6rem 1.5rem;
+	border: none;
+	border-radius: 0.5rem;
+	font-size: 1rem;
+	font-weight: 600;
+	cursor: pointer;
+	text-decoration: none;
+	transition: opacity 0.15s, background-color 0.15s;
+}
+
+.learn-completion__actions .btn--primary {
+	background: var(--primary, #3b82f6);
+	color: white;
+}
+
+.learn-completion__actions .btn--primary:hover {
+	background: var(--primary-dark, #2563eb);
+}
+
+.learn-completion__actions .btn--secondary {
+	background: var(--bg-secondary, #e5e7eb);
+	color: var(--text, #1f2937);
+}
+
+.learn-completion__actions .btn--secondary:hover {
+	background: var(--bg-secondary-dark, #d1d5db);
+}
+
+/* ── Quiz results in completion screen ────────────────────────────────────── */
+.learn-completion__quiz-results {
+	font-size: 0.95rem;
+	color: var(--text, #1f2937);
+	margin: 0 0 1.5rem;
+	padding: 0.75rem 1rem;
+	background: var(--surface, #ffffff);
+	border: 1px solid var(--border, #e5e7eb);
+	border-radius: 0.5rem;
+}
+
+.learn-completion__quiz-results strong {
+	color: var(--green, #16a34a);
+}
+
+/* ── Add to Deck button ───────────────────────────────────────────────────── */
+.lesson-nav__btn--add {
+	background: var(--primary, #3b82f6);
+	color: white;
+	border: none;
+	padding: 0.6rem 1.5rem;
+	border-radius: 0.5rem;
+	font-size: 0.95rem;
+	font-weight: 600;
+	transition: background-color 0.15s, opacity 0.15s;
+}
+
+.lesson-nav__btn--add:hover:not(:disabled) {
+	background: var(--primary-dark, #2563eb);
+}
+
+.lesson-nav__btn--add:disabled {
+	background: var(--green, #16a34a);
+	opacity: 0.8;
+}
+
+/* ── Learn session progress bar ───────────────────────────────────────────── */
+.learn-session-bar {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	padding: 0.75rem 1.5rem;
+	background: var(--surface, #ffffff);
+	border-bottom: 1px solid var(--border, #e5e7eb);
+	position: sticky;
+	top: 3.5rem;
+	z-index: 9;
+}
+
+.learn-session-bar__progress {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+}
+
+.learn-session-bar__count {
+	font-size: 0.85rem;
+	font-weight: 600;
+	color: var(--text, #1f2937);
+	white-space: nowrap;
+}
+
+.learn-session-bar__bar {
+	flex: 1;
+	height: 6px;
+	background: var(--border, #e5e7eb);
+	border-radius: 3px;
+	overflow: hidden;
+	max-width: 200px;
+}
+
+.learn-session-bar__fill {
+	height: 100%;
+	background: var(--primary, #3b82f6);
+	border-radius: 3px;
+	transition: width 0.3s ease;
+}
+
+.learn-session-bar__settings {
+	font-size: 0.8rem;
+	color: var(--text-muted, #6b7280);
+	background: none;
+	border: 1px solid var(--border, #e5e7eb);
+	padding: 0.3rem 0.6rem;
+	border-radius: 0.375rem;
+	cursor: pointer;
+	white-space: nowrap;
+	transition: border-color 0.15s, color 0.15s;
+}
+
+.learn-session-bar__settings:hover {
+	border-color: var(--primary, #3b82f6);
+	color: var(--primary, #3b82f6);
+}
+
+.learn-session-bar__exit {
+	font-size: 0.85rem;
+	padding: 0.3rem 0.6rem;
+	white-space: nowrap;
+}
+
+/* ── Session settings panel ───────────────────────────────────────────────── */
+.learn-session-settings {
+	padding: 0.75rem 1.5rem;
+	background: var(--bg-secondary, #f9fafb);
+	border-bottom: 1px solid var(--border, #e5e7eb);
+}
+
+.learn-session-settings__label {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	font-size: 0.9rem;
+	color: var(--text, #1f2937);
+}
+
+.learn-session-settings__slider {
+	flex: 1;
+	max-width: 200px;
+	accent-color: var(--primary, #3b82f6);
+}
+
+.learn-session-settings__value {
+	font-weight: 700;
+	color: var(--primary, #3b82f6);
+	min-width: 1.5rem;
+	text-align: center;
+}
+
+/* ── Practice quiz ────────────────────────────────────────────────────────── */
+.learn-quiz {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	min-height: calc(100vh - 4rem);
+	padding: 2rem 1rem;
+}
+
+.learn-quiz__header {
+	text-align: center;
+	margin-bottom: 2rem;
+}
+
+.learn-quiz__title {
+	font-size: 1.5rem;
+	font-weight: 700;
+	margin: 0 0 0.25rem;
+}
+
+.learn-quiz__subtitle {
+	font-size: 1rem;
+	color: var(--text-muted, #6b7280);
+	margin: 0 0 0.75rem;
+}
+
+.learn-quiz__progress {
+	font-size: 0.9rem;
+	color: var(--text-muted, #6b7280);
+}
+
+.learn-quiz__score {
+	margin-left: 0.5rem;
+	color: var(--green, #16a34a);
+	font-weight: 600;
+}
+
+.learn-quiz__actions {
+	margin-top: 2rem;
+}
+
+/* ── Navbar Learn button ──────────────────────────────────────────────────── */
+.header__nav-btn--learn {
+	color: var(--green, #16a34a) !important;
+}
+
+.header__badge--learn {
+	background: var(--green, #16a34a);
+	color: white;
+	font-size: 0.7rem;
+	font-weight: 700;
+	padding: 0.1rem 0.45rem;
+	border-radius: 999px;
+	margin-left: 0.25rem;
+}
+
+.header__nav-btn--disabled {
+	opacity: 0.4;
+	cursor: default;
+	pointer-events: none;
+}
+
+/* ── Deck-scoped review header ────────────────────────────────────────────── */
+.review-deck-header {
+	font-size: 0.9rem;
+	color: var(--text-muted, #6b7280);
+	margin-bottom: 1rem;
+	text-align: center;
+}
+
+.review-deck-header a {
+	color: var(--primary, #3b82f6);
+	text-decoration: none;
+	font-weight: 600;
+}
+
+.review-deck-header a:hover {
+	text-decoration: underline;
+}
+
+.empty-state__actions {
+	display: flex;
+	gap: 0.75rem;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Mastery Pips Component
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.mastery-pips {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+}
+
+.mastery-pips__bar {
+	display: flex;
+	gap: 3px;
+}
+
+/* ── Medium pips (review page) ──────────────────────────────────────────── */
+.mastery-pips--md .mastery-pips__pip {
+	width: 12px;
+	height: 12px;
+	border-radius: 3px;
+	background: var(--border, #e5e7eb);
+	transition: background 0.2s;
+}
+
+.mastery-pips--md .mastery-pips__pip--filled {
+	background: var(--srs-review, rgb(85, 56, 110));
+}
+
+.mastery-pips--md .mastery-pips__pip--filled.mastery-pips__pip--mastered {
+	background: var(--green, #22c55e);
+}
+
+/* ── Small pips (lists, cards) ──────────────────────────────────────────── */
+.mastery-pips--sm .mastery-pips__pip {
+	width: 8px;
+	height: 8px;
+	border-radius: 2px;
+	background: var(--border, #e5e7eb);
+	transition: background 0.2s;
+}
+
+.mastery-pips--sm .mastery-pips__pip--filled {
+	background: var(--srs-review, rgb(85, 56, 110));
+}
+
+.mastery-pips--sm .mastery-pips__pip--filled.mastery-pips__pip--mastered {
+	background: var(--green, #22c55e);
+}
+
+.mastery-pips__badge {
+	font-size: 0.7rem;
+	font-weight: 700;
+	color: var(--green, #22c55e);
+	white-space: nowrap;
+}
+
+.mastery-pips--sm .mastery-pips__badge {
+	font-size: 0.6rem;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   SRS Status Badges
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.srs-badge {
+	font-size: 0.65rem;
+	font-weight: 600;
+	padding: 0.15rem 0.4rem;
+	border-radius: 4px;
+	text-transform: uppercase;
+	letter-spacing: 0.03em;
+	white-space: nowrap;
+}
+
+.srs-badge--new {
+	background: var(--srs-new);
+	color: #fff;
+}
+
+.srs-badge--learning {
+	background: var(--srs-learning);
+	color: #fff;
+}
+
+.srs-badge--review {
+	background: var(--srs-review);
+	color: #fff;
+}
+
+.srs-badge--mastered {
+	background: var(--green);
+	color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Grammar Library Page
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.grammar-library {
+	max-width: 960px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.grammar-library__title {
+	font-size: 1.75rem;
+	margin: 0 0 1.25rem;
+	color: var(--text);
+}
+
+/* ── Level filter tabs ──────────────────────────────────────────────────── */
+.grammar-library__tabs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-bottom: 1rem;
+	border-bottom: 2px solid var(--border);
+	padding-bottom: 0.5rem;
+}
+
+.grammar-library__tab {
+	padding: 0.45rem 0.85rem;
+	border-radius: var(--radius-sm);
+	font-size: 0.85rem;
+	font-weight: 500;
+	color: var(--text-muted);
+	text-decoration: none;
+	transition: background 0.15s, color 0.15s;
+	white-space: nowrap;
+}
+
+.grammar-library__tab:hover {
+	background: var(--border);
+	color: var(--text);
+}
+
+.grammar-library__tab--active {
+	background: var(--blue);
+	color: #fff;
+}
+
+.grammar-library__tab--active:hover {
+	background: var(--blue-dark);
+	color: #fff;
+}
+
+.grammar-library__tab-short {
+	display: none;
+}
+
+@media (max-width: 640px) {
+	.grammar-library__tab-full {
+		display: none;
+	}
+	.grammar-library__tab-short {
+		display: inline;
+	}
+}
+
+/* ── Search bar ─────────────────────────────────────────────────────────── */
+.grammar-library__search {
+	margin-bottom: 1.25rem;
+}
+
+.grammar-library__search-input {
+	width: 100%;
+	padding: 0.6rem 1rem;
+	font-size: 0.95rem;
+	border: 2px solid var(--border-input, #d1d5db);
+	border-radius: var(--radius-sm);
+	outline: none;
+	transition: border-color 0.15s;
+	background: var(--surface);
+	color: var(--text);
+}
+
+.grammar-library__search-input:focus {
+	border-color: var(--blue);
+}
+
+.grammar-library__search-input::placeholder {
+	color: var(--text-faint);
+}
+
+/* ── Grammar card grid ──────────────────────────────────────────────────── */
+.grammar-library__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+	gap: 0.75rem;
+}
+
+.grammar-card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1rem;
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.grammar-card:hover {
+	border-color: var(--blue);
+	box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
+}
+
+.grammar-card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.grammar-card__title {
+	font-weight: 700;
+	font-size: 1.05rem;
+	color: var(--text);
+}
+
+.grammar-card__badge {
+	font-size: 0.65rem;
+	font-weight: 600;
+	padding: 0.15rem 0.4rem;
+	border-radius: 4px;
+	background: var(--srs-new);
+	color: #fff;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.grammar-card__hint {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	line-height: 1.4;
+}
+
+.grammar-card__mastery {
+	margin-top: auto;
+	padding-top: 0.25rem;
+}
+
+/* ── Empty state ────────────────────────────────────────────────────────── */
+.grammar-library__empty {
+	text-align: center;
+	padding: 3rem 1rem;
+	color: var(--text-muted);
+}
+
+.grammar-library__empty h3 {
+	margin: 0 0 0.5rem;
+	color: var(--text);
+}
+
+.grammar-library__empty p {
+	margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Deck Index Page
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+.deck-index {
+	max-width: 960px;
+	margin: 2rem auto;
+	padding: 0 1rem;
+}
+
+.deck-index__title {
+	font-size: 1.75rem;
+	margin: 0 0 1.25rem;
+	color: var(--text);
+}
+
+.deck-index__grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	gap: 1rem;
+}
+
+.deck-card {
+	background: var(--surface);
+	border: 1px solid var(--border);
+	border-radius: var(--radius);
+	padding: 1.25rem;
+	text-decoration: none;
+	color: inherit;
+	display: flex;
+	gap: 1rem;
+	align-items: flex-start;
+	transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+.deck-card:hover {
+	border-color: var(--blue);
+	box-shadow: 0 2px 8px rgba(59, 130, 246, 0.12);
+}
+
+.deck-card__icon {
+	font-size: 2rem;
+	line-height: 1;
+	flex-shrink: 0;
+}
+
+.deck-card__body {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+
+.deck-card__header {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	gap: 0.5rem;
+}
+
+.deck-card__title {
+	font-size: 1.1rem;
+	font-weight: 700;
+	margin: 0;
+	color: var(--text);
+}
+
+.deck-card__badge {
+	font-size: 0.65rem;
+	font-weight: 600;
+	padding: 0.15rem 0.4rem;
+	border-radius: 4px;
+	background: var(--srs-new);
+	color: #fff;
+	white-space: nowrap;
+	flex-shrink: 0;
+}
+
+.deck-card__desc {
+	margin: 0;
+	font-size: 0.85rem;
+	color: var(--text-muted);
+	line-height: 1.4;
+}
+
+.deck-card__meta {
+	font-size: 0.8rem;
+	color: var(--text-faint);
+	display: flex;
+	gap: 0.35rem;
+	align-items: center;
+}
+
+.deck-card__dot {
+	font-size: 0.6rem;
+}
+
+.deck-card__progress {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-top: 0.25rem;
+}
+
+.deck-card__progress-bar {
+	flex: 1;
+	height: 6px;
+	background: var(--border);
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.deck-card__progress-fill {
+	height: 100%;
+	background: var(--green);
+	border-radius: 3px;
+	transition: width 0.3s ease;
+}
+
+.deck-card__progress-text {
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+.deck-card__coming-soon {
+	font-size: 0.8rem;
+	color: var(--text-faint);
+	font-style: italic;
+	margin-top: 0.25rem;
+}
+
+.deck-index__empty {
+	text-align: center;
+	padding: 3rem 1rem;
+	color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   Deck Detail Page — Additional Styles
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Title row with TOPIK badge ─────────────────────────────────────────── */
+.deck-header__title-row {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+}
+
+.deck-header__topik-badge {
+	font-size: 0.7rem;
+	font-weight: 600;
+	padding: 0.2rem 0.5rem;
+	border-radius: 4px;
+	background: var(--srs-new);
+	color: #fff;
+	white-space: nowrap;
+}
+
+/* ── Lesson progress bar ────────────────────────────────────────────────── */
+.lesson-group__progress {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	margin-bottom: 0.5rem;
+}
+
+.lesson-group__progress-bar {
+	flex: 1;
+	height: 6px;
+	background: var(--border);
+	border-radius: 3px;
+	overflow: hidden;
+}
+
+.lesson-group__progress-fill {
+	height: 100%;
+	background: var(--green);
+	border-radius: 3px;
+	transition: width 0.3s ease;
+}
+
+.lesson-group__progress-text {
+	font-size: 0.75rem;
+	color: var(--text-muted);
+	white-space: nowrap;
+}
+
+/* ── Grammar row pips ───────────────────────────────────────────────────── */
+.grammar-row__pips {
+	display: flex;
+	align-items: center;
 }
 

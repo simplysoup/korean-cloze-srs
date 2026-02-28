@@ -7,13 +7,14 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 	let totalReviewed = 0;
 	let learnableCount = 0;
 	let enrolledDeckSlugs: { slug: string; title: string }[] = [];
+	let primaryLearnDeckId: string | null = null;
 
 	if (locals.user) {
 		const userId = locals.user.id;
 
-		// Reviews currently due
+		// Reviews currently due (exclude mastered)
 		reviewsDue = await prisma.reviewCard.count({
-			where: { userId, due: { lte: new Date() } }
+			where: { userId, due: { lte: new Date() }, masteredAt: null }
 		});
 
 		// Lifetime reviews (for XP / level)
@@ -41,7 +42,13 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 			// Learnable = total grammar in deck minus what the user has learned (lastLearnedIndex + 1)
 			const totalInDeck = enrollment.deck.grammarPoints.length;
 			const learnedInDeck = enrollment.lastLearnedIndex + 1;
-			learnableCount += Math.max(0, totalInDeck - learnedInDeck);
+			const deckLearnable = Math.max(0, totalInDeck - learnedInDeck);
+			learnableCount += deckLearnable;
+
+			// First deck with learnable content becomes the primary learn target
+			if (!primaryLearnDeckId && deckLearnable > 0) {
+				primaryLearnDeckId = enrollment.deckId;
+			}
 		}
 	}
 
@@ -54,6 +61,7 @@ export const load: LayoutServerLoad = async ({ locals }) => {
 		totalReviewed,
 		learnableCount,
 		levelInfo,
-		enrolledDeckSlugs
+		enrolledDeckSlugs,
+		primaryLearnDeckId
 	};
 };
