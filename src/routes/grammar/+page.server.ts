@@ -1,10 +1,11 @@
 import type { PageServerLoad } from './$types';
 import { prisma } from '$lib/server/db';
+import { hangulToRoman } from '$lib/hangulToRoman';
 
 export const load: PageServerLoad = async ({ locals, url }) => {
 	const levelFilter = url.searchParams.get('level');
 
-	// Load all grammar points with their deck relations for TOPIK level info
+	// Load all grammar points with deck relations for TOPIK level + curriculum sort order
 	const grammarPoints = await prisma.grammarPoint.findMany({
 		include: {
 			decks: {
@@ -13,12 +14,34 @@ export const load: PageServerLoad = async ({ locals, url }) => {
 				}
 			},
 			clozeCards: { select: { id: true } }
-		},
-		orderBy: [{ level: 'asc' }, { title: 'asc' }]
+		}
 	});
 
-	// If user is authenticated, join with ReviewCard for mastery state
-	let masteryMap = new Map<string, { streakCorrect: number; masteredAt: string | null }>();
+	// Build a map from grammarPointId → { sortOrder, lessonNumber } from DeckGrammarPoint
+	const deckGPs = await prisma.deckGrammarPoint.findMany({
+		select: {
+			grammarPointId: true,
+			sortOrder: true,
+			lessonNumber: true,
+			deck: { select: { topikLevel: true } }
+		},
+		orderBy: [{ deck: { sortOrder: 'asc' } }, { sortOrder: 'asc' }]
+	});
+
+	const orderMap = new Map<string, { sortOrder: number; lessonNumber: number; topikLevel: string }>();
+	for (const dgp of deckGPs) {
+		// First deck association wins (a GP shouldn't be in multiple decks, but just in case)
+		if (!orderMap.has(dgp.grammarPointId)) {
+			orderMap.set(dgp.grammarPointId, {
+				sortOrder: dgp.sortOrder,
+				lessonNumber: dgp.lessonNumber,
+				topikLevel: dgp.deck.topikLevel
+			});
+		}
+	}
+
+	// If user is authenticated, join with ReviewCard for mastery/SRS state
+	let masteryMap = new Map<string, { streakCorrect: number; masteredAt: string | null; state: number }>();
 
 	if (locals.user) {
 		const reviewCards = await prisma.reviewCard.findMany({
@@ -26,31 +49,38 @@ export const load: PageServerLoad = async ({ locals, url }) => {
 			select: {
 				streakCorrect: true,
 				masteredAt: true,
-				grammarPointId: true
+				grammarPointId: true,
+				state: true
 			}
 		});
 
-		// Aggregate per grammar point (now 1:1, but keep aggregation logic for safety)
 		for (const rc of reviewCards) {
 			const gpId = rc.grammarPointId;
 			const existing = masteryMap.get(gpId);
 			if (!existing) {
 				masteryMap.set(gpId, {
 					streakCorrect: rc.streakCorrect,
-					masteredAt: rc.masteredAt?.toISOString() ?? null
+					masteredAt: rc.masteredAt?.toISOString() ?? null,
+					state: rc.state
 				});
 			} else {
-				// Use min streakCorrect (weakest card determines grammar point mastery display)
 				existing.streakCorrect = Math.min(existing.streakCorrect, rc.streakCorrect);
-				// If any card is not mastered, grammar point is not mastered
 				if (!rc.masteredAt) existing.masteredAt = null;
 			}
 		}
 	}
 
 	const points = grammarPoints.map((gp) => {
-		const topikLevel = gp.decks[0]?.deck.topikLevel ?? 'topik1-1';
+		const order = orderMap.get(gp.id);
+		const topikLevel = order?.topikLevel ?? gp.decks[0]?.deck.topikLevel ?? 'topik1-1';
 		const mastery = masteryMap.get(gp.id);
+
+		// Build searchable text: Hangul title + romanized title + english hint + description
+		const romanizedTitle = hangulToRoman(gp.title);
+		const searchText = [gp.title, romanizedTitle, gp.hint, gp.description]
+			.join(' ')
+			.toLowerCase();
+
 		return {
 			id: gp.id,
 			title: gp.title,
@@ -59,11 +89,21 @@ export const load: PageServerLoad = async ({ locals, url }) => {
 			category: gp.category,
 			level: gp.level,
 			topikLevel,
+			sortOrder: order?.sortOrder ?? 999,
+			lessonNumber: order?.lessonNumber ?? 99,
 			cardCount: gp.clozeCards.length,
 			streakCorrect: mastery?.streakCorrect ?? 0,
 			masteredAt: mastery?.masteredAt ?? null,
-			hasReviewCard: mastery !== undefined
+			srsState: mastery?.state ?? -1, // -1 = unstudied
+			hasReviewCard: mastery !== undefined,
+			searchText
 		};
+	});
+
+	// Sort by TOPIK level, then curriculum sort order
+	points.sort((a, b) => {
+		if (a.topikLevel !== b.topikLevel) return a.topikLevel.localeCompare(b.topikLevel);
+		return a.sortOrder - b.sortOrder;
 	});
 
 	// Apply level filter
