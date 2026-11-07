@@ -1,0 +1,122 @@
+// Drizzle schema for the local SQLite database (expo-sqlite driver).
+// Mirrors prisma/schema.prisma from the old app, minus the server/auth
+// tables (User/Session/Account/Verification) — v1 is offline-first with a
+// single local user, no auth/server yet. See mobile/README.md.
+import { integer, real, text, sqliteTable, uniqueIndex } from 'drizzle-orm/sqlite-core';
+
+export const grammarPoints = sqliteTable('grammar_points', {
+  id: text('id').primaryKey(),
+  title: text('title').notNull(),
+  category: text('category').notNull(),
+  tense: text('tense'),
+  register: text('register'),
+  hint: text('hint').notNull(),
+  description: text('description').notNull(),
+  level: integer('level').notNull().default(1),
+  tags: text('tags').notNull().default('[]'), // JSON string[]
+  structurePattern: text('structure_pattern'),
+  notes: text('notes'), // JSON NoteSeed[] | null
+  relatedPointIds: text('related_point_ids').notNull().default('[]'), // JSON string[]
+  lessonNumber: integer('lesson_number').notNull(),
+  position: integer('position').notNull(), // global curriculum position, 1-based
+});
+
+export const clozeCards = sqliteTable('cloze_cards', {
+  id: text('id').primaryKey(),
+  grammarPointId: text('grammar_point_id').notNull(),
+  fullSentence: text('full_sentence').notNull(),
+  sentenceWithBlank: text('sentence_with_blank').notNull(),
+  vocabBaseForm: text('vocab_base_form').notNull(),
+  answer: text('answer').notNull(),
+  alternateAnswers: text('alternate_answers').notNull().default('[]'), // JSON string[]
+  englishHint: text('english_hint').notNull().default('[]'), // JSON EnglishHintPart[]
+  introducedAtPosition: integer('introduced_at_position').notNull().default(0),
+});
+
+export const clozeCardGrammarTargets = sqliteTable('cloze_card_grammar_targets', {
+  id: text('id').primaryKey(),
+  clozeCardId: text('cloze_card_id').notNull(),
+  grammarPointId: text('grammar_point_id').notNull(),
+  wordReplacement: text('word_replacement').notNull(),
+  blankIndex: integer('blank_index').notNull().default(0),
+}, (t) => [uniqueIndex('cloze_card_grammar_target_unique').on(t.clozeCardId, t.grammarPointId)]);
+
+export const lessonExamples = sqliteTable('lesson_examples', {
+  id: text('id').primaryKey(),
+  grammarPointId: text('grammar_point_id').notNull(),
+  fullSentence: text('full_sentence').notNull(),
+  sentenceWithBlank: text('sentence_with_blank').notNull(),
+  answer: text('answer').notNull(),
+  englishHint: text('english_hint').notNull().default('[]'), // JSON EnglishHintPart[]
+  order: integer('order').notNull().default(0),
+  notes: text('notes'),
+});
+
+export const reviewCards = sqliteTable('review_cards', {
+  id: text('id').primaryKey(),
+  // Single local user in v1; userId is kept for a future sync/auth layer.
+  userId: text('user_id').notNull().default('local'),
+  grammarPointId: text('grammar_point_id').notNull(),
+  stability: real('stability').notNull().default(0),
+  difficulty: real('difficulty').notNull().default(0),
+  reps: integer('reps').notNull().default(0),
+  lapses: integer('lapses').notNull().default(0),
+  state: integer('state').notNull().default(0),
+  due: text('due').notNull(), // ISO date string
+  lastReview: text('last_review'),
+  streakCorrect: integer('streak_correct').notNull().default(0),
+  masteredAt: text('mastered_at'),
+  peakStability: real('peak_stability').notNull().default(0),
+  lastClozeCardId: text('last_cloze_card_id'),
+}, (t) => [uniqueIndex('review_card_user_gp_unique').on(t.userId, t.grammarPointId)]);
+
+export const reviewLogs = sqliteTable('review_logs', {
+  id: text('id').primaryKey(),
+  reviewCardId: text('review_card_id').notNull(),
+  userId: text('user_id').notNull().default('local'),
+  rating: integer('rating').notNull(),
+  reviewedAt: text('reviewed_at').notNull(), // ISO date string
+  stability: real('stability').notNull(),
+  difficulty: real('difficulty').notNull(),
+  elapsedDays: real('elapsed_days').notNull(),
+  scheduledDays: real('scheduled_days').notNull(),
+});
+
+export const decks = sqliteTable('decks', {
+  id: text('id').primaryKey(),
+  title: text('title').notNull(),
+  slug: text('slug').notNull(),
+  description: text('description').notNull().default(''),
+  level: integer('level').notNull().default(1),
+  topikLevel: text('topik_level').notNull().default('topik1-1'),
+  sortOrder: integer('sort_order').notNull().default(0),
+});
+
+export const deckGrammarPoints = sqliteTable('deck_grammar_points', {
+  id: text('id').primaryKey(),
+  deckId: text('deck_id').notNull(),
+  grammarPointId: text('grammar_point_id').notNull(),
+  sortOrder: integer('sort_order').notNull(),
+  lessonNumber: integer('lesson_number').notNull(),
+}, (t) => [uniqueIndex('deck_gp_unique').on(t.deckId, t.grammarPointId)]);
+
+export const userDeckProgress = sqliteTable('user_deck_progress', {
+  id: text('id').primaryKey(),
+  userId: text('user_id').notNull().default('local'),
+  deckId: text('deck_id').notNull(),
+  lastLearnedIndex: integer('last_learned_index').notNull().default(-1),
+  lastStudiedAt: text('last_studied_at'),
+}, (t) => [uniqueIndex('user_deck_progress_unique').on(t.userId, t.deckId)]);
+
+export const userStreaks = sqliteTable('user_streaks', {
+  id: text('id').primaryKey(),
+  userId: text('user_id').notNull().default('local'),
+  currentStreak: integer('current_streak').notNull().default(0),
+  longestStreak: integer('longest_streak').notNull().default(0),
+  lastStudiedDate: text('last_studied_date'), // YYYY-MM-DD
+});
+
+export const meta = sqliteTable('meta', {
+  key: text('key').primaryKey(),
+  value: text('value').notNull(),
+});

@@ -1,9 +1,10 @@
 # v2 Scope — Feature-Complete Bunpro Clone for Korean
 
 > **Status:** Draft, 2026-11-07. Written after auditing main at `99c2789`
-> (last commit 2026-02-28). Not yet approved. Stack decision is open —
-> see “Architecture decision” below. Nothing in this doc is pushed yet;
-> it lives on local branch `v2/scope` until Nicholas picks a stack.
+> (last commit 2026-02-28). **Decision, 2026-11-07: Nicholas picked D —
+> Expo React Native.** The v2 build is on local branch `v2/expo`
+> (from `v2/scope`); the recommended option A in “Architecture decision”
+> below is superseded. Nothing in this doc is pushed yet.
 
 ## Goal
 
