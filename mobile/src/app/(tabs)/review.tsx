@@ -144,7 +144,7 @@ export default function ReviewScreen() {
           </Text>
         )}
         <Link href="/" asChild>
-          <Pressable style={[commonStyles.btn, commonStyles.btnPrimary]}>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary])}>
             <Text style={commonStyles.btnText}>Dashboard</Text>
           </Pressable>
         </Link>

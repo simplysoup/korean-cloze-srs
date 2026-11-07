@@ -146,12 +146,12 @@ export default function LearnScreen() {
           You&apos;ve learned all grammar points in {session.deckTitle}.
         </Text>
         <Link href="/review" asChild>
-          <Pressable style={[commonStyles.btn, commonStyles.btnPrimary, styles.wideButton]}>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.wideButton])}>
             <Text style={commonStyles.btnText}>Review Now</Text>
           </Pressable>
         </Link>
         <Link href="/" asChild>
-          <Pressable style={[commonStyles.btn, commonStyles.btnSecondary, styles.wideButton]}>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnSecondary, styles.wideButton])}>
             <Text style={commonStyles.btnTextDark}>Dashboard</Text>
           </Pressable>
         </Link>
@@ -182,7 +182,7 @@ export default function LearnScreen() {
             </Text>
           ) : null}
           <Link href="/review" asChild>
-            <Pressable style={[commonStyles.btn, commonStyles.btnPrimary, styles.wideButton]}>
+            <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.wideButton])}>
               <Text style={commonStyles.btnText}>Review Now</Text>
             </Pressable>
           </Link>
@@ -193,7 +193,7 @@ export default function LearnScreen() {
             <Text style={commonStyles.btnTextDark}>Learn More</Text>
           </Pressable>
           <Link href="/" asChild>
-            <Pressable style={[commonStyles.btn, commonStyles.btnSecondary, styles.wideButton]}>
+            <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnSecondary, styles.wideButton])}>
               <Text style={commonStyles.btnTextDark}>Dashboard</Text>
             </Pressable>
           </Link>

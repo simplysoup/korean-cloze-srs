@@ -55,7 +55,7 @@ export default function DashboardScreen() {
         <Text style={styles.dueCount}>{stats.dueCount}</Text>
         <Text style={styles.dueLabel}>{stats.dueCount === 1 ? 'review due' : 'reviews due'}</Text>
         <Link href="/review" asChild>
-          <Pressable style={[commonStyles.btn, commonStyles.btnPrimary, styles.startButton]}>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.startButton])}>
             <Text style={commonStyles.btnText}>
               {stats.dueCount > 0 ? 'Start Review' : 'Review'}
             </Text>
