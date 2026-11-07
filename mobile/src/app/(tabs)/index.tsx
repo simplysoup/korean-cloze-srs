@@ -15,12 +15,27 @@ const DISTRIBUTION: { key: keyof DashboardStats['srsDistribution']; label: strin
 
 export default function DashboardScreen() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
+  const [error, setError] = useState<string | null>(null);
 
   useFocusEffect(
     useCallback(() => {
-      setStats(getDashboardStats());
+      try {
+        setStats(getDashboardStats());
+        setError(null);
+      } catch (e) {
+        setError(e instanceof Error ? e.message : 'Failed to load dashboard.');
+      }
     }, []),
   );
+
+  if (error) {
+    return (
+      <View style={commonStyles.centered}>
+        <Text style={commonStyles.title}>Couldn&apos;t load the dashboard</Text>
+        <Text style={commonStyles.subtitle}>{error}</Text>
+      </View>
+    );
+  }
 
   if (!stats) {
     return (
