@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from 'react';
-import { ActivityIndicator, Pressable, Text, View } from 'react-native';
+import { ActivityIndicator, Platform, Pressable, Text, View } from 'react-native';
 import { Stack } from 'expo-router';
+import { openDatabaseAsync } from 'expo-sqlite';
 import { initDb } from '../db';
 import { colors, commonStyles } from '../components/theme';
 
@@ -11,26 +12,38 @@ export default function RootLayout() {
   const [error, setError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
 
-  // On web, expo-sqlite runs SQLite in a worker (wa-sqlite). The first
-  // synchronous open races worker startup (wasm fetch + compile + OPFS
-  // VFS init) against a ~73ms Atomics.pause spin budget in the sync
-  // channel, so it can fail with "Sync operation timeout" even though the
-  // worker keeps initializing in the background. Retrying a moment later
-  // succeeds once the worker is warm. On native the first attempt
-  // succeeds and no retry ever runs.
+  // On web, expo-sqlite runs SQLite in a worker (wa-sqlite). A synchronous
+  // open races worker startup (wasm fetch + compile + OPFS VFS init)
+  // against a ~73ms Atomics.pause spin budget in the sync channel, so the
+  // first sync open fails with "Sync operation timeout" — and blind
+  // retries make it worse, because the worker has no guard against
+  // concurrent init and a second open mid-init fails with SQLITE_MISUSE
+  // (error 21). Fix: on web, warm the worker up once through the async
+  // API, which has no spin budget and waits for init to finish, then
+  // close it and do the normal synchronous init against the warm worker.
+  // On native the warm-up is skipped and the first attempt just works.
   const init = useCallback(async () => {
     setError(null);
-    for (let i = 0; i < 8; i++) {
+    try {
+      if (Platform.OS === 'web') {
+        const warm = await openDatabaseAsync('korean-cloze-srs.db');
+        await warm.closeAsync();
+      }
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Failed to open the database.');
+      return;
+    }
+    for (let i = 0; i < 3; i++) {
       try {
         initDb();
         setReady(true);
         return;
       } catch (e) {
-        if (i === 7) {
+        if (i === 2) {
           setError(e instanceof Error ? e.message : 'Failed to open the database.');
           return;
         }
-        await sleep(400 * (i + 1));
+        await sleep(1000);
       }
     }
   }, []);
