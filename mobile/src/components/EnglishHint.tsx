@@ -45,6 +45,6 @@ const styles = StyleSheet.create({
     textDecorationLine: 'underline',
   },
   related: {
-    color: colors.amber,
+    color: colors.orange,
   },
 });

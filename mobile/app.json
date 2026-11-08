@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "Korean Cloze SRS",
+    "name": "Munpro",
     "slug": "korean-cloze-srs",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -19,7 +19,8 @@
       "predictiveBackGestureEnabled": false
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/favicon.png",
+      "output": "static"
     },
     "plugins": [
       "expo-router",

@@ -123,3 +123,40 @@ export function formatNextReview(due: Date | null, now: Date = new Date()): stri
   const diffDay = Math.round(diffHr / 24);
   return `${diffDay} day${diffDay === 1 ? '' : 's'}`;
 }
+
+/**
+ * Bunpro-style SRS rank label for a review card, from its FSRS state and
+ * stability (in days). Bands are a simple, honest mapping — not Bunpro's
+ * exact thresholds, which are not public:
+ *   New → "New", Learning/Relearning → "Beginner I",
+ *   Review → Beginner II–IV, then Seasoned I–III by stability, then Master.
+ * A card mastered by 8 correct answers in a row is always "Master".
+ */
+export function srsRankLabel(state: number, stabilityDays: number, mastered: boolean): string {
+  if (mastered) return 'Master';
+  if (state === 0) return 'New';
+  if (state === 1 || state === 3) return 'Beginner I';
+  if (stabilityDays < 3) return 'Beginner II';
+  if (stabilityDays < 7) return 'Beginner III';
+  if (stabilityDays < 14) return 'Beginner IV';
+  if (stabilityDays < 30) return 'Seasoned I';
+  if (stabilityDays < 90) return 'Seasoned II';
+  if (stabilityDays < 180) return 'Seasoned III';
+  return 'Master';
+}
+
+/** Bunpro-style SRS stage from FSRS state + stability (days). Used by the
+ * dashboard Progress card and Cram's quick counts. The thresholds sit in
+ * the same ballpark as Bunpro's intervals (Adept 2/4/8 days, Seasoned
+ * 12/24/48 days, Expert 3/6 months) — stability is the FSRS interval, so
+ * it is the honest analogue. */
+export type SrsStage = 'beginner' | 'adept' | 'seasoned' | 'expert' | 'master';
+
+export function stageForCard(state: number, stabilityDays: number, mastered: boolean): SrsStage {
+  if (mastered || stabilityDays >= 180) return 'master';
+  if (state === 0 || state === 1 || state === 3 || stabilityDays < 1) return 'beginner';
+  if (stabilityDays < 7) return 'adept';
+  if (stabilityDays < 30) return 'seasoned';
+  return 'expert';
+}
+

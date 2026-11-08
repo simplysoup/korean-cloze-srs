@@ -1,10 +1,13 @@
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { Link, useFocusEffect } from 'expo-router';
 import {
   completeLearnSession,
+  completeLearnSessionWithRetry,
+  getActiveDeckId,
   getGrammarDetail,
   getLearnSession,
+  markPointKnown,
   type LearnSession,
 } from '../../db';
 import { checkAnswers } from '../../lib/srs';
@@ -12,9 +15,6 @@ import { romanToHangul } from '../../lib/romanToHangul';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
 import { colors, commonStyles } from '../../components/theme';
-
-const DECK_ID = 'deck_topik1_level1';
-const SESSION_SIZE = 5;
 
 type Phase = 'learning' | 'quiz' | 'complete';
 type Note = { type: string; title: string; content: string };
@@ -33,35 +33,56 @@ function shuffle<T>(items: T[]): T[] {
   return arr;
 }
 
+const NOTE_LABEL: Record<string, string> = {
+  caution: 'Caution',
+  tip: 'Tip',
+  funfact: 'Note',
+};
+
 export default function LearnScreen() {
   const [session, setSession] = useState<LearnSession | null>(null);
   const [phase, setPhase] = useState<Phase>('learning');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [activeTab, setActiveTab] = useState<'details' | 'examples'>('details');
   const [addedIds, setAddedIds] = useState<Set<string>>(new Set());
-  const [quizCards, setQuizCards] = useState<QuizCard[]>([]);
-  const [quizIndex, setQuizIndex] = useState(0);
+  const [knownIds, setKnownIds] = useState<Set<string>>(new Set());
+  const [quizQueue, setQuizQueue] = useState<QuizCard[]>([]);
   const [quizRoman, setQuizRoman] = useState('');
   const [quizSubmitted, setQuizSubmitted] = useState(false);
   const [quizAnswerRevealed, setQuizAnswerRevealed] = useState(false);
-  const [quizCorrect, setQuizCorrect] = useState(0);
-  const [quizAnswered, setQuizAnswered] = useState(0);
+  const [quizRight, setQuizRight] = useState(0);
+  const [quizWrong, setQuizWrong] = useState(0);
+  const [quizFinished, setQuizFinished] = useState(0);
+  const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  // Self-study is an explicit opt-in beyond the daily queue (Bunpro-style:
+  // the daily queue is the default, extra learning is the user's choice).
+  const [selfStudy, setSelfStudy] = useState(false);
 
   const loadSession = useCallback(() => {
-    setSession(getLearnSession(DECK_ID, SESSION_SIZE));
+    setSession(getLearnSession(getActiveDeckId(), selfStudy));
     setPhase('learning');
     setCurrentIndex(0);
     setActiveTab('details');
     setAddedIds(new Set());
-    setQuizCards([]);
-    setQuizIndex(0);
-    setQuizCorrect(0);
-    setQuizAnswered(0);
+    setKnownIds(new Set());
+    setQuizQueue([]);
+    setQuizRight(0);
+    setQuizWrong(0);
+    setQuizFinished(0);
     setError(null);
-  }, []);
+  }, [selfStudy]);
 
   useFocusEffect(loadSession);
+
+  // Opting into self-study reloads the session without the daily cap.
+  // Deferred to a timeout: the lint rule forbids synchronous setState in
+  // the effect body.
+  useEffect(() => {
+    if (!selfStudy) return;
+    const t = setTimeout(loadSession, 0);
+    return () => clearTimeout(t);
+  }, [selfStudy, loadSession]);
 
   const grammarPoints = session?.grammarPoints ?? [];
   const currentGP = grammarPoints[currentIndex];
@@ -74,7 +95,7 @@ export default function LearnScreen() {
   const vocabBaseForm = detail?.cards[0]?.vocabBaseForm;
   const notes = currentGP ? asNotes(currentGP.notes) : null;
 
-  const currentQuizCard = quizCards[quizIndex] ?? null;
+  const currentQuizCard = quizQueue[0] ?? null;
   const quizHangul = romanToHangul(quizRoman);
   const quizAnswers = currentQuizCard
     ? [currentQuizCard.answer, ...currentQuizCard.alternateAnswers]
@@ -84,32 +105,60 @@ export default function LearnScreen() {
       ? checkAnswers([quizHangul], quizAnswers)
       : false;
 
-  function addToDeck() {
+  /** Advance past the current point, adding it to the deck. */
+  function advance() {
     if (!currentGP) return;
     const nextAdded = new Set(addedIds);
     nextAdded.add(currentGP.id);
     setAddedIds(nextAdded);
-    if (nextAdded.size >= SESSION_SIZE || currentIndex >= grammarPoints.length - 1) {
-      startQuiz([...nextAdded]);
+    moveToNextPoint(nextAdded);
+  }
+
+  /** "I already know this": master the point immediately, never test it. */
+  function markKnown() {
+    if (!currentGP || !session) return;
+    try {
+      markPointKnown(session.deckId, currentGP.id);
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not mark this point as known.');
+      return;
+    }
+    const nextKnown = new Set(knownIds);
+    nextKnown.add(currentGP.id);
+    setKnownIds(nextKnown);
+    moveToNextPoint(addedIds);
+  }
+
+  function moveToNextPoint(nextAdded: Set<string>) {
+    if (currentIndex >= grammarPoints.length - 1) {
+      finishLearning(nextAdded);
     } else {
       setCurrentIndex((i) => i + 1);
       setActiveTab('details');
     }
   }
 
-  function startQuiz(ids: string[]) {
+  async function finishLearning(nextAdded: Set<string>) {
     if (!session) return;
-    try {
-      const cards = completeLearnSession(session.deckId, ids);
-      setQuizCards(shuffle(cards));
-    } catch (e) {
-      setError(e instanceof Error ? e.message : 'Could not add these points to your deck.');
+    if (nextAdded.size === 0) {
+      // Everything was already known — nothing to quiz.
+      setPhase('complete');
       return;
     }
-    setQuizIndex(0);
-    setQuizCorrect(0);
-    setQuizAnswered(0);
+    setSaving(true);
+    try {
+      const cards = await completeLearnSessionWithRetry(session.deckId, [...nextAdded]);
+      setQuizQueue(shuffle(cards));
+    } catch (e) {
+      setError(e instanceof Error ? e.message : 'Could not add these points to your deck.');
+      setSaving(false);
+      return;
+    }
+    setQuizRight(0);
+    setQuizWrong(0);
+    setQuizFinished(0);
     resetQuizCard();
+    setSaving(false);
     setPhase('quiz');
   }
 
@@ -122,26 +171,60 @@ export default function LearnScreen() {
   function submitQuiz() {
     if (!currentQuizCard || quizHangul.trim() === '') return;
     setQuizSubmitted(true);
-    setQuizAnswered((n) => n + 1);
     if (checkAnswers([quizHangul], quizAnswers)) {
-      setQuizCorrect((n) => n + 1);
+      setQuizRight((n) => n + 1);
+    } else {
+      setQuizWrong((n) => n + 1);
     }
   }
 
   function nextQuizCard() {
-    if (quizIndex < quizCards.length - 1) {
-      setQuizIndex((i) => i + 1);
-      resetQuizCard();
+    if (!currentQuizCard) return;
+    if (quizIsCorrect) {
+      // Answered correctly: this card is done. Finish when the queue empties.
+      const remaining = quizQueue.slice(1);
+      setQuizFinished((n) => n + 1);
+      if (remaining.length === 0) {
+        setPhase('complete');
+      } else {
+        setQuizQueue(remaining);
+        resetQuizCard();
+      }
     } else {
-      setPhase('complete');
+      // Wrong: the card goes back to the end of the queue until it is
+      // answered correctly — every new point must eventually be right.
+      setQuizQueue([...quizQueue.slice(1), currentQuizCard]);
+      resetQuizCard();
     }
+  }
+
+  // ── Vacation mode ────────────────────────────────────────────────────────
+  if (session?.vacation) {
+    return (
+      <View style={commonStyles.centered}>
+        <Text style={styles.bigTitle}>Vacation mode is on</Text>
+        <Text style={[commonStyles.subtitle, styles.centerText]}>
+          Learning is paused, and your streak is frozen. Turn it off in Settings to resume.
+        </Text>
+        <Link href="/settings" asChild>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.wideButton])}>
+            <Text style={commonStyles.btnText}>Settings</Text>
+          </Pressable>
+        </Link>
+        <Link href="/" asChild>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnSecondary, styles.wideButton])}>
+            <Text style={commonStyles.btnTextDark}>Dashboard</Text>
+          </Pressable>
+        </Link>
+      </View>
+    );
   }
 
   // ── Deck complete ──────────────────────────────────────────────────────────
   if (session?.deckComplete) {
     return (
       <View style={commonStyles.centered}>
-        <Text style={styles.bigTitle}>🎉 Deck Complete!</Text>
+        <Text style={styles.bigTitle}>Deck Complete!</Text>
         <Text style={[commonStyles.subtitle, styles.centerText]}>
           You&apos;ve learned all grammar points in {session.deckTitle}.
         </Text>
@@ -159,26 +242,58 @@ export default function LearnScreen() {
     );
   }
 
+  // ── Daily queue complete (self-study is opt-in) ──────────────────────────
+  if (session?.queueDone) {
+    return (
+      <View style={commonStyles.centered}>
+        <Text style={styles.bigTitle}>Today&apos;s queue complete</Text>
+        <Text style={[commonStyles.subtitle, styles.centerText]}>
+          You learned {session.learnedToday}/{session.dailyLimit} grammar points today.
+          {session.totalRemaining > 0
+            ? ` ${session.totalRemaining} ${session.totalRemaining === 1 ? 'point' : 'points'} left in the deck.`
+            : ''}
+        </Text>
+        <Pressable
+          onPress={() => setSelfStudy(true)}
+          style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.wideButton])}
+        >
+          <Text style={commonStyles.btnText}>Self-Study (extra points)</Text>
+        </Pressable>
+        <Link href="/review" asChild>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnSecondary, styles.wideButton])}>
+            <Text style={commonStyles.btnTextDark}>Review Now</Text>
+          </Pressable>
+        </Link>
+        <Link href="/" asChild>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnSecondary, styles.wideButton])}>
+            <Text style={commonStyles.btnTextDark}>Dashboard</Text>
+          </Pressable>
+        </Link>
+      </View>
+    );
+  }
+
   // ── Session complete ───────────────────────────────────────────────────────
   if (phase === 'complete') {
     const learned = grammarPoints.filter((gp) => addedIds.has(gp.id));
+    const known = grammarPoints.filter((gp) => knownIds.has(gp.id));
     return (
       <ScrollView style={commonStyles.screen} contentContainerStyle={commonStyles.scrollContent}>
         <View style={commonStyles.centered}>
-          <Text style={styles.bigTitle}>🎉 Session Complete!</Text>
+          <Text style={styles.bigTitle}>Session Complete!</Text>
           <Text style={commonStyles.subtitle}>
-            You learned {learned.length} grammar {learned.length === 1 ? 'point' : 'points'}:
+            You learned {learned.length} grammar {learned.length === 1 ? 'point' : 'points'}
+            {known.length > 0 ? ` and marked ${known.length} as already known` : ''}:
           </Text>
           {learned.map((gp) => (
             <Text key={gp.id} style={commonStyles.body}>
               • {gp.title}
             </Text>
           ))}
-          <Text style={commonStyles.body}>{quizCards.length} practice cards added to your queue.</Text>
-          {quizAnswered > 0 ? (
+          {quizFinished > 0 ? (
             <Text style={commonStyles.body}>
-              Practice quiz: {quizCorrect}/{quizAnswered} correct (
-              {Math.round((quizCorrect / quizAnswered) * 100)}%)
+              Review stage: {quizFinished} {quizFinished === 1 ? 'card' : 'cards'} answered
+              correctly ({quizRight} right, {quizWrong} wrong along the way).
             </Text>
           ) : null}
           <Link href="/review" asChild>
@@ -202,7 +317,7 @@ export default function LearnScreen() {
     );
   }
 
-  // ── Practice quiz ──────────────────────────────────────────────────────────
+  // ── Review stage (quiz) — one card per new point, misses re-queue ─────────
   if (phase === 'quiz' && currentQuizCard) {
     return (
       <ScrollView
@@ -210,12 +325,22 @@ export default function LearnScreen() {
         contentContainerStyle={[commonStyles.scrollContent, styles.quizContent]}
         keyboardShouldPersistTaps="handled"
       >
-        <Text style={commonStyles.title}>Practice Quiz</Text>
-        <Text style={commonStyles.subtitle}>Test what you just learned</Text>
+        <Text style={commonStyles.title}>Review Stage</Text>
+        <Text style={commonStyles.subtitle}>Test what you just learned — every card must be answered correctly to finish.</Text>
         <Text style={commonStyles.muted}>
-          {quizIndex + 1} / {quizCards.length}
-          {quizAnswered > 0 ? `  (${quizCorrect}/${quizAnswered} correct)` : ''}
+          {quizFinished + 1} / {quizFinished + quizQueue.length}
+          {quizRight + quizWrong > 0 ? `  (${quizRight} right, ${quizWrong} wrong)` : ''}
         </Text>
+        <View style={[styles.barTrack, { width: '100%' }]}>
+          <View
+            style={[
+              styles.barFill,
+              {
+                width: `${Math.min(100, (quizFinished / (quizFinished + quizQueue.length)) * 100)}%`,
+              },
+            ]}
+          />
+        </View>
 
         <ClozeSentence
           sentenceWithBlank={currentQuizCard.sentenceWithBlank}
@@ -230,8 +355,8 @@ export default function LearnScreen() {
 
         {!quizSubmitted && !quizAnswerRevealed ? (
           <TextInput
-            style={commonStyles.input}
-            placeholder="Type romanized Korean…"
+            style={commonStyles.pillInput}
+            placeholder="답"
             placeholderTextColor={colors.faint}
             value={quizRoman}
             onChangeText={setQuizRoman}
@@ -250,10 +375,10 @@ export default function LearnScreen() {
             style={[styles.result, quizIsCorrect ? styles.resultCorrect : styles.resultIncorrect]}
           >
             {quizIsCorrect
-              ? '✓ Correct!'
+              ? 'Correct!'
               : quizAnswerRevealed
                 ? `Answer: ${quizAnswers.join(' / ')}`
-                : '✗ Incorrect'}
+                : 'Incorrect'}
           </Text>
         ) : null}
 
@@ -277,7 +402,7 @@ export default function LearnScreen() {
               style={[commonStyles.btn, commonStyles.btnPrimary, styles.controlButton]}
             >
               <Text style={commonStyles.btnText}>
-                {quizIndex < quizCards.length - 1 ? 'Next →' : 'Finish'}
+                {quizQueue.length <= 1 ? 'Finish' : 'Next →'}
               </Text>
             </Pressable>
           ) : !quizAnswerRevealed ? (
@@ -292,21 +417,24 @@ export default function LearnScreen() {
               onPress={nextQuizCard}
               style={[commonStyles.btn, commonStyles.btnPrimary, styles.controlButton]}
             >
-              <Text style={commonStyles.btnText}>
-                {quizIndex < quizCards.length - 1 ? 'Next →' : 'Finish'}
-              </Text>
+              <Text style={commonStyles.btnText}>Try Again Later</Text>
             </Pressable>
           )}
         </View>
-
-        <Pressable onPress={() => setPhase('complete')} style={styles.ghostButton}>
-          <Text style={styles.ghostText}>Skip Quiz &amp; Finish</Text>
-        </Pressable>
       </ScrollView>
     );
   }
 
-  // ── Learning phase ─────────────────────────────────────────────────────────
+  // ── Saving the learned set ───────────────────────────────────────────────
+  if (saving) {
+    return (
+      <View style={commonStyles.centered}>
+        <Text style={commonStyles.subtitle}>Saving your progress…</Text>
+      </View>
+    );
+  }
+
+  // ── Learning phase: one point page at a time ───────────────────────────────
   if (!currentGP) {
     return (
       <View style={commonStyles.centered}>
@@ -315,28 +443,52 @@ export default function LearnScreen() {
     );
   }
 
-  const alreadyAdded = addedIds.has(currentGP.id);
-
   return (
     <ScrollView style={commonStyles.screen} contentContainerStyle={commonStyles.scrollContent}>
-      {/* Session progress */}
+      {/* Active deck (chosen in the catalogue) + a way to change it. */}
+      <View style={styles.deckLine}>
+        <Text style={commonStyles.muted}>{session?.deckTitle ?? ''}</Text>
+        <Link href="/decks" asChild>
+          <Pressable>
+            <Text style={styles.changeDeck}>Change deck ›</Text>
+          </Pressable>
+        </Link>
+      </View>
+      {/* Session progress — today's queue (or self-study count). */}
       <View style={styles.sessionBar}>
         <Text style={commonStyles.muted}>
-          {addedIds.size} / {SESSION_SIZE} grammar points · {session?.totalRemaining ?? 0} left in
-          deck
+          {selfStudy
+            ? `${addedIds.size + knownIds.size} / ${grammarPoints.length} grammar points · Self-Study`
+            : `${(session?.learnedToday ?? 0) + addedIds.size + knownIds.size} / ${
+                session?.dailyLimit ?? 5
+              } today · ${session?.totalRemaining ?? 0} left in deck`}
         </Text>
         <View style={styles.barTrack}>
           <View
             style={[
               styles.barFill,
-              { width: `${Math.min(100, (addedIds.size / SESSION_SIZE) * 100)}%` },
+              {
+                width: selfStudy
+                  ? `${Math.min(
+                      100,
+                      grammarPoints.length > 0
+                        ? ((addedIds.size + knownIds.size) / grammarPoints.length) * 100
+                        : 0,
+                    )}%`
+                  : `${Math.min(
+                      100,
+                      (((session?.learnedToday ?? 0) + addedIds.size + knownIds.size) /
+                        (session?.dailyLimit ?? 5)) *
+                        100,
+                    )}%`,
+              },
             ]}
           />
         </View>
       </View>
-      {error ? <Text style={styles.error}>⚠️ {error}</Text> : null}
+      {error ? <Text style={styles.error}>{error}</Text> : null}
 
-      {/* Hero */}
+      {/* Point page: huge red form, meaning, tabs */}
       <Text style={styles.heroTitle}>{currentGP.title}</Text>
       {vocabBaseForm ? <Text style={styles.heroVocab}>{vocabBaseForm}</Text> : null}
       <Text style={commonStyles.subtitle}>{currentGP.hint}</Text>
@@ -344,7 +496,6 @@ export default function LearnScreen() {
         {currentIndex + 1} of {grammarPoints.length} in this session
       </Text>
 
-      {/* Tabs */}
       <View style={styles.tabRow}>
         <Pressable
           onPress={() => setActiveTab('details')}
@@ -389,7 +540,7 @@ export default function LearnScreen() {
           {notes?.map((note, i) => (
             <View key={i} style={commonStyles.card}>
               <Text style={styles.cardLabel}>
-                {note.type === 'caution' ? '⚠️' : note.type === 'tip' ? '💡' : '✨'} {note.title}
+                {NOTE_LABEL[note.type] ?? 'Note'} — {note.title}
               </Text>
               <Text style={commonStyles.body}>{note.content}</Text>
             </View>
@@ -413,8 +564,16 @@ export default function LearnScreen() {
         </View>
       )}
 
-      {/* Footer nav */}
+      {/* Footer: green "I already know this" + blue advance arrow */}
       <View style={styles.footer}>
+        <Pressable onPress={markKnown} style={styles.knownButton}>
+          <Text style={styles.knownText}>I already know this</Text>
+        </Pressable>
+        <Pressable onPress={advance} style={styles.advanceButton} accessibilityRole="button">
+          <Text style={styles.advanceText}>→</Text>
+        </Pressable>
+      </View>
+      <View style={styles.footerNav}>
         <Pressable
           onPress={() => {
             if (currentIndex > 0) {
@@ -423,13 +582,11 @@ export default function LearnScreen() {
             }
           }}
           disabled={currentIndex === 0}
-          style={[
-            commonStyles.btn,
-            commonStyles.btnSecondary,
-            currentIndex === 0 ? commonStyles.btnDisabled : undefined,
-          ]}
+          style={styles.ghostButton}
         >
-          <Text style={commonStyles.btnTextDark}>← Previous</Text>
+          <Text style={[styles.ghostText, currentIndex === 0 ? styles.ghostTextDisabled : undefined]}>
+            ← Previous
+          </Text>
         </Pressable>
         <View style={styles.pellets}>
           {grammarPoints.map((gp, i) => (
@@ -438,22 +595,11 @@ export default function LearnScreen() {
               style={[
                 styles.pellet,
                 i === currentIndex ? styles.pelletActive : undefined,
-                addedIds.has(gp.id) ? styles.pelletDone : undefined,
+                addedIds.has(gp.id) || knownIds.has(gp.id) ? styles.pelletDone : undefined,
               ]}
             />
           ))}
         </View>
-        <Pressable
-          onPress={addToDeck}
-          disabled={alreadyAdded}
-          style={[
-            commonStyles.btn,
-            commonStyles.btnPrimary,
-            alreadyAdded ? commonStyles.btnDisabled : undefined,
-          ]}
-        >
-          <Text style={commonStyles.btnText}>{alreadyAdded ? '✓ Added' : 'Add to Deck'}</Text>
-        </Pressable>
       </View>
     </ScrollView>
   );
@@ -496,18 +642,19 @@ const styles = StyleSheet.create({
   controlButton: {
     minWidth: 120,
   },
-  ghostButton: {
-    minHeight: 44,
-    justifyContent: 'center',
-    paddingHorizontal: 12,
-  },
-  ghostText: {
-    fontSize: 14,
-    color: colors.muted,
-    textDecorationLine: 'underline',
-  },
   sessionBar: {
     gap: 6,
+  },
+  deckLine: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginBottom: 8,
+  },
+  changeDeck: {
+    color: colors.primary,
+    fontSize: 14,
+    fontWeight: '600',
   },
   barTrack: {
     height: 8,
@@ -525,14 +672,14 @@ const styles = StyleSheet.create({
     color: colors.redDark,
   },
   heroTitle: {
-    fontSize: 28,
+    fontSize: 36,
     fontWeight: '800',
-    color: colors.text,
+    color: colors.primary,
     marginTop: 12,
   },
   heroVocab: {
     fontSize: 20,
-    color: colors.primaryDark,
+    color: colors.muted,
     marginTop: 4,
   },
   tabRow: {
@@ -581,9 +728,55 @@ const styles = StyleSheet.create({
   footer: {
     flexDirection: 'row',
     alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: 8,
+    gap: 12,
     marginTop: 20,
+  },
+  knownButton: {
+    flex: 1,
+    minHeight: 52,
+    borderRadius: 8,
+    backgroundColor: colors.green,
+    alignItems: 'center',
+    justifyContent: 'center',
+    paddingHorizontal: 16,
+  },
+  knownText: {
+    fontSize: 16,
+    fontWeight: '700',
+    color: '#fff',
+  },
+  advanceButton: {
+    width: 56,
+    height: 56,
+    borderRadius: 28,
+    backgroundColor: colors.blue,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  advanceText: {
+    fontSize: 26,
+    fontWeight: '700',
+    color: '#fff',
+  },
+  footerNav: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginTop: 12,
+  },
+  ghostButton: {
+    minHeight: 44,
+    justifyContent: 'center',
+    paddingHorizontal: 12,
+  },
+  ghostText: {
+    fontSize: 14,
+    color: colors.muted,
+    textDecorationLine: 'underline',
+  },
+  ghostTextDisabled: {
+    color: colors.faint,
+    textDecorationLine: 'none',
   },
   pellets: {
     flexDirection: 'row',

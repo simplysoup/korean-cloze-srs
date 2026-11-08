@@ -1,69 +1,22 @@
-import { useCallback, useState } from 'react';
-import { Text } from 'react-native';
-import { Tabs, useFocusEffect } from 'expo-router';
-import { getDashboardStats } from '../../db';
-import { colors } from '../../components/theme';
+import { Tabs } from 'expo-router';
 
-function TabIcon({ label }: { label: string }) {
-  return <Text style={{ fontSize: 20 }}>{label}</Text>;
-}
-
+// The tab navigator is only the router now: all navigation lives in the
+// top AppHeader (desktop navbar / mobile hamburger), so the bottom tab
+// bar is hidden entirely. The bar style still carries height: 0 so the
+// navigator reports a zero tab-bar height and screens get no bottom
+// padding reserved for a bar that isn't there.
 export default function TabsLayout() {
-  const [dueCount, setDueCount] = useState(0);
-
-  // Refresh the Review badge whenever the user lands on any tab.
-  useFocusEffect(
-    useCallback(() => {
-      try {
-        setDueCount(getDashboardStats().dueCount);
-      } catch {
-        // DB not ready yet; the root layout gates on initDb, so this is defensive.
-      }
-    }, []),
-  );
-
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: colors.primary,
-        tabBarInactiveTintColor: colors.muted,
-        tabBarLabelStyle: { fontSize: 12 },
-        headerTitleStyle: { fontWeight: '700' },
+        headerShown: false,
+        tabBarStyle: { display: 'none', height: 0 },
       }}
     >
-      <Tabs.Screen
-        name="index"
-        options={{
-          title: 'Dashboard',
-          tabBarLabel: 'Dashboard',
-          tabBarIcon: () => <TabIcon label="📊" />,
-        }}
-      />
-      <Tabs.Screen
-        name="learn"
-        options={{
-          title: 'Learn',
-          tabBarLabel: 'Learn',
-          tabBarIcon: () => <TabIcon label="📚" />,
-        }}
-      />
-      <Tabs.Screen
-        name="review"
-        options={{
-          title: 'Review',
-          tabBarLabel: 'Review',
-          tabBarIcon: () => <TabIcon label="✏️" />,
-          tabBarBadge: dueCount > 0 ? dueCount : undefined,
-        }}
-      />
-      <Tabs.Screen
-        name="grammar"
-        options={{
-          title: 'Grammar',
-          tabBarLabel: 'Grammar',
-          tabBarIcon: () => <TabIcon label="🔤" />,
-        }}
-      />
+      <Tabs.Screen name="index" options={{ title: 'Dashboard' }} />
+      <Tabs.Screen name="learn" options={{ title: 'Learn' }} />
+      <Tabs.Screen name="review" options={{ title: 'Reviews' }} />
+      <Tabs.Screen name="grammar" options={{ title: 'Grammar' }} />
     </Tabs>
   );
 }

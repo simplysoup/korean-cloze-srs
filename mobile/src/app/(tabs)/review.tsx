@@ -5,62 +5,90 @@ import {
   checkQueueItem,
   getDueQueue,
   getNextReviewAt,
+  getUserSettings,
   submitReview,
   type ReviewQueueItem,
+  type UserSettings,
 } from '../../db';
-import { formatNextReview, type Grade } from '../../lib/srs';
+import { formatNextReview, ratingForCheck, srsRankLabel } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
-import MasteryPips from '../../components/MasteryPips';
-import RatingButtons from '../../components/RatingButtons';
 import { colors, commonStyles } from '../../components/theme';
 
-type RevealState = 'hidden' | 'confirming' | 'revealed';
+/**
+ * Bunpro-style Reviews: minimal screen, sentence centered in large type,
+ * nuance hint above the blank, English hint below, one pill-shaped input
+ * at the bottom. Misses go to a Wrap-Up round and re-queue until answered
+ * correctly; the session ends with a Summary screen.
+ */
 
 export default function ReviewScreen() {
   const [queue, setQueue] = useState<ReviewQueueItem[]>([]);
   const [queueIndex, setQueueIndex] = useState(0);
+  const [missed, setMissed] = useState<ReviewQueueItem[]>([]);
+  const [round, setRound] = useState<'main' | 'wrapup'>('main');
   const [romanInputs, setRomanInputs] = useState<string[]>(['']);
   const [submitted, setSubmitted] = useState(false);
   const [answerRevealed, setAnswerRevealed] = useState(false);
   const [altIndex, setAltIndex] = useState(0);
-  const [revealState, setRevealState] = useState<RevealState>('hidden');
+  const [hintStage, setHintStage] = useState(0);
   const [autoFailed, setAutoFailed] = useState(false);
-  const [rating, setRating] = useState<Grade>(3);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [nextReviewAt, setNextReviewAt] = useState<string | null>(null);
+  const [right, setRight] = useState(0);
+  const [wrong, setWrong] = useState(0);
+  const [summary, setSummary] = useState(false);
+  const [settings, setSettings] = useState<UserSettings | null>(null);
 
   const loadQueue = useCallback(() => {
+    setSettings(getUserSettings());
     setQueue(getDueQueue(10));
     setQueueIndex(0);
+    setMissed([]);
+    setRound('main');
+    setRight(0);
+    setWrong(0);
+    setSummary(false);
     resetCardState();
     setNextReviewAt(getNextReviewAt());
   }, []);
 
   useFocusEffect(loadQueue);
 
-  const currentCard = queue[queueIndex];
+  const currentCard = summary ? undefined : queue[queueIndex];
   const parts = currentCard ? currentCard.sentenceWithBlank.split('___') : [''];
   const blankCount = parts.length - 1;
   const hangulValues = romanInputs.map((r) => romanToHangul(r));
   const allBlankFilled = hangulValues.slice(0, blankCount).every((h) => h.trim() !== '');
-  const allCorrect =
-    submitted && currentCard ? checkQueueItem(currentCard, hangulValues.slice(0, blankCount)) : false;
-  const placeholderText = currentCard
-    ? [currentCard.grammar.tense, currentCard.grammar.register].filter(Boolean).join(', ') ||
+  const isCorrect =
+    currentCard ? checkQueueItem(currentCard, hangulValues.slice(0, blankCount)) : false;
+  const allCorrect = submitted && isCorrect;
+  const nuanceHint = currentCard
+    ? [currentCard.grammar.tense, currentCard.grammar.register].filter(Boolean).join(' · ') ||
       currentCard.grammar.hint
     : '';
+  const rank = currentCard
+    ? srsRankLabel(currentCard.fsrsState, currentCard.stability, currentCard.masteredAt !== null)
+    : '';
+  const remaining = currentCard ? queue.length - queueIndex : 0;
+
+  const hintText = (() => {
+    if (!currentCard || hintStage === 0) return '';
+    const answer = currentCard.answers[altIndex] ?? currentCard.answers[0] ?? '';
+    if (hintStage === 1) return answer.slice(0, 1);
+    if (hintStage === 2) return answer.slice(0, Math.max(1, Math.ceil(answer.length / 2)));
+    return answer;
+  })();
 
   function resetCardState() {
     setRomanInputs(['']);
     setSubmitted(false);
     setAnswerRevealed(false);
     setAltIndex(0);
-    setRevealState('hidden');
+    setHintStage(0);
     setAutoFailed(false);
-    setRating(3);
     setError(null);
   }
 
@@ -75,29 +103,34 @@ export default function ReviewScreen() {
 
   function submit() {
     if (!currentCard || !allBlankFilled) return;
+    if (isCorrect) {
+      setRight((n) => n + 1);
+    } else {
+      setWrong((n) => n + 1);
+    }
+    // Lightning mode: advance immediately on a correct answer, with no
+    // confirmation step.
+    if (isCorrect && settings?.lightningMode) {
+      void next(true);
+      return;
+    }
     setSubmitted(true);
   }
 
   function undo() {
-    // Undo only restores the pre-submit input; the snapshot is the current
-    // input, since nothing edits it after submit. Re-enable editing.
+    // Undo only restores the pre-submit input; re-enable editing.
     setSubmitted(false);
     setAnswerRevealed(false);
   }
 
-  function toggleReveal() {
-    if (revealState === 'hidden') {
-      // Revealing before answering (and getting it wrong) costs the card.
-      if (!allCorrect && !submitted) {
-        setRevealState('confirming');
-      } else {
-        setRevealState('revealed');
-      }
-    } else if (revealState === 'confirming') {
-      setRevealState('revealed');
+  function advanceHint() {
+    if (!currentCard) return;
+    const nextStage = Math.min(3, hintStage + 1);
+    setHintStage(nextStage);
+    if (nextStage === 3) {
+      // Full answer revealed: the card is marked failed.
+      setAnswerRevealed(true);
       setAutoFailed(true);
-    } else {
-      setRevealState('hidden');
     }
   }
 
@@ -106,12 +139,12 @@ export default function ReviewScreen() {
     setAltIndex((i) => (i + 1) % currentCard.answers.length);
   }
 
-  async function next() {
+  async function next(correct: boolean) {
     if (!currentCard || saving) return;
     setSaving(true);
     setError(null);
-    // Revealing the info marks the review as failed, whatever the answer was.
-    const finalRating: Grade = autoFailed ? 1 : allCorrect ? rating : 1;
+    // Revealing the answer marks the review as failed, whatever was typed.
+    const finalRating = autoFailed ? 1 : ratingForCheck(correct);
     try {
       submitReview(currentCard.reviewCardId, finalRating, currentCard.clozeCardId);
     } catch (e) {
@@ -120,14 +153,54 @@ export default function ReviewScreen() {
       return;
     }
     setSaving(false);
-    if (queueIndex + 1 >= queue.length) {
-      // Queue finished: reload so the empty state (and next review time) shows.
-      setQueue([]);
-      setNextReviewAt(getNextReviewAt());
-    } else {
+    const wasMiss = autoFailed || !correct;
+    const nextMissed = wasMiss ? [...missed, currentCard] : missed;
+    if (queueIndex + 1 < queue.length) {
+      setMissed(nextMissed);
       setQueueIndex((i) => i + 1);
       resetCardState();
+    } else if (nextMissed.length > 0) {
+      // Round over with misses: Wrap-Up round — missed cards recur until correct.
+      setQueue(nextMissed);
+      setQueueIndex(0);
+      setMissed([]);
+      setRound('wrapup');
+      resetCardState();
+    } else {
+      setQueue([]);
+      setNextReviewAt(getNextReviewAt());
+      setSummary(true);
     }
+  }
+
+  // ── Summary screen ─────────────────────────────────────────────────────────
+  if (summary) {
+    const total = right + wrong;
+    return (
+      <View style={commonStyles.centered}>
+        <Text style={styles.bigTitle}>Session Complete!</Text>
+        <Text style={commonStyles.subtitle}>
+          {right} right · {wrong} wrong
+          {total > 0 ? ` — ${Math.round((right / total) * 100)}% correct` : ''}
+        </Text>
+        <Text style={commonStyles.muted}>
+          {round === 'wrapup'
+            ? 'Missed cards were re-tested in the Wrap-Up round until every one was answered correctly.'
+            : 'Every card was answered correctly.'}
+        </Text>
+        <Link href="/" asChild>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.wideButton])}>
+            <Text style={commonStyles.btnText}>Dashboard</Text>
+          </Pressable>
+        </Link>
+        <Pressable
+          onPress={loadQueue}
+          style={[commonStyles.btn, commonStyles.btnSecondary, styles.wideButton]}
+        >
+          <Text style={commonStyles.btnTextDark}>Review Again</Text>
+        </Pressable>
+      </View>
+    );
   }
 
   // ── Empty state ────────────────────────────────────────────────────────────
@@ -135,7 +208,7 @@ export default function ReviewScreen() {
     const next = nextReviewAt ? new Date(nextReviewAt) : null;
     return (
       <View style={commonStyles.centered}>
-        <Text style={styles.emptyTitle}>🎉 All caught up!</Text>
+        <Text style={styles.emptyTitle}>All caught up!</Text>
         {next ? (
           <Text style={commonStyles.subtitle}>Next review in {formatNextReview(next)}.</Text>
         ) : (
@@ -158,9 +231,24 @@ export default function ReviewScreen() {
       contentContainerStyle={[commonStyles.scrollContent, styles.content]}
       keyboardShouldPersistTaps="handled"
     >
-      <Text style={commonStyles.muted}>
-        {queueIndex + 1} / {queue.length}
-      </Text>
+      {/* HUD */}
+      <View style={styles.hud}>
+        <Pressable onPress={() => router.replace('/')} style={styles.hudButton}>
+          <Text style={styles.hudText}>End Session</Text>
+        </Pressable>
+        {settings?.showSrsRank !== false ? <Text style={styles.rank}>{rank}</Text> : null}
+      </View>
+      <View style={styles.hud}>
+        <Text style={styles.hudText}>
+          Right {right} · Wrong {wrong}
+        </Text>
+        <Text style={styles.hudText}>
+          {round === 'wrapup' ? 'Wrap-Up · ' : ''}Remaining {remaining}
+        </Text>
+      </View>
+
+      {/* Nuance hint above the blank */}
+      {nuanceHint ? <Text style={styles.nuance}>{nuanceHint}</Text> : null}
 
       <ClozeSentence
         sentenceWithBlank={currentCard.sentenceWithBlank}
@@ -169,20 +257,20 @@ export default function ReviewScreen() {
         answers={currentCard.answers}
         answerRevealed={answerRevealed}
         altIndex={altIndex}
-        placeholder={placeholderText}
+        placeholder=""
       />
 
       <EnglishHint parts={currentCard.englishHint} />
 
-      <MasteryPips streakCorrect={currentCard.streakCorrect} masteredAt={currentCard.masteredAt} />
+      {hintStage > 0 ? <Text style={styles.hint}>Hint: {hintText}</Text> : null}
 
       {!submitted && !answerRevealed ? (
-        <View style={styles.inputGroup}>
+        <View style={styles.inputRow}>
           {Array.from({ length: blankCount }, (_, i) => (
             <TextInput
               key={i}
-              style={commonStyles.input}
-              placeholder="Type romanized Korean…"
+              style={commonStyles.pillInput}
+              placeholder="답"
               placeholderTextColor={colors.faint}
               value={romanInputs[i] ?? ''}
               onChangeText={(v) => setRomanAt(i, v)}
@@ -195,35 +283,34 @@ export default function ReviewScreen() {
               }}
             />
           ))}
+          <Pressable
+            onPress={submit}
+            disabled={!allBlankFilled}
+            style={[styles.arrowButton, !allBlankFilled ? commonStyles.btnDisabled : undefined]}
+            accessibilityRole="button"
+          >
+            <Text style={styles.arrowText}>→</Text>
+          </Pressable>
         </View>
       ) : null}
 
       {submitted ? (
         <Text style={[styles.result, allCorrect && !autoFailed ? styles.resultCorrect : styles.resultIncorrect]}>
           {allCorrect && !autoFailed
-            ? '✓ Correct!'
+            ? 'Correct!'
             : answerRevealed
               ? `Answer: ${currentCard.answers.join(' / ')}`
-              : '✗ Incorrect'}
+              : 'Incorrect'}
         </Text>
       ) : null}
 
-      {error ? <Text style={styles.error}>⚠️ {error}</Text> : null}
+      {error ? <Text style={styles.error}>{error}</Text> : null}
 
       {/* Controls */}
       <View style={styles.controls}>
         {!submitted ? (
-          <Pressable
-            onPress={submit}
-            disabled={!allBlankFilled}
-            style={[
-              commonStyles.btn,
-              commonStyles.btnPrimary,
-              styles.controlButton,
-              !allBlankFilled ? commonStyles.btnDisabled : undefined,
-            ]}
-          >
-            <Text style={commonStyles.btnText}>Check</Text>
+          <Pressable onPress={advanceHint} style={[commonStyles.btn, commonStyles.btnSecondary, styles.controlButton]}>
+            <Text style={commonStyles.btnTextDark}>{hintStage === 0 ? 'Hint' : 'More Hint'}</Text>
           </Pressable>
         ) : allCorrect && !autoFailed ? (
           <>
@@ -236,7 +323,7 @@ export default function ReviewScreen() {
               </Pressable>
             ) : null}
             <Pressable
-              onPress={next}
+              onPress={() => void next(isCorrect)}
               disabled={saving}
               style={[
                 commonStyles.btn,
@@ -258,12 +345,14 @@ export default function ReviewScreen() {
                 >
                   <Text style={commonStyles.btnText}>Show Answer</Text>
                 </Pressable>
-                <Pressable
-                  onPress={undo}
-                  style={[commonStyles.btn, commonStyles.btnSecondary, styles.controlButton]}
-                >
-                  <Text style={commonStyles.btnTextDark}>Undo</Text>
-                </Pressable>
+                {settings?.undoEnabled !== false ? (
+                  <Pressable
+                    onPress={undo}
+                    style={[commonStyles.btn, commonStyles.btnSecondary, styles.controlButton]}
+                  >
+                    <Text style={commonStyles.btnTextDark}>Undo</Text>
+                  </Pressable>
+                ) : null}
               </>
             ) : (
               <>
@@ -278,7 +367,7 @@ export default function ReviewScreen() {
                   </Pressable>
                 ) : null}
                 <Pressable
-                  onPress={next}
+                  onPress={() => void next(isCorrect)}
                   disabled={saving}
                   style={[
                     commonStyles.btn,
@@ -295,45 +384,26 @@ export default function ReviewScreen() {
         )}
       </View>
 
-      {/* Rating picker after a correct first attempt (defaults to Good). */}
-      {submitted && allCorrect && !autoFailed ? (
-        <View style={styles.ratingBlock}>
-          <Text style={commonStyles.muted}>How well did you know it?</Text>
-          <RatingButtons value={rating} onChange={setRating} disabled={saving} />
+      {/* Grammar info after answering */}
+      {submitted ? (
+        <View style={commonStyles.card}>
+          <Text style={styles.grammarTitle}>{currentCard.grammar.title}</Text>
+          <Text style={commonStyles.muted}>
+            {currentCard.grammar.category}
+            {currentCard.grammar.tense ? ` · ${currentCard.grammar.tense}` : ''}
+            {currentCard.grammar.register ? ` · ${currentCard.grammar.register}` : ''}
+          </Text>
+          <Text style={[commonStyles.body, styles.grammarDescription]}>
+            {currentCard.grammar.description}
+          </Text>
+          <Pressable
+            onPress={() => router.push(`/grammar/${currentCard.grammarPointId}`)}
+            style={[commonStyles.btn, commonStyles.btnSecondary, styles.viewGrammarButton]}
+          >
+            <Text style={commonStyles.btnTextDark}>View Grammar →</Text>
+          </Pressable>
         </View>
       ) : null}
-
-      {/* Reveal Info */}
-      <View style={styles.revealBlock}>
-        <Pressable onPress={toggleReveal} style={styles.ghostButton}>
-          <Text style={styles.ghostText}>
-            {revealState === 'hidden'
-              ? 'Reveal Info'
-              : revealState === 'confirming'
-                ? '⚠️ Revealing will mark this review as failed. Tap again to confirm.'
-                : 'Hide Info'}
-          </Text>
-        </Pressable>
-        {revealState === 'revealed' ? (
-          <View style={commonStyles.card}>
-            <Text style={styles.grammarTitle}>{currentCard.grammar.title}</Text>
-            <Text style={commonStyles.muted}>
-              {currentCard.grammar.category}
-              {currentCard.grammar.tense ? ` · ${currentCard.grammar.tense}` : ''}
-              {currentCard.grammar.register ? ` · ${currentCard.grammar.register}` : ''}
-            </Text>
-            <Text style={[commonStyles.body, styles.grammarDescription]}>
-              {currentCard.grammar.description}
-            </Text>
-            <Pressable
-              onPress={() => router.push(`/grammar/${currentCard.grammarPointId}`)}
-              style={[commonStyles.btn, commonStyles.btnSecondary, styles.viewGrammarButton]}
-            >
-              <Text style={commonStyles.btnTextDark}>View Grammar →</Text>
-            </Pressable>
-          </View>
-        ) : null}
-      </View>
     </ScrollView>
   );
 }
@@ -342,17 +412,57 @@ const styles = StyleSheet.create({
   content: {
     alignItems: 'center',
     gap: 18,
-    paddingTop: 24,
+    paddingTop: 16,
   },
-  emptyTitle: {
+  hud: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    width: '100%',
+  },
+  hudButton: {
+    minHeight: 44,
+    justifyContent: 'center',
+    paddingHorizontal: 4,
+  },
+  hudText: {
+    fontSize: 14,
+    color: colors.muted,
+  },
+  rank: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: colors.primary,
+  },
+  nuance: {
+    fontSize: 15,
+    color: colors.muted,
+    textAlign: 'center',
+  },
+  hint: {
+    fontSize: 16,
+    color: colors.blue,
+    textAlign: 'center',
+  },
+  inputRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 10,
+    width: '100%',
+    justifyContent: 'center',
+  },
+  arrowButton: {
+    width: 52,
+    height: 52,
+    borderRadius: 26,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  arrowText: {
     fontSize: 24,
     fontWeight: '700',
-    color: colors.text,
-  },
-  inputGroup: {
-    alignItems: 'center',
-    gap: 8,
-    width: '100%',
+    color: '#fff',
   },
   result: {
     fontSize: 18,
@@ -378,26 +488,19 @@ const styles = StyleSheet.create({
   controlButton: {
     minWidth: 120,
   },
-  ratingBlock: {
-    alignItems: 'center',
-    gap: 8,
-    width: '100%',
-  },
-  revealBlock: {
-    alignItems: 'center',
-    gap: 12,
-    width: '100%',
-  },
-  ghostButton: {
-    minHeight: 44,
-    justifyContent: 'center',
-    paddingHorizontal: 12,
-  },
-  ghostText: {
-    fontSize: 14,
-    color: colors.muted,
-    textDecorationLine: 'underline',
+  bigTitle: {
+    fontSize: 26,
+    fontWeight: '800',
+    color: colors.text,
     textAlign: 'center',
+  },
+  emptyTitle: {
+    fontSize: 24,
+    fontWeight: '700',
+    color: colors.text,
+  },
+  wideButton: {
+    minWidth: 220,
   },
   grammarTitle: {
     fontSize: 18,

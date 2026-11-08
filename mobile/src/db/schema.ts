@@ -116,6 +116,28 @@ export const userStreaks = sqliteTable('user_streaks', {
   lastStudiedDate: text('last_studied_date'), // YYYY-MM-DD
 });
 
+export const users = sqliteTable('users', {
+  id: text('id').primaryKey(),
+  username: text('username').notNull(),
+  email: text('email').notNull(),
+  // Password is optional (email-code auth is the preferred route): an empty
+  // hash means "no password set". Never NULL in the raw DDL, so existing
+  // installs need no migration.
+  passwordHash: text('password_hash').notNull(),
+  salt: text('salt').notNull(),
+  createdAt: text('created_at').notNull(), // ISO date string
+}, (t) => [uniqueIndex('users_email_unique').on(t.email)]);
+
+/** Devices a user has verified by email code. A row means "this device has
+ * proven it can read this user's email". Logging out stamps lastLogoutAt
+ * (starting the 30-minute grace); verifying again clears it. */
+export const deviceTrust = sqliteTable('device_trust', {
+  userId: text('user_id').notNull(),
+  deviceId: text('device_id').notNull(),
+  lastVerifiedAt: text('last_verified_at').notNull(), // ISO date string
+  lastLogoutAt: text('last_logout_at'), // ISO date string | null
+}, (t) => [uniqueIndex('device_trust_user_device_unique').on(t.userId, t.deviceId)]);
+
 export const meta = sqliteTable('meta', {
   key: text('key').primaryKey(),
   value: text('value').notNull(),

@@ -1,7 +1,10 @@
-# Korean Cloze SRS — Mobile (Expo)
+# Munpro — Mobile (Expo)
 
 Expo React Native rebuild (option D) of the old SvelteKit app in the repo
-root. Offline-first, single local user, no server and no auth yet.
+root. Offline-first, local accounts (no server). Brand: **Munpro** (문법 =
+grammar + pro, the Korean parallel to Bunpro); UI modelled on Bunpro's
+flat, minimal look — light-grey pages, white cards, coral-red primary,
+teal-navy header.
 
 **Stack:** Expo SDK 58 · React Native 0.88 · React 19.3 · TypeScript (strict)
 · Expo Router (file-based routing, routes in `src/app/`) · expo-sqlite +
@@ -27,7 +30,7 @@ npm run ios          # macOS only
 
 | Command | What it does |
 |---|---|
-| `npm test` | Jest (jest-expo): romanization, FSRS, answer checking, seed validation — 39 tests |
+| `npm test` | Jest (jest-expo): romanization, FSRS, answer checking, seed validation, local auth — 39 + auth tests |
 | `npm run typecheck` | `tsc --noEmit` — must be 0 errors |
 | `npm run validate` | `node ../scripts/validate-content.mjs` — content counts + integrity |
 | `npm run export` | `npx expo export` — static export check (web) |
@@ -41,21 +44,25 @@ CI (`.github/workflows/mobile.yml`) runs validate, typecheck, tests, and
 ```
 mobile/
   src/app/            Expo Router screens
-    _layout.tsx       Stack + initDb() on mount
-    (tabs)/           Learn · Review · Dashboard · Grammar (tabs)
-    grammar/[id].tsx  Grammar detail (Details / Examples)
-  src/components/     ClozeSentence, EnglishHint, RatingButtons, …
+    _layout.tsx       Auth gate (login/signup paints before the DB opens) + Stack
+    (tabs)/           Learn · Reviews · Dashboard · Grammar (tabs)
+    grammar/[id].tsx  Grammar detail (Details / Examples / Resources)
+  src/components/     AuthScreen, BrandMark, ClozeSentence, EnglishHint, …
   src/db/
     schema.ts         Drizzle tables (mirrors prisma/schema.prisma,
-                      minus server/auth tables)
+                      plus a local `users` table)
     index.ts          getDb / initDb / seed, due queue, learn session,
-                      submitReview (FSRS + log + streak), dashboard stats
+                      submitReview (FSRS + log + streak), dashboard stats,
+                      local accounts + session, migration of pre-auth data
   src/lib/
     romanToHangul.ts  Ported verbatim from the old app (custom converter)
     hangulToRoman.ts  Ported verbatim (search helper)
     levels.ts         Ported verbatim (XP: 10/review, level N needs N×100 XP)
     srs.ts            Pure FSRS logic: computeFsrsReview, checkAnswers,
-                      correctAnswersForCard, formatNextReview
+                      correctAnswersForCard, formatNextReview, srsRankLabel
+    sha256.ts         Pure-TypeScript SHA-256 (password hashing)
+    auth.ts           Signup/login validation, salted iterated hashing
+    auth-context.tsx  AuthContext (current user + logout)
   src/content/
     topik1-level1.json  Ported seed content (see below)
     types.ts            Content types + flattenContent()
@@ -66,31 +73,55 @@ scripts/
 
 ### Data model (local SQLite, `korean-cloze-srs.db`)
 
-`grammar_points`, `cloze_cards`, `cloze_card_grammar_targets`,
-`lesson_examples`, `review_cards` (one FSRS record per grammar point,
-with `streak_correct`, `mastered_at`, `peak_stability`), `review_logs`,
-`decks`, `deck_grammar_points`, `user_deck_progress`, `user_streaks`,
-`meta` (content version). Single local user id is `local`; the `user_id`
-columns are kept so a future sync/auth layer has somewhere to go.
+`users` (local accounts: username, email, salted + iterated SHA-256
+password hash), `grammar_points`, `cloze_cards`,
+`cloze_card_grammar_targets`, `lesson_examples`, `review_cards` (one FSRS
+record per grammar point, with `streak_correct`, `mastered_at`,
+`peak_stability`), `review_logs`, `decks`, `deck_grammar_points`,
+`user_deck_progress`, `user_streaks`, `meta` (content version + session
+user id). Per-user rows are keyed by the logged-in account's id; pre-auth
+data keyed `local` migrates to the first account created on the device.
 
-### Review flow (ported from the old app)
+### Auth (local only, no server)
+
+Login/signup screens paint before the database opens — the DB warm-up
+(wasm fetch/compile + OPFS init) runs in the background while the user
+reads/types, and is only awaited when a form is submitted. First run with
+zero accounts goes to signup. "Remember Me" (default on) persists the
+session as a user id in the `meta` table, so returning users skip login;
+Log out is on the Dashboard. Passwords are salted + 1000× iterated
+SHA-256 (`src/lib/sha256.ts`, `src/lib/auth.ts`) — a local-privacy
+measure for a DB file that never leaves the device, not server-grade
+credential storage. No password reset, no social login.
+
+### Review flow (Bunpro-style)
 
 - Due queue: up to 10 review cards with `due <= now`, `masteredAt` null,
   ordered by due date; each presents its most-advanced cloze card
   (highest `introducedAtPosition`).
-- Type romanized Korean, see it convert to Hangul live in the blank.
-  Check is exact match against the answer + alternate answers (+ the
-  grammar-target word replacement). Correct → Good (3) by default, with
-  1–4 rating buttons after a correct first attempt; wrong → Again (1).
-  Reveal Info confirms first and forces Again. Show Answer / Undo behave
-  as in the old app.
+- Minimal screen: sentence centered in large type, nuance hint above the
+  blank, English hint below, one pill-shaped input at the bottom (type
+  romanized Korean, see it convert to Hangul live; ENTER or the arrow
+  button submits). HUD: End Session, SRS rank (New / Beginner I–IV /
+  Seasoned I–III / Master, from FSRS state + stability), Right/Wrong
+  counter, Remaining count. Hint reveals the answer in stages (full
+  reveal marks the card failed).
+- Check is exact match against the answer + alternate answers (+ the
+  grammar-target word replacement). Correct → Good (3); wrong → Again
+  (1). Show Answer reveals without re-typing; Undo re-enables editing.
+- Misses go to a Wrap-Up round and re-queue until answered correctly;
+  the session ends with a Summary screen (Right/Wrong, accuracy).
 - FSRS update, review log, and streak update happen locally and
   synchronously in `submitReview`. Mastery: 8 correct in a row masters a
   grammar point (it leaves the queue).
 - Learn flow: session of 5 grammar points from the deck in curriculum
-  order, “Add to Deck” advances, then a post-session quiz over those
-  points' cloze cards (quiz only, no FSRS submit), then a summary.
-  Completing a session creates the FSRS review cards (due immediately).
+  order, each shown as a point page (red headword, Structure, About,
+  Details, Examples). Green "I already know this" masters the point
+  immediately (never tested again); the blue arrow advances and adds the
+  point to the deck. Then a Review stage tests the just-learned points
+  (one card per point), re-queueing misses until every card is answered
+  correctly, then a summary. Completing a session creates the FSRS review
+  cards (due immediately).
 
 ## Provisional content — read this before using the app to study
 
@@ -110,8 +141,8 @@ exist.
 
 ## Not yet built (next steps, in roughly this order)
 
-- **Auth / sync** — no accounts, no server, no cloud backup. Data lives
-  only in the device SQLite file. Export/import is not built yet.
+- **Sync / cloud backup** — accounts are local-only; data lives only in
+  the device SQLite file. Export/import is not built yet.
 - **Push notifications** — no due-review reminders yet.
 - **Audio / TTS** — no pronunciation audio on examples yet.
 - **Vocabulary** — no vocab SRS track (the old app's menu said “soon” too).

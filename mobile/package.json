@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "main": "expo-router/entry",
   "dependencies": {
+    "@expo/metro-runtime": "^58.0.17",
     "drizzle-orm": "^0.45.4",
     "expo": "~58.0.23",
     "expo-constants": "~58.0.15",
@@ -21,6 +22,8 @@
   "devDependencies": {
     "@types/jest": "^30.0.0",
     "@types/react": "~19.3.0",
+    "eslint": "^9.0.0",
+    "eslint-config-expo": "~58.0.4",
     "jest": "^30.5.2",
     "jest-expo": "^58.0.14",
     "typescript": "~6.0.3"
@@ -34,7 +37,8 @@
     "typecheck": "tsc --noEmit",
     "validate": "node ../scripts/validate-content.mjs",
     "export": "npx expo export",
-    "start": "expo start"
+    "start": "expo start",
+    "lint": "expo lint"
   },
   "private": true
 }
