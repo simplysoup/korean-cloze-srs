@@ -37,7 +37,7 @@ export const lesson01: LessonSeed = {
 			structurePattern: '[Noun]이에요 / [Noun]예요',
 			notes: [
 				{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 이에요 after consonant-ending nouns (학생이에요) and 예요 after vowel-ending nouns (의사예요).' },
-				{ type: 'funfact', title: 'Contracted Form', content: 'In fast speech, 이에요 is sometimes shortened to 이예요, but the standard spelling is 이에요.' }
+				{ type: 'funfact', title: 'Contracted Form', content: '이예요 is a common misspelling. Write 이에요 after a final consonant and 예요 after a vowel; 아니에요 is a separate correct form.' }
 			],
 			relatedPointIds: ['gp_ida'],
 			lessonExamples: [
@@ -128,7 +128,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '학생이다.',
 					sentenceWithBlank: '학생___.',
 					answer: '이다',
-					englishHint: 'Is a student.',
+					englishHint: 'He is a student.',
 					order: 0
 				},
 				{
@@ -136,7 +136,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '한국 사람이다.',
 					sentenceWithBlank: '한국 사람___.',
 					answer: '이다',
-					englishHint: 'Is a Korean person.',
+					englishHint: 'They are Korean.',
 					order: 1
 				}
 			],
@@ -148,7 +148,7 @@ export const lesson01: LessonSeed = {
 					answer: '이다',
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
-					englishHint: 'Is a student.',
+					englishHint: 'He is a student.',
 					introducedAtPosition: 2
 				},
 				{
@@ -158,7 +158,7 @@ export const lesson01: LessonSeed = {
 					answer: '이다',
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
-					englishHint: 'Is a teacher.',
+					englishHint: 'She is a teacher.',
 					introducedAtPosition: 2
 				},
 				{
@@ -168,7 +168,7 @@ export const lesson01: LessonSeed = {
 					answer: '이다',
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
-					englishHint: 'Is an apple.',
+					englishHint: 'It is an apple.',
 					introducedAtPosition: 2
 				}
 			]
@@ -246,12 +246,12 @@ export const lesson01: LessonSeed = {
 				},
 				{
 					id: 'cc_eun_neun_04',
-					fullSentence: '날씨는 좋아요.',
-					sentenceWithBlank: '날씨___ 좋아요.',
-					answer: '는',
+					fullSentence: "이름은 수진이에요.",
+					sentenceWithBlank: "이름___ 수진이에요.",
+					answer: "은",
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
-					englishHint: 'The weather is nice.',
+					englishHint: "The name is Sujin.",
 					introducedAtPosition: 3
 				}
 			]
@@ -301,7 +301,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이것은 책이에요.',
 					sentenceWithBlank: '___은 책이에요.',
 					answer: '이것',
-					alternateAnswers: ['이거'],
+					alternateAnswers: [],
 					vocabBaseForm: '이것',
 					englishHint: 'This is a book.',
 					introducedAtPosition: 4
@@ -311,7 +311,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이것은 뭐예요?',
 					sentenceWithBlank: '___은 뭐예요?',
 					answer: '이것',
-					alternateAnswers: ['이거'],
+					alternateAnswers: [],
 					vocabBaseForm: '이것',
 					englishHint: 'What is this?',
 					introducedAtPosition: 4
@@ -321,7 +321,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이것은 사과예요.',
 					sentenceWithBlank: '___은 사과예요.',
 					answer: '이것',
-					alternateAnswers: ['이거'],
+					alternateAnswers: [],
 					vocabBaseForm: '이것',
 					englishHint: 'This is an apple.',
 					introducedAtPosition: 4
@@ -371,7 +371,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '그것은 연필이에요.',
 					sentenceWithBlank: '___은 연필이에요.',
 					answer: '그것',
-					alternateAnswers: ['그거'],
+					alternateAnswers: [],
 					vocabBaseForm: '그것',
 					englishHint: 'That is a pencil.',
 					introducedAtPosition: 5
@@ -381,7 +381,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '그것은 뭐예요?',
 					sentenceWithBlank: '___은 뭐예요?',
 					answer: '그것',
-					alternateAnswers: ['그거'],
+					alternateAnswers: [],
 					vocabBaseForm: '그것',
 					englishHint: 'What is that?',
 					introducedAtPosition: 5
@@ -391,7 +391,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '그것은 지갑이에요.',
 					sentenceWithBlank: '___은 지갑이에요.',
 					answer: '그것',
-					alternateAnswers: ['그거'],
+					alternateAnswers: [],
 					vocabBaseForm: '그것',
 					englishHint: 'That is a wallet.',
 					introducedAtPosition: 5
@@ -441,7 +441,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저것은 학교예요.',
 					sentenceWithBlank: '___은 학교예요.',
 					answer: '저것',
-					alternateAnswers: ['저거'],
+					alternateAnswers: [],
 					vocabBaseForm: '저것',
 					englishHint: 'That over there is a school.',
 					introducedAtPosition: 6
@@ -451,7 +451,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저것은 뭐예요?',
 					sentenceWithBlank: '___은 뭐예요?',
 					answer: '저것',
-					alternateAnswers: ['저거'],
+					alternateAnswers: [],
 					vocabBaseForm: '저것',
 					englishHint: 'What is that over there?',
 					introducedAtPosition: 6
@@ -461,7 +461,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저것은 병원이에요.',
 					sentenceWithBlank: '___은 병원이에요.',
 					answer: '저것',
-					alternateAnswers: ['저거'],
+					alternateAnswers: [],
 					vocabBaseForm: '저것',
 					englishHint: 'That over there is a hospital.',
 					introducedAtPosition: 6
@@ -521,12 +521,12 @@ export const lesson01: LessonSeed = {
 				},
 				{
 					id: 'cc_ui_02',
-					fullSentence: '한국의 음식은 맛있어요.',
-					sentenceWithBlank: '한국___ 음식은 맛있어요.',
-					answer: '의',
+					fullSentence: "이것은 한국의 음식이에요.",
+					sentenceWithBlank: "이것은 한국___ 음식이에요.",
+					answer: "의",
 					alternateAnswers: [],
 					vocabBaseForm: '의',
-					englishHint: "Korea's food is delicious.",
+					englishHint: "This is Korean food.",
 					introducedAtPosition: 7
 				},
 				{
@@ -594,22 +594,22 @@ export const lesson01: LessonSeed = {
 				},
 				{
 					id: 'cc_do_02',
-					fullSentence: '그것도 좋아요.',
-					sentenceWithBlank: '그것___ 좋아요.',
-					answer: '도',
+					fullSentence: "그것도 책이에요.",
+					sentenceWithBlank: "그것___ 책이에요.",
+					answer: "도",
 					alternateAnswers: [],
 					vocabBaseForm: '도',
-					englishHint: 'That is also good.',
+					englishHint: "That is also a book.",
 					introducedAtPosition: 8
 				},
 				{
 					id: 'cc_do_03',
-					fullSentence: '커피도 좋아요.',
-					sentenceWithBlank: '커피___ 좋아요.',
-					answer: '도',
+					fullSentence: "커피도 음료예요.",
+					sentenceWithBlank: "커피___ 음료예요.",
+					answer: "도",
 					alternateAnswers: [],
 					vocabBaseForm: '도',
-					englishHint: 'Coffee is also good.',
+					englishHint: "Coffee is also a drink.",
 					introducedAtPosition: 8
 				}
 			]
