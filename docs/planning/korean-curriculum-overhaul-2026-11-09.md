@@ -79,7 +79,7 @@ These are *not yet authored into the current 48-point Level 1 deck*. Adding them
 
 ## Validation and safe integration
 
-**Level 1** is committed to GitHub branch `content/learner-first-curriculum-2026-11-09`. **Level 2** is supplied as a separate ZIP; it is not included in that Git branch. The ZIP's `prisma/seed-data/topik1-level2/` hierarchy is ready to copy into a checkout.
+**Both Level 1 and Level 2** are committed to GitHub branch `content/learner-first-curriculum-2026-11-09`. The accompanying Level 2 ZIP is a convenience copy of the same 12 TypeScript files.
 
 Local Level 2 verification completed:
 - TypeScript `tsc --noEmit --strict` against repository `LessonSeed` types.
@@ -91,7 +91,7 @@ Local Level 2 verification completed:
 Level 1 was inspected via the connected GitHub source files: 11 lessons, 48 unique grammar points, 98 original worked examples, 154 original review cards, plus 11 worked examples and 24 review cards in additions; all 252 base clozes reconstruct correctly. The GitHub branch has **not been end-to-end executed in the running Expo app** from this environment.
 
 Before rollout, the main agent must:
-1. Merge/copy both content sources, run `bun scripts/port-content.ts` and `node scripts/validate-content.mjs` (or equivalent tooling for both levels).
+1. Run `bun scripts/port-content.ts` and `node scripts/validate-content.mjs` for Level 1, then implement/run an equivalent port and validation path for the committed Level 2 TypeScript files.
 2. Update JSON seeds, descriptions/provenance and any hard-coded lesson/position ordering references. Add the Level 2 port and registration workflow.
 3. Reconcile SRS/gating for **existing user progress**. IDs remain stable but positions do not; position-based checkpoints must be remapped or intentionally reset after user notice.
 4. Run lesson-order, card-reconstruction and ID checks on *ported JSON*, then UI review and independent Korean teacher/native-editor review before public deployment.
