@@ -118,14 +118,15 @@ export default function AppHeader({ user }: { user: AuthUser }) {
   return (
     <View style={styles.headerWrap}>
       <View style={styles.bar}>
-        <Link href="/" asChild>
-          <Pressable style={styles.brand} accessibilityRole="button">
-            <BrandMark size={28} dark />
-          </Pressable>
-        </Link>
+        <View style={styles.barInner}>
+          <Link href="/" asChild>
+            <Pressable style={styles.brand} accessibilityRole="button">
+              <BrandMark size={28} dark />
+            </Pressable>
+          </Link>
 
-        {isDesktop ? (
-          <View style={styles.rightGroup}>
+          {isDesktop ? (
+            <View style={styles.rightGroup}>
             <View style={styles.nav}>
               <Link href="/learn" asChild>
                 <Pressable style={styles.navItem} accessibilityRole="button">
@@ -255,7 +256,7 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                   </View>
                 </Pressable>
                 {openMenu === 'alerts' ? (
-                  <View style={[styles.menu, styles.menuRight]}>
+                  <View style={styles.menu}>
                     <Text style={styles.menuMuted}>No new notifications.</Text>
                   </View>
                 ) : null}
@@ -270,7 +271,7 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                   <HelpIcon />
                 </Pressable>
                 {openMenu === 'help' ? (
-                  <View style={[styles.menu, styles.menuRight]}>
+                  <View style={styles.menu}>
                     <Text style={styles.menuMuted}>
                       Munpro is a free Korean grammar trainer — a Bunpro-style SRS for TOPIK
                       grammar.
@@ -294,7 +295,7 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                   </View>
                 </Pressable>
                 {openMenu === 'user' ? (
-                  <View style={[styles.menu, styles.menuRight]}>
+                  <View style={styles.menu}>
                     <Link href="/account" asChild>
                       <Pressable style={styles.menuRow} onPress={() => setOpenMenu(null)}>
                         <Text style={styles.menuRowText}>Account & password</Text>
@@ -328,7 +329,8 @@ export default function AppHeader({ user }: { user: AuthUser }) {
           >
             <Text style={styles.hamburgerGlyph}>{mobileOpen ? '✕' : '☰'}</Text>
           </Pressable>
-        )}
+          )}
+        </View>
       </View>
 
       {!isDesktop && mobileOpen ? (
@@ -416,6 +418,18 @@ const styles = StyleSheet.create({
     minHeight: 56,
     flexDirection: 'row',
     alignItems: 'center',
+    justifyContent: 'center',
+  },
+  // The header content is centred on wide screens: the logo and the nav
+  // sit at the edges of a 1080px column (the same width as the page
+  // content) instead of at the far edges of the viewport, so they are
+  // visible all at once. Below 1080px this is just full-width.
+  barInner: {
+    width: '100%',
+    maxWidth: 1080,
+    minHeight: 56,
+    flexDirection: 'row',
+    alignItems: 'center',
     paddingHorizontal: 24,
     gap: 12,
   },
@@ -463,10 +477,17 @@ const styles = StyleSheet.create({
   menuAnchor: {
     position: 'relative',
   },
+  // Every header dropdown is right-aligned to its anchor (right: 0).
+  // All of the anchors — Content, Practice, bell, help, user chip —
+  // sit on the right half of the header, so a right-aligned menu can
+  // never run off the right edge of the viewport, and at the desktop
+  // breakpoint (768px) the leftmost anchor is far enough right that a
+  // 260px menu can't reach the left edge either. Do not add a
+  // left-anchored dropdown here without re-checking this.
   menu: {
     position: 'absolute',
     top: 44,
-    left: 0,
+    right: 0,
     minWidth: 260,
     backgroundColor: colors.white,
     borderRadius: 10,
@@ -478,10 +499,6 @@ const styles = StyleSheet.create({
     shadowRadius: 12,
     shadowOffset: { width: 0, height: 4 },
     zIndex: 20,
-  },
-  menuRight: {
-    left: undefined,
-    right: 0,
   },
   menuRow: {
     flexDirection: 'row',

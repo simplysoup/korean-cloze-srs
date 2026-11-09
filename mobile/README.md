@@ -155,12 +155,17 @@ and learning; turning it off bridges the streak), and review toggles
 The daily limit and batch size apply to the whole library — there are
 no per-deck settings (build 16 removed them with the active deck).
 
-### Navigation (build 17)
+### Navigation (build 20)
 
 The header is a teal-navy bar: the brand on the left, and Learn / Review /
 Content / Practice on the **right**, next to the icons and the user chip
-(24px horizontal padding, so nothing sits against the edge). The search,
-bell, and help icons are one SVG set (`src/components/icons.tsx`,
+(24px horizontal padding, so nothing sits against the edge). On wide
+screens the header content is centred in a 1080px column (the same width
+as the page content) instead of spanning the full viewport, so the logo
+and the nav are visible all at once. Every dropdown (Content, Practice,
+bell, help, user) is right-aligned to its anchor, so none of them can
+run off the right edge of the screen. The search, bell, and help icons
+are one SVG set (`src/components/icons.tsx`,
 react-native-svg, 22px, strokeWidth 2) — not mismatched text glyphs. The
 bell carries a count badge: coral-red when there are notifications, grey
 when the count is 0 (there is no notification source yet, so it is 0 and
