@@ -49,10 +49,10 @@ export const lesson03: LessonSeed = {
 				},
 				{
 					id: 'le_e_loc_02',
-					fullSentence: '집에 있어요.',
-					sentenceWithBlank: '집___ 있어요.',
-					answer: '에',
-					englishHint: 'I am at home.',
+					fullSentence: "집에 와요.",
+					sentenceWithBlank: "집___ 와요.",
+					answer: "에",
+					englishHint: "I come home.",
 					order: 1
 				}
 			],
@@ -69,12 +69,12 @@ export const lesson03: LessonSeed = {
 				},
 				{
 					id: 'cc_e_loc_02',
-					fullSentence: '집에 있어요.',
-					sentenceWithBlank: '집___ 있어요.',
-					answer: '에',
+					fullSentence: "집에 와요.",
+					sentenceWithBlank: "집___ 와요.",
+					answer: "에",
 					alternateAnswers: [],
 					vocabBaseForm: '에',
-					englishHint: 'I am at home.',
+					englishHint: "I come home.",
 					introducedAtPosition: 19
 				},
 				{
@@ -151,12 +151,12 @@ export const lesson03: LessonSeed = {
 				},
 				{
 					id: 'cc_isseoyo_03',
-					fullSentence: '책이 책상 위에 있어요.',
-					sentenceWithBlank: '책이 책상 위에 ___.',
-					answer: '있어요',
+					fullSentence: "책이 여기에 있어요.",
+					sentenceWithBlank: "책이 여기에 ___.",
+					answer: "있어요",
 					alternateAnswers: [],
 					vocabBaseForm: '있다',
-					englishHint: 'The book is on the desk.',
+					englishHint: "The book is here.",
 					introducedAtPosition: 20
 				}
 			]
