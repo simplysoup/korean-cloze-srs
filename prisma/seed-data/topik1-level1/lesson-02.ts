@@ -46,19 +46,19 @@ export const lesson02: LessonSeed = {
 			lessonExamples: [
 				{
 					id: 'le_i_ga_01',
-					fullSentence: '날씨가 좋아요.',
-					sentenceWithBlank: '날씨___ 좋아요.',
-					answer: '가',
-					englishHint: 'The weather is nice.',
+					fullSentence: "이름이 민수예요.",
+					sentenceWithBlank: "이름___ 민수예요.",
+					answer: "이",
+					englishHint: "The name is Minsu.",
 					order: 0,
 					notes: '날씨 ends in vowel → 가. Uses vocab 좋아요 (good).'
 				},
 				{
 					id: 'le_i_ga_02',
-					fullSentence: '물이 차가워요.',
-					sentenceWithBlank: '물___ 차가워요.',
-					answer: '이',
-					englishHint: 'The water is cold.',
+					fullSentence: "그것이 책이에요.",
+					sentenceWithBlank: "그것___ 책이에요.",
+					answer: "이",
+					englishHint: "That is a book.",
 					order: 1,
 					notes: '물 ends in consonant ㄹ → 이.'
 				}
@@ -66,48 +66,48 @@ export const lesson02: LessonSeed = {
 			cards: [
 				{
 					id: 'cc_i_ga_01',
-					fullSentence: '날씨가 좋아요.',
-					sentenceWithBlank: '날씨___ 좋아요.',
-					answer: '가',
+					fullSentence: "이름이 민수예요.",
+					sentenceWithBlank: "이름___ 민수예요.",
+					answer: "이",
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
-					englishHint: 'The weather is nice.',
+					englishHint: "The name is Minsu.",
 					introducedAtPosition: 9
 				},
 				{
 					id: 'cc_i_ga_02',
-					fullSentence: '물이 차가워요.',
-					sentenceWithBlank: '물___ 차가워요.',
-					answer: '이',
+					fullSentence: "이것이 물이에요.",
+					sentenceWithBlank: "이것___ 물이에요.",
+					answer: "이",
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
-					englishHint: 'The water is cold.',
+					englishHint: "This is water.",
 					introducedAtPosition: 9
 				},
 				{
 					id: 'cc_i_ga_03',
-					fullSentence: '고양이가 자요.',
-					sentenceWithBlank: '고양이___ 자요.',
-					answer: '가',
+					fullSentence: "저것이 고양이예요.",
+					sentenceWithBlank: "저것___ 고양이예요.",
+					answer: "이",
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
-					englishHint: 'The cat is sleeping.',
+					englishHint: "That over there is a cat.",
 					introducedAtPosition: 9
 				},
 				{
 					id: 'cc_i_ga_04',
-					fullSentence: '시간이 없어요.',
-					sentenceWithBlank: '시간___ 없어요.',
-					answer: '이',
+					fullSentence: "오늘이 월요일이에요.",
+					sentenceWithBlank: "오늘___ 월요일이에요.",
+					answer: "이",
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
-					englishHint: 'There is no time.',
+					englishHint: "Today is Monday.",
 					introducedAtPosition: 9
 				}
 			]
 		},
 
-		// ── 10. 을/를 — Object Marker ───────────────────────────────────────
+		// FLAG (N+1): This point precedes the first polite verb-ending point (pos 11).\n		// Its object-particle sentences necessarily use an otherwise unintroduced predicate.\n		// ── 10. 을/를 — Object Marker ───────────────────────────────────────
 		{
 			id: 'gp_eul_reul',
 			title: '을/를',
@@ -198,7 +198,7 @@ export const lesson02: LessonSeed = {
 			hint: 'polite present tense verb ending',
 			description:
 				'The most common verb ending in everyday polite Korean. ' +
-				'Attach to verb stems: -아요 when the last vowel is ㅏ or ㅗ, -어요 for all other vowels. ' +
+				'For regular stems, -아요 follows ㅏ/ㅗ and -어요 usually follows other vowels; contractions and irregular stems need special care. ' +
 				'하다 verbs become 해요. Expresses present actions, habits, and general truths.',
 			level: 1,
 			tags: ['verb-ending', 'beginner', 'TOPIK1'],
@@ -228,10 +228,10 @@ export const lesson02: LessonSeed = {
 				},
 				{
 					id: 'le_ayo_eoyo_03',
-					fullSentence: '학교에 가요.',
-					sentenceWithBlank: '학교에 ___.',
-					answer: '가요',
-					englishHint: 'I go to school.',
+					fullSentence: "오늘 가요.",
+					sentenceWithBlank: "오늘 ___.",
+					answer: "가요",
+					englishHint: "I am going today.",
 					order: 2,
 					notes: '가다 → 가요 (stem 가 has ㅏ vowel → 아요 contracts to 가요).'
 				}
@@ -269,12 +269,12 @@ export const lesson02: LessonSeed = {
 				},
 				{
 					id: 'cc_ayo_eoyo_04',
-					fullSentence: '학교에 가요.',
-					sentenceWithBlank: '학교에 ___.',
-					answer: '가요',
+					fullSentence: "오늘 가요.",
+					sentenceWithBlank: "오늘 ___.",
+					answer: "가요",
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
-					englishHint: 'I go to school.',
+					englishHint: "I am going today.",
 					introducedAtPosition: 11
 				},
 				{
@@ -425,12 +425,12 @@ export const lesson02: LessonSeed = {
 				},
 				{
 					id: 'cc_hago_03',
-					fullSentence: '커피하고 케이크를 주세요.',
-					sentenceWithBlank: '커피___ 케이크를 주세요.',
-					answer: '하고',
+					fullSentence: "빵하고 케이크를 먹어요.",
+					sentenceWithBlank: "빵___ 케이크를 먹어요.",
+					answer: "하고",
 					alternateAnswers: ['와', '랑'],
 					vocabBaseForm: '하고',
-					englishHint: 'Please give me coffee and cake.',
+					englishHint: "I eat bread and cake.",
 					introducedAtPosition: 13
 				}
 			]
@@ -466,10 +466,10 @@ export const lesson02: LessonSeed = {
 				},
 				{
 					id: 'le_yeogi_02',
-					fullSentence: '여기 앉으세요.',
-					sentenceWithBlank: '___ 앉으세요.',
-					answer: '여기',
-					englishHint: 'Please sit here.',
+					fullSentence: "여기 앉아요.",
+					sentenceWithBlank: "___ 앉아요.",
+					answer: "여기",
+					englishHint: "I sit here.",
 					order: 1
 				}
 			],
@@ -486,12 +486,12 @@ export const lesson02: LessonSeed = {
 				},
 				{
 					id: 'cc_yeogi_02',
-					fullSentence: '여기 앉으세요.',
-					sentenceWithBlank: '___ 앉으세요.',
-					answer: '여기',
+					fullSentence: "여기 앉아요.",
+					sentenceWithBlank: "___ 앉아요.",
+					answer: "여기",
 					alternateAnswers: [],
 					vocabBaseForm: '여기',
-					englishHint: 'Please sit here.',
+					englishHint: "I sit here.",
 					introducedAtPosition: 14
 				},
 				{
@@ -527,10 +527,10 @@ export const lesson02: LessonSeed = {
 			lessonExamples: [
 				{
 					id: 'le_geogi_01',
-					fullSentence: '거기는 어디예요?',
-					sentenceWithBlank: '___는 어디예요?',
-					answer: '거기',
-					englishHint: 'Where is there?',
+					fullSentence: "거기는 학교예요?",
+					sentenceWithBlank: "___는 학교예요?",
+					answer: "거기",
+					englishHint: "Is that place a school?",
 					order: 0
 				},
 				{
@@ -538,19 +538,19 @@ export const lesson02: LessonSeed = {
 					fullSentence: '거기도 좋아요.',
 					sentenceWithBlank: '___도 좋아요.',
 					answer: '거기',
-					englishHint: 'There is also good.',
+					englishHint: "That place is nice too.",
 					order: 1
 				}
 			],
 			cards: [
 				{
 					id: 'cc_geogi_01',
-					fullSentence: '거기는 어디예요?',
-					sentenceWithBlank: '___는 어디예요?',
-					answer: '거기',
+					fullSentence: "거기는 학교예요?",
+					sentenceWithBlank: "___는 학교예요?",
+					answer: "거기",
 					alternateAnswers: [],
 					vocabBaseForm: '거기',
-					englishHint: 'Where is there?',
+					englishHint: "Is that place a school?",
 					introducedAtPosition: 15
 				},
 				{
@@ -560,7 +560,7 @@ export const lesson02: LessonSeed = {
 					answer: '거기',
 					alternateAnswers: [],
 					vocabBaseForm: '거기',
-					englishHint: 'There is also good.',
+					englishHint: "That place is nice too.",
 					introducedAtPosition: 15
 				},
 				{
@@ -570,7 +570,7 @@ export const lesson02: LessonSeed = {
 					answer: '거기',
 					alternateAnswers: [],
 					vocabBaseForm: '거기',
-					englishHint: 'There is a café.',
+					englishHint: "That place is a café.",
 					introducedAtPosition: 15
 				}
 			]
@@ -639,7 +639,7 @@ export const lesson02: LessonSeed = {
 					answer: '저기',
 					alternateAnswers: [],
 					vocabBaseForm: '저기',
-					englishHint: 'Over there is also a restaurant.',
+					englishHint: "That place over there is also a restaurant.",
 					introducedAtPosition: 16
 				}
 			]
