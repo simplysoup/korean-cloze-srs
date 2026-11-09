@@ -20,15 +20,25 @@ interface LevelGroup {
 }
 
 const STATUS_STYLE: Record<GrammarListItem['status'], { label: string; color: string; background: string }> = {
-  new: { label: 'New', color: colors.muted, background: '#EDEDED' },
+  // Point cards are pale grey (#F2F2F2), so the New pill is white to
+  // read against the card; Learning/Mastered keep their tints.
+  new: { label: 'New', color: colors.muted, background: '#FFFFFF' },
   learning: { label: 'Learning', color: colors.blue, background: '#E3EEF8' },
   mastered: { label: 'Mastered', color: colors.green, background: '#E2F2E9' },
 };
 
 /**
- * Grammar Library, modelled on Bunpro's grammar_points: a toolbar (search
- * + Hide Learned Items), then one collapsible row per TOPIK level. Levels
- * start collapsed; expanding one shows its lessons, each with its points.
+ * Grammar Library, modelled on Bunpro's grammar_points (build 24): a
+ * toolbar (search + Hide Learned Items), then one large containing card
+ * per TOPIK level. The level header is a light-grey strip at the top of
+ * its card, and the lessons live inside the same card — the shared
+ * container + the header strip + the divider rules are what make the
+ * sub-elements feel connected to their headers, not indentation. Each
+ * lesson header has a divider above it (except the first in the level),
+ * a bold "Lesson N", and the subtitle in regular muted grey on the same
+ * line, so the lesson number is clearly distinguished from the pale-grey
+ * point cards beneath it. Levels start collapsed; expanding one shows
+ * its lessons, each with its points.
  */
 export default function GrammarScreen() {
   const [items, setItems] = useState<GrammarListItem[]>([]);
@@ -184,7 +194,7 @@ export default function GrammarScreen() {
               <View key={level.deckId} style={styles.levelGroup}>
                 <Pressable
                   onPress={() => toggleLevel(level.deckId)}
-                  style={styles.levelRow}
+                  style={[styles.levelRow, isOpen && styles.levelRowOpen]}
                   accessibilityRole="button"
                 >
                   <Text style={styles.levelChevron}>{isOpen ? '⌄' : '›'}</Text>
@@ -200,18 +210,25 @@ export default function GrammarScreen() {
                         No grammar points yet — content coming soon.
                       </Text>
                     ) : null}
-                    {level.groups.map((group) => {
+                    {level.groups.map((group, groupIndex) => {
                       const lessonKey = `${level.deckId}:${group.lessonNumber}`;
                       const lessonOpen = query.trim() !== '' || expanded.has(lessonKey);
                       return (
                         <View key={lessonKey} style={styles.lessonGroup}>
                           <Pressable
                             onPress={() => toggleLesson(lessonKey)}
-                            style={styles.lessonHeader}
+                            style={[
+                              styles.lessonHeader,
+                              groupIndex > 0 && styles.lessonHeaderDivider,
+                            ]}
                             accessibilityRole="button"
                           >
                             <Text style={styles.lessonHeaderText}>
-                              Lesson {group.lessonNumber} — {group.lessonTitle}
+                              Lesson {group.lessonNumber}
+                              <Text style={styles.lessonSubtitle}>
+                                {' – '}
+                                {group.lessonTitle}
+                              </Text>
                             </Text>
                             <Text style={styles.lessonHeaderMeta}>
                               {group.items.length} {lessonOpen ? '⌄' : '›'}
@@ -312,19 +329,34 @@ const styles = StyleSheet.create({
   filterButtonTextActive: {
     color: colors.white,
   },
+  // Level = ONE containing white card (Bunpro's main "connected" device):
+  // the level header strip sits at the top of the card and every lesson
+  // lives inside the same card, so the sub-elements belong to the header
+  // by sharing the container — not by indentation or a spine (Bunpro
+  // uses no indentation or left border either). The card's own padding
+  // is the only inset.
   levelGroup: {
-    marginBottom: 12,
+    backgroundColor: colors.white,
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#E4E4E4',
+    marginBottom: 24,
+    overflow: 'hidden',
   },
+  // Full-width header strip at the top of the level card: very light
+  // grey background with a divider beneath it (only when open — when
+  // collapsed the card is just this strip, so no divider is needed).
   levelRow: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 10,
-    backgroundColor: colors.white,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#E4E4E4',
-    minHeight: 56,
+    backgroundColor: '#F5F5F5',
+    minHeight: 60,
     paddingHorizontal: 16,
+  },
+  levelRowOpen: {
+    borderBottomWidth: 1,
+    borderBottomColor: '#E4E4E4',
   },
   levelChevron: {
     fontSize: 18,
@@ -335,7 +367,7 @@ const styles = StyleSheet.create({
   },
   levelTitle: {
     flex: 1,
-    fontSize: 17,
+    fontSize: 22,
     fontWeight: '800',
     color: colors.text,
   },
@@ -345,17 +377,32 @@ const styles = StyleSheet.create({
     color: colors.muted,
   },
   levelBody: {
-    paddingTop: 12,
+    padding: 16,
   },
   lessonGroup: {
-    marginBottom: 20,
+    marginBottom: 12,
   },
+  // Lesson header: a plain row on white. The divider ABOVE it (all but
+  // the first lesson in the level, where the level header's own divider
+  // serves) is the attachment device — it ties the header to the
+  // previous lesson's cards and marks where this lesson starts. The
+  // lesson NUMBER is bold; the subtitle is regular-weight muted grey on
+  // the same line, so the number reads as the header and the subtitle as
+  // its description. The point cards sit directly under the header, on
+  // pale grey, so the header (white, bold) is clearly distinct from
+  // the cards.
   lessonHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
     minHeight: 44,
+    paddingVertical: 6,
     marginBottom: 8,
+    gap: 8,
+  },
+  lessonHeaderDivider: {
+    borderTopWidth: 1,
+    borderTopColor: '#E4E4E4',
   },
   lessonHeaderText: {
     fontSize: 17,
@@ -363,19 +410,24 @@ const styles = StyleSheet.create({
     color: colors.text,
     flex: 1,
   },
+  lessonSubtitle: {
+    fontWeight: '400',
+    color: colors.muted,
+  },
   lessonHeaderMeta: {
     fontSize: 15,
     color: colors.muted,
     fontWeight: '600',
   },
+  // Point cards: flat pale-grey rectangles (Bunpro), no border or
+  // shadow. The form is bold dark, the meaning muted grey, and the
+  // status pill sits at the right.
   pointCard: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 12,
-    backgroundColor: colors.white,
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: '#E4E4E4',
+    backgroundColor: '#F2F2F2',
+    borderRadius: 8,
     paddingVertical: 12,
     paddingHorizontal: 14,
     marginBottom: 8,
@@ -385,7 +437,7 @@ const styles = StyleSheet.create({
     gap: 2,
   },
   rowTitle: {
-    fontSize: 20,
+    fontSize: 18,
     fontWeight: '700',
     color: colors.text,
   },

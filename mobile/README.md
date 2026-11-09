@@ -170,12 +170,26 @@ react-native-svg, 22px, strokeWidth 2) — not mismatched text glyphs. The
 bell carries a count badge: coral-red when there are notifications, grey
 when the count is 0 (there is no notification source yet, so it is 0 and
 greyed out). The Grammar Library (`(tabs)/grammar.tsx`) is modelled on
-Bunpro's grammar_points: a title + total count, a toolbar (search +
-Hide Learned Items, which shows only New points), and one collapsible
-row per TOPIK level, collapsed by default; expanding a level shows its
-lessons, each with its points and a status pill (New / Learning /
-Mastered) — no hardcoded level badge. A search or the Hide Learned
-filter auto-expands the levels that still have points.
+Bunpro's grammar_points (build 24): a title + total count, a toolbar (search +
+Hide Learned Items, which shows only New points), and one large containing
+card per TOPIK level, collapsed by default. The level header is a
+light-grey strip at the top of its card; the lessons live inside the same
+card, so the sub-elements feel connected to their headers (shared
+container + header strip + divider rules, no indentation). Each lesson
+header has a divider above it (except the first in the level), a bold
+"Lesson N", and the subtitle in regular muted grey on the same line, so
+the lesson number is clearly distinguished from the pale-grey point cards
+beneath it. Expanding a level shows its lessons, each with its points and
+a status pill (New / Learning / Mastered) — no hardcoded level badge. A
+search or the Hide Learned filter auto-expands the levels that still have
+points. The Decks catalogue (`decks.tsx`) is a grid, not a list (build
+24, Bunpro's Decks page but more utilitarian): each card has a
+typographic "cover" (the deck title in large type on pale grey, with a
+faint level number) and a thin red progress line along the bottom edge
+of the cover, its width proportional to the learned percentage; the
+bottom panel holds the description, three stats in a row (Points /
+Learned / Due, separated by vertical dividers), and the library action.
+The cover links to the deck detail page.
 
 ### Review flow (Bunpro-style)
 
