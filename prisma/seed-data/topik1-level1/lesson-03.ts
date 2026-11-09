@@ -63,7 +63,7 @@ export const lesson03: LessonSeed = {
 					fullSentence: '학교에 가요.',
 					sentenceWithBlank: '학교___ 가요.',
 					answer: '에',
-					alternateAnswers: [],
+					alternateAnswers: ['로'],
 					vocabBaseForm: '에',
 					englishHint: [h('I go ', 'none'), h('to school', 'direct'), h('.', 'none')],
 					introducedAtPosition: 19
@@ -83,7 +83,7 @@ export const lesson03: LessonSeed = {
 					fullSentence: '회사에 가요.',
 					sentenceWithBlank: '회사___ 가요.',
 					answer: '에',
-					alternateAnswers: [],
+					alternateAnswers: ['로'],
 					vocabBaseForm: '에',
 					englishHint: [h('I go ', 'none'), h('to work', 'direct'), h('.', 'none')],
 					introducedAtPosition: 19
@@ -109,7 +109,7 @@ export const lesson03: LessonSeed = {
 			structurePattern: '[Noun]이/가 있어요 · [Place]에 있어요',
 			notes: [
 				{ type: 'tip', title: 'Three Meanings', content: 'Existence: 의자가 있어요 (there is a chair). Possession: 돈이 있어요 (I have money). Location: 여기에 있어요 (I am here).' },
-				{ type: 'caution', title: 'Subject Particle', content: 'The thing that exists takes 이/가, not 은/는: 고양이가 있어요 (a cat exists).' }
+				{ type: 'caution', title: 'Subject Particle', content: '이/가 introduces what exists: 고양이가 있어요 (there is a cat). 은/는 is possible when making it the topic or contrasting it: 고양이는 있어요 (as for a cat, there is one).' }
 			],
 			lessonExamples: [
 				{
@@ -180,7 +180,7 @@ export const lesson03: LessonSeed = {
 			structurePattern: '[Noun]이/가 없어요',
 			notes: [
 				{ type: 'tip', title: 'Pair with 있다', content: '있다 (have/exist) ↔ 없다 (don\'t have / doesn\'t exist). They are a pair, not verb + negation.' },
-				{ type: 'caution', title: 'Not 안 있다', content: 'Don\'t say 안 있어요 — use 없어요 instead. 없다 is its own word, not a negation of 있다.' }
+				{ type: 'caution', title: 'Not 안 있다', content: 'For absence or lack of possession, use 없어요: 돈이 없어요 (I don’t have money). Learn it as the usual opposite of 있어요 in these examples.' }
 			],
 			lessonExamples: [
 				{

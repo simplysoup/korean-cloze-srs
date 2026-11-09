@@ -192,6 +192,15 @@ function greedyMatch(table: Readonly<Record<string, number>>, s: string, pos: nu
 	return null;
 }
 
+function matchMedial(s: string, pos: number): string | null {
+	const match = greedyMatch(MEDIAL, s, pos);
+	// A trailing y can be an informal vowel alias or the next syllable's
+	// onset. Prefer the syllable boundary when a y-vowel follows.
+	if (match?.endsWith('y') && MEDIAL[match.slice(0, -1)] !== undefined &&
+		greedyMatch(MEDIAL, s, pos + match.length - 1)) return match.slice(0, -1);
+	return match;
+}
+
 /** True when the substring of `s` starting at `pos` begins a valid medial vowel. */
 function startsMedial(s: string, pos: number): boolean {
 	return greedyMatch(MEDIAL, s, pos) !== null;
@@ -240,7 +249,7 @@ export function romanToHangul(input: string): string {
 
 			// 2. No initial consonant — try to match a medial vowel directly.
 			//    If found, use the silent ㅇ (index 11) as the implicit onset.
-			const medMatch = greedyMatch(MEDIAL, s, pos);
+			const medMatch = matchMedial(s, pos);
 			if (medMatch !== null) {
 				initialVal = SILENT_ONSET;
 				initialRoman = '';
@@ -270,7 +279,7 @@ export function romanToHangul(input: string): string {
 		// ── STATE: NEED_MEDIAL ──────────────────────────────────────────────
 		} else if (medialVal === -1) {
 
-			const medMatch = greedyMatch(MEDIAL, s, pos);
+			const medMatch = matchMedial(s, pos);
 			if (medMatch !== null) {
 				medialVal = MEDIAL[medMatch];
 				pos += medMatch.length;

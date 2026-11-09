@@ -15,7 +15,7 @@ import { calculateLevel } from '../lib/levels';
 import { generateSalt, hashPassword, isLogoutGraceActive, usernameFromEmail } from '../lib/auth';
 
 export const LOCAL_USER_ID = 'local';
-export const CONTENT_VERSION = 'topik1-level1-v2';
+export const CONTENT_VERSION = 'topik1-level1-v3';
 
 /** The id of the currently logged-in user; all queries below are scoped to
  * it. Defaults to 'local' until the auth layer sets the real account. */
@@ -114,15 +114,21 @@ export function initDb(): Db {
     database.insert(schema.decks).values(deck).onConflictDoNothing().run();
   }
 
+  // Content sync on a version bump: new rows are inserted AND changed
+  // text is updated (onConflictDoUpdate), so a content correction reaches
+  // devices that already seeded an earlier version. Review progress lives
+  // in review_cards / review_logs, which this never touches.
   for (const { gp, lessonNumber, position } of grammarPoints) {
-    database.insert(schema.grammarPoints).values({
-      id: gp.id, title: gp.title, category: gp.category, tense: gp.tense, register: gp.register,
+    const gpRow = {
+      title: gp.title, category: gp.category, tense: gp.tense, register: gp.register,
       hint: gp.hint, description: gp.description, level: gp.level,
       tags: JSON.stringify(gp.tags), structurePattern: gp.structurePattern,
       notes: gp.notes ? JSON.stringify(gp.notes) : null,
       relatedPointIds: JSON.stringify(gp.relatedPointIds ?? []),
       lessonNumber, position,
-    }).onConflictDoNothing().run();
+    };
+    database.insert(schema.grammarPoints).values({ id: gp.id, ...gpRow })
+      .onConflictDoUpdate({ target: schema.grammarPoints.id, set: gpRow }).run();
 
     database.insert(schema.deckGrammarPoints).values({
       id: `dgp_${bundle.deck.id}_${gp.id}`,
@@ -131,12 +137,14 @@ export function initDb(): Db {
     }).onConflictDoNothing().run();
 
     for (const card of gp.cards) {
-      database.insert(schema.clozeCards).values({
-        id: card.id, grammarPointId: gp.id, fullSentence: card.fullSentence,
+      const cardRow = {
+        grammarPointId: gp.id, fullSentence: card.fullSentence,
         sentenceWithBlank: card.sentenceWithBlank, vocabBaseForm: card.vocabBaseForm,
         answer: card.answer, alternateAnswers: JSON.stringify(card.alternateAnswers),
         englishHint: JSON.stringify(card.englishHint), introducedAtPosition: card.introducedAtPosition,
-      }).onConflictDoNothing().run();
+      };
+      database.insert(schema.clozeCards).values({ id: card.id, ...cardRow })
+        .onConflictDoUpdate({ target: schema.clozeCards.id, set: cardRow }).run();
       database.insert(schema.clozeCardGrammarTargets).values({
         id: `tgt_${card.id}_${gp.id}`, clozeCardId: card.id, grammarPointId: gp.id,
         wordReplacement: card.answer, blankIndex: 0,
@@ -150,11 +158,13 @@ export function initDb(): Db {
       }
     }
     for (const ex of gp.lessonExamples) {
-      database.insert(schema.lessonExamples).values({
-        id: ex.id, grammarPointId: gp.id, fullSentence: ex.fullSentence,
+      const exRow = {
+        grammarPointId: gp.id, fullSentence: ex.fullSentence,
         sentenceWithBlank: ex.sentenceWithBlank, answer: ex.answer,
         englishHint: JSON.stringify(ex.englishHint), order: ex.order, notes: ex.notes ?? null,
-      }).onConflictDoNothing().run();
+      };
+      database.insert(schema.lessonExamples).values({ id: ex.id, ...exRow })
+        .onConflictDoUpdate({ target: schema.lessonExamples.id, set: exRow }).run();
     }
   }
 

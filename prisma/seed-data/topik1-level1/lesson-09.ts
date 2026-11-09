@@ -28,12 +28,12 @@ export const lesson09: LessonSeed = {
 			description:
 				'Connects two clauses where the first is the reason for the second. ' +
 				'Verb stem + 아서/어서: 배가 고파서 밥을 먹었어요 "Because I was hungry, I ate." ' +
-				'Same vowel harmony as -아요/어요. The first clause CANNOT take past tense — tense is on the final verb only.',
+				'Same vowel harmony as -아요/어요. In the pattern taught here, put tense on the final verb.',
 			level: 1,
 			tags: ['connective', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + 아서/어서 + [result clause]',
 			notes: [
-				{ type: 'caution', title: 'No Tense in 1st Clause', content: '-아/어서 clause cannot have past/future tense markers. Use -(으)니까 if you need tense in the reason clause.' },
+				{ type: 'caution', title: 'Where to put tense', content: 'For these beginner examples, leave the reason clause unmarked for tense and mark the main verb. Compare -(으)니까 when explicitly marking a past reason.' },
 				{ type: 'tip', title: 'Common Combinations', content: '만나서 반갑습니다 (Nice to meet you — lit. "meeting, I am pleased"). 늦어서 죄송합니다 (Sorry for being late).' }
 			],
 			relatedPointIds: ['gp_eunikka'],
@@ -105,7 +105,7 @@ export const lesson09: LessonSeed = {
 			tags: ['connective', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + (으)니까 + [result clause]',
 			notes: [
-				{ type: 'tip', title: '-(으)니까 vs -아/어서', content: '-(으)니까 is more subjective and can precede commands: 시간이 없으니까 빨리 가세요. -아/어서 cannot precede commands.' },
+				{ type: 'tip', title: '-(으)니까 vs -아/어서', content: '-(으)니까 is more subjective and can precede commands: 시간이 없으니까 빨리 가세요. Use -(으)니까 for a reason followed by a command or suggestion in this lesson.' },
 				{ type: 'tip', title: 'Past OK', content: '-(으)니까 allows past tense: 이미 먹었으니까 안 먹어요 (I already ate, so I\'m not eating).' }
 			],
 			relatedPointIds: ['gp_aseo'],

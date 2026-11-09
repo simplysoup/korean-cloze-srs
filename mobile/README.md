@@ -30,21 +30,50 @@ npm run ios          # macOS only
 
 | Command | What it does |
 |---|---|
-| `npm test` | Jest (jest-expo): romanization, FSRS, answer checking, seed validation, local auth — 39 + auth tests |
+| `npm test` | Jest (jest-expo): romanization, FSRS, answer checking, seed validation, local auth — 65 tests |
 | `npm run typecheck` | `tsc --noEmit` — must be 0 errors |
 | `npm run validate` | `node ../scripts/validate-content.mjs` — content counts + integrity |
 | `npm run export` | `npx expo export` — static export check (web) |
 | `npm start` | Expo dev server |
 
-CI (`.github/workflows/mobile.yml`) runs validate, typecheck, tests, and
-`expo export` on every push touching `mobile/`.
+**Live:** [https://srv889405.tail9df0b2.ts.net:8443/](https://srv889405.tail9df0b2.ts.net:8443/) (VPS, Tailscale serve HTTPS on :8443 → local static server on :28767; see Deploy below). **CI:** `.github/workflows/mobile.yml` runs content validation, typecheck, Jest, and `expo export` on every push touching `mobile/`.
+
+## Deploy (VPS — the live site)
+
+The live site is a static export served by a dependency-free Node
+server on the VPS (`~/korean-cloze-web/server.js`, port 28767, SPA
+fallback, COOP/COEP headers for the SQLite wasm worker, proxies
+`/api/*` to the auth backend on 127.0.0.1:28768). Tailscale serve
+exposes it as https://srv889405.tail9df0b2.ts.net:8443/.
+
+From a checkout of this repo (branch `v2/expo`):
+
+```sh
+cd mobile
+tar --exclude=node_modules --exclude=dist --exclude=.expo -czf - . \
+  | ~/workspace/vps-ssh.sh 'mkdir -p ~/korean-build/mobile && cd ~/korean-build/mobile && tar xzf -'
+~/workspace/vps-ssh.sh 'cd ~/korean-build/mobile && PATH=~/node22/bin:$PATH npx expo export --platform web'
+~/workspace/vps-ssh.sh 'rm -rf ~/korean-cloze-web/dist && mv ~/korean-build/mobile/dist ~/korean-cloze-web/dist'
+```
+
+Then verify: `curl` the local server (200 on
+http://127.0.0.1:28767/), the public link (200 on
+https://srv889405.tail9df0b2.ts.net:8443/, 6 deferred script tags in
+the HTML), and `/api/auth/health` (`{"ok":true,"emailConfigured":true}`).
+
+Notes: SSH to the VPS goes over Tailscale only (`~/workspace/vps-ssh.sh`,
+never direct port 22); the VPS system Node 18 is too old for Expo, use
+`~/node22/bin`. `rsync` does not work over that SSH route (broken pipe)
+— tar over stdin is the transfer. The static server and the auth backend
+are started by `@reboot` crontab entries on the VPS.
 
 ## Architecture
 
 ```
 mobile/
   src/app/            Expo Router screens
-    _layout.tsx       Auth gate (login/signup paints before the DB opens) + Stack
+    _layout.tsx       App shell: nav + dashboard skeleton paint immediately;
+                      DB warm-up + session restore run in the background
     (tabs)/           Learn · Reviews · Dashboard · Grammar (tabs)
     grammar/[id].tsx  Grammar detail (Details / Examples / Resources)
   src/components/     AuthScreen, BrandMark, ClozeSentence, EnglishHint, …
@@ -82,17 +111,32 @@ record per grammar point, with `streak_correct`, `mastered_at`,
 user id). Per-user rows are keyed by the logged-in account's id; pre-auth
 data keyed `local` migrates to the first account created on the device.
 
-### Auth (local only, no server)
+### Auth (email-code, via the VPS backend — build 8)
 
-Login/signup screens paint before the database opens — the DB warm-up
-(wasm fetch/compile + OPFS init) runs in the background while the user
-reads/types, and is only awaited when a form is submitted. First run with
-zero accounts goes to signup. "Remember Me" (default on) persists the
-session as a user id in the `meta` table, so returning users skip login;
-Log out is on the Dashboard. Passwords are salted + 1000× iterated
-SHA-256 (`src/lib/sha256.ts`, `src/lib/auth.ts`) — a local-privacy
-measure for a DB file that never leaves the device, not server-grade
-credential storage. No password reset, no social login.
+Sign-in and sign-up are the same form: enter an email, get a 6-digit
+code, enter it, you're in. Codes are issued by the auth backend on the
+VPS (`~/korean-auth/server.js`, plain Node + nodemailer, binds
+127.0.0.1:28768, proxied same-origin as `/api/*` by the static server);
+6 digits, 10-minute expiry, 5 verify attempts, SHA-256-hashed in
+memory, rate-limited (5/hr per email, 30/hr per IP). Verifying a code
+(or a password login) trusts the device → auto-login; logging out
+starts a 30-minute grace, after which a code is required again.
+Password is optional (add/change in the Account screen); users created
+by email get their username from the email local part. The old
+local-password auth (salted + iterated SHA-256 in `src/lib/auth.ts`)
+is still in the codebase for password logins, but email-code is the
+primary flow. No social login. Accounts and progress live in the
+device SQLite file; the server never sees study data.
+
+### Settings (build 12)
+
+`/settings`: global daily new-items limit (1–10, default 5) and batch
+size (1–10, ≤ daily limit), hide streak, vacation mode (pauses reviews
+and learning; turning it off bridges the streak), and review toggles
+(show SRS rank, Undo, lightning mode, focus mode, max reviews/day).
+Per-deck Daily Goal (1–50) and Batch Size (1–50) live on each deck's
+detail page and override the global values when "Use global settings"
+is off.
 
 ### Review flow (Bunpro-style)
 
@@ -107,16 +151,23 @@ credential storage. No password reset, no social login.
   counter, Remaining count. Hint reveals the answer in stages (full
   reveal marks the card failed).
 - Check is exact match against the answer + alternate answers (+ the
-  grammar-target word replacement). Correct → Good (3); wrong → Again
-  (1). Show Answer reveals without re-typing; Undo re-enables editing.
+  grammar-target word replacement), after NFC normalization and
+  whitespace collapsing (`normalizeAnswer` in `src/lib/srs.ts`) — a
+  stray space or decomposed Hangul sequence no longer fails a correct
+  answer. Correct → Good (3); wrong → Again (1). After a wrong answer
+  the screen shows a targeted explanation for the classic confusions
+  (`answerExplanation`): 에 vs 에서, and the consonant/vowel rule for
+  은/는, 이/가, 을/를, 이에요/예요. Show Answer reveals without
+  re-typing; Undo re-enables editing.
 - Misses go to a Wrap-Up round and re-queue until answered correctly;
   the session ends with a Summary screen (Right/Wrong, accuracy).
 - FSRS update, review log, and streak update happen locally and
   synchronously in `submitReview`. Mastery: 8 correct in a row masters a
   grammar point (it leaves the queue).
-- Learn flow: session of 5 grammar points from the deck in curriculum
+- Learn flow: session of up to the daily-limit grammar points
+  (default 5, configurable in Settings) from the deck in curriculum
   order, each shown as a point page (red headword, Structure, About,
-  Details, Examples). Green "I already know this" masters the point
+  Details, Examples).
   immediately (never tested again); the blue arrow advances and adds the
   point to the deck. Then a Review stage tests the just-learned points
   (one card per point), re-queueing misses until every card is answered
@@ -125,16 +176,28 @@ credential storage. No password reset, no social login.
 
 ## Provisional content — read this before using the app to study
 
-**All 48 grammar points, 154 cloze cards, and 98 lesson examples
+**All 48 grammar points, 178 cloze cards, and 109 lesson examples
 (TOPIK I Level 1) are copied VERBATIM from the old app's seed data
 (`prisma/seed-data/topik1-level1/`).** They were authored by Nicholas
 with basic Korean and are marked provisional in the JSON itself
 (`provenance` field) and here. They will likely be regenerated later by
 a high-performing English–Korean multimodal model. No new cards were
-generated in this increment, and no grammar content was invented.
+generated in this increment, and no grammar content was invented —
+except the Level 1 additions (build 15): 24 variant practice cards and
+11 worked examples from the Codex "Make Level 1 lessons and reviews
+reliable" patch, merged in `scripts/port-content.ts` from
+`prisma/seed-data/topik1-level1/additions.ts`, plus four content
+corrections from the same patch (좋다 → 좋은 is regular, not
+irregular; -고 싶다 3rd person uses -고 싶어하다; the -아/어서 tense
+absolute softened; the 안 있어요 caution softened; 에/로 accepted as
+an alternate for "학교에 가요" / "회사에 가요"). Content is versioned
+(`CONTENT_VERSION` in `src/db/index.ts`, now `topik1-level1-v3`): on a
+version bump the seed upserts every content row, so new and corrected
+content reaches devices that already seeded an earlier version without
+touching review progress.
 
 Validation (`npm run validate` / the seed Jest test) enforces:
-11 lessons, 48 grammar points, 154 cloze cards, 98 lesson examples;
+11 lessons, 48 grammar points, 178 cloze cards, 109 lesson examples;
 every cloze answer appears in its sentence; every grammar point has
 ≥ 2 lesson examples; no duplicate ids; all related / extra-target ids
 exist.
@@ -146,13 +209,14 @@ exist.
 - **Push notifications** — no due-review reminders yet.
 - **Audio / TTS** — no pronunciation audio on examples yet.
 - **Vocabulary** — no vocab SRS track (the old app's menu said “soon” too).
-- **Cram mode and Ghost reviews** — not built.
+- **Ghost reviews** — not built (Cram exists since build 12, but no
+  ghost-review scheduling).
 - **Close-answer detection** — no Levenshtein ≤ 1 “close” warning yet;
-  checks are exact-match only.
+  checks are exact-match only (plus NFC/whitespace normalization).
 - **TOPIK I Level 2 and beyond** — content stops at Level 1 (48 points).
 - **Capacitor / App Store release** — no EAS build/submit config yet.
-- **Settings** — no settings screen (session size is fixed at 5 in Learn;
-  Review is capped at 10 due cards per session, as in the old app).
+- **Grammar point "Your Progress" panel, badges** — from the Bunpro
+  walkthrough; not built yet.
 
 ## Known issues / quirks carried over
 

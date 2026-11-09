@@ -11,11 +11,11 @@ const cards = grammarPoints.flatMap(({ gp }) => gp.cards);
 const examples = grammarPoints.flatMap(({ gp }) => gp.lessonExamples);
 
 describe('seed content counts', () => {
-  it('has 11 lessons, 48 grammar points, 154 cloze cards, 98 lesson examples', () => {
+  it('has 11 lessons, 48 grammar points, 178 cloze cards, 109 lesson examples', () => {
     expect(bundle.lessons.length).toBe(11);
     expect(grammarPoints.length).toBe(48);
-    expect(cards.length).toBe(154);
-    expect(examples.length).toBe(98);
+    expect(cards.length).toBe(178);
+    expect(examples.length).toBe(109);
   });
 });
 

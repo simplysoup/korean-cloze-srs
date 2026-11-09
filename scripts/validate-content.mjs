@@ -1,7 +1,7 @@
 /**
  * Validate the ported TOPIK I Level 1 content (mobile/src/content/topik1-level1.json).
  * Fails (exit 1) unless ALL of these hold:
- *  - 11 lessons, 48 grammar points, 154 cloze cards, 98 lesson examples
+ *  - 11 lessons, 48 grammar points, 178 cloze cards, 109 lesson examples
  *  - every cloze card's answer appears in its fullSentence
  *  - every grammar point has >= 2 lesson examples
  *  - no duplicate ids (grammar points, cards, examples)
@@ -25,8 +25,8 @@ const examples = gps.flatMap((g) => g.lessonExamples);
 
 check(lessons.length === 11, `lessons: expected 11, got ${lessons.length}`);
 check(gps.length === 48, `grammarPoints: expected 48, got ${gps.length}`);
-check(cards.length === 154, `clozeCards: expected 154, got ${cards.length}`);
-check(examples.length === 98, `lessonExamples: expected 98, got ${examples.length}`);
+check(cards.length === 178, `clozeCards: expected 178, got ${cards.length}`);
+check(examples.length === 109, `lessonExamples: expected 109, got ${examples.length}`);
 
 const seen = new Set();
 const dup = (id, kind) => {

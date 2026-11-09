@@ -97,7 +97,55 @@ export function computeFsrsReview(prev: FsrsState, rating: Grade, now: Date): Fs
  */
 export function checkAnswers(submitted: string[], correctAnswers: string[]): boolean {
   if (submitted.length === 0) return false;
-  return submitted.every((a) => correctAnswers.some((ca) => ca === a.trim()));
+  return submitted.every((a) =>
+    correctAnswers.some((ca) => normalizeAnswer(ca) === normalizeAnswer(a)),
+  );
+}
+
+/**
+ * Port of the old app's answers.ts (Codex Level 1 patch): normalize
+ * before comparing, so a stray space or a decomposed Hangul sequence
+ * does not fail an otherwise-correct answer. The Expo input is already
+ * Hangul (roman input converts live), so there is no roman mode here.
+ */
+export function normalizeAnswer(input: string): string {
+  return input.normalize('NFC').trim().replace(/\s+/g, ' ');
+}
+
+/**
+ * Port of answers.ts answerExplanation: a targeted hint for the most
+ * common confusions, shown after a wrong answer. Returns undefined when
+ * there is no specific explanation for this point/answer.
+ */
+export function answerExplanation(
+  grammarPointId: string,
+  expected: string,
+  input: string,
+): string | undefined {
+  const typed = normalizeAnswer(input);
+  const particle = ['에', '에서'].find((p) => typed === p);
+  if (grammarPointId === 'gp_eseo' && expected === '에서') {
+    return particle === '에'
+      ? '에 can mark a destination or where something is. This sentence says where an action happens, so use 에서.'
+      : '에서 marks where the action happens. Compare 도서관에서 공부해요 (study at the library) with 도서관에 가요 (go to the library).';
+  }
+  if (grammarPointId === 'gp_e_loc' && expected === '에') {
+    return particle === '에서'
+      ? '에서 can mark where an action happens. Here 에 marks a destination or where something is.'
+      : '에 marks a destination or where something is. Use 에서 for the place where an action happens.';
+  }
+  const forms: Record<string, [string, string]> = {
+    gp_eun_neun: ['은', '는'],
+    gp_i_ga: ['이', '가'],
+    gp_eul_reul: ['을', '를'],
+    gp_ieyo_yeyo: ['이에요', '예요'],
+  };
+  const pair = forms[grammarPointId];
+  if (pair && pair.includes(expected)) {
+    const [consonant, vowel] = pair;
+    return `Use ${consonant} after a noun ending in a consonant (받침) and ${vowel} after a noun ending in a vowel.`;
+  }
+  return undefined;
 }
 
 /** Correct answers for a cloze card: target word replacement (if any), answer, alternates — deduped. */

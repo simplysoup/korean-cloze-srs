@@ -28,7 +28,7 @@ export const lesson07: LessonSeed = {
 			description:
 				'Expresses a desire or wish. Verb stem + 고 싶다: 먹다 → 먹고 싶어요 "I want to eat." ' +
 				'Past form: -고 싶었어요 "I wanted to." ' +
-				'Only used for first person (I want) or second person questions (Do you want?).',
+				'Use it to express your own desire or ask the listener what they want. To describe someone else’s visible desire, the usual form is -고 싶어하다.',
 			level: 1,
 			tags: ['expression', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + 고 싶다',

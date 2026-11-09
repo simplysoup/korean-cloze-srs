@@ -28,13 +28,13 @@ export const lesson06: LessonSeed = {
 			description:
 				'Turns a descriptive verb (adjective) into a noun modifier. ' +
 				'After a consonant stem → -은: 작다 → 작은. After a vowel stem → -ㄴ: 크다 → 큰. ' +
-				'Irregular: 좋다 → 좋은, 길다 → 긴, 빠르다 → 빠른.',
+				'Compare 좋다 → 좋은 (regular), 길다 → 긴 (the stem-final ㄹ drops), and 빠르다 → 빠른.',
 			level: 1,
 			tags: ['modifier', 'beginner', 'TOPIK1'],
 			structurePattern: 'Adj stem + (으)ㄴ + Noun',
 			notes: [
 				{ type: 'tip', title: 'ㄹ-Irregular', content: 'If the stem ends in ㄹ, drop ㄹ and add -ㄴ: 길다 → 긴, 멀다 → 먼.' },
-				{ type: 'caution', title: 'Action Verbs Differ', content: 'Action verbs use -는 for present modification (다음 레슨). -(으)ㄴ with descriptive verbs only.' }
+				{ type: 'caution', title: 'Action Verbs Differ', content: 'Action verbs generally take -는 for present modification. They can take -(으)ㄴ for a completed action. Forms such as 있는 and 없는 also use -는.' }
 			],
 			lessonExamples: [
 				{

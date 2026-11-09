@@ -10,7 +10,7 @@ import {
   type ReviewQueueItem,
   type UserSettings,
 } from '../../db';
-import { formatNextReview, ratingForCheck, srsRankLabel } from '../../lib/srs';
+import { formatNextReview, ratingForCheck, srsRankLabel, answerExplanation } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
@@ -81,6 +81,17 @@ export default function ReviewScreen() {
     if (hintStage === 2) return answer.slice(0, Math.max(1, Math.ceil(answer.length / 2)));
     return answer;
   })();
+
+  // Targeted explanation for a wrong answer (에/에서 confusion, particle
+  // pairs) — ported from the old app's answers.ts.
+  const explanation =
+    currentCard && submitted && !allCorrect
+      ? answerExplanation(
+          currentCard.grammarPointId,
+          currentCard.wordReplacement || currentCard.answers[0] || '',
+          hangulValues[0] ?? '',
+        )
+      : undefined;
 
   function resetCardState() {
     setRomanInputs(['']);
@@ -304,6 +315,10 @@ export default function ReviewScreen() {
         </Text>
       ) : null}
 
+      {submitted && !allCorrect && explanation ? (
+        <Text style={styles.explanation}>{explanation}</Text>
+      ) : null}
+
       {error ? <Text style={styles.error}>{error}</Text> : null}
 
       {/* Controls */}
@@ -443,6 +458,12 @@ const styles = StyleSheet.create({
     fontSize: 16,
     color: colors.blue,
     textAlign: 'center',
+  },
+  explanation: {
+    fontSize: 14,
+    color: colors.muted,
+    textAlign: 'center',
+    marginTop: 8,
   },
   inputRow: {
     flexDirection: 'row',

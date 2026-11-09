@@ -1,6 +1,6 @@
 {
-  "provenance": "PROVISIONAL — copied verbatim from prisma/seed-data/topik1-level1/ (old SvelteKit app, last commit 2026-02-28). Authored by Nicholas with basic Korean; to be regenerated later by a high-performing English-Korean multimodal model. Do not treat as vetted teaching content.",
-  "source": "prisma/seed-data/topik1-level1/lesson-01.ts … lesson-11.ts",
+  "provenance": "PROVISIONAL — copied verbatim from prisma/seed-data/topik1-level1/ (old SvelteKit app, last commit 2026-02-28), plus the Level 1 additions in prisma/seed-data/topik1-level1/additions.ts (worked examples + variant practice cards, from the Codex \"Make Level 1 lessons and reviews reliable\" patch, 2026-11-08). Authored by Nicholas with basic Korean; to be regenerated later by a high-performing English-Korean multimodal model. Do not treat as vetted teaching content.",
+  "source": "prisma/seed-data/topik1-level1/lesson-01.ts … lesson-11.ts + additions.ts",
   "deck": {
     "id": "deck_topik1_level1",
     "title": "TOPIK I Level 1 Grammar",
@@ -85,6 +85,20 @@
                 }
               ],
               "order": 1
+            },
+            {
+              "id": "le_ieyo_repair",
+              "fullSentence": "이것은 책이에요.",
+              "sentenceWithBlank": "이것은 책___.",
+              "answer": "이에요",
+              "englishHint": [
+                {
+                  "text": "This is a book.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "책 ends in ㄱ, so use 이에요. Compare 의자예요, where 의자 ends in a vowel. For “is not,” learn the separate form 아니에요."
             }
           ],
           "cards": [
@@ -179,6 +193,36 @@
                 }
               ],
               "introducedAtPosition": 1
+            },
+            {
+              "id": "cc_ieyo_variant_book",
+              "fullSentence": "저것은 책이에요.",
+              "sentenceWithBlank": "저것은 책___.",
+              "answer": "이에요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 1,
+              "englishHint": [
+                {
+                  "text": "That over there is a book.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_ieyo_variant_desk",
+              "fullSentence": "이것은 의자예요.",
+              "sentenceWithBlank": "이것은 의자___.",
+              "answer": "예요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 1,
+              "englishHint": [
+                {
+                  "text": "This is a chair.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -375,6 +419,20 @@
               ],
               "order": 1,
               "notes": "Uses 예요 (GP1). 이름 ends in consonant ㅁ → 은."
+            },
+            {
+              "id": "le_topic_contrast",
+              "fullSentence": "커피는 마셔요. 차는 안 마셔요.",
+              "sentenceWithBlank": "커피___ 마셔요. 차는 안 마셔요.",
+              "answer": "는",
+              "englishHint": [
+                {
+                  "text": "I drink coffee. As for tea, I don’t drink it.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "는 contrasts coffee with tea. The contrast comes from the two sentences together."
             }
           ],
           "cards": [
@@ -453,6 +511,21 @@
                 }
               ],
               "introducedAtPosition": 3
+            },
+            {
+              "id": "cc_topic_variant_weekend",
+              "fullSentence": "토요일은 쉬어요. 일요일에는 일해요.",
+              "sentenceWithBlank": "토요일___ 쉬어요. 일요일에는 일해요.",
+              "answer": "은",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 3,
+              "englishHint": [
+                {
+                  "text": "I rest on Saturdays. On Sundays I work. Make Saturday the contrasting topic.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -1211,6 +1284,20 @@
               ],
               "order": 1,
               "notes": "물 ends in consonant ㄹ → 이."
+            },
+            {
+              "id": "le_subject_identification",
+              "fullSentence": "누가 왔어요? 친구가 왔어요.",
+              "sentenceWithBlank": "누가 왔어요? 친구___ 왔어요.",
+              "answer": "가",
+              "englishHint": [
+                {
+                  "text": "Who came? A friend came.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "가 identifies the person who came. 누가 means “who” as the subject."
             }
           ],
           "cards": [
@@ -1293,6 +1380,21 @@
                 }
               ],
               "introducedAtPosition": 9
+            },
+            {
+              "id": "cc_subject_variant_who",
+              "fullSentence": "누가 전화했어요? 선생님이 전화했어요.",
+              "sentenceWithBlank": "누가 전화했어요? 선생님___ 전화했어요.",
+              "answer": "이",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 9,
+              "englishHint": [
+                {
+                  "text": "Who called? The teacher called. Identify who did it.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -1552,6 +1654,20 @@
               ],
               "order": 2,
               "notes": "가다 → 가요 (stem 가 has ㅏ vowel → 아요 contracts to 가요)."
+            },
+            {
+              "id": "le_present_contraction",
+              "fullSentence": "영화를 봐요.",
+              "sentenceWithBlank": "영화를 ___.",
+              "answer": "봐요",
+              "englishHint": [
+                {
+                  "text": "I watch a movie.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 3,
+              "notes": "보다 → 봐요. The stem 보 and 아 combine to make 봐."
             }
           ],
           "cards": [
@@ -1671,6 +1787,51 @@
                 }
               ],
               "introducedAtPosition": 11
+            },
+            {
+              "id": "cc_present_variant_sit",
+              "fullSentence": "여기 앉아요.",
+              "sentenceWithBlank": "여기 ___.",
+              "answer": "앉아요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "앉다",
+              "introducedAtPosition": 11,
+              "englishHint": [
+                {
+                  "text": "I sit here.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_present_variant_read",
+              "fullSentence": "신문을 읽어요.",
+              "sentenceWithBlank": "신문을 읽___.",
+              "answer": "어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "읽다",
+              "introducedAtPosition": 11,
+              "englishHint": [
+                {
+                  "text": "I read the newspaper.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_present_variant_exercise",
+              "fullSentence": "매일 운동해요.",
+              "sentenceWithBlank": "매일 운동___.",
+              "answer": "해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "운동하다",
+              "introducedAtPosition": 11,
+              "englishHint": [
+                {
+                  "text": "I exercise every day.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -1816,6 +1977,21 @@
                 }
               ],
               "introducedAtPosition": 12
+            },
+            {
+              "id": "cc_short_negative_variant",
+              "fullSentence": "오늘은 커피를 안 마셔요.",
+              "sentenceWithBlank": "오늘은 커피를 ___ 마셔요.",
+              "answer": "안",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 12,
+              "englishHint": [
+                {
+                  "text": "Today I don’t drink coffee. Use the short negative form.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -1970,6 +2146,24 @@
                 }
               ],
               "introducedAtPosition": 13
+            },
+            {
+              "id": "cc_and_variant",
+              "fullSentence": "우유하고 빵을 사요.",
+              "sentenceWithBlank": "우유___ 빵을 사요.",
+              "answer": "하고",
+              "alternateAnswers": [
+                "와",
+                "랑"
+              ],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 13,
+              "englishHint": [
+                {
+                  "text": "I buy milk and bread.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -2097,6 +2291,21 @@
                 }
               ],
               "introducedAtPosition": 14
+            },
+            {
+              "id": "cc_here_variant",
+              "fullSentence": "여기에 책을 놓아요.",
+              "sentenceWithBlank": "___에 책을 놓아요.",
+              "answer": "여기",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 14,
+              "englishHint": [
+                {
+                  "text": "I put the book here, next to me.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -2223,6 +2432,21 @@
                 }
               ],
               "introducedAtPosition": 15
+            },
+            {
+              "id": "cc_there_variant",
+              "fullSentence": "거기에 뭐가 있어요?",
+              "sentenceWithBlank": "___에 뭐가 있어요?",
+              "answer": "거기",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 15,
+              "englishHint": [
+                {
+                  "text": "What is there where you are?",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -2341,6 +2565,21 @@
                 }
               ],
               "introducedAtPosition": 16
+            },
+            {
+              "id": "cc_over_there_variant",
+              "fullSentence": "저기에 은행이 있어요.",
+              "sentenceWithBlank": "___에 은행이 있어요.",
+              "answer": "저기",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 16,
+              "englishHint": [
+                {
+                  "text": "There is a bank over there away from both of us.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -2715,6 +2954,34 @@
                 }
               ],
               "order": 1
+            },
+            {
+              "id": "le_e_library_destination",
+              "fullSentence": "도서관에 가요.",
+              "sentenceWithBlank": "도서관___ 가요.",
+              "answer": "에",
+              "englishHint": [
+                {
+                  "text": "I go to the library.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "The library is the destination. Compare 도서관에서 공부해요, where the library is the place of the action."
+            },
+            {
+              "id": "le_e_library_existence",
+              "fullSentence": "도서관에 있어요.",
+              "sentenceWithBlank": "도서관___ 있어요.",
+              "answer": "에",
+              "englishHint": [
+                {
+                  "text": "I am at the library.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 3,
+              "notes": "있어요 tells you where someone or something is."
             }
           ],
           "cards": [
@@ -2723,7 +2990,9 @@
               "fullSentence": "학교에 가요.",
               "sentenceWithBlank": "학교___ 가요.",
               "answer": "에",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "로"
+              ],
               "vocabBaseForm": "에",
               "englishHint": [
                 {
@@ -2769,7 +3038,9 @@
               "fullSentence": "회사에 가요.",
               "sentenceWithBlank": "회사___ 가요.",
               "answer": "에",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "로"
+              ],
               "vocabBaseForm": "에",
               "englishHint": [
                 {
@@ -2786,6 +3057,55 @@
                 }
               ],
               "introducedAtPosition": 19
+            },
+            {
+              "id": "cc_e_variant_park",
+              "fullSentence": "공원에 가요.",
+              "sentenceWithBlank": "공원___ 가요.",
+              "answer": "에",
+              "alternateAnswers": [
+                "으로"
+              ],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 19,
+              "englishHint": [
+                {
+                  "text": "I go to the park.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_e_variant_school",
+              "fullSentence": "친구가 학교에 있어요.",
+              "sentenceWithBlank": "친구가 학교___ 있어요.",
+              "answer": "에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 19,
+              "englishHint": [
+                {
+                  "text": "My friend is at school.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_e_variant_store",
+              "fullSentence": "가게에 가요.",
+              "sentenceWithBlank": "가게___ 가요.",
+              "answer": "에",
+              "alternateAnswers": [
+                "로"
+              ],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 19,
+              "englishHint": [
+                {
+                  "text": "I go to the store.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -2813,7 +3133,7 @@
             {
               "type": "caution",
               "title": "Subject Particle",
-              "content": "The thing that exists takes 이/가, not 은/는: 고양이가 있어요 (a cat exists)."
+              "content": "이/가 introduces what exists: 고양이가 있어요 (there is a cat). 은/는 is possible when making it the topic or contrasting it: 고양이는 있어요 (as for a cat, there is one)."
             }
           ],
           "lessonExamples": [
@@ -2929,6 +3249,21 @@
                 }
               ],
               "introducedAtPosition": 20
+            },
+            {
+              "id": "cc_existence_variant",
+              "fullSentence": "가방에 책이 있어요.",
+              "sentenceWithBlank": "가방에 책이 ___.",
+              "answer": "있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "있다",
+              "introducedAtPosition": 20,
+              "englishHint": [
+                {
+                  "text": "There is a book in the bag.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -2956,7 +3291,7 @@
             {
               "type": "caution",
               "title": "Not 안 있다",
-              "content": "Don't say 안 있어요 — use 없어요 instead. 없다 is its own word, not a negation of 있다."
+              "content": "For absence or lack of possession, use 없어요: 돈이 없어요 (I don’t have money). Learn it as the usual opposite of 있어요 in these examples."
             }
           ],
           "lessonExamples": [
@@ -3139,6 +3474,20 @@
                 }
               ],
               "order": 1
+            },
+            {
+              "id": "le_eseo_library_action",
+              "fullSentence": "도서관에서 책을 읽어요.",
+              "sentenceWithBlank": "도서관___ 책을 읽어요.",
+              "answer": "에서",
+              "englishHint": [
+                {
+                  "text": "I read a book at the library.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "Reading is the action. The library tells you where it happens."
             }
           ],
           "cards": [
@@ -3210,6 +3559,51 @@
                 }
               ],
               "introducedAtPosition": 22
+            },
+            {
+              "id": "cc_eseo_variant_park",
+              "fullSentence": "공원에서 운동해요.",
+              "sentenceWithBlank": "공원___ 운동해요.",
+              "answer": "에서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 22,
+              "englishHint": [
+                {
+                  "text": "I exercise at the park.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_eseo_variant_home",
+              "fullSentence": "집에서 밥을 먹어요.",
+              "sentenceWithBlank": "집___ 밥을 먹어요.",
+              "answer": "에서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 22,
+              "englishHint": [
+                {
+                  "text": "I eat at home.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_eseo_variant_school",
+              "fullSentence": "학교에서 한국어를 배워요.",
+              "sentenceWithBlank": "학교___ 한국어를 배워요.",
+              "answer": "에서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 22,
+              "englishHint": [
+                {
+                  "text": "I learn Korean at school.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -3282,6 +3676,20 @@
                 }
               ],
               "order": 1
+            },
+            {
+              "id": "le_position_behind",
+              "fullSentence": "집 뒤에 나무가 있어요.",
+              "sentenceWithBlank": "집 ___에 나무가 있어요.",
+              "answer": "뒤",
+              "englishHint": [
+                {
+                  "text": "There is a tree behind the house.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "집 뒤에 literally puts the house first, then “behind,” then the location particle."
             }
           ],
           "cards": [
@@ -3378,6 +3786,21 @@
                 }
               ],
               "introducedAtPosition": 23
+            },
+            {
+              "id": "cc_position_behind_variant",
+              "fullSentence": "학교 뒤에 공원이 있어요.",
+              "sentenceWithBlank": "학교 ___에 공원이 있어요.",
+              "answer": "뒤",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 23,
+              "englishHint": [
+                {
+                  "text": "There is a park behind the school.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         }
@@ -4194,6 +4617,20 @@
                 }
               ],
               "order": 2
+            },
+            {
+              "id": "le_past_contraction",
+              "fullSentence": "영화를 봤어요.",
+              "sentenceWithBlank": "영화를 ___.",
+              "answer": "봤어요",
+              "englishHint": [
+                {
+                  "text": "I watched a movie.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 3,
+              "notes": "보다 → 봤어요. 보 and 았 combine to make 봤."
             }
           ],
           "cards": [
@@ -4311,6 +4748,21 @@
                 }
               ],
               "introducedAtPosition": 29
+            },
+            {
+              "id": "cc_past_variant_sit",
+              "fullSentence": "여기 앉았어요.",
+              "sentenceWithBlank": "여기 ___.",
+              "answer": "앉았어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "앉다",
+              "introducedAtPosition": 29,
+              "englishHint": [
+                {
+                  "text": "I sat here.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -4470,7 +4922,7 @@
           "tense": "present",
           "register": null,
           "hint": "adjective → noun modifier",
-          "description": "Turns a descriptive verb (adjective) into a noun modifier. After a consonant stem → -은: 작다 → 작은. After a vowel stem → -ㄴ: 크다 → 큰. Irregular: 좋다 → 좋은, 길다 → 긴, 빠르다 → 빠른.",
+          "description": "Turns a descriptive verb (adjective) into a noun modifier. After a consonant stem → -은: 작다 → 작은. After a vowel stem → -ㄴ: 크다 → 큰. Compare 좋다 → 좋은 (regular), 길다 → 긴 (the stem-final ㄹ drops), and 빠르다 → 빠른.",
           "level": 1,
           "tags": [
             "modifier",
@@ -4487,7 +4939,7 @@
             {
               "type": "caution",
               "title": "Action Verbs Differ",
-              "content": "Action verbs use -는 for present modification (다음 레슨). -(으)ㄴ with descriptive verbs only."
+              "content": "Action verbs generally take -는 for present modification. They can take -(으)ㄴ for a completed action. Forms such as 있는 and 없는 also use -는."
             }
           ],
           "lessonExamples": [
@@ -4931,7 +5383,7 @@
           "tense": "present",
           "register": "polite informal",
           "hint": "want to (do)",
-          "description": "Expresses a desire or wish. Verb stem + 고 싶다: 먹다 → 먹고 싶어요 \"I want to eat.\" Past form: -고 싶었어요 \"I wanted to.\" Only used for first person (I want) or second person questions (Do you want?).",
+          "description": "Expresses a desire or wish. Verb stem + 고 싶다: 먹다 → 먹고 싶어요 \"I want to eat.\" Past form: -고 싶었어요 \"I wanted to.\" Use it to express your own desire or ask the listener what they want. To describe someone else’s visible desire, the usual form is -고 싶어하다.",
           "level": 1,
           "tags": [
             "expression",
@@ -5139,6 +5591,20 @@
                 }
               ],
               "order": 1
+            },
+            {
+              "id": "le_ability_negative",
+              "fullSentence": "수영할 수 없어요.",
+              "sentenceWithBlank": "수영할 ___ 없어요.",
+              "answer": "수",
+              "englishHint": [
+                {
+                  "text": "I can’t swim.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "없어요 gives the negative meaning. 수 is separated from the verb by a space."
             }
           ],
           "cards": [
@@ -5210,6 +5676,36 @@
                 }
               ],
               "introducedAtPosition": 35
+            },
+            {
+              "id": "cc_ability_negative_variant",
+              "fullSentence": "오늘은 갈 수 없어요.",
+              "sentenceWithBlank": "오늘은 갈 ___.",
+              "answer": "수 없어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "",
+              "introducedAtPosition": 35,
+              "englishHint": [
+                {
+                  "text": "I can’t go today. Use the 수 pattern.",
+                  "highlightType": "none"
+                }
+              ]
+            },
+            {
+              "id": "cc_ability_conjugation_variant",
+              "fullSentence": "빵을 만들 수 있어요.",
+              "sentenceWithBlank": "빵을 ___ 수 있어요.",
+              "answer": "만들",
+              "alternateAnswers": [],
+              "vocabBaseForm": "만들다",
+              "introducedAtPosition": 35,
+              "englishHint": [
+                {
+                  "text": "I can make bread.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
@@ -5797,7 +6293,7 @@
           "tense": null,
           "register": null,
           "hint": "because, so (cause → result)",
-          "description": "Connects two clauses where the first is the reason for the second. Verb stem + 아서/어서: 배가 고파서 밥을 먹었어요 \"Because I was hungry, I ate.\" Same vowel harmony as -아요/어요. The first clause CANNOT take past tense — tense is on the final verb only.",
+          "description": "Connects two clauses where the first is the reason for the second. Verb stem + 아서/어서: 배가 고파서 밥을 먹었어요 \"Because I was hungry, I ate.\" Same vowel harmony as -아요/어요. In the pattern taught here, put tense on the final verb.",
           "level": 1,
           "tags": [
             "connective",
@@ -5808,8 +6304,8 @@
           "notes": [
             {
               "type": "caution",
-              "title": "No Tense in 1st Clause",
-              "content": "-아/어서 clause cannot have past/future tense markers. Use -(으)니까 if you need tense in the reason clause."
+              "title": "Where to put tense",
+              "content": "For these beginner examples, leave the reason clause unmarked for tense and mark the main verb. Compare -(으)니까 when explicitly marking a past reason."
             },
             {
               "type": "tip",
@@ -5955,7 +6451,7 @@
             {
               "type": "tip",
               "title": "-(으)니까 vs -아/어서",
-              "content": "-(으)니까 is more subjective and can precede commands: 시간이 없으니까 빨리 가세요. -아/어서 cannot precede commands."
+              "content": "-(으)니까 is more subjective and can precede commands: 시간이 없으니까 빨리 가세요. Use -(으)니까 for a reason followed by a command or suggestion in this lesson."
             },
             {
               "type": "tip",
@@ -6891,6 +7387,20 @@
                 }
               ],
               "order": 1
+            },
+            {
+              "id": "le_future_offer",
+              "fullSentence": "짐이 무거워요? 제가 들어 줄게요.",
+              "sentenceWithBlank": "짐이 무거워요? 제가 들어 ___.",
+              "answer": "줄게요",
+              "englishHint": [
+                {
+                  "text": "Is your bag heavy? I’ll carry it for you.",
+                  "highlightType": "none"
+                }
+              ],
+              "order": 2,
+              "notes": "The speaker offers to do something for the listener."
             }
           ],
           "cards": [
@@ -6962,6 +7472,21 @@
                 }
               ],
               "introducedAtPosition": 47
+            },
+            {
+              "id": "cc_future_offer_variant",
+              "fullSentence": "문을 열까요? 제가 열게요.",
+              "sentenceWithBlank": "문을 열까요? 제가 ___.",
+              "answer": "열게요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "열다",
+              "introducedAtPosition": 47,
+              "englishHint": [
+                {
+                  "text": "Shall I open the door? I’ll open it. Make an offer to the listener.",
+                  "highlightType": "none"
+                }
+              ]
             }
           ]
         },
