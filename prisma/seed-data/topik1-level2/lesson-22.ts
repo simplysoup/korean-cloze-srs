@@ -1,6 +1,6 @@
 import type { LessonSeed } from '../types';
 
-// Lesson 22 — Reporting What People Say
+// Lesson 22 — Optional Bridge: Reporting What People Say
 // Grammar points (positions 96–99):
 //   96. -ㄴ/는다고 하다
 //   97. -다고 하다 (adjective)
@@ -9,7 +9,7 @@ import type { LessonSeed } from '../types';
 // Available: all corrected Level 1 grammar (positions 1–48); Level 2 is cumulative.
 export const lesson22: LessonSeed = {
   lessonNumber: 22,
-  title: "Reporting What People Say",
+  title: "Optional Bridge: Reporting What People Say",
   grammarPoints: [
     {
       id: "gp_neundago_hada",
