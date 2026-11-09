@@ -28,26 +28,26 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
     "lessonExamples": [
       {
         "id": "le_anida_01",
-        "fullSentence": "저는 학생이 아니에요.",
-        "sentenceWithBlank": "저는 학생이 ___.",
+        "fullSentence": "학생이 아니에요.",
+        "sentenceWithBlank": "학생이 ___.",
         "answer": "아니에요",
         "englishHint": "I'm not a student.",
         "order": 0
       },
       {
         "id": "le_anida_02",
-        "fullSentence": "이것은 커피가 아니에요.",
-        "sentenceWithBlank": "이것은 커피가 ___.",
+        "fullSentence": "커피가 아니에요.",
+        "sentenceWithBlank": "커피가 ___.",
         "answer": "아니에요",
-        "englishHint": "This isn't coffee.",
+        "englishHint": "It's not coffee.",
         "order": 1
       }
     ],
     "cards": [
       {
         "id": "cc_anida_01",
-        "fullSentence": "저는 의사가 아니에요.",
-        "sentenceWithBlank": "저는 의사가 ___.",
+        "fullSentence": "의사가 아니에요.",
+        "sentenceWithBlank": "의사가 ___.",
         "answer": "아니에요",
         "englishHint": "I'm not a doctor.",
         "alternateAnswers": [],
@@ -56,20 +56,20 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
       },
       {
         "id": "cc_anida_02",
-        "fullSentence": "그것은 책이 아니에요.",
-        "sentenceWithBlank": "그것은 책이 ___.",
+        "fullSentence": "책이 아니에요.",
+        "sentenceWithBlank": "책이 ___.",
         "answer": "아니에요",
-        "englishHint": "That isn't a book.",
+        "englishHint": "It's not a book.",
         "alternateAnswers": [],
         "vocabBaseForm": "아니에요",
         "introducedAtPosition": 2
       },
       {
         "id": "cc_anida_03",
-        "fullSentence": "오늘은 금요일이 아니에요.",
-        "sentenceWithBlank": "오늘은 금요일이 ___.",
+        "fullSentence": "고양이가 아니에요.",
+        "sentenceWithBlank": "고양이가 ___.",
         "answer": "아니에요",
-        "englishHint": "Today isn't Friday.",
+        "englishHint": "It's not a cat.",
         "alternateAnswers": [],
         "vocabBaseForm": "아니에요",
         "introducedAtPosition": 2
@@ -102,16 +102,16 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
     "lessonExamples": [
       {
         "id": "le_mwo_01",
-        "fullSentence": "이것은 뭐예요?",
-        "sentenceWithBlank": "이것은 ___예요?",
+        "fullSentence": "뭐예요?",
+        "sentenceWithBlank": "___예요?",
         "answer": "뭐",
-        "englishHint": "What is this?",
+        "englishHint": "What is it?",
         "order": 0
       },
       {
         "id": "le_mwo_02",
-        "fullSentence": "이름이 뭐예요?",
-        "sentenceWithBlank": "이름이 ___예요?",
+        "fullSentence": "이름은 뭐예요?",
+        "sentenceWithBlank": "이름은 ___예요?",
         "answer": "뭐",
         "englishHint": "What's the name?",
         "order": 1
@@ -120,30 +120,30 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
     "cards": [
       {
         "id": "cc_mwo_01",
-        "fullSentence": "그것은 뭐예요?",
-        "sentenceWithBlank": "그것은 ___예요?",
+        "fullSentence": "취미는 뭐예요?",
+        "sentenceWithBlank": "취미는 ___예요?",
         "answer": "뭐",
-        "englishHint": "What is that?",
+        "englishHint": "What's your hobby?",
         "alternateAnswers": [],
         "vocabBaseForm": "뭐/무엇",
         "introducedAtPosition": 4
       },
       {
         "id": "cc_mwo_02",
-        "fullSentence": "저것은 뭐예요?",
-        "sentenceWithBlank": "저것은 ___예요?",
+        "fullSentence": "점심은 뭐예요?",
+        "sentenceWithBlank": "점심은 ___예요?",
         "answer": "뭐",
-        "englishHint": "What is that over there?",
+        "englishHint": "What's for lunch?",
         "alternateAnswers": [],
         "vocabBaseForm": "뭐/무엇",
         "introducedAtPosition": 4
       },
       {
         "id": "cc_mwo_03",
-        "fullSentence": "그 사람의 이름은 뭐예요?",
-        "sentenceWithBlank": "그 사람의 이름은 ___예요?",
+        "fullSentence": "직업은 뭐예요?",
+        "sentenceWithBlank": "직업은 ___예요?",
         "answer": "뭐",
-        "englishHint": "What's that person's name?",
+        "englishHint": "What's your job?",
         "alternateAnswers": [],
         "vocabBaseForm": "뭐/무엇",
         "introducedAtPosition": 4
@@ -200,7 +200,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "Who is this person?",
         "alternateAnswers": [],
         "vocabBaseForm": "누구",
-        "introducedAtPosition": 5
+        "introducedAtPosition": 12
       },
       {
         "id": "cc_nugu_02",
@@ -210,7 +210,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "Who is the student?",
         "alternateAnswers": [],
         "vocabBaseForm": "누구",
-        "introducedAtPosition": 5
+        "introducedAtPosition": 12
       },
       {
         "id": "cc_nugu_03",
@@ -220,7 +220,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "Who is that person?",
         "alternateAnswers": [],
         "vocabBaseForm": "누구",
-        "introducedAtPosition": 5
+        "introducedAtPosition": 12
       }
     ]
   },
@@ -274,7 +274,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "Why aren't you eating?",
         "alternateAnswers": [],
         "vocabBaseForm": "왜",
-        "introducedAtPosition": 20
+        "introducedAtPosition": 27
       },
       {
         "id": "cc_wae_02",
@@ -284,7 +284,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "Why are you resting today?",
         "alternateAnswers": [],
         "vocabBaseForm": "왜",
-        "introducedAtPosition": 20
+        "introducedAtPosition": 27
       },
       {
         "id": "cc_wae_03",
@@ -294,7 +294,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "Why can't you come?",
         "alternateAnswers": [],
         "vocabBaseForm": "왜",
-        "introducedAtPosition": 20
+        "introducedAtPosition": 27
       }
     ]
   },
@@ -348,7 +348,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "How do you write the name?",
         "alternateAnswers": [],
         "vocabBaseForm": "어떻게",
-        "introducedAtPosition": 21
+        "introducedAtPosition": 28
       },
       {
         "id": "cc_eotteoke_02",
@@ -358,7 +358,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "How do you eat this?",
         "alternateAnswers": [],
         "vocabBaseForm": "어떻게",
-        "introducedAtPosition": 21
+        "introducedAtPosition": 28
       },
       {
         "id": "cc_eotteoke_03",
@@ -368,7 +368,7 @@ export const foundationPoints: Record<string, GrammarPointSeed> = {
         "englishHint": "How do you study at home?",
         "alternateAnswers": [],
         "vocabBaseForm": "어떻게",
-        "introducedAtPosition": 21
+        "introducedAtPosition": 28
       }
     ]
   },
