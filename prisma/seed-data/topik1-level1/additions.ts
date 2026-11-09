@@ -46,7 +46,7 @@ export const level1Additions: Record<string, Additions> = {
 		]
 	},
 	gp_an: {
-		cards: [practice('short_negative_variant', '오늘은 커피를 ___ 마셔요.', '안', 'Today I don’t drink coffee. Use the short negative form.', 12)]
+		cards: [practice('short_negative_variant', '오늘은 커피를 ___ 마셔요.', '안', 'Today I don’t drink coffee.', 12)]
 	},
 	gp_hago: {
 		cards: [{ ...practice('and_variant', '우유___ 빵을 사요.', '하고', 'I buy milk and bread.', 13, ''), alternateAnswers: ['와', '랑'] }]
@@ -93,12 +93,12 @@ export const level1Additions: Record<string, Additions> = {
 	gp_eul_su_issda: {
 		examples: [worked('ability_negative', '수영할 ___ 없어요.', '수', 'I can’t swim.', 2, '없어요 gives the negative meaning. 수 is separated from the verb by a space.')],
 		cards: [
-			practice('ability_negative_variant', '오늘은 갈 ___.', '수 없어요', 'I can’t go today. Use the 수 pattern.', 35),
+			practice('ability_negative_variant', '오늘은 갈 ___.', '수 없어요', 'I can’t go today.', 35),
 			practice('ability_conjugation_variant', '빵을 ___ 수 있어요.', '만들', 'I can make bread.', 35, '만들다')
 		]
 	},
 	gp_eulgeyo: {
-		examples: [worked('future_offer', '짐이 무거워요? 제가 들어 ___.', '줄게요', 'Is your bag heavy? I’ll carry it for you.', 2, 'The speaker offers to do something for the listener.')],
+		examples: [worked('future_offer', '짐이 무거워요? 제가 들어 ___.', '줄게요', 'Is your luggage heavy? I’ll carry it for you.', 2, 'The speaker offers to do something for the listener.')],
 		cards: [practice('future_offer_variant', '문을 제가 ___.', '열게요', 'I will open the door.', 47, '열다')]
 	}
 };
