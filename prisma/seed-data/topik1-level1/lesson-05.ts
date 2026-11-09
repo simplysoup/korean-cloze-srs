@@ -1,450 +1,367 @@
 import type { LessonSeed } from '../types';
-import { foundationPoints } from './foundations';
 
-// Lesson 5 — Places and Getting Around
-// Positions 20–26
-// 20. yeogi
-// 21. geogi
-// 22. jeogi
-// 23. e_loc
-// 24. eseo
-// 25. eodi
-// 26. position
+// Lesson 5 — Time, Starting and Finishing
+// Grammar points (positions 23–27):
+//   23. e_time
+//   24. buteo
+//   25. kkaji
+//   26. jeone
+//   27. hue
+// Examples and cards use only grammar through their target position.
+
 export const lesson05: LessonSeed = {
 	lessonNumber: 5,
-	title: "Places and Getting Around",
+	title: "Time, Starting and Finishing",
 	grammarPoints: [
-		// 20. gp_yeogi
+		// 23. gp_e_time
 		{
-			id: 'gp_yeogi',
-			title: '여기',
-			category: 'demonstrative',
-			tense: null,
-			register: null,
-			hint: 'here (near speaker)',
-			description:
-				'Means "here" — a place near the speaker. ' +
-				'Part of a three-way system: 여기 (here, near me), 거기 (there, near you), 저기 (over there). ' +
-				'Can take particles: 여기에 (at here), 여기는 (as for here).',
-			level: 1,
-			tags: ['demonstrative', 'beginner', 'TOPIK1'],
-			structurePattern: '여기 + particle',
-			notes: [
-				{ type: 'funfact', title: 'Three-Way Places', content: '여기/거기/저기 follow the same 이/그/저 pattern as 이것/그것/저것.' }
-			],
-			lessonExamples: [
-				{
-					id: 'le_yeogi_01',
-					fullSentence: '여기는 학교예요.',
-					sentenceWithBlank: '___는 학교예요.',
-					answer: '여기',
-					englishHint: 'Here is a school.',
-					order: 0,
-					notes: 'Uses 은/는 (GP3), 예요 (GP1).'
-				},
-				{
-					id: 'le_yeogi_02',
-					fullSentence: "여기 앉아요.",
-					sentenceWithBlank: "___ 앉아요.",
-					answer: "여기",
-					englishHint: "I sit here.",
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_yeogi_01',
-					fullSentence: '여기는 학교예요.',
-					sentenceWithBlank: '___는 학교예요.',
-					answer: '여기',
-					alternateAnswers: [],
-					vocabBaseForm: '여기',
-					englishHint: 'Here is a school.',
-					introducedAtPosition: 20
-				},
-				{
-					id: 'cc_yeogi_02',
-					fullSentence: "여기 앉아요.",
-					sentenceWithBlank: "___ 앉아요.",
-					answer: "여기",
-					alternateAnswers: [],
-					vocabBaseForm: '여기',
-					englishHint: "I sit here.",
-					introducedAtPosition: 20
-				},
-				{
-					id: 'cc_yeogi_03',
-					fullSentence: '여기가 좋아요.',
-					sentenceWithBlank: '___가 좋아요.',
-					answer: '여기',
-					alternateAnswers: [],
-					vocabBaseForm: '여기',
-					englishHint: 'Here is good.',
-					introducedAtPosition: 20
-				}
-			]
-		},
-
-		// 21. gp_geogi
-		{
-			id: 'gp_geogi',
-			title: '거기',
-			category: 'demonstrative',
-			tense: null,
-			register: null,
-			hint: 'there (near listener)',
-			description:
-				'Means "there" — a place near the listener or a previously mentioned place. ' +
-				'Part of the 여기/거기/저기 system.',
-			level: 1,
-			tags: ['demonstrative', 'beginner', 'TOPIK1'],
-			structurePattern: '거기 + particle',
-			notes: [
-				{ type: 'tip', title: 'Reference', content: '거기 can also refer to a place already mentioned in the conversation, similar to English "there" or "that place."' }
-			],
-			lessonExamples: [
-				{
-					id: 'le_geogi_01',
-					fullSentence: "거기는 학교예요?",
-					sentenceWithBlank: "___는 학교예요?",
-					answer: "거기",
-					englishHint: "Is that place a school?",
-					order: 0
-				},
-				{
-					id: 'le_geogi_02',
-					fullSentence: '거기도 좋아요.',
-					sentenceWithBlank: '___도 좋아요.',
-					answer: '거기',
-					englishHint: "That place is nice too.",
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_geogi_01',
-					fullSentence: "거기는 학교예요?",
-					sentenceWithBlank: "___는 학교예요?",
-					answer: "거기",
-					alternateAnswers: [],
-					vocabBaseForm: '거기',
-					englishHint: "Is that place a school?",
-					introducedAtPosition: 21
-				},
-				{
-					id: 'cc_geogi_02',
-					fullSentence: '거기도 좋아요.',
-					sentenceWithBlank: '___도 좋아요.',
-					answer: '거기',
-					alternateAnswers: [],
-					vocabBaseForm: '거기',
-					englishHint: "That place is nice too.",
-					introducedAtPosition: 21
-				},
-				{
-					id: 'cc_geogi_03',
-					fullSentence: '거기는 카페예요.',
-					sentenceWithBlank: '___는 카페예요.',
-					answer: '거기',
-					alternateAnswers: [],
-					vocabBaseForm: '거기',
-					englishHint: "That place is a café.",
-					introducedAtPosition: 21
-				}
-			]
-		},
-
-		// 22. gp_jeogi
-		{
-			id: 'gp_jeogi',
-			title: '저기',
-			category: 'demonstrative',
-			tense: null,
-			register: null,
-			hint: 'over there (far from both)',
-			description:
-				'Means "over there" — a place far from both the speaker and listener. ' +
-				'Also used to get someone\'s attention: 저기요! = "Excuse me!"',
-			level: 1,
-			tags: ['demonstrative', 'beginner', 'TOPIK1'],
-			structurePattern: '저기 + particle',
-			notes: [
-				{ type: 'funfact', title: 'Attention Getter', content: '저기요! is a common way to get a stranger\'s attention, like "Excuse me!" at a restaurant.' }
-			],
-			lessonExamples: [
-				{
-					id: 'le_jeogi_01',
-					fullSentence: '저기는 공원이에요.',
-					sentenceWithBlank: '___는 공원이에요.',
-					answer: '저기',
-					englishHint: 'Over there is a park.',
-					order: 0
-				},
-				{
-					id: 'le_jeogi_02',
-					fullSentence: '저기가 학교예요.',
-					sentenceWithBlank: '___가 학교예요.',
-					answer: '저기',
-					englishHint: 'Over there is the school.',
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_jeogi_01',
-					fullSentence: '저기는 공원이에요.',
-					sentenceWithBlank: '___는 공원이에요.',
-					answer: '저기',
-					alternateAnswers: [],
-					vocabBaseForm: '저기',
-					englishHint: 'Over there is a park.',
-					introducedAtPosition: 22
-				},
-				{
-					id: 'cc_jeogi_02',
-					fullSentence: '저기가 학교예요.',
-					sentenceWithBlank: '___가 학교예요.',
-					answer: '저기',
-					alternateAnswers: [],
-					vocabBaseForm: '저기',
-					englishHint: 'Over there is the school.',
-					introducedAtPosition: 22
-				},
-				{
-					id: 'cc_jeogi_03',
-					fullSentence: '저기도 식당이에요.',
-					sentenceWithBlank: '___도 식당이에요.',
-					answer: '저기',
-					alternateAnswers: [],
-					vocabBaseForm: '저기',
-					englishHint: "That place over there is also a restaurant.",
-					introducedAtPosition: 22
-				}
-			]
-		},
-
-		// 23. gp_e_loc
-		{
-			id: 'gp_e_loc',
-			title: '에 (장소)',
+			id: 'gp_e_time',
+			title: '에 (시간)',
 			category: 'particle',
 			tense: null,
 			register: null,
-			hint: 'at, to (location/destination)',
+			hint: 'at, on, in (time)',
 			description:
-				'Marks a location or destination. Used with: ' +
-				'(1) existence verbs (있다/없다): 집에 있어요 "I\'m at home"; ' +
-				'(2) movement verbs (가다/오다): 학교에 가요 "I go to school." ' +
-				'Does not change form.',
+				'Marks a point in time: "at, on, in." ' +
+				'월요일에 = "on Monday", 3시에 = "at 3 o\'clock", 아침에 = "in the morning." ' +
+				'Same particle as location 에, but attached to time nouns.',
 			level: 1,
 			tags: ['particle', 'beginner', 'TOPIK1'],
-			structurePattern: '[Place]에',
+			structurePattern: '[Time noun]에',
 			notes: [
-				{ type: 'caution', title: '에 vs 에서', content: '에 marks destination or static location (with 있다). 에서 marks where an action happens (with action verbs like 공부하다).' },
-				{ type: 'tip', title: 'Two Uses', content: 'Destination: 학교에 가요 (go to school). Static location: 집에 있어요 (am at home).' }
+				{ type: 'caution', title: 'Not with 오늘/내일/어제', content: '오늘, 내일, 어제, 지금 do NOT take 에 — they are already adverbs of time: ✗ 오늘에, ✓ 오늘.' },
+				{ type: 'tip', title: 'Shared Particle', content: '에 serves both location and time. Context makes it clear.' }
 			],
 			lessonExamples: [
 				{
-					id: 'le_e_loc_01',
-					fullSentence: '학교에 가요.',
-					sentenceWithBlank: '학교___ 가요.',
+					id: 'le_e_time_01',
+					fullSentence: '월요일에 한국어를 공부해요.',
+					sentenceWithBlank: '월요일___ 한국어를 공부해요.',
 					answer: '에',
-					englishHint: 'I go to school.',
+					englishHint: 'I study Korean on Monday.',
 					order: 0
 				},
 				{
-					id: 'le_e_loc_02',
-					fullSentence: "집에 와요.",
-					sentenceWithBlank: "집___ 와요.",
-					answer: "에",
-					englishHint: "I come home.",
+					id: 'le_e_time_02',
+					fullSentence: '9시에 학교에 가요.',
+					sentenceWithBlank: '9시___ 학교에 가요.',
+					answer: '에',
+					englishHint: "I go to school at 9 o'clock.",
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_e_loc_01',
-					fullSentence: '학교에 가요.',
-					sentenceWithBlank: '학교___ 가요.',
+					id: 'cc_e_time_01',
+					fullSentence: '월요일에 한국어를 공부해요.',
+					sentenceWithBlank: '월요일___ 한국어를 공부해요.',
 					answer: '에',
-					alternateAnswers: ['로'],
-					vocabBaseForm: '에',
-					englishHint: 'I go to school.',
-					introducedAtPosition: 23
-				},
-				{
-					id: 'cc_e_loc_02',
-					fullSentence: "집에 와요.",
-					sentenceWithBlank: "집___ 와요.",
-					answer: "에",
 					alternateAnswers: [],
 					vocabBaseForm: '에',
-					englishHint: "I come home.",
+					englishHint: 'I study Korean on Monday.',
 					introducedAtPosition: 23
 				},
 				{
-					id: 'cc_e_loc_03',
-					fullSentence: '회사에 가요.',
-					sentenceWithBlank: '회사___ 가요.',
+					id: 'cc_e_time_02',
+					fullSentence: '아침에 운동해요.',
+					sentenceWithBlank: '아침___ 운동해요.',
 					answer: '에',
-					alternateAnswers: ['로'],
+					alternateAnswers: [],
 					vocabBaseForm: '에',
-					englishHint: 'I go to work.',
+					englishHint: 'I exercise in the morning.',
+					introducedAtPosition: 23
+				},
+				{
+					id: 'cc_e_time_03',
+					fullSentence: '저녁 7시에 밥을 먹어요.',
+					sentenceWithBlank: '저녁 7시___ 밥을 먹어요.',
+					answer: '에',
+					alternateAnswers: [],
+					vocabBaseForm: '에',
+					englishHint: 'I eat at 7 PM.',
 					introducedAtPosition: 23
 				}
 			]
 		},
 
-		// 24. gp_eseo
+		// 24. gp_buteo
 		{
-			id: 'gp_eseo',
-			title: '에서',
+			id: 'gp_buteo',
+			title: '부터',
 			category: 'particle',
 			tense: null,
 			register: null,
-			hint: 'at (location of action)',
+			hint: 'from, since (starting point)',
 			description:
-				'Marks the location where an action takes place. ' +
-				'Used with action verbs: 도서관에서 공부해요 "I study at the library." ' +
-				'Contrast with 에, which marks destination or static location.',
+				'Marks the starting point in time: "from" or "since." ' +
+				'Often paired with 까지 (until): 9시부터 6시까지 = "from 9 to 6." ' +
+				'Can also be used alone: 내일부터 = "starting from tomorrow."',
 			level: 1,
 			tags: ['particle', 'beginner', 'TOPIK1'],
-			structurePattern: '[Place]에서 + action verb',
+			structurePattern: '[Time]부터',
 			notes: [
-				{ type: 'caution', title: '에서 vs 에', content: 'Use 에서 for the location of an action (에서 공부해요 = study at). Use 에 for destination or static existence (에 가요 = go to, 에 있어요 = am at).' }
+				{ type: 'tip', title: 'Often Paired', content: '부터 often pairs with 까지: 부터~까지 = "from~until."' },
+				{ type: 'tip', title: 'Time Only', content: '부터 is mainly used for time. For place "from," use 에서.' }
 			],
 			lessonExamples: [
 				{
-					id: 'le_eseo_01',
-					fullSentence: '도서관에서 공부해요.',
-					sentenceWithBlank: '도서관___ 공부해요.',
-					answer: '에서',
-					englishHint: 'I study at the library.',
+					id: 'le_buteo_01',
+					fullSentence: '9시부터 일해요.',
+					sentenceWithBlank: '9시___ 일해요.',
+					answer: '부터',
+					englishHint: 'I work from 9.',
 					order: 0
 				},
 				{
-					id: 'le_eseo_02',
-					fullSentence: '카페에서 커피를 마셔요.',
-					sentenceWithBlank: '카페___ 커피를 마셔요.',
-					answer: '에서',
-					englishHint: 'I drink coffee at the café.',
+					id: 'le_buteo_02',
+					fullSentence: "월요일부터 공부해요.",
+					sentenceWithBlank: "월요일___ 공부해요.",
+					answer: "부터",
+					englishHint: "I start studying on Monday.",
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_eseo_01',
-					fullSentence: '도서관에서 공부해요.',
-					sentenceWithBlank: '도서관___ 공부해요.',
-					answer: '에서',
+					id: 'cc_buteo_01',
+					fullSentence: "9시부터 일해요.",
+					sentenceWithBlank: "9시___ 일해요.",
+					answer: "부터",
 					alternateAnswers: [],
-					vocabBaseForm: '에서',
-					englishHint: 'I study at the library.',
+					vocabBaseForm: '부터',
+					englishHint: "I start work at nine.",
 					introducedAtPosition: 24
 				},
 				{
-					id: 'cc_eseo_02',
-					fullSentence: '카페에서 커피를 마셔요.',
-					sentenceWithBlank: '카페___ 커피를 마셔요.',
-					answer: '에서',
+					id: 'cc_buteo_02',
+					fullSentence: "월요일부터 수업이 있어요.",
+					sentenceWithBlank: "월요일___ 수업이 있어요.",
+					answer: "부터",
 					alternateAnswers: [],
-					vocabBaseForm: '에서',
-					englishHint: 'I drink coffee at the café.',
+					vocabBaseForm: '부터',
+					englishHint: "I have classes starting Monday.",
 					introducedAtPosition: 24
 				},
 				{
-					id: 'cc_eseo_03',
-					fullSentence: '회사에서 일해요.',
-					sentenceWithBlank: '회사___ 일해요.',
-					answer: '에서',
+					id: 'cc_buteo_03',
+					fullSentence: "아침부터 공부해요.",
+					sentenceWithBlank: "아침___ 공부해요.",
+					answer: "부터",
 					alternateAnswers: [],
-					vocabBaseForm: '에서',
-					englishHint: 'I work at the office.',
+					vocabBaseForm: '부터',
+					englishHint: "I start studying in the morning.",
 					introducedAtPosition: 24
 				}
 			]
 		},
 
-		// 25. gp_eodi
-		foundationPoints.gp_eodi,
-
-		// 26. gp_position
+		// 25. gp_kkaji
 		{
-			id: 'gp_position',
-			title: '위/아래/앞/뒤/옆',
+			id: 'gp_kkaji',
+			title: '까지',
+			category: 'particle',
+			tense: null,
+			register: null,
+			hint: 'until, to (ending point)',
+			description:
+				'Marks the ending point in time or space: "until" or "to." ' +
+				'Often paired with 부터: 부터~까지 = "from~until." ' +
+				'Can also mark extent: 여기까지 = "up to here."',
+			level: 1,
+			tags: ['particle', 'beginner', 'TOPIK1'],
+			structurePattern: '[Time/Place]까지',
+			notes: [
+				{ type: 'tip', title: 'Time & Place', content: '까지 works for both time (6시까지 "until 6") and place (서울까지 "to Seoul").' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_kkaji_01',
+					fullSentence: '6시까지 일해요.',
+					sentenceWithBlank: '6시___ 일해요.',
+					answer: '까지',
+					englishHint: 'I work until 6.',
+					order: 0
+				},
+				{
+					id: 'le_kkaji_02',
+					fullSentence: '아침부터 저녁까지 공부해요.',
+					sentenceWithBlank: '아침부터 저녁___ 공부해요.',
+					answer: '까지',
+					englishHint: 'I study from morning until evening.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_kkaji_01',
+					fullSentence: '9시부터 6시까지 일해요.',
+					sentenceWithBlank: '9시부터 6시___ 일해요.',
+					answer: '까지',
+					alternateAnswers: [],
+					vocabBaseForm: '까지',
+					englishHint: 'I work from 9 until 6.',
+					introducedAtPosition: 25
+				},
+				{
+					id: 'cc_kkaji_02',
+					fullSentence: "서울에서 부산까지 가요.",
+					sentenceWithBlank: "서울에서 부산___ 가요.",
+					answer: "까지",
+					alternateAnswers: [],
+					vocabBaseForm: '까지',
+					englishHint: "I travel from Seoul to Busan.",
+					introducedAtPosition: 25
+				},
+				{
+					id: 'cc_kkaji_03',
+					fullSentence: '금요일까지 숙제를 해요.',
+					sentenceWithBlank: '금요일___ 숙제를 해요.',
+					answer: '까지',
+					alternateAnswers: [],
+					vocabBaseForm: '까지',
+					englishHint: 'I do homework by Friday.',
+					introducedAtPosition: 25
+				}
+			]
+		},
+
+		// 26. gp_jeone
+		{
+			id: 'gp_jeone',
+			title: '전에',
 			category: 'expression',
 			tense: null,
 			register: null,
-			hint: 'above, below, front, behind, beside',
+			hint: 'before',
 			description:
-				'Position nouns that combine with 에 to describe spatial relationships. ' +
-				'Pattern: [Reference Noun] + 위/아래/앞/뒤/옆 + 에. ' +
-				'책상 위에 = "on the desk", 의자 아래에 = "under the chair."',
+				'Means "before" a time or action. ' +
+				'수업 전에 = "before class." ' +
+				'The verb pattern -기 전에 is taught separately at Level 2; here, use a noun + 전에.',
 			level: 1,
 			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: '[Noun] 위/아래/앞/뒤/옆 + 에',
+			structurePattern: '[Noun] 전에',
 			notes: [
-				{ type: 'tip', title: 'Five Position Words', content: '위 (above/on), 아래 (below/under), 앞 (in front), 뒤 (behind), 옆 (beside/next to).' },
-				{ type: 'tip', title: 'Word Order', content: 'Reference noun comes first, then the position: 책상 위에 = "desk above-at" = on the desk.' }
+				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 전에 (before class). With verbs: 먹기 전에 (before eating) — uses the -기 nominalizer.' }
 			],
 			lessonExamples: [
 				{
-					id: 'le_position_01',
-					fullSentence: '책이 책상 위에 있어요.',
-					sentenceWithBlank: '책이 책상 ___에 있어요.',
-					answer: '위',
-					englishHint: 'The book is on the desk.',
+					id: 'le_jeone_01',
+					fullSentence: '수업 전에 커피를 마셔요.',
+					sentenceWithBlank: '수업 ___ 커피를 마셔요.',
+					answer: '전에',
+					englishHint: 'I drink coffee before class.',
 					order: 0
 				},
 				{
-					id: 'le_position_02',
-					fullSentence: '고양이가 의자 아래에 있어요.',
-					sentenceWithBlank: '고양이가 의자 ___에 있어요.',
-					answer: '아래',
-					englishHint: 'The cat is under the chair.',
+					id: 'le_jeone_02',
+					fullSentence: '12시 전에 점심을 먹어요.',
+					sentenceWithBlank: '12시 ___ 점심을 먹어요.',
+					answer: '전에',
+					englishHint: 'I eat lunch before 12.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_position_01',
-					fullSentence: '책이 책상 위에 있어요.',
-					sentenceWithBlank: '책이 책상 ___에 있어요.',
-					answer: '위',
+					id: 'cc_jeone_01',
+					fullSentence: '수업 전에 커피를 마셔요.',
+					sentenceWithBlank: '수업 ___ 커피를 마셔요.',
+					answer: '전에',
 					alternateAnswers: [],
-					vocabBaseForm: '위/아래/앞/뒤/옆',
-					englishHint: 'The book is on the desk.',
+					vocabBaseForm: '전에',
+					englishHint: 'I drink coffee before class.',
 					introducedAtPosition: 26
 				},
 				{
-					id: 'cc_position_02',
-					fullSentence: '고양이가 의자 아래에 있어요.',
-					sentenceWithBlank: '고양이가 의자 ___에 있어요.',
-					answer: '아래',
-					alternateAnswers: ['밑'],
-					vocabBaseForm: '위/아래/앞/뒤/옆',
-					englishHint: 'The cat is under the chair.',
+					id: 'cc_jeone_02',
+					fullSentence: "운동 전에 물을 마셔요.",
+					sentenceWithBlank: "운동 ___ 물을 마셔요.",
+					answer: "전에",
+					alternateAnswers: [],
+					vocabBaseForm: '전에',
+					englishHint: "I drink water before exercising.",
 					introducedAtPosition: 26
 				},
 				{
-					id: 'cc_position_03',
-					fullSentence: '학교 앞에 가게가 있어요.',
-					sentenceWithBlank: '학교 ___에 가게가 있어요.',
-					answer: '앞',
+					id: 'cc_jeone_03',
+					fullSentence: '10시 전에 집에 가요.',
+					sentenceWithBlank: '10시 ___ 집에 가요.',
+					answer: '전에',
 					alternateAnswers: [],
-					vocabBaseForm: '위/아래/앞/뒤/옆',
-					englishHint: 'There is a store in front of the school.',
+					vocabBaseForm: '전에',
+					englishHint: 'I go home before 10.',
 					introducedAtPosition: 26
+				}
+			]
+		},
+
+		// 27. gp_hue
+		{
+			id: 'gp_hue',
+			title: '후에',
+			category: 'expression',
+			tense: null,
+			register: null,
+			hint: 'after',
+			description:
+				'Means "after" a time or action. ' +
+				'수업 후에 = "after class." ' +
+				'The verb modifier + 후에 is taught separately at Level 2; here, use a noun + 후에.',
+			level: 1,
+			tags: ['expression', 'beginner', 'TOPIK1'],
+			structurePattern: '[Noun] 후에',
+			notes: [
+				{ type: 'tip', title: 'Synonym', content: '다음에 is a more casual alternative meaning "after" or "next time."' },
+				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 후에 (after class). With verbs: 먹은 후에 (after eating).' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_hue_01',
+					fullSentence: '수업 후에 운동해요.',
+					sentenceWithBlank: '수업 ___ 운동해요.',
+					answer: '후에',
+					englishHint: 'I exercise after class.',
+					order: 0
 				},
 				{
-					id: 'cc_position_04',
-					fullSentence: '은행 옆에 카페가 있어요.',
-					sentenceWithBlank: '은행 ___에 카페가 있어요.',
-					answer: '옆',
-					alternateAnswers: [],
-					vocabBaseForm: '위/아래/앞/뒤/옆',
-					englishHint: 'There is a café next to the bank.',
-					introducedAtPosition: 26
+					id: 'le_hue_02',
+					fullSentence: '점심 후에 커피를 마셔요.',
+					sentenceWithBlank: '점심 ___ 커피를 마셔요.',
+					answer: '후에',
+					englishHint: 'I drink coffee after lunch.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_hue_01',
+					fullSentence: '수업 후에 운동해요.',
+					sentenceWithBlank: '수업 ___ 운동해요.',
+					answer: '후에',
+					alternateAnswers: ['다음에'],
+					vocabBaseForm: '후에',
+					englishHint: 'I exercise after class.',
+					introducedAtPosition: 27
+				},
+				{
+					id: 'cc_hue_02',
+					fullSentence: "퇴근 후에 친구를 만나요.",
+					sentenceWithBlank: "퇴근 ___ 친구를 만나요.",
+					answer: "후에",
+					alternateAnswers: ['다음에'],
+					vocabBaseForm: '후에',
+					englishHint: "I meet a friend after work.",
+					introducedAtPosition: 27
+				},
+				{
+					id: 'cc_hue_03',
+					fullSentence: "저녁 식사 후에 산책해요.",
+					sentenceWithBlank: "저녁 식사 ___ 산책해요.",
+					answer: "후에",
+					alternateAnswers: ['다음에'],
+					vocabBaseForm: '후에',
+					englishHint: "I take a walk after dinner.",
+					introducedAtPosition: 27
 				}
 			]
 		}

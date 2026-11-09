@@ -1,298 +1,227 @@
 import type { LessonSeed } from '../types';
-import { foundationPoints } from './foundations';
 
-// Lesson 9 — Age and Time Ranges
-// Positions 40–44
-// 40. sal_age
-// 41. buteo
-// 42. kkaji
-// 43. jeone
-// 44. hue
+// Lesson 9 — Conditions and Contrast
+// Grammar points (positions 40–42):
+//   40. eumyeon
+//   41. jiman
+//   42. hajiman
+// Examples and cards use only grammar through their target position.
+
 export const lesson09: LessonSeed = {
 	lessonNumber: 9,
-	title: "Age and Time Ranges",
+	title: "Conditions and Contrast",
 	grammarPoints: [
-		// 40. gp_sal_age
-		foundationPoints.gp_sal_age,
-
-		// 41. gp_buteo
+		// 40. gp_eumyeon
 		{
-			id: 'gp_buteo',
-			title: '부터',
-			category: 'particle',
+			id: 'gp_eumyeon',
+			title: '-(으)면',
+			category: 'connective',
 			tense: null,
 			register: null,
-			hint: 'from, since (starting point)',
+			hint: 'if, when (conditional)',
 			description:
-				'Marks the starting point in time: "from" or "since." ' +
-				'Often paired with 까지 (until): 9시부터 6시까지 = "from 9 to 6." ' +
-				'Can also be used alone: 내일부터 = "starting from tomorrow."',
+				'Conditional connector meaning "if" or "when." ' +
+				'After most consonant stems use -으면 (먹다 → 먹으면); after vowel stems use -면 (가다 → 가면). Keep ㄹ-final stems: 살다 → 살면. ' +
+				'시간이 있으면 같이 가요 "If you have time, let\'s go together."',
 			level: 1,
-			tags: ['particle', 'beginner', 'TOPIK1'],
-			structurePattern: '[Time]부터',
+			tags: ['connective', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb stem + (으)면 + [result clause]',
 			notes: [
-				{ type: 'tip', title: 'Often Paired', content: '부터 often pairs with 까지: 부터~까지 = "from~until."' },
-				{ type: 'tip', title: 'Time Only', content: '부터 is mainly used for time. For place "from," use 에서.' }
+				{ type: 'tip', title: 'Hypothetical & Habitual', content: '-(으)면 covers both hypothetical (if it rains) and habitual (whenever I eat). Context determines which.' },
+				{ type: 'tip', title: 'ㄹ-Irregular', content: 'Stems ending in ㄹ keep ㄹ before -면: 살다 → 살면, 알다 → 알면.' }
 			],
 			lessonExamples: [
 				{
-					id: 'le_buteo_01',
-					fullSentence: '9시부터 일해요.',
-					sentenceWithBlank: '9시___ 일해요.',
-					answer: '부터',
-					englishHint: 'I work from 9.',
+					id: 'le_eumyeon_01',
+					fullSentence: '시간이 있으면 같이 가요.',
+					sentenceWithBlank: '시간이 ___ 같이 가요.',
+					answer: '있으면',
+					englishHint: "If you have time, let's go together.",
 					order: 0
 				},
 				{
-					id: 'le_buteo_02',
-					fullSentence: "월요일부터 공부해요.",
-					sentenceWithBlank: "월요일___ 공부해요.",
-					answer: "부터",
-					englishHint: "I start studying on Monday.",
+					id: 'le_eumyeon_02',
+					fullSentence: '비가 오면 집에 있어요.',
+					sentenceWithBlank: '비가 ___ 집에 있어요.',
+					answer: '오면',
+					englishHint: 'If it rains, I stay home.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_buteo_01',
-					fullSentence: "9시부터 일해요.",
-					sentenceWithBlank: "9시___ 일해요.",
-					answer: "부터",
+					id: 'cc_eumyeon_01',
+					fullSentence: '시간이 있으면 같이 가요.',
+					sentenceWithBlank: '시간이 있으___ 같이 가요.',
+					answer: '면',
 					alternateAnswers: [],
-					vocabBaseForm: '부터',
-					englishHint: "I start work at nine.",
+					vocabBaseForm: '-(으)면',
+					englishHint: "If you have time, let's go together.",
+					introducedAtPosition: 40
+				},
+				{
+					id: 'cc_eumyeon_02',
+					fullSentence: '한국에 가면 불고기를 먹고 싶어요.',
+					sentenceWithBlank: '한국에 가___ 불고기를 먹고 싶어요.',
+					answer: '면',
+					alternateAnswers: [],
+					vocabBaseForm: '-(으)면',
+					englishHint: 'If I go to Korea, I want to eat bulgogi.',
+					introducedAtPosition: 40
+				},
+				{
+					id: 'cc_eumyeon_03',
+					fullSentence: '날씨가 좋으면 공원에 가요.',
+					sentenceWithBlank: '날씨가 좋으___ 공원에 가요.',
+					answer: '면',
+					alternateAnswers: [],
+					vocabBaseForm: '-(으)면',
+					englishHint: 'If the weather is nice, I go to the park.',
+					introducedAtPosition: 40
+				}
+			]
+		},
+
+		// 41. gp_jiman
+		{
+			id: 'gp_jiman',
+			title: '-지만',
+			category: 'connective',
+			tense: null,
+			register: null,
+			hint: 'but, however (connects clauses)',
+			description:
+				'Clause-level contrast connector. Verb/Adj stem + 지만: ' +
+				'비싸지만 맛있어요 "It\'s expensive but delicious." ' +
+				'Can also take tense: 갔지만 "went but." Always attaches directly to the stem (no vowel harmony).',
+			level: 1,
+			tags: ['connective', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb/Adj stem + 지만 + [contrasting clause]',
+			notes: [
+				{ type: 'tip', title: 'No Vowel Harmony', content: '-지만 attaches directly to any stem. No consonant/vowel distinction. 먹다 → 먹지만, 가다 → 가지만.' },
+				{ type: 'tip', title: 'With Tense', content: 'Past: 갔지만, 먹었지만. The tense goes between the stem and -지만.' }
+			],
+			relatedPointIds: ['gp_hajiman'],
+			lessonExamples: [
+				{
+					id: 'le_jiman_01',
+					fullSentence: '비싸지만 맛있어요.',
+					sentenceWithBlank: '비싸___ 맛있어요.',
+					answer: '지만',
+					englishHint: "It's expensive but it's delicious.",
+					order: 0
+				},
+				{
+					id: 'le_jiman_02',
+					fullSentence: '한국어는 어렵지만 재미있어요.',
+					sentenceWithBlank: '한국어는 어렵___ 재미있어요.',
+					answer: '지만',
+					englishHint: 'Korean is difficult but fun.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_jiman_01',
+					fullSentence: '비싸지만 맛있어요.',
+					sentenceWithBlank: '비싸___ 맛있어요.',
+					answer: '지만',
+					alternateAnswers: [],
+					vocabBaseForm: '-지만',
+					englishHint: "It's expensive but it's delicious.",
 					introducedAtPosition: 41
 				},
 				{
-					id: 'cc_buteo_02',
-					fullSentence: "월요일부터 수업이 있어요.",
-					sentenceWithBlank: "월요일___ 수업이 있어요.",
-					answer: "부터",
+					id: 'cc_jiman_02',
+					fullSentence: '피곤하지만 공부해야 해요.',
+					sentenceWithBlank: '피곤하___ 공부해야 해요.',
+					answer: '지만',
 					alternateAnswers: [],
-					vocabBaseForm: '부터',
-					englishHint: "I have classes starting Monday.",
+					vocabBaseForm: '-지만',
+					englishHint: "I'm tired but I have to study.",
 					introducedAtPosition: 41
 				},
 				{
-					id: 'cc_buteo_03',
-					fullSentence: "아침부터 공부해요.",
-					sentenceWithBlank: "아침___ 공부해요.",
-					answer: "부터",
+					id: 'cc_jiman_03',
+					fullSentence: '작지만 좋은 집이에요.',
+					sentenceWithBlank: '작___ 좋은 집이에요.',
+					answer: '지만',
 					alternateAnswers: [],
-					vocabBaseForm: '부터',
-					englishHint: "I start studying in the morning.",
+					vocabBaseForm: '-지만',
+					englishHint: "It's small but a nice house.",
 					introducedAtPosition: 41
 				}
 			]
 		},
 
-		// 42. gp_kkaji
+		// 42. gp_hajiman
 		{
-			id: 'gp_kkaji',
-			title: '까지',
-			category: 'particle',
+			id: 'gp_hajiman',
+			title: '하지만',
+			category: 'connective',
 			tense: null,
 			register: null,
-			hint: 'until, to (ending point)',
+			hint: 'but, however (sentence connector)',
 			description:
-				'Marks the ending point in time or space: "until" or "to." ' +
-				'Often paired with 부터: 부터~까지 = "from~until." ' +
-				'Can also mark extent: 여기까지 = "up to here."',
+				'Sentence-initial contrast connector meaning "but" or "however." ' +
+				'Links two sentences: 한국어는 어려워요. 하지만 재미있어요. ' +
+				'"Korean is hard. But it\'s fun." Compare with -지만 which connects clauses within one sentence.',
 			level: 1,
-			tags: ['particle', 'beginner', 'TOPIK1'],
-			structurePattern: '[Time/Place]까지',
+			tags: ['connective', 'beginner', 'TOPIK1'],
+			structurePattern: '[Sentence A]. 하지만 [contrasting sentence B].',
 			notes: [
-				{ type: 'tip', title: 'Time & Place', content: '까지 works for both time (6시까지 "until 6") and place (서울까지 "to Seoul").' }
+				{ type: 'tip', title: '-지만 vs 하지만', content: '-지만 connects clauses within one sentence. 하지만 connects two separate sentences. Same meaning, different scope.' },
+				{ type: 'tip', title: 'Similar Words', content: '하지만, 그런데, 그렇지만 all mean "but/however." 하지만 is the most common in writing.' }
 			],
+			relatedPointIds: ['gp_jiman'],
 			lessonExamples: [
 				{
-					id: 'le_kkaji_01',
-					fullSentence: '6시까지 일해요.',
-					sentenceWithBlank: '6시___ 일해요.',
-					answer: '까지',
-					englishHint: 'I work until 6.',
+					id: 'le_hajiman_01',
+					fullSentence: '한국어는 어려워요. 하지만 재미있어요.',
+					sentenceWithBlank: '한국어는 어려워요. ___ 재미있어요.',
+					answer: '하지만',
+					englishHint: "Korean is hard. But it's fun.",
 					order: 0
 				},
 				{
-					id: 'le_kkaji_02',
-					fullSentence: '아침부터 저녁까지 공부해요.',
-					sentenceWithBlank: '아침부터 저녁___ 공부해요.',
-					answer: '까지',
-					englishHint: 'I study from morning until evening.',
+					id: 'le_hajiman_02',
+					fullSentence: '비가 왔어요. 하지만 공원에 갔어요.',
+					sentenceWithBlank: '비가 왔어요. ___ 공원에 갔어요.',
+					answer: '하지만',
+					englishHint: 'It rained. But I went to the park.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_kkaji_01',
-					fullSentence: '9시부터 6시까지 일해요.',
-					sentenceWithBlank: '9시부터 6시___ 일해요.',
-					answer: '까지',
+					id: 'cc_hajiman_01',
+					fullSentence: '한국어는 어려워요. 하지만 재미있어요.',
+					sentenceWithBlank: '한국어는 어려워요. ___ 재미있어요.',
+					answer: '하지만',
 					alternateAnswers: [],
-					vocabBaseForm: '까지',
-					englishHint: 'I work from 9 until 6.',
+					vocabBaseForm: '하지만',
+					englishHint: "Korean is hard. But it's fun.",
 					introducedAtPosition: 42
 				},
 				{
-					id: 'cc_kkaji_02',
-					fullSentence: "서울에서 부산까지 가요.",
-					sentenceWithBlank: "서울에서 부산___ 가요.",
-					answer: "까지",
+					id: 'cc_hajiman_02',
+					fullSentence: '그 식당은 비싸요. 하지만 맛있어요.',
+					sentenceWithBlank: '그 식당은 비싸요. ___ 맛있어요.',
+					answer: '하지만',
 					alternateAnswers: [],
-					vocabBaseForm: '까지',
-					englishHint: "I travel from Seoul to Busan.",
+					vocabBaseForm: '하지만',
+					englishHint: "That restaurant is expensive. But it's delicious.",
 					introducedAtPosition: 42
 				},
 				{
-					id: 'cc_kkaji_03',
-					fullSentence: '금요일까지 숙제를 해요.',
-					sentenceWithBlank: '금요일___ 숙제를 해요.',
-					answer: '까지',
+					id: 'cc_hajiman_03',
+					fullSentence: '피곤해요. 하지만 공부해야 해요.',
+					sentenceWithBlank: '피곤해요. ___ 공부해야 해요.',
+					answer: '하지만',
 					alternateAnswers: [],
-					vocabBaseForm: '까지',
-					englishHint: 'I do homework by Friday.',
+					vocabBaseForm: '하지만',
+					englishHint: "I'm tired. But I have to study.",
 					introducedAtPosition: 42
-				}
-			]
-		},
-
-		// 43. gp_jeone
-		{
-			id: 'gp_jeone',
-			title: '전에',
-			category: 'expression',
-			tense: null,
-			register: null,
-			hint: 'before',
-			description:
-				'Means "before" a time or action. ' +
-				'수업 전에 = "before class." ' +
-				'The verb pattern -기 전에 is taught separately at Level 2; here, use a noun + 전에.',
-			level: 1,
-			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: '[Noun] 전에',
-			notes: [
-				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 전에 (before class). With verbs: 먹기 전에 (before eating) — uses the -기 nominalizer.' }
-			],
-			lessonExamples: [
-				{
-					id: 'le_jeone_01',
-					fullSentence: '수업 전에 커피를 마셔요.',
-					sentenceWithBlank: '수업 ___ 커피를 마셔요.',
-					answer: '전에',
-					englishHint: 'I drink coffee before class.',
-					order: 0
-				},
-				{
-					id: 'le_jeone_02',
-					fullSentence: '12시 전에 점심을 먹어요.',
-					sentenceWithBlank: '12시 ___ 점심을 먹어요.',
-					answer: '전에',
-					englishHint: 'I eat lunch before 12.',
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_jeone_01',
-					fullSentence: '수업 전에 커피를 마셔요.',
-					sentenceWithBlank: '수업 ___ 커피를 마셔요.',
-					answer: '전에',
-					alternateAnswers: [],
-					vocabBaseForm: '전에',
-					englishHint: 'I drink coffee before class.',
-					introducedAtPosition: 43
-				},
-				{
-					id: 'cc_jeone_02',
-					fullSentence: "운동 전에 물을 마셔요.",
-					sentenceWithBlank: "운동 ___ 물을 마셔요.",
-					answer: "전에",
-					alternateAnswers: [],
-					vocabBaseForm: '전에',
-					englishHint: "I drink water before exercising.",
-					introducedAtPosition: 43
-				},
-				{
-					id: 'cc_jeone_03',
-					fullSentence: '10시 전에 집에 가요.',
-					sentenceWithBlank: '10시 ___ 집에 가요.',
-					answer: '전에',
-					alternateAnswers: [],
-					vocabBaseForm: '전에',
-					englishHint: 'I go home before 10.',
-					introducedAtPosition: 43
-				}
-			]
-		},
-
-		// 44. gp_hue
-		{
-			id: 'gp_hue',
-			title: '후에',
-			category: 'expression',
-			tense: null,
-			register: null,
-			hint: 'after',
-			description:
-				'Means "after" a time or action. ' +
-				'수업 후에 = "after class." ' +
-				'The verb modifier + 후에 is taught separately at Level 2; here, use a noun + 후에.',
-			level: 1,
-			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: '[Noun] 후에',
-			notes: [
-				{ type: 'tip', title: 'Synonym', content: '다음에 is a more casual alternative meaning "after" or "next time."' },
-				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 후에 (after class). With verbs: 먹은 후에 (after eating).' }
-			],
-			lessonExamples: [
-				{
-					id: 'le_hue_01',
-					fullSentence: '수업 후에 운동해요.',
-					sentenceWithBlank: '수업 ___ 운동해요.',
-					answer: '후에',
-					englishHint: 'I exercise after class.',
-					order: 0
-				},
-				{
-					id: 'le_hue_02',
-					fullSentence: '점심 후에 커피를 마셔요.',
-					sentenceWithBlank: '점심 ___ 커피를 마셔요.',
-					answer: '후에',
-					englishHint: 'I drink coffee after lunch.',
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_hue_01',
-					fullSentence: '수업 후에 운동해요.',
-					sentenceWithBlank: '수업 ___ 운동해요.',
-					answer: '후에',
-					alternateAnswers: ['다음에'],
-					vocabBaseForm: '후에',
-					englishHint: 'I exercise after class.',
-					introducedAtPosition: 44
-				},
-				{
-					id: 'cc_hue_02',
-					fullSentence: "퇴근 후에 친구를 만나요.",
-					sentenceWithBlank: "퇴근 ___ 친구를 만나요.",
-					answer: "후에",
-					alternateAnswers: ['다음에'],
-					vocabBaseForm: '후에',
-					englishHint: "I meet a friend after work.",
-					introducedAtPosition: 44
-				},
-				{
-					id: 'cc_hue_03',
-					fullSentence: "저녁 식사 후에 산책해요.",
-					sentenceWithBlank: "저녁 식사 ___ 산책해요.",
-					answer: "후에",
-					alternateAnswers: ['다음에'],
-					vocabBaseForm: '후에',
-					englishHint: "I take a walk after dinner.",
-					introducedAtPosition: 44
 				}
 			]
 		}
