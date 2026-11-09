@@ -16,7 +16,7 @@ import { calculateLevel } from '../lib/levels';
 import { generateSalt, hashPassword, isLogoutGraceActive, usernameFromEmail } from '../lib/auth';
 
 export const LOCAL_USER_ID = 'local';
-export const CONTENT_VERSION = 'topik1-level1-v3';
+export const CONTENT_VERSION = 'topik1-level1-v4';
 
 /** The id of the currently logged-in user; all queries below are scoped to
  * it. Defaults to 'local' until the auth layer sets the real account. */
@@ -94,6 +94,11 @@ export function initDb(): Db {
   const { grammarPoints } = flattenContent(bundle);
   const nowIso = new Date().toISOString();
 
+  // The Level 1 deck row is upserted (not insert-if-absent) so a
+  // corrected title reaches devices that already seeded an earlier
+  // version — the old title "TOPIK I Level 1 Grammar" had a stray
+  // "Grammar" no other deck has. Same pattern as the grammar points
+  // below; the version bump at the top of this function is what runs it.
   database.insert(schema.decks).values({
     id: bundle.deck.id,
     title: bundle.deck.title,
@@ -102,7 +107,17 @@ export function initDb(): Db {
     level: bundle.deck.level,
     topikLevel: bundle.deck.topikLevel,
     sortOrder: 0,
-  }).onConflictDoNothing().run();
+  }).onConflictDoUpdate({
+    target: schema.decks.id,
+    set: {
+      title: bundle.deck.title,
+      slug: bundle.deck.slug,
+      description: 'TOPIK I Level 1 grammar — provisional content, see mobile/README.md.',
+      level: bundle.deck.level,
+      topikLevel: bundle.deck.topikLevel,
+      sortOrder: 0,
+    },
+  }).run();
 
   // The deck catalogue: every TOPIK level is its own deck, plus a
   // Non-TOPIK deck. Only Level 1 has content so far; the rest are

@@ -40,7 +40,7 @@ const data = {
 	provenance:
 		'PROVISIONAL — copied verbatim from prisma/seed-data/topik1-level1/ (old SvelteKit app, last commit 2026-02-28), plus the Level 1 additions in prisma/seed-data/topik1-level1/additions.ts (worked examples + variant practice cards, from the Codex "Make Level 1 lessons and reviews reliable" patch, 2026-11-08). Authored by Nicholas with basic Korean; to be regenerated later by a high-performing English-Korean multimodal model. Do not treat as vetted teaching content.',
 	source: 'prisma/seed-data/topik1-level1/lesson-01.ts … lesson-11.ts + additions.ts',
-	deck: { id: 'deck_topik1_level1', title: 'TOPIK I Level 1 Grammar', slug: 'topik1-level1', topikLevel: 'topik1-1', level: 1 },
+	deck: { id: 'deck_topik1_level1', title: 'TOPIK I Level 1', slug: 'topik1-level1', topikLevel: 'topik1-1', level: 1 },
 	lessons
 };
 

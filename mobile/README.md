@@ -234,10 +234,10 @@ corrections from the same patch (좋다 → 좋은 is regular, not
 irregular; -고 싶다 3rd person uses -고 싶어하다; the -아/어서 tense
 absolute softened; the 안 있어요 caution softened; 에/로 accepted as
 an alternate for "학교에 가요" / "회사에 가요"). Content is versioned
-(`CONTENT_VERSION` in `src/db/index.ts`, now `topik1-level1-v3`): on a
-version bump the seed upserts every content row, so new and corrected
-content reaches devices that already seeded an earlier version without
-touching review progress.
+(`CONTENT_VERSION` in `src/db/index.ts`, now `topik1-level1-v4`): on a
+version bump the seed upserts every content row — including the Level 1
+deck title, so a corrected title reaches devices that already seeded an
+earlier version — without touching review progress.
 
 Validation (`npm run validate` / the seed Jest test) enforces:
 11 lessons, 48 grammar points, 178 cloze cards, 109 lesson examples;
