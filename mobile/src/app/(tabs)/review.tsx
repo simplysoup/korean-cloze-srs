@@ -12,7 +12,6 @@ import {
 } from '../../db';
 import { formatNextReview, ratingForCheck, srsRankLabel, answerExplanation } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
-import { hangulToRoman } from '../../lib/hangulToRoman';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
 import { colors, commonStyles } from '../../components/theme';
@@ -33,7 +32,6 @@ export default function ReviewScreen() {
   const [submitted, setSubmitted] = useState(false);
   const [answerRevealed, setAnswerRevealed] = useState(false);
   const [altIndex, setAltIndex] = useState(0);
-  const [hintStage, setHintStage] = useState(0);
   const [autoFailed, setAutoFailed] = useState(false);
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -79,20 +77,6 @@ export default function ReviewScreen() {
   const sessionProgressPct =
     queue.length > 0 ? ((queueIndex + (submitted ? 1 : 0)) / queue.length) * 100 : 0;
 
-  // Hint stages, adapted for Korean learners. Bunpro's stages assume the
-  // learner already reads Japanese fluently (a Japanese nuance note), so
-  // they don't transfer. These are progressive disclosure toward the
-  // answer, in a mode the learner can use at each step:
-  //   1 — Meaning: the grammar point's English meaning.
-  //   2 — Sound: the romanization of the answer (sound it out, then type it).
-  //   3 — Answer: the full Hangul answer (reveals it, marks the card failed).
-  // The stages accumulate: stage 2 shows Meaning + Sound.
-  const hintAnswer = currentCard
-    ? currentCard.answers[altIndex] ?? currentCard.answers[0] ?? ''
-    : '';
-  const hintMeaning = currentCard ? currentCard.grammar.hint : '';
-  const hintSound = hintAnswer ? hangulToRoman(hintAnswer) : '';
-
   // Targeted explanation for a wrong answer (에/에서 confusion, particle
   // pairs) — ported from the old app's answers.ts.
   const explanation =
@@ -109,7 +93,6 @@ export default function ReviewScreen() {
     setSubmitted(false);
     setAnswerRevealed(false);
     setAltIndex(0);
-    setHintStage(0);
     setAutoFailed(false);
     setError(null);
   }
@@ -145,23 +128,21 @@ export default function ReviewScreen() {
     setAnswerRevealed(false);
   }
 
-  function advanceHint() {
+  // No hint system (dropped in build 23). The Meaning stage was the
+  // question itself, the Sound stage (romanization) was the answer, and
+  // the formation-rule stage gave the answer away for binary points
+  // (the rule + the visible word before the blank determines the form).
+  // Until a genuinely useful hint is designed, the only pre-submit escape
+  // is Show Answer below: it reveals the answer, marks the card failed,
+  // and submits the card so Next appears — the same fail-and-advance
+  // behaviour the old full-reveal stage had, but labelled honestly
+  // instead of pretending to be a hint.
+  function revealAnswer() {
     if (!currentCard) return;
-    const nextStage = Math.min(3, hintStage + 1);
-    setHintStage(nextStage);
-    if (nextStage === 3) {
-      // Full answer revealed: the card is marked failed, and the card
-      // moves to the submitted state so the Next button appears. The old
-      // code set answerRevealed without submitting, which hid the input
-      // and left only a dead Hint button — the user was stuck on the card
-      // with no way forward except End Session. The wrong count is
-      // incremented here (submit() normally does it) so the summary stays
-      // accurate.
-      setAnswerRevealed(true);
-      setAutoFailed(true);
-      setSubmitted(true);
-      setWrong((n) => n + 1);
-    }
+    setAnswerRevealed(true);
+    setAutoFailed(true);
+    setSubmitted(true);
+    setWrong((n) => n + 1);
   }
 
   function cycleAlt() {
@@ -296,25 +277,6 @@ export default function ReviewScreen() {
 
       <EnglishHint parts={currentCard.englishHint} />
 
-      {hintStage >= 1 ? (
-        <View style={styles.hintBlock}>
-          <Text style={styles.hint}>
-            <Text style={styles.hintLabel}>Meaning: </Text>
-            {hintMeaning}
-          </Text>
-          {hintStage >= 2 ? (
-            <Text style={styles.hint}>
-              <Text style={styles.hintLabel}>Sound: </Text>
-              {hintSound}
-            </Text>
-          ) : null}
-        </View>
-      ) : null}
-
-      {hintStage === 2 && !submitted ? (
-        <Text style={styles.hintNote}>Revealing the answer marks this card incorrect.</Text>
-      ) : null}
-
       {!submitted && !answerRevealed ? (
         <View style={styles.inputRow}>
           {Array.from({ length: blankCount }, (_, i) => (
@@ -364,10 +326,8 @@ export default function ReviewScreen() {
       {/* Controls */}
       <View style={styles.controls}>
         {!submitted ? (
-          <Pressable onPress={advanceHint} style={[commonStyles.btn, commonStyles.btnSecondary, styles.controlButton]}>
-            <Text style={commonStyles.btnTextDark}>
-              {hintStage === 0 ? 'Hint: meaning' : hintStage === 1 ? 'Hint: sound' : 'Reveal answer'}
-            </Text>
+          <Pressable onPress={revealAnswer} style={[commonStyles.btn, commonStyles.btnSecondary, styles.controlButton]}>
+            <Text style={commonStyles.btnTextDark}>Show Answer</Text>
           </Pressable>
         ) : allCorrect && !autoFailed ? (
           <>
@@ -507,29 +467,6 @@ const styles = StyleSheet.create({
   },
   nuance: {
     fontSize: 15,
-    color: colors.muted,
-    textAlign: 'center',
-  },
-  // Hint block: the stages accumulate (Meaning, then Meaning + Sound), so
-  // the block holds one line per revealed stage. The label is bold so the
-  // stage is obvious at a glance.
-  hintBlock: {
-    marginTop: 8,
-    gap: 2,
-  },
-  hint: {
-    fontSize: 16,
-    color: colors.blue,
-    textAlign: 'center',
-  },
-  hintLabel: {
-    fontWeight: '700',
-  },
-  // Shown at stage 2, before the user taps "Reveal answer": the consequence
-  // of the final stage, stated before they commit to it.
-  hintNote: {
-    marginTop: 6,
-    fontSize: 13,
     color: colors.muted,
     textAlign: 'center',
   },
