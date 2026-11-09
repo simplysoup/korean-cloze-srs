@@ -83,16 +83,18 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  // The sentence is the dominant element (Bunpro's is ~36–40px); the blank
+  // is the same size so the typed Hangul matches the sentence.
   sentenceText: {
-    fontSize: 26,
-    lineHeight: 40,
+    fontSize: 32,
+    lineHeight: 46,
     color: colors.text,
   },
   // Hard underline: thick and dark, so the blank is obvious even before
   // anything is typed. Correctness states keep their own colours.
   blank: {
-    fontSize: 26,
-    lineHeight: 40,
+    fontSize: 32,
+    lineHeight: 46,
     borderBottomWidth: 3,
     borderBottomColor: colors.text,
     paddingHorizontal: 4,

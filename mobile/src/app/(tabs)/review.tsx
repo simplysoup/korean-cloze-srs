@@ -12,6 +12,7 @@ import {
 } from '../../db';
 import { formatNextReview, ratingForCheck, srsRankLabel, answerExplanation } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
+import { hangulToRoman } from '../../lib/hangulToRoman';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
 import { colors, commonStyles } from '../../components/theme';
@@ -73,14 +74,24 @@ export default function ReviewScreen() {
     ? srsRankLabel(currentCard.fsrsState, currentCard.stability, currentCard.masteredAt !== null)
     : '';
   const remaining = currentCard ? queue.length - queueIndex : 0;
+  // Thin session progress bar (Bunpro has one along the top edge): the
+  // fraction of cards completed, counting the current card once submitted.
+  const sessionProgressPct =
+    queue.length > 0 ? ((queueIndex + (submitted ? 1 : 0)) / queue.length) * 100 : 0;
 
-  const hintText = (() => {
-    if (!currentCard || hintStage === 0) return '';
-    const answer = currentCard.answers[altIndex] ?? currentCard.answers[0] ?? '';
-    if (hintStage === 1) return answer.slice(0, 1);
-    if (hintStage === 2) return answer.slice(0, Math.max(1, Math.ceil(answer.length / 2)));
-    return answer;
-  })();
+  // Hint stages, adapted for Korean learners. Bunpro's stages assume the
+  // learner already reads Japanese fluently (a Japanese nuance note), so
+  // they don't transfer. These are progressive disclosure toward the
+  // answer, in a mode the learner can use at each step:
+  //   1 — Meaning: the grammar point's English meaning.
+  //   2 — Sound: the romanization of the answer (sound it out, then type it).
+  //   3 — Answer: the full Hangul answer (reveals it, marks the card failed).
+  // The stages accumulate: stage 2 shows Meaning + Sound.
+  const hintAnswer = currentCard
+    ? currentCard.answers[altIndex] ?? currentCard.answers[0] ?? ''
+    : '';
+  const hintMeaning = currentCard ? currentCard.grammar.hint : '';
+  const hintSound = hintAnswer ? hangulToRoman(hintAnswer) : '';
 
   // Targeted explanation for a wrong answer (에/에서 confusion, particle
   // pairs) — ported from the old app's answers.ts.
@@ -139,9 +150,17 @@ export default function ReviewScreen() {
     const nextStage = Math.min(3, hintStage + 1);
     setHintStage(nextStage);
     if (nextStage === 3) {
-      // Full answer revealed: the card is marked failed.
+      // Full answer revealed: the card is marked failed, and the card
+      // moves to the submitted state so the Next button appears. The old
+      // code set answerRevealed without submitting, which hid the input
+      // and left only a dead Hint button — the user was stuck on the card
+      // with no way forward except End Session. The wrong count is
+      // incremented here (submit() normally does it) so the summary stays
+      // accurate.
       setAnswerRevealed(true);
       setAutoFailed(true);
+      setSubmitted(true);
+      setWrong((n) => n + 1);
     }
   }
 
@@ -237,11 +256,15 @@ export default function ReviewScreen() {
   }
 
   return (
-    <ScrollView
-      style={commonStyles.screen}
-      contentContainerStyle={[commonStyles.scrollContent, styles.content]}
-      keyboardShouldPersistTaps="handled"
-    >
+    <View style={commonStyles.screen}>
+      <View style={styles.sessionProgress}>
+        <View style={[styles.sessionProgressFill, { width: `${sessionProgressPct}%` }]} />
+      </View>
+      <ScrollView
+        style={styles.scroll}
+        contentContainerStyle={[commonStyles.scrollContent, styles.content]}
+        keyboardShouldPersistTaps="handled"
+      >
       {/* HUD */}
       <View style={styles.hud}>
         <Pressable onPress={() => router.replace('/')} style={styles.hudButton}>
@@ -273,7 +296,24 @@ export default function ReviewScreen() {
 
       <EnglishHint parts={currentCard.englishHint} />
 
-      {hintStage > 0 ? <Text style={styles.hint}>Hint: {hintText}</Text> : null}
+      {hintStage >= 1 ? (
+        <View style={styles.hintBlock}>
+          <Text style={styles.hint}>
+            <Text style={styles.hintLabel}>Meaning: </Text>
+            {hintMeaning}
+          </Text>
+          {hintStage >= 2 ? (
+            <Text style={styles.hint}>
+              <Text style={styles.hintLabel}>Sound: </Text>
+              {hintSound}
+            </Text>
+          ) : null}
+        </View>
+      ) : null}
+
+      {hintStage === 2 && !submitted ? (
+        <Text style={styles.hintNote}>Revealing the answer marks this card incorrect.</Text>
+      ) : null}
 
       {!submitted && !answerRevealed ? (
         <View style={styles.inputRow}>
@@ -325,7 +365,9 @@ export default function ReviewScreen() {
       <View style={styles.controls}>
         {!submitted ? (
           <Pressable onPress={advanceHint} style={[commonStyles.btn, commonStyles.btnSecondary, styles.controlButton]}>
-            <Text style={commonStyles.btnTextDark}>{hintStage === 0 ? 'Hint' : 'More Hint'}</Text>
+            <Text style={commonStyles.btnTextDark}>
+              {hintStage === 0 ? 'Hint: meaning' : hintStage === 1 ? 'Hint: sound' : 'Reveal answer'}
+            </Text>
           </Pressable>
         ) : allCorrect && !autoFailed ? (
           <>
@@ -420,10 +462,24 @@ export default function ReviewScreen() {
         </View>
       ) : null}
     </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
+  // Thin session progress bar along the top edge (Bunpro-style): the fill
+  // grows as cards are completed.
+  sessionProgress: {
+    height: 4,
+    backgroundColor: colors.border,
+  },
+  sessionProgressFill: {
+    height: 4,
+    backgroundColor: colors.primary,
+  },
+  scroll: {
+    flex: 1,
+  },
   content: {
     alignItems: 'center',
     gap: 18,
@@ -454,9 +510,27 @@ const styles = StyleSheet.create({
     color: colors.muted,
     textAlign: 'center',
   },
+  // Hint block: the stages accumulate (Meaning, then Meaning + Sound), so
+  // the block holds one line per revealed stage. The label is bold so the
+  // stage is obvious at a glance.
+  hintBlock: {
+    marginTop: 8,
+    gap: 2,
+  },
   hint: {
     fontSize: 16,
     color: colors.blue,
+    textAlign: 'center',
+  },
+  hintLabel: {
+    fontWeight: '700',
+  },
+  // Shown at stage 2, before the user taps "Reveal answer": the consequence
+  // of the final stage, stated before they commit to it.
+  hintNote: {
+    marginTop: 6,
+    fontSize: 13,
+    color: colors.muted,
     textAlign: 'center',
   },
   explanation: {

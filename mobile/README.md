@@ -187,8 +187,17 @@ filter auto-expands the levels that still have points.
   romanized Korean, see it convert to Hangul live; ENTER or the arrow
   button submits). HUD: End Session, SRS rank (New / Beginner I–IV /
   Seasoned I–III / Master, from FSRS state + stability), Right/Wrong
-  counter, Remaining count. Hint reveals the answer in stages (full
-  reveal marks the card failed).
+  counter, Remaining count, and a thin red progress bar along the top
+  edge that grows as cards are completed. Hint is a 3-stage progressive
+  disclosure adapted for Korean learners (build 22; Bunpro's stages assume
+  fluent Japanese reading, so they don't transfer): 1 — Meaning, the
+  grammar point's English meaning; 2 — Sound, the romanization of the
+  answer; 3 — Answer, the full Hangul (reveals it and marks the card
+  failed, and the card moves to the submitted state so Next appears —
+  the old final stage left the card un-submitted and stuck). The button
+  labels what the next tap reveals ("Hint: meaning" / "Hint: sound" /
+  "Reveal answer"), and a note at stage 2 states that revealing marks
+  the card incorrect.
 - The English hint's 'direct' highlight is the English word for the
   blanked Korean grammar — the copula ("I [am] a student"), the
   preposition ("I go [to] school"), "also", "and"/"with", "Oh," — never
