@@ -29,7 +29,7 @@ export const lesson03: LessonSeed = {
 			tags: ['verb-ending', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + 아요/어요',
 			notes: [
-				{ type: 'tip', title: 'Vowel Harmony', content: 'If the last vowel of the stem is ㅏ or ㅗ → 아요. Otherwise → 어요. 하다 → 해요 (special).' },
+				{ type: 'tip', title: 'Vowel Harmony', content: 'Regular stems usually take -아요 after ㅏ or ㅗ and -어요 after other vowels. 하다 → 해요; contractions and irregulars need separate attention.' },
 				{ type: 'tip', title: 'Examples', content: '가다 → 가요 (go), 먹다 → 먹어요 (eat), 공부하다 → 공부해요 (study).' }
 			],
 			lessonExamples: [
@@ -212,7 +212,7 @@ export const lesson03: LessonSeed = {
 			tags: ['negation', 'beginner', 'TOPIK1'],
 			structurePattern: '안 + [Verb]',
 			notes: [
-				{ type: 'tip', title: '하다 Verbs', content: 'For noun+하다 verbs, 안 goes between: 공부 안 해요 (not: 안 공부해요).' },
+				{ type: 'tip', title: '하다 Verbs', content: 'For noun+하다 verbs, 안 goes between: 공부 안 해요 is the usual spoken placement for 공부하다.' },
 				{ type: 'caution', title: '안 vs -지 않다', content: '안 is the short form. The long form -지 않다 is taught later and used in formal/written contexts.' }
 			],
 			lessonExamples: [
@@ -279,13 +279,13 @@ export const lesson03: LessonSeed = {
 			hint: 'long-form negation ("do not")',
 			description:
 				'The long-form negation pattern. Verb stem + 지 않다: 먹다 → 먹지 않아요 "do not eat." ' +
-				'More formal/emphatic than the short 안 negation. ' +
+				'Often a little more formal or measured than short 안 negation, without necessarily adding emphasis. ' +
 				'Works with all verb types including 하다 verbs: 공부하지 않아요.',
 			level: 1,
 			tags: ['negation', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + 지 않다',
 			notes: [
-				{ type: 'tip', title: '안 vs -지 않다', content: '안 먹어요 and 먹지 않아요 mean the same thing. -지 않다 is slightly more formal or emphatic.' },
+				{ type: 'tip', title: '안 vs -지 않다', content: '안 먹어요 and 먹지 않아요 mean the same thing. -지 않다 can sound a little more formal or measured, but is not automatically stronger.' },
 				{ type: 'tip', title: '하다 Verbs', content: 'For 하다 verbs, -지 않다 is simpler: 공부하지 않아요 (compare: 공부 안 해요).' }
 			],
 			lessonExamples: [
