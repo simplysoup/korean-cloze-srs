@@ -121,26 +121,22 @@ const STAGE_ROWS: {
   { key: 'ghost', label: 'Ghost', interval: 'lapses' },
 ];
 
-/** Progress by SRS stage (stages are set by FSRS stability). */
+/**
+ * Progress by SRS stage (stages are set by FSRS stability), Bunpro-style:
+ * one number card per stage — a large count, the stage name, and the
+ * interval — instead of bars. A bar's length is just the count drawn
+ * again, so it adds nothing; the number is the information.
+ */
 function ProgressStages({ stats }: { stats: DashboardStats }) {
-  const max = Math.max(1, ...STAGE_ROWS.map((r) => stats.stageCounts[r.key]));
   return (
     <View>
       <Text style={styles.sectionTitle}>Progress</Text>
-      <View style={commonStyles.card}>
+      <View style={styles.stageCards}>
         {STAGE_ROWS.map((row) => (
-          <View key={row.key} style={styles.progressRow}>
-            <Text style={styles.progressLabel}>{row.label}</Text>
-            <View style={styles.progressTrack}>
-              <View
-                style={[
-                  styles.progressFill,
-                  { width: `${(stats.stageCounts[row.key] / max) * 100}%` },
-                ]}
-              />
-            </View>
-            <Text style={styles.progressCount}>{stats.stageCounts[row.key]}</Text>
-            <Text style={styles.progressInterval}>{row.interval}</Text>
+          <View key={row.key} style={styles.stageCard}>
+            <Text style={styles.stageCount}>{stats.stageCounts[row.key]}</Text>
+            <Text style={styles.stageLabel}>{row.label}</Text>
+            <Text style={styles.stageInterval}>{row.interval}</Text>
           </View>
         ))}
       </View>
@@ -648,16 +644,45 @@ const styles = StyleSheet.create({
     fontWeight: '700',
     color: colors.text,
   },
-  progressRow: {
+  // Number cards for the SRS-stage Progress section: one card per
+  // stage in a wrapping row, so all seven fit on desktop and wrap to
+  // three per row on a phone. The count is the large number; the bar
+  // is gone (it only redrew the count).
+  stageCards: {
     flexDirection: 'row',
-    alignItems: 'center',
-    gap: 10,
-    paddingVertical: 5,
+    flexWrap: 'wrap',
+    gap: 8,
   },
-  progressLabel: {
-    width: 64,
-    fontSize: 14,
+  stageCard: {
+    flexGrow: 1,
+    flexShrink: 1,
+    flexBasis: 96,
+    minWidth: 96,
+    backgroundColor: colors.white,
+    borderRadius: 10,
+    borderWidth: 1,
+    borderColor: '#E4E4E4',
+    paddingVertical: 12,
+    paddingHorizontal: 8,
+    alignItems: 'center',
+    gap: 2,
+  },
+  stageCount: {
+    fontSize: 28,
+    fontWeight: '800',
     color: colors.text,
+    lineHeight: 32,
+  },
+  stageLabel: {
+    fontSize: 13,
+    fontWeight: '700',
+    color: colors.text,
+    textAlign: 'center',
+  },
+  stageInterval: {
+    fontSize: 11,
+    color: colors.muted,
+    textAlign: 'center',
   },
   progressTrack: {
     flex: 1,
@@ -676,12 +701,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: '600',
     color: colors.text,
-    textAlign: 'right',
-  },
-  progressInterval: {
-    width: 78,
-    fontSize: 12,
-    color: colors.muted,
     textAlign: 'right',
   },
   logoutButton: {
