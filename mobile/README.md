@@ -107,9 +107,27 @@ password hash), `grammar_points`, `cloze_cards`,
 `cloze_card_grammar_targets`, `lesson_examples`, `review_cards` (one FSRS
 record per grammar point, with `streak_correct`, `mastered_at`,
 `peak_stability`), `review_logs`, `decks`, `deck_grammar_points`,
-`user_deck_progress`, `user_streaks`, `meta` (content version + session
-user id). Per-user rows are keyed by the logged-in account's id; pre-auth
-data keyed `local` migrates to the first account created on the device.
+`library_decks` (the user's library — see below), `user_streaks`, `meta`
+(content version + session user id). Per-user rows are keyed by the
+logged-in account's id; pre-auth data keyed `local` migrates to the
+first account created on the device.
+
+### The library (build 16 — replaces the active deck)
+
+There is no "current" deck. Each TOPIK level is its own deck, and the
+user adds any decks they want to their **library** (from the Decks
+catalogue or a deck's detail page; Learning a deck adds it first). Learn,
+Review, and Cram pull from **all library decks at once, in dependency
+order** — deck sortOrder, then curriculum position — deduped by grammar
+point id, so decks with overlapping cards never duplicate a point (the
+ordering is a pure function, `orderLibraryPoints` in
+`src/lib/library.ts`, unit-tested). A point learned in one deck counts
+everywhere it appears; removing a deck from the library pauses its
+reviews and learning (its progress is kept and resumes if re-added).
+New users start with an empty library; the dashboard and Learn screen
+point them at the catalogue. A one-time migration in `initDb`
+(`libraryMigrated`) adds, for every user who already learned points,
+the decks containing those points — existing users keep running.
 
 ### Auth (email-code, via the VPS backend — build 8)
 
@@ -134,9 +152,8 @@ device SQLite file; the server never sees study data.
 size (1–10, ≤ daily limit), hide streak, vacation mode (pauses reviews
 and learning; turning it off bridges the streak), and review toggles
 (show SRS rank, Undo, lightning mode, focus mode, max reviews/day).
-Per-deck Daily Goal (1–50) and Batch Size (1–50) live on each deck's
-detail page and override the global values when "Use global settings"
-is off.
+The daily limit and batch size apply to the whole library — there are
+no per-deck settings (build 16 removed them with the active deck).
 
 ### Review flow (Bunpro-style)
 
@@ -165,11 +182,11 @@ is off.
   synchronously in `submitReview`. Mastery: 8 correct in a row masters a
   grammar point (it leaves the queue).
 - Learn flow: session of up to the daily-limit grammar points
-  (default 5, configurable in Settings) from the deck in curriculum
-  order, each shown as a point page (red headword, Structure, About,
-  Details, Examples).
+  (default 5, configurable in Settings) from all library decks in
+  dependency order, each shown as a point page (red headword, Structure, About,
+  Details, Examples). Green "I already know this" masters the point
   immediately (never tested again); the blue arrow advances and adds the
-  point to the deck. Then a Review stage tests the just-learned points
+  point to your learned set. Then a Review stage tests the just-learned points
   (one card per point), re-queueing misses until every card is answered
   correctly, then a summary. Completing a session creates the FSRS review
   cards (due immediately).

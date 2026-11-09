@@ -1,13 +1,9 @@
 import { useEffect, useState } from 'react';
-import { Link, usePathname, useRouter } from 'expo-router';
+import { Link, usePathname } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import {
-  getActiveDeckId,
   getDashboardStats,
-  getDecks,
   getUserSettings,
-  setActiveDeckId,
-  type DeckInfo,
 } from '../db';
 import { useAuth, type AuthUser } from '../lib/auth-context';
 import BrandMark from './BrandMark';
@@ -40,7 +36,6 @@ function CountPill({ count }: { count: number }) {
 export default function AppHeader({ user }: { user: AuthUser }) {
   const { logout } = useAuth();
   const pathname = usePathname();
-  const router = useRouter();
   const { width } = useWindowDimensions();
   const isDesktop = width >= DESKTOP_BREAKPOINT;
   const [openMenu, setOpenMenu] = useState<MenuId>(null);
@@ -49,10 +44,9 @@ export default function AppHeader({ user }: { user: AuthUser }) {
     dueCount: number;
     learnedToday: number;
     dailyLearnLimit: number;
+    libraryCount: number;
     level: number;
   } | null>(null);
-  const [decks, setDecks] = useState<DeckInfo[]>([]);
-  const [activeDeckId, setActiveDeckIdState] = useState('');
   const [focusMode, setFocusMode] = useState(false);
 
   // Refresh the nav counts whenever the route changes (e.g. back to the
@@ -70,18 +64,15 @@ export default function AppHeader({ user }: { user: AuthUser }) {
             dueCount: s.dueCount,
             learnedToday: s.learnedToday,
             dailyLearnLimit: s.dailyLearnLimit,
+            libraryCount: s.libraryCount,
             level: s.level,
           },
-          decks: getDecks(),
-          activeDeckId: getActiveDeckId(),
           focusMode: getUserSettings().focusMode,
         };
       })
       .then((data) => {
         if (cancelled) return;
         setStats(data.stats);
-        setDecks(data.decks);
-        setActiveDeckIdState(data.activeDeckId);
         setFocusMode(data.focusMode);
         setOpenMenu(null);
         setMobileOpen(false);
@@ -94,20 +85,16 @@ export default function AppHeader({ user }: { user: AuthUser }) {
     };
   }, [pathname]);
 
-  const remainingToday = stats ? Math.max(0, stats.dailyLearnLimit - stats.learnedToday) : 0;
+  // No decks in the library yet: nothing to learn today.
+  const remainingToday =
+    stats && stats.libraryCount > 0
+      ? Math.max(0, stats.dailyLearnLimit - stats.learnedToday)
+      : 0;
   const dueCount = stats?.dueCount ?? 0;
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   function toggleMenu(id: Exclude<MenuId, null>) {
     setOpenMenu((cur) => (cur === id ? null : id));
-  }
-
-  function pickDeck(deck: DeckInfo) {
-    if (deck.totalPoints === 0) return;
-    setActiveDeckId(deck.id);
-    setActiveDeckIdState(deck.id);
-    setOpenMenu(null);
-    router.push('/learn');
   }
 
   function closeMenus() {
@@ -148,7 +135,10 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                 </Pressable>
               </Link>
 
-              {/* Content: the decks + the grammar library. */}
+              {/* Content: the decks catalogue + the grammar library.
+                  The dropdown never lists individual decks — there is no
+                  "current" deck; Learn and Review pull from every deck
+                  in the user's library. */}
               <View style={styles.menuAnchor}>
                 <Pressable
                   style={styles.navItem}
@@ -166,35 +156,9 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                 </Pressable>
                 {openMenu === 'content' ? (
                   <View style={styles.menu}>
-                    <Text style={styles.menuHeading}>Decks</Text>
-                    {decks.map((deck) => {
-                      const available = deck.totalPoints > 0;
-                      const isCurrent = deck.id === activeDeckId;
-                      return (
-                        <Pressable
-                          key={deck.id}
-                          style={styles.menuRow}
-                          onPress={() => pickDeck(deck)}
-                          disabled={!available}
-                        >
-                          <Text style={[styles.menuRowText, !available && styles.menuRowMuted]}>
-                            {deck.title}
-                          </Text>
-                          <Text style={styles.menuRowMeta}>
-                            {isCurrent
-                              ? 'Current ✓'
-                              : available
-                                ? `${deck.totalPoints} points`
-                                : 'Soon'}
-                          </Text>
-                        </Pressable>
-                      );
-                    })}
                     <Link href="/decks" asChild>
                       <Pressable style={styles.menuRow} onPress={() => setOpenMenu(null)}>
-                        <Text style={[styles.menuRowText, { color: colors.primary }]}>
-                          Browse all decks ›
-                        </Text>
+                        <Text style={styles.menuRowText}>Decks</Text>
                       </Pressable>
                     </Link>
                     <View style={styles.menuDivider} />
@@ -494,15 +458,6 @@ const styles = StyleSheet.create({
     left: undefined,
     right: 0,
   },
-  menuHeading: {
-    fontSize: 11,
-    fontWeight: '700',
-    color: colors.muted,
-    textTransform: 'uppercase',
-    paddingHorizontal: 14,
-    paddingTop: 6,
-    paddingBottom: 4,
-  },
   menuRow: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -517,10 +472,6 @@ const styles = StyleSheet.create({
   },
   menuRowMuted: {
     color: colors.faint,
-  },
-  menuRowMeta: {
-    fontSize: 13,
-    color: colors.muted,
   },
   menuDivider: {
     height: 1,

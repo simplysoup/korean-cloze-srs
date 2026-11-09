@@ -1,25 +1,23 @@
 import { useCallback, useState } from 'react';
 import { Link, useFocusEffect, useLocalSearchParams, useRouter } from 'expo-router';
-import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
+import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import {
-  getActiveDeckId,
+  addDeckToLibrary,
   getDashboardStats,
-  getDeckSettings,
   getDecks,
-  getEffectiveLearnSettings,
   getUserSettings,
-  setActiveDeckId,
-  setDeckSettings,
+  isDeckInLibrary,
+  removeDeckFromLibrary,
   type DeckInfo,
 } from '../../db';
-import Stepper from '../../components/Stepper';
 import { colors, commonStyles } from '../../components/theme';
 
 /**
  * Deck detail page — Bunpro's deck page, cut to what exists: title and
- * description, Learn/Review buttons, lesson rows with learned counts, a
- * Details panel, and per-deck Daily Goal / Batch Size (which override the
- * global settings for this deck only).
+ * description, Learn/Review buttons, lesson rows with learned counts, and
+ * a Details panel. There is no "current" deck and no per-deck settings:
+ * the daily goal and batch size live in Settings and apply to the whole
+ * library. Learning this deck adds it to the library first.
  */
 
 export default function DeckDetailScreen() {
@@ -30,12 +28,8 @@ export default function DeckDetailScreen() {
   const [lessons, setLessons] = useState<
     { lessonNumber: number; lessonTitle: string; learned: number; total: number }[]
   >([]);
-  const [isCurrent, setIsCurrent] = useState(false);
-  const [useGlobal, setUseGlobal] = useState(true);
-  const [dailyGoal, setDailyGoal] = useState(5);
+  const [inLibrary, setInLibrary] = useState(false);
   const [batchSize, setBatchSize] = useState(5);
-  const [globalDaily, setGlobalDaily] = useState(5);
-  const [globalBatch, setGlobalBatch] = useState(5);
 
   const load = useCallback(() => {
     if (!deckId) return;
@@ -43,52 +37,23 @@ export default function DeckDetailScreen() {
     setDeck(found);
     const level = getDashboardStats().levelProgress.find((l) => l.deckId === deckId);
     setLessons(level?.lessons ?? []);
-    setIsCurrent(getActiveDeckId() === deckId);
-    const global = getUserSettings();
-    setGlobalDaily(global.dailyNewLimit);
-    setGlobalBatch(global.batchSize);
-    const override = getDeckSettings(deckId);
-    const hasOverride = override.dailyGoal != null || override.batchSize != null;
-    setUseGlobal(!hasOverride);
-    const effective = getEffectiveLearnSettings(deckId);
-    setDailyGoal(override.dailyGoal ?? effective.dailyLimit);
-    setBatchSize(override.batchSize ?? effective.batchSize);
+    setInLibrary(isDeckInLibrary(deckId));
+    setBatchSize(getUserSettings().batchSize);
   }, [deckId]);
 
   useFocusEffect(load);
 
-  function toggleGlobal(on: boolean) {
-    if (!deckId) return;
-    setUseGlobal(on);
-    if (on) {
-      setDeckSettings(deckId, { dailyGoal: null, batchSize: null });
-      setDailyGoal(globalDaily);
-      setBatchSize(globalBatch);
-    } else {
-      setDeckSettings(deckId, { dailyGoal, batchSize });
-    }
-  }
-
-  function changeDailyGoal(v: number) {
-    if (!deckId) return;
-    setDailyGoal(v);
-    setDeckSettings(deckId, { dailyGoal: v });
-    if (batchSize > v) {
-      setBatchSize(v);
-      setDeckSettings(deckId, { dailyGoal: v, batchSize: v });
-    }
-  }
-
-  function changeBatchSize(v: number) {
-    if (!deckId) return;
-    setBatchSize(v);
-    setDeckSettings(deckId, { batchSize: v });
-  }
-
   function learn() {
     if (!deckId || !deck) return;
-    setActiveDeckId(deckId);
+    if (!inLibrary) addDeckToLibrary(deckId);
     router.push('/learn');
+  }
+
+  function toggleLibrary() {
+    if (!deckId) return;
+    if (inLibrary) removeDeckFromLibrary(deckId);
+    else addDeckToLibrary(deckId);
+    setInLibrary(!inLibrary);
   }
 
   if (!deckId) {
@@ -132,7 +97,7 @@ export default function DeckDetailScreen() {
       <View style={styles.badges}>
         <Text style={styles.badge}>Grammar</Text>
         <Text style={styles.badge}>{deck.totalPoints} points</Text>
-        {isCurrent ? <Text style={[styles.badge, styles.badgeCurrent]}>Current deck ✓</Text> : null}
+        {inLibrary ? <Text style={[styles.badge, styles.badgeLibrary]}>In your library ✓</Text> : null}
       </View>
       <Text style={[commonStyles.body, { marginTop: 8 }]}>{deck.description}</Text>
 
@@ -142,7 +107,7 @@ export default function DeckDetailScreen() {
             onPress={learn}
             style={[commonStyles.btn, commonStyles.btnPrimary, styles.actionButton]}
           >
-            <Text style={commonStyles.btnText}>Learn 5</Text>
+            <Text style={commonStyles.btnText}>Learn {batchSize}</Text>
           </Pressable>
         ) : null}
         <Link href="/review" asChild>
@@ -157,6 +122,13 @@ export default function DeckDetailScreen() {
           </Pressable>
         </Link>
       </View>
+      {available ? (
+        <Pressable style={styles.libraryToggle} onPress={toggleLibrary}>
+          <Text style={styles.libraryToggleText}>
+            {inLibrary ? 'Remove from library' : 'Add to library'}
+          </Text>
+        </Pressable>
+      ) : null}
 
       <Text style={styles.sectionTitle}>Details</Text>
       <View style={commonStyles.card}>
@@ -220,59 +192,6 @@ export default function DeckDetailScreen() {
           ))
         )}
       </View>
-
-      <Text style={styles.sectionTitle}>Deck Settings</Text>
-      <View style={commonStyles.card}>
-        <View style={styles.settingsRow}>
-          <View style={styles.settingsText}>
-            <Text style={styles.settingsLabel}>Use global settings</Text>
-            <Text style={commonStyles.muted}>
-              Daily goal {globalDaily} · Batch size {globalBatch} (from Settings).
-            </Text>
-          </View>
-          <Switch
-            value={useGlobal}
-            onValueChange={toggleGlobal}
-            trackColor={{ true: colors.primary }}
-          />
-        </View>
-        {!useGlobal ? (
-          <>
-            <View style={styles.divider} />
-            <View style={styles.settingsRow}>
-              <View style={styles.settingsText}>
-                <Text style={styles.settingsLabel}>Daily Goal</Text>
-                <Text style={commonStyles.muted}>New points per day for this deck (1–50).</Text>
-              </View>
-              <Stepper
-                value={dailyGoal}
-                min={1}
-                max={50}
-                step={1}
-                format={(v) => String(v)}
-                onChange={changeDailyGoal}
-              />
-            </View>
-            <View style={styles.divider} />
-            <View style={styles.settingsRow}>
-              <View style={styles.settingsText}>
-                <Text style={styles.settingsLabel}>Batch Size</Text>
-                <Text style={commonStyles.muted}>
-                  New points per Learn session (never more than the daily goal).
-                </Text>
-              </View>
-              <Stepper
-                value={batchSize}
-                min={1}
-                max={50}
-                step={1}
-                format={(v) => String(v)}
-                onChange={changeBatchSize}
-              />
-            </View>
-          </>
-        ) : null}
-      </View>
     </ScrollView>
   );
 }
@@ -303,7 +222,7 @@ const styles = StyleSheet.create({
     paddingVertical: 4,
     overflow: 'hidden',
   },
-  badgeCurrent: {
+  badgeLibrary: {
     backgroundColor: '#FDECEC',
     color: colors.primary,
   },
@@ -314,6 +233,16 @@ const styles = StyleSheet.create({
   },
   actionButton: {
     flex: 1,
+  },
+  libraryToggle: {
+    marginTop: 10,
+    paddingVertical: 6,
+    alignItems: 'center',
+  },
+  libraryToggleText: {
+    color: colors.muted,
+    fontSize: 14,
+    fontWeight: '600',
   },
   sectionTitle: {
     fontSize: 17,
@@ -367,25 +296,5 @@ const styles = StyleSheet.create({
   },
   lessonBar: {
     width: 90,
-  },
-  settingsRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    justifyContent: 'space-between',
-    gap: 12,
-    paddingVertical: 10,
-  },
-  settingsText: {
-    flex: 1,
-    gap: 2,
-  },
-  settingsLabel: {
-    fontSize: 16,
-    fontWeight: '600',
-    color: colors.text,
-  },
-  divider: {
-    height: 1,
-    backgroundColor: colors.border,
   },
 });

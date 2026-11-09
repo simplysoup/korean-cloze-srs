@@ -1,26 +1,36 @@
 import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { Link, router, useFocusEffect } from 'expo-router';
-import { getActiveDeckId, getDecks, setActiveDeckId, type DeckInfo } from '../db';
+import {
+  addDeckToLibrary,
+  getDecks,
+  removeDeckFromLibrary,
+  type DeckInfo,
+} from '../db';
 import { colors, commonStyles } from '../components/theme';
 
 /** The deck catalogue: every TOPIK level is its own deck, plus Non-TOPIK.
- * The user chooses a deck here; Learn and Review then use the active one. */
+ * There is no "current" deck — the user adds any decks they want to
+ * their library, and Learn and Review pull from all of them at once,
+ * in dependency order. A deck with overlapping cards never duplicates:
+ * a grammar point learned in one deck counts everywhere it appears. */
 export default function DecksScreen() {
   const [decks, setDecks] = useState<DeckInfo[]>([]);
-  const [activeDeckId, setActiveDeckIdState] = useState('');
 
   useFocusEffect(
     useCallback(() => {
       setDecks(getDecks());
-      setActiveDeckIdState(getActiveDeckId());
     }, []),
   );
 
-  function selectDeck(deck: DeckInfo) {
-    setActiveDeckId(deck.id);
-    setActiveDeckIdState(deck.id);
-    router.push('/learn');
+  function addToLibrary(deck: DeckInfo) {
+    addDeckToLibrary(deck.id);
+    setDecks(getDecks());
+  }
+
+  function removeFromLibrary(deck: DeckInfo) {
+    removeDeckFromLibrary(deck.id);
+    setDecks(getDecks());
   }
 
   return (
@@ -30,12 +40,11 @@ export default function DecksScreen() {
       </Pressable>
       <Text style={commonStyles.title}>Decks</Text>
       <Text style={[commonStyles.subtitle, { marginTop: 6 }]}>
-        Each TOPIK level is its own deck. Choose one to learn — Learn and Review use the active
-        deck.
+        Each TOPIK level is its own deck. Add the decks you want to your library — Learn and
+        Review pull from all of them at once, in dependency order.
       </Text>
       {decks.map((deck) => {
         const available = deck.totalPoints > 0;
-        const isCurrent = deck.id === activeDeckId;
         return (
           <View
             key={deck.id}
@@ -47,7 +56,7 @@ export default function DecksScreen() {
                   <Text style={[styles.deckTitle, styles.deckTitleLink]}>{deck.title}</Text>
                 </Pressable>
               </Link>
-              {isCurrent ? <Text style={styles.currentBadge}>Current deck ✓</Text> : null}
+              {deck.inLibrary ? <Text style={styles.libraryBadge}>In your library ✓</Text> : null}
             </View>
             <Text style={commonStyles.muted}>{deck.description}</Text>
             <Text style={[commonStyles.muted, { marginTop: 6 }]}>
@@ -55,15 +64,20 @@ export default function DecksScreen() {
                 ? `${deck.totalPoints} grammar points · ${deck.learnedPoints} learned · ${deck.dueCount} due`
                 : 'No content yet.'}
             </Text>
-            {available && !isCurrent ? (
-              <Pressable style={styles.selectButton} onPress={() => selectDeck(deck)}>
-                <Text style={styles.selectButtonText}>Select deck</Text>
+            {available && !deck.inLibrary ? (
+              <Pressable style={styles.selectButton} onPress={() => addToLibrary(deck)}>
+                <Text style={styles.selectButtonText}>Add to library</Text>
               </Pressable>
             ) : null}
-            {available && isCurrent ? (
-              <Pressable style={styles.selectButton} onPress={() => router.push('/learn')}>
-                <Text style={styles.selectButtonText}>Learn →</Text>
-              </Pressable>
+            {available && deck.inLibrary ? (
+              <>
+                <Pressable style={styles.selectButton} onPress={() => router.push('/learn')}>
+                  <Text style={styles.selectButtonText}>Learn →</Text>
+                </Pressable>
+                <Pressable style={styles.removeButton} onPress={() => removeFromLibrary(deck)}>
+                  <Text style={styles.removeButtonText}>Remove from library</Text>
+                </Pressable>
+              </>
             ) : null}
             {!available ? (
               <Text style={[commonStyles.muted, { marginTop: 8 }]}>Content coming soon.</Text>
@@ -105,7 +119,7 @@ const styles = StyleSheet.create({
   deckTitleLink: {
     color: colors.primary,
   },
-  currentBadge: {
+  libraryBadge: {
     fontSize: 13,
     fontWeight: '700',
     color: colors.green,
@@ -121,5 +135,15 @@ const styles = StyleSheet.create({
     color: '#fff',
     fontWeight: '700',
     fontSize: 15,
+  },
+  removeButton: {
+    marginTop: 8,
+    paddingVertical: 6,
+    alignItems: 'center',
+  },
+  removeButtonText: {
+    color: colors.muted,
+    fontSize: 14,
+    fontWeight: '600',
   },
 });

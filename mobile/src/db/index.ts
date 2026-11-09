@@ -11,6 +11,7 @@ import * as schema from './schema';
 import contentBundle from '../content/topik1-level1.json';
 import { flattenContent, type ContentBundle } from '../content/types';
 import { checkAnswers, computeFsrsReview, correctAnswersForCard, newFsrsState, stageForCard, type Grade } from '../lib/srs';
+import { orderLibraryPoints } from '../lib/library';
 import { calculateLevel } from '../lib/levels';
 import { generateSalt, hashPassword, isLogoutGraceActive, usernameFromEmail } from '../lib/auth';
 
@@ -61,6 +62,7 @@ CREATE TABLE IF NOT EXISTS review_logs (id TEXT PRIMARY KEY, review_card_id TEXT
 CREATE TABLE IF NOT EXISTS decks (id TEXT PRIMARY KEY, title TEXT NOT NULL, slug TEXT NOT NULL, description TEXT NOT NULL DEFAULT '', level INTEGER NOT NULL DEFAULT 1, topik_level TEXT NOT NULL DEFAULT 'topik1-1', sort_order INTEGER NOT NULL DEFAULT 0);
 CREATE TABLE IF NOT EXISTS deck_grammar_points (id TEXT PRIMARY KEY, deck_id TEXT NOT NULL, grammar_point_id TEXT NOT NULL, sort_order INTEGER NOT NULL, lesson_number INTEGER NOT NULL, UNIQUE(deck_id, grammar_point_id));
 CREATE TABLE IF NOT EXISTS user_deck_progress (id TEXT PRIMARY KEY, user_id TEXT NOT NULL DEFAULT 'local', deck_id TEXT NOT NULL, last_learned_index INTEGER NOT NULL DEFAULT -1, last_studied_at TEXT, UNIQUE(user_id, deck_id));
+CREATE TABLE IF NOT EXISTS library_decks (id TEXT PRIMARY KEY, user_id TEXT NOT NULL DEFAULT 'local', deck_id TEXT NOT NULL, added_at TEXT NOT NULL, UNIQUE(user_id, deck_id));
 CREATE TABLE IF NOT EXISTS user_streaks (id TEXT PRIMARY KEY, user_id TEXT NOT NULL DEFAULT 'local', current_streak INTEGER NOT NULL DEFAULT 0, longest_streak INTEGER NOT NULL DEFAULT 0, last_studied_date TEXT);
 CREATE TABLE IF NOT EXISTS meta (key TEXT PRIMARY KEY, value TEXT NOT NULL);
 CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, username TEXT NOT NULL, email TEXT NOT NULL, password_hash TEXT NOT NULL, salt TEXT NOT NULL, created_at TEXT NOT NULL, UNIQUE(email));
@@ -74,6 +76,13 @@ export function initDb(): Db {
   sqliteDb!.execSync(CREATE_TABLES_SQL);
   // One-time cleanup of the pre-v2 remembered session (see SESSION_META_KEY).
   database.delete(schema.meta).where(eq(schema.meta.key, 'sessionUserId')).run();
+  // One-time library migration (build 16): the library replaces the
+  // single active deck. Users who already learned points keep running —
+  // every deck containing one of their learned grammar points joins
+  // their library. New users start with an empty library and add decks
+  // from the catalogue. Runs before the version check so it also runs
+  // on devices whose content is already current.
+  migrateLibrary(database);
   const version = database
     .select()
     .from(schema.meta)
@@ -231,6 +240,8 @@ export interface DashboardStats {
   learnedToday: number;
   /** Daily new-points limit (Bunpro-style daily queue). */
   dailyLearnLimit: number;
+  /** Decks in the user's library (0 = they haven't added one yet). */
+  libraryCount: number;
   /** Vacation mode: reviews and learning are paused. */
   vacationMode: boolean;
   /** Distinct days with review activity (all time). */
@@ -272,14 +283,19 @@ export function getDueQueue(limit = 10): ReviewQueueItem[] {
   if (effectiveLimit <= 0) return [];
   const database = getDb();
   const nowIso = new Date().toISOString();
+  // Only points in library decks are reviewable: a deck removed from
+  // the library pauses its reviews (its progress is kept). The limit
+  // applies after the library filter, so a removed deck can't starve
+  // the queue.
+  const libraryGpIds = new Set(getLibraryGrammarPointIds());
   const due = database
     .select()
     .from(schema.reviewCards)
     .where(and(eq(schema.reviewCards.userId, uid()), lte(schema.reviewCards.due, nowIso)))
     .orderBy(asc(schema.reviewCards.due))
-    .limit(effectiveLimit)
     .all()
-    .filter((rc) => !rc.masteredAt);
+    .filter((rc) => !rc.masteredAt && libraryGpIds.has(rc.grammarPointId))
+    .slice(0, effectiveLimit);
 
   const queue: ReviewQueueItem[] = [];
   for (const rc of due) {
@@ -318,14 +334,13 @@ export function getDueQueue(limit = 10): ReviewQueueItem[] {
 }
 
 export function getNextReviewAt(): string | null {
-  const database = getDb();
-  const next = database
+  const libraryGpIds = new Set(getLibraryGrammarPointIds());
+  const cards = getDb()
     .select().from(schema.reviewCards)
     .where(eq(schema.reviewCards.userId, uid()))
     .orderBy(asc(schema.reviewCards.due))
-    .limit(1)
-    .get();
-  return next?.due ?? null;
+    .all();
+  return cards.find((c) => libraryGpIds.has(c.grammarPointId))?.due ?? null;
 }
 
 export function getDashboardStats(): DashboardStats {
@@ -336,9 +351,13 @@ export function getDashboardStats(): DashboardStats {
   const settings = getUserSettings();
   const today = nowIso.slice(0, 10);
   const reviewedToday = logs.filter((l) => l.reviewedAt.slice(0, 10) === today).length;
-  // The due count is what the user can actually review: 0 on vacation,
-  // capped by the daily max otherwise.
-  const rawDueCount = allCards.filter((c) => c.due <= nowIso && !c.masteredAt).length;
+  // The due count is what the user can actually review: only points in
+  // library decks count (a deck removed from the library pauses its
+  // reviews), 0 on vacation, capped by the daily max otherwise.
+  const libraryGpIds = new Set(getLibraryGrammarPointIds());
+  const rawDueCount = allCards.filter(
+    (c) => c.due <= nowIso && !c.masteredAt && libraryGpIds.has(c.grammarPointId),
+  ).length;
   const dueCount = settings.vacationMode
     ? 0
     : settings.maxReviewsPerDay != null
@@ -426,8 +445,6 @@ export function getDashboardStats(): DashboardStats {
       lessons: lessonRows,
     };
   });
-  const activeDeckId = getActiveDeckId();
-  const effective = getEffectiveLearnSettings(activeDeckId);
   return {
     dueCount, totalReviews,
     level: levelInfo.level, currentXP: levelInfo.currentXP, xpForNextLevel: levelInfo.xpForNextLevel,
@@ -437,7 +454,8 @@ export function getDashboardStats(): DashboardStats {
     learnedCount: allCards.length, totalGrammarPoints,
     newCount: Math.max(0, totalGrammarPoints - allCards.length),
     nextReviewAt: getNextReviewAt(),
-    learnedToday: getLearnedToday(), dailyLearnLimit: effective.dailyLimit,
+    learnedToday: getLearnedToday(), dailyLearnLimit: settings.dailyNewLimit,
+    libraryCount: getLibraryDeckIds().length,
     levelProgress,
     vacationMode: settings.vacationMode,
     daysStudied,
@@ -566,9 +584,11 @@ export interface DeckInfo {
   totalPoints: number;
   learnedPoints: number;
   dueCount: number;
+  inLibrary: boolean;
 }
 
-/** The deck catalogue (TOPIK 1–6 + Non-TOPIK) with per-user progress. */
+/** The deck catalogue (TOPIK 1–6 + Non-TOPIK) with per-user progress
+ * and library membership. */
 export function getDecks(): DeckInfo[] {
   const database = getDb();
   const nowIso = new Date().toISOString();
@@ -576,6 +596,7 @@ export function getDecks(): DeckInfo[] {
   const dgps = database.select().from(schema.deckGrammarPoints).all();
   const cards = database.select().from(schema.reviewCards).where(eq(schema.reviewCards.userId, uid())).all();
   const gpToDeck = new Map(dgps.map((d) => [d.grammarPointId, d.deckId] as const));
+  const libraryIds = new Set(getLibraryDeckIds());
   return decks.map((deck) => {
     const deckGps = dgps.filter((d) => d.deckId === deck.id);
     const deckCards = cards.filter((c) => gpToDeck.get(c.grammarPointId) === deck.id);
@@ -590,28 +611,104 @@ export function getDecks(): DeckInfo[] {
       totalPoints: deckGps.length,
       learnedPoints: deckCards.length,
       dueCount: deckCards.filter((c) => c.due <= nowIso && !c.masteredAt).length,
+      inLibrary: libraryIds.has(deck.id),
     };
   });
 }
 
-const ACTIVE_DECK_META_KEY = 'activeDeckId';
-
-/** The deck the user chose in the catalogue; defaults to the first deck
- * that has content (TOPIK I Level 1 today). */
-export function getActiveDeckId(): string {
-  const saved = getMeta(ACTIVE_DECK_META_KEY);
-  if (saved) {
-    const exists = getDb().select().from(schema.decks).where(eq(schema.decks.id, saved)).get();
-    if (exists) return saved;
-  }
-  const withContent = getDecks().find((d) => d.totalPoints > 0);
-  return withContent?.id ?? getDecks()[0]?.id ?? '';
+/** The decks in the current user's library, in catalogue order. */
+export function getLibraryDeckIds(): string[] {
+  const database = getDb();
+  const decks = database.select().from(schema.decks).orderBy(asc(schema.decks.sortOrder)).all();
+  const order = new Map(decks.map((d, i) => [d.id, i] as const));
+  return database
+    .select()
+    .from(schema.libraryDecks)
+    .where(eq(schema.libraryDecks.userId, uid()))
+    .all()
+    .map((r) => r.deckId)
+    .sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));
 }
 
-export function setActiveDeckId(deckId: string): void {
-  const exists = getDb().select().from(schema.decks).where(eq(schema.decks.id, deckId)).get();
-  if (!exists) return;
-  setMeta(ACTIVE_DECK_META_KEY, deckId);
+export function isDeckInLibrary(deckId: string): boolean {
+  return getDb()
+    .select()
+    .from(schema.libraryDecks)
+    .where(and(eq(schema.libraryDecks.userId, uid()), eq(schema.libraryDecks.deckId, deckId)))
+    .get() != null;
+}
+
+/** Add a deck to the library. Only decks with content can be added. */
+export function addDeckToLibrary(deckId: string): void {
+  const database = getDb();
+  const deck = database.select().from(schema.decks).where(eq(schema.decks.id, deckId)).get();
+  if (!deck) return;
+  const hasContent = database.select().from(schema.deckGrammarPoints)
+    .where(eq(schema.deckGrammarPoints.deckId, deckId)).get() != null;
+  if (!hasContent) return;
+  database.insert(schema.libraryDecks).values({
+    id: `lib_${uid()}_${deckId}`, userId: uid(), deckId, addedAt: new Date().toISOString(),
+  }).onConflictDoNothing().run();
+}
+
+export function removeDeckFromLibrary(deckId: string): void {
+  getDb()
+    .delete(schema.libraryDecks)
+    .where(and(eq(schema.libraryDecks.userId, uid()), eq(schema.libraryDecks.deckId, deckId)))
+    .run();
+}
+
+/** The grammar points in the user's library, in dependency order
+ * (deck sortOrder, then curriculum position), deduped by grammar point
+ * id — a point in two library decks appears once. */
+export function getLibraryGrammarPointIds(): string[] {
+  const database = getDb();
+  const libraryIds = new Set(getLibraryDeckIds());
+  if (libraryIds.size === 0) return [];
+  const decks = database.select().from(schema.decks).all();
+  const sortOrder = new Map(decks.map((d) => [d.id, d.sortOrder] as const));
+  const positions = new Map(
+    database.select().from(schema.grammarPoints).all()
+      .map((g) => [g.id, g.position] as const),
+  );
+  const entries = database.select().from(schema.deckGrammarPoints).all()
+    .filter((d) => libraryIds.has(d.deckId))
+    .map((d) => ({
+      deckSortOrder: sortOrder.get(d.deckId) ?? 0,
+      position: positions.get(d.grammarPointId) ?? 0,
+      grammarPointId: d.grammarPointId,
+    }));
+  return orderLibraryPoints(entries);
+}
+
+/** One-time library migration (build 16). See initDb. */
+function migrateLibrary(database: Db): void {
+  const done = database
+    .select()
+    .from(schema.meta)
+    .where(eq(schema.meta.key, 'libraryMigrated'))
+    .get();
+  if (done) return;
+  const learnedByUser = new Map<string, Set<string>>();
+  for (const rc of database.select().from(schema.reviewCards).all()) {
+    const set = learnedByUser.get(rc.userId) ?? new Set<string>();
+    set.add(rc.grammarPointId);
+    learnedByUser.set(rc.userId, set);
+  }
+  const nowIso = new Date().toISOString();
+  for (const [userId, gpIds] of learnedByUser) {
+    const deckIds = new Set(
+      database.select().from(schema.deckGrammarPoints).all()
+        .filter((d) => gpIds.has(d.grammarPointId))
+        .map((d) => d.deckId),
+    );
+    for (const deckId of deckIds) {
+      database.insert(schema.libraryDecks).values({
+        id: `lib_${userId}_${deckId}`, userId, deckId, addedAt: nowIso,
+      }).onConflictDoNothing().run();
+    }
+  }
+  database.insert(schema.meta).values({ key: 'libraryMigrated', value: '1' }).onConflictDoNothing().run();
 }
 
 // ── Settings ───────────────────────────────────────────────────────────────
@@ -726,75 +823,12 @@ export function updateUserSettings(patch: Partial<UserSettings>): void {
   setMeta(settingsKey(), JSON.stringify(next));
 }
 
-/** Per-deck overrides (null = use the global setting). Bunpro's per-deck
- * Daily Goal (default 5, max 50) and Batch Size (cannot exceed the goal). */
-export interface DeckSettings {
-  dailyGoal: number | null;
-  batchSize: number | null;
-}
-
-function deckSettingsKey(): string {
-  return `deckSettings:${uid()}`;
-}
-
-export function getDeckSettings(deckId: string): DeckSettings {
-  const raw = getMeta(deckSettingsKey());
-  if (!raw) return { dailyGoal: null, batchSize: null };
-  try {
-    const map = JSON.parse(raw) as Record<string, DeckSettings>;
-    const d = map[deckId];
-    if (!d) return { dailyGoal: null, batchSize: null };
-    const dailyGoal = d.dailyGoal == null ? null : clampInt(d.dailyGoal, 1, 50, 5);
-    const batchSize = d.batchSize == null ? null : clampInt(d.batchSize, 1, 50, 5);
-    return {
-      dailyGoal,
-      batchSize: dailyGoal != null && batchSize != null ? Math.min(batchSize, dailyGoal) : batchSize,
-    };
-  } catch {
-    return { dailyGoal: null, batchSize: null };
-  }
-}
-
-export function setDeckSettings(deckId: string, patch: Partial<DeckSettings>): void {
-  const raw = getMeta(deckSettingsKey());
-  let map: Record<string, DeckSettings> = {};
-  try {
-    map = raw ? (JSON.parse(raw) as Record<string, DeckSettings>) : {};
-  } catch {
-    map = {};
-  }
-  const prev = map[deckId] ?? { dailyGoal: null, batchSize: null };
-  const dailyGoal =
-    patch.dailyGoal === undefined
-      ? prev.dailyGoal
-      : patch.dailyGoal == null
-        ? null
-        : clampInt(patch.dailyGoal, 1, 50, 5);
-  let batchSize =
-    patch.batchSize === undefined
-      ? prev.batchSize
-      : patch.batchSize == null
-        ? null
-        : clampInt(patch.batchSize, 1, 50, 5);
-  if (dailyGoal != null && batchSize != null) batchSize = Math.min(batchSize, dailyGoal);
-  map[deckId] = { dailyGoal, batchSize };
-  setMeta(deckSettingsKey(), JSON.stringify(map));
-}
-
-/** The daily limit and batch size that apply to a deck: its own override,
- * else the global settings. */
-export function getEffectiveLearnSettings(deckId: string): { dailyLimit: number; batchSize: number } {
-  const global = getUserSettings();
-  const deck = getDeckSettings(deckId);
-  const dailyLimit = deck.dailyGoal ?? global.dailyNewLimit;
-  const batchSize = Math.min(deck.batchSize ?? global.batchSize, dailyLimit);
-  return { dailyLimit, batchSize };
-}
 
 export interface LearnSession {
+  /** True when every point in the library has been learned. */
   deckComplete: boolean;
-  deckId: string;
-  deckTitle: string;
+  /** True when the library is empty — no decks added yet. */
+  libraryEmpty: boolean;
   totalRemaining: number;
   grammarPoints: { id: string; title: string; hint: string; category: string; tense: string | null; register: string | null; description: string; level: number; tags: string[]; structurePattern: string | null; notes: unknown; sortOrder: number }[];
   /** Points learned today so far (drives the dashboard's Learn X/5). */
@@ -806,62 +840,67 @@ export interface LearnSession {
   vacation: boolean;
 }
 
-export function getLearnSession(deckId: string, selfStudy = false): LearnSession {
+/** The next Learn batch, pulled from all library decks in dependency
+ * order (deck sortOrder, then curriculum position), deduped by grammar
+ * point. "Learned" is "has a review card" — no per-deck progress
+ * tracking. Daily queue: the global limit and batch size from Settings.
+ * Learn only offers today's remaining quota unless the user explicitly
+ * opts into self-study. Vacation mode pauses learning entirely. */
+export function getLearnSession(selfStudy = false): LearnSession {
   const database = getDb();
-  const deck = database.select().from(schema.decks).where(eq(schema.decks.id, deckId)).get();
-  const progress = database.select().from(schema.userDeckProgress)
-    .where(and(eq(schema.userDeckProgress.userId, uid()), eq(schema.userDeckProgress.deckId, deckId))).get();
-  const nextIndex = (progress?.lastLearnedIndex ?? -1) + 1;
-  const ordered = database.select().from(schema.deckGrammarPoints).where(eq(schema.deckGrammarPoints.deckId, deckId)).all()
-    .sort((a, b) => a.sortOrder - b.sortOrder);
-  const remaining = ordered.filter((d) => d.sortOrder >= nextIndex);
-  // Daily queue: the deck's effective limit and batch size (per-deck
-  // override, else the global settings). Learn only offers today's
-  // remaining quota unless the user explicitly opts into self-study.
-  // Vacation mode pauses learning entirely.
-  const { dailyLimit, batchSize } = getEffectiveLearnSettings(deckId);
-  const vacation = getUserSettings().vacationMode;
+  const settings = getUserSettings();
+  const dailyLimit = settings.dailyNewLimit;
+  const batchSize = settings.batchSize;
+  const vacation = settings.vacationMode;
   const learnedToday = getLearnedToday();
+  const libraryIds = getLibraryDeckIds();
+  if (libraryIds.length === 0) {
+    return {
+      deckComplete: false, libraryEmpty: true, totalRemaining: 0,
+      grammarPoints: [], learnedToday, dailyLimit, queueDone: false, vacation,
+    };
+  }
+  const learnedIds = new Set(
+    database.select().from(schema.reviewCards).where(eq(schema.reviewCards.userId, uid())).all()
+      .map((c) => c.grammarPointId),
+  );
+  const orderedIds = getLibraryGrammarPointIds().filter((id) => !learnedIds.has(id));
   const quota = vacation ? 0 : selfStudy ? batchSize : Math.max(0, dailyLimit - learnedToday);
-  const batch = remaining.slice(0, Math.min(batchSize, quota));
-  const grammarPoints = batch.map((d) => {
-    const gp = database.select().from(schema.grammarPoints).where(eq(schema.grammarPoints.id, d.grammarPointId)).get()!;
+  const batch = orderedIds.slice(0, Math.min(batchSize, quota));
+  const grammarPoints = batch.map((gpId) => {
+    const gp = database.select().from(schema.grammarPoints).where(eq(schema.grammarPoints.id, gpId)).get()!;
     return {
       id: gp.id, title: gp.title, hint: gp.hint, category: gp.category, tense: gp.tense,
       register: gp.register, description: gp.description, level: gp.level,
       tags: JSON.parse(gp.tags) as string[], structurePattern: gp.structurePattern,
-      notes: gp.notes ? JSON.parse(gp.notes) : null, sortOrder: d.sortOrder,
+      notes: gp.notes ? JSON.parse(gp.notes) : null, sortOrder: gp.position,
     };
   });
   return {
-    deckComplete: batch.length === 0 && remaining.length === 0,
-    deckId,
-    deckTitle: deck?.title ?? 'TOPIK I Level 1 Grammar',
-    totalRemaining: remaining.length,
+    deckComplete: batch.length === 0 && orderedIds.length === 0,
+    libraryEmpty: false,
+    totalRemaining: orderedIds.length,
     grammarPoints,
     learnedToday,
     dailyLimit,
-    queueDone: batch.length === 0 && remaining.length > 0,
+    queueDone: batch.length === 0 && orderedIds.length > 0,
     vacation,
   };
 }
 
-/** Create FSRS review cards for the learned grammar points and advance deck progress. Returns their cloze cards for the post-session quiz.
+/** Create FSRS review cards for the learned grammar points. Returns their
+ * cloze cards for the post-session quiz.
  * All writes run in one transaction: on expo-sqlite web every sync call
  * spins waiting on the worker, and each auto-commit write fsyncs to OPFS
  * — a burst of separate writes can exceed the spin budget ("Sync operation
  * timeout") on a phone. One transaction = one fsync at COMMIT. */
-export function completeLearnSession(deckId: string, grammarPointIds: string[]) {
+export function completeLearnSession(grammarPointIds: string[]) {
   const database = getDb();
   const now = new Date();
   return withTransaction(database, (tx) => {
     const quizCards: { id: string; grammarPointId: string; fullSentence: string; sentenceWithBlank: string; answer: string; alternateAnswers: string[]; englishHint: { text: string; highlightType: string }[] }[] = [];
-    let maxSortOrder = -1;
     let newlyLearned = 0;
     for (const gpId of grammarPointIds) {
-      const dgp = tx.select().from(schema.deckGrammarPoints)
-        .where(and(eq(schema.deckGrammarPoints.deckId, deckId), eq(schema.deckGrammarPoints.grammarPointId, gpId))).get();
-      if (dgp) maxSortOrder = Math.max(maxSortOrder, dgp.sortOrder);
       const state = newFsrsState(now);
       const inserted = tx.insert(schema.reviewCards).values({
         id: `rc_${uid()}_${gpId}`,
@@ -887,19 +926,6 @@ export function completeLearnSession(deckId: string, grammarPointIds: string[]) 
         });
       }
     }
-    const progress = tx.select().from(schema.userDeckProgress)
-      .where(and(eq(schema.userDeckProgress.userId, uid()), eq(schema.userDeckProgress.deckId, deckId))).get();
-    if (progress) {
-      tx.update(schema.userDeckProgress).set({
-        lastLearnedIndex: Math.max(progress.lastLearnedIndex, maxSortOrder),
-        lastStudiedAt: now.toISOString(),
-      }).where(eq(schema.userDeckProgress.id, progress.id)).run();
-    } else {
-      tx.insert(schema.userDeckProgress).values({
-        id: `udp_${uid()}_${deckId}`, userId: uid(), deckId,
-        lastLearnedIndex: maxSortOrder, lastStudiedAt: now.toISOString(),
-      }).run();
-    }
     addLearnedTodayTx(tx, now.toISOString().slice(0, 10), newlyLearned);
     return quizCards;
   });
@@ -912,14 +938,13 @@ function isSyncTimeout(e: unknown): boolean {
 }
 
 /** completeLearnSession with retries on the worker spin-budget timeout.
- * Safe to retry: the inserts are onConflictDoNothing and the progress
- * update sets absolute values, so a re-run after a partial attempt is a
- * no-op for the parts that already landed. */
-export async function completeLearnSessionWithRetry(deckId: string, grammarPointIds: string[]) {
+ * Safe to retry: the inserts are onConflictDoNothing, so a re-run after
+ * a partial attempt is a no-op for the parts that already landed. */
+export async function completeLearnSessionWithRetry(grammarPointIds: string[]) {
   let lastError: unknown = null;
   for (let attempt = 0; attempt < 4; attempt++) {
     try {
-      return completeLearnSession(deckId, grammarPointIds);
+      return completeLearnSession(grammarPointIds);
     } catch (e) {
       lastError = e;
       if (!isSyncTimeout(e) || attempt === 3) throw e;
@@ -1012,11 +1037,13 @@ export interface CramCounts {
 }
 
 export function getCramCounts(): CramCounts {
+  const libraryGpIds = new Set(getLibraryGrammarPointIds());
   const cards = getDb()
     .select()
     .from(schema.reviewCards)
     .where(eq(schema.reviewCards.userId, uid()))
-    .all();
+    .all()
+    .filter((c) => libraryGpIds.has(c.grammarPointId));
   let masters = 0;
   let ghosts = 0;
   let difficult = 0;
@@ -1033,13 +1060,15 @@ export function getCramCounts(): CramCounts {
   };
 }
 
-/** Grammar point ids in a Quick-Cram set. */
+/** Grammar point ids in a Quick-Cram set (library decks only). */
 export function getCramPointIds(kind: CramSetKind): string[] {
+  const libraryGpIds = new Set(getLibraryGrammarPointIds());
   const cards = getDb()
     .select()
     .from(schema.reviewCards)
     .where(eq(schema.reviewCards.userId, uid()))
-    .all();
+    .all()
+    .filter((c) => libraryGpIds.has(c.grammarPointId));
   return cards
     .filter((c) => {
       if (kind === 'masters') return stageForCard(c.state, c.stability, c.masteredAt !== null) === 'master';
@@ -1051,14 +1080,19 @@ export function getCramPointIds(kind: CramSetKind): string[] {
 }
 
 export interface CramLessonRow {
+  deckId: string;
+  deckTitle: string;
   lessonNumber: number;
   lessonTitle: string;
   learned: number;
   total: number;
 }
 
-/** Per-lesson learned/total for a deck (the Custom Cram table). */
-export function getCramLessonRows(deckId: string): CramLessonRow[] {
+/** Per-lesson learned/total for every library deck (the Custom Cram
+ * table), ordered by deck then lesson. A point in two library decks is
+ * counted once per deck here (per-deck progress), but the Cram queue
+ * itself dedupes by grammar point id. */
+export function getCramLessonRows(): CramLessonRow[] {
   const database = getDb();
   const bundle = contentBundle as unknown as ContentBundle;
   const lessonTitles = new Map<string, string>();
@@ -1073,25 +1107,34 @@ export function getCramLessonRows(deckId: string): CramLessonRow[] {
       .all()
       .map((c) => c.grammarPointId),
   );
+  const libraryIds = getLibraryDeckIds();
+  if (libraryIds.length === 0) return [];
+  const decks = database.select().from(schema.decks).all();
+  const deckById = new Map(decks.map((d) => [d.id, d] as const));
   const dgps = database
     .select()
     .from(schema.deckGrammarPoints)
-    .where(eq(schema.deckGrammarPoints.deckId, deckId))
-    .all();
-  const lessons = new Map<number, { lessonTitle: string; total: number; learned: number }>();
+    .all()
+    .filter((d) => libraryIds.includes(d.deckId));
+  const lessons = new Map<string, { deckId: string; deckTitle: string; lessonNumber: number; lessonTitle: string; total: number; learned: number }>();
   for (const dgp of dgps) {
-    const entry = lessons.get(dgp.lessonNumber) ?? {
+    const key = `${dgp.deckId}:${dgp.lessonNumber}`;
+    const entry = lessons.get(key) ?? {
+      deckId: dgp.deckId,
+      deckTitle: deckById.get(dgp.deckId)?.title ?? dgp.deckId,
+      lessonNumber: dgp.lessonNumber,
       lessonTitle: lessonTitles.get(dgp.grammarPointId) ?? `Lesson ${dgp.lessonNumber}`,
       total: 0,
       learned: 0,
     };
     entry.total += 1;
     if (learnedIds.has(dgp.grammarPointId)) entry.learned += 1;
-    lessons.set(dgp.lessonNumber, entry);
+    lessons.set(key, entry);
   }
-  return [...lessons.entries()]
-    .sort((a, b) => a[0] - b[0])
-    .map(([lessonNumber, entry]) => ({ lessonNumber, ...entry }));
+  const deckOrder = new Map(libraryIds.map((id, i) => [id, i] as const));
+  return [...lessons.values()].sort(
+    (a, b) => (deckOrder.get(a.deckId) ?? 0) - (deckOrder.get(b.deckId) ?? 0) || a.lessonNumber - b.lessonNumber,
+  );
 }
 
 /** Grammar point ids learned in a lesson of a deck (for Custom Cram). */
@@ -1258,11 +1301,7 @@ export function migrateLocalDataToUser(userId: string): void {
   const database = getDb();
   database.update(schema.reviewCards).set({ userId }).where(eq(schema.reviewCards.userId, LOCAL_USER_ID)).run();
   database.update(schema.reviewLogs).set({ userId }).where(eq(schema.reviewLogs.userId, LOCAL_USER_ID)).run();
-  database
-    .update(schema.userDeckProgress)
-    .set({ userId })
-    .where(eq(schema.userDeckProgress.userId, LOCAL_USER_ID))
-    .run();
+  database.update(schema.libraryDecks).set({ userId }).where(eq(schema.libraryDecks.userId, LOCAL_USER_ID)).run();
   database.update(schema.userStreaks).set({ userId }).where(eq(schema.userStreaks.userId, LOCAL_USER_ID)).run();
 }
 
@@ -1393,7 +1432,7 @@ export function deviceMayAutoLogin(trust: DeviceTrust | null, nowMs: number = Da
  * (never tested again) and advance deck progress past it. The point still
  * counts as learned.
  */
-export function markPointKnown(deckId: string, grammarPointId: string): void {
+export function markPointKnown(grammarPointId: string): void {
   const database = getDb();
   const now = new Date();
   // One transaction = one OPFS fsync at COMMIT (see completeLearnSession).
@@ -1418,31 +1457,5 @@ export function markPointKnown(deckId: string, grammarPointId: string): void {
       })
       .onConflictDoNothing()
       .run();
-    const dgp = tx
-      .select()
-      .from(schema.deckGrammarPoints)
-      .where(and(eq(schema.deckGrammarPoints.deckId, deckId), eq(schema.deckGrammarPoints.grammarPointId, grammarPointId)))
-      .get();
-    if (!dgp) return;
-    const progress = tx
-      .select()
-      .from(schema.userDeckProgress)
-      .where(and(eq(schema.userDeckProgress.userId, uid()), eq(schema.userDeckProgress.deckId, deckId)))
-      .get();
-    if (progress) {
-      tx
-        .update(schema.userDeckProgress)
-        .set({ lastLearnedIndex: Math.max(progress.lastLearnedIndex, dgp.sortOrder), lastStudiedAt: now.toISOString() })
-        .where(eq(schema.userDeckProgress.id, progress.id))
-        .run();
-    } else {
-      tx.insert(schema.userDeckProgress).values({
-        id: `udp_${uid()}_${deckId}`,
-        userId: uid(),
-        deckId,
-        lastLearnedIndex: dgp.sortOrder,
-        lastStudiedAt: now.toISOString(),
-      }).run();
-    }
   });
 }

@@ -3,13 +3,11 @@ import { Link, useFocusEffect } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import {
   checkQueueItem,
-  getActiveDeckId,
   getCramCounts,
   getCramLessonRows,
   getCramPointIds,
   getCramPointIdsForLesson,
   getCramQueue,
-  getDecks,
   type CramCounts,
   type CramLessonRow,
   type CramSetKind,
@@ -39,9 +37,8 @@ export default function CramScreen() {
   const [phase, setPhase] = useState<Phase>('setup');
   const [counts, setCounts] = useState<CramCounts | null>(null);
   const [lessonRows, setLessonRows] = useState<CramLessonRow[]>([]);
-  const [deckTitle, setDeckTitle] = useState('');
   const [quickKind, setQuickKind] = useState<CramSetKind | null>(null);
-  const [selectedLessons, setSelectedLessons] = useState<Set<number>>(new Set());
+  const [selectedLessons, setSelectedLessons] = useState<Set<string>>(new Set());
   const [sets, setSets] = useState(1);
 
   // Quiz state.
@@ -57,10 +54,8 @@ export default function CramScreen() {
   const [wrong, setWrong] = useState(0);
 
   const loadSetup = useCallback(() => {
-    const deckId = getActiveDeckId();
     setCounts(getCramCounts());
-    setLessonRows(getCramLessonRows(deckId));
-    setDeckTitle(getDecks().find((d) => d.id === deckId)?.title ?? '');
+    setLessonRows(getCramLessonRows());
     setQuickKind(null);
     setSelectedLessons(new Set());
     setSets(1);
@@ -69,13 +64,16 @@ export default function CramScreen() {
 
   useFocusEffect(loadSetup);
 
-  /** Grammar point ids in the current selection (quick set or lessons). */
+  /** Grammar point ids in the current selection (quick set or lessons).
+   * Lesson keys are deck:lesson — lesson numbers collide across decks —
+   * and the result is deduped, so a point in two library decks is
+   * crammed once. */
   function selectedPointIds(): string[] {
     if (quickKind) return getCramPointIds(quickKind);
-    const deckId = getActiveDeckId();
     const ids: string[] = [];
-    for (const lessonNumber of selectedLessons) {
-      ids.push(...getCramPointIdsForLesson(deckId, lessonNumber));
+    for (const key of selectedLessons) {
+      const [deckId, lessonNumber] = key.split(':');
+      ids.push(...getCramPointIdsForLesson(deckId, Number(lessonNumber)));
     }
     return [...new Set(ids)];
   }
@@ -83,16 +81,17 @@ export default function CramScreen() {
   const selectedCount = quickKind
     ? (counts?.[quickKind] ?? 0)
     : lessonRows
-        .filter((r) => selectedLessons.has(r.lessonNumber))
+        .filter((r) => selectedLessons.has(`${r.deckId}:${r.lessonNumber}`))
         .reduce((n, r) => n + r.learned, 0);
   const questionCount = Math.min(sets * 25, selectedCount);
 
-  function toggleLesson(lessonNumber: number) {
+  function toggleLesson(deckId: string, lessonNumber: number) {
     setQuickKind(null);
+    const key = `${deckId}:${lessonNumber}`;
     setSelectedLessons((prev) => {
       const next = new Set(prev);
-      if (next.has(lessonNumber)) next.delete(lessonNumber);
-      else next.add(lessonNumber);
+      if (next.has(key)) next.delete(key);
+      else next.add(key);
       return next;
     });
   }
@@ -342,34 +341,54 @@ export default function CramScreen() {
         })}
       </View>
 
-      <Text style={styles.sectionTitle}>Custom — {deckTitle}</Text>
-      <View style={commonStyles.card}>
-        {lessonRows.length === 0 ? (
-          <Text style={commonStyles.muted}>No lessons in this deck yet.</Text>
-        ) : (
-          lessonRows.map((row) => {
-            const selected = selectedLessons.has(row.lessonNumber);
-            return (
-              <Pressable
-                key={row.lessonNumber}
-                style={[styles.lessonRow, selected && styles.lessonRowSelected]}
-                onPress={() => toggleLesson(row.lessonNumber)}
-              >
-                <Text style={styles.lessonCheck}>{selected ? '✓' : '○'}</Text>
-                <View style={styles.lessonText}>
-                  <Text style={styles.lessonTitle}>
-                    Lesson {row.lessonNumber}: {row.lessonTitle}
-                  </Text>
-                  <Text style={commonStyles.muted}>
-                    Learned {row.learned} · Selected {selected ? row.learned : 0} · New{' '}
-                    {row.total - row.learned}
-                  </Text>
-                </View>
-              </Pressable>
-            );
-          })
-        )}
-      </View>
+      <Text style={styles.sectionTitle}>Custom</Text>
+      {lessonRows.length === 0 ? (
+        <View style={commonStyles.card}>
+          <Text style={commonStyles.muted}>
+            No lessons to cram yet — add a deck to your library first.
+          </Text>
+          <Link href="/decks" asChild>
+            <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.startButton])}>
+              <Text style={commonStyles.btnText}>Browse decks</Text>
+            </Pressable>
+          </Link>
+        </View>
+      ) : (
+        // One group per library deck, in library order.
+        [...new Map(lessonRows.map((r) => [r.deckId, r.deckTitle])).entries()].map(
+          ([deckId, deckTitle]) => (
+            <View key={deckId}>
+              <Text style={styles.deckSubheading}>{deckTitle}</Text>
+              <View style={commonStyles.card}>
+                {lessonRows
+                  .filter((row) => row.deckId === deckId)
+                  .map((row) => {
+                    const key = `${row.deckId}:${row.lessonNumber}`;
+                    const selected = selectedLessons.has(key);
+                    return (
+                      <Pressable
+                        key={key}
+                        style={[styles.lessonRow, selected && styles.lessonRowSelected]}
+                        onPress={() => toggleLesson(row.deckId, row.lessonNumber)}
+                      >
+                        <Text style={styles.lessonCheck}>{selected ? '✓' : '○'}</Text>
+                        <View style={styles.lessonText}>
+                          <Text style={styles.lessonTitle}>
+                            Lesson {row.lessonNumber}: {row.lessonTitle}
+                          </Text>
+                          <Text style={commonStyles.muted}>
+                            Learned {row.learned} · Selected {selected ? row.learned : 0} · New{' '}
+                            {row.total - row.learned}
+                          </Text>
+                        </View>
+                      </Pressable>
+                    );
+                  })}
+              </View>
+            </View>
+          ),
+        )
+      )}
 
       <Text style={styles.sectionTitle}>How many sets?</Text>
       <View style={commonStyles.card}>
@@ -426,6 +445,13 @@ const styles = StyleSheet.create({
     color: colors.text,
     marginTop: 24,
     marginBottom: 8,
+  },
+  deckSubheading: {
+    fontSize: 14,
+    fontWeight: '700',
+    color: colors.muted,
+    marginTop: 12,
+    marginBottom: 6,
   },
   quickRow: {
     flexDirection: 'row',

@@ -9,9 +9,10 @@ import { colors, commonStyles } from '../../components/theme';
 
 /**
  * Bunpro-style two-column dashboard. Desktop (≥1024px): main column
- * (Learn/Review, stats bar, Next Steps, Insights, Your Path, Progress)
- * + sidebar (profile/streak, TOPIK progress). Mobile: the same sections
- * in a single column.
+ * (Learn/Review, stats bar, SRS-stage progress) + sidebar (profile/streak,
+ * TOPIK progress). Mobile: the same sections in a single column. There is
+ * no deck picker on the cards — Learn and Review pull from every deck in
+ * the user's library.
  */
 
 /** Two columns at this width and up; below it, a single column. */
@@ -28,107 +29,58 @@ function Segments({ filled, total }: { filled: number; total: number }) {
   );
 }
 
-function DeckMenuRows({ stats }: { stats: DashboardStats }) {
-  return (
-    <>
-      {stats.levelProgress.map((level) => (
-        <View key={level.deckId} style={styles.deckRow}>
-          <Text style={styles.deckNameWhite}>{level.title}</Text>
-          <Text style={styles.deckMetaWhite}>
-            {level.learned}/{level.total}
-          </Text>
-          <Text style={styles.deckCheckWhite}>✓</Text>
-        </View>
-      ))}
-      <Link href="/decks" asChild>
-        <Pressable>
-          <Text style={styles.deckBrowse}>Browse all decks ›</Text>
-        </Pressable>
-      </Link>
-    </>
-  );
-}
-
-function LearnCard({
-  stats,
-  open,
-  onToggle,
-}: {
-  stats: DashboardStats;
-  open: boolean;
-  onToggle: () => void;
-}) {
-  return (
-    <View style={styles.bigCardNavy}>
-      <View style={styles.bigCardRow}>
-        <Link href="/learn" asChild>
+function LearnCard({ stats }: { stats: DashboardStats }) {
+  // No decks in the library yet: the card points at the catalogue so the
+  // user can add one, instead of showing an empty daily queue.
+  if (stats.libraryCount === 0) {
+    return (
+      <View style={styles.bigCardNavy}>
+        <Link href="/decks" asChild>
           <Pressable style={StyleSheet.flatten([styles.bigCardMain])} accessibilityRole="button">
             <View style={styles.bigCardTitleRow}>
               <Text style={styles.bigCardTitleWhite}>Learn</Text>
-              <Text style={styles.bigCardCountWhite}>
-                {stats.learnedToday}/{stats.dailyLearnLimit}
-              </Text>
             </View>
-            <Segments filled={stats.learnedToday} total={stats.dailyLearnLimit} />
+            <Text style={styles.bigCardEmptyText}>
+              No decks in your library yet — add one to start learning.
+            </Text>
           </Pressable>
         </Link>
-        <Pressable
-          style={styles.chevron}
-          onPress={onToggle}
-          accessibilityRole="button"
-          accessibilityLabel="Choose deck"
-        >
-          <Text style={styles.chevronGlyph}>{open ? '⌃' : '⌄'}</Text>
-        </Pressable>
       </View>
-      {open ? (
-        <View style={styles.deckMenu}>
-          <DeckMenuRows stats={stats} />
-        </View>
-      ) : null}
+    );
+  }
+  return (
+    <View style={styles.bigCardNavy}>
+      <Link href="/learn" asChild>
+        <Pressable style={StyleSheet.flatten([styles.bigCardMain])} accessibilityRole="button">
+          <View style={styles.bigCardTitleRow}>
+            <Text style={styles.bigCardTitleWhite}>Learn</Text>
+            <Text style={styles.bigCardCountWhite}>
+              {stats.learnedToday}/{stats.dailyLearnLimit}
+            </Text>
+          </View>
+          <Segments filled={stats.learnedToday} total={stats.dailyLearnLimit} />
+        </Pressable>
+      </Link>
     </View>
   );
 }
 
-function ReviewCard({
-  stats,
-  open,
-  onToggle,
-}: {
-  stats: DashboardStats;
-  open: boolean;
-  onToggle: () => void;
-}) {
+function ReviewCard({ stats }: { stats: DashboardStats }) {
   return (
     <View style={styles.bigCardCoral}>
-      <View style={styles.bigCardRow}>
-        <Link href="/review" asChild>
-          <Pressable style={StyleSheet.flatten([styles.bigCardMain])} accessibilityRole="button">
-            <View style={styles.bigCardTitleRow}>
-              <View>
-                <Text style={styles.bigCardTitleWhite}>Review</Text>
-                <Text style={styles.bigCardSubtitleWhite}>Grammar &amp; Vocab</Text>
-              </View>
-              <View style={styles.countPill}>
-                <Text style={styles.countPillText}>{stats.dueCount}</Text>
-              </View>
+      <Link href="/review" asChild>
+        <Pressable style={StyleSheet.flatten([styles.bigCardMain])} accessibilityRole="button">
+          <View style={styles.bigCardTitleRow}>
+            <View>
+              <Text style={styles.bigCardTitleWhite}>Review</Text>
+              <Text style={styles.bigCardSubtitleWhite}>Grammar &amp; Vocab</Text>
             </View>
-          </Pressable>
-        </Link>
-        <Pressable
-          style={styles.chevron}
-          onPress={onToggle}
-          accessibilityRole="button"
-          accessibilityLabel="Choose deck"
-        >
-          <Text style={styles.chevronGlyph}>{open ? '⌃' : '⌄'}</Text>
+            <View style={styles.countPill}>
+              <Text style={styles.countPillText}>{stats.dueCount}</Text>
+            </View>
+          </View>
         </Pressable>
-      </View>
-      {open ? (
-        <View style={styles.deckMenu}>
-          <DeckMenuRows stats={stats} />
-        </View>
-      ) : null}
+      </Link>
     </View>
   );
 }
@@ -319,8 +271,6 @@ function TopikProgress({ stats }: { stats: DashboardStats }) {
 export default function DashboardScreen() {
   const [stats, setStats] = useState<DashboardStats | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [learnDeckOpen, setLearnDeckOpen] = useState(false);
-  const [reviewDeckOpen, setReviewDeckOpen] = useState(false);
   const [hideStreak, setHideStreak] = useState(false);
   const { user, logout } = useAuth();
   const { width } = useWindowDimensions();
@@ -362,33 +312,17 @@ export default function DashboardScreen() {
       {isDesktop ? (
         <View style={styles.topRow}>
           <View style={styles.topCell}>
-            <LearnCard
-              stats={stats}
-              open={learnDeckOpen}
-              onToggle={() => setLearnDeckOpen((o) => !o)}
-            />
+            <LearnCard stats={stats} />
           </View>
           <View style={styles.topCell}>
-            <ReviewCard
-              stats={stats}
-              open={reviewDeckOpen}
-              onToggle={() => setReviewDeckOpen((o) => !o)}
-            />
+            <ReviewCard stats={stats} />
           </View>
         </View>
       ) : (
         <>
-          <LearnCard
-            stats={stats}
-            open={learnDeckOpen}
-            onToggle={() => setLearnDeckOpen((o) => !o)}
-          />
+          <LearnCard stats={stats} />
           <View style={{ marginTop: 12 }}>
-            <ReviewCard
-              stats={stats}
-              open={reviewDeckOpen}
-              onToggle={() => setReviewDeckOpen((o) => !o)}
-            />
+            <ReviewCard stats={stats} />
           </View>
         </>
       )}
@@ -510,10 +444,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 3 },
     elevation: 2,
   },
-  bigCardRow: {
-    flexDirection: 'row',
-    minHeight: 88,
-  },
   bigCardMain: {
     flex: 1,
     justifyContent: 'center',
@@ -571,49 +501,11 @@ const styles = StyleSheet.create({
   segmentEmpty: {
     backgroundColor: 'rgba(255,255,255,0.25)',
   },
-  chevron: {
-    width: 52,
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderLeftWidth: 1,
-    borderLeftColor: 'rgba(255,255,255,0.25)',
-  },
-  chevronGlyph: {
-    fontSize: 22,
-    color: '#fff',
-  },
-  deckMenu: {
-    borderTopWidth: 1,
-    borderTopColor: 'rgba(255,255,255,0.25)',
-    paddingHorizontal: 20,
-    paddingVertical: 12,
-    gap: 8,
-  },
-  deckRow: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    gap: 12,
-  },
-  deckNameWhite: {
-    flex: 1,
-    fontSize: 16,
-    fontWeight: '700',
-    color: '#fff',
-  },
-  deckMetaWhite: {
+  bigCardEmptyText: {
     fontSize: 14,
     color: 'rgba(255,255,255,0.85)',
-  },
-  deckCheckWhite: {
-    fontSize: 16,
-    fontWeight: '800',
-    color: '#fff',
-  },
-  deckBrowse: {
-    fontSize: 14,
-    fontWeight: '700',
-    color: '#fff',
-    paddingVertical: 4,
+    lineHeight: 20,
+    marginTop: 8,
   },
   nextReview: {
     fontSize: 14,

@@ -4,7 +4,6 @@ import { Link, useFocusEffect } from 'expo-router';
 import {
   completeLearnSession,
   completeLearnSessionWithRetry,
-  getActiveDeckId,
   getGrammarDetail,
   getLearnSession,
   markPointKnown,
@@ -60,7 +59,7 @@ export default function LearnScreen() {
   const [selfStudy, setSelfStudy] = useState(false);
 
   const loadSession = useCallback(() => {
-    setSession(getLearnSession(getActiveDeckId(), selfStudy));
+    setSession(getLearnSession(selfStudy));
     setPhase('learning');
     setCurrentIndex(0);
     setActiveTab('details');
@@ -118,7 +117,7 @@ export default function LearnScreen() {
   function markKnown() {
     if (!currentGP || !session) return;
     try {
-      markPointKnown(session.deckId, currentGP.id);
+      markPointKnown(currentGP.id);
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Could not mark this point as known.');
       return;
@@ -147,10 +146,10 @@ export default function LearnScreen() {
     }
     setSaving(true);
     try {
-      const cards = await completeLearnSessionWithRetry(session.deckId, [...nextAdded]);
+      const cards = await completeLearnSessionWithRetry([...nextAdded]);
       setQuizQueue(shuffle(cards));
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Could not add these points to your deck.');
+      setError(e instanceof Error ? e.message : 'Could not add these points.');
       setSaving(false);
       return;
     }
@@ -220,13 +219,36 @@ export default function LearnScreen() {
     );
   }
 
-  // ── Deck complete ──────────────────────────────────────────────────────────
+  // ── Library empty ────────────────────────────────────────────────────────
+  if (session?.libraryEmpty) {
+    return (
+      <View style={commonStyles.centered}>
+        <Text style={styles.bigTitle}>Your library is empty</Text>
+        <Text style={[commonStyles.subtitle, styles.centerText]}>
+          Add a deck to your library to start learning — Learn pulls from
+          every deck in your library at once.
+        </Text>
+        <Link href="/decks" asChild>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.wideButton])}>
+            <Text style={commonStyles.btnText}>Browse decks</Text>
+          </Pressable>
+        </Link>
+        <Link href="/" asChild>
+          <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnSecondary, styles.wideButton])}>
+            <Text style={commonStyles.btnTextDark}>Dashboard</Text>
+          </Pressable>
+        </Link>
+      </View>
+    );
+  }
+
+  // ── Library complete ───────────────────────────────────────────────────────
   if (session?.deckComplete) {
     return (
       <View style={commonStyles.centered}>
         <Text style={styles.bigTitle}>Deck Complete!</Text>
         <Text style={[commonStyles.subtitle, styles.centerText]}>
-          You&apos;ve learned all grammar points in {session.deckTitle}.
+          You&apos;ve learned all grammar points in your library.
         </Text>
         <Link href="/review" asChild>
           <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.wideButton])}>
@@ -250,7 +272,7 @@ export default function LearnScreen() {
         <Text style={[commonStyles.subtitle, styles.centerText]}>
           You learned {session.learnedToday}/{session.dailyLimit} grammar points today.
           {session.totalRemaining > 0
-            ? ` ${session.totalRemaining} ${session.totalRemaining === 1 ? 'point' : 'points'} left in the deck.`
+            ? ` ${session.totalRemaining} ${session.totalRemaining === 1 ? 'point' : 'points'} left in your library.`
             : ''}
         </Text>
         <Pressable
@@ -445,12 +467,12 @@ export default function LearnScreen() {
 
   return (
     <ScrollView style={commonStyles.screen} contentContainerStyle={commonStyles.scrollContent}>
-      {/* Active deck (chosen in the catalogue) + a way to change it. */}
+      {/* The library the session pulls from + a way to manage it. */}
       <View style={styles.deckLine}>
-        <Text style={commonStyles.muted}>{session?.deckTitle ?? ''}</Text>
+        <Text style={commonStyles.muted}>Learning from your library</Text>
         <Link href="/decks" asChild>
           <Pressable>
-            <Text style={styles.changeDeck}>Change deck ›</Text>
+            <Text style={styles.changeDeck}>Manage decks ›</Text>
           </Pressable>
         </Link>
       </View>

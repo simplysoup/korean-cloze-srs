@@ -100,6 +100,20 @@ export const deckGrammarPoints = sqliteTable('deck_grammar_points', {
   lessonNumber: integer('lesson_number').notNull(),
 }, (t) => [uniqueIndex('deck_gp_unique').on(t.deckId, t.grammarPointId)]);
 
+/** The user's library: the decks they chose to run. Learn, Review, and
+ * Cram pull from all library decks in dependency order (deck sortOrder,
+ * then curriculum position), deduped by grammar point. A deck with no
+ * content cannot be added. */
+export const libraryDecks = sqliteTable('library_decks', {
+  id: text('id').primaryKey(),
+  userId: text('user_id').notNull().default('local'),
+  deckId: text('deck_id').notNull(),
+  addedAt: text('added_at').notNull(),
+}, (t) => [uniqueIndex('library_decks_unique').on(t.userId, t.deckId)]);
+
+/** Legacy: per-deck learn progress (last learned index). Superseded by
+ * the library model — "learned" is now "has a review card" — and no
+ * longer written to. Kept so existing devices need no migration. */
 export const userDeckProgress = sqliteTable('user_deck_progress', {
   id: text('id').primaryKey(),
   userId: text('user_id').notNull().default('local'),
