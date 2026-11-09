@@ -1,300 +1,98 @@
 import type { LessonSeed } from '../types';
+import { foundationPoints } from './foundations';
 
-// Lesson 7 — Polite Requests, Needs and Wants
-// Grammar points (positions 32–35):
-//   32. euseyo
-//   33. a_juseyo
-//   34. aya_hada
-//   35. go_sipda
-// Examples and cards use only grammar through their target position.
-
+// Lesson 7 — Days, Numbers and Hours
+// Positions 29–33
+// 29. e_time
+// 30. eonje
+// 31. sino_numbers
+// 32. native_numbers
+// 33. si_hour
 export const lesson07: LessonSeed = {
 	lessonNumber: 7,
-	title: "Polite Requests, Needs and Wants",
+	title: "Days, Numbers and Hours",
 	grammarPoints: [
-		// 32. gp_euseyo
+		// 29. gp_e_time
 		{
-			id: 'gp_euseyo',
-			title: '-(으)세요',
-			category: 'verb-ending',
+			id: 'gp_e_time',
+			title: '에 (시간)',
+			category: 'particle',
 			tense: null,
-			register: 'polite',
-			hint: 'please (do) / polite imperative',
+			register: null,
+			hint: 'at, on, in (time)',
 			description:
-				'Polite imperative form used for requests and instructions. ' +
-				'After consonant stem → -으세요: 읽다 → 읽으세요. After vowel stem → -세요: 가다 → 가세요. ' +
-				'Also used as honorific present: 어머니가 가세요 "Mother goes/is going."',
+				'Marks a point in time: "at, on, in." ' +
+				'월요일에 = "on Monday", 3시에 = "at 3 o\'clock", 아침에 = "in the morning." ' +
+				'Same particle as location 에, but attached to time nouns.',
 			level: 1,
-			tags: ['verb-ending', 'honorific', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + (으)세요',
+			tags: ['particle', 'beginner', 'TOPIK1'],
+			structurePattern: '[Time noun]에',
 			notes: [
-				{ type: 'tip', title: 'Dual Use', content: '-(으)세요 is both a polite imperative ("please do") and an honorific form. Context determines meaning.' },
-				{ type: 'tip', title: 'Irregular', content: 'ㄹ-ending stems drop ㄹ: 만들다 → 만드세요. 듣다 → 들으세요 (ㄷ-irregular).' }
+				{ type: 'caution', title: 'Not with 오늘/내일/어제', content: '오늘, 내일, 어제, 지금 do NOT take 에 — they are already adverbs of time: ✗ 오늘에, ✓ 오늘.' },
+				{ type: 'tip', title: 'Shared Particle', content: '에 serves both location and time. Context makes it clear.' }
 			],
 			lessonExamples: [
 				{
-					id: 'le_euseyo_01',
-					fullSentence: '여기에 앉으세요.',
-					sentenceWithBlank: '여기에 ___.',
-					answer: '앉으세요',
-					englishHint: 'Please sit here.',
+					id: 'le_e_time_01',
+					fullSentence: '월요일에 한국어를 공부해요.',
+					sentenceWithBlank: '월요일___ 한국어를 공부해요.',
+					answer: '에',
+					englishHint: 'I study Korean on Monday.',
 					order: 0
 				},
 				{
-					id: 'le_euseyo_02',
-					fullSentence: '이것을 보세요.',
-					sentenceWithBlank: '이것을 ___.',
-					answer: '보세요',
-					englishHint: 'Please look at this.',
+					id: 'le_e_time_02',
+					fullSentence: "아침에 학교에 가요.",
+					sentenceWithBlank: "아침___ 학교에 가요.",
+					answer: "에",
+					englishHint: "I go to school in the morning.",
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_euseyo_01',
-					fullSentence: '여기에 앉으세요.',
-					sentenceWithBlank: '여기에 ___.',
-					answer: '앉으세요',
+					id: 'cc_e_time_01',
+					fullSentence: '월요일에 한국어를 공부해요.',
+					sentenceWithBlank: '월요일___ 한국어를 공부해요.',
+					answer: '에',
 					alternateAnswers: [],
-					vocabBaseForm: '앉다',
-					englishHint: 'Please sit here.',
-					introducedAtPosition: 32
+					vocabBaseForm: '에',
+					englishHint: 'I study Korean on Monday.',
+					introducedAtPosition: 29
 				},
 				{
-					id: 'cc_euseyo_02',
-					fullSentence: '천천히 가세요.',
-					sentenceWithBlank: '천천히 ___.',
-					answer: '가세요',
+					id: 'cc_e_time_02',
+					fullSentence: '아침에 운동해요.',
+					sentenceWithBlank: '아침___ 운동해요.',
+					answer: '에',
 					alternateAnswers: [],
-					vocabBaseForm: '가다',
-					englishHint: 'Please go slowly.',
-					introducedAtPosition: 32
+					vocabBaseForm: '에',
+					englishHint: 'I exercise in the morning.',
+					introducedAtPosition: 29
 				},
 				{
-					id: 'cc_euseyo_03',
-					fullSentence: '이 책을 읽으세요.',
-					sentenceWithBlank: '이 책을 ___.',
-					answer: '읽으세요',
+					id: 'cc_e_time_03',
+					fullSentence: "저녁에 밥을 먹어요.",
+					sentenceWithBlank: "저녁___ 밥을 먹어요.",
+					answer: "에",
 					alternateAnswers: [],
-					vocabBaseForm: '읽다',
-					englishHint: 'Please read this book.',
-					introducedAtPosition: 32
+					vocabBaseForm: '에',
+					englishHint: "I eat in the evening.",
+					introducedAtPosition: 29
 				}
 			]
 		},
 
-		// 33. gp_a_juseyo
-		{
-			id: 'gp_a_juseyo',
-			title: '-아/어 주세요',
-			category: 'expression',
-			tense: null,
-			register: 'polite',
-			hint: 'please do (for me)',
-			description:
-				'Polite request asking someone to do something as a favor. ' +
-				'Verb stem + 아/어 주세요: 가르치다 → 가르쳐 주세요 "please teach me." ' +
-				'Same vowel harmony as -아요/어요. More specifically requesting action for the speaker\'s benefit.',
-			level: 1,
-			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 아/어 주세요',
-			notes: [
-				{ type: 'tip', title: '-(으)세요 vs -아/어 주세요', content: '-(으)세요 is a general polite command. -아/어 주세요 specifically asks "please do this for me" — implies a favor.' },
-				{ type: 'tip', title: 'Common Phrases', content: '도와주세요 (please help), 알려 주세요 (please let me know), 기다려 주세요 (please wait).' }
-			],
-			relatedPointIds: ['gp_euseyo'],
-			lessonExamples: [
-				{
-					id: 'le_a_juseyo_01',
-					fullSentence: '사진을 찍어 주세요.',
-					sentenceWithBlank: '사진을 찍어 ___.',
-					answer: '주세요',
-					englishHint: 'Please take a photo (for me).',
-					order: 0
-				},
-				{
-					id: 'le_a_juseyo_02',
-					fullSentence: '천천히 말해 주세요.',
-					sentenceWithBlank: '천천히 말해 ___.',
-					answer: '주세요',
-					englishHint: 'Please speak slowly (for me).',
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_a_juseyo_01',
-					fullSentence: '사진을 찍어 주세요.',
-					sentenceWithBlank: '사진을 찍어 ___.',
-					answer: '주세요',
-					alternateAnswers: [],
-					vocabBaseForm: '-아/어 주세요',
-					englishHint: 'Please take a photo (for me).',
-					introducedAtPosition: 33
-				},
-				{
-					id: 'cc_a_juseyo_02',
-					fullSentence: '문을 열어 주세요.',
-					sentenceWithBlank: '문을 열어 ___.',
-					answer: '주세요',
-					alternateAnswers: [],
-					vocabBaseForm: '-아/어 주세요',
-					englishHint: 'Please open the door (for me).',
-					introducedAtPosition: 33
-				},
-				{
-					id: 'cc_a_juseyo_03',
-					fullSentence: '한국어로 말해 주세요.',
-					sentenceWithBlank: '한국어로 말해 ___.',
-					answer: '주세요',
-					alternateAnswers: [],
-					vocabBaseForm: '-아/어 주세요',
-					englishHint: 'Please speak in Korean (for me).',
-					introducedAtPosition: 33
-				}
-			]
-		},
+		// 30. gp_eonje
+		foundationPoints.gp_eonje,
 
-		// 34. gp_aya_hada
-		{
-			id: 'gp_aya_hada',
-			title: '-아/어야 하다',
-			category: 'expression',
-			tense: null,
-			register: 'polite informal',
-			hint: 'must, have to',
-			description:
-				'Expresses obligation or necessity. Verb stem + 아야/어야 하다: ' +
-				'가다 → 가야 해요 "must go." 먹다 → 먹어야 해요 "must eat." ' +
-				'하다 → 해야 해요 "must do." Same vowel harmony as -아요/어요.',
-			level: 1,
-			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 아야/어야 하다',
-			notes: [
-				{ type: 'tip', title: 'Vowel Harmony', content: 'Same as -아요/어요: stem ㅏ/ㅗ → 아야 해요; otherwise → 어야 해요. 하다 → 해야 해요.' },
-				{ type: 'tip', title: 'Negative', content: '-지 않아도 돼요 means "don\'t have to" (no obligation). Not covered here but useful to know.' }
-			],
-			lessonExamples: [
-				{
-					id: 'le_aya_hada_01',
-					fullSentence: '내일 학교에 가야 해요.',
-					sentenceWithBlank: '내일 학교에 가야 ___.',
-					answer: '해요',
-					englishHint: 'I have to go to school tomorrow.',
-					order: 0
-				},
-				{
-					id: 'le_aya_hada_02',
-					fullSentence: '숙제를 해야 해요.',
-					sentenceWithBlank: '숙제를 해야 ___.',
-					answer: '해요',
-					englishHint: 'I have to do homework.',
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_aya_hada_01',
-					fullSentence: '내일 학교에 가야 해요.',
-					sentenceWithBlank: '내일 학교에 ___ 해요.',
-					answer: '가야',
-					alternateAnswers: [],
-					vocabBaseForm: '가다',
-					englishHint: 'I have to go to school tomorrow.',
-					introducedAtPosition: 34
-				},
-				{
-					id: 'cc_aya_hada_02',
-					fullSentence: '약을 먹어야 해요.',
-					sentenceWithBlank: '약을 ___ 해요.',
-					answer: '먹어야',
-					alternateAnswers: [],
-					vocabBaseForm: '먹다',
-					englishHint: 'I have to take medicine.',
-					introducedAtPosition: 34
-				},
-				{
-					id: 'cc_aya_hada_03',
-					fullSentence: '지금 공부해야 해요.',
-					sentenceWithBlank: '지금 ___ 해요.',
-					answer: '공부해야',
-					alternateAnswers: [],
-					vocabBaseForm: '공부하다',
-					englishHint: 'I have to study now.',
-					introducedAtPosition: 34
-				}
-			]
-		},
+		// 31. gp_sino_numbers
+		foundationPoints.gp_sino_numbers,
 
-		// 35. gp_go_sipda
-		{
-			id: 'gp_go_sipda',
-			title: '-고 싶다',
-			category: 'expression',
-			tense: 'present',
-			register: 'polite informal',
-			hint: 'want to (do)',
-			description:
-				'Expresses a desire or wish. Verb stem + 고 싶다: 먹다 → 먹고 싶어요 "I want to eat." ' +
-				'Past form: -고 싶었어요 "I wanted to." ' +
-				'Use it to express your own desire or ask the listener what they want. To describe someone else’s visible desire, the usual form is -고 싶어하다.',
-			level: 1,
-			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 고 싶다',
-			notes: [
-				{ type: 'tip', title: 'First/Second Person', content: '-고 싶다 is for "I want" or "Do you want?" For third person desires, use -고 싶어하다.' },
-				{ type: 'tip', title: 'No Conjugation Needed', content: 'The verb stem stays unchanged: 가다 → 가고 싶어요, 먹다 → 먹고 싶어요. No vowel harmony rules.' }
-			],
-			lessonExamples: [
-				{
-					id: 'le_go_sipda_01',
-					fullSentence: '한국에 가고 싶어요.',
-					sentenceWithBlank: '한국에 가고 ___.',
-					answer: '싶어요',
-					englishHint: 'I want to go to Korea.',
-					order: 0
-				},
-				{
-					id: 'le_go_sipda_02',
-					fullSentence: '커피를 마시고 싶어요.',
-					sentenceWithBlank: '커피를 마시고 ___.',
-					answer: '싶어요',
-					englishHint: 'I want to drink coffee.',
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_go_sipda_01',
-					fullSentence: '한국에 가고 싶어요.',
-					sentenceWithBlank: '한국에 가고 ___.',
-					answer: '싶어요',
-					alternateAnswers: [],
-					vocabBaseForm: '-고 싶다',
-					englishHint: 'I want to go to Korea.',
-					introducedAtPosition: 35
-				},
-				{
-					id: 'cc_go_sipda_02',
-					fullSentence: '불고기를 먹고 싶어요.',
-					sentenceWithBlank: '불고기를 먹고 ___.',
-					answer: '싶어요',
-					alternateAnswers: [],
-					vocabBaseForm: '-고 싶다',
-					englishHint: 'I want to eat bulgogi.',
-					introducedAtPosition: 35
-				},
-				{
-					id: 'cc_go_sipda_03',
-					fullSentence: '영화를 보고 싶어요.',
-					sentenceWithBlank: '영화를 보고 ___.',
-					answer: '싶어요',
-					alternateAnswers: [],
-					vocabBaseForm: '-고 싶다',
-					englishHint: 'I want to watch a movie.',
-					introducedAtPosition: 35
-				}
-			]
-		}
+		// 32. gp_native_numbers
+		foundationPoints.gp_native_numbers,
+
+		// 33. gp_si_hour
+		foundationPoints.gp_si_hour
 	]
 };
