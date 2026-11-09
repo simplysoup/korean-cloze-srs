@@ -44,7 +44,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '월요일에 한국어를 공부해요.',
 					sentenceWithBlank: '월요일___ 한국어를 공부해요.',
 					answer: '에',
-					englishHint: [h('I study Korean ', 'none'), h('on Monday', 'direct'), h('.', 'none')],
+					englishHint: [h('I study Korean ', 'none'), h('on', 'direct'), h(' Monday.', 'none')],
 					order: 0
 				},
 				{
@@ -52,7 +52,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '9시에 학교에 가요.',
 					sentenceWithBlank: '9시___ 학교에 가요.',
 					answer: '에',
-					englishHint: [h('I go to school ', 'none'), h("at 9 o'clock", 'direct'), h('.', 'none')],
+					englishHint: [h('I go to school ', 'none'), h('at', 'direct'), h(" 9 o'clock.", 'none')],
 					order: 1
 				}
 			],
@@ -64,7 +64,7 @@ export const lesson04: LessonSeed = {
 					answer: '에',
 					alternateAnswers: [],
 					vocabBaseForm: '에',
-					englishHint: [h('I study Korean ', 'none'), h('on Monday', 'direct'), h('.', 'none')],
+					englishHint: [h('I study Korean ', 'none'), h('on', 'direct'), h(' Monday.', 'none')],
 					introducedAtPosition: 24
 				},
 				{
@@ -74,7 +74,7 @@ export const lesson04: LessonSeed = {
 					answer: '에',
 					alternateAnswers: [],
 					vocabBaseForm: '에',
-					englishHint: [h('I exercise ', 'none'), h('in the morning', 'direct'), h('.', 'none')],
+					englishHint: [h('I exercise ', 'none'), h('in', 'direct'), h(' the morning.', 'none')],
 					introducedAtPosition: 24
 				},
 				{
@@ -84,7 +84,7 @@ export const lesson04: LessonSeed = {
 					answer: '에',
 					alternateAnswers: [],
 					vocabBaseForm: '에',
-					englishHint: [h('I eat ', 'none'), h('at 7 PM', 'direct'), h('.', 'none')],
+					englishHint: [h('I eat ', 'none'), h('at', 'direct'), h(' 7 PM.', 'none')],
 					introducedAtPosition: 24
 				}
 			]
@@ -115,7 +115,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '9시부터 일해요.',
 					sentenceWithBlank: '9시___ 일해요.',
 					answer: '부터',
-					englishHint: [h('I work ', 'none'), h('from 9', 'direct'), h('.', 'none')],
+					englishHint: [h('I work ', 'none'), h('from', 'direct'), h(' 9.', 'none')],
 					order: 0
 				},
 				{
@@ -123,7 +123,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '월요일부터 금요일까지 공부해요.',
 					sentenceWithBlank: '월요일___ 금요일까지 공부해요.',
 					answer: '부터',
-					englishHint: [h('I study ', 'none'), h('from Monday', 'direct'), h(' to Friday.', 'related')],
+					englishHint: [h('I study ', 'none'), h('from', 'direct'), h(' Monday to Friday.', 'none')],
 					order: 1
 				}
 			],
@@ -135,7 +135,7 @@ export const lesson04: LessonSeed = {
 					answer: '부터',
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
-					englishHint: [h('I work ', 'none'), h('from 9', 'direct'), h(' to 6.', 'related')],
+					englishHint: [h('I work ', 'none'), h('from', 'direct'), h(' 9 to 6.', 'none')],
 					introducedAtPosition: 25
 				},
 				{
@@ -145,7 +145,7 @@ export const lesson04: LessonSeed = {
 					answer: '부터',
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
-					englishHint: [h('I have class ', 'none'), h('from Monday', 'direct'), h(' to Friday.', 'related')],
+					englishHint: [h('I have class ', 'none'), h('from', 'direct'), h(' Monday to Friday.', 'none')],
 					introducedAtPosition: 25
 				},
 				{
@@ -155,7 +155,7 @@ export const lesson04: LessonSeed = {
 					answer: '부터',
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
-					englishHint: [h('I study ', 'none'), h('from morning', 'direct'), h(' until evening.', 'related')],
+					englishHint: [h('I study ', 'none'), h('from', 'direct'), h(' morning until evening.', 'none')],
 					introducedAtPosition: 25
 				}
 			]
@@ -185,7 +185,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '6시까지 일해요.',
 					sentenceWithBlank: '6시___ 일해요.',
 					answer: '까지',
-					englishHint: [h('I work ', 'none'), h('until 6', 'direct'), h('.', 'none')],
+					englishHint: [h('I work ', 'none'), h('until', 'direct'), h(' 6.', 'none')],
 					order: 0
 				},
 				{
@@ -193,7 +193,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '아침부터 저녁까지 공부해요.',
 					sentenceWithBlank: '아침부터 저녁___ 공부해요.',
 					answer: '까지',
-					englishHint: [h('I study from morning ', 'related'), h('until evening', 'direct'), h('.', 'none')],
+					englishHint: [h('I study from morning ', 'none'), h('until', 'direct'), h(' evening.', 'none')],
 					order: 1
 				}
 			],
@@ -205,7 +205,7 @@ export const lesson04: LessonSeed = {
 					answer: '까지',
 					alternateAnswers: [],
 					vocabBaseForm: '까지',
-					englishHint: [h('I work from 9 ', 'related'), h('until 6', 'direct'), h('.', 'none')],
+					englishHint: [h('I work from 9 ', 'none'), h('until', 'direct'), h(' 6.', 'none')],
 					introducedAtPosition: 26
 				},
 				{
@@ -215,7 +215,7 @@ export const lesson04: LessonSeed = {
 					answer: '까지',
 					alternateAnswers: [],
 					vocabBaseForm: '까지',
-					englishHint: [h('From Seoul ', 'related'), h('to Busan', 'direct'), h(" it's far.", 'none')],
+					englishHint: [h('From Seoul ', 'none'), h('to', 'direct'), h(" Busan it's far.", 'none')],
 					introducedAtPosition: 26
 				},
 				{
@@ -225,7 +225,7 @@ export const lesson04: LessonSeed = {
 					answer: '까지',
 					alternateAnswers: [],
 					vocabBaseForm: '까지',
-					englishHint: [h('I do homework ', 'none'), h('by Friday', 'direct'), h('.', 'none')],
+					englishHint: [h('I do homework ', 'none'), h('by', 'direct'), h(' Friday.', 'none')],
 					introducedAtPosition: 26
 				}
 			]
@@ -255,7 +255,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '수업 전에 커피를 마셔요.',
 					sentenceWithBlank: '수업 ___ 커피를 마셔요.',
 					answer: '전에',
-					englishHint: [h('I drink coffee ', 'none'), h('before class', 'direct'), h('.', 'none')],
+					englishHint: [h('I drink coffee ', 'none'), h('before', 'direct'), h(' class.', 'none')],
 					order: 0
 				},
 				{
@@ -263,7 +263,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '12시 전에 점심을 먹어요.',
 					sentenceWithBlank: '12시 ___ 점심을 먹어요.',
 					answer: '전에',
-					englishHint: [h('I eat lunch ', 'none'), h('before 12', 'direct'), h('.', 'none')],
+					englishHint: [h('I eat lunch ', 'none'), h('before', 'direct'), h(' 12.', 'none')],
 					order: 1
 				}
 			],
@@ -275,7 +275,7 @@ export const lesson04: LessonSeed = {
 					answer: '전에',
 					alternateAnswers: [],
 					vocabBaseForm: '전에',
-					englishHint: [h('I drink coffee ', 'none'), h('before class', 'direct'), h('.', 'none')],
+					englishHint: [h('I drink coffee ', 'none'), h('before', 'direct'), h(' class.', 'none')],
 					introducedAtPosition: 27
 				},
 				{
@@ -285,7 +285,7 @@ export const lesson04: LessonSeed = {
 					answer: '전에',
 					alternateAnswers: [],
 					vocabBaseForm: '전에',
-					englishHint: [h('I read a book ', 'none'), h('before sleeping', 'direct'), h('.', 'none')],
+					englishHint: [h('I read a book ', 'none'), h('before', 'direct'), h(' sleeping.', 'none')],
 					introducedAtPosition: 27
 				},
 				{
@@ -295,7 +295,7 @@ export const lesson04: LessonSeed = {
 					answer: '전에',
 					alternateAnswers: [],
 					vocabBaseForm: '전에',
-					englishHint: [h('I go home ', 'none'), h('before 10', 'direct'), h('.', 'none')],
+					englishHint: [h('I go home ', 'none'), h('before', 'direct'), h(' 10.', 'none')],
 					introducedAtPosition: 27
 				}
 			]
@@ -326,7 +326,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '수업 후에 운동해요.',
 					sentenceWithBlank: '수업 ___ 운동해요.',
 					answer: '후에',
-					englishHint: [h('I exercise ', 'none'), h('after class', 'direct'), h('.', 'none')],
+					englishHint: [h('I exercise ', 'none'), h('after', 'direct'), h(' class.', 'none')],
 					order: 0
 				},
 				{
@@ -334,7 +334,7 @@ export const lesson04: LessonSeed = {
 					fullSentence: '점심 후에 커피를 마셔요.',
 					sentenceWithBlank: '점심 ___ 커피를 마셔요.',
 					answer: '후에',
-					englishHint: [h('I drink coffee ', 'none'), h('after lunch', 'direct'), h('.', 'none')],
+					englishHint: [h('I drink coffee ', 'none'), h('after', 'direct'), h(' lunch.', 'none')],
 					order: 1
 				}
 			],
@@ -346,7 +346,7 @@ export const lesson04: LessonSeed = {
 					answer: '후에',
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
-					englishHint: [h('I exercise ', 'none'), h('after class', 'direct'), h('.', 'none')],
+					englishHint: [h('I exercise ', 'none'), h('after', 'direct'), h(' class.', 'none')],
 					introducedAtPosition: 28
 				},
 				{
@@ -356,7 +356,7 @@ export const lesson04: LessonSeed = {
 					answer: '후에',
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
-					englishHint: [h('I meet a friend ', 'none'), h('after work', 'direct'), h('.', 'none')],
+					englishHint: [h('I meet a friend ', 'none'), h('after', 'direct'), h(' work.', 'none')],
 					introducedAtPosition: 28
 				},
 				{
@@ -366,7 +366,7 @@ export const lesson04: LessonSeed = {
 					answer: '후에',
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
-					englishHint: [h('I take a walk ', 'none'), h('after dinner', 'direct'), h('.', 'none')],
+					englishHint: [h('I take a walk ', 'none'), h('after', 'direct'), h(' dinner.', 'none')],
 					introducedAtPosition: 28
 				}
 			]

@@ -155,6 +155,21 @@ and learning; turning it off bridges the streak), and review toggles
 The daily limit and batch size apply to the whole library — there are
 no per-deck settings (build 16 removed them with the active deck).
 
+### Navigation (build 17)
+
+The header is a teal-navy bar: the brand on the left, and Learn / Review /
+Content / Practice on the **right**, next to the icons and the user chip
+(24px horizontal padding, so nothing sits against the edge). The search,
+bell, and help icons are one SVG set (`src/components/icons.tsx`,
+react-native-svg, 22px, strokeWidth 2) — not mismatched text glyphs. The
+bell carries a count badge: coral-red when there are notifications, grey
+when the count is 0 (there is no notification source yet, so it is 0 and
+greyed out). The Grammar Library (`(tabs)/grammar.tsx`) is modelled on
+Bunpro's grammar_points: a title + total count, a search that matches
+Korean, English, and romanized text, level tabs (All / Level 1–6 /
+Non-TOPIK), lesson sections with counts, and a status pill (New /
+Learning / Mastered) on each row — no hardcoded level badge.
+
 ### Review flow (Bunpro-style)
 
 - Due queue: up to 10 review cards with `due <= now`, `masteredAt` null,
@@ -167,6 +182,15 @@ no per-deck settings (build 16 removed them with the active deck).
   Seasoned I–III / Master, from FSRS state + stability), Right/Wrong
   counter, Remaining count. Hint reveals the answer in stages (full
   reveal marks the card failed).
+- The English hint's 'direct' highlight is the English word for the
+  blanked Korean grammar — the copula ("I [am] a student"), the
+  preposition ("I go [to] school"), "also", "and"/"with", "Oh," — never
+  the noun it attaches to (build 17 fixed 48 cards/examples that
+  highlighted the noun or the whole phrase; the five instruction-style
+  practice hints have no word to highlight and stay unhighlighted).
+  The blank itself has a hard 3px dark underline and shows a visible
+  line even when empty (a non-breaking-space filler), so the target is
+  obvious before anything is typed.
 - Check is exact match against the answer + alternate answers (+ the
   grammar-target word replacement), after NFC normalization and
   whitespace collapsing (`normalizeAnswer` in `src/lib/srs.ts`) — a

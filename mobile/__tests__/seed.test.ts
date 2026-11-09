@@ -27,6 +27,40 @@ describe('seed content integrity', () => {
     }
   });
 
+  /**
+   * The English hint's 'direct' highlight must be the English word for the
+   * blanked Korean grammar — not the noun it attaches to. (Build 17: the
+   * copula highlighted the noun, "I am a [student]", and prepositions
+   * highlighted the whole phrase, "I go [to school]".)
+   */
+  it("highlights the grammar's English word, not the noun", () => {
+    const directOf = (id: string) => {
+      const item = [...cards, ...examples].find((x) => x.id === id);
+      expect(item).toBeDefined();
+      const direct = item!.englishHint.filter((p) => p.highlightType === 'direct');
+      expect(direct).toHaveLength(1);
+      return direct[0].text;
+    };
+    expect(directOf('cc_ieyo_01')).toBe('am');
+    expect(directOf('cc_ieyo_03')).toBe("'s");
+    expect(directOf('cc_ida_01')).toBe('Is');
+    expect(directOf('cc_do_01')).toBe('also');
+    expect(directOf('cc_hago_01')).toBe('and');
+    expect(directOf('cc_hago_02')).toBe('with');
+    expect(directOf('cc_neyo_01')).toBe('Oh,');
+    expect(directOf('cc_e_loc_01')).toBe('to');
+    expect(directOf('cc_e_loc_02')).toBe('at');
+    expect(directOf('cc_eseo_01')).toBe('at');
+    expect(directOf('cc_e_time_01')).toBe('on');
+    expect(directOf('cc_buteo_01')).toBe('from');
+    expect(directOf('cc_kkaji_01')).toBe('until');
+    expect(directOf('cc_jeone_01')).toBe('before');
+    expect(directOf('cc_hue_01')).toBe('after');
+    // The hint sentence itself is unchanged by the re-split.
+    const ieyo = cards.find((c) => c.id === 'cc_ieyo_01')!;
+    expect(ieyo.englishHint.map((p) => p.text).join('')).toBe('I am a student.');
+  });
+
   it('every grammar point has at least 2 lesson examples', () => {
     for (const { gp } of grammarPoints) {
       expect(gp.lessonExamples.length).toBeGreaterThanOrEqual(2);

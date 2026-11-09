@@ -58,7 +58,7 @@ export default function ClozeSentence({
                 {answerRevealed
                   ? answers[altIndex] ?? answers[0] ?? ''
                   : isEmpty
-                    ? placeholder
+                    ? placeholder || BLANK_FILLER
                     : hangul}
               </Text>
             )}
@@ -68,6 +68,13 @@ export default function ClozeSentence({
     </View>
   );
 }
+
+/**
+ * An empty blank has no text, so a nested Text with no content renders
+ * zero-width and its underline disappears. A run of non-breaking spaces
+ * keeps the blank wide enough for the underline to show.
+ */
+const BLANK_FILLER = '\u00A0\u00A0\u00A0\u00A0';
 
 const styles = StyleSheet.create({
   sentence: {
@@ -81,11 +88,13 @@ const styles = StyleSheet.create({
     lineHeight: 40,
     color: colors.text,
   },
+  // Hard underline: thick and dark, so the blank is obvious even before
+  // anything is typed. Correctness states keep their own colours.
   blank: {
     fontSize: 26,
     lineHeight: 40,
-    borderBottomWidth: 2,
-    borderBottomColor: colors.border,
+    borderBottomWidth: 3,
+    borderBottomColor: colors.text,
     paddingHorizontal: 4,
   },
   blankPlaceholder: {

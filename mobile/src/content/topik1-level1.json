@@ -51,15 +51,15 @@
               "answer": "이에요",
               "englishHint": [
                 {
-                  "text": "I am a ",
+                  "text": "I ",
                   "highlightType": "none"
                 },
                 {
-                  "text": "student",
+                  "text": "am",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a student.",
                   "highlightType": "none"
                 }
               ],
@@ -72,15 +72,15 @@
               "answer": "예요",
               "englishHint": [
                 {
-                  "text": "It's an ",
+                  "text": "It",
                   "highlightType": "none"
                 },
                 {
-                  "text": "apple",
+                  "text": "'s",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " an apple.",
                   "highlightType": "none"
                 }
               ],
@@ -93,7 +93,15 @@
               "answer": "이에요",
               "englishHint": [
                 {
-                  "text": "This is a book.",
+                  "text": "This ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "is",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a book.",
                   "highlightType": "none"
                 }
               ],
@@ -111,15 +119,15 @@
               "vocabBaseForm": "이에요/예요",
               "englishHint": [
                 {
-                  "text": "I am a ",
+                  "text": "I ",
                   "highlightType": "none"
                 },
                 {
-                  "text": "student",
+                  "text": "am",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a student.",
                   "highlightType": "none"
                 }
               ],
@@ -134,15 +142,15 @@
               "vocabBaseForm": "이에요/예요",
               "englishHint": [
                 {
-                  "text": "I am a ",
+                  "text": "I ",
                   "highlightType": "none"
                 },
                 {
-                  "text": "doctor",
+                  "text": "am",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a doctor.",
                   "highlightType": "none"
                 }
               ],
@@ -157,15 +165,15 @@
               "vocabBaseForm": "이에요/예요",
               "englishHint": [
                 {
-                  "text": "It's a ",
+                  "text": "It",
                   "highlightType": "none"
                 },
                 {
-                  "text": "teacher",
+                  "text": "'s",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a teacher.",
                   "highlightType": "none"
                 }
               ],
@@ -180,15 +188,15 @@
               "vocabBaseForm": "이에요/예요",
               "englishHint": [
                 {
-                  "text": "It's ",
+                  "text": "It",
                   "highlightType": "none"
                 },
                 {
-                  "text": "coffee",
+                  "text": "'s",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " coffee.",
                   "highlightType": "none"
                 }
               ],
@@ -204,7 +212,15 @@
               "introducedAtPosition": 1,
               "englishHint": [
                 {
-                  "text": "That over there is a book.",
+                  "text": "That over there ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "is",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a book.",
                   "highlightType": "none"
                 }
               ]
@@ -219,7 +235,15 @@
               "introducedAtPosition": 1,
               "englishHint": [
                 {
-                  "text": "This is a chair.",
+                  "text": "This ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "is",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a chair.",
                   "highlightType": "none"
                 }
               ]
@@ -264,15 +288,11 @@
               "answer": "이다",
               "englishHint": [
                 {
-                  "text": "Is a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "student",
+                  "text": "Is",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a student.",
                   "highlightType": "none"
                 }
               ],
@@ -285,15 +305,11 @@
               "answer": "이다",
               "englishHint": [
                 {
-                  "text": "Is a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "Korean person",
+                  "text": "Is",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a Korean person.",
                   "highlightType": "none"
                 }
               ],
@@ -310,7 +326,11 @@
               "vocabBaseForm": "이다",
               "englishHint": [
                 {
-                  "text": "Is a student.",
+                  "text": "Is",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a student.",
                   "highlightType": "none"
                 }
               ],
@@ -325,7 +345,11 @@
               "vocabBaseForm": "이다",
               "englishHint": [
                 {
-                  "text": "Is a teacher.",
+                  "text": "Is",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a teacher.",
                   "highlightType": "none"
                 }
               ],
@@ -340,7 +364,11 @@
               "vocabBaseForm": "이다",
               "englishHint": [
                 {
-                  "text": "Is an apple.",
+                  "text": "Is",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " an apple.",
                   "highlightType": "none"
                 }
               ],
@@ -427,7 +455,15 @@
               "answer": "는",
               "englishHint": [
                 {
-                  "text": "I drink coffee. As for tea, I don’t drink it.",
+                  "text": "I drink coffee. ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "As for tea",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": ", I don’t drink it.",
                   "highlightType": "none"
                 }
               ],
@@ -1141,11 +1177,7 @@
               "vocabBaseForm": "도",
               "englishHint": [
                 {
-                  "text": "I",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " am ",
+                  "text": "I am ",
                   "highlightType": "none"
                 },
                 {
@@ -1292,7 +1324,15 @@
               "answer": "가",
               "englishHint": [
                 {
-                  "text": "Who came? A friend came.",
+                  "text": "Who came? ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "A friend",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " came.",
                   "highlightType": "none"
                 }
               ],
@@ -1662,7 +1702,15 @@
               "answer": "봐요",
               "englishHint": [
                 {
-                  "text": "I watch a movie.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "watch",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a movie.",
                   "highlightType": "none"
                 }
               ],
@@ -1798,7 +1846,15 @@
               "introducedAtPosition": 11,
               "englishHint": [
                 {
-                  "text": "I sit here.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "sit",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " here.",
                   "highlightType": "none"
                 }
               ]
@@ -1813,7 +1869,15 @@
               "introducedAtPosition": 11,
               "englishHint": [
                 {
-                  "text": "I read the newspaper.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "read",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the newspaper.",
                   "highlightType": "none"
                 }
               ]
@@ -1828,7 +1892,15 @@
               "introducedAtPosition": 11,
               "englishHint": [
                 {
-                  "text": "I exercise every day.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "exercise",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " every day.",
                   "highlightType": "none"
                 }
               ]
@@ -2030,11 +2102,11 @@
               "answer": "하고",
               "englishHint": [
                 {
-                  "text": "I eat ",
+                  "text": "I eat bread ",
                   "highlightType": "none"
                 },
                 {
-                  "text": "bread and",
+                  "text": "and",
                   "highlightType": "direct"
                 },
                 {
@@ -2056,11 +2128,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "with a friend",
+                  "text": "with",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a friend.",
                   "highlightType": "none"
                 }
               ],
@@ -2081,11 +2153,11 @@
               "vocabBaseForm": "하고",
               "englishHint": [
                 {
-                  "text": "I eat ",
+                  "text": "I eat bread ",
                   "highlightType": "none"
                 },
                 {
-                  "text": "bread and",
+                  "text": "and",
                   "highlightType": "direct"
                 },
                 {
@@ -2111,11 +2183,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "with a friend",
+                  "text": "with",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " a friend.",
                   "highlightType": "none"
                 }
               ],
@@ -2133,11 +2205,11 @@
               "vocabBaseForm": "하고",
               "englishHint": [
                 {
-                  "text": "Please give me ",
+                  "text": "Please give me coffee ",
                   "highlightType": "none"
                 },
                 {
-                  "text": "coffee and",
+                  "text": "and",
                   "highlightType": "direct"
                 },
                 {
@@ -2160,7 +2232,15 @@
               "introducedAtPosition": 13,
               "englishHint": [
                 {
-                  "text": "I buy milk and bread.",
+                  "text": "I buy milk ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "and",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " bread.",
                   "highlightType": "none"
                 }
               ]
@@ -2302,7 +2382,15 @@
               "introducedAtPosition": 14,
               "englishHint": [
                 {
-                  "text": "I put the book here, next to me.",
+                  "text": "I put the book ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "here",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": ", next to me.",
                   "highlightType": "none"
                 }
               ]
@@ -2443,7 +2531,15 @@
               "introducedAtPosition": 15,
               "englishHint": [
                 {
-                  "text": "What is there where you are?",
+                  "text": "What is ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "there",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " where you are?",
                   "highlightType": "none"
                 }
               ]
@@ -2576,7 +2672,15 @@
               "introducedAtPosition": 16,
               "englishHint": [
                 {
-                  "text": "There is a bank over there away from both of us.",
+                  "text": "There is a bank ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "over there",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " away from both of us.",
                   "highlightType": "none"
                 }
               ]
@@ -2618,15 +2722,11 @@
               "answer": "네요",
               "englishHint": [
                 {
-                  "text": "Oh, the weather is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "nice",
+                  "text": "Oh,",
                   "highlightType": "direct"
                 },
                 {
-                  "text": "!",
+                  "text": " the weather is nice!",
                   "highlightType": "none"
                 }
               ],
@@ -2640,15 +2740,11 @@
               "answer": "네요",
               "englishHint": [
                 {
-                  "text": "Oh, this is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "delicious",
+                  "text": "Oh,",
                   "highlightType": "direct"
                 },
                 {
-                  "text": "!",
+                  "text": " this is delicious!",
                   "highlightType": "none"
                 }
               ],
@@ -2666,15 +2762,11 @@
               "vocabBaseForm": "좋다",
               "englishHint": [
                 {
-                  "text": "Oh, the weather is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "nice",
+                  "text": "Oh,",
                   "highlightType": "direct"
                 },
                 {
-                  "text": "!",
+                  "text": " the weather is nice!",
                   "highlightType": "none"
                 }
               ],
@@ -2689,15 +2781,11 @@
               "vocabBaseForm": "맛있다",
               "englishHint": [
                 {
-                  "text": "Oh, this food is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "delicious",
+                  "text": "Oh,",
                   "highlightType": "direct"
                 },
                 {
-                  "text": "!",
+                  "text": " this food is delicious!",
                   "highlightType": "none"
                 }
               ],
@@ -2712,15 +2800,11 @@
               "vocabBaseForm": "잘하다",
               "englishHint": [
                 {
-                  "text": "Oh, you're ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "good at",
+                  "text": "Oh,",
                   "highlightType": "direct"
                 },
                 {
-                  "text": " Korean!",
+                  "text": " you're good at Korean!",
                   "highlightType": "none"
                 }
               ],
@@ -2924,11 +3008,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "to school",
+                  "text": "to",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " school.",
                   "highlightType": "none"
                 }
               ],
@@ -2945,11 +3029,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at home",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " home.",
                   "highlightType": "none"
                 }
               ],
@@ -2962,7 +3046,15 @@
               "answer": "에",
               "englishHint": [
                 {
-                  "text": "I go to the library.",
+                  "text": "I go ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "to",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the library.",
                   "highlightType": "none"
                 }
               ],
@@ -2976,7 +3068,15 @@
               "answer": "에",
               "englishHint": [
                 {
-                  "text": "I am at the library.",
+                  "text": "I am ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "at",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the library.",
                   "highlightType": "none"
                 }
               ],
@@ -3000,11 +3100,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "to school",
+                  "text": "to",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " school.",
                   "highlightType": "none"
                 }
               ],
@@ -3023,11 +3123,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at home",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " home.",
                   "highlightType": "none"
                 }
               ],
@@ -3048,11 +3148,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "to work",
+                  "text": "to",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " work.",
                   "highlightType": "none"
                 }
               ],
@@ -3070,7 +3170,15 @@
               "introducedAtPosition": 19,
               "englishHint": [
                 {
-                  "text": "I go to the park.",
+                  "text": "I go ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "to",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the park.",
                   "highlightType": "none"
                 }
               ]
@@ -3085,7 +3193,15 @@
               "introducedAtPosition": 19,
               "englishHint": [
                 {
-                  "text": "My friend is at school.",
+                  "text": "My friend is ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "at",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " school.",
                   "highlightType": "none"
                 }
               ]
@@ -3102,7 +3218,15 @@
               "introducedAtPosition": 19,
               "englishHint": [
                 {
-                  "text": "I go to the store.",
+                  "text": "I go ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "to",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the store.",
                   "highlightType": "none"
                 }
               ]
@@ -3260,7 +3384,15 @@
               "introducedAtPosition": 20,
               "englishHint": [
                 {
-                  "text": "There is a book in the bag.",
+                  "text": "There ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "is",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a book in the bag.",
                   "highlightType": "none"
                 }
               ]
@@ -3444,11 +3576,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at the library",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " the library.",
                   "highlightType": "none"
                 }
               ],
@@ -3465,11 +3597,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at the café",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " the café.",
                   "highlightType": "none"
                 }
               ],
@@ -3482,7 +3614,15 @@
               "answer": "에서",
               "englishHint": [
                 {
-                  "text": "I read a book at the library.",
+                  "text": "I read a book ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "at",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the library.",
                   "highlightType": "none"
                 }
               ],
@@ -3504,11 +3644,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at the library",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " the library.",
                   "highlightType": "none"
                 }
               ],
@@ -3527,11 +3667,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at the café",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " the café.",
                   "highlightType": "none"
                 }
               ],
@@ -3550,11 +3690,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at the office",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " the office.",
                   "highlightType": "none"
                 }
               ],
@@ -3570,7 +3710,15 @@
               "introducedAtPosition": 22,
               "englishHint": [
                 {
-                  "text": "I exercise at the park.",
+                  "text": "I exercise ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "at",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the park.",
                   "highlightType": "none"
                 }
               ]
@@ -3585,7 +3733,15 @@
               "introducedAtPosition": 22,
               "englishHint": [
                 {
-                  "text": "I eat at home.",
+                  "text": "I eat ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "at",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " home.",
                   "highlightType": "none"
                 }
               ]
@@ -3600,7 +3756,15 @@
               "introducedAtPosition": 22,
               "englishHint": [
                 {
-                  "text": "I learn Korean at school.",
+                  "text": "I learn Korean ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "at",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " school.",
                   "highlightType": "none"
                 }
               ]
@@ -3684,7 +3848,15 @@
               "answer": "뒤",
               "englishHint": [
                 {
-                  "text": "There is a tree behind the house.",
+                  "text": "There is a tree ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "behind",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the house.",
                   "highlightType": "none"
                 }
               ],
@@ -3797,7 +3969,15 @@
               "introducedAtPosition": 23,
               "englishHint": [
                 {
-                  "text": "There is a park behind the school.",
+                  "text": "There is a park ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "behind",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " the school.",
                   "highlightType": "none"
                 }
               ]
@@ -3849,11 +4029,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "on Monday",
+                  "text": "on",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " Monday.",
                   "highlightType": "none"
                 }
               ],
@@ -3870,11 +4050,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at 9 o'clock",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " 9 o'clock.",
                   "highlightType": "none"
                 }
               ],
@@ -3895,11 +4075,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "on Monday",
+                  "text": "on",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " Monday.",
                   "highlightType": "none"
                 }
               ],
@@ -3918,11 +4098,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "in the morning",
+                  "text": "in",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " the morning.",
                   "highlightType": "none"
                 }
               ],
@@ -3941,11 +4121,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "at 7 PM",
+                  "text": "at",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " 7 PM.",
                   "highlightType": "none"
                 }
               ],
@@ -3992,11 +4172,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "from 9",
+                  "text": "from",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " 9.",
                   "highlightType": "none"
                 }
               ],
@@ -4013,12 +4193,12 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "from Monday",
+                  "text": "from",
                   "highlightType": "direct"
                 },
                 {
-                  "text": " to Friday.",
-                  "highlightType": "related"
+                  "text": " Monday to Friday.",
+                  "highlightType": "none"
                 }
               ],
               "order": 1
@@ -4038,12 +4218,12 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "from 9",
+                  "text": "from",
                   "highlightType": "direct"
                 },
                 {
-                  "text": " to 6.",
-                  "highlightType": "related"
+                  "text": " 9 to 6.",
+                  "highlightType": "none"
                 }
               ],
               "introducedAtPosition": 25
@@ -4061,12 +4241,12 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "from Monday",
+                  "text": "from",
                   "highlightType": "direct"
                 },
                 {
-                  "text": " to Friday.",
-                  "highlightType": "related"
+                  "text": " Monday to Friday.",
+                  "highlightType": "none"
                 }
               ],
               "introducedAtPosition": 25
@@ -4084,12 +4264,12 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "from morning",
+                  "text": "from",
                   "highlightType": "direct"
                 },
                 {
-                  "text": " until evening.",
-                  "highlightType": "related"
+                  "text": " morning until evening.",
+                  "highlightType": "none"
                 }
               ],
               "introducedAtPosition": 25
@@ -4130,11 +4310,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "until 6",
+                  "text": "until",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " 6.",
                   "highlightType": "none"
                 }
               ],
@@ -4148,14 +4328,14 @@
               "englishHint": [
                 {
                   "text": "I study from morning ",
-                  "highlightType": "related"
+                  "highlightType": "none"
                 },
                 {
-                  "text": "until evening",
+                  "text": "until",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " evening.",
                   "highlightType": "none"
                 }
               ],
@@ -4173,14 +4353,14 @@
               "englishHint": [
                 {
                   "text": "I work from 9 ",
-                  "highlightType": "related"
+                  "highlightType": "none"
                 },
                 {
-                  "text": "until 6",
+                  "text": "until",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " 6.",
                   "highlightType": "none"
                 }
               ],
@@ -4196,14 +4376,14 @@
               "englishHint": [
                 {
                   "text": "From Seoul ",
-                  "highlightType": "related"
+                  "highlightType": "none"
                 },
                 {
-                  "text": "to Busan",
+                  "text": "to",
                   "highlightType": "direct"
                 },
                 {
-                  "text": " it's far.",
+                  "text": " Busan it's far.",
                   "highlightType": "none"
                 }
               ],
@@ -4222,11 +4402,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "by Friday",
+                  "text": "by",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " Friday.",
                   "highlightType": "none"
                 }
               ],
@@ -4268,11 +4448,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "before class",
+                  "text": "before",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " class.",
                   "highlightType": "none"
                 }
               ],
@@ -4289,11 +4469,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "before 12",
+                  "text": "before",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " 12.",
                   "highlightType": "none"
                 }
               ],
@@ -4314,11 +4494,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "before class",
+                  "text": "before",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " class.",
                   "highlightType": "none"
                 }
               ],
@@ -4337,11 +4517,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "before sleeping",
+                  "text": "before",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " sleeping.",
                   "highlightType": "none"
                 }
               ],
@@ -4360,11 +4540,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "before 10",
+                  "text": "before",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " 10.",
                   "highlightType": "none"
                 }
               ],
@@ -4411,11 +4591,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "after class",
+                  "text": "after",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " class.",
                   "highlightType": "none"
                 }
               ],
@@ -4432,11 +4612,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "after lunch",
+                  "text": "after",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " lunch.",
                   "highlightType": "none"
                 }
               ],
@@ -4459,11 +4639,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "after class",
+                  "text": "after",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " class.",
                   "highlightType": "none"
                 }
               ],
@@ -4484,11 +4664,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "after work",
+                  "text": "after",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " work.",
                   "highlightType": "none"
                 }
               ],
@@ -4509,11 +4689,11 @@
                   "highlightType": "none"
                 },
                 {
-                  "text": "after dinner",
+                  "text": "after",
                   "highlightType": "direct"
                 },
                 {
-                  "text": ".",
+                  "text": " dinner.",
                   "highlightType": "none"
                 }
               ],
@@ -4625,7 +4805,15 @@
               "answer": "봤어요",
               "englishHint": [
                 {
-                  "text": "I watched a movie.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "watched",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " a movie.",
                   "highlightType": "none"
                 }
               ],
@@ -4759,7 +4947,15 @@
               "introducedAtPosition": 29,
               "englishHint": [
                 {
-                  "text": "I sat here.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "sat",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " here.",
                   "highlightType": "none"
                 }
               ]
@@ -5599,7 +5795,15 @@
               "answer": "수",
               "englishHint": [
                 {
-                  "text": "I can’t swim.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "can’t",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " swim.",
                   "highlightType": "none"
                 }
               ],
@@ -5702,7 +5906,15 @@
               "introducedAtPosition": 35,
               "englishHint": [
                 {
-                  "text": "I can make bread.",
+                  "text": "I ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "can",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " make bread.",
                   "highlightType": "none"
                 }
               ]
@@ -7395,7 +7607,15 @@
               "answer": "줄게요",
               "englishHint": [
                 {
-                  "text": "Is your bag heavy? I’ll carry it for you.",
+                  "text": "Is your bag heavy? ",
+                  "highlightType": "none"
+                },
+                {
+                  "text": "I’ll carry it",
+                  "highlightType": "direct"
+                },
+                {
+                  "text": " for you.",
                   "highlightType": "none"
                 }
               ],

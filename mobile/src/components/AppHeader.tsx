@@ -7,6 +7,7 @@ import {
 } from '../db';
 import { useAuth, type AuthUser } from '../lib/auth-context';
 import BrandMark from './BrandMark';
+import { BellIcon, HelpIcon, SearchIcon } from './icons';
 import { colors } from './theme';
 
 /** Desktop nav appears at this width and up; below it, the hamburger. */
@@ -91,6 +92,10 @@ export default function AppHeader({ user }: { user: AuthUser }) {
       ? Math.max(0, stats.dailyLearnLimit - stats.learnedToday)
       : 0;
   const dueCount = stats?.dueCount ?? 0;
+  // Notifications: the app has no notification source yet, so the count
+  // is 0 and the bell renders greyed out. When a source lands, this is
+  // the number that colours the bell and its badge.
+  const notificationCount = 0;
   const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
 
   function toggleMenu(id: Exclude<MenuId, null>) {
@@ -120,7 +125,7 @@ export default function AppHeader({ user }: { user: AuthUser }) {
         </Link>
 
         {isDesktop ? (
-          <>
+          <View style={styles.rightGroup}>
             <View style={styles.nav}>
               <Link href="/learn" asChild>
                 <Pressable style={styles.navItem} accessibilityRole="button">
@@ -224,7 +229,7 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                   accessibilityRole="button"
                   accessibilityLabel="Search"
                 >
-                  <Text style={styles.iconGlyph}>⌕</Text>
+                  <SearchIcon />
                 </Pressable>
               </Link>
               <View style={styles.menuAnchor}>
@@ -234,7 +239,20 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                   accessibilityRole="button"
                   accessibilityLabel="Notifications"
                 >
-                  <Text style={styles.iconGlyph}>○</Text>
+                  <View style={styles.bellWrap}>
+                    <BellIcon color={notificationCount > 0 ? colors.primary : '#A9BEC6'} />
+                    <View
+                      style={[
+                        styles.badge,
+                        {
+                          backgroundColor:
+                            notificationCount > 0 ? colors.primary : '#5A6B70',
+                        },
+                      ]}
+                    >
+                      <Text style={styles.badgeText}>{notificationCount}</Text>
+                    </View>
+                  </View>
                 </Pressable>
                 {openMenu === 'alerts' ? (
                   <View style={[styles.menu, styles.menuRight]}>
@@ -249,7 +267,7 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                   accessibilityRole="button"
                   accessibilityLabel="Help"
                 >
-                  <Text style={styles.iconGlyph}>?</Text>
+                  <HelpIcon />
                 </Pressable>
                 {openMenu === 'help' ? (
                   <View style={[styles.menu, styles.menuRight]}>
@@ -300,7 +318,7 @@ export default function AppHeader({ user }: { user: AuthUser }) {
                 ) : null}
               </View>
             </View>
-          </>
+          </View>
         ) : (
           <Pressable
             onPress={() => setMobileOpen((o) => !o)}
@@ -398,24 +416,31 @@ const styles = StyleSheet.create({
     minHeight: 56,
     flexDirection: 'row',
     alignItems: 'center',
-    paddingHorizontal: 16,
-    gap: 16,
+    paddingHorizontal: 24,
+    gap: 12,
   },
   brand: {
     flexDirection: 'row',
     alignItems: 'center',
   },
+  // The whole right side — nav links + icons + user chip — sits at the
+  // right edge, pushed there by marginLeft: 'auto'.
+  rightGroup: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 4,
+    marginLeft: 'auto',
+  },
   nav: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    flex: 1,
   },
   navItem: {
     flexDirection: 'row',
     alignItems: 'center',
     gap: 6,
-    paddingHorizontal: 10,
+    paddingHorizontal: 8,
     paddingVertical: 8,
   },
   navText: {
@@ -489,7 +514,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    marginLeft: 'auto',
   },
   iconButton: {
     width: 36,
@@ -497,10 +521,31 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
-  iconGlyph: {
-    color: '#A9BEC6',
-    fontSize: 20,
-    fontWeight: '600',
+  // Bell + count badge. The badge is coral-red when there are
+  // notifications, grey when the count is 0 (same rule as the bell).
+  bellWrap: {
+    position: 'relative',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  badge: {
+    position: 'absolute',
+    top: -4,
+    right: -6,
+    minWidth: 18,
+    height: 18,
+    borderRadius: 9,
+    paddingHorizontal: 4,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderWidth: 2,
+    borderColor: colors.navy,
+  },
+  badgeText: {
+    color: '#fff',
+    fontSize: 11,
+    fontWeight: '700',
+    lineHeight: 13,
   },
   userChip: {
     flexDirection: 'row',
