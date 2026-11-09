@@ -1,231 +1,226 @@
 import type { LessonSeed } from '../types';
 
-// ══════════════════════════════════════════════════════════════════════════════
-// Lesson 9 — Reason and Cause
-//
+// Lesson 9 — Conditions and Contrast
 // Grammar points (positions 40–42):
-//  40. -아/어서        Because / so (sequential cause, no tense in 1st clause)
-//  41. -(으)니까       Because / since (subjective reason, allows tense)
-//  42. 그래서          So / therefore (sentence-initial connector)
-//
-// Available: all L1–L8 grammar (pos 1–39).
-// ══════════════════════════════════════════════════════════════════════════════
-
+//   40. eumyeon
+//   41. jiman
+//   42. hajiman
+// Examples and cards use only grammar through their target position.
 
 export const lesson09: LessonSeed = {
 	lessonNumber: 9,
-	title: 'Reason and Cause',
+	title: "Conditions and Contrast",
 	grammarPoints: [
-		// ── 40. -아/어서 — Because / so ─────────────────────────────────────
+		// 40. gp_eumyeon
 		{
-			id: 'gp_aseo',
-			title: '-아/어서',
+			id: 'gp_eumyeon',
+			title: '-(으)면',
 			category: 'connective',
 			tense: null,
 			register: null,
-			hint: 'because, so (cause → result)',
+			hint: 'if, when (conditional)',
 			description:
-				'Connects two clauses where the first is the reason for the second. ' +
-				'Verb stem + 아서/어서: 배가 고파서 밥을 먹었어요 "Because I was hungry, I ate." ' +
-				'Same vowel harmony as -아요/어요. In the pattern taught here, put tense on the final verb.',
+				'Conditional connector meaning "if" or "when." ' +
+				'After consonant stem → -으면: 먹다 → 먹으면. After vowel stem → -면: 가다 → 가면. ' +
+				'시간이 있으면 같이 가요 "If you have time, let\'s go together."',
 			level: 1,
 			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 아서/어서 + [result clause]',
+			structurePattern: 'Verb stem + (으)면 + [result clause]',
 			notes: [
-				{ type: 'caution', title: 'Where to put tense', content: 'For these beginner examples, leave the reason clause unmarked for tense and mark the main verb. Compare -(으)니까 when explicitly marking a past reason.' },
-				{ type: 'tip', title: 'Common Combinations', content: '만나서 반갑습니다 (Nice to meet you — lit. "meeting, I am pleased"). 늦어서 죄송합니다 (Sorry for being late).' }
+				{ type: 'tip', title: 'Hypothetical & Habitual', content: '-(으)면 covers both hypothetical (if it rains) and habitual (whenever I eat). Context determines which.' },
+				{ type: 'tip', title: 'ㄹ-Irregular', content: 'Stems ending in ㄹ: drop ㄹ, add -면. 살다 → 살면, 알다 → 알면.' }
 			],
-			relatedPointIds: ['gp_eunikka'],
 			lessonExamples: [
 				{
-					id: 'le_aseo_01',
-					fullSentence: '배가 고파서 밥을 먹었어요.',
-					sentenceWithBlank: '배가 ___ 밥을 먹었어요.',
-					answer: '고파서',
-					englishHint: 'I ate because I was hungry.',
+					id: 'le_eumyeon_01',
+					fullSentence: '시간이 있으면 같이 가요.',
+					sentenceWithBlank: '시간이 ___ 같이 가요.',
+					answer: '있으면',
+					englishHint: "If you have time, let's go together.",
 					order: 0
 				},
 				{
-					id: 'le_aseo_02',
-					fullSentence: '피곤해서 집에 있었어요.',
-					sentenceWithBlank: '___ 집에 있었어요.',
-					answer: '피곤해서',
-					englishHint: 'I stayed home because I was tired.',
+					id: 'le_eumyeon_02',
+					fullSentence: '비가 오면 집에 있어요.',
+					sentenceWithBlank: '비가 ___ 집에 있어요.',
+					answer: '오면',
+					englishHint: 'If it rains, I stay home.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_aseo_01',
-					fullSentence: '배가 고파서 밥을 먹었어요.',
-					sentenceWithBlank: '배가 고파___ 밥을 먹었어요.',
-					answer: '서',
+					id: 'cc_eumyeon_01',
+					fullSentence: '시간이 있으면 같이 가요.',
+					sentenceWithBlank: '시간이 있으___ 같이 가요.',
+					answer: '면',
 					alternateAnswers: [],
-					vocabBaseForm: '-아/어서',
-					englishHint: 'I ate because I was hungry.',
+					vocabBaseForm: '-(으)면',
+					englishHint: "If you have time, let's go together.",
 					introducedAtPosition: 40
 				},
 				{
-					id: 'cc_aseo_02',
-					fullSentence: '비가 와서 우산을 가져갔어요.',
-					sentenceWithBlank: '비가 와___ 우산을 가져갔어요.',
-					answer: '서',
+					id: 'cc_eumyeon_02',
+					fullSentence: '한국에 가면 불고기를 먹고 싶어요.',
+					sentenceWithBlank: '한국에 가___ 불고기를 먹고 싶어요.',
+					answer: '면',
 					alternateAnswers: [],
-					vocabBaseForm: '-아/어서',
-					englishHint: 'I took an umbrella because it was raining.',
+					vocabBaseForm: '-(으)면',
+					englishHint: 'If I go to Korea, I want to eat bulgogi.',
 					introducedAtPosition: 40
 				},
 				{
-					id: 'cc_aseo_03',
-					fullSentence: '늦어서 택시를 탔어요.',
-					sentenceWithBlank: '늦어___ 택시를 탔어요.',
-					answer: '서',
+					id: 'cc_eumyeon_03',
+					fullSentence: '날씨가 좋으면 공원에 가요.',
+					sentenceWithBlank: '날씨가 좋으___ 공원에 가요.',
+					answer: '면',
 					alternateAnswers: [],
-					vocabBaseForm: '-아/어서',
-					englishHint: 'I took a taxi because I was late.',
+					vocabBaseForm: '-(으)면',
+					englishHint: 'If the weather is nice, I go to the park.',
 					introducedAtPosition: 40
 				}
 			]
 		},
 
-		// ── 41. -(으)니까 — Because / since ─────────────────────────────────
+		// 41. gp_jiman
 		{
-			id: 'gp_eunikka',
-			title: '-(으)니까',
+			id: 'gp_jiman',
+			title: '-지만',
 			category: 'connective',
 			tense: null,
 			register: null,
-			hint: 'because, since (subjective reason)',
+			hint: 'but, however (connects clauses)',
 			description:
-				'Connects a reason clause to a result clause. More subjective than -아/어서. ' +
-				'After consonant stem → -으니까: 읽다 → 읽으니까. After vowel stem → -니까: 가다 → 가니까. ' +
-				'CAN take past tense: 갔으니까. Often used with commands/suggestions.',
+				'Clause-level contrast connector. Verb/Adj stem + 지만: ' +
+				'비싸지만 맛있어요 "It\'s expensive but delicious." ' +
+				'Can also take tense: 갔지만 "went but." Always attaches directly to the stem (no vowel harmony).',
 			level: 1,
 			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + (으)니까 + [result clause]',
+			structurePattern: 'Verb/Adj stem + 지만 + [contrasting clause]',
 			notes: [
-				{ type: 'tip', title: '-(으)니까 vs -아/어서', content: '-(으)니까 is more subjective and can precede commands: 시간이 없으니까 빨리 가세요. Use -(으)니까 for a reason followed by a command or suggestion in this lesson.' },
-				{ type: 'tip', title: 'Past OK', content: '-(으)니까 allows past tense: 이미 먹었으니까 안 먹어요 (I already ate, so I\'m not eating).' }
+				{ type: 'tip', title: 'No Vowel Harmony', content: '-지만 attaches directly to any stem. No consonant/vowel distinction. 먹다 → 먹지만, 가다 → 가지만.' },
+				{ type: 'tip', title: 'With Tense', content: 'Past: 갔지만, 먹었지만. The tense goes between the stem and -지만.' }
 			],
-			relatedPointIds: ['gp_aseo'],
+			relatedPointIds: ['gp_hajiman'],
 			lessonExamples: [
 				{
-					id: 'le_eunikka_01',
-					fullSentence: '시간이 없으니까 빨리 가세요.',
-					sentenceWithBlank: '시간이 ___ 빨리 가세요.',
-					answer: '없으니까',
-					englishHint: "Please go quickly because there's no time.",
+					id: 'le_jiman_01',
+					fullSentence: '비싸지만 맛있어요.',
+					sentenceWithBlank: '비싸___ 맛있어요.',
+					answer: '지만',
+					englishHint: "It's expensive but it's delicious.",
 					order: 0
 				},
 				{
-					id: 'le_eunikka_02',
-					fullSentence: '날씨가 추우니까 옷을 많이 입으세요.',
-					sentenceWithBlank: '날씨가 ___ 옷을 많이 입으세요.',
-					answer: '추우니까',
-					englishHint: "Please dress warmly because it's cold.",
+					id: 'le_jiman_02',
+					fullSentence: '한국어는 어렵지만 재미있어요.',
+					sentenceWithBlank: '한국어는 어렵___ 재미있어요.',
+					answer: '지만',
+					englishHint: 'Korean is difficult but fun.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_eunikka_01',
-					fullSentence: '시간이 없으니까 빨리 가세요.',
-					sentenceWithBlank: '시간이 없으___ 빨리 가세요.',
-					answer: '니까',
+					id: 'cc_jiman_01',
+					fullSentence: '비싸지만 맛있어요.',
+					sentenceWithBlank: '비싸___ 맛있어요.',
+					answer: '지만',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)니까',
-					englishHint: "Please go quickly because there's no time.",
+					vocabBaseForm: '-지만',
+					englishHint: "It's expensive but it's delicious.",
 					introducedAtPosition: 41
 				},
 				{
-					id: 'cc_eunikka_02',
-					fullSentence: '비가 오니까 우산을 가져가세요.',
-					sentenceWithBlank: '비가 오___ 우산을 가져가세요.',
-					answer: '니까',
+					id: 'cc_jiman_02',
+					fullSentence: '피곤하지만 공부해야 해요.',
+					sentenceWithBlank: '피곤하___ 공부해야 해요.',
+					answer: '지만',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)니까',
-					englishHint: "Take an umbrella because it's raining.",
+					vocabBaseForm: '-지만',
+					englishHint: "I'm tired but I have to study.",
 					introducedAtPosition: 41
 				},
 				{
-					id: 'cc_eunikka_03',
-					fullSentence: '맛있으니까 많이 드세요.',
-					sentenceWithBlank: '맛있으___ 많이 드세요.',
-					answer: '니까',
+					id: 'cc_jiman_03',
+					fullSentence: '작지만 좋은 집이에요.',
+					sentenceWithBlank: '작___ 좋은 집이에요.',
+					answer: '지만',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)니까',
-					englishHint: "Please eat a lot because it's delicious.",
+					vocabBaseForm: '-지만',
+					englishHint: "It's small but a nice house.",
 					introducedAtPosition: 41
 				}
 			]
 		},
 
-		// ── 42. 그래서 — So / therefore ─────────────────────────────────────
+		// 42. gp_hajiman
 		{
-			id: 'gp_geuraeseo',
-			title: '그래서',
+			id: 'gp_hajiman',
+			title: '하지만',
 			category: 'connective',
 			tense: null,
 			register: null,
-			hint: 'so, therefore (sentence connector)',
+			hint: 'but, however (sentence connector)',
 			description:
-				'Sentence-initial connector meaning "so" or "therefore." ' +
-				'Links two sentences where the first is the cause: 비가 왔어요. 그래서 집에 있었어요. ' +
-				'"It rained. So I stayed home." Can also be used as a question: 그래서요? "So (what happened)?"',
+				'Sentence-initial contrast connector meaning "but" or "however." ' +
+				'Links two sentences: 한국어는 어려워요. 하지만 재미있어요. ' +
+				'"Korean is hard. But it\'s fun." Compare with -지만 which connects clauses within one sentence.',
 			level: 1,
 			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: '[Cause sentence]. 그래서 [result sentence].',
+			structurePattern: '[Sentence A]. 하지만 [contrasting sentence B].',
 			notes: [
-				{ type: 'tip', title: 'Sentence Connector', content: '그래서 connects two independent sentences. Unlike -아/어서 and -(으)니까, it doesn\'t connect clauses within one sentence.' },
-				{ type: 'tip', title: 'Related Words', content: '그래서 (so/therefore), 그런데 (but/however), 그리고 (and/also) are the three most common sentence connectors.' }
+				{ type: 'tip', title: '-지만 vs 하지만', content: '-지만 connects clauses within one sentence. 하지만 connects two separate sentences. Same meaning, different scope.' },
+				{ type: 'tip', title: 'Similar Words', content: '하지만, 그런데, 그렇지만 all mean "but/however." 하지만 is the most common in writing.' }
 			],
+			relatedPointIds: ['gp_jiman'],
 			lessonExamples: [
 				{
-					id: 'le_geuraeseo_01',
-					fullSentence: '배가 고팠어요. 그래서 밥을 먹었어요.',
-					sentenceWithBlank: '배가 고팠어요. ___ 밥을 먹었어요.',
-					answer: '그래서',
-					englishHint: 'I was hungry. So I ate.',
+					id: 'le_hajiman_01',
+					fullSentence: '한국어는 어려워요. 하지만 재미있어요.',
+					sentenceWithBlank: '한국어는 어려워요. ___ 재미있어요.',
+					answer: '하지만',
+					englishHint: "Korean is hard. But it's fun.",
 					order: 0
 				},
 				{
-					id: 'le_geuraeseo_02',
-					fullSentence: '비가 왔어요. 그래서 집에 있었어요.',
-					sentenceWithBlank: '비가 왔어요. ___ 집에 있었어요.',
-					answer: '그래서',
-					englishHint: 'It rained. So I stayed home.',
+					id: 'le_hajiman_02',
+					fullSentence: '비가 왔어요. 하지만 공원에 갔어요.',
+					sentenceWithBlank: '비가 왔어요. ___ 공원에 갔어요.',
+					answer: '하지만',
+					englishHint: 'It rained. But I went to the park.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_geuraeseo_01',
-					fullSentence: '배가 고팠어요. 그래서 밥을 먹었어요.',
-					sentenceWithBlank: '배가 고팠어요. ___ 밥을 먹었어요.',
-					answer: '그래서',
+					id: 'cc_hajiman_01',
+					fullSentence: '한국어는 어려워요. 하지만 재미있어요.',
+					sentenceWithBlank: '한국어는 어려워요. ___ 재미있어요.',
+					answer: '하지만',
 					alternateAnswers: [],
-					vocabBaseForm: '그래서',
-					englishHint: 'I was hungry. So I ate.',
+					vocabBaseForm: '하지만',
+					englishHint: "Korean is hard. But it's fun.",
 					introducedAtPosition: 42
 				},
 				{
-					id: 'cc_geuraeseo_02',
-					fullSentence: '시간이 없었어요. 그래서 택시를 탔어요.',
-					sentenceWithBlank: '시간이 없었어요. ___ 택시를 탔어요.',
-					answer: '그래서',
+					id: 'cc_hajiman_02',
+					fullSentence: '그 식당은 비싸요. 하지만 맛있어요.',
+					sentenceWithBlank: '그 식당은 비싸요. ___ 맛있어요.',
+					answer: '하지만',
 					alternateAnswers: [],
-					vocabBaseForm: '그래서',
-					englishHint: 'I had no time. So I took a taxi.',
+					vocabBaseForm: '하지만',
+					englishHint: "That restaurant is expensive. But it's delicious.",
 					introducedAtPosition: 42
 				},
 				{
-					id: 'cc_geuraeseo_03',
-					fullSentence: '한국어를 좋아해요. 그래서 매일 공부해요.',
-					sentenceWithBlank: '한국어를 좋아해요. ___ 매일 공부해요.',
-					answer: '그래서',
+					id: 'cc_hajiman_03',
+					fullSentence: '피곤해요. 하지만 공부해야 해요.',
+					sentenceWithBlank: '피곤해요. ___ 공부해야 해요.',
+					answer: '하지만',
 					alternateAnswers: [],
-					vocabBaseForm: '그래서',
-					englishHint: 'I like Korean. So I study every day.',
+					vocabBaseForm: '하지만',
+					englishHint: "I'm tired. But I have to study.",
 					introducedAtPosition: 42
 				}
 			]

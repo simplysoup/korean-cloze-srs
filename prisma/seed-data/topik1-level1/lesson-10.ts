@@ -1,231 +1,227 @@
 import type { LessonSeed } from '../types';
 
-// ══════════════════════════════════════════════════════════════════════════════
-// Lesson 10 — Condition and Contrast
-//
+// Lesson 10 — Connecting Actions and Making Plans
 // Grammar points (positions 43–45):
-//  43. -(으)면         If / when (conditional)
-//  44. -지만           But / however (clause-level contrast)
-//  45. 하지만          But / however (sentence-initial contrast)
-//
-// Available: all L1–L9 grammar (pos 1–42).
-// ══════════════════════════════════════════════════════════════════════════════
-
+//   43. go_seq
+//   44. eulgeyo
+//   45. eul_geoyeyo
+// Examples and cards use only grammar through their target position.
 
 export const lesson10: LessonSeed = {
 	lessonNumber: 10,
-	title: 'Condition and Contrast',
+	title: "Connecting Actions and Making Plans",
 	grammarPoints: [
-		// ── 43. -(으)면 — If / when ────────────────────────────────────────
+		// 43. gp_go_seq
 		{
-			id: 'gp_eumyeon',
-			title: '-(으)면',
+			id: 'gp_go_seq',
+			title: '-고',
 			category: 'connective',
 			tense: null,
 			register: null,
-			hint: 'if, when (conditional)',
+			hint: 'and, and then (sequential/listing)',
 			description:
-				'Conditional connector meaning "if" or "when." ' +
-				'After consonant stem → -으면: 먹다 → 먹으면. After vowel stem → -면: 가다 → 가면. ' +
-				'시간이 있으면 같이 가요 "If you have time, let\'s go together."',
+				'Connects two actions sequentially or lists parallel actions. ' +
+				'Verb stem + 고: 밥을 먹고 커피를 마셔요 "I eat and (then) drink coffee." ' +
+				'No vowel harmony — always 고. Can express time order or simple listing.',
 			level: 1,
 			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + (으)면 + [result clause]',
+			structurePattern: 'Verb stem + 고 + [next action]',
 			notes: [
-				{ type: 'tip', title: 'Hypothetical & Habitual', content: '-(으)면 covers both hypothetical (if it rains) and habitual (whenever I eat). Context determines which.' },
-				{ type: 'tip', title: 'ㄹ-Irregular', content: 'Stems ending in ㄹ: drop ㄹ, add -면. 살다 → 살면, 알다 → 알면.' }
+				{ type: 'tip', title: 'No Conjugation', content: '-고 attaches directly to any verb stem. No consonant/vowel rules: 먹고, 가고, 하고. Same form as 하고 (and/with) for nouns.' },
+				{ type: 'tip', title: 'Order Matters', content: 'When sequential: 손을 씻고 밥을 먹어요 (wash hands THEN eat). When listing: 노래하고 춤을 춰요 (sing AND dance — simultaneous).' }
 			],
+			relatedPointIds: ['gp_hago'],
 			lessonExamples: [
 				{
-					id: 'le_eumyeon_01',
-					fullSentence: '시간이 있으면 같이 가요.',
-					sentenceWithBlank: '시간이 ___ 같이 가요.',
-					answer: '있으면',
-					englishHint: "If you have time, let's go together.",
+					id: 'le_go_seq_01',
+					fullSentence: '아침을 먹고 학교에 가요.',
+					sentenceWithBlank: '아침을 먹___ 학교에 가요.',
+					answer: '고',
+					englishHint: 'I eat breakfast and then go to school.',
 					order: 0
 				},
 				{
-					id: 'le_eumyeon_02',
-					fullSentence: '비가 오면 집에 있어요.',
-					sentenceWithBlank: '비가 ___ 집에 있어요.',
-					answer: '오면',
-					englishHint: 'If it rains, I stay home.',
+					id: 'le_go_seq_02',
+					fullSentence: '숙제를 하고 텔레비전을 봐요.',
+					sentenceWithBlank: '숙제를 하___ 텔레비전을 봐요.',
+					answer: '고',
+					englishHint: 'I do homework and then watch TV.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_eumyeon_01',
-					fullSentence: '시간이 있으면 같이 가요.',
-					sentenceWithBlank: '시간이 있으___ 같이 가요.',
-					answer: '면',
+					id: 'cc_go_seq_01',
+					fullSentence: '아침을 먹고 학교에 가요.',
+					sentenceWithBlank: '아침을 먹___ 학교에 가요.',
+					answer: '고',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)면',
-					englishHint: "If you have time, let's go together.",
+					vocabBaseForm: '-고',
+					englishHint: 'I eat breakfast and then go to school.',
 					introducedAtPosition: 43
 				},
 				{
-					id: 'cc_eumyeon_02',
-					fullSentence: '한국에 가면 불고기를 먹고 싶어요.',
-					sentenceWithBlank: '한국에 가___ 불고기를 먹고 싶어요.',
-					answer: '면',
+					id: 'cc_go_seq_02',
+					fullSentence: '샤워하고 옷을 입었어요.',
+					sentenceWithBlank: '샤워하___ 옷을 입었어요.',
+					answer: '고',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)면',
-					englishHint: 'If I go to Korea, I want to eat bulgogi.',
+					vocabBaseForm: '-고',
+					englishHint: 'I showered and then got dressed.',
 					introducedAtPosition: 43
 				},
 				{
-					id: 'cc_eumyeon_03',
-					fullSentence: '날씨가 좋으면 공원에 가요.',
-					sentenceWithBlank: '날씨가 좋으___ 공원에 가요.',
-					answer: '면',
+					id: 'cc_go_seq_03',
+					fullSentence: '커피를 마시고 일을 시작해요.',
+					sentenceWithBlank: '커피를 마시___ 일을 시작해요.',
+					answer: '고',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)면',
-					englishHint: 'If the weather is nice, I go to the park.',
+					vocabBaseForm: '-고',
+					englishHint: 'I drink coffee and then start work.',
 					introducedAtPosition: 43
 				}
 			]
 		},
 
-		// ── 44. -지만 — But / however (clause connector) ───────────────────
+		// 44. gp_eulgeyo
 		{
-			id: 'gp_jiman',
-			title: '-지만',
-			category: 'connective',
-			tense: null,
-			register: null,
-			hint: 'but, however (connects clauses)',
+			id: 'gp_eulgeyo',
+			title: '-(으)ㄹ게요',
+			category: 'verb-ending',
+			tense: 'future',
+			register: 'polite informal',
+			hint: 'I will (promise to listener)',
 			description:
-				'Clause-level contrast connector. Verb/Adj stem + 지만: ' +
-				'비싸지만 맛있어요 "It\'s expensive but delicious." ' +
-				'Can also take tense: 갔지만 "went but." Always attaches directly to the stem (no vowel harmony).',
+				'Expresses the speaker\'s intention or promise, with consideration for the listener. ' +
+				'After consonant stem → -을게요: 먹다 → 먹을게요. After vowel stem → -ㄹ게요: 가다 → 갈게요. ' +
+				'First person only. Implies "I will (and you should know / it affects you)."',
 			level: 1,
-			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb/Adj stem + 지만 + [contrasting clause]',
+			tags: ['verb-ending', 'future', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb stem + (으)ㄹ게요',
 			notes: [
-				{ type: 'tip', title: 'No Vowel Harmony', content: '-지만 attaches directly to any stem. No consonant/vowel distinction. 먹다 → 먹지만, 가다 → 가지만.' },
-				{ type: 'tip', title: 'With Tense', content: 'Past: 갔지만, 먹었지만. The tense goes between the stem and -지만.' }
+				{ type: 'tip', title: 'First Person Only', content: '-(으)ㄹ게요 is ONLY for "I will." For "you/he/she will," use -(으)ㄹ 거예요.' },
+				{ type: 'tip', title: 'vs -(으)ㄹ 거예요', content: '-(으)ㄹ게요 = promise/consideration for listener. -(으)ㄹ 거예요 = plan/prediction (any person).' }
 			],
-			relatedPointIds: ['gp_hajiman'],
+			relatedPointIds: ['gp_eul_geoyeyo'],
 			lessonExamples: [
 				{
-					id: 'le_jiman_01',
-					fullSentence: '비싸지만 맛있어요.',
-					sentenceWithBlank: '비싸___ 맛있어요.',
-					answer: '지만',
-					englishHint: "It's expensive but it's delicious.",
+					id: 'le_eulgeyo_01',
+					fullSentence: '제가 할게요.',
+					sentenceWithBlank: '제가 ___.',
+					answer: '할게요',
+					englishHint: "I'll do it.",
 					order: 0
 				},
 				{
-					id: 'le_jiman_02',
-					fullSentence: '한국어는 어렵지만 재미있어요.',
-					sentenceWithBlank: '한국어는 어렵___ 재미있어요.',
-					answer: '지만',
-					englishHint: 'Korean is difficult but fun.',
+					id: 'le_eulgeyo_02',
+					fullSentence: '내일 전화할게요.',
+					sentenceWithBlank: '내일 ___.',
+					answer: '전화할게요',
+					englishHint: "I'll call (you) tomorrow.",
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_jiman_01',
-					fullSentence: '비싸지만 맛있어요.',
-					sentenceWithBlank: '비싸___ 맛있어요.',
-					answer: '지만',
+					id: 'cc_eulgeyo_01',
+					fullSentence: '제가 할게요.',
+					sentenceWithBlank: '제가 ___.',
+					answer: '할게요',
 					alternateAnswers: [],
-					vocabBaseForm: '-지만',
-					englishHint: "It's expensive but it's delicious.",
+					vocabBaseForm: '하다',
+					englishHint: "I'll do it.",
 					introducedAtPosition: 44
 				},
 				{
-					id: 'cc_jiman_02',
-					fullSentence: '피곤하지만 공부해야 해요.',
-					sentenceWithBlank: '피곤하___ 공부해야 해요.',
-					answer: '지만',
+					id: 'cc_eulgeyo_02',
+					fullSentence: '내일 갈게요.',
+					sentenceWithBlank: '내일 ___.',
+					answer: '갈게요',
 					alternateAnswers: [],
-					vocabBaseForm: '-지만',
-					englishHint: "I'm tired but I have to study.",
+					vocabBaseForm: '가다',
+					englishHint: "I'll go tomorrow.",
 					introducedAtPosition: 44
 				},
 				{
-					id: 'cc_jiman_03',
-					fullSentence: '작지만 좋은 집이에요.',
-					sentenceWithBlank: '작___ 좋은 집이에요.',
-					answer: '지만',
+					id: 'cc_eulgeyo_03',
+					fullSentence: '다음에 더 열심히 할게요.',
+					sentenceWithBlank: '다음에 더 열심히 ___.',
+					answer: '할게요',
 					alternateAnswers: [],
-					vocabBaseForm: '-지만',
-					englishHint: "It's small but a nice house.",
+					vocabBaseForm: '하다',
+					englishHint: "I'll try harder next time.",
 					introducedAtPosition: 44
 				}
 			]
 		},
 
-		// ── 45. 하지만 — But / however (sentence connector) ─────────────────
+		// 45. gp_eul_geoyeyo
 		{
-			id: 'gp_hajiman',
-			title: '하지만',
-			category: 'connective',
-			tense: null,
-			register: null,
-			hint: 'but, however (sentence connector)',
+			id: 'gp_eul_geoyeyo',
+			title: '-(으)ㄹ 거예요',
+			category: 'verb-ending',
+			tense: 'future',
+			register: 'polite informal',
+			hint: 'will, going to (plan/prediction)',
 			description:
-				'Sentence-initial contrast connector meaning "but" or "however." ' +
-				'Links two sentences: 한국어는 어려워요. 하지만 재미있어요. ' +
-				'"Korean is hard. But it\'s fun." Compare with -지만 which connects clauses within one sentence.',
+				'Expresses a future plan or prediction. Works for all persons. ' +
+				'After consonant stem → -을 거예요: 먹다 → 먹을 거예요. After vowel stem → -ㄹ 거예요: 가다 → 갈 거예요. ' +
+				'내일 뭐 할 거예요? "What will you do tomorrow?"',
 			level: 1,
-			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: '[Sentence A]. 하지만 [contrasting sentence B].',
+			tags: ['verb-ending', 'future', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb stem + (으)ㄹ 거예요',
 			notes: [
-				{ type: 'tip', title: '-지만 vs 하지만', content: '-지만 connects clauses within one sentence. 하지만 connects two separate sentences. Same meaning, different scope.' },
-				{ type: 'tip', title: 'Similar Words', content: '하지만, 그런데, 그렇지만 all mean "but/however." 하지만 is the most common in writing.' }
+				{ type: 'tip', title: 'All Persons', content: '저는 갈 거예요 (I will go). 친구는 갈 거예요 (My friend will go). 비가 올 거예요 (It will rain). Any subject works.' },
+				{ type: 'tip', title: 'Questions', content: '뭐 할 거예요? (What will you do?), 어디 갈 거예요? (Where will you go?) — very common question patterns.' }
 			],
-			relatedPointIds: ['gp_jiman'],
+			relatedPointIds: ['gp_eulgeyo'],
 			lessonExamples: [
 				{
-					id: 'le_hajiman_01',
-					fullSentence: '한국어는 어려워요. 하지만 재미있어요.',
-					sentenceWithBlank: '한국어는 어려워요. ___ 재미있어요.',
-					answer: '하지만',
-					englishHint: "Korean is hard. But it's fun.",
+					id: 'le_eul_geoyeyo_01',
+					fullSentence: '내일 한국어를 공부할 거예요.',
+					sentenceWithBlank: '내일 한국어를 공부할 ___.',
+					answer: '거예요',
+					englishHint: "I'm going to study Korean tomorrow.",
 					order: 0
 				},
 				{
-					id: 'le_hajiman_02',
-					fullSentence: '비가 왔어요. 하지만 공원에 갔어요.',
-					sentenceWithBlank: '비가 왔어요. ___ 공원에 갔어요.',
-					answer: '하지만',
-					englishHint: 'It rained. But I went to the park.',
+					id: 'le_eul_geoyeyo_02',
+					fullSentence: '주말에 친구를 만날 거예요.',
+					sentenceWithBlank: '주말에 친구를 만날 ___.',
+					answer: '거예요',
+					englishHint: "I'm going to meet a friend on the weekend.",
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_hajiman_01',
-					fullSentence: '한국어는 어려워요. 하지만 재미있어요.',
-					sentenceWithBlank: '한국어는 어려워요. ___ 재미있어요.',
-					answer: '하지만',
+					id: 'cc_eul_geoyeyo_01',
+					fullSentence: '내일 한국어를 공부할 거예요.',
+					sentenceWithBlank: '내일 한국어를 공부할 ___.',
+					answer: '거예요',
 					alternateAnswers: [],
-					vocabBaseForm: '하지만',
-					englishHint: "Korean is hard. But it's fun.",
+					vocabBaseForm: '-(으)ㄹ 거예요',
+					englishHint: "I'm going to study Korean tomorrow.",
 					introducedAtPosition: 45
 				},
 				{
-					id: 'cc_hajiman_02',
-					fullSentence: '그 식당은 비싸요. 하지만 맛있어요.',
-					sentenceWithBlank: '그 식당은 비싸요. ___ 맛있어요.',
-					answer: '하지만',
+					id: 'cc_eul_geoyeyo_02',
+					fullSentence: '오늘 저녁에 뭐 먹을 거예요?',
+					sentenceWithBlank: '오늘 저녁에 뭐 먹을 ___?',
+					answer: '거예요',
 					alternateAnswers: [],
-					vocabBaseForm: '하지만',
-					englishHint: "That restaurant is expensive. But it's delicious.",
+					vocabBaseForm: '-(으)ㄹ 거예요',
+					englishHint: 'What are you going to eat tonight?',
 					introducedAtPosition: 45
 				},
 				{
-					id: 'cc_hajiman_03',
-					fullSentence: '피곤해요. 하지만 공부해야 해요.',
-					sentenceWithBlank: '피곤해요. ___ 공부해야 해요.',
-					answer: '하지만',
+					id: 'cc_eul_geoyeyo_03',
+					fullSentence: '내년에 한국에 갈 거예요.',
+					sentenceWithBlank: '내년에 한국에 갈 ___.',
+					answer: '거예요',
 					alternateAnswers: [],
-					vocabBaseForm: '하지만',
-					englishHint: "I'm tired. But I have to study.",
+					vocabBaseForm: '-(으)ㄹ 거예요',
+					englishHint: "I'm going to go to Korea next year.",
 					introducedAtPosition: 45
 				}
 			]

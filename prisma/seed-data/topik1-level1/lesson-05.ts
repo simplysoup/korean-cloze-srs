@@ -1,186 +1,367 @@
 import type { LessonSeed } from '../types';
 
-// ══════════════════════════════════════════════════════════════════════════════
-// Lesson 5 — Past Tense and Negation
-//
-// Grammar points (positions 29–30):
-//  29. -았어요/-었어요   Past tense (polite informal)
-//  30. -지 않다          Long-form negation ("do not")
-//
-// Available: all L1–L4 grammar (pos 1–28).
-// ══════════════════════════════════════════════════════════════════════════════
-
+// Lesson 5 — Time, Starting and Finishing
+// Grammar points (positions 23–27):
+//   23. e_time
+//   24. buteo
+//   25. kkaji
+//   26. jeone
+//   27. hue
+// Examples and cards use only grammar through their target position.
 
 export const lesson05: LessonSeed = {
 	lessonNumber: 5,
-	title: 'Past Tense and Negation',
+	title: "Time, Starting and Finishing",
 	grammarPoints: [
-		// ── 29. -았어요/-었어요 — Past tense (polite informal) ───────────────
+		// 23. gp_e_time
 		{
-			id: 'gp_asseoyo',
-			title: '-았어요/-었어요',
-			category: 'verb-ending',
-			tense: 'past',
-			register: 'polite informal',
-			hint: 'past tense (polite)',
+			id: 'gp_e_time',
+			title: '에 (시간)',
+			category: 'particle',
+			tense: null,
+			register: null,
+			hint: 'at, on, in (time)',
 			description:
-				'The polite informal past tense ending. ' +
-				'If the stem\'s last vowel is ㅏ or ㅗ → -았어요; otherwise → -었어요. ' +
-				'하다 verbs → 했어요. 가다 → 갔어요, 먹다 → 먹었어요, 공부하다 → 공부했어요.',
+				'Marks a point in time: "at, on, in." ' +
+				'월요일에 = "on Monday", 3시에 = "at 3 o\'clock", 아침에 = "in the morning." ' +
+				'Same particle as location 에, but attached to time nouns.',
 			level: 1,
-			tags: ['verb-ending', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 았어요/었어요',
+			tags: ['particle', 'beginner', 'TOPIK1'],
+			structurePattern: '[Time noun]에',
 			notes: [
-				{ type: 'tip', title: 'Vowel Harmony', content: 'Last vowel ㅏ/ㅗ → 았어요. Other vowels → 었어요. 하다 → 했어요 (special).' },
-				{ type: 'tip', title: 'Contraction', content: '가 + 았어요 → 갔어요, 보 + 았어요 → 봤어요, 마시 + 었어요 → 마셨어요. The vowels merge.' }
+				{ type: 'caution', title: 'Not with 오늘/내일/어제', content: '오늘, 내일, 어제, 지금 do NOT take 에 — they are already adverbs of time: ✗ 오늘에, ✓ 오늘.' },
+				{ type: 'tip', title: 'Shared Particle', content: '에 serves both location and time. Context makes it clear.' }
 			],
 			lessonExamples: [
 				{
-					id: 'le_asseoyo_01',
-					fullSentence: '어제 학교에 갔어요.',
-					sentenceWithBlank: '어제 학교에 ___.',
-					answer: '갔어요',
-					englishHint: 'I went to school yesterday.',
+					id: 'le_e_time_01',
+					fullSentence: '월요일에 한국어를 공부해요.',
+					sentenceWithBlank: '월요일___ 한국어를 공부해요.',
+					answer: '에',
+					englishHint: 'I study Korean on Monday.',
 					order: 0
 				},
 				{
-					id: 'le_asseoyo_02',
-					fullSentence: '저는 밥을 먹었어요.',
-					sentenceWithBlank: '저는 밥을 ___.',
-					answer: '먹었어요',
-					englishHint: 'I ate rice.',
+					id: 'le_e_time_02',
+					fullSentence: '9시에 학교에 가요.',
+					sentenceWithBlank: '9시___ 학교에 가요.',
+					answer: '에',
+					englishHint: "I go to school at 9 o'clock.",
 					order: 1
-				},
-				{
-					id: 'le_asseoyo_03',
-					fullSentence: '어제 한국어를 공부했어요.',
-					sentenceWithBlank: '어제 한국어를 ___.',
-					answer: '공부했어요',
-					englishHint: 'I studied Korean yesterday.',
-					order: 2
 				}
 			],
 			cards: [
 				{
-					id: 'cc_asseoyo_01',
-					fullSentence: '어제 학교에 갔어요.',
-					sentenceWithBlank: '어제 학교에 ___.',
-					answer: '갔어요',
+					id: 'cc_e_time_01',
+					fullSentence: '월요일에 한국어를 공부해요.',
+					sentenceWithBlank: '월요일___ 한국어를 공부해요.',
+					answer: '에',
 					alternateAnswers: [],
-					vocabBaseForm: '가다',
-					englishHint: 'I went to school yesterday.',
-					introducedAtPosition: 29
+					vocabBaseForm: '에',
+					englishHint: 'I study Korean on Monday.',
+					introducedAtPosition: 23
 				},
 				{
-					id: 'cc_asseoyo_02',
-					fullSentence: '저는 밥을 먹었어요.',
-					sentenceWithBlank: '저는 밥을 ___.',
-					answer: '먹었어요',
+					id: 'cc_e_time_02',
+					fullSentence: '아침에 운동해요.',
+					sentenceWithBlank: '아침___ 운동해요.',
+					answer: '에',
 					alternateAnswers: [],
-					vocabBaseForm: '먹다',
-					englishHint: 'I ate rice.',
-					introducedAtPosition: 29
+					vocabBaseForm: '에',
+					englishHint: 'I exercise in the morning.',
+					introducedAtPosition: 23
 				},
 				{
-					id: 'cc_asseoyo_03',
-					fullSentence: '어제 영화를 봤어요.',
-					sentenceWithBlank: '어제 영화를 ___.',
-					answer: '봤어요',
+					id: 'cc_e_time_03',
+					fullSentence: '저녁 7시에 밥을 먹어요.',
+					sentenceWithBlank: '저녁 7시___ 밥을 먹어요.',
+					answer: '에',
 					alternateAnswers: [],
-					vocabBaseForm: '보다',
-					englishHint: 'I watched a movie yesterday.',
-					introducedAtPosition: 29
-				},
-				{
-					id: 'cc_asseoyo_04',
-					fullSentence: '커피를 마셨어요.',
-					sentenceWithBlank: '커피를 ___.',
-					answer: '마셨어요',
-					alternateAnswers: [],
-					vocabBaseForm: '마시다',
-					englishHint: 'I drank coffee.',
-					introducedAtPosition: 29
-				},
-				{
-					id: 'cc_asseoyo_05',
-					fullSentence: '숙제를 했어요.',
-					sentenceWithBlank: '숙제를 ___.',
-					answer: '했어요',
-					alternateAnswers: [],
-					vocabBaseForm: '하다',
-					englishHint: 'I did (my) homework.',
-					introducedAtPosition: 29
+					vocabBaseForm: '에',
+					englishHint: 'I eat at 7 PM.',
+					introducedAtPosition: 23
 				}
 			]
 		},
 
-		// ── 30. -지 않다 — Long-form negation ───────────────────────────────
+		// 24. gp_buteo
 		{
-			id: 'gp_ji_anha',
-			title: '-지 않다',
-			category: 'verb-ending',
+			id: 'gp_buteo',
+			title: '부터',
+			category: 'particle',
 			tense: null,
-			register: 'polite informal',
-			hint: 'long-form negation ("do not")',
+			register: null,
+			hint: 'from, since (starting point)',
 			description:
-				'The long-form negation pattern. Verb stem + 지 않다: 먹다 → 먹지 않아요 "do not eat." ' +
-				'More formal/emphatic than the short 안 negation. ' +
-				'Works with all verb types including 하다 verbs: 공부하지 않아요.',
+				'Marks the starting point in time: "from" or "since." ' +
+				'Often paired with 까지 (until): 9시부터 6시까지 = "from 9 to 6." ' +
+				'Can also be used alone: 내일부터 = "starting from tomorrow."',
 			level: 1,
-			tags: ['negation', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 지 않다',
+			tags: ['particle', 'beginner', 'TOPIK1'],
+			structurePattern: '[Time]부터',
 			notes: [
-				{ type: 'tip', title: '안 vs -지 않다', content: '안 먹어요 and 먹지 않아요 mean the same thing. -지 않다 is slightly more formal or emphatic.' },
-				{ type: 'tip', title: '하다 Verbs', content: 'For 하다 verbs, -지 않다 is simpler: 공부하지 않아요 (compare: 공부 안 해요).' }
+				{ type: 'tip', title: 'Often Paired', content: '부터 often pairs with 까지: 부터~까지 = "from~until."' },
+				{ type: 'tip', title: 'Time Only', content: '부터 is mainly used for time. For place "from," use 에서.' }
 			],
 			lessonExamples: [
 				{
-					id: 'le_ji_anha_01',
-					fullSentence: '저는 고기를 먹지 않아요.',
-					sentenceWithBlank: '저는 고기를 먹지 ___.',
-					answer: '않아요',
-					englishHint: 'I do not eat meat.',
+					id: 'le_buteo_01',
+					fullSentence: '9시부터 일해요.',
+					sentenceWithBlank: '9시___ 일해요.',
+					answer: '부터',
+					englishHint: 'I work from 9.',
 					order: 0
 				},
 				{
-					id: 'le_ji_anha_02',
-					fullSentence: '오늘은 공부하지 않아요.',
-					sentenceWithBlank: '오늘은 공부하지 ___.',
-					answer: '않아요',
-					englishHint: 'I am not studying today.',
+					id: 'le_buteo_02',
+					fullSentence: "월요일부터 공부해요.",
+					sentenceWithBlank: "월요일___ 공부해요.",
+					answer: "부터",
+					englishHint: "I start studying on Monday.",
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_ji_anha_01',
-					fullSentence: '저는 고기를 먹지 않아요.',
-					sentenceWithBlank: '저는 고기를 먹지 ___.',
-					answer: '않아요',
+					id: 'cc_buteo_01',
+					fullSentence: "9시부터 일해요.",
+					sentenceWithBlank: "9시___ 일해요.",
+					answer: "부터",
 					alternateAnswers: [],
-					vocabBaseForm: '-지 않다',
-					englishHint: 'I do not eat meat.',
-					introducedAtPosition: 30
+					vocabBaseForm: '부터',
+					englishHint: "I start work at nine.",
+					introducedAtPosition: 24
 				},
 				{
-					id: 'cc_ji_anha_02',
-					fullSentence: '오늘은 운동하지 않아요.',
-					sentenceWithBlank: '오늘은 운동하지 ___.',
-					answer: '않아요',
+					id: 'cc_buteo_02',
+					fullSentence: "월요일부터 수업이 있어요.",
+					sentenceWithBlank: "월요일___ 수업이 있어요.",
+					answer: "부터",
 					alternateAnswers: [],
-					vocabBaseForm: '-지 않다',
-					englishHint: 'I am not exercising today.',
-					introducedAtPosition: 30
+					vocabBaseForm: '부터',
+					englishHint: "I have classes starting Monday.",
+					introducedAtPosition: 24
 				},
 				{
-					id: 'cc_ji_anha_03',
-					fullSentence: '이 음식은 맛있지 않아요.',
-					sentenceWithBlank: '이 음식은 맛있지 ___.',
-					answer: '않아요',
+					id: 'cc_buteo_03',
+					fullSentence: "아침부터 공부해요.",
+					sentenceWithBlank: "아침___ 공부해요.",
+					answer: "부터",
 					alternateAnswers: [],
-					vocabBaseForm: '-지 않다',
-					englishHint: 'This food is not delicious.',
-					introducedAtPosition: 30
+					vocabBaseForm: '부터',
+					englishHint: "I start studying in the morning.",
+					introducedAtPosition: 24
+				}
+			]
+		},
+
+		// 25. gp_kkaji
+		{
+			id: 'gp_kkaji',
+			title: '까지',
+			category: 'particle',
+			tense: null,
+			register: null,
+			hint: 'until, to (ending point)',
+			description:
+				'Marks the ending point in time or space: "until" or "to." ' +
+				'Often paired with 부터: 부터~까지 = "from~until." ' +
+				'Can also mark extent: 여기까지 = "up to here."',
+			level: 1,
+			tags: ['particle', 'beginner', 'TOPIK1'],
+			structurePattern: '[Time/Place]까지',
+			notes: [
+				{ type: 'tip', title: 'Time & Place', content: '까지 works for both time (6시까지 "until 6") and place (서울까지 "to Seoul").' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_kkaji_01',
+					fullSentence: '6시까지 일해요.',
+					sentenceWithBlank: '6시___ 일해요.',
+					answer: '까지',
+					englishHint: 'I work until 6.',
+					order: 0
+				},
+				{
+					id: 'le_kkaji_02',
+					fullSentence: '아침부터 저녁까지 공부해요.',
+					sentenceWithBlank: '아침부터 저녁___ 공부해요.',
+					answer: '까지',
+					englishHint: 'I study from morning until evening.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_kkaji_01',
+					fullSentence: '9시부터 6시까지 일해요.',
+					sentenceWithBlank: '9시부터 6시___ 일해요.',
+					answer: '까지',
+					alternateAnswers: [],
+					vocabBaseForm: '까지',
+					englishHint: 'I work from 9 until 6.',
+					introducedAtPosition: 25
+				},
+				{
+					id: 'cc_kkaji_02',
+					fullSentence: "서울에서 부산까지 가요.",
+					sentenceWithBlank: "서울에서 부산___ 가요.",
+					answer: "까지",
+					alternateAnswers: [],
+					vocabBaseForm: '까지',
+					englishHint: "I travel from Seoul to Busan.",
+					introducedAtPosition: 25
+				},
+				{
+					id: 'cc_kkaji_03',
+					fullSentence: '금요일까지 숙제를 해요.',
+					sentenceWithBlank: '금요일___ 숙제를 해요.',
+					answer: '까지',
+					alternateAnswers: [],
+					vocabBaseForm: '까지',
+					englishHint: 'I do homework by Friday.',
+					introducedAtPosition: 25
+				}
+			]
+		},
+
+		// 26. gp_jeone
+		{
+			id: 'gp_jeone',
+			title: '전에',
+			category: 'expression',
+			tense: null,
+			register: null,
+			hint: 'before',
+			description:
+				'Means "before" a time or action. ' +
+				'수업 전에 = "before class." ' +
+				'The verb pattern -기 전에 is taught separately at Level 2; here, use a noun + 전에.',
+			level: 1,
+			tags: ['expression', 'beginner', 'TOPIK1'],
+			structurePattern: '[Noun] 전에',
+			notes: [
+				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 전에 (before class). With verbs: 먹기 전에 (before eating) — uses the -기 nominalizer.' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_jeone_01',
+					fullSentence: '수업 전에 커피를 마셔요.',
+					sentenceWithBlank: '수업 ___ 커피를 마셔요.',
+					answer: '전에',
+					englishHint: 'I drink coffee before class.',
+					order: 0
+				},
+				{
+					id: 'le_jeone_02',
+					fullSentence: '12시 전에 점심을 먹어요.',
+					sentenceWithBlank: '12시 ___ 점심을 먹어요.',
+					answer: '전에',
+					englishHint: 'I eat lunch before 12.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_jeone_01',
+					fullSentence: '수업 전에 커피를 마셔요.',
+					sentenceWithBlank: '수업 ___ 커피를 마셔요.',
+					answer: '전에',
+					alternateAnswers: [],
+					vocabBaseForm: '전에',
+					englishHint: 'I drink coffee before class.',
+					introducedAtPosition: 26
+				},
+				{
+					id: 'cc_jeone_02',
+					fullSentence: "운동 전에 물을 마셔요.",
+					sentenceWithBlank: "운동 ___ 물을 마셔요.",
+					answer: "전에",
+					alternateAnswers: [],
+					vocabBaseForm: '전에',
+					englishHint: "I drink water before exercising.",
+					introducedAtPosition: 26
+				},
+				{
+					id: 'cc_jeone_03',
+					fullSentence: '10시 전에 집에 가요.',
+					sentenceWithBlank: '10시 ___ 집에 가요.',
+					answer: '전에',
+					alternateAnswers: [],
+					vocabBaseForm: '전에',
+					englishHint: 'I go home before 10.',
+					introducedAtPosition: 26
+				}
+			]
+		},
+
+		// 27. gp_hue
+		{
+			id: 'gp_hue',
+			title: '후에',
+			category: 'expression',
+			tense: null,
+			register: null,
+			hint: 'after',
+			description:
+				'Means "after" a time or action. ' +
+				'수업 후에 = "after class." ' +
+				'The verb modifier + 후에 is taught separately at Level 2; here, use a noun + 후에.',
+			level: 1,
+			tags: ['expression', 'beginner', 'TOPIK1'],
+			structurePattern: '[Noun] 후에',
+			notes: [
+				{ type: 'tip', title: 'Synonym', content: '다음에 is a more casual alternative meaning "after" or "next time."' },
+				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 후에 (after class). With verbs: 먹은 후에 (after eating).' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_hue_01',
+					fullSentence: '수업 후에 운동해요.',
+					sentenceWithBlank: '수업 ___ 운동해요.',
+					answer: '후에',
+					englishHint: 'I exercise after class.',
+					order: 0
+				},
+				{
+					id: 'le_hue_02',
+					fullSentence: '점심 후에 커피를 마셔요.',
+					sentenceWithBlank: '점심 ___ 커피를 마셔요.',
+					answer: '후에',
+					englishHint: 'I drink coffee after lunch.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_hue_01',
+					fullSentence: '수업 후에 운동해요.',
+					sentenceWithBlank: '수업 ___ 운동해요.',
+					answer: '후에',
+					alternateAnswers: ['다음에'],
+					vocabBaseForm: '후에',
+					englishHint: 'I exercise after class.',
+					introducedAtPosition: 27
+				},
+				{
+					id: 'cc_hue_02',
+					fullSentence: "퇴근 후에 친구를 만나요.",
+					sentenceWithBlank: "퇴근 ___ 친구를 만나요.",
+					answer: "후에",
+					alternateAnswers: ['다음에'],
+					vocabBaseForm: '후에',
+					englishHint: "I meet a friend after work.",
+					introducedAtPosition: 27
+				},
+				{
+					id: 'cc_hue_03',
+					fullSentence: "저녁 식사 후에 산책해요.",
+					sentenceWithBlank: "저녁 식사 ___ 산책해요.",
+					answer: "후에",
+					alternateAnswers: ['다음에'],
+					vocabBaseForm: '후에',
+					englishHint: "I take a walk after dinner.",
+					introducedAtPosition: 27
 				}
 			]
 		}

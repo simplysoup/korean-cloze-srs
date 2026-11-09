@@ -1,232 +1,229 @@
 import type { LessonSeed } from '../types';
 
-// ══════════════════════════════════════════════════════════════════════════════
-// Lesson 11 — Future and Sequential Actions
-//
+// Lesson 11 — Reactions, Confirmation and Uncertainty
 // Grammar points (positions 46–48):
-//  46. -고              And then / and (sequential or listing)
-//  47. -(으)ㄹ게요      I will (promise/intention toward listener)
-//  48. -(으)ㄹ 거예요   Will / going to (plan/prediction)
-//
-// Available: all L1–L10 grammar (pos 1–45).
-// ══════════════════════════════════════════════════════════════════════════════
-
+//   46. neyo
+//   47. jiyo
+//   48. n_geos_gatda
+// Examples and cards use only grammar through their target position.
 
 export const lesson11: LessonSeed = {
 	lessonNumber: 11,
-	title: 'Future and Sequential Actions',
+	title: "Reactions, Confirmation and Uncertainty",
 	grammarPoints: [
-		// ── 46. -고 — And then / and (sequential or listing connector) ──────
+		// 46. gp_neyo
 		{
-			id: 'gp_go_seq',
-			title: '-고',
-			category: 'connective',
-			tense: null,
-			register: null,
-			hint: 'and, and then (sequential/listing)',
+			id: 'gp_neyo',
+			title: '-네요',
+			category: 'verb-ending',
+			tense: 'present',
+			register: 'polite informal',
+			hint: 'surprise / realization ending',
 			description:
-				'Connects two actions sequentially or lists parallel actions. ' +
-				'Verb stem + 고: 밥을 먹고 커피를 마셔요 "I eat and (then) drink coffee." ' +
-				'No vowel harmony — always 고. Can express time order or simple listing.',
+				'A sentence-ending expressing mild surprise or a new realization. ' +
+				'Attaches to verb/adjective stems: 크다 → 크네요 ("Oh, it\'s big!"), 맛있다 → 맛있네요. ' +
+				'Shows the speaker is noticing something for the first time.',
 			level: 1,
-			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 고 + [next action]',
+			tags: ['verb-ending', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb/Adj stem + 네요',
 			notes: [
-				{ type: 'tip', title: 'No Conjugation', content: '-고 attaches directly to any verb stem. No consonant/vowel rules: 먹고, 가고, 하고. Same form as 하고 (and/with) for nouns.' },
-				{ type: 'tip', title: 'Order Matters', content: 'When sequential: 손을 씻고 밥을 먹어요 (wash hands THEN eat). When listing: 노래하고 춤을 춰요 (sing AND dance — simultaneous).' }
+				{ type: 'tip', title: 'Direct Attachment', content: '-네요 attaches directly to the verb stem with no modification: 먹다 → 먹네요, 크다 → 크네요.' },
+				{ type: 'funfact', title: 'Feeling', content: '-네요 conveys "Oh, I see!" or "Oh, how nice!" — a warm, observational tone.' }
 			],
-			relatedPointIds: ['gp_hago'],
 			lessonExamples: [
 				{
-					id: 'le_go_seq_01',
-					fullSentence: '아침을 먹고 학교에 가요.',
-					sentenceWithBlank: '아침을 먹___ 학교에 가요.',
-					answer: '고',
-					englishHint: 'I eat breakfast and then go to school.',
-					order: 0
+					id: 'le_neyo_01',
+					fullSentence: '날씨가 좋네요.',
+					sentenceWithBlank: '날씨가 좋___.',
+					answer: '네요',
+					englishHint: 'Oh, the weather is nice!',
+					order: 0,
+					notes: 'Uses 이/가 (GP9). Stem 좋 + 네요.'
 				},
 				{
-					id: 'le_go_seq_02',
-					fullSentence: '숙제를 하고 텔레비전을 봐요.',
-					sentenceWithBlank: '숙제를 하___ 텔레비전을 봐요.',
-					answer: '고',
-					englishHint: 'I do homework and then watch TV.',
-					order: 1
+					id: 'le_neyo_02',
+					fullSentence: '이것은 맛있네요.',
+					sentenceWithBlank: '이것은 맛있___.',
+					answer: '네요',
+					englishHint: 'Oh, this is delicious!',
+					order: 1,
+					notes: 'Uses 이것 (GP4), 은/는 (GP3). Stem 맛있 + 네요.'
 				}
 			],
 			cards: [
 				{
-					id: 'cc_go_seq_01',
-					fullSentence: '아침을 먹고 학교에 가요.',
-					sentenceWithBlank: '아침을 먹___ 학교에 가요.',
-					answer: '고',
+					id: 'cc_neyo_01',
+					fullSentence: '날씨가 좋네요.',
+					sentenceWithBlank: '날씨가 좋___.',
+					answer: '네요',
 					alternateAnswers: [],
-					vocabBaseForm: '-고',
-					englishHint: 'I eat breakfast and then go to school.',
+					vocabBaseForm: '좋다',
+					englishHint: 'Oh, the weather is nice!',
 					introducedAtPosition: 46
 				},
 				{
-					id: 'cc_go_seq_02',
-					fullSentence: '샤워하고 옷을 입었어요.',
-					sentenceWithBlank: '샤워하___ 옷을 입었어요.',
-					answer: '고',
+					id: 'cc_neyo_02',
+					fullSentence: '이 음식은 맛있네요.',
+					sentenceWithBlank: '이 음식은 맛있___.',
+					answer: '네요',
 					alternateAnswers: [],
-					vocabBaseForm: '-고',
-					englishHint: 'I showered and then got dressed.',
+					vocabBaseForm: '맛있다',
+					englishHint: 'Oh, this food is delicious!',
 					introducedAtPosition: 46
 				},
 				{
-					id: 'cc_go_seq_03',
-					fullSentence: '커피를 마시고 일을 시작해요.',
-					sentenceWithBlank: '커피를 마시___ 일을 시작해요.',
-					answer: '고',
+					id: 'cc_neyo_03',
+					fullSentence: '한국어를 잘하네요.',
+					sentenceWithBlank: '한국어를 잘하___.',
+					answer: '네요',
 					alternateAnswers: [],
-					vocabBaseForm: '-고',
-					englishHint: 'I drink coffee and then start work.',
+					vocabBaseForm: '잘하다',
+					englishHint: "Oh, you're good at Korean!",
 					introducedAtPosition: 46
 				}
 			]
 		},
 
-		// ── 47. -(으)ㄹ게요 — I will (promise/intention) ───────────────────
+		// 47. gp_jiyo
 		{
-			id: 'gp_eulgeyo',
-			title: '-(으)ㄹ게요',
+			id: 'gp_jiyo',
+			title: '-지요/죠',
 			category: 'verb-ending',
-			tense: 'future',
+			tense: 'present',
 			register: 'polite informal',
-			hint: 'I will (promise to listener)',
+			hint: 'confirmation ("…right?")',
 			description:
-				'Expresses the speaker\'s intention or promise, with consideration for the listener. ' +
-				'After consonant stem → -을게요: 먹다 → 먹을게요. After vowel stem → -ㄹ게요: 가다 → 갈게요. ' +
-				'First person only. Implies "I will (and you should know / it affects you)."',
+				'A sentence-ending that seeks confirmation or states something assumed to be common knowledge. ' +
+				'죠 is the contracted form of 지요 and is more common in speech. ' +
+				'Equivalent to English "…right?" or "…isn\'t it?"',
 			level: 1,
-			tags: ['verb-ending', 'future', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + (으)ㄹ게요',
+			tags: ['verb-ending', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb/Adj stem + 지요(죠)',
 			notes: [
-				{ type: 'tip', title: 'First Person Only', content: '-(으)ㄹ게요 is ONLY for "I will." For "you/he/she will," use -(으)ㄹ 거예요.' },
-				{ type: 'tip', title: 'vs -(으)ㄹ 거예요', content: '-(으)ㄹ게요 = promise/consideration for listener. -(으)ㄹ 거예요 = plan/prediction (any person).' }
+				{ type: 'tip', title: 'Contraction', content: '지요 → 죠 in casual speech. Both are polite. 죠 is overwhelmingly more common in conversation.' },
+				{ type: 'tip', title: 'Usage', content: 'Use when you believe the listener already knows or agrees: "한국 음식 좋아하죠?" = "You like Korean food, right?"' }
 			],
-			relatedPointIds: ['gp_eul_geoyeyo'],
 			lessonExamples: [
 				{
-					id: 'le_eulgeyo_01',
-					fullSentence: '제가 할게요.',
-					sentenceWithBlank: '제가 ___.',
-					answer: '할게요',
-					englishHint: "I'll do it.",
-					order: 0
+					id: 'le_jiyo_01',
+					fullSentence: '한국어는 재미있지요?',
+					sentenceWithBlank: '한국어는 재미있___?',
+					answer: '지요',
+					englishHint: 'Korean is fun, right?',
+					order: 0,
+					notes: 'Uses 은/는 (GP3). Stem 재미있 + 지요.'
 				},
 				{
-					id: 'le_eulgeyo_02',
-					fullSentence: '내일 전화할게요.',
-					sentenceWithBlank: '내일 ___.',
-					answer: '전화할게요',
-					englishHint: "I'll call (you) tomorrow.",
-					order: 1
+					id: 'le_jiyo_02',
+					fullSentence: '이것은 좋죠?',
+					sentenceWithBlank: '이것은 좋___?',
+					answer: '죠',
+					englishHint: 'This is good, right?',
+					order: 1,
+					notes: 'Uses 이것 (GP4), 은/는 (GP3). Contracted form 죠.'
 				}
 			],
 			cards: [
 				{
-					id: 'cc_eulgeyo_01',
-					fullSentence: '제가 할게요.',
-					sentenceWithBlank: '제가 ___.',
-					answer: '할게요',
-					alternateAnswers: [],
-					vocabBaseForm: '하다',
-					englishHint: "I'll do it.",
+					id: 'cc_jiyo_01',
+					fullSentence: '한국어는 재미있지요?',
+					sentenceWithBlank: '한국어는 재미있___?',
+					answer: '지요',
+					alternateAnswers: ['죠'],
+					vocabBaseForm: '재미있다',
+					englishHint: 'Korean is fun, right?',
 					introducedAtPosition: 47
 				},
 				{
-					id: 'cc_eulgeyo_02',
-					fullSentence: '내일 갈게요.',
-					sentenceWithBlank: '내일 ___.',
-					answer: '갈게요',
-					alternateAnswers: [],
-					vocabBaseForm: '가다',
-					englishHint: "I'll go tomorrow.",
+					id: 'cc_jiyo_02',
+					fullSentence: '맛있죠?',
+					sentenceWithBlank: '맛있___?',
+					answer: '죠',
+					alternateAnswers: ['지요'],
+					vocabBaseForm: '맛있다',
+					englishHint: "It's delicious, right?",
 					introducedAtPosition: 47
 				},
 				{
-					id: 'cc_eulgeyo_03',
-					fullSentence: '다음에 더 열심히 할게요.',
-					sentenceWithBlank: '다음에 더 열심히 ___.',
-					answer: '할게요',
-					alternateAnswers: [],
-					vocabBaseForm: '하다',
-					englishHint: "I'll try harder next time.",
+					id: 'cc_jiyo_03',
+					fullSentence: '이 영화는 재미있죠?',
+					sentenceWithBlank: '이 영화는 재미있___?',
+					answer: '죠',
+					alternateAnswers: ['지요'],
+					vocabBaseForm: '재미있다',
+					englishHint: 'This movie is fun, right?',
 					introducedAtPosition: 47
 				}
 			]
 		},
 
-		// ── 48. -(으)ㄹ 거예요 — Will / going to ───────────────────────────
+		// 48. gp_n_geos_gatda
 		{
-			id: 'gp_eul_geoyeyo',
-			title: '-(으)ㄹ 거예요',
-			category: 'verb-ending',
-			tense: 'future',
+			id: 'gp_n_geos_gatda',
+			title: '-ㄴ 것 같다',
+			category: 'expression',
+			tense: 'present',
 			register: 'polite informal',
-			hint: 'will, going to (plan/prediction)',
+			hint: 'seems like, I think (present observation)',
 			description:
-				'Expresses a future plan or prediction. Works for all persons. ' +
-				'After consonant stem → -을 거예요: 먹다 → 먹을 거예요. After vowel stem → -ㄹ 거예요: 가다 → 갈 거예요. ' +
-				'내일 뭐 할 거예요? "What will you do tomorrow?"',
+				'Expresses a guess or soft opinion about a present state. ' +
+				'Descriptive verb stem + (으)ㄴ 것 같다: 비싼 것 같아요 "It seems expensive." ' +
+				'For nouns: Noun + 인 것 같아요 "It seems to be [noun]."',
 			level: 1,
-			tags: ['verb-ending', 'future', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + (으)ㄹ 거예요',
+			tags: ['expression', 'beginner', 'TOPIK1'],
+			structurePattern: 'Adj stem + (으)ㄴ 것 같다',
 			notes: [
-				{ type: 'tip', title: 'All Persons', content: '저는 갈 거예요 (I will go). 친구는 갈 거예요 (My friend will go). 비가 올 거예요 (It will rain). Any subject works.' },
-				{ type: 'tip', title: 'Questions', content: '뭐 할 거예요? (What will you do?), 어디 갈 거예요? (Where will you go?) — very common question patterns.' }
+				{ type: 'tip', title: 'Soft Opinion', content: 'Korean speakers often use -ㄴ 것 같다 for politeness even when they are sure, to soften the statement.' },
+				{ type: 'caution', title: 'Tense Matters', content: 'For past: -ㄴ 것 같다 (same form for adj). For action verbs in present: -는 것 같다 (different ending, later lesson).' }
 			],
-			relatedPointIds: ['gp_eulgeyo'],
+			relatedPointIds: ['gp_eun_modifier'],
 			lessonExamples: [
 				{
-					id: 'le_eul_geoyeyo_01',
-					fullSentence: '내일 한국어를 공부할 거예요.',
-					sentenceWithBlank: '내일 한국어를 공부할 ___.',
-					answer: '거예요',
-					englishHint: "I'm going to study Korean tomorrow.",
+					id: 'le_geos_gatda_01',
+					fullSentence: '이 음식은 비싼 것 같아요.',
+					sentenceWithBlank: '이 음식은 비싼 것 ___.',
+					answer: '같아요',
+					englishHint: 'This food seems expensive.',
 					order: 0
 				},
 				{
-					id: 'le_eul_geoyeyo_02',
-					fullSentence: '주말에 친구를 만날 거예요.',
-					sentenceWithBlank: '주말에 친구를 만날 ___.',
-					answer: '거예요',
-					englishHint: "I'm going to meet a friend on the weekend.",
+					id: 'le_geos_gatda_02',
+					fullSentence: '오늘은 추운 것 같아요.',
+					sentenceWithBlank: '오늘은 추운 것 ___.',
+					answer: '같아요',
+					englishHint: 'Today seems cold.',
 					order: 1
 				}
 			],
 			cards: [
 				{
-					id: 'cc_eul_geoyeyo_01',
-					fullSentence: '내일 한국어를 공부할 거예요.',
-					sentenceWithBlank: '내일 한국어를 공부할 ___.',
-					answer: '거예요',
+					id: 'cc_geos_gatda_01',
+					fullSentence: '이 가방은 비싼 것 같아요.',
+					sentenceWithBlank: '이 가방은 비싼 것 ___.',
+					answer: '같아요',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)ㄹ 거예요',
-					englishHint: "I'm going to study Korean tomorrow.",
+					vocabBaseForm: '-ㄴ 것 같다',
+					englishHint: 'This bag seems expensive.',
 					introducedAtPosition: 48
 				},
 				{
-					id: 'cc_eul_geoyeyo_02',
-					fullSentence: '오늘 저녁에 뭐 먹을 거예요?',
-					sentenceWithBlank: '오늘 저녁에 뭐 먹을 ___?',
-					answer: '거예요',
+					id: 'cc_geos_gatda_02',
+					fullSentence: '날씨가 좋은 것 같아요.',
+					sentenceWithBlank: '날씨가 좋은 것 ___.',
+					answer: '같아요',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)ㄹ 거예요',
-					englishHint: 'What are you going to eat tonight?',
+					vocabBaseForm: '-ㄴ 것 같다',
+					englishHint: 'The weather seems nice.',
 					introducedAtPosition: 48
 				},
 				{
-					id: 'cc_eul_geoyeyo_03',
-					fullSentence: '내년에 한국에 갈 거예요.',
-					sentenceWithBlank: '내년에 한국에 갈 ___.',
-					answer: '거예요',
+					id: 'cc_geos_gatda_03',
+					fullSentence: '그 사람은 한국 사람인 것 같아요.',
+					sentenceWithBlank: '그 사람은 한국 사람인 것 ___.',
+					answer: '같아요',
 					alternateAnswers: [],
-					vocabBaseForm: '-(으)ㄹ 거예요',
-					englishHint: "I'm going to go to Korea next year.",
+					vocabBaseForm: '-ㄴ 것 같다',
+					englishHint: 'That person seems to be Korean.',
 					introducedAtPosition: 48
 				}
 			]
