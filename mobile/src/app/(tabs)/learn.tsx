@@ -11,6 +11,7 @@ import {
 } from '../../db';
 import { checkAnswers } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
+import { syncNow } from '../../lib/sync';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
 import { colors, commonStyles } from '../../components/theme';
@@ -185,6 +186,8 @@ export default function LearnScreen() {
       setQuizFinished((n) => n + 1);
       if (remaining.length === 0) {
         setPhase('complete');
+        // Session done: back the new cards up to the server (best-effort).
+        void syncNow();
       } else {
         setQuizQueue(remaining);
         resetQuizCard();

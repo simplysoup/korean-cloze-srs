@@ -12,6 +12,7 @@ import {
 } from '../../db';
 import { formatNextReview, ratingForCheck, srsRankLabel, answerExplanation } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
+import { syncNow } from '../../lib/sync';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
 import { colors, commonStyles } from '../../components/theme';
@@ -181,6 +182,8 @@ export default function ReviewScreen() {
       setQueue([]);
       setNextReviewAt(getNextReviewAt());
       setSummary(true);
+      // Session done: back the progress up to the server (best-effort).
+      void syncNow();
     }
   }
 

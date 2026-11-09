@@ -129,7 +129,7 @@ point them at the catalogue. A one-time migration in `initDb`
 (`libraryMigrated`) adds, for every user who already learned points,
 the decks containing those points — existing users keep running.
 
-### Auth (email-code, via the VPS backend — build 8)
+### Auth (email-code, via the VPS backend — build 8; server accounts + sync — build 26)
 
 Sign-in and sign-up are the same form: enter an email, get a 6-digit
 code, enter it, you're in. Codes are issued by the auth backend on the
@@ -143,8 +143,26 @@ Password is optional (add/change in the Account screen); users created
 by email get their username from the email local part. The old
 local-password auth (salted + iterated SHA-256 in `src/lib/auth.ts`)
 is still in the codebase for password logins, but email-code is the
-primary flow. No social login. Accounts and progress live in the
-device SQLite file; the server never sees study data.
+primary flow. No social login.
+
+**Server accounts + sync (build 26, design in
+`docs/planning/sync-server-accounts.md`):** verifying a code or logging
+in with a password now creates the account on the server too and issues
+a 30-day session token (stored in the device DB). The server keeps the
+account (email, username, scrypt password hash) and one sync document
+per user in `~/korean-auth/munpro.db` (SQLite via `node:sqlite`,
+built-in). The app syncs a full snapshot of the user's per-user state
+(review cards, review logs, library decks, streak, settings, daily
+learned counts) — keyed by grammar point / deck / date, never local
+random ids — and merges the server copy into the local DB when the
+server is newer, so a second device (or a fresh install) gets the
+progress back. Sync runs on login and auto-login, after each review and
+learn session, and on demand from Settings ("Sync now", which also
+shows the last synced time). It is best-effort: offline, the app just
+works locally and syncs later. A first login by email code is what
+issues the token — a device that was already logged in before build 26
+has no token until its owner logs in by code once (Settings says so).
+Logging out invalidates the token server-side.
 
 ### Settings (build 12)
 
@@ -270,8 +288,6 @@ exist.
 
 ## Not yet built (next steps, in roughly this order)
 
-- **Sync / cloud backup** — accounts are local-only; data lives only in
-  the device SQLite file. Export/import is not built yet.
 - **Push notifications** — no due-review reminders yet.
 - **Audio / TTS** — no pronunciation audio on examples yet.
 - **Vocabulary** — no vocab SRS track (the old app's menu said “soon” too).

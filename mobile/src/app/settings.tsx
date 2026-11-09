@@ -1,7 +1,8 @@
 import { useCallback, useState } from 'react';
 import { Link, useFocusEffect } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
-import { getUserSettings, updateUserSettings, type UserSettings } from '../db';
+import { getLastSyncedAt, getSessionToken, getUserSettings, updateUserSettings, type UserSettings } from '../db';
+import { syncNow } from '../lib/sync';
 import Stepper from '../components/Stepper';
 import { colors, commonStyles } from '../components/theme';
 
@@ -35,18 +36,46 @@ function ToggleRow({
   );
 }
 
+function syncStatusText(): string {
+  if (!getSessionToken()) return 'Not signed in on the server — log in by email code to enable sync.';
+  const last = getLastSyncedAt();
+  if (!last) return 'Never synced yet. Your progress is only on this device.';
+  return `Last synced ${new Date(last).toLocaleString()}.`;
+}
+
 export default function SettingsScreen() {
   const [settings, setSettings] = useState<UserSettings>(() => getUserSettings());
+  const [syncStatus, setSyncStatus] = useState<string>(() => syncStatusText());
+  const [syncing, setSyncing] = useState(false);
 
   useFocusEffect(
     useCallback(() => {
       setSettings(getUserSettings());
+      setSyncStatus(syncStatusText());
     }, []),
   );
 
   function update(patch: Partial<UserSettings>) {
     updateUserSettings(patch);
     setSettings(getUserSettings());
+  }
+
+  async function doSync() {
+    if (syncing) return;
+    setSyncing(true);
+    setSyncStatus('Syncing…');
+    try {
+      const result = await syncNow();
+      if (result.status === 'offline') {
+        setSyncStatus('Could not reach the server. Your progress is safe on this device and will sync later.');
+      } else if (result.status === 'no-token' || result.status === 'unauthorized') {
+        setSyncStatus('Not signed in on the server — log in by email code to enable sync.');
+      } else {
+        setSyncStatus(syncStatusText());
+      }
+    } finally {
+      setSyncing(false);
+    }
   }
 
   return (
@@ -152,6 +181,23 @@ export default function SettingsScreen() {
         </View>
       </View>
 
+      <Text style={styles.sectionTitle}>Sync & backup</Text>
+      <View style={commonStyles.card}>
+        <View style={styles.row}>
+          <View style={styles.rowText}>
+            <Text style={styles.rowLabel}>Cloud backup</Text>
+            <Text style={commonStyles.muted}>
+              Your reviews, streak, and settings are backed up to the server so they survive a lost device or a new phone. Sync also runs automatically after you log in and after each session.
+            </Text>
+            <Text style={[commonStyles.muted, { marginTop: 6 }]}>{syncStatus}</Text>
+          </View>
+        </View>
+        <View style={styles.divider} />
+        <Pressable onPress={() => void doSync()} disabled={syncing} style={styles.syncButton}>
+          <Text style={styles.syncButtonText}>{syncing ? 'Syncing…' : 'Sync now'}</Text>
+        </Pressable>
+      </View>
+
       <Text style={[commonStyles.muted, { marginTop: 16 }]}>
         Per-deck daily goal and batch size are set on each deck&apos;s page.
       </Text>
@@ -191,6 +237,19 @@ const styles = StyleSheet.create({
   divider: {
     height: 1,
     backgroundColor: colors.border,
+  },
+  syncButton: {
+    marginTop: 12,
+    minHeight: 44,
+    borderRadius: 8,
+    backgroundColor: colors.primary,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  syncButtonText: {
+    fontSize: 15,
+    fontWeight: '700',
+    color: '#fff',
   },
   accountLink: {
     marginTop: 16,

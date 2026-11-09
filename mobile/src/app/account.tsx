@@ -1,8 +1,9 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
-import { getUserById, setUserPassword, userHasPassword } from '../db';
+import { getSessionToken, getUserById, setUserPassword, userHasPassword } from '../db';
 import { validatePasswordSet, verifyPassword } from '../lib/auth';
+import { setServerPassword } from '../lib/api';
 import { useAuth } from '../lib/auth-context';
 import { colors, commonStyles } from '../components/theme';
 
@@ -46,6 +47,16 @@ export default function AccountScreen() {
     setBusy(true);
     try {
       setUserPassword(user.id, password);
+      // Also store it server-side (so the password works from any
+      // device). Best-effort: the local password is set either way.
+      const token = getSessionToken();
+      if (token) {
+        try {
+          await setServerPassword(password, token);
+        } catch {
+          // Ignore — the local password still works on this device.
+        }
+      }
       setHasPassword(true);
       setCurrentPassword('');
       setPassword('');

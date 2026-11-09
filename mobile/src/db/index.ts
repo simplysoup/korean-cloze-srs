@@ -14,6 +14,8 @@ import { checkAnswers, computeFsrsReview, correctAnswersForCard, newFsrsState, s
 import { orderLibraryPoints } from '../lib/library';
 import { calculateLevel } from '../lib/levels';
 import { generateSalt, hashPassword, isLogoutGraceActive, usernameFromEmail } from '../lib/auth';
+import { mergeDailyLearned, mergeStreaks, serverCardWins } from '../lib/sync-merge';
+import type { SyncDocument } from '../lib/sync-types';
 
 export const LOCAL_USER_ID = 'local';
 export const CONTENT_VERSION = 'topik1-level1-v5';
@@ -664,6 +666,7 @@ export function addDeckToLibrary(deckId: string): void {
   database.insert(schema.libraryDecks).values({
     id: `lib_${uid()}_${deckId}`, userId: uid(), deckId, addedAt: new Date().toISOString(),
   }).onConflictDoNothing().run();
+  markSyncDirty();
 }
 
 export function removeDeckFromLibrary(deckId: string): void {
@@ -671,6 +674,7 @@ export function removeDeckFromLibrary(deckId: string): void {
     .delete(schema.libraryDecks)
     .where(and(eq(schema.libraryDecks.userId, uid()), eq(schema.libraryDecks.deckId, deckId)))
     .run();
+  markSyncDirty();
 }
 
 /** The grammar points in the user's library, in dependency order
@@ -836,6 +840,7 @@ export function updateUserSettings(patch: Partial<UserSettings>): void {
     }
   }
   setMeta(settingsKey(), JSON.stringify(next));
+  markSyncDirty();
 }
 
 
@@ -912,7 +917,7 @@ export function getLearnSession(selfStudy = false): LearnSession {
 export function completeLearnSession(grammarPointIds: string[]) {
   const database = getDb();
   const now = new Date();
-  return withTransaction(database, (tx) => {
+  const quizCards = withTransaction(database, (tx) => {
     const quizCards: { id: string; grammarPointId: string; fullSentence: string; sentenceWithBlank: string; answer: string; alternateAnswers: string[]; englishHint: string }[] = [];
     let newlyLearned = 0;
     for (const gpId of grammarPointIds) {
@@ -944,6 +949,8 @@ export function completeLearnSession(grammarPointIds: string[]) {
     addLearnedTodayTx(tx, now.toISOString().slice(0, 10), newlyLearned);
     return quizCards;
   });
+  markSyncDirty();
+  return quizCards;
 }
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -1004,6 +1011,7 @@ export function submitReview(reviewCardId: string, rating: Grade, clozeCardId?: 
     }).run();
     updateStreak(tx, now);
   });
+  markSyncDirty();
   return { nextDue: result.state.due.toISOString(), state: result.state.state };
 }
 
@@ -1473,4 +1481,227 @@ export function markPointKnown(grammarPointId: string): void {
       .onConflictDoNothing()
       .run();
   });
+  markSyncDirty();
+}
+
+// ── Sync (server accounts + backup) ─────────────────────────────────────────
+// See docs/planning/sync-server-accounts.md. The sync document is a full
+// snapshot of this user's per-user state, keyed by stable content-derived
+// identifiers (grammarPointId, deckId, date) — never local random ids,
+// which differ per device (a review card's local id embeds the user id).
+
+const SYNC_DIRTY_KEY = 'syncDirty';
+const SYNC_TOKEN_KEY = 'sessionToken';
+const SYNC_LAST_VERSION_KEY = 'syncLastVersion';
+const SYNC_LAST_SYNCED_AT_KEY = 'syncLastSyncedAt';
+
+/** Set when local per-user state changed since the last successful push.
+ * Set by the writes to synced tables; cleared on a successful push. */
+export function markSyncDirty(): void {
+  // Skip the write when already dirty: a review session calls this once
+  // per card, and each meta write is its own OPFS fsync.
+  if (getMeta(SYNC_DIRTY_KEY) === '1') return;
+  setMeta(SYNC_DIRTY_KEY, '1');
+}
+
+export function isSyncDirty(): boolean {
+  return getMeta(SYNC_DIRTY_KEY) === '1';
+}
+
+export function clearSyncDirty(): void {
+  setMeta(SYNC_DIRTY_KEY, '0');
+}
+
+/** The server session token (Bearer), or null when logged out / never
+ * issued one. Stored in the device DB next to the password hash. */
+export function getSessionToken(): string | null {
+  return getMeta(SYNC_TOKEN_KEY) || null;
+}
+
+export function setSessionToken(token: string): void {
+  setMeta(SYNC_TOKEN_KEY, token);
+}
+
+export function clearSessionToken(): void {
+  setMeta(SYNC_TOKEN_KEY, '');
+}
+
+/** The server sync version this device last synced to (0 = never). */
+export function getLastSyncedVersion(): number {
+  const v = getMeta(SYNC_LAST_VERSION_KEY);
+  return v ? parseInt(v, 10) || 0 : 0;
+}
+
+export function setLastSyncedVersion(v: number): void {
+  setMeta(SYNC_LAST_VERSION_KEY, String(v));
+}
+
+export function getLastSyncedAt(): string | null {
+  return getMeta(SYNC_LAST_SYNCED_AT_KEY);
+}
+
+export function setLastSyncedAt(iso: string): void {
+  setMeta(SYNC_LAST_SYNCED_AT_KEY, iso);
+}
+
+/** Serialize this user's per-user state into a sync document. The
+ * version is 0 here — the server assigns it on push. */
+export function getSyncSnapshot(): SyncDocument {
+  const database = getDb();
+  const user = getUserById(uid());
+  const cards = database.select().from(schema.reviewCards).where(eq(schema.reviewCards.userId, uid())).all();
+  const logs = database.select().from(schema.reviewLogs).where(eq(schema.reviewLogs.userId, uid())).all();
+  const cardGp = new Map(cards.map((c) => [c.id, c.grammarPointId] as const));
+  const libDecks = database.select().from(schema.libraryDecks).where(eq(schema.libraryDecks.userId, uid())).all();
+  const streak = database.select().from(schema.userStreaks).where(eq(schema.userStreaks.userId, uid())).get();
+  const settingsRaw = getMeta(settingsKey());
+  const dailyLearned: Record<string, number> = {};
+  const dailyPrefix = `dailyLearned:${uid()}:`;
+  for (const row of database.select().from(schema.meta).all()) {
+    if (row.key.startsWith(dailyPrefix)) {
+      dailyLearned[row.key.slice(dailyPrefix.length)] = parseInt(row.value, 10) || 0;
+    }
+  }
+  return {
+    version: 0,
+    updatedAt: new Date().toISOString(),
+    user: { username: user?.username ?? 'learner', email: user?.email ?? '' },
+    reviewCards: cards.map((c) => ({
+      grammarPointId: c.grammarPointId, stability: c.stability, difficulty: c.difficulty,
+      reps: c.reps, lapses: c.lapses, state: c.state, due: c.due, lastReview: c.lastReview,
+      streakCorrect: c.streakCorrect, masteredAt: c.masteredAt, peakStability: c.peakStability,
+      lastClozeCardId: c.lastClozeCardId,
+    })),
+    // A log whose review card is gone (should not happen) has no grammar
+    // point to attach to, so it is dropped rather than synced orphaned.
+    reviewLogs: logs
+      .filter((l) => cardGp.has(l.reviewCardId))
+      .map((l) => ({
+        id: l.id, grammarPointId: cardGp.get(l.reviewCardId)!,
+        rating: l.rating, reviewedAt: l.reviewedAt, stability: l.stability,
+        difficulty: l.difficulty, elapsedDays: l.elapsedDays, scheduledDays: l.scheduledDays,
+      })),
+    libraryDecks: libDecks.map((d) => ({ deckId: d.deckId, addedAt: d.addedAt })),
+    streak: streak
+      ? { currentStreak: streak.currentStreak, longestStreak: streak.longestStreak, lastStudiedDate: streak.lastStudiedDate }
+      : null,
+    settings: settingsRaw ? (JSON.parse(settingsRaw) as Record<string, unknown>) : null,
+    dailyLearned,
+  };
+}
+
+/**
+ * Merge a server sync document into the local DB, in one transaction.
+ * Returns true when anything changed (so the caller knows to push the
+ * merged state back). The merge never loses a review: review cards keep
+ * the later lastReview (tie → higher reps), logs and library decks are
+ * unions, streaks take the max, daily counts take the max. Settings are
+ * the one last-write-wins case — the server document is newer than the
+ * last sync by construction, so its blob wins (changing settings on two
+ * devices between syncs loses one device's change; settings are rare and
+ * easily re-changed).
+ */
+export function applySyncSnapshot(doc: SyncDocument): boolean {
+  const database = getDb();
+  let changed = false;
+  withTransaction(database, (tx) => {
+    for (const sc of doc.reviewCards) {
+      const local = tx
+        .select()
+        .from(schema.reviewCards)
+        .where(and(eq(schema.reviewCards.userId, uid()), eq(schema.reviewCards.grammarPointId, sc.grammarPointId)))
+        .get();
+      if (!local) {
+        tx.insert(schema.reviewCards).values({
+          id: `rc_${uid()}_${sc.grammarPointId}`, userId: uid(), grammarPointId: sc.grammarPointId,
+          stability: sc.stability, difficulty: sc.difficulty, reps: sc.reps, lapses: sc.lapses,
+          state: sc.state, due: sc.due, lastReview: sc.lastReview, streakCorrect: sc.streakCorrect,
+          masteredAt: sc.masteredAt, peakStability: sc.peakStability, lastClozeCardId: sc.lastClozeCardId,
+        }).run();
+        changed = true;
+        continue;
+      }
+      // ISO strings compare chronologically; null sorts before any date.
+      if (serverCardWins(local, sc)) {
+        tx.update(schema.reviewCards).set({
+          stability: sc.stability, difficulty: sc.difficulty, reps: sc.reps, lapses: sc.lapses,
+          state: sc.state, due: sc.due, lastReview: sc.lastReview, streakCorrect: sc.streakCorrect,
+          masteredAt: sc.masteredAt, peakStability: sc.peakStability, lastClozeCardId: sc.lastClozeCardId,
+        }).where(eq(schema.reviewCards.id, local.id)).run();
+        changed = true;
+      }
+    }
+    for (const sl of doc.reviewLogs) {
+      const existing = tx.select().from(schema.reviewLogs).where(eq(schema.reviewLogs.id, sl.id)).get();
+      if (existing) continue;
+      tx.insert(schema.reviewLogs).values({
+        id: sl.id, reviewCardId: `rc_${uid()}_${sl.grammarPointId}`, userId: uid(), rating: sl.rating,
+        reviewedAt: sl.reviewedAt, stability: sl.stability, difficulty: sl.difficulty,
+        elapsedDays: sl.elapsedDays, scheduledDays: sl.scheduledDays,
+      }).run();
+      changed = true;
+    }
+    for (const sd of doc.libraryDecks) {
+      const existing = tx
+        .select()
+        .from(schema.libraryDecks)
+        .where(and(eq(schema.libraryDecks.userId, uid()), eq(schema.libraryDecks.deckId, sd.deckId)))
+        .get();
+      if (existing) continue;
+      tx.insert(schema.libraryDecks).values({
+        id: `lib_${uid()}_${sd.deckId}`, userId: uid(), deckId: sd.deckId, addedAt: sd.addedAt,
+      }).run();
+      changed = true;
+    }
+    if (doc.streak) {
+      const local = tx.select().from(schema.userStreaks).where(eq(schema.userStreaks.userId, uid())).get();
+      if (!local) {
+        tx.insert(schema.userStreaks).values({
+          id: newId('streak'), userId: uid(),
+          currentStreak: doc.streak.currentStreak, longestStreak: doc.streak.longestStreak,
+          lastStudiedDate: doc.streak.lastStudiedDate,
+        }).run();
+        changed = true;
+      } else {
+        const merged = mergeStreaks(
+          { currentStreak: local.currentStreak, longestStreak: local.longestStreak, lastStudiedDate: local.lastStudiedDate },
+          doc.streak,
+        );
+        if (
+          merged.currentStreak !== local.currentStreak ||
+          merged.longestStreak !== local.longestStreak ||
+          merged.lastStudiedDate !== local.lastStudiedDate
+        ) {
+          tx.update(schema.userStreaks).set(merged).where(eq(schema.userStreaks.id, local.id)).run();
+          changed = true;
+        }
+      }
+    }
+    if (doc.settings) {
+      const raw = JSON.stringify(doc.settings);
+      // Read and write through the transaction (not getMeta/setMeta,
+      // which use the sync driver outside it).
+      const row = tx.select().from(schema.meta).where(eq(schema.meta.key, settingsKey())).get();
+      if (row?.value !== raw) {
+        tx.insert(schema.meta).values({ key: settingsKey(), value: raw })
+          .onConflictDoUpdate({ target: schema.meta.key, set: { value: raw } }).run();
+        changed = true;
+      }
+    }
+    const localDaily: Record<string, number> = {};
+    for (const date of Object.keys(doc.dailyLearned)) {
+      const key = dailyLearnedKey(date);
+      const row = tx.select().from(schema.meta).where(eq(schema.meta.key, key)).get();
+      localDaily[date] = row ? parseInt(row.value, 10) || 0 : 0;
+    }
+    const mergedDaily = mergeDailyLearned(localDaily, doc.dailyLearned);
+    for (const [date, count] of Object.entries(mergedDaily)) {
+      if (count === localDaily[date]) continue;
+      const key = dailyLearnedKey(date);
+      tx.insert(schema.meta).values({ key, value: String(count) })
+        .onConflictDoUpdate({ target: schema.meta.key, set: { value: String(count) } }).run();
+      changed = true;
+    }
+  });
+  return changed;
 }

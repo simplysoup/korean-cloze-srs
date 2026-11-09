@@ -3,11 +3,13 @@ import { Platform, Pressable, ScrollView, Text, View } from 'react-native';
 import { Stack } from 'expo-router';
 import { openDatabaseAsync, type SQLiteDatabase } from 'expo-sqlite';
 import {
+  clearSessionToken,
   clearSessionUserId,
   deviceMayAutoLogin,
   getDeviceTrust,
   getLastUserId,
   getOrCreateDeviceId,
+  getSessionToken,
   getSessionUserId,
   getSoleUser,
   getUserById,
@@ -19,6 +21,8 @@ import {
   trustDevice,
   LOCAL_USER_ID,
 } from '../db';
+import { logoutServer } from '../lib/api';
+import { syncNow } from '../lib/sync';
 import { AuthContext, type AuthUser } from '../lib/auth-context';
 import AuthScreen from '../components/AuthScreen';
 import AppHeader from '../components/AppHeader';
@@ -146,7 +150,13 @@ export default function RootLayout() {
         deviceIdRef.current = deviceId;
         setDeviceId(deviceId);
         setLastEmail(lastEmail);
-        if (sessionUser) setUser(sessionUser);
+        if (sessionUser) {
+          setUser(sessionUser);
+          // Auto-login restored a session: pull the server state (a new
+          // device gets its progress back) and push anything local.
+          // Best-effort — offline, the app just works locally.
+          void syncNow();
+        }
         setInitDone(true);
       })
       .catch((e) => {
@@ -172,6 +182,9 @@ export default function RootLayout() {
         // for this launch (next launch will ask for a code again).
       }
       setUser(authed);
+      // Fresh login: pull the server state (a new device gets its
+      // progress back) and push anything local. Best-effort.
+      void syncNow();
     },
     [],
   );
@@ -179,6 +192,10 @@ export default function RootLayout() {
   const logout = useCallback(() => {
     try {
       clearSessionUserId();
+      // Invalidate the server session too, so the token cannot be reused.
+      const token = getSessionToken();
+      if (token) void logoutServer(token);
+      clearSessionToken();
       // Stamps the trust row: this device may auto-log the user back in
       // for 30 minutes; past that, the email-code route is required.
       if (user && deviceIdRef.current) markDeviceLogout(user.id, deviceIdRef.current);

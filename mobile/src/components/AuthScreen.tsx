@@ -5,12 +5,21 @@ import {
   createUserByEmail,
   deviceMayAutoLogin,
   getDeviceTrust,
+  getSessionToken,
   getUserByEmail,
   migrateLocalDataToUser,
+  setSessionToken,
   setUserPassword,
   userHasPassword,
   type DbUser,
 } from '../db';
+import {
+  loginPassword,
+  requestCode as requestCodeApi,
+  ServerUnreachable,
+  setServerPassword,
+  verifyCode as verifyCodeApi,
+} from '../lib/api';
 import {
   validateCode,
   validateEmail,
@@ -38,21 +47,6 @@ function toAuthUser(u: DbUser): AuthUser {
 }
 
 const RESEND_COOLDOWN_MS = 60 * 1000;
-
-async function postJson(path: string, body: Record<string, string>): Promise<{ status: number; json: any }> {
-  const res = await fetch(path, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(body),
-  });
-  let json: any = {};
-  try {
-    json = await res.json();
-  } catch {
-    json = {};
-  }
-  return { status: res.status, json };
-}
 
 function requestCodeError(status: number, error: string | undefined): string {
   if (error === 'invalid-email') return 'Enter a valid email address.';
@@ -107,16 +101,16 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
   async function requestCode(targetEmail: string): Promise<boolean> {
     setBusy(true);
     try {
-      const { status, json } = await postJson('/api/auth/request-code', { email: targetEmail });
-      if (status === 200 && json.ok) {
-        setRelayNote(json.delivery === 'relay');
+      const { status, ok, delivery, error } = await requestCodeApi(targetEmail);
+      if (status === 200 && ok) {
+        setRelayNote(delivery === 'relay');
         setResendAt(Date.now() + RESEND_COOLDOWN_MS);
         return true;
       }
-      setFormError(requestCodeError(status, json.error));
+      setFormError(requestCodeError(status, error));
       return false;
-    } catch {
-      setFormError(requestCodeError(0, 'auth-unavailable'));
+    } catch (e) {
+      setFormError(requestCodeError(0, e instanceof ServerUnreachable ? 'auth-unavailable' : undefined));
       return false;
     } finally {
       setBusy(false);
@@ -158,14 +152,17 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
     setFormError(null);
     setBusy(true);
     try {
-      const { status, json } = await postJson('/api/auth/verify-code', {
-        email: email.trim().toLowerCase(),
-        code: code.trim(),
-      });
-      if (status !== 200 || !json.ok) {
-        setFormError(verifyCodeError(status, json.error));
+      const { status, ok, token, error } = await verifyCodeApi(
+        email.trim().toLowerCase(),
+        code.trim(),
+      );
+      if (status !== 200 || !ok) {
+        setFormError(verifyCodeError(status, error));
         return;
       }
+      // The server session token (for sync). Stored before onAuthed, so
+      // the sync that runs on login can use it.
+      if (token) setSessionToken(token);
       const normalized = email.trim().toLowerCase();
       const existing = getUserByEmail(normalized);
       let user: DbUser;
@@ -189,8 +186,8 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
         return;
       }
       onAuthed(authed);
-    } catch {
-      setFormError(verifyCodeError(0, 'auth-unavailable'));
+    } catch (e) {
+      setFormError(verifyCodeError(0, e instanceof ServerUnreachable ? 'auth-unavailable' : undefined));
     } finally {
       setBusy(false);
     }
@@ -208,7 +205,32 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
     setFormError(null);
     setBusy(true);
     try {
-      const user = getUserByEmail(email.trim().toLowerCase());
+      const normalized = email.trim().toLowerCase();
+      // Server first (so a password works from any device). If the
+      // server is unreachable, or the account predates server passwords,
+      // fall back to the local password check.
+      let serverOk = false;
+      try {
+        const { status, ok, token } = await loginPassword(normalized, password);
+        if (status === 200 && ok && token) {
+          setSessionToken(token);
+          serverOk = true;
+        }
+      } catch (e) {
+        if (!(e instanceof ServerUnreachable)) throw e;
+      }
+      if (serverOk) {
+        // Ensure the local account exists (a new device has none yet).
+        let user = getUserByEmail(normalized);
+        if (!user) {
+          user = createUserByEmail(normalized);
+        }
+        // Keep the local password in step so offline login still works.
+        setUserPassword(user.id, password);
+        onAuthed(toAuthUser(user));
+        return;
+      }
+      const user = getUserByEmail(normalized);
       if (!user || !userHasPassword(user) || !verifyPassword(password, user.salt, user.passwordHash)) {
         setFormError('Email or password is incorrect.');
         return;
@@ -230,6 +252,17 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
     setBusy(true);
     try {
       setUserPassword(pendingUser.id, password);
+      // Also store it server-side (so the password works from any
+      // device). Best-effort: the local password is set either way, and
+      // it can be set on the server later from Account.
+      const token = getSessionToken();
+      if (token) {
+        try {
+          await setServerPassword(password, token);
+        } catch {
+          // Ignore — the local password still works on this device.
+        }
+      }
       onAuthed(pendingUser);
     } catch {
       setFormError('Something went wrong. Please try again.');
