@@ -64,7 +64,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "이",
         "englishHint": "It isn't a book.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "아니다",
         "introducedAtPosition": 2
       },
       {
@@ -74,7 +74,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "가",
         "englishHint": "It isn't coffee.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "아니다",
         "introducedAtPosition": 2
       },
       {
@@ -84,7 +84,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "아니에요",
         "englishHint": "It isn't a school.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "아니다",
         "introducedAtPosition": 2
       }
     ]
@@ -152,7 +152,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "쉬세요",
         "englishHint": "Grandmother is resting.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "쉬다",
         "introducedAtPosition": 33
       },
       {
@@ -162,7 +162,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "일하세요",
         "englishHint": "Mother is working.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "일하다",
         "introducedAtPosition": 33
       },
       {
@@ -172,7 +172,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "앉으세요",
         "englishHint": "The teacher is sitting down.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "앉다",
         "introducedAtPosition": 33
       }
     ]
@@ -235,7 +235,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "입니다",
         "englishHint": "I am a doctor.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "이다",
         "introducedAtPosition": 58
       },
       {
@@ -245,7 +245,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "입니까",
         "englishHint": "Is this a book?",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "이다",
         "introducedAtPosition": 58
       },
       {
@@ -255,7 +255,7 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
         "answer": "입니다",
         "englishHint": "This place is a hospital.",
         "alternateAnswers": [],
-        "vocabBaseForm": "",
+        "vocabBaseForm": "이다",
         "introducedAtPosition": 58
       }
     ]
