@@ -1,20 +1,20 @@
 import type { LessonSeed } from '../types';
 
 // Lesson 2 — People, Possession and Existence
-// Grammar points (positions 6–11):
-//   6. ui
-//   7. do
-//   8. ida
-//   9. i_ga
-//   10. isseoyo
-//   11. eopseoyo
+// Grammar points (positions 7–12):
+//   7. ui
+//   8. do
+//   9. ida
+//   10. i_ga
+//   11. isseoyo
+//   12. eopseoyo
 // Examples and cards use only grammar through their target position.
 
 export const lesson02: LessonSeed = {
 	lessonNumber: 2,
 	title: "People, Possession and Existence",
 	grammarPoints: [
-		// 6. gp_ui
+		// 7. gp_ui
 		{
 			id: 'gp_ui',
 			title: '의',
@@ -62,7 +62,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '의',
 					englishHint: 'My name is Sujin.',
-					introducedAtPosition: 6
+					introducedAtPosition: 7
 				},
 				{
 					id: 'cc_ui_02',
@@ -72,7 +72,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '의',
 					englishHint: "This is Korean food.",
-					introducedAtPosition: 6
+					introducedAtPosition: 7
 				},
 				{
 					id: 'cc_ui_03',
@@ -82,12 +82,12 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '의',
 					englishHint: 'Whose bag is this?',
-					introducedAtPosition: 6
+					introducedAtPosition: 7
 				}
 			]
 		},
 
-		// 7. gp_do
+		// 8. gp_do
 		{
 			id: 'gp_do',
 			title: '도',
@@ -135,7 +135,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '도',
 					englishHint: 'I am also a student.',
-					introducedAtPosition: 7
+					introducedAtPosition: 8
 				},
 				{
 					id: 'cc_do_02',
@@ -145,7 +145,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '도',
 					englishHint: "That is also a book.",
-					introducedAtPosition: 7
+					introducedAtPosition: 8
 				},
 				{
 					id: 'cc_do_03',
@@ -155,12 +155,12 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '도',
 					englishHint: "Coffee is also a drink.",
-					introducedAtPosition: 7
+					introducedAtPosition: 8
 				}
 			]
 		},
 
-		// 8. gp_ida
+		// 9. gp_ida
 		{
 			id: 'gp_ida',
 			title: '이다',
@@ -207,7 +207,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
 					englishHint: 'He is a student.',
-					introducedAtPosition: 8
+					introducedAtPosition: 9
 				},
 				{
 					id: 'cc_ida_02',
@@ -217,7 +217,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
 					englishHint: 'She is a teacher.',
-					introducedAtPosition: 8
+					introducedAtPosition: 9
 				},
 				{
 					id: 'cc_ida_03',
@@ -227,12 +227,12 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
 					englishHint: 'It is an apple.',
-					introducedAtPosition: 8
+					introducedAtPosition: 9
 				}
 			]
 		},
 
-		// 9. gp_i_ga
+		// 10. gp_i_ga
 		{
 			id: 'gp_i_ga',
 			title: '이/가',
@@ -280,7 +280,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
 					englishHint: "The name is Minsu.",
-					introducedAtPosition: 9
+					introducedAtPosition: 10
 				},
 				{
 					id: 'cc_i_ga_02',
@@ -290,7 +290,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
 					englishHint: "This is water.",
-					introducedAtPosition: 9
+					introducedAtPosition: 10
 				},
 				{
 					id: 'cc_i_ga_03',
@@ -300,7 +300,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
 					englishHint: "That over there is a cat.",
-					introducedAtPosition: 9
+					introducedAtPosition: 10
 				},
 				{
 					id: 'cc_i_ga_04',
@@ -310,12 +310,12 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이/가',
 					englishHint: "That person is a doctor.",
-					introducedAtPosition: 9
+					introducedAtPosition: 10
 				}
 			]
 		},
 
-		// 10. gp_isseoyo
+		// 11. gp_isseoyo
 		{
 			id: 'gp_isseoyo',
 			title: '있다/있어요',
@@ -362,7 +362,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '있다',
 					englishHint: 'There is a cat.',
-					introducedAtPosition: 10
+					introducedAtPosition: 11
 				},
 				{
 					id: 'cc_isseoyo_02',
@@ -372,7 +372,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '있다',
 					englishHint: 'I have time.',
-					introducedAtPosition: 10
+					introducedAtPosition: 11
 				},
 				{
 					id: 'cc_isseoyo_03',
@@ -382,12 +382,12 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '있다',
 					englishHint: "There is a book.",
-					introducedAtPosition: 10
+					introducedAtPosition: 11
 				}
 			]
 		},
 
-		// 11. gp_eopseoyo
+		// 12. gp_eopseoyo
 		{
 			id: 'gp_eopseoyo',
 			title: '없다/없어요',
@@ -433,7 +433,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '없다',
 					englishHint: "I don't have time.",
-					introducedAtPosition: 11
+					introducedAtPosition: 12
 				},
 				{
 					id: 'cc_eopseoyo_02',
@@ -443,7 +443,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '없다',
 					englishHint: "I don't have money.",
-					introducedAtPosition: 11
+					introducedAtPosition: 12
 				},
 				{
 					id: 'cc_eopseoyo_03',
@@ -453,7 +453,7 @@ export const lesson02: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '없다',
 					englishHint: "There is no chair.",
-					introducedAtPosition: 11
+					introducedAtPosition: 12
 				}
 			]
 		}

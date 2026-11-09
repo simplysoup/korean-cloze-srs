@@ -1,17 +1,17 @@
 import type { LessonSeed } from '../types';
 
 // Lesson 11 — Reactions, Confirmation and Uncertainty
-// Grammar points (positions 46–48):
-//   46. neyo
-//   47. jiyo
-//   48. n_geos_gatda
+// Grammar points (positions 48–50):
+//   48. neyo
+//   49. jiyo
+//   50. n_geos_gatda
 // Examples and cards use only grammar through their target position.
 
 export const lesson11: LessonSeed = {
 	lessonNumber: 11,
 	title: "Reactions, Confirmation and Uncertainty",
 	grammarPoints: [
-		// 46. gp_neyo
+		// 48. gp_neyo
 		{
 			id: 'gp_neyo',
 			title: '-네요',
@@ -59,7 +59,7 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '좋다',
 					englishHint: 'Oh, the weather is nice!',
-					introducedAtPosition: 46
+					introducedAtPosition: 48
 				},
 				{
 					id: 'cc_neyo_02',
@@ -69,7 +69,7 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '맛있다',
 					englishHint: 'Oh, this food is delicious!',
-					introducedAtPosition: 46
+					introducedAtPosition: 48
 				},
 				{
 					id: 'cc_neyo_03',
@@ -79,12 +79,12 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '잘하다',
 					englishHint: "Oh, you're good at Korean!",
-					introducedAtPosition: 46
+					introducedAtPosition: 48
 				}
 			]
 		},
 
-		// 47. gp_jiyo
+		// 49. gp_jiyo
 		{
 			id: 'gp_jiyo',
 			title: '-지요/죠',
@@ -132,7 +132,7 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: ['죠'],
 					vocabBaseForm: '재미있다',
 					englishHint: 'Korean is fun, right?',
-					introducedAtPosition: 47
+					introducedAtPosition: 49
 				},
 				{
 					id: 'cc_jiyo_02',
@@ -142,7 +142,7 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: ['지요'],
 					vocabBaseForm: '맛있다',
 					englishHint: "It's delicious, right?",
-					introducedAtPosition: 47
+					introducedAtPosition: 49
 				},
 				{
 					id: 'cc_jiyo_03',
@@ -152,12 +152,12 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: ['지요'],
 					vocabBaseForm: '재미있다',
 					englishHint: 'This movie is fun, right?',
-					introducedAtPosition: 47
+					introducedAtPosition: 49
 				}
 			]
 		},
 
-		// 48. gp_n_geos_gatda
+		// 50. gp_n_geos_gatda
 		{
 			id: 'gp_n_geos_gatda',
 			title: '-ㄴ 것 같다',
@@ -204,7 +204,7 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-ㄴ 것 같다',
 					englishHint: 'This bag seems expensive.',
-					introducedAtPosition: 48
+					introducedAtPosition: 50
 				},
 				{
 					id: 'cc_geos_gatda_02',
@@ -214,7 +214,7 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-ㄴ 것 같다',
 					englishHint: 'The weather seems nice.',
-					introducedAtPosition: 48
+					introducedAtPosition: 50
 				},
 				{
 					id: 'cc_geos_gatda_03',
@@ -224,7 +224,7 @@ export const lesson11: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-ㄴ 것 같다',
 					englishHint: 'That person seems to be Korean.',
-					introducedAtPosition: 48
+					introducedAtPosition: 50
 				}
 			]
 		}

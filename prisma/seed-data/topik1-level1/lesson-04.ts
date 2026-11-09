@@ -1,20 +1,20 @@
 import type { LessonSeed } from '../types';
 
 // Lesson 4 — Places, Movement and Position
-// Grammar points (positions 17–22):
-//   17. yeogi
-//   18. geogi
-//   19. jeogi
-//   20. e_loc
-//   21. eseo
-//   22. position
+// Grammar points (positions 18–23):
+//   18. yeogi
+//   19. geogi
+//   20. jeogi
+//   21. e_loc
+//   22. eseo
+//   23. position
 // Examples and cards use only grammar through their target position.
 
 export const lesson04: LessonSeed = {
 	lessonNumber: 4,
 	title: "Places, Movement and Position",
 	grammarPoints: [
-		// 17. gp_yeogi
+		// 18. gp_yeogi
 		{
 			id: 'gp_yeogi',
 			title: '여기',
@@ -60,7 +60,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '여기',
 					englishHint: 'Here is a school.',
-					introducedAtPosition: 17
+					introducedAtPosition: 18
 				},
 				{
 					id: 'cc_yeogi_02',
@@ -70,7 +70,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '여기',
 					englishHint: "I sit here.",
-					introducedAtPosition: 17
+					introducedAtPosition: 18
 				},
 				{
 					id: 'cc_yeogi_03',
@@ -80,12 +80,12 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '여기',
 					englishHint: 'Here is good.',
-					introducedAtPosition: 17
+					introducedAtPosition: 18
 				}
 			]
 		},
 
-		// 18. gp_geogi
+		// 19. gp_geogi
 		{
 			id: 'gp_geogi',
 			title: '거기',
@@ -129,7 +129,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '거기',
 					englishHint: "Is that place a school?",
-					introducedAtPosition: 18
+					introducedAtPosition: 19
 				},
 				{
 					id: 'cc_geogi_02',
@@ -139,7 +139,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '거기',
 					englishHint: "That place is nice too.",
-					introducedAtPosition: 18
+					introducedAtPosition: 19
 				},
 				{
 					id: 'cc_geogi_03',
@@ -149,12 +149,12 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '거기',
 					englishHint: "That place is a café.",
-					introducedAtPosition: 18
+					introducedAtPosition: 19
 				}
 			]
 		},
 
-		// 19. gp_jeogi
+		// 20. gp_jeogi
 		{
 			id: 'gp_jeogi',
 			title: '저기',
@@ -198,7 +198,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '저기',
 					englishHint: 'Over there is a park.',
-					introducedAtPosition: 19
+					introducedAtPosition: 20
 				},
 				{
 					id: 'cc_jeogi_02',
@@ -208,7 +208,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '저기',
 					englishHint: 'Over there is the school.',
-					introducedAtPosition: 19
+					introducedAtPosition: 20
 				},
 				{
 					id: 'cc_jeogi_03',
@@ -218,12 +218,12 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '저기',
 					englishHint: "That place over there is also a restaurant.",
-					introducedAtPosition: 19
+					introducedAtPosition: 20
 				}
 			]
 		},
 
-		// 20. gp_e_loc
+		// 21. gp_e_loc
 		{
 			id: 'gp_e_loc',
 			title: '에 (장소)',
@@ -270,7 +270,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: ['로'],
 					vocabBaseForm: '에',
 					englishHint: 'I go to school.',
-					introducedAtPosition: 20
+					introducedAtPosition: 21
 				},
 				{
 					id: 'cc_e_loc_02',
@@ -280,7 +280,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '에',
 					englishHint: "I come home.",
-					introducedAtPosition: 20
+					introducedAtPosition: 21
 				},
 				{
 					id: 'cc_e_loc_03',
@@ -290,12 +290,12 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: ['로'],
 					vocabBaseForm: '에',
 					englishHint: 'I go to work.',
-					introducedAtPosition: 20
+					introducedAtPosition: 21
 				}
 			]
 		},
 
-		// 21. gp_eseo
+		// 22. gp_eseo
 		{
 			id: 'gp_eseo',
 			title: '에서',
@@ -340,7 +340,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '에서',
 					englishHint: 'I study at the library.',
-					introducedAtPosition: 21
+					introducedAtPosition: 22
 				},
 				{
 					id: 'cc_eseo_02',
@@ -350,7 +350,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '에서',
 					englishHint: 'I drink coffee at the café.',
-					introducedAtPosition: 21
+					introducedAtPosition: 22
 				},
 				{
 					id: 'cc_eseo_03',
@@ -360,12 +360,12 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '에서',
 					englishHint: 'I work at the office.',
-					introducedAtPosition: 21
+					introducedAtPosition: 22
 				}
 			]
 		},
 
-		// 22. gp_position
+		// 23. gp_position
 		{
 			id: 'gp_position',
 			title: '위/아래/앞/뒤/옆',
@@ -411,7 +411,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '위/아래/앞/뒤/옆',
 					englishHint: 'The book is on the desk.',
-					introducedAtPosition: 22
+					introducedAtPosition: 23
 				},
 				{
 					id: 'cc_position_02',
@@ -421,7 +421,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: ['밑'],
 					vocabBaseForm: '위/아래/앞/뒤/옆',
 					englishHint: 'The cat is under the chair.',
-					introducedAtPosition: 22
+					introducedAtPosition: 23
 				},
 				{
 					id: 'cc_position_03',
@@ -431,7 +431,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '위/아래/앞/뒤/옆',
 					englishHint: 'There is a store in front of the school.',
-					introducedAtPosition: 22
+					introducedAtPosition: 23
 				},
 				{
 					id: 'cc_position_04',
@@ -441,7 +441,7 @@ export const lesson04: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '위/아래/앞/뒤/옆',
 					englishHint: 'There is a café next to the bank.',
-					introducedAtPosition: 22
+					introducedAtPosition: 23
 				}
 			]
 		}
