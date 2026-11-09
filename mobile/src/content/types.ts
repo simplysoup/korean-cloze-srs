@@ -1,5 +1,6 @@
 // Content types — mirrors prisma/seed-data/types.ts in the old app.
-// The JSON in topik1-level1.json is the verbatim port of that seed data.
+// The JSON in topik1-level1.json / topik1-level2.json is the verbatim
+// port of that seed data (see scripts/port-content.ts).
 export interface ClozeCardSeed {
   id: string;
   fullSentence: string;

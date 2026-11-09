@@ -1,29 +1,34 @@
 /**
- * Port the TOPIK I Level 1 seed content from the old SvelteKit app
- * (prisma/seed-data/topik1-level1/) into the Expo app as JSON.
+ * Port the TOPIK I seed content (prisma/seed-data/topik1-level1/ and
+ * topik1-level2/) into the Expo app as JSON.
  *
- * PROVISIONAL CONTENT — see mobile/README.md. The sentences below were
- * authored by Nicholas with basic Korean and will likely be regenerated
- * later by a high-performing English–Korean multimodal model. This script
- * copies them VERBATIM; it does not edit, improve, or generate any
- * Korean (or English) content.
+ * Level 1 was authored by Nicholas with basic Korean, then audited and
+ * reorganised into a learner-first curriculum on 2026-11-09 (see
+ * docs/planning/korean-curriculum-overhaul-2026-11-09.md). Level 2 was
+ * authored fresh in the same overhaul. This script copies the seed data
+ * VERBATIM; it does not edit, improve, or generate any Korean (or
+ * English) content.
  *
  * Run:  bun scripts/port-content.ts
  * Output: mobile/src/content/topik1-level1.json
+ *         mobile/src/content/topik1-level2.json
  */
-import { allLessons } from '../prisma/seed-data/topik1-level1';
+import { allLessons as level1Lessons } from '../prisma/seed-data/topik1-level1';
 import { level1Additions } from '../prisma/seed-data/topik1-level1/additions';
+import { allLessons as level2Lessons } from '../prisma/seed-data/topik1-level2';
 import { writeFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import type { LessonSeed } from '../prisma/seed-data/types';
 
-const outPath = join(dirname(fileURLToPath(import.meta.url)), '..', 'mobile', 'src', 'content', 'topik1-level1.json');
+const contentDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'mobile', 'src', 'content');
 
 // Merge the Codex Level 1 additions (worked examples + variant practice
 // cards, ported from the old app's patch) into each grammar point. The
 // SvelteKit allLessons are left untouched — the merge happens here, at
-// the Expo port boundary.
-const lessons = allLessons.map((lesson) => ({
+// the Expo port boundary. Level 2 has no additions file; all of its
+// cards and examples live in the lesson files directly.
+const level1 = level1Lessons.map((lesson) => ({
 	...lesson,
 	grammarPoints: lesson.grammarPoints.map((gp) => {
 		const added = level1Additions[gp.id];
@@ -36,21 +41,35 @@ const lessons = allLessons.map((lesson) => ({
 	})
 }));
 
-const data = {
-	provenance:
-		'PROVISIONAL — copied verbatim from prisma/seed-data/topik1-level1/ (old SvelteKit app, last commit 2026-02-28), plus the Level 1 additions in prisma/seed-data/topik1-level1/additions.ts (worked examples + variant practice cards, from the Codex "Make Level 1 lessons and reviews reliable" patch, 2026-11-08). Authored by Nicholas with basic Korean; to be regenerated later by a high-performing English-Korean multimodal model. Do not treat as vetted teaching content.',
-	source: 'prisma/seed-data/topik1-level1/lesson-01.ts … lesson-11.ts + additions.ts',
-	deck: { id: 'deck_topik1_level1', title: 'TOPIK I Level 1', slug: 'topik1-level1', topikLevel: 'topik1-1', level: 1 },
-	lessons
-};
+function portLevel(
+	lessons: LessonSeed[],
+	deck: { id: string; title: string; slug: string; topikLevel: string; level: number },
+	provenance: string,
+	source: string,
+	outFile: string,
+) {
+	const data = { provenance, source, deck, lessons };
+	const outPath = join(contentDir, outFile);
+	writeFileSync(outPath, JSON.stringify(data, null, 2) + '\n');
+	const gps = lessons.flatMap((l) => l.grammarPoints);
+	const cards = gps.flatMap((g) => g.cards);
+	const examples = gps.flatMap((g) => g.lessonExamples);
+	console.log(`${outFile}: ${lessons.length} lessons, ${gps.length} grammar points, ${cards.length} cloze cards, ${examples.length} lesson examples`);
+	console.log(`  wrote ${outPath}`);
+}
 
-writeFileSync(outPath, JSON.stringify(data, null, 2) + '\n');
+portLevel(
+	level1,
+	{ id: 'deck_topik1_level1', title: 'TOPIK I Level 1', slug: 'topik1-level1', topikLevel: 'topik1-1', level: 1 },
+	'Level 1 was authored by Nicholas with basic Korean, then audited and reorganised into a learner-first curriculum on 2026-11-09 (41 sentence corrections, 12 translation-only fixes, invalid alternate answers removed, grammar points reordered so polite verb conjugation precedes object-particle production). See docs/planning/korean-curriculum-overhaul-2026-11-09.md. Plus the Level 1 additions in prisma/seed-data/topik1-level1/additions.ts (worked examples + variant practice cards, from the Codex "Make Level 1 lessons and reviews reliable" patch, 2026-11-08). Not independently reviewed by a Korean educator; treat as a curated draft, not vetted teaching content.',
+	'prisma/seed-data/topik1-level1/lesson-01.ts … lesson-11.ts + additions.ts',
+	'topik1-level1.json',
+);
 
-const gps = lessons.flatMap((l) => l.grammarPoints);
-const cards = gps.flatMap((g) => g.cards);
-const examples = gps.flatMap((g) => g.lessonExamples);
-console.log(`lessons: ${lessons.length}`);
-console.log(`grammarPoints: ${gps.length}`);
-console.log(`clozeCards: ${cards.length}`);
-console.log(`lessonExamples: ${examples.length}`);
-console.log(`wrote ${outPath}`);
+portLevel(
+	level2Lessons,
+	{ id: 'deck_topik1_level2', title: 'TOPIK I Level 2', slug: 'topik-level-2', topikLevel: 'topik1-2', level: 2 },
+	'Level 2 was authored fresh in the learner-first curriculum overhaul on 2026-11-09 (see docs/planning/korean-curriculum-overhaul-2026-11-09.md). Lesson 22 (reported speech) is labelled an optional bridge — it sits near or beyond the usual TOPIK I beginner boundary. -(으)ㄹ지라도 and written nominalization -(으)ㅁ were deliberately omitted as higher-level material. Not independently reviewed by a Korean educator; treat as a curated draft, not vetted teaching content.',
+	'prisma/seed-data/topik1-level2/lesson-12.ts … lesson-22.ts',
+	'topik1-level2.json',
+);

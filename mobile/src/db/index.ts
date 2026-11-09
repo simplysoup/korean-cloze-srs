@@ -8,8 +8,9 @@ import { openDatabaseSync } from 'expo-sqlite';
 import { drizzle, type ExpoSQLiteDatabase } from 'drizzle-orm/expo-sqlite';
 import { and, asc, eq, lte, sql } from 'drizzle-orm';
 import * as schema from './schema';
-import contentBundle from '../content/topik1-level1.json';
-import { flattenContent, type ContentBundle } from '../content/types';
+import contentBundleLevel1 from '../content/topik1-level1.json';
+import contentBundleLevel2 from '../content/topik1-level2.json';
+import { flattenContent, type ContentBundle, type GrammarPointSeed } from '../content/types';
 import { checkAnswers, computeFsrsReview, correctAnswersForCard, newFsrsState, stageForCard, type Grade } from '../lib/srs';
 import { orderLibraryPoints } from '../lib/library';
 import { calculateLevel } from '../lib/levels';
@@ -18,7 +19,7 @@ import { mergeDailyLearned, mergeStreaks, serverCardWins } from '../lib/sync-mer
 import type { SyncDocument } from '../lib/sync-types';
 
 export const LOCAL_USER_ID = 'local';
-export const CONTENT_VERSION = 'topik1-level1-v5';
+export const CONTENT_VERSION = 'topik1-v6';
 
 /** The id of the currently logged-in user; all queries below are scoped to
  * it. Defaults to 'local' until the auth layer sets the real account. */
@@ -71,7 +72,41 @@ CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, username TEXT NOT NULL, e
 CREATE TABLE IF NOT EXISTS device_trust (user_id TEXT NOT NULL, device_id TEXT NOT NULL, last_verified_at TEXT NOT NULL, last_logout_at TEXT, UNIQUE(user_id, device_id));
 `;
 
-/** Create tables and seed the provisional TOPIK I Level 1 content (verbatim port). Idempotent. */
+/** Every content bundle in curriculum order (Level 1, then Level 2). */
+const CONTENT_BUNDLES: ContentBundle[] = [
+  contentBundleLevel1 as unknown as ContentBundle,
+  contentBundleLevel2 as unknown as ContentBundle,
+];
+
+/**
+ * Every grammar point in every content bundle, in curriculum order, with
+ * its global 1-based position (Level 1: 1-48, Level 2: 49-99) and its
+ * position within its own bundle (for per-deck ordering). Review progress
+ * is keyed by grammar point id, not by position, so reordering positions
+ * (as the 2026-11-09 learner-first overhaul did) never loses progress —
+ * the re-seed just updates the stored position/lesson on each point.
+ */
+function allContentGrammarPoints(): {
+  gp: GrammarPointSeed; lessonNumber: number; lessonTitle: string;
+  position: number; bundlePosition: number; bundle: ContentBundle;
+}[] {
+  const out: {
+    gp: GrammarPointSeed; lessonNumber: number; lessonTitle: string;
+    position: number; bundlePosition: number; bundle: ContentBundle;
+  }[] = [];
+  let position = 0;
+  for (const bundle of CONTENT_BUNDLES) {
+    let bundlePosition = 0;
+    for (const { gp, lessonNumber, lessonTitle } of flattenContent(bundle).grammarPoints) {
+      position += 1;
+      bundlePosition += 1;
+      out.push({ gp, lessonNumber, lessonTitle, position, bundlePosition, bundle });
+    }
+  }
+  return out;
+}
+
+/** Create tables and seed the TOPIK I Level 1 + Level 2 content. Idempotent. */
 export function initDb(): Db {
   const database = getDb();
   // execSync lives on the raw expo-sqlite handle, not on the Drizzle wrapper.
@@ -92,44 +127,46 @@ export function initDb(): Db {
     .get();
   if (version?.value === CONTENT_VERSION) return database;
 
-  const bundle = contentBundle as unknown as ContentBundle;
-  const { grammarPoints } = flattenContent(bundle);
+  const grammarPoints = allContentGrammarPoints();
   const nowIso = new Date().toISOString();
 
-  // The Level 1 deck row is upserted (not insert-if-absent) so a
-  // corrected title reaches devices that already seeded an earlier
-  // version — the old title "TOPIK I Level 1 Grammar" had a stray
-  // "Grammar" no other deck has. Same pattern as the grammar points
-  // below; the version bump at the top of this function is what runs it.
-  database.insert(schema.decks).values({
-    id: bundle.deck.id,
-    title: bundle.deck.title,
-    slug: bundle.deck.slug,
-    description: 'TOPIK I Level 1 grammar — provisional content, see mobile/README.md.',
-    level: bundle.deck.level,
-    topikLevel: bundle.deck.topikLevel,
-    sortOrder: 0,
-  }).onConflictDoUpdate({
-    target: schema.decks.id,
-    set: {
+  // Each content deck row is upserted (not insert-if-absent) so a
+  // corrected title/description reaches devices that already seeded an
+  // earlier version. sortOrder is the bundle's index in CONTENT_BUNDLES
+  // (Level 1: 0, Level 2: 1), matching the catalogue order.
+  const deckDescriptions: Record<string, string> = {
+    deck_topik1_level1: 'TOPIK I Level 1 grammar — audited and reorganised into a learner-first curriculum 2026-11-09.',
+    deck_topik1_level2: 'TOPIK I Level 2 grammar. Lesson 22 (reported speech) is an optional bridge.',
+  };
+  CONTENT_BUNDLES.forEach((bundle, index) => {
+    database.insert(schema.decks).values({
+      id: bundle.deck.id,
       title: bundle.deck.title,
       slug: bundle.deck.slug,
-      description: 'TOPIK I Level 1 grammar — provisional content, see mobile/README.md.',
+      description: deckDescriptions[bundle.deck.id] ?? '',
       level: bundle.deck.level,
       topikLevel: bundle.deck.topikLevel,
-      sortOrder: 0,
-    },
-  }).run();
+      sortOrder: index,
+    }).onConflictDoUpdate({
+      target: schema.decks.id,
+      set: {
+        title: bundle.deck.title,
+        slug: bundle.deck.slug,
+        description: deckDescriptions[bundle.deck.id] ?? '',
+        level: bundle.deck.level,
+        topikLevel: bundle.deck.topikLevel,
+        sortOrder: index,
+      },
+    }).run();
+  });
 
-  // The deck catalogue: every TOPIK level is its own deck, plus a
-  // Non-TOPIK deck. Only Level 1 has content so far; the rest are
-  // catalogue entries (no grammar points yet) so the Decks page and the
-  // library can list them as coming soon.
+  // The deck catalogue: the TOPIK levels without content yet, plus a
+  // Non-TOPIK deck. These are catalogue entries (no grammar points yet)
+  // so the Decks page and the library can list them as coming soon.
   const catalogue: {
     id: string; title: string; slug: string; description: string;
     level: number; topikLevel: string; sortOrder: number;
   }[] = [
-    { id: 'deck_topik1_level2', title: 'TOPIK I Level 2', slug: 'topik-level-2', description: 'TOPIK I Level 2 grammar.', level: 2, topikLevel: 'topik1-2', sortOrder: 1 },
     { id: 'deck_topik2_level3', title: 'TOPIK II Level 3', slug: 'topik-level-3', description: 'TOPIK II Level 3 grammar.', level: 3, topikLevel: 'topik2-3', sortOrder: 2 },
     { id: 'deck_topik2_level4', title: 'TOPIK II Level 4', slug: 'topik-level-4', description: 'TOPIK II Level 4 grammar.', level: 4, topikLevel: 'topik2-4', sortOrder: 3 },
     { id: 'deck_topik2_level5', title: 'TOPIK II Level 5', slug: 'topik-level-5', description: 'TOPIK II Level 5 grammar.', level: 5, topikLevel: 'topik2-5', sortOrder: 4 },
@@ -144,7 +181,13 @@ export function initDb(): Db {
   // text is updated (onConflictDoUpdate), so a content correction reaches
   // devices that already seeded an earlier version. Review progress lives
   // in review_cards / review_logs, which this never touches.
-  for (const { gp, lessonNumber, position } of grammarPoints) {
+  //
+  // The deck_grammar_points row is also upserted (not insert-if-absent):
+  // its lessonNumber and sortOrder are read by the dashboard per-level
+  // progress and the Cram lesson rows, so a curriculum reorder (as in
+  // the 2026-11-09 learner-first overhaul, which moved Level 1 points
+  // between lessons) must update them on existing devices.
+  for (const { gp, lessonNumber, position, bundlePosition, bundle } of grammarPoints) {
     const gpRow = {
       title: gp.title, category: gp.category, tense: gp.tense, register: gp.register,
       hint: gp.hint, description: gp.description, level: gp.level,
@@ -159,8 +202,11 @@ export function initDb(): Db {
     database.insert(schema.deckGrammarPoints).values({
       id: `dgp_${bundle.deck.id}_${gp.id}`,
       deckId: bundle.deck.id, grammarPointId: gp.id,
-      sortOrder: position - 1, lessonNumber,
-    }).onConflictDoNothing().run();
+      sortOrder: bundlePosition - 1, lessonNumber,
+    }).onConflictDoUpdate({
+      target: schema.deckGrammarPoints.id,
+      set: { sortOrder: bundlePosition - 1, lessonNumber },
+    }).run();
 
     for (const card of gp.cards) {
       const cardRow = {
@@ -423,9 +469,8 @@ export function getDashboardStats(): DashboardStats {
   // decks table, not the content bundle) — a new level is just a new deck
   // row with its grammar points.
   const learnedIds = new Set(allCards.map((c) => c.grammarPointId));
-  const bundle = contentBundle as unknown as ContentBundle;
   const lessonTitles = new Map<string, string>();
-  for (const { gp, lessonTitle } of flattenContent(bundle).grammarPoints) {
+  for (const { gp, lessonTitle } of allContentGrammarPoints()) {
     lessonTitles.set(gp.id, lessonTitle);
   }
   const decks = database.select().from(schema.decks).orderBy(asc(schema.decks.sortOrder)).all();
@@ -483,8 +528,7 @@ export function getDashboardStats(): DashboardStats {
 
 export function getGrammarList(): GrammarListItem[] {
   const database = getDb();
-  const bundle = contentBundle as unknown as ContentBundle;
-  const { grammarPoints } = flattenContent(bundle);
+  const grammarPoints = allContentGrammarPoints();
   const reviewByGp = new Map(
     database.select().from(schema.reviewCards).where(eq(schema.reviewCards.userId, uid())).all()
       .map((rc) => [rc.grammarPointId, rc] as const),
@@ -1117,9 +1161,8 @@ export interface CramLessonRow {
  * itself dedupes by grammar point id. */
 export function getCramLessonRows(): CramLessonRow[] {
   const database = getDb();
-  const bundle = contentBundle as unknown as ContentBundle;
   const lessonTitles = new Map<string, string>();
-  for (const { gp, lessonTitle } of flattenContent(bundle).grammarPoints) {
+  for (const { gp, lessonTitle } of allContentGrammarPoints()) {
     lessonTitles.set(gp.id, lessonTitle);
   }
   const learnedIds = new Set(

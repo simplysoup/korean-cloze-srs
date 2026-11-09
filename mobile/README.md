@@ -258,33 +258,48 @@ The cover links to the deck detail page.
   correctly, then a summary. Completing a session creates the FSRS review
   cards (due immediately).
 
-## Provisional content — read this before using the app to study
+## Content — audited Level 1 + new Level 2 (2026-11-09 overhaul)
 
-**All 48 grammar points, 178 cloze cards, and 109 lesson examples
-(TOPIK I Level 1) are copied VERBATIM from the old app's seed data
-(`prisma/seed-data/topik1-level1/`).** They were authored by Nicholas
-with basic Korean and are marked provisional in the JSON itself
-(`provenance` field) and here. They will likely be regenerated later by
-a high-performing English–Korean multimodal model. No new cards were
-generated in this increment, and no grammar content was invented —
-except the Level 1 additions (build 15): 24 variant practice cards and
-11 worked examples from the Codex "Make Level 1 lessons and reviews
-reliable" patch, merged in `scripts/port-content.ts` from
-`prisma/seed-data/topik1-level1/additions.ts`, plus four content
-corrections from the same patch (좋다 → 좋은 is regular, not
-irregular; -고 싶다 3rd person uses -고 싶어하다; the -아/어서 tense
-absolute softened; the 안 있어요 caution softened; 에/로 accepted as
-an alternate for "학교에 가요" / "회사에 가요"). Content is versioned
-(`CONTENT_VERSION` in `src/db/index.ts`, now `topik1-level1-v4`): on a
-version bump the seed upserts every content row — including the Level 1
-deck title, so a corrected title reaches devices that already seeded an
-earlier version — without touching review progress.
+**TOPIK I Level 1 (11 lessons, 48 grammar points, 178 cloze cards,
+109 lesson examples) was audited and reorganised into a learner-first
+curriculum on 2026-11-09** (41 sentence corrections, 12
+translation-only fixes, invalid alternate answers removed, and the
+grammar points reordered so polite verb conjugation precedes
+object-particle production — the original order had learners producing
+을/를 before they had the verb endings to form natural sentences).
+**TOPIK I Level 2 (11 lessons, 51 grammar points, 153 cloze cards,
+102 lesson examples) was authored fresh in the same overhaul.** Full
+details, including the lesson plans and the known gaps (아니다,
+question words, numbers/counters, honorifics, and giving/receiving
+are not yet in the deck): `docs/planning/korean-curriculum-overhaul-2026-11-09.md`.
 
-Validation (`npm run validate` / the seed Jest test) enforces:
-11 lessons, 48 grammar points, 178 cloze cards, 109 lesson examples;
-every cloze answer appears in its sentence; every grammar point has
-≥ 2 lesson examples; no duplicate ids; all related / extra-target ids
-exist.
+The content is a curated draft, not independently reviewed by a Korean
+educator. Lesson 22 (reported speech) is labelled an optional bridge —
+it sits near or beyond the usual TOPIK I beginner boundary. The
+seed data lives in `prisma/seed-data/topik1-level1/` and
+`topik1-level2/`; `bun scripts/port-content.ts` ports both to JSON
+(`mobile/src/content/topik1-level1.json`,
+`topik1-level2.json`), and the Level 1 additions (build 15: 24 variant
+practice cards and 11 worked examples from the Codex "Make Level 1
+lessons and reviews reliable" patch) are merged at the port boundary
+from `prisma/seed-data/topik1-level1/additions.ts`. Content is
+versioned (`CONTENT_VERSION` in `src/db/index.ts`, now `topik1-v6`):
+on a version bump the seed upserts every content row — including the
+deck titles and the `deck_grammar_points` lesson/sort rows, so a
+curriculum reorder reaches devices that already seeded an earlier
+version — without touching review progress (keyed by grammar point
+id, not by position).
+
+Validation (`npm run validate` / the seed Jest test) enforces, per
+level: Level 1 — 11 lessons, 48 grammar points, 178 cloze cards, 109
+lesson examples; Level 2 — 11 lessons, 51 grammar points, 153 cloze
+cards, 102 lesson examples; every cloze answer appears in its
+sentence; every grammar point has ≥ 2 lesson examples and ≥ 3 cloze
+cards; no duplicate ids across both levels; all related /
+extra-target ids exist; every card's `introducedAtPosition` is in its
+level's range (Level 1: 1-48, Level 2: 49-99) and matches its owning
+point's global position for single-target cards; global positions are
+continuous 1-99.
 
 ## Not yet built (next steps, in roughly this order)
 
@@ -295,7 +310,7 @@ exist.
   ghost-review scheduling).
 - **Close-answer detection** — no Levenshtein ≤ 1 “close” warning yet;
   checks are exact-match only (plus NFC/whitespace normalization).
-- **TOPIK I Level 2 and beyond** — content stops at Level 1 (48 points).
+- **TOPIK II Levels 3-6 and beyond** — content stops at TOPIK I Level 2 (99 points).
 - **Capacitor / App Store release** — no EAS build/submit config yet.
 - **Grammar point "Your Progress" panel, badges** — from the Bunpro
   walkthrough; not built yet.

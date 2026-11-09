@@ -1,22 +1,117 @@
 import type { LessonSeed } from '../types';
 
-// ══════════════════════════════════════════════════════════════════════════════
-// Lesson 6 — Modifiers and Degree
-//
-// Grammar points (positions 31–33):
-//  31. -(으)ㄴ          Adjective modifier (makes adj → noun modifier)
-//  32. 만               Only / just (particle)
-//  33. -ㄴ 것 같다      Seems like / appears to (present state guess)
-//
-// Available: all L1–L5 grammar (pos 1–30).
-// ══════════════════════════════════════════════════════════════════════════════
-
+// Lesson 6 — Talking About the Past and Describing Things
+// Grammar points (positions 28–31):
+//   28. asseoyo
+//   29. eun_modifier
+//   30. man
+//   31. hago
+// Examples and cards use only grammar through their target position.
 
 export const lesson06: LessonSeed = {
 	lessonNumber: 6,
-	title: 'Modifiers and Degree',
+	title: "Talking About the Past and Describing Things",
 	grammarPoints: [
-		// ── 31. -(으)ㄴ — Adjective modifier form ───────────────────────────
+		// 28. gp_asseoyo
+		{
+			id: 'gp_asseoyo',
+			title: '-았어요/-었어요',
+			category: 'verb-ending',
+			tense: 'past',
+			register: 'polite informal',
+			hint: 'past tense (polite)',
+			description:
+				'The polite informal past tense ending. ' +
+				'If the stem\'s last vowel is ㅏ or ㅗ → -았어요; otherwise → -었어요. ' +
+				'하다 verbs → 했어요. 가다 → 갔어요, 먹다 → 먹었어요, 공부하다 → 공부했어요.',
+			level: 1,
+			tags: ['verb-ending', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb stem + 았어요/었어요',
+			notes: [
+				{ type: 'tip', title: 'Vowel Harmony', content: 'Last vowel ㅏ/ㅗ → 았어요. Other vowels → 었어요. 하다 → 했어요 (special).' },
+				{ type: 'tip', title: 'Contraction', content: '가 + 았어요 → 갔어요, 보 + 았어요 → 봤어요, 마시 + 었어요 → 마셨어요. The vowels merge.' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_asseoyo_01',
+					fullSentence: '어제 학교에 갔어요.',
+					sentenceWithBlank: '어제 학교에 ___.',
+					answer: '갔어요',
+					englishHint: 'I went to school yesterday.',
+					order: 0
+				},
+				{
+					id: 'le_asseoyo_02',
+					fullSentence: '저는 밥을 먹었어요.',
+					sentenceWithBlank: '저는 밥을 ___.',
+					answer: '먹었어요',
+					englishHint: 'I ate rice.',
+					order: 1
+				},
+				{
+					id: 'le_asseoyo_03',
+					fullSentence: '어제 한국어를 공부했어요.',
+					sentenceWithBlank: '어제 한국어를 ___.',
+					answer: '공부했어요',
+					englishHint: 'I studied Korean yesterday.',
+					order: 2
+				}
+			],
+			cards: [
+				{
+					id: 'cc_asseoyo_01',
+					fullSentence: '어제 학교에 갔어요.',
+					sentenceWithBlank: '어제 학교에 ___.',
+					answer: '갔어요',
+					alternateAnswers: [],
+					vocabBaseForm: '가다',
+					englishHint: 'I went to school yesterday.',
+					introducedAtPosition: 28
+				},
+				{
+					id: 'cc_asseoyo_02',
+					fullSentence: '저는 밥을 먹었어요.',
+					sentenceWithBlank: '저는 밥을 ___.',
+					answer: '먹었어요',
+					alternateAnswers: [],
+					vocabBaseForm: '먹다',
+					englishHint: 'I ate rice.',
+					introducedAtPosition: 28
+				},
+				{
+					id: 'cc_asseoyo_03',
+					fullSentence: '어제 영화를 봤어요.',
+					sentenceWithBlank: '어제 영화를 ___.',
+					answer: '봤어요',
+					alternateAnswers: [],
+					vocabBaseForm: '보다',
+					englishHint: 'I watched a movie yesterday.',
+					introducedAtPosition: 28
+				},
+				{
+					id: 'cc_asseoyo_04',
+					fullSentence: '커피를 마셨어요.',
+					sentenceWithBlank: '커피를 ___.',
+					answer: '마셨어요',
+					alternateAnswers: [],
+					vocabBaseForm: '마시다',
+					englishHint: 'I drank coffee.',
+					introducedAtPosition: 28
+				},
+				{
+					id: 'cc_asseoyo_05',
+					fullSentence: '숙제를 했어요.',
+					sentenceWithBlank: '숙제를 ___.',
+					answer: '했어요',
+					alternateAnswers: [],
+					vocabBaseForm: '하다',
+					englishHint: 'I did (my) homework.',
+					introducedAtPosition: 28
+				}
+			]
+		},
+
+		// 29. gp_eun_modifier
 		{
 			id: 'gp_eun_modifier',
 			title: '-(으)ㄴ',
@@ -62,7 +157,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '크다',
 					englishHint: 'I bought a big bag.',
-					introducedAtPosition: 31
+					introducedAtPosition: 29
 				},
 				{
 					id: 'cc_eun_mod_02',
@@ -72,7 +167,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '작다',
 					englishHint: 'I live in a small house.',
-					introducedAtPosition: 31
+					introducedAtPosition: 29
 				},
 				{
 					id: 'cc_eun_mod_03',
@@ -82,7 +177,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '좋다',
 					englishHint: 'I ate good food.',
-					introducedAtPosition: 31
+					introducedAtPosition: 29
 				},
 				{
 					id: 'cc_eun_mod_04',
@@ -92,12 +187,12 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '비싸다',
 					englishHint: "I don't buy expensive clothes.",
-					introducedAtPosition: 31
+					introducedAtPosition: 29
 				}
 			]
 		},
 
-		// ── 32. 만 — Only / just ────────────────────────────────────────────
+		// 30. gp_man
 		{
 			id: 'gp_man',
 			title: '만',
@@ -142,7 +237,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '만',
 					englishHint: 'I drink only water.',
-					introducedAtPosition: 32
+					introducedAtPosition: 30
 				},
 				{
 					id: 'cc_man_02',
@@ -152,7 +247,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '만',
 					englishHint: 'Please give me just one.',
-					introducedAtPosition: 32
+					introducedAtPosition: 30
 				},
 				{
 					id: 'cc_man_03',
@@ -162,79 +257,80 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '만',
 					englishHint: 'I rest only on weekends.',
-					introducedAtPosition: 32
+					introducedAtPosition: 30
 				}
 			]
 		},
 
-		// ── 33. -ㄴ 것 같다 — Seems like / appears to ──────────────────────
+		// 31. gp_hago
 		{
-			id: 'gp_n_geos_gatda',
-			title: '-ㄴ 것 같다',
-			category: 'expression',
-			tense: 'present',
-			register: 'polite informal',
-			hint: 'seems like, I think (present observation)',
+			id: 'gp_hago',
+			title: '하고',
+			category: 'particle',
+			tense: null,
+			register: null,
+			hint: 'and, with (connecting nouns)',
 			description:
-				'Expresses a guess or soft opinion about a present state. ' +
-				'Descriptive verb stem + (으)ㄴ 것 같다: 비싼 것 같아요 "It seems expensive." ' +
-				'For nouns: Noun + 인 것 같아요 "It seems to be [noun]."',
+				'Connects two nouns meaning "and" or "with." ' +
+				'Used in everyday speech after any noun regardless of ending. ' +
+				'친구하고 같이 = "together with a friend", 빵하고 우유 = "bread and milk."',
 			level: 1,
-			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: 'Adj stem + (으)ㄴ 것 같다',
+			tags: ['particle', 'beginner', 'TOPIK1'],
+			structurePattern: '[Noun]하고 [Noun]',
 			notes: [
-				{ type: 'tip', title: 'Soft Opinion', content: 'Korean speakers often use -ㄴ 것 같다 for politeness even when they are sure, to soften the statement.' },
-				{ type: 'caution', title: 'Tense Matters', content: 'For past: -ㄴ 것 같다 (same form for adj). For action verbs in present: -는 것 같다 (different ending, later lesson).' }
+				{ type: 'tip', title: 'Formal Alternatives', content: 'More formal/written: 과 (after consonant) / 와 (after vowel). Casual alternative: (이)랑.' },
+				{ type: 'tip', title: 'No Allomorphs', content: '하고 doesn\'t change form — it\'s always 하고 regardless of the preceding syllable.' }
 			],
-			relatedPointIds: ['gp_eun_modifier'],
 			lessonExamples: [
 				{
-					id: 'le_geos_gatda_01',
-					fullSentence: '이 음식은 비싼 것 같아요.',
-					sentenceWithBlank: '이 음식은 비싼 것 ___.',
-					answer: '같아요',
-					englishHint: 'This food seems expensive.',
-					order: 0
+					id: 'le_hago_01',
+					fullSentence: "빵하고 우유를 사요.",
+					sentenceWithBlank: "빵___ 우유를 사요.",
+					answer: '하고',
+					englishHint: "I buy bread and milk.",
+					order: 0,
+					notes: 'Uses 을/를 (GP10), -아요/어요 (GP11).'
 				},
 				{
-					id: 'le_geos_gatda_02',
-					fullSentence: '오늘은 추운 것 같아요.',
-					sentenceWithBlank: '오늘은 추운 것 ___.',
-					answer: '같아요',
-					englishHint: 'Today seems cold.',
-					order: 1
+					id: 'le_hago_02',
+					fullSentence: '친구하고 같이 가요.',
+					sentenceWithBlank: '친구___ 같이 가요.',
+					answer: '하고',
+					englishHint: 'I go with a friend.',
+					order: 1,
+					notes: 'Uses -아요/어요 (GP11).'
 				}
 			],
 			cards: [
 				{
-					id: 'cc_geos_gatda_01',
-					fullSentence: '이 가방은 비싼 것 같아요.',
-					sentenceWithBlank: '이 가방은 비싼 것 ___.',
-					answer: '같아요',
-					alternateAnswers: [],
-					vocabBaseForm: '-ㄴ 것 같다',
-					englishHint: 'This bag seems expensive.',
-					introducedAtPosition: 33
+					id: 'cc_hago_01',
+					fullSentence: "빵하고 우유를 사요.",
+					sentenceWithBlank: "빵___ 우유를 사요.",
+					answer: '하고',
+					alternateAnswers: ['과', '이랑'],
+					vocabBaseForm: '하고',
+					englishHint: "I buy bread and milk.",
+					introducedAtPosition: 31
 				},
 				{
-					id: 'cc_geos_gatda_02',
-					fullSentence: '날씨가 좋은 것 같아요.',
-					sentenceWithBlank: '날씨가 좋은 것 ___.',
-					answer: '같아요',
-					alternateAnswers: [],
-					vocabBaseForm: '-ㄴ 것 같다',
-					englishHint: 'The weather seems nice.',
-					introducedAtPosition: 33
+					id: 'cc_hago_02',
+					fullSentence: '친구하고 같이 가요.',
+					sentenceWithBlank: '친구___ 같이 가요.',
+					answer: '하고',
+					alternateAnswers: ['와', '랑'],
+					vocabBaseForm: '하고',
+					englishHint: 'I go with a friend.',
+					introducedAtPosition: 31
 				},
 				{
-					id: 'cc_geos_gatda_03',
-					fullSentence: '그 사람은 한국 사람인 것 같아요.',
-					sentenceWithBlank: '그 사람은 한국 사람인 것 ___.',
-					answer: '같아요',
-					alternateAnswers: [],
-					vocabBaseForm: '-ㄴ 것 같다',
-					englishHint: 'That person seems to be Korean.',
-					introducedAtPosition: 33
+					id: 'cc_hago_03',
+					fullSentence: "빵하고 케이크를 먹어요.",
+					sentenceWithBlank: "빵___ 케이크를 먹어요.",
+					answer: "하고",
+					alternateAnswers: ['와', '랑'],
+					vocabBaseForm: '하고',
+					englishHint: "I eat bread and cake.",
+					introducedAtPosition: 31
 				}
 			]
 		}

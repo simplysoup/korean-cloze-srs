@@ -1,0 +1,3551 @@
+{
+  "provenance": "Level 2 was authored fresh in the learner-first curriculum overhaul on 2026-11-09 (see docs/planning/korean-curriculum-overhaul-2026-11-09.md). Lesson 22 (reported speech) is labelled an optional bridge — it sits near or beyond the usual TOPIK I beginner boundary. -(으)ㄹ지라도 and written nominalization -(으)ㅁ were deliberately omitted as higher-level material. Not independently reviewed by a Korean educator; treat as a curated draft, not vetted teaching content.",
+  "source": "prisma/seed-data/topik1-level2/lesson-12.ts … lesson-22.ts",
+  "deck": {
+    "id": "deck_topik1_level2",
+    "title": "TOPIK I Level 2",
+    "slug": "topik-level-2",
+    "topikLevel": "topik1-2",
+    "level": 2
+  },
+  "lessons": [
+    {
+      "lessonNumber": 12,
+      "title": "Plans, Invitations and Purposes",
+      "grammarPoints": [
+        {
+          "id": "gp_eulkkayo",
+          "title": "-(으)ㄹ까요?",
+          "category": "proposal",
+          "tense": null,
+          "register": null,
+          "hint": "shall we, shall I",
+          "description": "Attach -을까요 after a consonant stem or -ㄹ까요 after a vowel stem; ㄹ-final stems take 까요 (살까요?). It proposes a shared action, offers help, or asks for the listener's opinion. Example: 같이 갈까요? (Shall we go together?)",
+          "level": 2,
+          "tags": [
+            "proposal",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem](으)ㄹ까요?",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eulkkayo_01",
+              "fullSentence": "같이 갈까요?",
+              "sentenceWithBlank": "같이 ___?",
+              "answer": "갈까요",
+              "englishHint": "Shall we go together?",
+              "order": 0
+            },
+            {
+              "id": "le_eulkkayo_02",
+              "fullSentence": "무슨 영화를 볼까요?",
+              "sentenceWithBlank": "무슨 영화를 ___?",
+              "answer": "볼까요",
+              "englishHint": "What movie shall we watch?",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eulkkayo_01",
+              "fullSentence": "이제 출발할까요?",
+              "sentenceWithBlank": "이제 ___?",
+              "answer": "출발할까요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ까요?",
+              "englishHint": "Shall we leave now?",
+              "introducedAtPosition": 49
+            },
+            {
+              "id": "cc_eulkkayo_02",
+              "fullSentence": "제가 문을 열까요?",
+              "sentenceWithBlank": "제가 문을 ___?",
+              "answer": "열까요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ까요?",
+              "englishHint": "Shall I open the door?",
+              "introducedAtPosition": 49
+            },
+            {
+              "id": "cc_eulkkayo_03",
+              "fullSentence": "지금 점심을 먹을까요?",
+              "sentenceWithBlank": "지금 점심을 ___?",
+              "answer": "먹을까요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ까요?",
+              "englishHint": "Shall we eat lunch now?",
+              "introducedAtPosition": 49
+            }
+          ]
+        },
+        {
+          "id": "gp_eullaeyo",
+          "title": "-(으)ㄹ래요",
+          "category": "intention",
+          "tense": null,
+          "register": null,
+          "hint": "want to, will (choice)",
+          "description": "Attach -을래요 to consonant stems or -ㄹ래요 to vowel stems; ㄹ-final stems take 래요 (살래요). It expresses a conversational choice or preference, not a neutral future prediction. Example: 저는 차를 마실래요. (I will have tea.)",
+          "level": 2,
+          "tags": [
+            "intention",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem](으)ㄹ래요",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eullaeyo_01",
+              "fullSentence": "저는 차를 마실래요.",
+              "sentenceWithBlank": "저는 차를 ___.",
+              "answer": "마실래요",
+              "englishHint": "I will have tea.",
+              "order": 0
+            },
+            {
+              "id": "le_eullaeyo_02",
+              "fullSentence": "주말에 뭐 할래요?",
+              "sentenceWithBlank": "주말에 뭐 ___?",
+              "answer": "할래요",
+              "englishHint": "What do you want to do this weekend?",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eullaeyo_01",
+              "fullSentence": "저는 물을 마실래요.",
+              "sentenceWithBlank": "저는 물을 ___.",
+              "answer": "마실래요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ래요",
+              "englishHint": "I will have water.",
+              "introducedAtPosition": 50
+            },
+            {
+              "id": "cc_eullaeyo_02",
+              "fullSentence": "이것을 살래요?",
+              "sentenceWithBlank": "이것을 ___?",
+              "answer": "살래요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ래요",
+              "englishHint": "Do you want to buy this?",
+              "introducedAtPosition": 50
+            },
+            {
+              "id": "cc_eullaeyo_03",
+              "fullSentence": "저는 집에서 쉴래요.",
+              "sentenceWithBlank": "저는 집에서 ___.",
+              "answer": "쉴래요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ래요",
+              "englishHint": "I want to rest at home.",
+              "introducedAtPosition": 50
+            }
+          ]
+        },
+        {
+          "id": "gp_euryeogo_hada",
+          "title": "-(으)려고 하다",
+          "category": "intention",
+          "tense": null,
+          "register": null,
+          "hint": "plan to, intend to",
+          "description": "Attach -으려고 to consonant stems or -려고 to vowel stems, then 하다; ㄹ-final stems take 려고 (살려고 해요). It describes an intention or plan, not a completed action. Example: 내일 한국어를 공부하려고 해요. (I plan to study Korean tomorrow.)",
+          "level": 2,
+          "tags": [
+            "intention",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem](으)려고 하다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_euryeogo_hada_01",
+              "fullSentence": "내일 한국어를 공부하려고 해요.",
+              "sentenceWithBlank": "내일 한국어를 ___.",
+              "answer": "공부하려고 해요",
+              "englishHint": "I plan to study Korean tomorrow.",
+              "order": 0
+            },
+            {
+              "id": "le_euryeogo_hada_02",
+              "fullSentence": "주말에 친구를 만나려고 해요.",
+              "sentenceWithBlank": "주말에 친구를 ___.",
+              "answer": "만나려고 해요",
+              "englishHint": "I plan to meet a friend this weekend.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_euryeogo_hada_01",
+              "fullSentence": "오늘 장을 보려고 해요.",
+              "sentenceWithBlank": "오늘 장을 ___.",
+              "answer": "보려고 해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)려고 하다",
+              "englishHint": "I'm planning to buy groceries today.",
+              "introducedAtPosition": 51
+            },
+            {
+              "id": "cc_euryeogo_hada_02",
+              "fullSentence": "저녁에 책을 읽으려고 해요.",
+              "sentenceWithBlank": "저녁에 책을 ___.",
+              "answer": "읽으려고 해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)려고 하다",
+              "englishHint": "I plan to read a book tonight.",
+              "introducedAtPosition": 51
+            },
+            {
+              "id": "cc_euryeogo_hada_03",
+              "fullSentence": "내년에 한국에 가려고 해요.",
+              "sentenceWithBlank": "내년에 한국에 ___.",
+              "answer": "가려고 해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)려고 하다",
+              "englishHint": "I plan to go to Korea next year.",
+              "introducedAtPosition": 51
+            }
+          ]
+        },
+        {
+          "id": "gp_eureo_gada",
+          "title": "-(으)러 가다",
+          "category": "purpose",
+          "tense": null,
+          "register": null,
+          "hint": "go or come to do",
+          "description": "Attach -으러 to a consonant-ending action verb stem or -러 to a vowel-ending stem before 가다 or 오다; ㄹ-final stems take 러 (놀러 가요). It gives the purpose of going or coming. Example: 밥을 먹으러 가요. (I am going to eat.)",
+          "level": 2,
+          "tags": [
+            "purpose",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem](으)러 가다 / 오다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eureo_gada_01",
+              "fullSentence": "밥을 먹으러 가요.",
+              "sentenceWithBlank": "밥을 ___.",
+              "answer": "먹으러 가요",
+              "englishHint": "I am going to eat.",
+              "order": 0
+            },
+            {
+              "id": "le_eureo_gada_02",
+              "fullSentence": "친구를 만나러 가요.",
+              "sentenceWithBlank": "친구를 ___.",
+              "answer": "만나러 가요",
+              "englishHint": "I am going to meet a friend.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eureo_gada_01",
+              "fullSentence": "커피를 마시러 가요.",
+              "sentenceWithBlank": "커피를 ___.",
+              "answer": "마시러 가요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)러 가다",
+              "englishHint": "I'm going to get coffee.",
+              "introducedAtPosition": 52
+            },
+            {
+              "id": "cc_eureo_gada_02",
+              "fullSentence": "책을 사러 갔어요.",
+              "sentenceWithBlank": "책을 ___.",
+              "answer": "사러 갔어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)러 가다",
+              "englishHint": "I went to buy a book.",
+              "introducedAtPosition": 52
+            },
+            {
+              "id": "cc_eureo_gada_03",
+              "fullSentence": "수영을 하러 가요.",
+              "sentenceWithBlank": "수영을 ___.",
+              "answer": "하러 가요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)러 가다",
+              "englishHint": "I am going swimming.",
+              "introducedAtPosition": 52
+            }
+          ]
+        },
+        {
+          "id": "gp_eupsida",
+          "title": "-(으)ㅂ시다",
+          "category": "proposal",
+          "tense": null,
+          "register": null,
+          "hint": "let us (formal)",
+          "description": "Attach -읍시다 after consonant-ending stems or -ㅂ시다 after vowel-ending stems; final ㄹ drops (살다 → 삽시다). This makes a formal suggestion to do something together. Example: 이제 갑시다. (Let us go now.)",
+          "level": 2,
+          "tags": [
+            "proposal",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem](으)ㅂ시다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eupsida_01",
+              "fullSentence": "이제 갑시다.",
+              "sentenceWithBlank": "이제 ___.",
+              "answer": "갑시다",
+              "englishHint": "Let us go now.",
+              "order": 0
+            },
+            {
+              "id": "le_eupsida_02",
+              "fullSentence": "같이 점심을 먹읍시다.",
+              "sentenceWithBlank": "같이 점심을 ___.",
+              "answer": "먹읍시다",
+              "englishHint": "Let us eat lunch together.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eupsida_01",
+              "fullSentence": "같이 공부합시다.",
+              "sentenceWithBlank": "같이 ___.",
+              "answer": "공부합시다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㅂ시다",
+              "englishHint": "Let's study together.",
+              "introducedAtPosition": 53
+            },
+            {
+              "id": "cc_eupsida_02",
+              "fullSentence": "내일 다시 만납시다.",
+              "sentenceWithBlank": "내일 다시 ___.",
+              "answer": "만납시다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㅂ시다",
+              "englishHint": "Let us meet again tomorrow.",
+              "introducedAtPosition": 53
+            },
+            {
+              "id": "cc_eupsida_03",
+              "fullSentence": "여기에서 잠깐 쉽시다.",
+              "sentenceWithBlank": "여기에서 잠깐 ___.",
+              "answer": "쉽시다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㅂ시다",
+              "englishHint": "Let us rest here for a moment.",
+              "introducedAtPosition": 53
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 13,
+      "title": "Formal Speech and Everyday Rules",
+      "grammarPoints": [
+        {
+          "id": "gp_seumnida",
+          "title": "-ㅂ니다/-습니다",
+          "category": "formal ending",
+          "tense": null,
+          "register": "formal polite",
+          "hint": "formal statement",
+          "description": "Attach -ㅂ니다 after vowel-ending stems and -습니다 after consonant-ending stems; ㄹ-final stems drop ㄹ (살다 → 삽니다). This is the formal polite declarative style used in announcements and presentations; 있다 becomes 있습니다. Example: 저는 매일 한국어를 공부합니다. (I study Korean every day.)",
+          "level": 2,
+          "tags": [
+            "formal ending",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb/Adj stem]ㅂ니다 / 습니다",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_ayo_eoyo"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_seumnida_01",
+              "fullSentence": "저는 매일 한국어를 공부합니다.",
+              "sentenceWithBlank": "저는 매일 한국어를 공부___.",
+              "answer": "합니다",
+              "englishHint": "I study Korean every day.",
+              "order": 0
+            },
+            {
+              "id": "le_seumnida_02",
+              "fullSentence": "버스가 곧 옵니다.",
+              "sentenceWithBlank": "버스가 곧 ___.",
+              "answer": "옵니다",
+              "englishHint": "The bus will arrive soon.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_seumnida_01",
+              "fullSentence": "저는 회사에 다닙니다.",
+              "sentenceWithBlank": "저는 회사에 ___.",
+              "answer": "다닙니다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㅂ니다/-습니다",
+              "englishHint": "I work for a company.",
+              "introducedAtPosition": 54
+            },
+            {
+              "id": "cc_seumnida_02",
+              "fullSentence": "오늘은 날씨가 좋습니다.",
+              "sentenceWithBlank": "오늘은 날씨가 ___.",
+              "answer": "좋습니다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㅂ니다/-습니다",
+              "englishHint": "The weather is nice today.",
+              "introducedAtPosition": 54
+            },
+            {
+              "id": "cc_seumnida_03",
+              "fullSentence": "지금 시간이 없습니다.",
+              "sentenceWithBlank": "지금 시간이 ___.",
+              "answer": "없습니다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㅂ니다/-습니다",
+              "englishHint": "I do not have time now.",
+              "introducedAtPosition": 54
+            }
+          ]
+        },
+        {
+          "id": "gp_seumnikka",
+          "title": "-ㅂ니까/-습니까?",
+          "category": "formal ending",
+          "tense": null,
+          "register": "formal polite",
+          "hint": "formal question",
+          "description": "Attach -ㅂ니까 after vowel-ending stems or -습니까 after consonant-ending stems; ㄹ-final stems drop ㄹ (살다 → 삽니까?). Noun + 입니까? is the formal copula question. Example: 지금 어디에 갑니까? (Where are you going now?)",
+          "level": 2,
+          "tags": [
+            "formal ending",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb/Adj stem]ㅂ니까? / 습니까?",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_ieyo_yeyo"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_seumnikka_01",
+              "fullSentence": "지금 어디에 갑니까?",
+              "sentenceWithBlank": "지금 어디에 ___?",
+              "answer": "갑니까",
+              "englishHint": "Where are you going now?",
+              "order": 0
+            },
+            {
+              "id": "le_seumnikka_02",
+              "fullSentence": "한국어를 공부합니까?",
+              "sentenceWithBlank": "한국어를 ___?",
+              "answer": "공부합니까",
+              "englishHint": "Do you study Korean?",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_seumnikka_01",
+              "fullSentence": "어디에 삽니까?",
+              "sentenceWithBlank": "어디에 ___?",
+              "answer": "삽니까",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㅂ니까/-습니까?",
+              "englishHint": "Where do you live?",
+              "introducedAtPosition": 55
+            },
+            {
+              "id": "cc_seumnikka_02",
+              "fullSentence": "이 책이 좋습니까?",
+              "sentenceWithBlank": "이 책이 ___?",
+              "answer": "좋습니까",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㅂ니까/-습니까?",
+              "englishHint": "Is this book good?",
+              "introducedAtPosition": 55
+            },
+            {
+              "id": "cc_seumnikka_03",
+              "fullSentence": "시간이 있습니까?",
+              "sentenceWithBlank": "시간이 ___?",
+              "answer": "있습니까",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㅂ니까/-습니까?",
+              "englishHint": "Do you have time?",
+              "introducedAtPosition": 55
+            }
+          ]
+        },
+        {
+          "id": "gp_eodo_doeda",
+          "title": "-아/어도 되다",
+          "category": "permission",
+          "tense": null,
+          "register": null,
+          "hint": "may, be allowed to",
+          "description": "Combine the -아/어 form of an action verb with -도 되다 to ask or give permission. Conjugate 되다 at the end: 여기 앉아도 돼요 means \"You may sit here.\" Example: 여기 앉아도 돼요? (May I sit here?)",
+          "level": 2,
+          "tags": [
+            "permission",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]아/어도 되다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eodo_doeda_01",
+              "fullSentence": "여기 앉아도 돼요?",
+              "sentenceWithBlank": "여기 ___?",
+              "answer": "앉아도 돼요",
+              "englishHint": "May I sit here?",
+              "order": 0
+            },
+            {
+              "id": "le_eodo_doeda_02",
+              "fullSentence": "사진을 찍어도 돼요.",
+              "sentenceWithBlank": "사진을 ___.",
+              "answer": "찍어도 돼요",
+              "englishHint": "You may take pictures.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eodo_doeda_01",
+              "fullSentence": "여기에서 물을 마셔도 돼요?",
+              "sentenceWithBlank": "여기에서 물을 ___?",
+              "answer": "마셔도 돼요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어도 되다",
+              "englishHint": "May I drink water here?",
+              "introducedAtPosition": 56
+            },
+            {
+              "id": "cc_eodo_doeda_02",
+              "fullSentence": "지금 가도 돼요.",
+              "sentenceWithBlank": "지금 ___.",
+              "answer": "가도 돼요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어도 되다",
+              "englishHint": "You may go now.",
+              "introducedAtPosition": 56
+            },
+            {
+              "id": "cc_eodo_doeda_03",
+              "fullSentence": "이 책을 읽어도 돼요?",
+              "sentenceWithBlank": "이 책을 ___?",
+              "answer": "읽어도 돼요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어도 되다",
+              "englishHint": "May I read this book?",
+              "introducedAtPosition": 56
+            }
+          ]
+        },
+        {
+          "id": "gp_eumyeon_an_doeda",
+          "title": "-(으)면 안 되다",
+          "category": "prohibition",
+          "tense": null,
+          "register": null,
+          "hint": "must not",
+          "description": "Attach -으면 to consonant-ending stems and -면 to vowel-ending stems, then add 안 되다. It prohibits an action rather than expressing inability. Example: 여기에서 담배를 피우면 안 돼요. (You must not smoke here.)",
+          "level": 2,
+          "tags": [
+            "prohibition",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem](으)면 안 되다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eumyeon_an_doeda_01",
+              "fullSentence": "여기에서 담배를 피우면 안 돼요.",
+              "sentenceWithBlank": "여기에서 ___.",
+              "answer": "담배를 피우면 안 돼요",
+              "englishHint": "You must not smoke here.",
+              "order": 0
+            },
+            {
+              "id": "le_eumyeon_an_doeda_02",
+              "fullSentence": "수업에 늦으면 안 돼요.",
+              "sentenceWithBlank": "수업에 ___.",
+              "answer": "늦으면 안 돼요",
+              "englishHint": "You must not be late for class.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eumyeon_an_doeda_01",
+              "fullSentence": "여기에서 사진을 찍으면 안 돼요.",
+              "sentenceWithBlank": "여기에서 사진을 ___.",
+              "answer": "찍으면 안 돼요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)면 안 되다",
+              "englishHint": "You must not take pictures here.",
+              "introducedAtPosition": 57
+            },
+            {
+              "id": "cc_eumyeon_an_doeda_02",
+              "fullSentence": "여기에 들어가면 안 돼요.",
+              "sentenceWithBlank": "여기에 ___.",
+              "answer": "들어가면 안 돼요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)면 안 되다",
+              "englishHint": "You must not enter here.",
+              "introducedAtPosition": 57
+            },
+            {
+              "id": "cc_eumyeon_an_doeda_03",
+              "fullSentence": "수업 시간에 전화하면 안 돼요.",
+              "sentenceWithBlank": "수업 시간에 전화___.",
+              "answer": "하면 안 돼요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)면 안 되다",
+              "englishHint": "You must not use your phone during class.",
+              "introducedAtPosition": 57
+            }
+          ]
+        },
+        {
+          "id": "gp_ji_maseyo",
+          "title": "-지 마세요",
+          "category": "prohibition",
+          "tense": null,
+          "register": null,
+          "hint": "please do not",
+          "description": "Attach -지 마세요 directly to an action verb stem to make a polite negative request. Do not combine it with 안 or 못. Example: 여기에서 뛰지 마세요. (Please do not run here.)",
+          "level": 2,
+          "tags": [
+            "prohibition",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]지 마세요",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_ji_maseyo_01",
+              "fullSentence": "여기에서 뛰지 마세요.",
+              "sentenceWithBlank": "여기에서 ___.",
+              "answer": "뛰지 마세요",
+              "englishHint": "Please do not run here.",
+              "order": 0
+            },
+            {
+              "id": "le_ji_maseyo_02",
+              "fullSentence": "걱정하지 마세요.",
+              "sentenceWithBlank": "걱정___.",
+              "answer": "하지 마세요",
+              "englishHint": "Please do not worry.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_ji_maseyo_01",
+              "fullSentence": "지금 떠나지 마세요.",
+              "sentenceWithBlank": "지금 ___.",
+              "answer": "떠나지 마세요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-지 마세요",
+              "englishHint": "Please don't leave now.",
+              "introducedAtPosition": 58
+            },
+            {
+              "id": "cc_ji_maseyo_02",
+              "fullSentence": "너무 많이 먹지 마세요.",
+              "sentenceWithBlank": "너무 많이 ___.",
+              "answer": "먹지 마세요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-지 마세요",
+              "englishHint": "Please do not eat too much.",
+              "introducedAtPosition": 58
+            },
+            {
+              "id": "cc_ji_maseyo_03",
+              "fullSentence": "지금 문을 열지 마세요.",
+              "sentenceWithBlank": "지금 문을 ___.",
+              "answer": "열지 마세요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-지 마세요",
+              "englishHint": "Please do not open the door now.",
+              "introducedAtPosition": 58
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 14,
+      "title": "Before, After and When",
+      "grammarPoints": [
+        {
+          "id": "gp_gi_nominal",
+          "title": "-기",
+          "category": "nominalization",
+          "tense": null,
+          "register": null,
+          "hint": "doing (an action as a noun)",
+          "description": "Attach -기 to an action verb stem to form a noun-like expression for an activity. A particle can follow it: 걷기가 좋아요 means \"Walking is pleasant.\" Example: 저는 책 읽기를 좋아해요. (I like reading books.)",
+          "level": 2,
+          "tags": [
+            "nominalization",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem]기 + [particle]",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_gi_nominal_01",
+              "fullSentence": "저는 책 읽기를 좋아해요.",
+              "sentenceWithBlank": "저는 책 읽___ 좋아해요.",
+              "answer": "기를",
+              "englishHint": "I like reading books.",
+              "order": 0
+            },
+            {
+              "id": "le_gi_nominal_02",
+              "fullSentence": "일찍 일어나기가 어려워요.",
+              "sentenceWithBlank": "일찍 일어나___ 어려워요.",
+              "answer": "기가",
+              "englishHint": "Getting up early is difficult.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gi_nominal_01",
+              "fullSentence": "저는 요리하기를 좋아해요.",
+              "sentenceWithBlank": "저는 ___ 좋아해요.",
+              "answer": "요리하기를",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기",
+              "englishHint": "I like cooking.",
+              "introducedAtPosition": 59
+            },
+            {
+              "id": "cc_gi_nominal_02",
+              "fullSentence": "매일 걷기를 좋아해요.",
+              "sentenceWithBlank": "매일 걷___ 좋아해요.",
+              "answer": "기를",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기",
+              "englishHint": "I like walking every day.",
+              "introducedAtPosition": 59
+            },
+            {
+              "id": "cc_gi_nominal_03",
+              "fullSentence": "한국어를 배우기가 재미있어요.",
+              "sentenceWithBlank": "한국어를 배우___ 재미있어요.",
+              "answer": "기가",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기",
+              "englishHint": "Learning Korean is fun.",
+              "introducedAtPosition": 59
+            }
+          ]
+        },
+        {
+          "id": "gp_go_naseo",
+          "title": "-고 나서",
+          "category": "time",
+          "tense": null,
+          "register": null,
+          "hint": "after doing",
+          "description": "Add -고 나서 to an action verb stem when the second action follows the completed first action. Unlike plain -고, this form explicitly marks the order. Example: 밥을 먹고 나서 커피를 마셔요. (After eating, I drink coffee.)",
+          "level": 2,
+          "tags": [
+            "time",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]고 나서",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_go_seq"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_go_naseo_01",
+              "fullSentence": "밥을 먹고 나서 커피를 마셔요.",
+              "sentenceWithBlank": "밥을 먹고 ___ 커피를 마셔요.",
+              "answer": "나서",
+              "englishHint": "After eating, I drink coffee.",
+              "order": 0
+            },
+            {
+              "id": "le_go_naseo_02",
+              "fullSentence": "숙제를 하고 나서 친구를 만났어요.",
+              "sentenceWithBlank": "숙제를 하고 ___ 친구를 만났어요.",
+              "answer": "나서",
+              "englishHint": "After doing my homework, I met a friend.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_go_naseo_01",
+              "fullSentence": "커피를 마시고 나서 출근해요.",
+              "sentenceWithBlank": "커피를 마시고 ___ 출근해요.",
+              "answer": "나서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 나서",
+              "englishHint": "After drinking coffee, I go to work.",
+              "introducedAtPosition": 60
+            },
+            {
+              "id": "cc_go_naseo_02",
+              "fullSentence": "운동하고 나서 샤워해요.",
+              "sentenceWithBlank": "운동하고 ___ 샤워해요.",
+              "answer": "나서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 나서",
+              "englishHint": "After exercising, I shower.",
+              "introducedAtPosition": 60
+            },
+            {
+              "id": "cc_go_naseo_03",
+              "fullSentence": "손을 씻고 나서 밥을 먹어요.",
+              "sentenceWithBlank": "손을 씻고 ___ 밥을 먹어요.",
+              "answer": "나서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 나서",
+              "englishHint": "After washing my hands, I eat.",
+              "introducedAtPosition": 60
+            }
+          ]
+        },
+        {
+          "id": "gp_eun_hue",
+          "title": "-(으)ㄴ 후에",
+          "category": "time",
+          "tense": null,
+          "register": null,
+          "hint": "after doing",
+          "description": "Attach -은 후에 to a consonant-ending action verb stem or -ㄴ 후에 to a vowel-ending stem. It places the following event after that action; it is different from noun + 후에. Example: 밥을 먹은 후에 약을 먹어요. (I take medicine after eating.)",
+          "level": 2,
+          "tags": [
+            "time",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem](으)ㄴ 후에",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_hue"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_eun_hue_01",
+              "fullSentence": "밥을 먹은 후에 약을 먹어요.",
+              "sentenceWithBlank": "밥을 먹은 ___ 약을 먹어요.",
+              "answer": "후에",
+              "englishHint": "I take medicine after eating.",
+              "order": 0
+            },
+            {
+              "id": "le_eun_hue_02",
+              "fullSentence": "일을 끝낸 후에 집에 갔어요.",
+              "sentenceWithBlank": "일을 끝낸 ___ 집에 갔어요.",
+              "answer": "후에",
+              "englishHint": "I went home after finishing work.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eun_hue_01",
+              "fullSentence": "수업이 끝난 후에 집에 갔어요.",
+              "sentenceWithBlank": "수업이 끝난 ___ 집에 갔어요.",
+              "answer": "후에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ 후에",
+              "englishHint": "I went home after class ended.",
+              "introducedAtPosition": 61
+            },
+            {
+              "id": "cc_eun_hue_02",
+              "fullSentence": "영화를 본 후에 커피를 마셨어요.",
+              "sentenceWithBlank": "영화를 본 ___ 커피를 마셨어요.",
+              "answer": "후에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ 후에",
+              "englishHint": "After watching a movie, I drank coffee.",
+              "introducedAtPosition": 61
+            },
+            {
+              "id": "cc_eun_hue_03",
+              "fullSentence": "책을 읽은 후에 잠을 자요.",
+              "sentenceWithBlank": "책을 읽은 ___ 잠을 자요.",
+              "answer": "후에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ 후에",
+              "englishHint": "After reading a book, I go to sleep.",
+              "introducedAtPosition": 61
+            }
+          ]
+        },
+        {
+          "id": "gp_gi_jeone",
+          "title": "-기 전에",
+          "category": "time",
+          "tense": null,
+          "register": null,
+          "hint": "before doing",
+          "description": "Attach -기 전에 to an action verb stem to express \"before doing\" an action. For a noun, simply use noun + 전에, which was introduced earlier. Example: 자기 전에 이를 닦아요. (I brush my teeth before sleeping.)",
+          "level": 2,
+          "tags": [
+            "time",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]기 전에",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_jeone"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gi_jeone_01",
+              "fullSentence": "자기 전에 이를 닦아요.",
+              "sentenceWithBlank": "자기 ___ 이를 닦아요.",
+              "answer": "전에",
+              "englishHint": "I brush my teeth before sleeping.",
+              "order": 0
+            },
+            {
+              "id": "le_gi_jeone_02",
+              "fullSentence": "밥을 먹기 전에 손을 씻어요.",
+              "sentenceWithBlank": "밥을 먹기 ___ 손을 씻어요.",
+              "answer": "전에",
+              "englishHint": "I wash my hands before eating.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gi_jeone_01",
+              "fullSentence": "외출하기 전에 문을 닫아요.",
+              "sentenceWithBlank": "외출하기 ___ 문을 닫아요.",
+              "answer": "전에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기 전에",
+              "englishHint": "I close the door before going out.",
+              "introducedAtPosition": 62
+            },
+            {
+              "id": "cc_gi_jeone_02",
+              "fullSentence": "학교에 가기 전에 아침을 먹어요.",
+              "sentenceWithBlank": "학교에 가기 ___ 아침을 먹어요.",
+              "answer": "전에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기 전에",
+              "englishHint": "I eat breakfast before going to school.",
+              "introducedAtPosition": 62
+            },
+            {
+              "id": "cc_gi_jeone_03",
+              "fullSentence": "운동하기 전에 물을 마셔요.",
+              "sentenceWithBlank": "운동하기 ___ 물을 마셔요.",
+              "answer": "전에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기 전에",
+              "englishHint": "I drink water before exercising.",
+              "introducedAtPosition": 62
+            }
+          ]
+        },
+        {
+          "id": "gp_eul_ttae",
+          "title": "-(으)ㄹ 때",
+          "category": "time",
+          "tense": null,
+          "register": null,
+          "hint": "when, at the time of",
+          "description": "Attach -을 때 after a consonant-ending stem or -ㄹ 때 after a vowel-ending stem. It describes the time at which an event happens; ㄹ-ending stems take 때 directly. Example: 집에 갈 때 버스를 타요. (When I go home, I take the bus.)",
+          "level": 2,
+          "tags": [
+            "time",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb/Adj stem](으)ㄹ 때",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eul_ttae_01",
+              "fullSentence": "집에 갈 때 버스를 타요.",
+              "sentenceWithBlank": "집에 갈 ___ 버스를 타요.",
+              "answer": "때",
+              "englishHint": "When I go home, I take the bus.",
+              "order": 0
+            },
+            {
+              "id": "le_eul_ttae_02",
+              "fullSentence": "시간이 있을 때 책을 읽어요.",
+              "sentenceWithBlank": "시간이 있을 ___ 책을 읽어요.",
+              "answer": "때",
+              "englishHint": "I read when I have time.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eul_ttae_01",
+              "fullSentence": "아플 때 쉬어요.",
+              "sentenceWithBlank": "아플 ___ 쉬어요.",
+              "answer": "때",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ 때",
+              "englishHint": "I rest when I am sick.",
+              "introducedAtPosition": 63
+            },
+            {
+              "id": "cc_eul_ttae_02",
+              "fullSentence": "밥을 먹을 때 텔레비전을 안 봐요.",
+              "sentenceWithBlank": "밥을 먹을 ___ 텔레비전을 안 봐요.",
+              "answer": "때",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ 때",
+              "englishHint": "I do not watch TV while eating.",
+              "introducedAtPosition": 63
+            },
+            {
+              "id": "cc_eul_ttae_03",
+              "fullSentence": "추울 때 따뜻한 차를 마셔요.",
+              "sentenceWithBlank": "추울 ___ 따뜻한 차를 마셔요.",
+              "answer": "때",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ 때",
+              "englishHint": "When it is cold, I drink warm tea.",
+              "introducedAtPosition": 63
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 15,
+      "title": "Ongoing Actions and Choices",
+      "grammarPoints": [
+        {
+          "id": "gp_go_itda",
+          "title": "-고 있다",
+          "category": "aspect",
+          "tense": null,
+          "register": null,
+          "hint": "be doing",
+          "description": "Attach -고 있다 to an action verb stem to describe an action in progress. Conjugate 있다 for tense and politeness. Example: 지금 책을 읽고 있어요. (I am reading a book now.)",
+          "level": 2,
+          "tags": [
+            "aspect",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]고 있다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_go_itda_01",
+              "fullSentence": "지금 책을 읽고 있어요.",
+              "sentenceWithBlank": "지금 책을 읽고 ___.",
+              "answer": "있어요",
+              "englishHint": "I am reading a book now.",
+              "order": 0
+            },
+            {
+              "id": "le_go_itda_02",
+              "fullSentence": "친구가 공부하고 있어요.",
+              "sentenceWithBlank": "친구가 공부하고 ___.",
+              "answer": "있어요",
+              "englishHint": "My friend is studying.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_go_itda_01",
+              "fullSentence": "지금 음악을 듣고 있어요.",
+              "sentenceWithBlank": "지금 음악을 듣고 ___.",
+              "answer": "있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 있다",
+              "englishHint": "I'm listening to music right now.",
+              "introducedAtPosition": 64
+            },
+            {
+              "id": "cc_go_itda_02",
+              "fullSentence": "엄마가 요리하고 있어요.",
+              "sentenceWithBlank": "엄마가 요리하고 ___.",
+              "answer": "있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 있다",
+              "englishHint": "Mom is cooking.",
+              "introducedAtPosition": 64
+            },
+            {
+              "id": "cc_go_itda_03",
+              "fullSentence": "지금 비가 오고 있어요.",
+              "sentenceWithBlank": "지금 비가 오고 ___.",
+              "answer": "있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 있다",
+              "englishHint": "It is raining now.",
+              "introducedAtPosition": 64
+            }
+          ]
+        },
+        {
+          "id": "gp_neun_jung",
+          "title": "-는 중이다",
+          "category": "aspect",
+          "tense": null,
+          "register": null,
+          "hint": "in the middle of doing",
+          "description": "Attach -는 중이다 to an action verb stem to emphasize being in the middle of an activity. ㄹ-final stems drop ㄹ before -는. Example: 지금 공부하는 중이에요. (I am in the middle of studying.)",
+          "level": 2,
+          "tags": [
+            "aspect",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]는 중이다",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_go_seq"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_neun_jung_01",
+              "fullSentence": "지금 공부하는 중이에요.",
+              "sentenceWithBlank": "지금 공부하는 ___.",
+              "answer": "중이에요",
+              "englishHint": "I am in the middle of studying.",
+              "order": 0
+            },
+            {
+              "id": "le_neun_jung_02",
+              "fullSentence": "저는 지금 일하는 중이에요.",
+              "sentenceWithBlank": "저는 지금 일하는 ___.",
+              "answer": "중이에요",
+              "englishHint": "I am working right now.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_neun_jung_01",
+              "fullSentence": "지금 청소하는 중이에요.",
+              "sentenceWithBlank": "지금 청소하는 ___.",
+              "answer": "중이에요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 중이다",
+              "englishHint": "I'm cleaning right now.",
+              "introducedAtPosition": 65
+            },
+            {
+              "id": "cc_neun_jung_02",
+              "fullSentence": "친구가 밥을 먹는 중이에요.",
+              "sentenceWithBlank": "친구가 밥을 먹는 ___.",
+              "answer": "중이에요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 중이다",
+              "englishHint": "My friend is eating right now.",
+              "introducedAtPosition": 65
+            },
+            {
+              "id": "cc_neun_jung_03",
+              "fullSentence": "우리는 지금 회의하는 중이에요.",
+              "sentenceWithBlank": "우리는 지금 회의하는 ___.",
+              "answer": "중이에요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 중이다",
+              "englishHint": "We are in a meeting now.",
+              "introducedAtPosition": 65
+            }
+          ]
+        },
+        {
+          "id": "gp_geona",
+          "title": "-거나",
+          "category": "choice",
+          "tense": null,
+          "register": null,
+          "hint": "or (between actions)",
+          "description": "Attach -거나 directly to a verb or adjective stem to connect alternatives. Unlike noun + (이)나, it joins verbal predicates. Example: 주말에는 책을 읽거나 영화를 봐요. (On weekends I read books or watch movies.)",
+          "level": 2,
+          "tags": [
+            "choice",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb/Adj stem]거나",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_geona_01",
+              "fullSentence": "주말에는 책을 읽거나 영화를 봐요.",
+              "sentenceWithBlank": "주말에는 책을 읽___ 영화를 봐요.",
+              "answer": "거나",
+              "englishHint": "On weekends I read books or watch movies.",
+              "order": 0
+            },
+            {
+              "id": "le_geona_02",
+              "fullSentence": "집에서 쉬거나 산책해요.",
+              "sentenceWithBlank": "집에서 쉬___ 산책해요.",
+              "answer": "거나",
+              "englishHint": "I rest at home or take a walk.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_geona_01",
+              "fullSentence": "저는 주말에 요리하거나 쉬어요.",
+              "sentenceWithBlank": "저는 주말에 요리하___ 쉬어요.",
+              "answer": "거나",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-거나",
+              "englishHint": "On weekends, I cook or rest.",
+              "introducedAtPosition": 66
+            },
+            {
+              "id": "cc_geona_02",
+              "fullSentence": "아침에는 빵을 먹거나 밥을 먹어요.",
+              "sentenceWithBlank": "아침에는 빵을 먹___ 밥을 먹어요.",
+              "answer": "거나",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-거나",
+              "englishHint": "For breakfast, I eat bread or rice.",
+              "introducedAtPosition": 66
+            },
+            {
+              "id": "cc_geona_03",
+              "fullSentence": "저녁에 운동하거나 음악을 들어요.",
+              "sentenceWithBlank": "저녁에 운동하___ 음악을 들어요.",
+              "answer": "거나",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-거나",
+              "englishHint": "In the evening, I exercise or listen to music.",
+              "introducedAtPosition": 66
+            }
+          ]
+        },
+        {
+          "id": "gp_ina_choice",
+          "title": "(이)나",
+          "category": "choice",
+          "tense": null,
+          "register": null,
+          "hint": "or (between nouns)",
+          "description": "Use -이나 after consonant-ending nouns and -나 after vowel-ending nouns to present alternatives. For a simple choice, 커피나 차 means \"coffee or tea.\" Example: 커피나 차를 마실래요? (Would you like coffee or tea?)",
+          "level": 2,
+          "tags": [
+            "choice",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun](이)나 [Noun]",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_ina_choice_01",
+              "fullSentence": "커피나 차를 마실래요?",
+              "sentenceWithBlank": "커피___ 차를 마실래요?",
+              "answer": "나",
+              "englishHint": "Would you like coffee or tea?",
+              "order": 0
+            },
+            {
+              "id": "le_ina_choice_02",
+              "fullSentence": "주말에 영화나 드라마를 봐요.",
+              "sentenceWithBlank": "주말에 영화___ 드라마를 봐요.",
+              "answer": "나",
+              "englishHint": "On weekends, I watch movies or dramas.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_ina_choice_01",
+              "fullSentence": "책이나 신문을 읽어요.",
+              "sentenceWithBlank": "책___ 신문을 읽어요.",
+              "answer": "이나",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(이)나",
+              "englishHint": "I read books or newspapers.",
+              "introducedAtPosition": 67
+            },
+            {
+              "id": "cc_ina_choice_02",
+              "fullSentence": "점심에 김밥이나 라면을 먹어요.",
+              "sentenceWithBlank": "점심에 김밥___ 라면을 먹어요.",
+              "answer": "이나",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(이)나",
+              "englishHint": "For lunch, I eat kimbap or ramen.",
+              "introducedAtPosition": 67
+            },
+            {
+              "id": "cc_ina_choice_03",
+              "fullSentence": "버스나 지하철을 타요.",
+              "sentenceWithBlank": "버스___ 지하철을 타요.",
+              "answer": "나",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(이)나",
+              "englishHint": "I take the bus or subway.",
+              "introducedAtPosition": 67
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 16,
+      "title": "Describing People and Things",
+      "grammarPoints": [
+        {
+          "id": "gp_neun_modifier",
+          "title": "-는 N",
+          "category": "relative clause",
+          "tense": null,
+          "register": null,
+          "hint": "person or thing that does",
+          "description": "Attach -는 to an action verb stem before a noun to describe a present or habitual action. For stems ending in ㄹ, drop ㄹ before -는: 살다 becomes 사는. Example: 저기에서 책을 읽는 사람은 제 친구예요. (The person reading over there is my friend.)",
+          "level": 2,
+          "tags": [
+            "relative clause",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem]는 [Noun]",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_neun_modifier_01",
+              "fullSentence": "저기에서 책을 읽는 사람은 제 친구예요.",
+              "sentenceWithBlank": "저기에서 책을 ___ 사람은 제 친구예요.",
+              "answer": "읽는",
+              "englishHint": "The person reading over there is my friend.",
+              "order": 0
+            },
+            {
+              "id": "le_neun_modifier_02",
+              "fullSentence": "한국어를 배우는 학생이 많아요.",
+              "sentenceWithBlank": "한국어를 ___ 학생이 많아요.",
+              "answer": "배우는",
+              "englishHint": "There are many students who study Korean.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_neun_modifier_01",
+              "fullSentence": "저기 웃는 사람은 우리 선생님이에요.",
+              "sentenceWithBlank": "저기 ___ 사람은 우리 선생님이에요.",
+              "answer": "웃는",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 N",
+              "englishHint": "The person smiling over there is our teacher.",
+              "introducedAtPosition": 68
+            },
+            {
+              "id": "cc_neun_modifier_02",
+              "fullSentence": "매일 운동하는 사람은 건강해요.",
+              "sentenceWithBlank": "매일 ___ 사람은 건강해요.",
+              "answer": "운동하는",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 N",
+              "englishHint": "People who exercise daily are healthy.",
+              "introducedAtPosition": 68
+            },
+            {
+              "id": "cc_neun_modifier_03",
+              "fullSentence": "제가 자주 가는 카페는 여기예요.",
+              "sentenceWithBlank": "제가 자주 ___ 카페는 여기예요.",
+              "answer": "가는",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 N",
+              "englishHint": "This is the café I often go to.",
+              "introducedAtPosition": 68
+            }
+          ]
+        },
+        {
+          "id": "gp_eun_past_modifier",
+          "title": "-(으)ㄴ N (action)",
+          "category": "relative clause",
+          "tense": null,
+          "register": null,
+          "hint": "thing that was done",
+          "description": "Attach -은 after a consonant-ending action verb stem or -ㄴ after a vowel-ending stem before a noun; final ㄹ drops (살다 → 산). This describes a completed action, unlike the present adjective modifier from Level 1. Example: 어제 산 옷이 예뻐요. (The clothes I bought yesterday are pretty.)",
+          "level": 2,
+          "tags": [
+            "relative clause",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem](으)ㄴ [Noun]",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_eun_modifier"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_eun_past_modifier_01",
+              "fullSentence": "어제 산 옷이 예뻐요.",
+              "sentenceWithBlank": "어제 ___ 옷이 예뻐요.",
+              "answer": "산",
+              "englishHint": "The clothes I bought yesterday are pretty.",
+              "order": 0
+            },
+            {
+              "id": "le_eun_past_modifier_02",
+              "fullSentence": "제가 만든 음식은 맛있어요.",
+              "sentenceWithBlank": "제가 ___ 음식은 맛있어요.",
+              "answer": "만든",
+              "englishHint": "The food I made is delicious.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eun_past_modifier_01",
+              "fullSentence": "어제 읽은 책이 재미있었어요.",
+              "sentenceWithBlank": "어제 ___ 책이 재미있었어요.",
+              "answer": "읽은",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ N (action)",
+              "englishHint": "The book I read yesterday was interesting.",
+              "introducedAtPosition": 69
+            },
+            {
+              "id": "cc_eun_past_modifier_02",
+              "fullSentence": "어제 본 영화는 재미있었어요.",
+              "sentenceWithBlank": "어제 ___ 영화는 재미있었어요.",
+              "answer": "본",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ N (action)",
+              "englishHint": "The movie I watched yesterday was interesting.",
+              "introducedAtPosition": 69
+            },
+            {
+              "id": "cc_eun_past_modifier_03",
+              "fullSentence": "아침에 먹은 음식은 김밥이에요.",
+              "sentenceWithBlank": "아침에 ___ 음식은 김밥이에요.",
+              "answer": "먹은",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ N (action)",
+              "englishHint": "I ate gimbap for breakfast.",
+              "introducedAtPosition": 69
+            }
+          ]
+        },
+        {
+          "id": "gp_eul_future_modifier",
+          "title": "-(으)ㄹ N",
+          "category": "relative clause",
+          "tense": null,
+          "register": null,
+          "hint": "thing to do, future noun modifier",
+          "description": "Attach -을 after a consonant-ending action verb stem or -ㄹ after a vowel-ending stem before a noun; ㄹ-final stems keep their ㄹ (살다 → 살 집). It describes an anticipated or intended action involving the noun. Example: 내일 만날 사람은 제 친구예요. (The person I will meet tomorrow is my friend.)",
+          "level": 2,
+          "tags": [
+            "relative clause",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem](으)ㄹ [Noun]",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eul_future_modifier_01",
+              "fullSentence": "내일 만날 사람은 제 친구예요.",
+              "sentenceWithBlank": "내일 ___ 사람은 제 친구예요.",
+              "answer": "만날",
+              "englishHint": "The person I will meet tomorrow is my friend.",
+              "order": 0
+            },
+            {
+              "id": "le_eul_future_modifier_02",
+              "fullSentence": "오늘 먹을 음식은 뭐예요?",
+              "sentenceWithBlank": "오늘 ___ 음식은 뭐예요?",
+              "answer": "먹을",
+              "englishHint": "What are we eating today?",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eul_future_modifier_01",
+              "fullSentence": "내일 입을 옷을 준비했어요.",
+              "sentenceWithBlank": "내일 ___ 옷을 준비했어요.",
+              "answer": "입을",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ N",
+              "englishHint": "I prepared the clothes I'll wear tomorrow.",
+              "introducedAtPosition": 70
+            },
+            {
+              "id": "cc_eul_future_modifier_02",
+              "fullSentence": "주말에 볼 영화를 정했어요.",
+              "sentenceWithBlank": "주말에 ___ 영화를 정했어요.",
+              "answer": "볼",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ N",
+              "englishHint": "I chose the movie I will watch this weekend.",
+              "introducedAtPosition": 70
+            },
+            {
+              "id": "cc_eul_future_modifier_03",
+              "fullSentence": "내일 읽을 책을 샀어요.",
+              "sentenceWithBlank": "내일 ___ 책을 샀어요.",
+              "answer": "읽을",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ N",
+              "englishHint": "I bought the book I will read tomorrow.",
+              "introducedAtPosition": 70
+            }
+          ]
+        },
+        {
+          "id": "gp_neun_geot",
+          "title": "-는 것",
+          "category": "nominalization",
+          "tense": null,
+          "register": null,
+          "hint": "doing something (as a noun)",
+          "description": "Put -는 것 after an action verb stem to turn the action into a noun phrase. In speech, 것이 often contracts to 게 and 것을 to 걸. Example: 저는 책을 읽는 것을 좋아해요. (I like reading books.)",
+          "level": 2,
+          "tags": [
+            "nominalization",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem]는 것",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_neun_geot_01",
+              "fullSentence": "저는 책을 읽는 것을 좋아해요.",
+              "sentenceWithBlank": "저는 책을 ___ 좋아해요.",
+              "answer": "읽는 것을",
+              "englishHint": "I like reading books.",
+              "order": 0
+            },
+            {
+              "id": "le_neun_geot_02",
+              "fullSentence": "일찍 일어나는 것이 어려워요.",
+              "sentenceWithBlank": "일찍 ___ 어려워요.",
+              "answer": "일어나는 것이",
+              "englishHint": "Getting up early is hard.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_neun_geot_01",
+              "fullSentence": "저는 음악 듣는 것을 좋아해요.",
+              "sentenceWithBlank": "저는 음악 ___ 좋아해요.",
+              "answer": "듣는 것을",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 것",
+              "englishHint": "I like listening to music.",
+              "introducedAtPosition": 71
+            },
+            {
+              "id": "cc_neun_geot_02",
+              "fullSentence": "운동하는 것은 건강에 좋아요.",
+              "sentenceWithBlank": "___ 건강에 좋아요.",
+              "answer": "운동하는 것은",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 것",
+              "englishHint": "Exercising is good for your health.",
+              "introducedAtPosition": 71
+            },
+            {
+              "id": "cc_neun_geot_03",
+              "fullSentence": "저는 요리하는 것이 재미있어요.",
+              "sentenceWithBlank": "저는 ___ 재미있어요.",
+              "answer": "요리하는 것이",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는 것",
+              "englishHint": "I find cooking fun.",
+              "introducedAtPosition": 71
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 17,
+      "title": "Trying Things and Talking About Experience",
+      "grammarPoints": [
+        {
+          "id": "gp_eoboda",
+          "title": "-아/어 보다",
+          "category": "modal",
+          "tense": null,
+          "register": null,
+          "hint": "try doing",
+          "description": "Attach -아/어 보다 to an action verb stem to mean trying or experiencing an action. The auxiliary 보다 can be conjugated: 먹어 봤어요 means \"I tried eating it.\" Example: 이 음식을 먹어 보세요. (Please try this food.)",
+          "level": 2,
+          "tags": [
+            "modal",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]아/어 보다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eoboda_01",
+              "fullSentence": "이 음식을 먹어 보세요.",
+              "sentenceWithBlank": "이 음식을 먹어 ___.",
+              "answer": "보세요",
+              "englishHint": "Please try this food.",
+              "order": 0
+            },
+            {
+              "id": "le_eoboda_02",
+              "fullSentence": "한국 음식을 만들어 봤어요.",
+              "sentenceWithBlank": "한국 음식을 만들어 ___.",
+              "answer": "봤어요",
+              "englishHint": "I tried making Korean food.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eoboda_01",
+              "fullSentence": "김치를 먹어 봤어요.",
+              "sentenceWithBlank": "김치를 먹어 ___.",
+              "answer": "봤어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 보다",
+              "englishHint": "I've tried kimchi.",
+              "introducedAtPosition": 72
+            },
+            {
+              "id": "cc_eoboda_02",
+              "fullSentence": "한번 입어 보세요.",
+              "sentenceWithBlank": "한번 입어 ___.",
+              "answer": "보세요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 보다",
+              "englishHint": "Please try it on.",
+              "introducedAtPosition": 72
+            },
+            {
+              "id": "cc_eoboda_03",
+              "fullSentence": "그 옷을 입어 봤어요.",
+              "sentenceWithBlank": "그 옷을 입어 ___.",
+              "answer": "봤어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 보다",
+              "englishHint": "I tried wearing those clothes.",
+              "introducedAtPosition": 72
+            }
+          ]
+        },
+        {
+          "id": "gp_eun_jeok",
+          "title": "-(으)ㄴ 적이 있다",
+          "category": "experience",
+          "tense": null,
+          "register": null,
+          "hint": "have done before",
+          "description": "Attach -은 적이 있다 after a consonant-ending action verb stem or -ㄴ 적이 있다 after a vowel-ending stem; ㄹ-final stems drop ㄹ. Use 없다 for no experience; the construction refers to having done something before. Example: 한국에 간 적이 있어요. (I have been to Korea.)",
+          "level": 2,
+          "tags": [
+            "experience",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem](으)ㄴ 적이 있다/없다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eun_jeok_01",
+              "fullSentence": "한국에 간 적이 있어요.",
+              "sentenceWithBlank": "한국에 간 ___.",
+              "answer": "적이 있어요",
+              "englishHint": "I have been to Korea.",
+              "order": 0
+            },
+            {
+              "id": "le_eun_jeok_02",
+              "fullSentence": "혼자 여행한 적이 있어요.",
+              "sentenceWithBlank": "혼자 여행한 ___.",
+              "answer": "적이 있어요",
+              "englishHint": "I have traveled alone before.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eun_jeok_01",
+              "fullSentence": "부산에 간 적이 있어요.",
+              "sentenceWithBlank": "부산에 간 ___.",
+              "answer": "적이 있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ 적이 있다",
+              "englishHint": "I've been to Busan before.",
+              "introducedAtPosition": 73
+            },
+            {
+              "id": "cc_eun_jeok_02",
+              "fullSentence": "그 음식을 먹은 적이 없어요.",
+              "sentenceWithBlank": "그 음식을 먹은 ___.",
+              "answer": "적이 없어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ 적이 있다",
+              "englishHint": "I have never eaten that food.",
+              "introducedAtPosition": 73
+            },
+            {
+              "id": "cc_eun_jeok_03",
+              "fullSentence": "서울에 산 적이 있어요.",
+              "sentenceWithBlank": "서울에 산 ___.",
+              "answer": "적이 있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ 적이 있다",
+              "englishHint": "I have lived in Seoul before.",
+              "introducedAtPosition": 73
+            }
+          ]
+        },
+        {
+          "id": "gp_eobon_jeok",
+          "title": "-아/어 본 적이 있다",
+          "category": "experience",
+          "tense": null,
+          "register": null,
+          "hint": "have tried before",
+          "description": "Combine -아/어 보다 with the past modifier 본 적이 있다 to describe having tried something. Use 없다 to say you have never tried it. Example: 김치를 먹어 본 적이 있어요. (I have tried kimchi before.)",
+          "level": 2,
+          "tags": [
+            "experience",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]아/어 본 적이 있다/없다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eobon_jeok_01",
+              "fullSentence": "김치를 먹어 본 적이 있어요.",
+              "sentenceWithBlank": "김치를 먹어 ___.",
+              "answer": "본 적이 있어요",
+              "englishHint": "I have tried kimchi before.",
+              "order": 0
+            },
+            {
+              "id": "le_eobon_jeok_02",
+              "fullSentence": "한복을 입어 본 적이 없어요.",
+              "sentenceWithBlank": "한복을 입어 ___.",
+              "answer": "본 적이 없어요",
+              "englishHint": "I have never tried wearing a hanbok.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eobon_jeok_01",
+              "fullSentence": "제주도에서 운전해 본 적이 있어요.",
+              "sentenceWithBlank": "제주도에서 운전해 ___.",
+              "answer": "본 적이 있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 본 적이 있다",
+              "englishHint": "I've tried driving on Jeju Island.",
+              "introducedAtPosition": 74
+            },
+            {
+              "id": "cc_eobon_jeok_02",
+              "fullSentence": "그 책을 읽어 본 적이 있어요.",
+              "sentenceWithBlank": "그 책을 읽어 ___.",
+              "answer": "본 적이 있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 본 적이 있다",
+              "englishHint": "I have read that book before.",
+              "introducedAtPosition": 74
+            },
+            {
+              "id": "cc_eobon_jeok_03",
+              "fullSentence": "제주도에 가 본 적이 있어요.",
+              "sentenceWithBlank": "제주도에 가 ___.",
+              "answer": "본 적이 있어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 본 적이 있다",
+              "englishHint": "I have visited Jeju Island before.",
+              "introducedAtPosition": 74
+            }
+          ]
+        },
+        {
+          "id": "gp_giro_hada",
+          "title": "-기로 하다",
+          "category": "decision",
+          "tense": null,
+          "register": null,
+          "hint": "decide to",
+          "description": "Attach -기로 하다 to an action verb stem to state a decision or agreement. The decision can be past even when the action is planned for the future. Example: 내일부터 운동하기로 했어요. (I decided to exercise starting tomorrow.)",
+          "level": 2,
+          "tags": [
+            "decision",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]기로 하다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_giro_hada_01",
+              "fullSentence": "내일부터 운동하기로 했어요.",
+              "sentenceWithBlank": "내일부터 운동하___ 했어요.",
+              "answer": "기로",
+              "englishHint": "I decided to exercise starting tomorrow.",
+              "order": 0
+            },
+            {
+              "id": "le_giro_hada_02",
+              "fullSentence": "친구하고 같이 가기로 했어요.",
+              "sentenceWithBlank": "친구하고 같이 가___ 했어요.",
+              "answer": "기로",
+              "englishHint": "I decided to go with my friend.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_giro_hada_01",
+              "fullSentence": "이번 주에는 일찍 자기로 했어요.",
+              "sentenceWithBlank": "이번 주에는 일찍 자___ 했어요.",
+              "answer": "기로",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기로 하다",
+              "englishHint": "I've decided to go to bed early this week.",
+              "introducedAtPosition": 75
+            },
+            {
+              "id": "cc_giro_hada_02",
+              "fullSentence": "오늘은 집에서 쉬기로 했어요.",
+              "sentenceWithBlank": "오늘은 집에서 쉬___ 했어요.",
+              "answer": "기로",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기로 하다",
+              "englishHint": "I decided to rest at home today.",
+              "introducedAtPosition": 75
+            },
+            {
+              "id": "cc_giro_hada_03",
+              "fullSentence": "다음 주에 만나기로 했어요.",
+              "sentenceWithBlank": "다음 주에 만나___ 했어요.",
+              "answer": "기로",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기로 하다",
+              "englishHint": "We decided to meet next week.",
+              "introducedAtPosition": 75
+            }
+          ]
+        },
+        {
+          "id": "gp_eul_geot_gatda",
+          "title": "-(으)ㄹ 것 같다",
+          "category": "conjecture",
+          "tense": null,
+          "register": null,
+          "hint": "seems likely to, probably",
+          "description": "Attach -을 것 같다 after a consonant-ending predicate stem or -ㄹ 것 같다 after a vowel-ending stem; ㄹ-final stems keep their ㄹ. It expresses a tentative prediction, unlike present-state -(으)ㄴ 것 같다. Example: 내일 비가 올 것 같아요. (I think it will rain tomorrow.)",
+          "level": 2,
+          "tags": [
+            "conjecture",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb/Adj stem](으)ㄹ 것 같다",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_n_geos_gatda"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_eul_geot_gatda_01",
+              "fullSentence": "내일 비가 올 것 같아요.",
+              "sentenceWithBlank": "내일 비가 ___.",
+              "answer": "올 것 같아요",
+              "englishHint": "I think it will rain tomorrow.",
+              "order": 0
+            },
+            {
+              "id": "le_eul_geot_gatda_02",
+              "fullSentence": "주말에는 바쁠 것 같아요.",
+              "sentenceWithBlank": "주말에는 ___.",
+              "answer": "바쁠 것 같아요",
+              "englishHint": "I think I will be busy this weekend.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eul_geot_gatda_01",
+              "fullSentence": "내일은 눈이 올 것 같아요.",
+              "sentenceWithBlank": "내일은 눈이 ___.",
+              "answer": "올 것 같아요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ 것 같다",
+              "englishHint": "I think it might snow tomorrow.",
+              "introducedAtPosition": 76
+            },
+            {
+              "id": "cc_eul_geot_gatda_02",
+              "fullSentence": "이 음식은 매울 것 같아요.",
+              "sentenceWithBlank": "이 음식은 ___.",
+              "answer": "매울 것 같아요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ 것 같다",
+              "englishHint": "I think this food will be spicy.",
+              "introducedAtPosition": 76
+            },
+            {
+              "id": "cc_eul_geot_gatda_03",
+              "fullSentence": "친구가 곧 올 것 같아요.",
+              "sentenceWithBlank": "친구가 곧 ___.",
+              "answer": "올 것 같아요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄹ 것 같다",
+              "englishHint": "I think my friend will arrive soon.",
+              "introducedAtPosition": 76
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 18,
+      "title": "Giving Reasons and Background",
+      "grammarPoints": [
+        {
+          "id": "gp_gi_ttaemune",
+          "title": "-기 때문에",
+          "category": "reason",
+          "tense": null,
+          "register": null,
+          "hint": "because",
+          "description": "Attach -기 때문에 to a verb or adjective stem to give a reason. It is more explicit and often more written-sounding than -아/어서; noun + 때문에 does not need -기. Example: 비가 오기 때문에 집에 있어요. (I am staying home because it is raining.)",
+          "level": 2,
+          "tags": [
+            "reason",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb/Adj stem]기 때문에",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_aseo",
+            "gp_eunikka"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gi_ttaemune_01",
+              "fullSentence": "비가 오기 때문에 집에 있어요.",
+              "sentenceWithBlank": "비가 오기 ___ 집에 있어요.",
+              "answer": "때문에",
+              "englishHint": "I am staying home because it is raining.",
+              "order": 0
+            },
+            {
+              "id": "le_gi_ttaemune_02",
+              "fullSentence": "시험이 있기 때문에 공부해요.",
+              "sentenceWithBlank": "시험이 있기 ___ 공부해요.",
+              "answer": "때문에",
+              "englishHint": "I study because I have an exam.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gi_ttaemune_01",
+              "fullSentence": "배가 아프기 때문에 못 갔어요.",
+              "sentenceWithBlank": "배가 아프기 ___ 못 갔어요.",
+              "answer": "때문에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기 때문에",
+              "englishHint": "I couldn't go because my stomach hurt.",
+              "introducedAtPosition": 77
+            },
+            {
+              "id": "cc_gi_ttaemune_02",
+              "fullSentence": "너무 춥기 때문에 밖에 안 나가요.",
+              "sentenceWithBlank": "너무 춥기 ___ 밖에 안 나가요.",
+              "answer": "때문에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기 때문에",
+              "englishHint": "I am not going outside because it is too cold.",
+              "introducedAtPosition": 77
+            },
+            {
+              "id": "cc_gi_ttaemune_03",
+              "fullSentence": "시간이 없기 때문에 택시를 탔어요.",
+              "sentenceWithBlank": "시간이 없기 ___ 택시를 탔어요.",
+              "answer": "때문에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-기 때문에",
+              "englishHint": "I took a taxi because I had no time.",
+              "introducedAtPosition": 77
+            }
+          ]
+        },
+        {
+          "id": "gp_neunde",
+          "title": "-는데",
+          "category": "connective",
+          "tense": null,
+          "register": null,
+          "hint": "but, and (background)",
+          "description": "Attach -는데 to an action verb stem to give background or set up a contrast. For a stem ending in ㄹ, drop ㄹ: 살다 becomes 사는데. Example: 비가 오는데 우산이 없어요. (It is raining, but I do not have an umbrella.)",
+          "level": 2,
+          "tags": [
+            "connective",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem]는데",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_neunde_01",
+              "fullSentence": "비가 오는데 우산이 없어요.",
+              "sentenceWithBlank": "비가 오___ 우산이 없어요.",
+              "answer": "는데",
+              "englishHint": "It is raining, but I do not have an umbrella.",
+              "order": 0
+            },
+            {
+              "id": "le_neunde_02",
+              "fullSentence": "친구를 기다리는데 아직 안 와요.",
+              "sentenceWithBlank": "친구를 기다리___ 아직 안 와요.",
+              "answer": "는데",
+              "englishHint": "I am waiting for my friend, but they have not come yet.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_neunde_01",
+              "fullSentence": "밖에 비가 오는데 우산이 없어요.",
+              "sentenceWithBlank": "밖에 비가 오___ 우산이 없어요.",
+              "answer": "는데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는데",
+              "englishHint": "It's raining outside, but I don't have an umbrella.",
+              "introducedAtPosition": 78
+            },
+            {
+              "id": "cc_neunde_02",
+              "fullSentence": "저는 커피를 마시는데 친구는 차를 마셔요.",
+              "sentenceWithBlank": "저는 커피를 마시___ 친구는 차를 마셔요.",
+              "answer": "는데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는데",
+              "englishHint": "I drink coffee, but my friend drinks tea.",
+              "introducedAtPosition": 78
+            },
+            {
+              "id": "cc_neunde_03",
+              "fullSentence": "지금 공부하는데 조금 후에 전화할게요.",
+              "sentenceWithBlank": "지금 공부하___ 조금 후에 전화할게요.",
+              "answer": "는데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-는데",
+              "englishHint": "I am studying now, so I will call a little later.",
+              "introducedAtPosition": 78
+            }
+          ]
+        },
+        {
+          "id": "gp_eunde",
+          "title": "-(으)ㄴ데",
+          "category": "connective",
+          "tense": null,
+          "register": null,
+          "hint": "but, and (state background)",
+          "description": "Use -은데 after a consonant-ending adjective stem or -ㄴ데 after a vowel-ending stem to give background or contrast. Stem-final ㄹ drops, and ㅂ-irregular adjectives use -운데: 춥다 becomes 추운데. Example: 날씨가 추운데 밖에 갈까요? (It is cold, but shall we go outside?)",
+          "level": 2,
+          "tags": [
+            "connective",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Adjective stem](으)ㄴ데",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eunde_01",
+              "fullSentence": "날씨가 추운데 밖에 갈까요?",
+              "sentenceWithBlank": "날씨가 ___ 밖에 갈까요?",
+              "answer": "추운데",
+              "englishHint": "It is cold, but shall we go outside?",
+              "order": 0
+            },
+            {
+              "id": "le_eunde_02",
+              "fullSentence": "이 식당은 비싼데 음식이 맛있어요.",
+              "sentenceWithBlank": "이 식당은 ___ 음식이 맛있어요.",
+              "answer": "비싼데",
+              "englishHint": "This restaurant is expensive, but the food is good.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eunde_01",
+              "fullSentence": "그 옷은 비싼데 예뻐요.",
+              "sentenceWithBlank": "그 옷은 ___ 예뻐요.",
+              "answer": "비싼데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ데",
+              "englishHint": "Those clothes are expensive but pretty.",
+              "introducedAtPosition": 79
+            },
+            {
+              "id": "cc_eunde_02",
+              "fullSentence": "방은 작은데 아주 깨끗해요.",
+              "sentenceWithBlank": "방은 ___ 아주 깨끗해요.",
+              "answer": "작은데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ데",
+              "englishHint": "The room is small but very clean.",
+              "introducedAtPosition": 79
+            },
+            {
+              "id": "cc_eunde_03",
+              "fullSentence": "오늘은 바쁜데 내일은 시간이 있어요.",
+              "sentenceWithBlank": "오늘은 ___ 내일은 시간이 있어요.",
+              "answer": "바쁜데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)ㄴ데",
+              "englishHint": "I am busy today, but I have time tomorrow.",
+              "introducedAtPosition": 79
+            }
+          ]
+        },
+        {
+          "id": "gp_inde",
+          "title": "-(이)ㄴ데",
+          "category": "connective",
+          "tense": null,
+          "register": null,
+          "hint": "but, and (noun background)",
+          "description": "Attach -인데 to a noun to introduce background information or a contrast. The same form is used after consonant- and vowel-ending nouns. Example: 오늘은 일요일인데 회사에 가요. (It is Sunday, but I am going to work.)",
+          "level": 2,
+          "tags": [
+            "connective",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun]인데",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_inde_01",
+              "fullSentence": "오늘은 일요일인데 회사에 가요.",
+              "sentenceWithBlank": "오늘은 일요일___ 회사에 가요.",
+              "answer": "인데",
+              "englishHint": "It is Sunday, but I am going to work.",
+              "order": 0
+            },
+            {
+              "id": "le_inde_02",
+              "fullSentence": "제 친구인데 한국어를 잘해요.",
+              "sentenceWithBlank": "제 친구___ 한국어를 잘해요.",
+              "answer": "인데",
+              "englishHint": "This is my friend, and they speak Korean well.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_inde_01",
+              "fullSentence": "내일 시험인데 아직 공부 안 했어요.",
+              "sentenceWithBlank": "내일 시험___ 아직 공부 안 했어요.",
+              "answer": "인데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(이)ㄴ데",
+              "englishHint": "I have an exam tomorrow, but I haven't studied yet.",
+              "introducedAtPosition": 80
+            },
+            {
+              "id": "cc_inde_02",
+              "fullSentence": "지금 점심시간인데 같이 먹을까요?",
+              "sentenceWithBlank": "지금 점심시간___ 같이 먹을까요?",
+              "answer": "인데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(이)ㄴ데",
+              "englishHint": "It is lunchtime; shall we eat together?",
+              "introducedAtPosition": 80
+            },
+            {
+              "id": "cc_inde_03",
+              "fullSentence": "여기는 도서관인데 아주 조용해요.",
+              "sentenceWithBlank": "여기는 도서관___ 아주 조용해요.",
+              "answer": "인데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(이)ㄴ데",
+              "englishHint": "This is a library, and it is very quiet.",
+              "introducedAtPosition": 80
+            }
+          ]
+        },
+        {
+          "id": "gp_eumyeonseo",
+          "title": "-(으)면서",
+          "category": "connective",
+          "tense": null,
+          "register": null,
+          "hint": "while doing",
+          "description": "Attach -으면서 after consonant-ending action verb stems or -면서 after vowel-ending stems. The two actions normally have the same subject and happen at the same time; ㄹ-final stems take -면서. Example: 음악을 들으면서 공부해요. (I study while listening to music.)",
+          "level": 2,
+          "tags": [
+            "connective",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Action verb stem](으)면서",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eumyeonseo_01",
+              "fullSentence": "음악을 들으면서 공부해요.",
+              "sentenceWithBlank": "음악을 들으___ 공부해요.",
+              "answer": "면서",
+              "englishHint": "I study while listening to music.",
+              "order": 0
+            },
+            {
+              "id": "le_eumyeonseo_02",
+              "fullSentence": "밥을 먹으면서 텔레비전을 봐요.",
+              "sentenceWithBlank": "밥을 먹으___ 텔레비전을 봐요.",
+              "answer": "면서",
+              "englishHint": "I watch TV while eating.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eumyeonseo_01",
+              "fullSentence": "커피를 마시면서 책을 읽어요.",
+              "sentenceWithBlank": "커피를 마시___ 책을 읽어요.",
+              "answer": "면서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)면서",
+              "englishHint": "I read while drinking coffee.",
+              "introducedAtPosition": 81
+            },
+            {
+              "id": "cc_eumyeonseo_02",
+              "fullSentence": "걸으면서 전화하지 마세요.",
+              "sentenceWithBlank": "걸으___ 전화하지 마세요.",
+              "answer": "면서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)면서",
+              "englishHint": "Please do not talk on the phone while walking.",
+              "introducedAtPosition": 81
+            },
+            {
+              "id": "cc_eumyeonseo_03",
+              "fullSentence": "친구하고 이야기하면서 걸어요.",
+              "sentenceWithBlank": "친구하고 이야기하___ 걸어요.",
+              "answer": "면서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-(으)면서",
+              "englishHint": "I walk while talking with a friend.",
+              "introducedAtPosition": 81
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 19,
+      "title": "Changes and Prepared Results",
+      "grammarPoints": [
+        {
+          "id": "gp_eojida",
+          "title": "-아/어지다",
+          "category": "change",
+          "tense": null,
+          "register": null,
+          "hint": "become",
+          "description": "Attach -아/어지다 to an adjective stem to express a change of state. Conjugate 지다 at the end: 추워지다 becomes 추워졌어요 in the past. Example: 날씨가 많이 추워졌어요. (The weather got much colder.)",
+          "level": 2,
+          "tags": [
+            "change",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Adjective stem]아/어지다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eojida_01",
+              "fullSentence": "날씨가 많이 추워졌어요.",
+              "sentenceWithBlank": "날씨가 많이 추워___.",
+              "answer": "졌어요",
+              "englishHint": "The weather got much colder.",
+              "order": 0
+            },
+            {
+              "id": "le_eojida_02",
+              "fullSentence": "한국어가 조금 쉬워졌어요.",
+              "sentenceWithBlank": "한국어가 조금 쉬워___.",
+              "answer": "졌어요",
+              "englishHint": "Korean has become a little easier.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eojida_01",
+              "fullSentence": "날씨가 시원해졌어요.",
+              "sentenceWithBlank": "날씨가 시원해___.",
+              "answer": "졌어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어지다",
+              "englishHint": "The weather has gotten cooler.",
+              "introducedAtPosition": 82
+            },
+            {
+              "id": "cc_eojida_02",
+              "fullSentence": "날이 따뜻해졌어요.",
+              "sentenceWithBlank": "날이 따뜻해___.",
+              "answer": "졌어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어지다",
+              "englishHint": "The weather got warmer.",
+              "introducedAtPosition": 82
+            },
+            {
+              "id": "cc_eojida_03",
+              "fullSentence": "방이 깨끗해졌어요.",
+              "sentenceWithBlank": "방이 깨끗해___.",
+              "answer": "졌어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어지다",
+              "englishHint": "The room became clean.",
+              "introducedAtPosition": 82
+            }
+          ]
+        },
+        {
+          "id": "gp_ge_adverb",
+          "title": "-게",
+          "category": "adverb",
+          "tense": null,
+          "register": null,
+          "hint": "-ly, in a ... way",
+          "description": "Attach -게 to an adjective stem to describe how an action is performed. It functions adverbially: 빠르게 걷다 means \"walk quickly.\" Example: 조용하게 말해 주세요. (Please speak quietly.)",
+          "level": 2,
+          "tags": [
+            "adverb",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Adjective stem]게 + [Verb]",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_ge_adverb_01",
+              "fullSentence": "조용하게 말해 주세요.",
+              "sentenceWithBlank": "___ 말해 주세요.",
+              "answer": "조용하게",
+              "englishHint": "Please speak quietly.",
+              "order": 0
+            },
+            {
+              "id": "le_ge_adverb_02",
+              "fullSentence": "정확하게 읽으세요.",
+              "sentenceWithBlank": "___ 읽으세요.",
+              "answer": "정확하게",
+              "englishHint": "Please read accurately.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_ge_adverb_01",
+              "fullSentence": "문을 조용하게 닫아 주세요.",
+              "sentenceWithBlank": "문을 ___ 닫아 주세요.",
+              "answer": "조용하게",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-게",
+              "englishHint": "Please close the door quietly.",
+              "introducedAtPosition": 83
+            },
+            {
+              "id": "cc_ge_adverb_02",
+              "fullSentence": "글씨를 크게 쓰세요.",
+              "sentenceWithBlank": "글씨를 ___ 쓰세요.",
+              "answer": "크게",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-게",
+              "englishHint": "Please write in big letters.",
+              "introducedAtPosition": 83
+            },
+            {
+              "id": "cc_ge_adverb_03",
+              "fullSentence": "음악을 작게 틀어 주세요.",
+              "sentenceWithBlank": "음악을 ___ 틀어 주세요.",
+              "answer": "작게",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-게",
+              "englishHint": "Please play the music quietly.",
+              "introducedAtPosition": 83
+            }
+          ]
+        },
+        {
+          "id": "gp_ge_doeda",
+          "title": "-게 되다",
+          "category": "change",
+          "tense": null,
+          "register": null,
+          "hint": "come to, end up",
+          "description": "Attach -게 되다 to an action verb stem to describe a change in circumstances or an outcome. It often suggests the change was not simply a direct personal decision. Example: 다음 달부터 서울에서 살게 됐어요. (I ended up moving to Seoul starting next month.)",
+          "level": 2,
+          "tags": [
+            "change",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]게 되다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_ge_doeda_01",
+              "fullSentence": "다음 달부터 서울에서 살게 됐어요.",
+              "sentenceWithBlank": "다음 달부터 서울에서 살게 ___.",
+              "answer": "됐어요",
+              "englishHint": "I ended up moving to Seoul starting next month.",
+              "order": 0
+            },
+            {
+              "id": "le_ge_doeda_02",
+              "fullSentence": "새 회사에서 일하게 됐어요.",
+              "sentenceWithBlank": "새 회사에서 일하게 ___.",
+              "answer": "됐어요",
+              "englishHint": "I got a job at a new company.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_ge_doeda_01",
+              "fullSentence": "다음 주부터 야근하게 됐어요.",
+              "sentenceWithBlank": "다음 주부터 야근하게 ___.",
+              "answer": "됐어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-게 되다",
+              "englishHint": "I have ended up having to work overtime starting next week.",
+              "introducedAtPosition": 84
+            },
+            {
+              "id": "cc_ge_doeda_02",
+              "fullSentence": "한국 친구를 만나서 한국어를 배우게 됐어요.",
+              "sentenceWithBlank": "한국 친구를 만나서 한국어를 배우게 ___.",
+              "answer": "됐어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-게 되다",
+              "englishHint": "I started learning Korean after meeting a Korean friend.",
+              "introducedAtPosition": 84
+            },
+            {
+              "id": "cc_ge_doeda_03",
+              "fullSentence": "이제 아침에 일찍 일어나게 됐어요.",
+              "sentenceWithBlank": "이제 아침에 일찍 일어나게 ___.",
+              "answer": "됐어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-게 되다",
+              "englishHint": "I have come to get up early in the morning.",
+              "introducedAtPosition": 84
+            }
+          ]
+        },
+        {
+          "id": "gp_eoduda",
+          "title": "-아/어 두다",
+          "category": "result",
+          "tense": null,
+          "register": null,
+          "hint": "do in advance, leave done",
+          "description": "Attach -아/어 두다 to an action verb stem when doing something now for later use or leaving its result in place. For example, 문을 열어 두세요 means \"Please leave the door open.\" Example: 문을 열어 두세요. (Please leave the door open.)",
+          "level": 2,
+          "tags": [
+            "result",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]아/어 두다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eoduda_01",
+              "fullSentence": "문을 열어 두세요.",
+              "sentenceWithBlank": "문을 열어 ___.",
+              "answer": "두세요",
+              "englishHint": "Please leave the door open.",
+              "order": 0
+            },
+            {
+              "id": "le_eoduda_02",
+              "fullSentence": "내일 먹을 밥을 만들어 뒀어요.",
+              "sentenceWithBlank": "내일 먹을 밥을 만들어 ___.",
+              "answer": "뒀어요",
+              "englishHint": "I prepared tomorrow's meal in advance.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eoduda_01",
+              "fullSentence": "미리 숙제를 해 뒀어요.",
+              "sentenceWithBlank": "미리 숙제를 해 ___.",
+              "answer": "뒀어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 두다",
+              "englishHint": "I did my homework ahead of time.",
+              "introducedAtPosition": 85
+            },
+            {
+              "id": "cc_eoduda_02",
+              "fullSentence": "전화번호를 적어 뒀어요.",
+              "sentenceWithBlank": "전화번호를 적어 ___.",
+              "answer": "뒀어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 두다",
+              "englishHint": "I wrote down the phone number for later.",
+              "introducedAtPosition": 85
+            },
+            {
+              "id": "cc_eoduda_03",
+              "fullSentence": "물을 미리 사 뒀어요.",
+              "sentenceWithBlank": "물을 미리 사 ___.",
+              "answer": "뒀어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 두다",
+              "englishHint": "I bought water in advance.",
+              "introducedAtPosition": 85
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 20,
+      "title": "Comparisons and Everyday Quantities",
+      "grammarPoints": [
+        {
+          "id": "gp_boda_compare",
+          "title": "보다",
+          "category": "comparison",
+          "tense": null,
+          "register": null,
+          "hint": "than",
+          "description": "Attach 보다 to the thing used as the comparison standard. The other thing is often marked by 이/가 or 은/는: 버스보다 지하철이 빨라요. Example: 버스보다 지하철이 빨라요. (The subway is faster than the bus.)",
+          "level": 2,
+          "tags": [
+            "comparison",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun]보다 + [comparison]",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_boda_compare_01",
+              "fullSentence": "버스보다 지하철이 빨라요.",
+              "sentenceWithBlank": "버스___ 지하철이 빨라요.",
+              "answer": "보다",
+              "englishHint": "The subway is faster than the bus.",
+              "order": 0
+            },
+            {
+              "id": "le_boda_compare_02",
+              "fullSentence": "오늘은 어제보다 더 추워요.",
+              "sentenceWithBlank": "오늘은 어제___ 더 추워요.",
+              "answer": "보다",
+              "englishHint": "Today is colder than yesterday.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_boda_compare_01",
+              "fullSentence": "오늘은 어제보다 따뜻해요.",
+              "sentenceWithBlank": "오늘은 어제___ 따뜻해요.",
+              "answer": "보다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "보다",
+              "englishHint": "It's warmer today than yesterday.",
+              "introducedAtPosition": 86
+            },
+            {
+              "id": "cc_boda_compare_02",
+              "fullSentence": "저는 커피보다 차를 더 좋아해요.",
+              "sentenceWithBlank": "저는 커피___ 차를 더 좋아해요.",
+              "answer": "보다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "보다",
+              "englishHint": "I prefer tea to coffee.",
+              "introducedAtPosition": 86
+            },
+            {
+              "id": "cc_boda_compare_03",
+              "fullSentence": "이 가방은 저것보다 가벼워요.",
+              "sentenceWithBlank": "이 가방은 저것___ 가벼워요.",
+              "answer": "보다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "보다",
+              "englishHint": "This bag is lighter than that one.",
+              "introducedAtPosition": 86
+            }
+          ]
+        },
+        {
+          "id": "gp_cheoreom",
+          "title": "처럼",
+          "category": "comparison",
+          "tense": null,
+          "register": null,
+          "hint": "like, as",
+          "description": "Attach 처럼 directly to a noun to mean \"like\" or \"in the same way as.\" It compares manner or resemblance, not a numerical difference. Example: 그 사람은 가수처럼 노래해요. (That person sings like a singer.)",
+          "level": 2,
+          "tags": [
+            "comparison",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun]처럼",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_cheoreom_01",
+              "fullSentence": "그 사람은 가수처럼 노래해요.",
+              "sentenceWithBlank": "그 사람은 가수___ 노래해요.",
+              "answer": "처럼",
+              "englishHint": "That person sings like a singer.",
+              "order": 0
+            },
+            {
+              "id": "le_cheoreom_02",
+              "fullSentence": "아이처럼 웃어요.",
+              "sentenceWithBlank": "아이___ 웃어요.",
+              "answer": "처럼",
+              "englishHint": "She laughs like a child.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_cheoreom_01",
+              "fullSentence": "선생님처럼 천천히 말해요.",
+              "sentenceWithBlank": "선생님___ 천천히 말해요.",
+              "answer": "처럼",
+              "alternateAnswers": [],
+              "vocabBaseForm": "처럼",
+              "englishHint": "I speak slowly, like the teacher.",
+              "introducedAtPosition": 87
+            },
+            {
+              "id": "cc_cheoreom_02",
+              "fullSentence": "저도 친구처럼 한국어를 잘하고 싶어요.",
+              "sentenceWithBlank": "저도 친구___ 한국어를 잘하고 싶어요.",
+              "answer": "처럼",
+              "alternateAnswers": [],
+              "vocabBaseForm": "처럼",
+              "englishHint": "I want to speak Korean well like my friend.",
+              "introducedAtPosition": 87
+            },
+            {
+              "id": "cc_cheoreom_03",
+              "fullSentence": "오늘도 어제처럼 바빠요.",
+              "sentenceWithBlank": "오늘도 어제___ 바빠요.",
+              "answer": "처럼",
+              "alternateAnswers": [],
+              "vocabBaseForm": "처럼",
+              "englishHint": "I am busy today, just like yesterday.",
+              "introducedAtPosition": 87
+            }
+          ]
+        },
+        {
+          "id": "gp_euro_means",
+          "title": "(으)로",
+          "category": "particle",
+          "tense": null,
+          "register": null,
+          "hint": "by, using, toward",
+          "description": "Attach -으로 after consonants except ㄹ, and -로 after vowels or ㄹ. It marks means, instrument, or direction: 버스로 가요 means \"I go by bus.\" Example: 학교에 버스로 가요. (I go to school by bus.)",
+          "level": 2,
+          "tags": [
+            "particle",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun](으)로",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_euro_means_01",
+              "fullSentence": "버스로 학교에 가요.",
+              "sentenceWithBlank": "버스___ 학교에 가요.",
+              "answer": "로",
+              "englishHint": "I go to school by bus.",
+              "order": 0
+            },
+            {
+              "id": "le_euro_means_02",
+              "fullSentence": "연필로 이름을 써요.",
+              "sentenceWithBlank": "연필___ 이름을 써요.",
+              "answer": "로",
+              "englishHint": "I write my name with a pencil.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_euro_means_01",
+              "fullSentence": "서울에 기차로 가요.",
+              "sentenceWithBlank": "서울에 기차___ 가요.",
+              "answer": "로",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(으)로",
+              "englishHint": "I go to Seoul by train.",
+              "introducedAtPosition": 88
+            },
+            {
+              "id": "cc_euro_means_02",
+              "fullSentence": "오른쪽으로 가세요.",
+              "sentenceWithBlank": "오른쪽___ 가세요.",
+              "answer": "으로",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(으)로",
+              "englishHint": "Please go to the right.",
+              "introducedAtPosition": 88
+            },
+            {
+              "id": "cc_euro_means_03",
+              "fullSentence": "지하철로 회사에 가요.",
+              "sentenceWithBlank": "지하철___ 회사에 가요.",
+              "answer": "로",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(으)로",
+              "englishHint": "I take the subway to work.",
+              "introducedAtPosition": 88
+            }
+          ]
+        },
+        {
+          "id": "gp_mada",
+          "title": "마다",
+          "category": "frequency",
+          "tense": null,
+          "register": null,
+          "hint": "every, each",
+          "description": "Attach 마다 to a noun for recurring time periods or each member of a group. It does not change according to the final consonant. Example: 저는 아침마다 운동해요. (I exercise every morning.)",
+          "level": 2,
+          "tags": [
+            "frequency",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun]마다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_mada_01",
+              "fullSentence": "저는 아침마다 운동해요.",
+              "sentenceWithBlank": "저는 아침___ 운동해요.",
+              "answer": "마다",
+              "englishHint": "I exercise every morning.",
+              "order": 0
+            },
+            {
+              "id": "le_mada_02",
+              "fullSentence": "주말마다 친구를 만나요.",
+              "sentenceWithBlank": "주말___ 친구를 만나요.",
+              "answer": "마다",
+              "englishHint": "I meet friends every weekend.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_mada_01",
+              "fullSentence": "수업마다 숙제가 있어요.",
+              "sentenceWithBlank": "수업___ 숙제가 있어요.",
+              "answer": "마다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "마다",
+              "englishHint": "Every class has homework.",
+              "introducedAtPosition": 89
+            },
+            {
+              "id": "cc_mada_02",
+              "fullSentence": "이 버스는 정류장마다 서요.",
+              "sentenceWithBlank": "이 버스는 정류장___ 서요.",
+              "answer": "마다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "마다",
+              "englishHint": "This bus stops at every stop.",
+              "introducedAtPosition": 89
+            },
+            {
+              "id": "cc_mada_03",
+              "fullSentence": "날마다 한국어를 공부해요.",
+              "sentenceWithBlank": "날___ 한국어를 공부해요.",
+              "answer": "마다",
+              "alternateAnswers": [],
+              "vocabBaseForm": "마다",
+              "englishHint": "I study Korean every day.",
+              "introducedAtPosition": 89
+            }
+          ]
+        },
+        {
+          "id": "gp_bakke",
+          "title": "밖에",
+          "category": "limitation",
+          "tense": null,
+          "register": null,
+          "hint": "only, no more than",
+          "description": "Attach 밖에 to a noun meaning \"nothing other than.\" In this limiting use it requires a negative predicate such as 없다, 안, or 못. Example: 지갑에 천 원밖에 없어요. (I only have 1,000 won in my wallet.)",
+          "level": 2,
+          "tags": [
+            "limitation",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun]밖에 + [negative predicate]",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_bakke_01",
+              "fullSentence": "지갑에 천 원밖에 없어요.",
+              "sentenceWithBlank": "지갑에 천 원___ 없어요.",
+              "answer": "밖에",
+              "englishHint": "I only have 1,000 won in my wallet.",
+              "order": 0
+            },
+            {
+              "id": "le_bakke_02",
+              "fullSentence": "시간이 십 분밖에 없어요.",
+              "sentenceWithBlank": "시간이 십 분___ 없어요.",
+              "answer": "밖에",
+              "englishHint": "I only have ten minutes.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_bakke_01",
+              "fullSentence": "여기에는 물밖에 없어요.",
+              "sentenceWithBlank": "여기에는 물___ 없어요.",
+              "answer": "밖에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "밖에",
+              "englishHint": "There is only water here.",
+              "introducedAtPosition": 90
+            },
+            {
+              "id": "cc_bakke_02",
+              "fullSentence": "오늘은 물밖에 안 마셨어요.",
+              "sentenceWithBlank": "오늘은 물___ 안 마셨어요.",
+              "answer": "밖에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "밖에",
+              "englishHint": "I only drank water today.",
+              "introducedAtPosition": 90
+            },
+            {
+              "id": "cc_bakke_03",
+              "fullSentence": "저는 한국어밖에 못 해요.",
+              "sentenceWithBlank": "저는 한국어___ 못 해요.",
+              "answer": "밖에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "밖에",
+              "englishHint": "I can only speak Korean.",
+              "introducedAtPosition": 90
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 21,
+      "title": "Unexpected Results and Concessions",
+      "grammarPoints": [
+        {
+          "id": "gp_eobeorida",
+          "title": "-아/어 버리다",
+          "category": "aspect",
+          "tense": null,
+          "register": null,
+          "hint": "end up doing, finish completely",
+          "description": "Attach -아/어 버리다 to an action verb stem to express completion, often with regret or relief. The auxiliary 버리다 is then conjugated for tense and politeness. Example: 숙제를 다 해 버렸어요. (I finished all my homework.)",
+          "level": 2,
+          "tags": [
+            "aspect",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]아/어 버리다",
+          "notes": [],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_eobeorida_01",
+              "fullSentence": "숙제를 다 해 버렸어요.",
+              "sentenceWithBlank": "숙제를 다 해 ___.",
+              "answer": "버렸어요",
+              "englishHint": "I finished all my homework.",
+              "order": 0
+            },
+            {
+              "id": "le_eobeorida_02",
+              "fullSentence": "실수로 사진을 지워 버렸어요.",
+              "sentenceWithBlank": "실수로 사진을 지워 ___.",
+              "answer": "버렸어요",
+              "englishHint": "I accidentally deleted the photo.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eobeorida_01",
+              "fullSentence": "돈을 다 써 버렸어요.",
+              "sentenceWithBlank": "돈을 다 써 ___.",
+              "answer": "버렸어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 버리다",
+              "englishHint": "I ended up spending all the money.",
+              "introducedAtPosition": 91
+            },
+            {
+              "id": "cc_eobeorida_02",
+              "fullSentence": "케이크를 다 먹어 버렸어요.",
+              "sentenceWithBlank": "케이크를 다 먹어 ___.",
+              "answer": "버렸어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 버리다",
+              "englishHint": "I ate the entire cake.",
+              "introducedAtPosition": 91
+            },
+            {
+              "id": "cc_eobeorida_03",
+              "fullSentence": "물을 다 마셔 버렸어요.",
+              "sentenceWithBlank": "물을 다 마셔 ___.",
+              "answer": "버렸어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어 버리다",
+              "englishHint": "I drank all the water.",
+              "introducedAtPosition": 91
+            }
+          ]
+        },
+        {
+          "id": "gp_eodo_concession",
+          "title": "-아/어도",
+          "category": "concession",
+          "tense": null,
+          "register": null,
+          "hint": "even if, although",
+          "description": "Attach -아/어도 to a predicate stem for a condition that does not change the main outcome. Distinguish this concessive use from -아/어도 되다, which expresses permission. Example: 비가 와도 가요. (I will go even if it rains.)",
+          "level": 2,
+          "tags": [
+            "concession",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb/Adj stem]아/어도",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_eumyeon"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_eodo_concession_01",
+              "fullSentence": "비가 와도 가요.",
+              "sentenceWithBlank": "비가 와___ 가요.",
+              "answer": "도",
+              "englishHint": "I will go even if it rains.",
+              "order": 0
+            },
+            {
+              "id": "le_eodo_concession_02",
+              "fullSentence": "피곤해도 공부해요.",
+              "sentenceWithBlank": "피곤해___ 공부해요.",
+              "answer": "도",
+              "englishHint": "I study even when I am tired.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_eodo_concession_01",
+              "fullSentence": "추워도 밖에 나가요.",
+              "sentenceWithBlank": "추워___ 밖에 나가요.",
+              "answer": "도",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어도",
+              "englishHint": "I go outside even when it's cold.",
+              "introducedAtPosition": 92
+            },
+            {
+              "id": "cc_eodo_concession_02",
+              "fullSentence": "조금 비싸도 살 거예요.",
+              "sentenceWithBlank": "조금 비싸___ 살 거예요.",
+              "answer": "도",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어도",
+              "englishHint": "I will buy it even if it is a little expensive.",
+              "introducedAtPosition": 92
+            },
+            {
+              "id": "cc_eodo_concession_03",
+              "fullSentence": "시간이 없어도 괜찮아요.",
+              "sentenceWithBlank": "시간이 없어___ 괜찮아요.",
+              "answer": "도",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어도",
+              "englishHint": "It is okay even if you do not have time.",
+              "introducedAtPosition": 92
+            }
+          ]
+        },
+        {
+          "id": "gp_geureonde",
+          "title": "그런데",
+          "category": "discourse",
+          "tense": null,
+          "register": null,
+          "hint": "but, by the way",
+          "description": "Use 그런데 at the beginning of a new sentence to introduce a contrast or a shift in topic. It can mean \"but\" or \"by the way,\" depending on context. Example: 오늘은 추워요. 그런데 코트가 없어요. (It is cold today, but I do not have a coat.)",
+          "level": 2,
+          "tags": [
+            "discourse",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Sentence]. 그런데 [Sentence].",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_hajiman"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_geureonde_01",
+              "fullSentence": "오늘은 추워요. 그런데 코트가 없어요.",
+              "sentenceWithBlank": "오늘은 추워요. ___ 코트가 없어요.",
+              "answer": "그런데",
+              "englishHint": "It is cold today, but I do not have a coat.",
+              "order": 0
+            },
+            {
+              "id": "le_geureonde_02",
+              "fullSentence": "그 영화는 재미있어요. 그런데 너무 길어요.",
+              "sentenceWithBlank": "그 영화는 재미있어요. ___ 너무 길어요.",
+              "answer": "그런데",
+              "englishHint": "That movie is interesting, but it is too long.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_geureonde_01",
+              "fullSentence": "저는 커피를 좋아해요. 그런데 오늘은 차를 마셔요.",
+              "sentenceWithBlank": "저는 커피를 좋아해요. ___ 오늘은 차를 마셔요.",
+              "answer": "그런데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "그런데",
+              "englishHint": "I like coffee, but today I am drinking tea.",
+              "introducedAtPosition": 93
+            },
+            {
+              "id": "cc_geureonde_02",
+              "fullSentence": "한국어를 공부해요. 그런데 아직 어려워요.",
+              "sentenceWithBlank": "한국어를 공부해요. ___ 아직 어려워요.",
+              "answer": "그런데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "그런데",
+              "englishHint": "I study Korean, but it is still hard.",
+              "introducedAtPosition": 93
+            },
+            {
+              "id": "cc_geureonde_03",
+              "fullSentence": "저는 서울에 살아요. 그런데 고향은 부산이에요.",
+              "sentenceWithBlank": "저는 서울에 살아요. ___ 고향은 부산이에요.",
+              "answer": "그런데",
+              "alternateAnswers": [],
+              "vocabBaseForm": "그런데",
+              "englishHint": "I live in Seoul, but my hometown is Busan.",
+              "introducedAtPosition": 93
+            }
+          ]
+        },
+        {
+          "id": "gp_go_nan_hue",
+          "title": "-고 난 후에",
+          "category": "time",
+          "tense": null,
+          "register": null,
+          "hint": "after finishing",
+          "description": "Attach -고 난 후에 after an action verb stem to emphasize that one action has finished before the next begins. It is close in meaning to -고 나서. Example: 운동하고 난 후에 물을 마셔요. (I drink water after exercising.)",
+          "level": 2,
+          "tags": [
+            "time",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]고 난 후에",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_go_seq"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_go_nan_hue_01",
+              "fullSentence": "운동하고 난 후에 물을 마셔요.",
+              "sentenceWithBlank": "운동하고 난 ___ 물을 마셔요.",
+              "answer": "후에",
+              "englishHint": "I drink water after exercising.",
+              "order": 0
+            },
+            {
+              "id": "le_go_nan_hue_02",
+              "fullSentence": "시험을 보고 난 후에 쉬었어요.",
+              "sentenceWithBlank": "시험을 보고 난 ___ 쉬었어요.",
+              "answer": "후에",
+              "englishHint": "I rested after taking the exam.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_go_nan_hue_01",
+              "fullSentence": "영화를 보고 난 후에 집에 갔어요.",
+              "sentenceWithBlank": "영화를 보고 난 ___ 집에 갔어요.",
+              "answer": "후에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 난 후에",
+              "englishHint": "I went home after watching the movie.",
+              "introducedAtPosition": 94
+            },
+            {
+              "id": "cc_go_nan_hue_02",
+              "fullSentence": "밥을 먹고 난 후에 설거지를 해요.",
+              "sentenceWithBlank": "밥을 먹고 난 ___ 설거지를 해요.",
+              "answer": "후에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 난 후에",
+              "englishHint": "I wash the dishes after eating.",
+              "introducedAtPosition": 94
+            },
+            {
+              "id": "cc_go_nan_hue_03",
+              "fullSentence": "일을 끝내고 난 후에 집에 갔어요.",
+              "sentenceWithBlank": "일을 끝내고 난 ___ 집에 갔어요.",
+              "answer": "후에",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-고 난 후에",
+              "englishHint": "I went home after finishing work.",
+              "introducedAtPosition": 94
+            }
+          ]
+        },
+        {
+          "id": "gp_aseo_sequence",
+          "title": "-아/어서 (sequence)",
+          "category": "connective",
+          "tense": null,
+          "register": null,
+          "hint": "do and then",
+          "description": "The familiar -아/어서 form can also connect actions in time order, especially when the first leads into the second. For example, 일어나서 세수해요 means \"I get up and wash my face.\" Example: 아침에 일어나서 세수해요. (I get up and then wash my face in the morning.)",
+          "level": 2,
+          "tags": [
+            "connective",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Verb stem]아/어서 + [next action]",
+          "notes": [],
+          "relatedPointIds": [
+            "gp_aseo"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_aseo_sequence_01",
+              "fullSentence": "아침에 일어나서 세수해요.",
+              "sentenceWithBlank": "아침에 일어나___ 세수해요.",
+              "answer": "서",
+              "englishHint": "I get up and then wash my face in the morning.",
+              "order": 0
+            },
+            {
+              "id": "le_aseo_sequence_02",
+              "fullSentence": "집에 가서 쉬었어요.",
+              "sentenceWithBlank": "집에 가___ 쉬었어요.",
+              "answer": "서",
+              "englishHint": "I went home and rested.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_aseo_sequence_01",
+              "fullSentence": "집에 들어가서 손을 씻어요.",
+              "sentenceWithBlank": "집에 들어가___ 손을 씻어요.",
+              "answer": "서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어서 (sequence)",
+              "englishHint": "I go inside and wash my hands.",
+              "introducedAtPosition": 95
+            },
+            {
+              "id": "cc_aseo_sequence_02",
+              "fullSentence": "시장에서 과일을 사서 집에 왔어요.",
+              "sentenceWithBlank": "시장에서 과일을 사___ 집에 왔어요.",
+              "answer": "서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어서 (sequence)",
+              "englishHint": "I bought fruit at the market and came home.",
+              "introducedAtPosition": 95
+            },
+            {
+              "id": "cc_aseo_sequence_03",
+              "fullSentence": "버스를 타서 학교에 갔어요.",
+              "sentenceWithBlank": "버스를 타___ 학교에 갔어요.",
+              "answer": "서",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-아/어서 (sequence)",
+              "englishHint": "I took the bus and went to school.",
+              "introducedAtPosition": 95
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 22,
+      "title": "Optional Bridge: Reporting What People Say",
+      "grammarPoints": [
+        {
+          "id": "gp_neundago_hada",
+          "title": "-ㄴ/는다고 하다",
+          "category": "reportative",
+          "tense": null,
+          "register": null,
+          "hint": "say that someone does",
+          "description": "For present action-verb statements, attach -는다고 after consonant-ending stems and -ㄴ다고 after vowel-ending stems, then 하다. Use -ㄴ다고 after ㄹ-final stems too, dropping ㄹ; reported speech is usually more advanced than core TOPIK I. Example: 친구가 매일 운동한다고 해요. (My friend says they exercise every day.)",
+          "level": 2,
+          "tags": [
+            "reportative",
+            "TOPIK1",
+            "optional-bridge"
+          ],
+          "structurePattern": "[Action verb stem]ㄴ/는다고 하다",
+          "notes": [
+            {
+              "type": "caution",
+              "title": "Optional bridge",
+              "content": "Reported speech is often covered after core beginner grammar. This lesson is enrichment, not required for basic TOPIK I practice."
+            }
+          ],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_neundago_hada_01",
+              "fullSentence": "친구가 매일 운동한다고 해요.",
+              "sentenceWithBlank": "친구가 매일 ___.",
+              "answer": "운동한다고 해요",
+              "englishHint": "My friend says they exercise every day.",
+              "order": 0
+            },
+            {
+              "id": "le_neundago_hada_02",
+              "fullSentence": "민수가 지금 책을 읽는다고 해요.",
+              "sentenceWithBlank": "민수가 지금 책을 ___.",
+              "answer": "읽는다고 해요",
+              "englishHint": "Minsu says he is reading a book now.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_neundago_hada_01",
+              "fullSentence": "친구가 내일 온다고 해요.",
+              "sentenceWithBlank": "친구가 내일 ___.",
+              "answer": "온다고 해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㄴ/는다고 하다",
+              "englishHint": "My friend says they are coming tomorrow.",
+              "introducedAtPosition": 96
+            },
+            {
+              "id": "cc_neundago_hada_02",
+              "fullSentence": "동생이 학교에 간다고 했어요.",
+              "sentenceWithBlank": "동생이 학교에 ___.",
+              "answer": "간다고 했어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㄴ/는다고 하다",
+              "englishHint": "My younger sibling said they were going to school.",
+              "introducedAtPosition": 96
+            },
+            {
+              "id": "cc_neundago_hada_03",
+              "fullSentence": "친구가 저녁을 먹는다고 해요.",
+              "sentenceWithBlank": "친구가 저녁을 ___.",
+              "answer": "먹는다고 해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-ㄴ/는다고 하다",
+              "englishHint": "My friend says they are eating dinner.",
+              "introducedAtPosition": 96
+            }
+          ]
+        },
+        {
+          "id": "gp_dago_hada_adj",
+          "title": "-다고 하다 (adjective)",
+          "category": "reportative",
+          "tense": null,
+          "register": null,
+          "hint": "say that it is",
+          "description": "Attach -다고 하다 to descriptive verb stems to report someone's statement about a state. The usual polite form is -다고 해요. Example: 친구가 오늘 바쁘다고 해요. (My friend says they are busy today.)",
+          "level": 2,
+          "tags": [
+            "reportative",
+            "TOPIK1",
+            "optional-bridge"
+          ],
+          "structurePattern": "[Adjective stem]다고 하다",
+          "notes": [
+            {
+              "type": "caution",
+              "title": "Optional bridge",
+              "content": "Reported speech is often covered after core beginner grammar. This lesson is enrichment, not required for basic TOPIK I practice."
+            }
+          ],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_dago_hada_adj_01",
+              "fullSentence": "친구가 오늘 바쁘다고 해요.",
+              "sentenceWithBlank": "친구가 오늘 ___.",
+              "answer": "바쁘다고 해요",
+              "englishHint": "My friend says they are busy today.",
+              "order": 0
+            },
+            {
+              "id": "le_dago_hada_adj_02",
+              "fullSentence": "엄마가 음식이 맛있다고 해요.",
+              "sentenceWithBlank": "엄마가 음식이 ___.",
+              "answer": "맛있다고 해요",
+              "englishHint": "Mom says the food is delicious.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_dago_hada_adj_01",
+              "fullSentence": "민수가 오늘 피곤하다고 해요.",
+              "sentenceWithBlank": "민수가 오늘 ___.",
+              "answer": "피곤하다고 해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-다고 하다 (adjective)",
+              "englishHint": "Minsu says he is tired today.",
+              "introducedAtPosition": 97
+            },
+            {
+              "id": "cc_dago_hada_adj_02",
+              "fullSentence": "동생이 너무 춥다고 했어요.",
+              "sentenceWithBlank": "동생이 너무 ___.",
+              "answer": "춥다고 했어요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-다고 하다 (adjective)",
+              "englishHint": "My younger sibling said it was very cold.",
+              "introducedAtPosition": 97
+            },
+            {
+              "id": "cc_dago_hada_adj_03",
+              "fullSentence": "선생님이 시험이 쉽다고 해요.",
+              "sentenceWithBlank": "선생님이 시험이 ___.",
+              "answer": "쉽다고 해요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-다고 하다 (adjective)",
+              "englishHint": "The teacher says the exam is easy.",
+              "introducedAtPosition": 97
+            }
+          ]
+        },
+        {
+          "id": "gp_irago_hada",
+          "title": "(이)라고 하다",
+          "category": "reportative",
+          "tense": null,
+          "register": null,
+          "hint": "say it is called, say it is a noun",
+          "description": "Use -이라고 after consonant-ending nouns and -라고 after vowel-ending nouns, followed by 하다. It reports a noun identification or someone's name. Example: 저는 민수라고 해요. (My name is Minsu.)",
+          "level": 2,
+          "tags": [
+            "reportative",
+            "TOPIK1",
+            "optional-bridge"
+          ],
+          "structurePattern": "[Noun](이)라고 하다",
+          "notes": [
+            {
+              "type": "caution",
+              "title": "Optional bridge",
+              "content": "Reported speech is often covered after core beginner grammar. This lesson is enrichment, not required for basic TOPIK I practice."
+            }
+          ],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_irago_hada_01",
+              "fullSentence": "저는 민수라고 해요.",
+              "sentenceWithBlank": "저는 민수___ 해요.",
+              "answer": "라고",
+              "englishHint": "My name is Minsu.",
+              "order": 0
+            },
+            {
+              "id": "le_irago_hada_02",
+              "fullSentence": "그 사람은 선생님이라고 해요.",
+              "sentenceWithBlank": "그 사람은 선생님___ 해요.",
+              "answer": "이라고",
+              "englishHint": "They say that person is a teacher.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_irago_hada_01",
+              "fullSentence": "제 이름은 수진이라고 해요.",
+              "sentenceWithBlank": "제 이름은 수진___ 해요.",
+              "answer": "이라고",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(이)라고 하다",
+              "englishHint": "My name is Sujin.",
+              "introducedAtPosition": 98
+            },
+            {
+              "id": "cc_irago_hada_02",
+              "fullSentence": "이 음식은 김치라고 해요.",
+              "sentenceWithBlank": "이 음식은 김치___ 해요.",
+              "answer": "라고",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(이)라고 하다",
+              "englishHint": "This food is called kimchi.",
+              "introducedAtPosition": 98
+            },
+            {
+              "id": "cc_irago_hada_03",
+              "fullSentence": "친구 이름은 수진이라고 해요.",
+              "sentenceWithBlank": "친구 이름은 수진___ 해요.",
+              "answer": "이라고",
+              "alternateAnswers": [],
+              "vocabBaseForm": "(이)라고 하다",
+              "englishHint": "My friend's name is Sujin.",
+              "introducedAtPosition": 98
+            }
+          ]
+        },
+        {
+          "id": "gp_dagoyo",
+          "title": "-다고요?",
+          "category": "reportative",
+          "tense": null,
+          "register": null,
+          "hint": "did you say ...?",
+          "description": "Add -다고요? to a reported statement to ask for confirmation or repeat something surprising. Action verbs normally take their reported -ㄴ/는다고 form first. Example: 내일 비가 온다고요? (Did you say it will rain tomorrow?)",
+          "level": 2,
+          "tags": [
+            "reportative",
+            "TOPIK1",
+            "optional-bridge"
+          ],
+          "structurePattern": "[Reported clause]다고요?",
+          "notes": [
+            {
+              "type": "caution",
+              "title": "Optional bridge",
+              "content": "Reported speech is often covered after core beginner grammar. This lesson is enrichment, not required for basic TOPIK I practice."
+            }
+          ],
+          "relatedPointIds": [],
+          "lessonExamples": [
+            {
+              "id": "le_dagoyo_01",
+              "fullSentence": "내일 비가 온다고요?",
+              "sentenceWithBlank": "내일 비가 온___?",
+              "answer": "다고요",
+              "englishHint": "Did you say it will rain tomorrow?",
+              "order": 0
+            },
+            {
+              "id": "le_dagoyo_02",
+              "fullSentence": "그 식당이 비싸다고요?",
+              "sentenceWithBlank": "그 식당이 비싸___?",
+              "answer": "다고요",
+              "englishHint": "Did you say that restaurant is expensive?",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_dagoyo_01",
+              "fullSentence": "내일 수업이 없다고요?",
+              "sentenceWithBlank": "내일 수업이 없___?",
+              "answer": "다고요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-다고요?",
+              "englishHint": "Did you say there is no class tomorrow?",
+              "introducedAtPosition": 99
+            },
+            {
+              "id": "cc_dagoyo_02",
+              "fullSentence": "친구가 오늘 간다고요?",
+              "sentenceWithBlank": "친구가 오늘 간___?",
+              "answer": "다고요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-다고요?",
+              "englishHint": "Did you say your friend is going today?",
+              "introducedAtPosition": 99
+            },
+            {
+              "id": "cc_dagoyo_03",
+              "fullSentence": "그 영화가 재미있다고요?",
+              "sentenceWithBlank": "그 영화가 재미있___?",
+              "answer": "다고요",
+              "alternateAnswers": [],
+              "vocabBaseForm": "-다고요?",
+              "englishHint": "Did you say that movie is interesting?",
+              "introducedAtPosition": 99
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

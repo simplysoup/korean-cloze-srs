@@ -24,9 +24,9 @@ CI (`.github/workflows/mobile.yml`) runs content validation, typecheck, Jest, an
 
 ## Content
 
-TOPIK I Level 1: 48 grammar points, 178 cloze cards, 109 lesson examples. The content is **provisional** — authored by Nicholas with basic Korean, copied verbatim from the old app's seed data, plus 24 variant practice cards and 11 worked examples from a Codex Level 1 patch (build 15). It will likely be regenerated later by a high-performing English–Korean multimodal model.
+TOPIK I Level 1: 48 grammar points, 178 cloze cards, 109 lesson examples. TOPIK I Level 2: 51 grammar points, 153 cloze cards, 102 lesson examples. Both levels were audited and (for Level 1) reorganised into a learner-first curriculum on 2026-11-09; Level 2 was authored fresh in the same overhaul. Full details: `docs/planning/korean-curriculum-overhaul-2026-11-09.md`. The content is a curated draft, not independently reviewed by a Korean educator.
 
-The canonical content source is still the old app's seed data in `prisma/seed-data/topik1-level1/` (plus `additions.ts`); `scripts/port-content.ts` (`bun scripts/port-content.ts`) regenerates `mobile/src/content/topik1-level1.json` from it. Content is versioned (`CONTENT_VERSION` in `mobile/src/db/index.ts`): on a version bump the app upserts every content row, so new and corrected content reaches existing devices without touching review progress.
+The canonical content source is the seed data in `prisma/seed-data/topik1-level1/` (plus `additions.ts`) and `prisma/seed-data/topik1-level2/`; `scripts/port-content.ts` (`bun scripts/port-content.ts`) regenerates `mobile/src/content/topik1-level1.json` and `topik1-level2.json` from it. Content is versioned (`CONTENT_VERSION` in `mobile/src/db/index.ts`, now `topik1-v6`): on a version bump the app upserts every content row, so new and corrected content reaches existing devices without touching review progress.
 
 ## Legacy SvelteKit app (frozen, not deployed)
 

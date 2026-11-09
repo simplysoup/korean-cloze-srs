@@ -1,22 +1,232 @@
 import type { LessonSeed } from '../types';
 
-// ══════════════════════════════════════════════════════════════════════════════
-// Lesson 7 — Want and Ability
-//
-// Grammar points (positions 34–36):
-//  34. -고 싶다          Want to (desire)
-//  35. -(으)ㄹ 수 있다   Can / able to
-//  36. 못               Cannot (short-form inability)
-//
-// Available: all L1–L6 grammar (pos 1–33).
-// ══════════════════════════════════════════════════════════════════════════════
-
+// Lesson 7 — Polite Requests, Needs and Wants
+// Grammar points (positions 32–35):
+//   32. euseyo
+//   33. a_juseyo
+//   34. aya_hada
+//   35. go_sipda
+// Examples and cards use only grammar through their target position.
 
 export const lesson07: LessonSeed = {
 	lessonNumber: 7,
-	title: 'Want and Ability',
+	title: "Polite Requests, Needs and Wants",
 	grammarPoints: [
-		// ── 34. -고 싶다 — Want to ──────────────────────────────────────────
+		// 32. gp_euseyo
+		{
+			id: 'gp_euseyo',
+			title: '-(으)세요',
+			category: 'verb-ending',
+			tense: null,
+			register: 'polite',
+			hint: 'please (do) / polite imperative',
+			description:
+				'Polite imperative form used for requests and instructions. ' +
+				'After consonant stem → -으세요: 읽다 → 읽으세요. After vowel stem → -세요: 가다 → 가세요. ' +
+				'Also used as honorific present: 어머니가 가세요 "Mother goes/is going."',
+			level: 1,
+			tags: ['verb-ending', 'honorific', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb stem + (으)세요',
+			notes: [
+				{ type: 'tip', title: 'Dual Use', content: '-(으)세요 is both a polite imperative ("please do") and an honorific form. Context determines meaning.' },
+				{ type: 'tip', title: 'Irregular', content: 'ㄹ-ending stems drop ㄹ: 만들다 → 만드세요. 듣다 → 들으세요 (ㄷ-irregular).' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_euseyo_01',
+					fullSentence: '여기에 앉으세요.',
+					sentenceWithBlank: '여기에 ___.',
+					answer: '앉으세요',
+					englishHint: 'Please sit here.',
+					order: 0
+				},
+				{
+					id: 'le_euseyo_02',
+					fullSentence: '이것을 보세요.',
+					sentenceWithBlank: '이것을 ___.',
+					answer: '보세요',
+					englishHint: 'Please look at this.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_euseyo_01',
+					fullSentence: '여기에 앉으세요.',
+					sentenceWithBlank: '여기에 ___.',
+					answer: '앉으세요',
+					alternateAnswers: [],
+					vocabBaseForm: '앉다',
+					englishHint: 'Please sit here.',
+					introducedAtPosition: 32
+				},
+				{
+					id: 'cc_euseyo_02',
+					fullSentence: '천천히 가세요.',
+					sentenceWithBlank: '천천히 ___.',
+					answer: '가세요',
+					alternateAnswers: [],
+					vocabBaseForm: '가다',
+					englishHint: 'Please go slowly.',
+					introducedAtPosition: 32
+				},
+				{
+					id: 'cc_euseyo_03',
+					fullSentence: '이 책을 읽으세요.',
+					sentenceWithBlank: '이 책을 ___.',
+					answer: '읽으세요',
+					alternateAnswers: [],
+					vocabBaseForm: '읽다',
+					englishHint: 'Please read this book.',
+					introducedAtPosition: 32
+				}
+			]
+		},
+
+		// 33. gp_a_juseyo
+		{
+			id: 'gp_a_juseyo',
+			title: '-아/어 주세요',
+			category: 'expression',
+			tense: null,
+			register: 'polite',
+			hint: 'please do (for me)',
+			description:
+				'Polite request asking someone to do something as a favor. ' +
+				'Verb stem + 아/어 주세요: 가르치다 → 가르쳐 주세요 "please teach me." ' +
+				'Same vowel harmony as -아요/어요. More specifically requesting action for the speaker\'s benefit.',
+			level: 1,
+			tags: ['expression', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb stem + 아/어 주세요',
+			notes: [
+				{ type: 'tip', title: '-(으)세요 vs -아/어 주세요', content: '-(으)세요 is a general polite command. -아/어 주세요 specifically asks "please do this for me" — implies a favor.' },
+				{ type: 'tip', title: 'Common Phrases', content: '도와주세요 (please help), 알려 주세요 (please let me know), 기다려 주세요 (please wait).' }
+			],
+			relatedPointIds: ['gp_euseyo'],
+			lessonExamples: [
+				{
+					id: 'le_a_juseyo_01',
+					fullSentence: '사진을 찍어 주세요.',
+					sentenceWithBlank: '사진을 찍어 ___.',
+					answer: '주세요',
+					englishHint: 'Please take a photo (for me).',
+					order: 0
+				},
+				{
+					id: 'le_a_juseyo_02',
+					fullSentence: '천천히 말해 주세요.',
+					sentenceWithBlank: '천천히 말해 ___.',
+					answer: '주세요',
+					englishHint: 'Please speak slowly (for me).',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_a_juseyo_01',
+					fullSentence: '사진을 찍어 주세요.',
+					sentenceWithBlank: '사진을 찍어 ___.',
+					answer: '주세요',
+					alternateAnswers: [],
+					vocabBaseForm: '-아/어 주세요',
+					englishHint: 'Please take a photo (for me).',
+					introducedAtPosition: 33
+				},
+				{
+					id: 'cc_a_juseyo_02',
+					fullSentence: '문을 열어 주세요.',
+					sentenceWithBlank: '문을 열어 ___.',
+					answer: '주세요',
+					alternateAnswers: [],
+					vocabBaseForm: '-아/어 주세요',
+					englishHint: 'Please open the door (for me).',
+					introducedAtPosition: 33
+				},
+				{
+					id: 'cc_a_juseyo_03',
+					fullSentence: '한국어로 말해 주세요.',
+					sentenceWithBlank: '한국어로 말해 ___.',
+					answer: '주세요',
+					alternateAnswers: [],
+					vocabBaseForm: '-아/어 주세요',
+					englishHint: 'Please speak in Korean (for me).',
+					introducedAtPosition: 33
+				}
+			]
+		},
+
+		// 34. gp_aya_hada
+		{
+			id: 'gp_aya_hada',
+			title: '-아/어야 하다',
+			category: 'expression',
+			tense: null,
+			register: 'polite informal',
+			hint: 'must, have to',
+			description:
+				'Expresses obligation or necessity. Verb stem + 아야/어야 하다: ' +
+				'가다 → 가야 해요 "must go." 먹다 → 먹어야 해요 "must eat." ' +
+				'하다 → 해야 해요 "must do." Same vowel harmony as -아요/어요.',
+			level: 1,
+			tags: ['expression', 'beginner', 'TOPIK1'],
+			structurePattern: 'Verb stem + 아야/어야 하다',
+			notes: [
+				{ type: 'tip', title: 'Vowel Harmony', content: 'Same as -아요/어요: stem ㅏ/ㅗ → 아야 해요; otherwise → 어야 해요. 하다 → 해야 해요.' },
+				{ type: 'tip', title: 'Negative', content: '-지 않아도 돼요 means "don\'t have to" (no obligation). Not covered here but useful to know.' }
+			],
+			lessonExamples: [
+				{
+					id: 'le_aya_hada_01',
+					fullSentence: '내일 학교에 가야 해요.',
+					sentenceWithBlank: '내일 학교에 가야 ___.',
+					answer: '해요',
+					englishHint: 'I have to go to school tomorrow.',
+					order: 0
+				},
+				{
+					id: 'le_aya_hada_02',
+					fullSentence: '숙제를 해야 해요.',
+					sentenceWithBlank: '숙제를 해야 ___.',
+					answer: '해요',
+					englishHint: 'I have to do homework.',
+					order: 1
+				}
+			],
+			cards: [
+				{
+					id: 'cc_aya_hada_01',
+					fullSentence: '내일 학교에 가야 해요.',
+					sentenceWithBlank: '내일 학교에 ___ 해요.',
+					answer: '가야',
+					alternateAnswers: [],
+					vocabBaseForm: '가다',
+					englishHint: 'I have to go to school tomorrow.',
+					introducedAtPosition: 34
+				},
+				{
+					id: 'cc_aya_hada_02',
+					fullSentence: '약을 먹어야 해요.',
+					sentenceWithBlank: '약을 ___ 해요.',
+					answer: '먹어야',
+					alternateAnswers: [],
+					vocabBaseForm: '먹다',
+					englishHint: 'I have to take medicine.',
+					introducedAtPosition: 34
+				},
+				{
+					id: 'cc_aya_hada_03',
+					fullSentence: '지금 공부해야 해요.',
+					sentenceWithBlank: '지금 ___ 해요.',
+					answer: '공부해야',
+					alternateAnswers: [],
+					vocabBaseForm: '공부하다',
+					englishHint: 'I have to study now.',
+					introducedAtPosition: 34
+				}
+			]
+		},
+
+		// 35. gp_go_sipda
 		{
 			id: 'gp_go_sipda',
 			title: '-고 싶다',
@@ -62,7 +272,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
 					englishHint: 'I want to go to Korea.',
-					introducedAtPosition: 34
+					introducedAtPosition: 35
 				},
 				{
 					id: 'cc_go_sipda_02',
@@ -72,7 +282,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
 					englishHint: 'I want to eat bulgogi.',
-					introducedAtPosition: 34
+					introducedAtPosition: 35
 				},
 				{
 					id: 'cc_go_sipda_03',
@@ -82,151 +292,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
 					englishHint: 'I want to watch a movie.',
-					introducedAtPosition: 34
-				}
-			]
-		},
-
-		// ── 35. -(으)ㄹ 수 있다 — Can / able to ────────────────────────────
-		{
-			id: 'gp_eul_su_issda',
-			title: '-(으)ㄹ 수 있다',
-			category: 'expression',
-			tense: null,
-			register: 'polite informal',
-			hint: 'can, able to / cannot, unable to',
-			description:
-				'Expresses ability or possibility. Verb stem + (으)ㄹ 수 있다: 먹을 수 있어요 "can eat." ' +
-				'Negative: -(으)ㄹ 수 없다: 먹을 수 없어요 "cannot eat." ' +
-				'After consonant stem → -을 수 있다; after vowel stem → -ㄹ 수 있다.',
-			level: 1,
-			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + (으)ㄹ 수 있다/없다',
-			notes: [
-				{ type: 'tip', title: 'Allomorphs', content: 'Consonant stem: 먹다 → 먹을 수 있어요. Vowel stem: 가다 → 갈 수 있어요. ㄹ stem: 만들다 → 만들 수 있어요 (ㄹ stays).' },
-				{ type: 'tip', title: '있다 vs 없다', content: '수 있다 = can/able. 수 없다 = cannot/unable. Both conjugate normally: 있어요/없어요.' }
-			],
-			relatedPointIds: ['gp_mos'],
-			lessonExamples: [
-				{
-					id: 'le_eul_su_01',
-					fullSentence: '한국어를 읽을 수 있어요.',
-					sentenceWithBlank: '한국어를 읽을 수 ___.',
-					answer: '있어요',
-					englishHint: 'I can read Korean.',
-					order: 0
-				},
-				{
-					id: 'le_eul_su_02',
-					fullSentence: '매운 음식을 먹을 수 없어요.',
-					sentenceWithBlank: '매운 음식을 먹을 수 ___.',
-					answer: '없어요',
-					englishHint: 'I cannot eat spicy food.',
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_eul_su_01',
-					fullSentence: '한국어를 읽을 수 있어요.',
-					sentenceWithBlank: '한국어를 읽을 ___ 있어요.',
-					answer: '수',
-					alternateAnswers: [],
-					vocabBaseForm: '-(으)ㄹ 수 있다',
-					englishHint: 'I can read Korean.',
 					introducedAtPosition: 35
-				},
-				{
-					id: 'cc_eul_su_02',
-					fullSentence: '내일 갈 수 있어요.',
-					sentenceWithBlank: '내일 갈 ___ 있어요.',
-					answer: '수',
-					alternateAnswers: [],
-					vocabBaseForm: '-(으)ㄹ 수 있다',
-					englishHint: 'I can go tomorrow.',
-					introducedAtPosition: 35
-				},
-				{
-					id: 'cc_eul_su_03',
-					fullSentence: '여기에서 수영할 수 없어요.',
-					sentenceWithBlank: '여기에서 수영할 ___ 없어요.',
-					answer: '수',
-					alternateAnswers: [],
-					vocabBaseForm: '-(으)ㄹ 수 있다',
-					englishHint: 'You cannot swim here.',
-					introducedAtPosition: 35
-				}
-			]
-		},
-
-		// ── 36. 못 — Cannot (short-form inability) ─────────────────────────
-		{
-			id: 'gp_mos',
-			title: '못',
-			category: 'adverb',
-			tense: null,
-			register: null,
-			hint: 'cannot, unable to (short negation)',
-			description:
-				'Short-form inability negation. Placed before the verb: 못 먹어요 "cannot eat." ' +
-				'For 하다 verbs, 못 goes between the noun and 하다: 운동 못 해요. ' +
-				'Indicates inability (cannot), not refusal (won\'t). Compare with 안 (choice not to).',
-			level: 1,
-			tags: ['adverb', 'negation', 'beginner', 'TOPIK1'],
-			structurePattern: '못 + Verb',
-			notes: [
-				{ type: 'tip', title: '못 vs 안', content: '못 = cannot (inability/impossibility). 안 = do not (choice/preference). 못 먹어요 (can\'t eat) vs 안 먹어요 (don\'t eat).' },
-				{ type: 'tip', title: '하다 Split', content: 'For Noun+하다 verbs: 공부 못 해요 (cannot study), not 못 공부해요.' }
-			],
-			relatedPointIds: ['gp_an', 'gp_eul_su_issda'],
-			lessonExamples: [
-				{
-					id: 'le_mos_01',
-					fullSentence: '저는 매운 음식을 못 먹어요.',
-					sentenceWithBlank: '저는 매운 음식을 ___ 먹어요.',
-					answer: '못',
-					englishHint: "I can't eat spicy food.",
-					order: 0
-				},
-				{
-					id: 'le_mos_02',
-					fullSentence: '오늘은 운동 못 해요.',
-					sentenceWithBlank: '오늘은 운동 ___ 해요.',
-					answer: '못',
-					englishHint: "I can't exercise today.",
-					order: 1
-				}
-			],
-			cards: [
-				{
-					id: 'cc_mos_01',
-					fullSentence: '저는 매운 음식을 못 먹어요.',
-					sentenceWithBlank: '저는 매운 음식을 ___ 먹어요.',
-					answer: '못',
-					alternateAnswers: [],
-					vocabBaseForm: '못',
-					englishHint: "I can't eat spicy food.",
-					introducedAtPosition: 36
-				},
-				{
-					id: 'cc_mos_02',
-					fullSentence: '한국어를 못 읽어요.',
-					sentenceWithBlank: '한국어를 ___ 읽어요.',
-					answer: '못',
-					alternateAnswers: [],
-					vocabBaseForm: '못',
-					englishHint: "I can't read Korean.",
-					introducedAtPosition: 36
-				},
-				{
-					id: 'cc_mos_03',
-					fullSentence: '오늘 수영 못 해요.',
-					sentenceWithBlank: '오늘 수영 ___ 해요.',
-					answer: '못',
-					alternateAnswers: [],
-					vocabBaseForm: '못',
-					englishHint: "I can't swim today.",
-					introducedAtPosition: 36
 				}
 			]
 		}
