@@ -1,12 +1,12 @@
 import type { LessonSeed } from '../types';
 
 // Lesson 22 — Optional Bridge: Reporting What People Say
-// Grammar points (positions 96–99):
-//   96. -ㄴ/는다고 하다
-//   97. -다고 하다 (adjective)
-//   98. (이)라고 하다
-//   99. -다고요?
-// Available: all corrected Level 1 grammar (positions 1–48); Level 2 is cumulative.
+// Grammar points (positions 99–102):
+//   99. -ㄴ/는다고 하다
+//   100. -다고 하다 (adjective)
+//   101. (이)라고 하다
+//   102. -다고요?
+// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
 export const lesson22: LessonSeed = {
   lessonNumber: 22,
   title: "Optional Bridge: Reporting What People Say",
@@ -29,9 +29,9 @@ export const lesson22: LessonSeed = {
         { id: "le_neundago_hada_02", fullSentence: "민수가 지금 책을 읽는다고 해요.", sentenceWithBlank: "민수가 지금 책을 ___.", answer: "읽는다고 해요", englishHint: "Minsu says he is reading a book now.", order: 1 },
       ],
       cards: [
-        { id: "cc_neundago_hada_01", fullSentence: "친구가 내일 온다고 해요.", sentenceWithBlank: "친구가 내일 ___.", answer: "온다고 해요", alternateAnswers: [], vocabBaseForm: "-ㄴ/는다고 하다", englishHint: "My friend says they are coming tomorrow.", introducedAtPosition: 96 },
-        { id: "cc_neundago_hada_02", fullSentence: "동생이 학교에 간다고 했어요.", sentenceWithBlank: "동생이 학교에 ___.", answer: "간다고 했어요", alternateAnswers: [], vocabBaseForm: "-ㄴ/는다고 하다", englishHint: "My younger sibling said they were going to school.", introducedAtPosition: 96 },
-        { id: "cc_neundago_hada_03", fullSentence: "친구가 저녁을 먹는다고 해요.", sentenceWithBlank: "친구가 저녁을 ___.", answer: "먹는다고 해요", alternateAnswers: [], vocabBaseForm: "-ㄴ/는다고 하다", englishHint: "My friend says they are eating dinner.", introducedAtPosition: 96 },
+        { id: "cc_neundago_hada_01", fullSentence: "친구가 내일 온다고 해요.", sentenceWithBlank: "친구가 내일 ___.", answer: "온다고 해요", alternateAnswers: [], vocabBaseForm: "-ㄴ/는다고 하다", englishHint: "My friend says they are coming tomorrow.", introducedAtPosition: 99 },
+        { id: "cc_neundago_hada_02", fullSentence: "동생이 학교에 간다고 했어요.", sentenceWithBlank: "동생이 학교에 ___.", answer: "간다고 했어요", alternateAnswers: [], vocabBaseForm: "-ㄴ/는다고 하다", englishHint: "My younger sibling said they were going to school.", introducedAtPosition: 99 },
+        { id: "cc_neundago_hada_03", fullSentence: "친구가 저녁을 먹는다고 해요.", sentenceWithBlank: "친구가 저녁을 ___.", answer: "먹는다고 해요", alternateAnswers: [], vocabBaseForm: "-ㄴ/는다고 하다", englishHint: "My friend says they are eating dinner.", introducedAtPosition: 99 },
       ]
     },
     {
@@ -52,9 +52,9 @@ export const lesson22: LessonSeed = {
         { id: "le_dago_hada_adj_02", fullSentence: "엄마가 음식이 맛있다고 해요.", sentenceWithBlank: "엄마가 음식이 ___.", answer: "맛있다고 해요", englishHint: "Mom says the food is delicious.", order: 1 },
       ],
       cards: [
-        { id: "cc_dago_hada_adj_01", fullSentence: "민수가 오늘 피곤하다고 해요.", sentenceWithBlank: "민수가 오늘 ___.", answer: "피곤하다고 해요", alternateAnswers: [], vocabBaseForm: "-다고 하다 (adjective)", englishHint: "Minsu says he is tired today.", introducedAtPosition: 97 },
-        { id: "cc_dago_hada_adj_02", fullSentence: "동생이 너무 춥다고 했어요.", sentenceWithBlank: "동생이 너무 ___.", answer: "춥다고 했어요", alternateAnswers: [], vocabBaseForm: "-다고 하다 (adjective)", englishHint: "My younger sibling said it was very cold.", introducedAtPosition: 97 },
-        { id: "cc_dago_hada_adj_03", fullSentence: "선생님이 시험이 쉽다고 해요.", sentenceWithBlank: "선생님이 시험이 ___.", answer: "쉽다고 해요", alternateAnswers: [], vocabBaseForm: "-다고 하다 (adjective)", englishHint: "The teacher says the exam is easy.", introducedAtPosition: 97 },
+        { id: "cc_dago_hada_adj_01", fullSentence: "민수가 오늘 피곤하다고 해요.", sentenceWithBlank: "민수가 오늘 ___.", answer: "피곤하다고 해요", alternateAnswers: [], vocabBaseForm: "-다고 하다 (adjective)", englishHint: "Minsu says he is tired today.", introducedAtPosition: 100 },
+        { id: "cc_dago_hada_adj_02", fullSentence: "동생이 너무 춥다고 했어요.", sentenceWithBlank: "동생이 너무 ___.", answer: "춥다고 했어요", alternateAnswers: [], vocabBaseForm: "-다고 하다 (adjective)", englishHint: "My younger sibling said it was very cold.", introducedAtPosition: 100 },
+        { id: "cc_dago_hada_adj_03", fullSentence: "선생님이 시험이 쉽다고 해요.", sentenceWithBlank: "선생님이 시험이 ___.", answer: "쉽다고 해요", alternateAnswers: [], vocabBaseForm: "-다고 하다 (adjective)", englishHint: "The teacher says the exam is easy.", introducedAtPosition: 100 },
       ]
     },
     {
@@ -75,9 +75,9 @@ export const lesson22: LessonSeed = {
         { id: "le_irago_hada_02", fullSentence: "그 사람은 선생님이라고 해요.", sentenceWithBlank: "그 사람은 선생님___ 해요.", answer: "이라고", englishHint: "They say that person is a teacher.", order: 1 },
       ],
       cards: [
-        { id: "cc_irago_hada_01", fullSentence: "제 이름은 수진이라고 해요.", sentenceWithBlank: "제 이름은 수진___ 해요.", answer: "이라고", alternateAnswers: [], vocabBaseForm: "(이)라고 하다", englishHint: "My name is Sujin.", introducedAtPosition: 98 },
-        { id: "cc_irago_hada_02", fullSentence: "이 음식은 김치라고 해요.", sentenceWithBlank: "이 음식은 김치___ 해요.", answer: "라고", alternateAnswers: [], vocabBaseForm: "(이)라고 하다", englishHint: "This food is called kimchi.", introducedAtPosition: 98 },
-        { id: "cc_irago_hada_03", fullSentence: "친구 이름은 수진이라고 해요.", sentenceWithBlank: "친구 이름은 수진___ 해요.", answer: "이라고", alternateAnswers: [], vocabBaseForm: "(이)라고 하다", englishHint: "My friend's name is Sujin.", introducedAtPosition: 98 },
+        { id: "cc_irago_hada_01", fullSentence: "제 이름은 수진이라고 해요.", sentenceWithBlank: "제 이름은 수진___ 해요.", answer: "이라고", alternateAnswers: [], vocabBaseForm: "(이)라고 하다", englishHint: "My name is Sujin.", introducedAtPosition: 101 },
+        { id: "cc_irago_hada_02", fullSentence: "이 음식은 김치라고 해요.", sentenceWithBlank: "이 음식은 김치___ 해요.", answer: "라고", alternateAnswers: [], vocabBaseForm: "(이)라고 하다", englishHint: "This food is called kimchi.", introducedAtPosition: 101 },
+        { id: "cc_irago_hada_03", fullSentence: "친구 이름은 수진이라고 해요.", sentenceWithBlank: "친구 이름은 수진___ 해요.", answer: "이라고", alternateAnswers: [], vocabBaseForm: "(이)라고 하다", englishHint: "My friend's name is Sujin.", introducedAtPosition: 101 },
       ]
     },
     {
@@ -98,9 +98,9 @@ export const lesson22: LessonSeed = {
         { id: "le_dagoyo_02", fullSentence: "그 식당이 비싸다고요?", sentenceWithBlank: "그 식당이 비싸___?", answer: "다고요", englishHint: "Did you say that restaurant is expensive?", order: 1 },
       ],
       cards: [
-        { id: "cc_dagoyo_01", fullSentence: "내일 수업이 없다고요?", sentenceWithBlank: "내일 수업이 없___?", answer: "다고요", alternateAnswers: [], vocabBaseForm: "-다고요?", englishHint: "Did you say there is no class tomorrow?", introducedAtPosition: 99 },
-        { id: "cc_dagoyo_02", fullSentence: "친구가 오늘 간다고요?", sentenceWithBlank: "친구가 오늘 간___?", answer: "다고요", alternateAnswers: [], vocabBaseForm: "-다고요?", englishHint: "Did you say your friend is going today?", introducedAtPosition: 99 },
-        { id: "cc_dagoyo_03", fullSentence: "그 영화가 재미있다고요?", sentenceWithBlank: "그 영화가 재미있___?", answer: "다고요", alternateAnswers: [], vocabBaseForm: "-다고요?", englishHint: "Did you say that movie is interesting?", introducedAtPosition: 99 },
+        { id: "cc_dagoyo_01", fullSentence: "내일 수업이 없다고요?", sentenceWithBlank: "내일 수업이 없___?", answer: "다고요", alternateAnswers: [], vocabBaseForm: "-다고요?", englishHint: "Did you say there is no class tomorrow?", introducedAtPosition: 102 },
+        { id: "cc_dagoyo_02", fullSentence: "친구가 오늘 간다고요?", sentenceWithBlank: "친구가 오늘 간___?", answer: "다고요", alternateAnswers: [], vocabBaseForm: "-다고요?", englishHint: "Did you say your friend is going today?", introducedAtPosition: 102 },
+        { id: "cc_dagoyo_03", fullSentence: "그 영화가 재미있다고요?", sentenceWithBlank: "그 영화가 재미있___?", answer: "다고요", alternateAnswers: [], vocabBaseForm: "-다고요?", englishHint: "Did you say that movie is interesting?", introducedAtPosition: 102 },
       ]
     },
   ]

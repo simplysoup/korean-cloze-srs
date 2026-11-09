@@ -1,13 +1,13 @@
 import type { LessonSeed } from '../types';
 
 // Lesson 17 — Trying Things and Talking About Experience
-// Grammar points (positions 72–76):
-//   72. -아/어 보다
-//   73. -(으)ㄴ 적이 있다
-//   74. -아/어 본 적이 있다
-//   75. -기로 하다
-//   76. -(으)ㄹ 것 같다
-// Available: all corrected Level 1 grammar (positions 1–48); Level 2 is cumulative.
+// Grammar points (positions 75–79):
+//   75. -아/어 보다
+//   76. -(으)ㄴ 적이 있다
+//   77. -아/어 본 적이 있다
+//   78. -기로 하다
+//   79. -(으)ㄹ 것 같다
+// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
 export const lesson17: LessonSeed = {
   lessonNumber: 17,
   title: "Trying Things and Talking About Experience",
@@ -30,9 +30,9 @@ export const lesson17: LessonSeed = {
         { id: "le_eoboda_02", fullSentence: "한국 음식을 만들어 봤어요.", sentenceWithBlank: "한국 음식을 만들어 ___.", answer: "봤어요", englishHint: "I tried making Korean food.", order: 1 },
       ],
       cards: [
-        { id: "cc_eoboda_01", fullSentence: "김치를 먹어 봤어요.", sentenceWithBlank: "김치를 먹어 ___.", answer: "봤어요", alternateAnswers: [], vocabBaseForm: "-아/어 보다", englishHint: "I've tried kimchi.", introducedAtPosition: 72 },
-        { id: "cc_eoboda_02", fullSentence: "한번 입어 보세요.", sentenceWithBlank: "한번 입어 ___.", answer: "보세요", alternateAnswers: [], vocabBaseForm: "-아/어 보다", englishHint: "Please try it on.", introducedAtPosition: 72 },
-        { id: "cc_eoboda_03", fullSentence: "그 옷을 입어 봤어요.", sentenceWithBlank: "그 옷을 입어 ___.", answer: "봤어요", alternateAnswers: [], vocabBaseForm: "-아/어 보다", englishHint: "I tried wearing those clothes.", introducedAtPosition: 72 },
+        { id: "cc_eoboda_01", fullSentence: "김치를 먹어 봤어요.", sentenceWithBlank: "김치를 먹어 ___.", answer: "봤어요", alternateAnswers: [], vocabBaseForm: "-아/어 보다", englishHint: "I've tried kimchi.", introducedAtPosition: 75 },
+        { id: "cc_eoboda_02", fullSentence: "한번 입어 보세요.", sentenceWithBlank: "한번 입어 ___.", answer: "보세요", alternateAnswers: [], vocabBaseForm: "-아/어 보다", englishHint: "Please try it on.", introducedAtPosition: 75 },
+        { id: "cc_eoboda_03", fullSentence: "그 옷을 입어 봤어요.", sentenceWithBlank: "그 옷을 입어 ___.", answer: "봤어요", alternateAnswers: [], vocabBaseForm: "-아/어 보다", englishHint: "I tried wearing those clothes.", introducedAtPosition: 75 },
       ]
     },
     {
@@ -53,9 +53,9 @@ export const lesson17: LessonSeed = {
         { id: "le_eun_jeok_02", fullSentence: "혼자 여행한 적이 있어요.", sentenceWithBlank: "혼자 여행한 ___.", answer: "적이 있어요", englishHint: "I have traveled alone before.", order: 1 },
       ],
       cards: [
-        { id: "cc_eun_jeok_01", fullSentence: "부산에 간 적이 있어요.", sentenceWithBlank: "부산에 간 ___.", answer: "적이 있어요", alternateAnswers: [], vocabBaseForm: "-(으)ㄴ 적이 있다", englishHint: "I've been to Busan before.", introducedAtPosition: 73 },
-        { id: "cc_eun_jeok_02", fullSentence: "그 음식을 먹은 적이 없어요.", sentenceWithBlank: "그 음식을 먹은 ___.", answer: "적이 없어요", alternateAnswers: [], vocabBaseForm: "-(으)ㄴ 적이 있다", englishHint: "I have never eaten that food.", introducedAtPosition: 73 },
-        { id: "cc_eun_jeok_03", fullSentence: "서울에 산 적이 있어요.", sentenceWithBlank: "서울에 산 ___.", answer: "적이 있어요", alternateAnswers: [], vocabBaseForm: "-(으)ㄴ 적이 있다", englishHint: "I have lived in Seoul before.", introducedAtPosition: 73 },
+        { id: "cc_eun_jeok_01", fullSentence: "부산에 간 적이 있어요.", sentenceWithBlank: "부산에 간 ___.", answer: "적이 있어요", alternateAnswers: [], vocabBaseForm: "-(으)ㄴ 적이 있다", englishHint: "I've been to Busan before.", introducedAtPosition: 76 },
+        { id: "cc_eun_jeok_02", fullSentence: "그 음식을 먹은 적이 없어요.", sentenceWithBlank: "그 음식을 먹은 ___.", answer: "적이 없어요", alternateAnswers: [], vocabBaseForm: "-(으)ㄴ 적이 있다", englishHint: "I have never eaten that food.", introducedAtPosition: 76 },
+        { id: "cc_eun_jeok_03", fullSentence: "서울에 산 적이 있어요.", sentenceWithBlank: "서울에 산 ___.", answer: "적이 있어요", alternateAnswers: [], vocabBaseForm: "-(으)ㄴ 적이 있다", englishHint: "I have lived in Seoul before.", introducedAtPosition: 76 },
       ]
     },
     {
@@ -76,9 +76,9 @@ export const lesson17: LessonSeed = {
         { id: "le_eobon_jeok_02", fullSentence: "한복을 입어 본 적이 없어요.", sentenceWithBlank: "한복을 입어 ___.", answer: "본 적이 없어요", englishHint: "I have never tried wearing a hanbok.", order: 1 },
       ],
       cards: [
-        { id: "cc_eobon_jeok_01", fullSentence: "제주도에서 운전해 본 적이 있어요.", sentenceWithBlank: "제주도에서 운전해 ___.", answer: "본 적이 있어요", alternateAnswers: [], vocabBaseForm: "-아/어 본 적이 있다", englishHint: "I've tried driving on Jeju Island.", introducedAtPosition: 74 },
-        { id: "cc_eobon_jeok_02", fullSentence: "그 책을 읽어 본 적이 있어요.", sentenceWithBlank: "그 책을 읽어 ___.", answer: "본 적이 있어요", alternateAnswers: [], vocabBaseForm: "-아/어 본 적이 있다", englishHint: "I have read that book before.", introducedAtPosition: 74 },
-        { id: "cc_eobon_jeok_03", fullSentence: "제주도에 가 본 적이 있어요.", sentenceWithBlank: "제주도에 가 ___.", answer: "본 적이 있어요", alternateAnswers: [], vocabBaseForm: "-아/어 본 적이 있다", englishHint: "I have visited Jeju Island before.", introducedAtPosition: 74 },
+        { id: "cc_eobon_jeok_01", fullSentence: "제주도에서 운전해 본 적이 있어요.", sentenceWithBlank: "제주도에서 운전해 ___.", answer: "본 적이 있어요", alternateAnswers: [], vocabBaseForm: "-아/어 본 적이 있다", englishHint: "I've tried driving on Jeju Island.", introducedAtPosition: 77 },
+        { id: "cc_eobon_jeok_02", fullSentence: "그 책을 읽어 본 적이 있어요.", sentenceWithBlank: "그 책을 읽어 ___.", answer: "본 적이 있어요", alternateAnswers: [], vocabBaseForm: "-아/어 본 적이 있다", englishHint: "I have read that book before.", introducedAtPosition: 77 },
+        { id: "cc_eobon_jeok_03", fullSentence: "제주도에 가 본 적이 있어요.", sentenceWithBlank: "제주도에 가 ___.", answer: "본 적이 있어요", alternateAnswers: [], vocabBaseForm: "-아/어 본 적이 있다", englishHint: "I have visited Jeju Island before.", introducedAtPosition: 77 },
       ]
     },
     {
@@ -99,9 +99,9 @@ export const lesson17: LessonSeed = {
         { id: "le_giro_hada_02", fullSentence: "친구하고 같이 가기로 했어요.", sentenceWithBlank: "친구하고 같이 가___ 했어요.", answer: "기로", englishHint: "I decided to go with my friend.", order: 1 },
       ],
       cards: [
-        { id: "cc_giro_hada_01", fullSentence: "이번 주에는 일찍 자기로 했어요.", sentenceWithBlank: "이번 주에는 일찍 자___ 했어요.", answer: "기로", alternateAnswers: [], vocabBaseForm: "-기로 하다", englishHint: "I've decided to go to bed early this week.", introducedAtPosition: 75 },
-        { id: "cc_giro_hada_02", fullSentence: "오늘은 집에서 쉬기로 했어요.", sentenceWithBlank: "오늘은 집에서 쉬___ 했어요.", answer: "기로", alternateAnswers: [], vocabBaseForm: "-기로 하다", englishHint: "I decided to rest at home today.", introducedAtPosition: 75 },
-        { id: "cc_giro_hada_03", fullSentence: "다음 주에 만나기로 했어요.", sentenceWithBlank: "다음 주에 만나___ 했어요.", answer: "기로", alternateAnswers: [], vocabBaseForm: "-기로 하다", englishHint: "We decided to meet next week.", introducedAtPosition: 75 },
+        { id: "cc_giro_hada_01", fullSentence: "이번 주에는 일찍 자기로 했어요.", sentenceWithBlank: "이번 주에는 일찍 자___ 했어요.", answer: "기로", alternateAnswers: [], vocabBaseForm: "-기로 하다", englishHint: "I've decided to go to bed early this week.", introducedAtPosition: 78 },
+        { id: "cc_giro_hada_02", fullSentence: "오늘은 집에서 쉬기로 했어요.", sentenceWithBlank: "오늘은 집에서 쉬___ 했어요.", answer: "기로", alternateAnswers: [], vocabBaseForm: "-기로 하다", englishHint: "I decided to rest at home today.", introducedAtPosition: 78 },
+        { id: "cc_giro_hada_03", fullSentence: "다음 주에 만나기로 했어요.", sentenceWithBlank: "다음 주에 만나___ 했어요.", answer: "기로", alternateAnswers: [], vocabBaseForm: "-기로 하다", englishHint: "We decided to meet next week.", introducedAtPosition: 78 },
       ]
     },
     {
@@ -122,9 +122,9 @@ export const lesson17: LessonSeed = {
         { id: "le_eul_geot_gatda_02", fullSentence: "주말에는 바쁠 것 같아요.", sentenceWithBlank: "주말에는 ___.", answer: "바쁠 것 같아요", englishHint: "I think I will be busy this weekend.", order: 1 },
       ],
       cards: [
-        { id: "cc_eul_geot_gatda_01", fullSentence: "내일은 눈이 올 것 같아요.", sentenceWithBlank: "내일은 눈이 ___.", answer: "올 것 같아요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ 것 같다", englishHint: "I think it might snow tomorrow.", introducedAtPosition: 76 },
-        { id: "cc_eul_geot_gatda_02", fullSentence: "이 음식은 매울 것 같아요.", sentenceWithBlank: "이 음식은 ___.", answer: "매울 것 같아요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ 것 같다", englishHint: "I think this food will be spicy.", introducedAtPosition: 76 },
-        { id: "cc_eul_geot_gatda_03", fullSentence: "친구가 곧 올 것 같아요.", sentenceWithBlank: "친구가 곧 ___.", answer: "올 것 같아요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ 것 같다", englishHint: "I think my friend will arrive soon.", introducedAtPosition: 76 },
+        { id: "cc_eul_geot_gatda_01", fullSentence: "내일은 눈이 올 것 같아요.", sentenceWithBlank: "내일은 눈이 ___.", answer: "올 것 같아요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ 것 같다", englishHint: "I think it might snow tomorrow.", introducedAtPosition: 79 },
+        { id: "cc_eul_geot_gatda_02", fullSentence: "이 음식은 매울 것 같아요.", sentenceWithBlank: "이 음식은 ___.", answer: "매울 것 같아요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ 것 같다", englishHint: "I think this food will be spicy.", introducedAtPosition: 79 },
+        { id: "cc_eul_geot_gatda_03", fullSentence: "친구가 곧 올 것 같아요.", sentenceWithBlank: "친구가 곧 ___.", answer: "올 것 같아요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ 것 같다", englishHint: "I think my friend will arrive soon.", introducedAtPosition: 79 },
       ]
     },
   ]

@@ -1,13 +1,13 @@
 import type { LessonSeed } from '../types';
 
 // Lesson 12 — Plans, Invitations and Purposes
-// Grammar points (positions 49–53):
-//   49. -(으)ㄹ까요?
-//   50. -(으)ㄹ래요
-//   51. -(으)려고 하다
-//   52. -(으)러 가다
-//   53. -(으)ㅂ시다
-// Available: all corrected Level 1 grammar (positions 1–48); Level 2 is cumulative.
+// Grammar points (positions 51–55):
+//   51. -(으)ㄹ까요?
+//   52. -(으)ㄹ래요
+//   53. -(으)려고 하다
+//   54. -(으)러 가다
+//   55. -(으)ㅂ시다
+// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
 export const lesson12: LessonSeed = {
   lessonNumber: 12,
   title: "Plans, Invitations and Purposes",
@@ -30,9 +30,9 @@ export const lesson12: LessonSeed = {
         { id: "le_eulkkayo_02", fullSentence: "무슨 영화를 볼까요?", sentenceWithBlank: "무슨 영화를 ___?", answer: "볼까요", englishHint: "What movie shall we watch?", order: 1 },
       ],
       cards: [
-        { id: "cc_eulkkayo_01", fullSentence: "이제 출발할까요?", sentenceWithBlank: "이제 ___?", answer: "출발할까요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ까요?", englishHint: "Shall we leave now?", introducedAtPosition: 49 },
-        { id: "cc_eulkkayo_02", fullSentence: "제가 문을 열까요?", sentenceWithBlank: "제가 문을 ___?", answer: "열까요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ까요?", englishHint: "Shall I open the door?", introducedAtPosition: 49 },
-        { id: "cc_eulkkayo_03", fullSentence: "지금 점심을 먹을까요?", sentenceWithBlank: "지금 점심을 ___?", answer: "먹을까요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ까요?", englishHint: "Shall we eat lunch now?", introducedAtPosition: 49 },
+        { id: "cc_eulkkayo_01", fullSentence: "이제 출발할까요?", sentenceWithBlank: "이제 ___?", answer: "출발할까요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ까요?", englishHint: "Shall we leave now?", introducedAtPosition: 51 },
+        { id: "cc_eulkkayo_02", fullSentence: "제가 문을 열까요?", sentenceWithBlank: "제가 문을 ___?", answer: "열까요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ까요?", englishHint: "Shall I open the door?", introducedAtPosition: 51 },
+        { id: "cc_eulkkayo_03", fullSentence: "지금 점심을 먹을까요?", sentenceWithBlank: "지금 점심을 ___?", answer: "먹을까요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ까요?", englishHint: "Shall we eat lunch now?", introducedAtPosition: 51 },
       ]
     },
     {
@@ -53,9 +53,9 @@ export const lesson12: LessonSeed = {
         { id: "le_eullaeyo_02", fullSentence: "주말에 뭐 할래요?", sentenceWithBlank: "주말에 뭐 ___?", answer: "할래요", englishHint: "What do you want to do this weekend?", order: 1 },
       ],
       cards: [
-        { id: "cc_eullaeyo_01", fullSentence: "저는 물을 마실래요.", sentenceWithBlank: "저는 물을 ___.", answer: "마실래요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ래요", englishHint: "I will have water.", introducedAtPosition: 50 },
-        { id: "cc_eullaeyo_02", fullSentence: "이것을 살래요?", sentenceWithBlank: "이것을 ___?", answer: "살래요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ래요", englishHint: "Do you want to buy this?", introducedAtPosition: 50 },
-        { id: "cc_eullaeyo_03", fullSentence: "저는 집에서 쉴래요.", sentenceWithBlank: "저는 집에서 ___.", answer: "쉴래요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ래요", englishHint: "I want to rest at home.", introducedAtPosition: 50 },
+        { id: "cc_eullaeyo_01", fullSentence: "저는 물을 마실래요.", sentenceWithBlank: "저는 물을 ___.", answer: "마실래요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ래요", englishHint: "I will have water.", introducedAtPosition: 52 },
+        { id: "cc_eullaeyo_02", fullSentence: "이것을 살래요?", sentenceWithBlank: "이것을 ___?", answer: "살래요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ래요", englishHint: "Do you want to buy this?", introducedAtPosition: 52 },
+        { id: "cc_eullaeyo_03", fullSentence: "저는 집에서 쉴래요.", sentenceWithBlank: "저는 집에서 ___.", answer: "쉴래요", alternateAnswers: [], vocabBaseForm: "-(으)ㄹ래요", englishHint: "I want to rest at home.", introducedAtPosition: 52 },
       ]
     },
     {
@@ -76,9 +76,9 @@ export const lesson12: LessonSeed = {
         { id: "le_euryeogo_hada_02", fullSentence: "주말에 친구를 만나려고 해요.", sentenceWithBlank: "주말에 친구를 ___.", answer: "만나려고 해요", englishHint: "I plan to meet a friend this weekend.", order: 1 },
       ],
       cards: [
-        { id: "cc_euryeogo_hada_01", fullSentence: "오늘 장을 보려고 해요.", sentenceWithBlank: "오늘 장을 ___.", answer: "보려고 해요", alternateAnswers: [], vocabBaseForm: "-(으)려고 하다", englishHint: "I'm planning to buy groceries today.", introducedAtPosition: 51 },
-        { id: "cc_euryeogo_hada_02", fullSentence: "저녁에 책을 읽으려고 해요.", sentenceWithBlank: "저녁에 책을 ___.", answer: "읽으려고 해요", alternateAnswers: [], vocabBaseForm: "-(으)려고 하다", englishHint: "I plan to read a book tonight.", introducedAtPosition: 51 },
-        { id: "cc_euryeogo_hada_03", fullSentence: "내년에 한국에 가려고 해요.", sentenceWithBlank: "내년에 한국에 ___.", answer: "가려고 해요", alternateAnswers: [], vocabBaseForm: "-(으)려고 하다", englishHint: "I plan to go to Korea next year.", introducedAtPosition: 51 },
+        { id: "cc_euryeogo_hada_01", fullSentence: "오늘 장을 보려고 해요.", sentenceWithBlank: "오늘 장을 ___.", answer: "보려고 해요", alternateAnswers: [], vocabBaseForm: "-(으)려고 하다", englishHint: "I'm planning to buy groceries today.", introducedAtPosition: 53 },
+        { id: "cc_euryeogo_hada_02", fullSentence: "저녁에 책을 읽으려고 해요.", sentenceWithBlank: "저녁에 책을 ___.", answer: "읽으려고 해요", alternateAnswers: [], vocabBaseForm: "-(으)려고 하다", englishHint: "I plan to read a book tonight.", introducedAtPosition: 53 },
+        { id: "cc_euryeogo_hada_03", fullSentence: "내년에 한국에 가려고 해요.", sentenceWithBlank: "내년에 한국에 ___.", answer: "가려고 해요", alternateAnswers: [], vocabBaseForm: "-(으)려고 하다", englishHint: "I plan to go to Korea next year.", introducedAtPosition: 53 },
       ]
     },
     {
@@ -99,9 +99,9 @@ export const lesson12: LessonSeed = {
         { id: "le_eureo_gada_02", fullSentence: "친구를 만나러 가요.", sentenceWithBlank: "친구를 ___.", answer: "만나러 가요", englishHint: "I am going to meet a friend.", order: 1 },
       ],
       cards: [
-        { id: "cc_eureo_gada_01", fullSentence: "커피를 마시러 가요.", sentenceWithBlank: "커피를 ___.", answer: "마시러 가요", alternateAnswers: [], vocabBaseForm: "-(으)러 가다", englishHint: "I'm going to get coffee.", introducedAtPosition: 52 },
-        { id: "cc_eureo_gada_02", fullSentence: "책을 사러 갔어요.", sentenceWithBlank: "책을 ___.", answer: "사러 갔어요", alternateAnswers: [], vocabBaseForm: "-(으)러 가다", englishHint: "I went to buy a book.", introducedAtPosition: 52 },
-        { id: "cc_eureo_gada_03", fullSentence: "수영을 하러 가요.", sentenceWithBlank: "수영을 ___.", answer: "하러 가요", alternateAnswers: [], vocabBaseForm: "-(으)러 가다", englishHint: "I am going swimming.", introducedAtPosition: 52 },
+        { id: "cc_eureo_gada_01", fullSentence: "커피를 마시러 가요.", sentenceWithBlank: "커피를 ___.", answer: "마시러 가요", alternateAnswers: [], vocabBaseForm: "-(으)러 가다", englishHint: "I'm going to get coffee.", introducedAtPosition: 54 },
+        { id: "cc_eureo_gada_02", fullSentence: "책을 사러 갔어요.", sentenceWithBlank: "책을 ___.", answer: "사러 갔어요", alternateAnswers: [], vocabBaseForm: "-(으)러 가다", englishHint: "I went to buy a book.", introducedAtPosition: 54 },
+        { id: "cc_eureo_gada_03", fullSentence: "수영을 하러 가요.", sentenceWithBlank: "수영을 ___.", answer: "하러 가요", alternateAnswers: [], vocabBaseForm: "-(으)러 가다", englishHint: "I am going swimming.", introducedAtPosition: 54 },
       ]
     },
     {
@@ -122,9 +122,9 @@ export const lesson12: LessonSeed = {
         { id: "le_eupsida_02", fullSentence: "같이 점심을 먹읍시다.", sentenceWithBlank: "같이 점심을 ___.", answer: "먹읍시다", englishHint: "Let us eat lunch together.", order: 1 },
       ],
       cards: [
-        { id: "cc_eupsida_01", fullSentence: "같이 공부합시다.", sentenceWithBlank: "같이 ___.", answer: "공부합시다", alternateAnswers: [], vocabBaseForm: "-(으)ㅂ시다", englishHint: "Let's study together.", introducedAtPosition: 53 },
-        { id: "cc_eupsida_02", fullSentence: "내일 다시 만납시다.", sentenceWithBlank: "내일 다시 ___.", answer: "만납시다", alternateAnswers: [], vocabBaseForm: "-(으)ㅂ시다", englishHint: "Let us meet again tomorrow.", introducedAtPosition: 53 },
-        { id: "cc_eupsida_03", fullSentence: "여기에서 잠깐 쉽시다.", sentenceWithBlank: "여기에서 잠깐 ___.", answer: "쉽시다", alternateAnswers: [], vocabBaseForm: "-(으)ㅂ시다", englishHint: "Let us rest here for a moment.", introducedAtPosition: 53 },
+        { id: "cc_eupsida_01", fullSentence: "같이 공부합시다.", sentenceWithBlank: "같이 ___.", answer: "공부합시다", alternateAnswers: [], vocabBaseForm: "-(으)ㅂ시다", englishHint: "Let's study together.", introducedAtPosition: 55 },
+        { id: "cc_eupsida_02", fullSentence: "내일 다시 만납시다.", sentenceWithBlank: "내일 다시 ___.", answer: "만납시다", alternateAnswers: [], vocabBaseForm: "-(으)ㅂ시다", englishHint: "Let us meet again tomorrow.", introducedAtPosition: 55 },
+        { id: "cc_eupsida_03", fullSentence: "여기에서 잠깐 쉽시다.", sentenceWithBlank: "여기에서 잠깐 ___.", answer: "쉽시다", alternateAnswers: [], vocabBaseForm: "-(으)ㅂ시다", englishHint: "Let us rest here for a moment.", introducedAtPosition: 55 },
       ]
     },
   ]

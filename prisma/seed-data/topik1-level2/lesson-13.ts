@@ -1,13 +1,15 @@
 import type { LessonSeed } from '../types';
+import { grammarGapPoints } from '../grammar-gaps';
 
 // Lesson 13 — Formal Speech and Everyday Rules
-// Grammar points (positions 54–58):
-//   54. -ㅂ니다/-습니다
-//   55. -ㅂ니까/-습니까?
-//   56. -아/어도 되다
-//   57. -(으)면 안 되다
-//   58. -지 마세요
-// Available: all corrected Level 1 grammar (positions 1–48); Level 2 is cumulative.
+// Grammar points (positions 56–61):
+//   56. -ㅂ니다/-습니다
+//   57. -ㅂ니까/-습니까?
+//   58. N입니다/입니까?
+//   59. -아/어도 되다
+//   60. -(으)면 안 되다
+//   61. -지 마세요
+// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
 export const lesson13: LessonSeed = {
   lessonNumber: 13,
   title: "Formal Speech and Everyday Rules",
@@ -30,9 +32,9 @@ export const lesson13: LessonSeed = {
         { id: "le_seumnida_02", fullSentence: "버스가 곧 옵니다.", sentenceWithBlank: "버스가 곧 ___.", answer: "옵니다", englishHint: "The bus will arrive soon.", order: 1 },
       ],
       cards: [
-        { id: "cc_seumnida_01", fullSentence: "저는 회사에 다닙니다.", sentenceWithBlank: "저는 회사에 ___.", answer: "다닙니다", alternateAnswers: [], vocabBaseForm: "-ㅂ니다/-습니다", englishHint: "I work for a company.", introducedAtPosition: 54 },
-        { id: "cc_seumnida_02", fullSentence: "오늘은 날씨가 좋습니다.", sentenceWithBlank: "오늘은 날씨가 ___.", answer: "좋습니다", alternateAnswers: [], vocabBaseForm: "-ㅂ니다/-습니다", englishHint: "The weather is nice today.", introducedAtPosition: 54 },
-        { id: "cc_seumnida_03", fullSentence: "지금 시간이 없습니다.", sentenceWithBlank: "지금 시간이 ___.", answer: "없습니다", alternateAnswers: [], vocabBaseForm: "-ㅂ니다/-습니다", englishHint: "I do not have time now.", introducedAtPosition: 54 },
+        { id: "cc_seumnida_01", fullSentence: "저는 회사에 다닙니다.", sentenceWithBlank: "저는 회사에 ___.", answer: "다닙니다", alternateAnswers: [], vocabBaseForm: "-ㅂ니다/-습니다", englishHint: "I work for a company.", introducedAtPosition: 56 },
+        { id: "cc_seumnida_02", fullSentence: "오늘은 날씨가 좋습니다.", sentenceWithBlank: "오늘은 날씨가 ___.", answer: "좋습니다", alternateAnswers: [], vocabBaseForm: "-ㅂ니다/-습니다", englishHint: "The weather is nice today.", introducedAtPosition: 56 },
+        { id: "cc_seumnida_03", fullSentence: "지금 시간이 없습니다.", sentenceWithBlank: "지금 시간이 ___.", answer: "없습니다", alternateAnswers: [], vocabBaseForm: "-ㅂ니다/-습니다", englishHint: "I do not have time now.", introducedAtPosition: 56 },
       ]
     },
     {
@@ -53,11 +55,12 @@ export const lesson13: LessonSeed = {
         { id: "le_seumnikka_02", fullSentence: "한국어를 공부합니까?", sentenceWithBlank: "한국어를 ___?", answer: "공부합니까", englishHint: "Do you study Korean?", order: 1 },
       ],
       cards: [
-        { id: "cc_seumnikka_01", fullSentence: "어디에 삽니까?", sentenceWithBlank: "어디에 ___?", answer: "삽니까", alternateAnswers: [], vocabBaseForm: "-ㅂ니까/-습니까?", englishHint: "Where do you live?", introducedAtPosition: 55 },
-        { id: "cc_seumnikka_02", fullSentence: "이 책이 좋습니까?", sentenceWithBlank: "이 책이 ___?", answer: "좋습니까", alternateAnswers: [], vocabBaseForm: "-ㅂ니까/-습니까?", englishHint: "Is this book good?", introducedAtPosition: 55 },
-        { id: "cc_seumnikka_03", fullSentence: "시간이 있습니까?", sentenceWithBlank: "시간이 ___?", answer: "있습니까", alternateAnswers: [], vocabBaseForm: "-ㅂ니까/-습니까?", englishHint: "Do you have time?", introducedAtPosition: 55 },
+        { id: "cc_seumnikka_01", fullSentence: "어디에 삽니까?", sentenceWithBlank: "어디에 ___?", answer: "삽니까", alternateAnswers: [], vocabBaseForm: "-ㅂ니까/-습니까?", englishHint: "Where do you live?", introducedAtPosition: 57 },
+        { id: "cc_seumnikka_02", fullSentence: "이 책이 좋습니까?", sentenceWithBlank: "이 책이 ___?", answer: "좋습니까", alternateAnswers: [], vocabBaseForm: "-ㅂ니까/-습니까?", englishHint: "Is this book good?", introducedAtPosition: 57 },
+        { id: "cc_seumnikka_03", fullSentence: "시간이 있습니까?", sentenceWithBlank: "시간이 ___?", answer: "있습니까", alternateAnswers: [], vocabBaseForm: "-ㅂ니까/-습니까?", englishHint: "Do you have time?", introducedAtPosition: 57 },
       ]
     },
+    grammarGapPoints.gp_imnida_imnikka,
     {
       id: "gp_eodo_doeda",
       title: "-아/어도 되다",
@@ -76,9 +79,9 @@ export const lesson13: LessonSeed = {
         { id: "le_eodo_doeda_02", fullSentence: "사진을 찍어도 돼요.", sentenceWithBlank: "사진을 ___.", answer: "찍어도 돼요", englishHint: "You may take pictures.", order: 1 },
       ],
       cards: [
-        { id: "cc_eodo_doeda_01", fullSentence: "여기에서 물을 마셔도 돼요?", sentenceWithBlank: "여기에서 물을 ___?", answer: "마셔도 돼요", alternateAnswers: [], vocabBaseForm: "-아/어도 되다", englishHint: "May I drink water here?", introducedAtPosition: 56 },
-        { id: "cc_eodo_doeda_02", fullSentence: "지금 가도 돼요.", sentenceWithBlank: "지금 ___.", answer: "가도 돼요", alternateAnswers: [], vocabBaseForm: "-아/어도 되다", englishHint: "You may go now.", introducedAtPosition: 56 },
-        { id: "cc_eodo_doeda_03", fullSentence: "이 책을 읽어도 돼요?", sentenceWithBlank: "이 책을 ___?", answer: "읽어도 돼요", alternateAnswers: [], vocabBaseForm: "-아/어도 되다", englishHint: "May I read this book?", introducedAtPosition: 56 },
+        { id: "cc_eodo_doeda_01", fullSentence: "여기에서 물을 마셔도 돼요?", sentenceWithBlank: "여기에서 물을 ___?", answer: "마셔도 돼요", alternateAnswers: [], vocabBaseForm: "-아/어도 되다", englishHint: "May I drink water here?", introducedAtPosition: 59 },
+        { id: "cc_eodo_doeda_02", fullSentence: "지금 가도 돼요.", sentenceWithBlank: "지금 ___.", answer: "가도 돼요", alternateAnswers: [], vocabBaseForm: "-아/어도 되다", englishHint: "You may go now.", introducedAtPosition: 59 },
+        { id: "cc_eodo_doeda_03", fullSentence: "이 책을 읽어도 돼요?", sentenceWithBlank: "이 책을 ___?", answer: "읽어도 돼요", alternateAnswers: [], vocabBaseForm: "-아/어도 되다", englishHint: "May I read this book?", introducedAtPosition: 59 },
       ]
     },
     {
@@ -99,9 +102,9 @@ export const lesson13: LessonSeed = {
         { id: "le_eumyeon_an_doeda_02", fullSentence: "수업에 늦으면 안 돼요.", sentenceWithBlank: "수업에 ___.", answer: "늦으면 안 돼요", englishHint: "You must not be late for class.", order: 1 },
       ],
       cards: [
-        { id: "cc_eumyeon_an_doeda_01", fullSentence: "여기에서 사진을 찍으면 안 돼요.", sentenceWithBlank: "여기에서 사진을 ___.", answer: "찍으면 안 돼요", alternateAnswers: [], vocabBaseForm: "-(으)면 안 되다", englishHint: "You must not take pictures here.", introducedAtPosition: 57 },
-        { id: "cc_eumyeon_an_doeda_02", fullSentence: "여기에 들어가면 안 돼요.", sentenceWithBlank: "여기에 ___.", answer: "들어가면 안 돼요", alternateAnswers: [], vocabBaseForm: "-(으)면 안 되다", englishHint: "You must not enter here.", introducedAtPosition: 57 },
-        { id: "cc_eumyeon_an_doeda_03", fullSentence: "수업 시간에 전화하면 안 돼요.", sentenceWithBlank: "수업 시간에 전화___.", answer: "하면 안 돼요", alternateAnswers: [], vocabBaseForm: "-(으)면 안 되다", englishHint: "You must not use your phone during class.", introducedAtPosition: 57 },
+        { id: "cc_eumyeon_an_doeda_01", fullSentence: "여기에서 사진을 찍으면 안 돼요.", sentenceWithBlank: "여기에서 사진을 ___.", answer: "찍으면 안 돼요", alternateAnswers: [], vocabBaseForm: "-(으)면 안 되다", englishHint: "You must not take pictures here.", introducedAtPosition: 60 },
+        { id: "cc_eumyeon_an_doeda_02", fullSentence: "여기에 들어가면 안 돼요.", sentenceWithBlank: "여기에 ___.", answer: "들어가면 안 돼요", alternateAnswers: [], vocabBaseForm: "-(으)면 안 되다", englishHint: "You must not enter here.", introducedAtPosition: 60 },
+        { id: "cc_eumyeon_an_doeda_03", fullSentence: "수업 시간에 전화하면 안 돼요.", sentenceWithBlank: "수업 시간에 전화___.", answer: "하면 안 돼요", alternateAnswers: [], vocabBaseForm: "-(으)면 안 되다", englishHint: "You must not use your phone during class.", introducedAtPosition: 60 },
       ]
     },
     {
@@ -122,9 +125,9 @@ export const lesson13: LessonSeed = {
         { id: "le_ji_maseyo_02", fullSentence: "걱정하지 마세요.", sentenceWithBlank: "걱정___.", answer: "하지 마세요", englishHint: "Please do not worry.", order: 1 },
       ],
       cards: [
-        { id: "cc_ji_maseyo_01", fullSentence: "지금 떠나지 마세요.", sentenceWithBlank: "지금 ___.", answer: "떠나지 마세요", alternateAnswers: [], vocabBaseForm: "-지 마세요", englishHint: "Please don't leave now.", introducedAtPosition: 58 },
-        { id: "cc_ji_maseyo_02", fullSentence: "너무 많이 먹지 마세요.", sentenceWithBlank: "너무 많이 ___.", answer: "먹지 마세요", alternateAnswers: [], vocabBaseForm: "-지 마세요", englishHint: "Please do not eat too much.", introducedAtPosition: 58 },
-        { id: "cc_ji_maseyo_03", fullSentence: "지금 문을 열지 마세요.", sentenceWithBlank: "지금 문을 ___.", answer: "열지 마세요", alternateAnswers: [], vocabBaseForm: "-지 마세요", englishHint: "Please do not open the door now.", introducedAtPosition: 58 },
+        { id: "cc_ji_maseyo_01", fullSentence: "지금 떠나지 마세요.", sentenceWithBlank: "지금 ___.", answer: "떠나지 마세요", alternateAnswers: [], vocabBaseForm: "-지 마세요", englishHint: "Please don't leave now.", introducedAtPosition: 61 },
+        { id: "cc_ji_maseyo_02", fullSentence: "너무 많이 먹지 마세요.", sentenceWithBlank: "너무 많이 ___.", answer: "먹지 마세요", alternateAnswers: [], vocabBaseForm: "-지 마세요", englishHint: "Please do not eat too much.", introducedAtPosition: 61 },
+        { id: "cc_ji_maseyo_03", fullSentence: "지금 문을 열지 마세요.", sentenceWithBlank: "지금 문을 ___.", answer: "열지 마세요", alternateAnswers: [], vocabBaseForm: "-지 마세요", englishHint: "Please do not open the door now.", introducedAtPosition: 61 },
       ]
     },
   ]
