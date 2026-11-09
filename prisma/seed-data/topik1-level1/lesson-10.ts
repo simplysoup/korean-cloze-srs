@@ -28,7 +28,7 @@ export const lesson10: LessonSeed = {
 			structurePattern: 'Verb stem + 고 + [next action]',
 			notes: [
 				{ type: 'tip', title: 'No Conjugation', content: '-고 attaches directly to any verb stem. No consonant/vowel rules: 먹고, 가고, 하고. Same form as 하고 (and/with) for nouns.' },
-				{ type: 'tip', title: 'Order Matters', content: 'When sequential: 손을 씻고 밥을 먹어요 (wash hands THEN eat). When listing: 노래하고 춤을 춰요 (sing AND dance — simultaneous).' }
+				{ type: 'tip', title: 'Order Matters', content: 'When sequential: 손을 씻고 밥을 먹어요 (wash hands THEN eat). When listing: 노래하고 춤을 춰요 (sing and dance, with no fixed time order).' }
 			],
 			relatedPointIds: ['gp_hago'],
 			lessonExamples: [
@@ -93,13 +93,13 @@ export const lesson10: LessonSeed = {
 			hint: 'I will (promise to listener)',
 			description:
 				'Expresses the speaker\'s intention or promise, with consideration for the listener. ' +
-				'After consonant stem → -을게요: 먹다 → 먹을게요. After vowel stem → -ㄹ게요: 가다 → 갈게요. ' +
-				'First person only. Implies "I will (and you should know / it affects you)."',
+				'After most consonant stems use -을게요 (먹을게요), after vowel stems use -ㄹ게요 (갈게요); ㄹ-final stems keep ㄹ: 살게요. ' +
+				'In ordinary statements, it expresses the speaker’s own commitment. Implies "I will (and you should know / it affects you)."',
 			level: 1,
 			tags: ['verb-ending', 'future', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + (으)ㄹ게요',
 			notes: [
-				{ type: 'tip', title: 'First Person Only', content: '-(으)ㄹ게요 is ONLY for "I will." For "you/he/she will," use -(으)ㄹ 거예요.' },
+				{ type: 'tip', title: 'First Person Only', content: '-(으)ㄹ게요 normally expresses the speaker’s own promise, not a prediction about someone else. For other people’s plans, use -(으)ㄹ 거예요.' },
 				{ type: 'tip', title: 'vs -(으)ㄹ 거예요', content: '-(으)ㄹ게요 = promise/consideration for listener. -(으)ㄹ 거예요 = plan/prediction (any person).' }
 			],
 			relatedPointIds: ['gp_eul_geoyeyo'],
@@ -165,7 +165,7 @@ export const lesson10: LessonSeed = {
 			hint: 'will, going to (plan/prediction)',
 			description:
 				'Expresses a future plan or prediction. Works for all persons. ' +
-				'After consonant stem → -을 거예요: 먹다 → 먹을 거예요. After vowel stem → -ㄹ 거예요: 가다 → 갈 거예요. ' +
+				'After most consonant stems use -을 거예요 (먹을 거예요), after vowel stems use -ㄹ 거예요 (갈 거예요); ㄹ-final stems keep ㄹ: 살 거예요. ' +
 				'내일 뭐 할 거예요? "What will you do tomorrow?"',
 			level: 1,
 			tags: ['verb-ending', 'future', 'beginner', 'TOPIK1'],
