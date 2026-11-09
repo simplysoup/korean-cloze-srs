@@ -4,7 +4,7 @@ A spaced-repetition app for learning Korean grammar through cloze-deletion (fill
 
 **Live:** [https://srv889405.tail9df0b2.ts.net:8443/](https://srv889405.tail9df0b2.ts.net:8443/)
 
-**The live app is the Expo React Native rebuild in [`mobile/`](mobile/README.md).** Expo is the toolkit on top of React Native (the engine): the app is React Native code, using Expo Router, expo-sqlite, and `expo export` for the web build served on the VPS. See [`mobile/README.md`](mobile/README.md) for the full docs — stack, architecture, auth, settings, content, and deploy.
+**The live app is the Expo React Native rebuild in [`mobile/`](mobile/README.md).** Expo is the toolkit on top of React Native (the engine): the app is React Native code, using Expo Router, expo-sqlite, and `expo export` for the web build served on the VPS. See [`mobile/README.md`](mobile/README.md) for the full docs — stack, architecture, auth, settings, content, and deploy. The older SvelteKit app now lives on the [`legacy/svelte`](https://github.com/simplysoup/korean-cloze-srs/tree/legacy/svelte) branch; `main` is the Expo app only (its seed data in `prisma/seed-data/` is the content source of truth).
 
 **Stack (live app):** Expo SDK 58 · React Native 0.88 · React 19.3 · TypeScript (strict) · Expo Router · expo-sqlite + Drizzle ORM · `ts-fsrs` (FSRS 6) · email-code auth via a small Node backend on the VPS.
 
