@@ -23,7 +23,7 @@ export const lesson08: LessonSeed = {
 			description:
 				'Expresses ability or possibility. Verb stem + (으)ㄹ 수 있다: 먹을 수 있어요 "can eat." ' +
 				'Negative: -(으)ㄹ 수 없다: 먹을 수 없어요 "cannot eat." ' +
-				'After consonant stem → -을 수 있다; after vowel stem → -ㄹ 수 있다.',
+				'After most consonant stems use -을 수 있다; after vowel stems use -ㄹ 수 있다. Keep a stem-final ㄹ: 살다 → 살 수 있다.',
 			level: 1,
 			tags: ['expression', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + (으)ㄹ 수 있다/없다',
@@ -93,7 +93,7 @@ export const lesson08: LessonSeed = {
 			register: null,
 			hint: 'because, since (subjective reason)',
 			description:
-				'Connects a reason clause to a result clause. More subjective than -아/어서. ' +
+				'Connects a reason clause to a result clause. Often used to give a reason that supports a command or suggestion, unlike causal -아/어서 in this beginner pattern. ' +
 				'After consonant stem → -으니까: 읽다 → 읽으니까. After vowel stem → -니까: 가다 → 가니까. ' +
 				'CAN take past tense: 갔으니까. Often used with commands/suggestions.',
 			level: 1,
@@ -166,11 +166,11 @@ export const lesson08: LessonSeed = {
 			hint: 'because, so (cause → result)',
 			description:
 				'Connects two clauses where the first is the reason for the second. ' +
-				'Verb stem + 아서/어서: 배가 고파서 밥을 먹었어요 "Because I was hungry, I ate." ' +
+				'Verb/adjective stem + 아서/어서: 배가 고파서 밥을 먹었어요 "Because I was hungry, I ate." ' +
 				'Same vowel harmony as -아요/어요. In the pattern taught here, put tense on the final verb.',
 			level: 1,
 			tags: ['connective', 'beginner', 'TOPIK1'],
-			structurePattern: 'Verb stem + 아서/어서 + [result clause]',
+			structurePattern: 'Verb/Adj stem + 아서/어서 + [result clause]',
 			notes: [
 				{ type: 'caution', title: 'Where to put tense', content: 'For these beginner examples, leave the reason clause unmarked for tense and mark the main verb. Compare -(으)니까 when explicitly marking a past reason.' },
 				{ type: 'tip', title: 'Common Combinations', content: '만나서 반갑습니다 (Nice to meet you — lit. "meeting, I am pleased"). 늦어서 죄송합니다 (Sorry for being late).' }
