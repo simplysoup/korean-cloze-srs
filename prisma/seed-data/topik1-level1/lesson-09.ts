@@ -21,14 +21,14 @@ export const lesson09: LessonSeed = {
 			hint: 'if, when (conditional)',
 			description:
 				'Conditional connector meaning "if" or "when." ' +
-				'After consonant stem → -으면: 먹다 → 먹으면. After vowel stem → -면: 가다 → 가면. ' +
+				'After most consonant stems use -으면 (먹다 → 먹으면); after vowel stems use -면 (가다 → 가면). Keep ㄹ-final stems: 살다 → 살면. ' +
 				'시간이 있으면 같이 가요 "If you have time, let\'s go together."',
 			level: 1,
 			tags: ['connective', 'beginner', 'TOPIK1'],
 			structurePattern: 'Verb stem + (으)면 + [result clause]',
 			notes: [
 				{ type: 'tip', title: 'Hypothetical & Habitual', content: '-(으)면 covers both hypothetical (if it rains) and habitual (whenever I eat). Context determines which.' },
-				{ type: 'tip', title: 'ㄹ-Irregular', content: 'Stems ending in ㄹ: drop ㄹ, add -면. 살다 → 살면, 알다 → 알면.' }
+				{ type: 'tip', title: 'ㄹ-Irregular', content: 'Stems ending in ㄹ keep ㄹ before -면: 살다 → 살면, 알다 → 알면.' }
 			],
 			lessonExamples: [
 				{
