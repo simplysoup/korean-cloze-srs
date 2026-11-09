@@ -119,42 +119,42 @@ export const lesson04: LessonSeed = {
 				},
 				{
 					id: 'le_buteo_02',
-					fullSentence: '월요일부터 금요일까지 공부해요.',
-					sentenceWithBlank: '월요일___ 금요일까지 공부해요.',
-					answer: '부터',
-					englishHint: 'I study from Monday to Friday.',
+					fullSentence: "월요일부터 공부해요.",
+					sentenceWithBlank: "월요일___ 공부해요.",
+					answer: "부터",
+					englishHint: "I start studying on Monday.",
 					order: 1
 				}
 			],
 			cards: [
 				{
 					id: 'cc_buteo_01',
-					fullSentence: '9시부터 6시까지 일해요.',
-					sentenceWithBlank: '9시___ 6시까지 일해요.',
-					answer: '부터',
+					fullSentence: "9시부터 일해요.",
+					sentenceWithBlank: "9시___ 일해요.",
+					answer: "부터",
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
-					englishHint: 'I work from 9 to 6.',
+					englishHint: "I start work at nine.",
 					introducedAtPosition: 25
 				},
 				{
 					id: 'cc_buteo_02',
-					fullSentence: '월요일부터 금요일까지 수업이 있어요.',
-					sentenceWithBlank: '월요일___ 금요일까지 수업이 있어요.',
-					answer: '부터',
+					fullSentence: "월요일부터 수업이 있어요.",
+					sentenceWithBlank: "월요일___ 수업이 있어요.",
+					answer: "부터",
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
-					englishHint: 'I have class from Monday to Friday.',
+					englishHint: "I have classes starting Monday.",
 					introducedAtPosition: 25
 				},
 				{
 					id: 'cc_buteo_03',
-					fullSentence: '아침부터 저녁까지 공부해요.',
-					sentenceWithBlank: '아침___ 저녁까지 공부해요.',
-					answer: '부터',
+					fullSentence: "아침부터 공부해요.",
+					sentenceWithBlank: "아침___ 공부해요.",
+					answer: "부터",
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
-					englishHint: 'I study from morning until evening.',
+					englishHint: "I start studying in the morning.",
 					introducedAtPosition: 25
 				}
 			]
@@ -209,12 +209,12 @@ export const lesson04: LessonSeed = {
 				},
 				{
 					id: 'cc_kkaji_02',
-					fullSentence: '서울에서 부산까지 멀어요.',
-					sentenceWithBlank: '서울에서 부산___ 멀어요.',
-					answer: '까지',
+					fullSentence: "서울에서 부산까지 가요.",
+					sentenceWithBlank: "서울에서 부산___ 가요.",
+					answer: "까지",
 					alternateAnswers: [],
 					vocabBaseForm: '까지',
-					englishHint: "From Seoul to Busan it's far.",
+					englishHint: "I travel from Seoul to Busan.",
 					introducedAtPosition: 26
 				},
 				{
@@ -241,10 +241,10 @@ export const lesson04: LessonSeed = {
 			description:
 				'Means "before" a time or action. ' +
 				'수업 전에 = "before class." ' +
-				'Can also follow a verb stem: 먹기 전에 = "before eating."',
+				'The verb pattern -기 전에 is taught separately at Level 2; here, use a noun + 전에.',
 			level: 1,
 			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: '[Noun] 전에 · [Verb stem]기 전에',
+			structurePattern: '[Noun] 전에',
 			notes: [
 				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 전에 (before class). With verbs: 먹기 전에 (before eating) — uses the -기 nominalizer.' }
 			],
@@ -279,12 +279,12 @@ export const lesson04: LessonSeed = {
 				},
 				{
 					id: 'cc_jeone_02',
-					fullSentence: '자기 전에 책을 읽어요.',
-					sentenceWithBlank: '자기 ___ 책을 읽어요.',
-					answer: '전에',
+					fullSentence: "운동 전에 물을 마셔요.",
+					sentenceWithBlank: "운동 ___ 물을 마셔요.",
+					answer: "전에",
 					alternateAnswers: [],
 					vocabBaseForm: '전에',
-					englishHint: 'I read a book before sleeping.',
+					englishHint: "I drink water before exercising.",
 					introducedAtPosition: 27
 				},
 				{
@@ -311,10 +311,10 @@ export const lesson04: LessonSeed = {
 			description:
 				'Means "after" a time or action. ' +
 				'수업 후에 = "after class." ' +
-				'Can also follow a verb stem: 먹은 후에 = "after eating."',
+				'The verb modifier + 후에 is taught separately at Level 2; here, use a noun + 후에.',
 			level: 1,
 			tags: ['expression', 'beginner', 'TOPIK1'],
-			structurePattern: '[Noun] 후에 · [Verb]ㄴ/은 후에',
+			structurePattern: '[Noun] 후에',
 			notes: [
 				{ type: 'tip', title: 'Synonym', content: '다음에 is a more casual alternative meaning "after" or "next time."' },
 				{ type: 'tip', title: 'Two Patterns', content: 'With nouns: 수업 후에 (after class). With verbs: 먹은 후에 (after eating).' }
@@ -350,22 +350,22 @@ export const lesson04: LessonSeed = {
 				},
 				{
 					id: 'cc_hue_02',
-					fullSentence: '일 후에 친구를 만나요.',
-					sentenceWithBlank: '일 ___ 친구를 만나요.',
-					answer: '후에',
+					fullSentence: "퇴근 후에 친구를 만나요.",
+					sentenceWithBlank: "퇴근 ___ 친구를 만나요.",
+					answer: "후에",
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
-					englishHint: 'I meet a friend after work.',
+					englishHint: "I meet a friend after work.",
 					introducedAtPosition: 28
 				},
 				{
 					id: 'cc_hue_03',
-					fullSentence: '저녁 후에 산책해요.',
-					sentenceWithBlank: '저녁 ___ 산책해요.',
-					answer: '후에',
+					fullSentence: "저녁 식사 후에 산책해요.",
+					sentenceWithBlank: "저녁 식사 ___ 산책해요.",
+					answer: "후에",
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
-					englishHint: 'I take a walk after dinner.',
+					englishHint: "I take a walk after dinner.",
 					introducedAtPosition: 28
 				}
 			]
