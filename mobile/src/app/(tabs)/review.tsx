@@ -275,7 +275,7 @@ export default function ReviewScreen() {
         placeholder=""
       />
 
-      <EnglishHint parts={currentCard.englishHint} />
+      <EnglishHint text={currentCard.englishHint} />
 
       {!submitted && !answerRevealed ? (
         <View style={styles.inputRow}>

@@ -179,7 +179,7 @@ export default function GrammarDetailScreen() {
                     </Pressable>
                   )}
                   {showTranslation ? (
-                    <EnglishHint parts={ex.englishHint} />
+                    <EnglishHint text={ex.englishHint} />
                   ) : (
                     <Pressable onPress={() => reveal(tKey)} style={styles.hiddenBox}>
                       <Text style={styles.hiddenText}>Tap to reveal translation</Text>
@@ -221,7 +221,7 @@ export default function GrammarDetailScreen() {
                       <Text style={styles.hiddenText}>Tap to reveal translation</Text>
                     </Pressable>
                   )}
-                  {showTranslation ? <EnglishHint parts={card.englishHint} /> : null}
+                  {showTranslation ? <EnglishHint text={card.englishHint} /> : null}
                 </View>
               );
             })

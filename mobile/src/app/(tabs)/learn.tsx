@@ -373,7 +373,7 @@ export default function LearnScreen() {
           placeholder=""
         />
 
-        <EnglishHint parts={currentQuizCard.englishHint} />
+        <EnglishHint text={currentQuizCard.englishHint} />
 
         {!quizSubmitted && !quizAnswerRevealed ? (
           <TextInput
@@ -576,7 +576,7 @@ export default function LearnScreen() {
                 <Text style={styles.exampleSentence}>
                   {ex.sentenceWithBlank.replace('___', ex.answer)}
                 </Text>
-                <EnglishHint parts={ex.englishHint} />
+                <EnglishHint text={ex.englishHint} />
                 {ex.notes ? <Text style={commonStyles.muted}>{ex.notes}</Text> : null}
               </View>
             ))

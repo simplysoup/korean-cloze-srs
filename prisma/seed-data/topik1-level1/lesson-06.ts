@@ -11,7 +11,6 @@ import type { LessonSeed } from '../types';
 // Available: all L1–L5 grammar (pos 1–30).
 // ══════════════════════════════════════════════════════════════════════════════
 
-const h = (text: string, highlightType: 'none' | 'direct' | 'related' = 'none') => ({ text, highlightType });
 
 export const lesson06: LessonSeed = {
 	lessonNumber: 6,
@@ -42,7 +41,7 @@ export const lesson06: LessonSeed = {
 					fullSentence: '큰 가방이 있어요.',
 					sentenceWithBlank: '___ 가방이 있어요.',
 					answer: '큰',
-					englishHint: [h('There is a ', 'none'), h('big', 'direct'), h(' bag.', 'none')],
+					englishHint: 'There is a big bag.',
 					order: 0
 				},
 				{
@@ -50,7 +49,7 @@ export const lesson06: LessonSeed = {
 					fullSentence: '작은 고양이가 있어요.',
 					sentenceWithBlank: '___ 고양이가 있어요.',
 					answer: '작은',
-					englishHint: [h('There is a ', 'none'), h('small', 'direct'), h(' cat.', 'none')],
+					englishHint: 'There is a small cat.',
 					order: 1
 				}
 			],
@@ -62,7 +61,7 @@ export const lesson06: LessonSeed = {
 					answer: '큰',
 					alternateAnswers: [],
 					vocabBaseForm: '크다',
-					englishHint: [h('I bought a ', 'none'), h('big', 'direct'), h(' bag.', 'none')],
+					englishHint: 'I bought a big bag.',
 					introducedAtPosition: 31
 				},
 				{
@@ -72,7 +71,7 @@ export const lesson06: LessonSeed = {
 					answer: '작은',
 					alternateAnswers: [],
 					vocabBaseForm: '작다',
-					englishHint: [h('I live in a ', 'none'), h('small', 'direct'), h(' house.', 'none')],
+					englishHint: 'I live in a small house.',
 					introducedAtPosition: 31
 				},
 				{
@@ -82,7 +81,7 @@ export const lesson06: LessonSeed = {
 					answer: '좋은',
 					alternateAnswers: [],
 					vocabBaseForm: '좋다',
-					englishHint: [h('I ate ', 'none'), h('good', 'direct'), h(' food.', 'none')],
+					englishHint: 'I ate good food.',
 					introducedAtPosition: 31
 				},
 				{
@@ -92,7 +91,7 @@ export const lesson06: LessonSeed = {
 					answer: '비싼',
 					alternateAnswers: [],
 					vocabBaseForm: '비싸다',
-					englishHint: [h("I don't buy ", 'none'), h('expensive', 'direct'), h(' clothes.', 'none')],
+					englishHint: "I don't buy expensive clothes.",
 					introducedAtPosition: 31
 				}
 			]
@@ -122,7 +121,7 @@ export const lesson06: LessonSeed = {
 					fullSentence: '물만 마셔요.',
 					sentenceWithBlank: '물___ 마셔요.',
 					answer: '만',
-					englishHint: [h('I drink ', 'none'), h('only', 'direct'), h(' water.', 'none')],
+					englishHint: 'I drink only water.',
 					order: 0
 				},
 				{
@@ -130,7 +129,7 @@ export const lesson06: LessonSeed = {
 					fullSentence: '저는 한국어만 공부해요.',
 					sentenceWithBlank: '저는 한국어___ 공부해요.',
 					answer: '만',
-					englishHint: [h('I study ', 'none'), h('only', 'direct'), h(' Korean.', 'none')],
+					englishHint: 'I study only Korean.',
 					order: 1
 				}
 			],
@@ -142,7 +141,7 @@ export const lesson06: LessonSeed = {
 					answer: '만',
 					alternateAnswers: [],
 					vocabBaseForm: '만',
-					englishHint: [h('I drink ', 'none'), h('only', 'direct'), h(' water.', 'none')],
+					englishHint: 'I drink only water.',
 					introducedAtPosition: 32
 				},
 				{
@@ -152,7 +151,7 @@ export const lesson06: LessonSeed = {
 					answer: '만',
 					alternateAnswers: [],
 					vocabBaseForm: '만',
-					englishHint: [h('Please give me ', 'none'), h('just', 'direct'), h(' one.', 'none')],
+					englishHint: 'Please give me just one.',
 					introducedAtPosition: 32
 				},
 				{
@@ -162,7 +161,7 @@ export const lesson06: LessonSeed = {
 					answer: '만',
 					alternateAnswers: [],
 					vocabBaseForm: '만',
-					englishHint: [h('I rest ', 'none'), h('only', 'direct'), h(' on weekends.', 'none')],
+					englishHint: 'I rest only on weekends.',
 					introducedAtPosition: 32
 				}
 			]
@@ -194,7 +193,7 @@ export const lesson06: LessonSeed = {
 					fullSentence: '이 음식은 비싼 것 같아요.',
 					sentenceWithBlank: '이 음식은 비싼 것 ___.',
 					answer: '같아요',
-					englishHint: [h('This food ', 'none'), h('seems', 'direct'), h(' expensive.', 'none')],
+					englishHint: 'This food seems expensive.',
 					order: 0
 				},
 				{
@@ -202,7 +201,7 @@ export const lesson06: LessonSeed = {
 					fullSentence: '오늘은 추운 것 같아요.',
 					sentenceWithBlank: '오늘은 추운 것 ___.',
 					answer: '같아요',
-					englishHint: [h('Today ', 'none'), h('seems', 'direct'), h(' cold.', 'none')],
+					englishHint: 'Today seems cold.',
 					order: 1
 				}
 			],
@@ -214,7 +213,7 @@ export const lesson06: LessonSeed = {
 					answer: '같아요',
 					alternateAnswers: [],
 					vocabBaseForm: '-ㄴ 것 같다',
-					englishHint: [h('This bag ', 'none'), h('seems', 'direct'), h(' expensive.', 'none')],
+					englishHint: 'This bag seems expensive.',
 					introducedAtPosition: 33
 				},
 				{
@@ -224,7 +223,7 @@ export const lesson06: LessonSeed = {
 					answer: '같아요',
 					alternateAnswers: [],
 					vocabBaseForm: '-ㄴ 것 같다',
-					englishHint: [h('The weather ', 'none'), h('seems', 'direct'), h(' nice.', 'none')],
+					englishHint: 'The weather seems nice.',
 					introducedAtPosition: 33
 				},
 				{
@@ -234,7 +233,7 @@ export const lesson06: LessonSeed = {
 					answer: '같아요',
 					alternateAnswers: [],
 					vocabBaseForm: '-ㄴ 것 같다',
-					englishHint: [h('That person ', 'none'), h('seems', 'direct'), h(' to be Korean.', 'none')],
+					englishHint: 'That person seems to be Korean.',
 					introducedAtPosition: 33
 				}
 			]

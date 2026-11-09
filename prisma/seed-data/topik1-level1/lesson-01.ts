@@ -16,7 +16,6 @@ import type { LessonSeed } from '../types';
 // N+1 scope: lesson examples for GP N may only use grammar from positions 1–N.
 // ══════════════════════════════════════════════════════════════════════════════
 
-const h = (text: string, highlightType: 'none' | 'direct' | 'related' = 'none') => ({ text, highlightType });
 
 export const lesson01: LessonSeed = {
 	lessonNumber: 1,
@@ -47,7 +46,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '학생이에요.',
 					sentenceWithBlank: '학생___.',
 					answer: '이에요',
-					englishHint: [h('I ', 'none'), h('am', 'direct'), h(' a student.', 'none')],
+					englishHint: 'I am a student.',
 					order: 0
 				},
 				{
@@ -55,7 +54,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '사과예요.',
 					sentenceWithBlank: '사과___.',
 					answer: '예요',
-					englishHint: [h('It', 'none'), h("'s", 'direct'), h(' an apple.', 'none')],
+					englishHint: "It's an apple.",
 					order: 1
 				}
 			],
@@ -67,7 +66,7 @@ export const lesson01: LessonSeed = {
 					answer: '이에요',
 					alternateAnswers: [],
 					vocabBaseForm: '이에요/예요',
-					englishHint: [h('I ', 'none'), h('am', 'direct'), h(' a student.', 'none')],
+					englishHint: 'I am a student.',
 					introducedAtPosition: 1
 				},
 				{
@@ -77,7 +76,7 @@ export const lesson01: LessonSeed = {
 					answer: '예요',
 					alternateAnswers: [],
 					vocabBaseForm: '이에요/예요',
-					englishHint: [h('I ', 'none'), h('am', 'direct'), h(' a doctor.', 'none')],
+					englishHint: 'I am a doctor.',
 					introducedAtPosition: 1
 				},
 				{
@@ -87,7 +86,7 @@ export const lesson01: LessonSeed = {
 					answer: '이에요',
 					alternateAnswers: [],
 					vocabBaseForm: '이에요/예요',
-					englishHint: [h('It', 'none'), h("'s", 'direct'), h(' a teacher.', 'none')],
+					englishHint: "It's a teacher.",
 					introducedAtPosition: 1
 				},
 				{
@@ -97,7 +96,7 @@ export const lesson01: LessonSeed = {
 					answer: '예요',
 					alternateAnswers: [],
 					vocabBaseForm: '이에요/예요',
-					englishHint: [h('It', 'none'), h("'s", 'direct'), h(' coffee.', 'none')],
+					englishHint: "It's coffee.",
 					introducedAtPosition: 1
 				}
 			]
@@ -129,7 +128,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '학생이다.',
 					sentenceWithBlank: '학생___.',
 					answer: '이다',
-					englishHint: [h('Is', 'direct'), h(' a student.', 'none')],
+					englishHint: 'Is a student.',
 					order: 0
 				},
 				{
@@ -137,7 +136,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '한국 사람이다.',
 					sentenceWithBlank: '한국 사람___.',
 					answer: '이다',
-					englishHint: [h('Is', 'direct'), h(' a Korean person.', 'none')],
+					englishHint: 'Is a Korean person.',
 					order: 1
 				}
 			],
@@ -149,7 +148,7 @@ export const lesson01: LessonSeed = {
 					answer: '이다',
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
-					englishHint: [h('Is', 'direct'), h(' a student.', 'none')],
+					englishHint: 'Is a student.',
 					introducedAtPosition: 2
 				},
 				{
@@ -159,7 +158,7 @@ export const lesson01: LessonSeed = {
 					answer: '이다',
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
-					englishHint: [h('Is', 'direct'), h(' a teacher.', 'none')],
+					englishHint: 'Is a teacher.',
 					introducedAtPosition: 2
 				},
 				{
@@ -169,7 +168,7 @@ export const lesson01: LessonSeed = {
 					answer: '이다',
 					alternateAnswers: [],
 					vocabBaseForm: '이다',
-					englishHint: [h('Is', 'direct'), h(' an apple.', 'none')],
+					englishHint: 'Is an apple.',
 					introducedAtPosition: 2
 				}
 			]
@@ -200,7 +199,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저는 학생이에요.',
 					sentenceWithBlank: '저___ 학생이에요.',
 					answer: '는',
-					englishHint: [h('As for ', 'direct'), h('me', 'direct'), h(', I am a student.', 'none')],
+					englishHint: 'As for me, I am a student.',
 					order: 0,
 					notes: 'Uses 이에요/예요 (GP1). 저 ends in vowel → 는.'
 				},
@@ -209,7 +208,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이름은 민수예요.',
 					sentenceWithBlank: '이름___ 민수예요.',
 					answer: '은',
-					englishHint: [h('As for the ', 'direct'), h('name', 'direct'), h(', it\'s Minsu.', 'none')],
+					englishHint: "As for the name, it's Minsu.",
 					order: 1,
 					notes: 'Uses 예요 (GP1). 이름 ends in consonant ㅁ → 은.'
 				}
@@ -222,7 +221,7 @@ export const lesson01: LessonSeed = {
 					answer: '는',
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
-					englishHint: [h('I', 'direct'), h(' am a student.', 'none')],
+					englishHint: 'I am a student.',
 					introducedAtPosition: 3
 				},
 				{
@@ -232,7 +231,7 @@ export const lesson01: LessonSeed = {
 					answer: '은',
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
-					englishHint: [h('The name', 'direct'), h(' is Minsu.', 'none')],
+					englishHint: 'The name is Minsu.',
 					introducedAtPosition: 3
 				},
 				{
@@ -242,7 +241,7 @@ export const lesson01: LessonSeed = {
 					answer: '은',
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
-					englishHint: [h('Today', 'direct'), h(' is Monday.', 'none')],
+					englishHint: 'Today is Monday.',
 					introducedAtPosition: 3
 				},
 				{
@@ -252,7 +251,7 @@ export const lesson01: LessonSeed = {
 					answer: '는',
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
-					englishHint: [h('The weather', 'direct'), h(' is nice.', 'none')],
+					englishHint: 'The weather is nice.',
 					introducedAtPosition: 3
 				}
 			]
@@ -283,7 +282,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이것은 책이에요.',
 					sentenceWithBlank: '___은 책이에요.',
 					answer: '이것',
-					englishHint: [h('This', 'direct'), h(' is a book.', 'none')],
+					englishHint: 'This is a book.',
 					order: 0,
 					notes: 'Uses 은/는 (GP3), 이에요/예요 (GP1).'
 				},
@@ -292,7 +291,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이것은 가방이에요.',
 					sentenceWithBlank: '___은 가방이에요.',
 					answer: '이것',
-					englishHint: [h('This', 'direct'), h(' is a bag.', 'none')],
+					englishHint: 'This is a bag.',
 					order: 1
 				}
 			],
@@ -304,7 +303,7 @@ export const lesson01: LessonSeed = {
 					answer: '이것',
 					alternateAnswers: ['이거'],
 					vocabBaseForm: '이것',
-					englishHint: [h('This', 'direct'), h(' is a book.', 'none')],
+					englishHint: 'This is a book.',
 					introducedAtPosition: 4
 				},
 				{
@@ -314,7 +313,7 @@ export const lesson01: LessonSeed = {
 					answer: '이것',
 					alternateAnswers: ['이거'],
 					vocabBaseForm: '이것',
-					englishHint: [h('What is ', 'none'), h('this', 'direct'), h('?', 'none')],
+					englishHint: 'What is this?',
 					introducedAtPosition: 4
 				},
 				{
@@ -324,7 +323,7 @@ export const lesson01: LessonSeed = {
 					answer: '이것',
 					alternateAnswers: ['이거'],
 					vocabBaseForm: '이것',
-					englishHint: [h('This', 'direct'), h(' is an apple.', 'none')],
+					englishHint: 'This is an apple.',
 					introducedAtPosition: 4
 				}
 			]
@@ -354,7 +353,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '그것은 연필이에요.',
 					sentenceWithBlank: '___은 연필이에요.',
 					answer: '그것',
-					englishHint: [h('That', 'direct'), h(' is a pencil.', 'none')],
+					englishHint: 'That is a pencil.',
 					order: 0
 				},
 				{
@@ -362,7 +361,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '그것은 우유예요.',
 					sentenceWithBlank: '___은 우유예요.',
 					answer: '그것',
-					englishHint: [h('That', 'direct'), h(' is milk.', 'none')],
+					englishHint: 'That is milk.',
 					order: 1
 				}
 			],
@@ -374,7 +373,7 @@ export const lesson01: LessonSeed = {
 					answer: '그것',
 					alternateAnswers: ['그거'],
 					vocabBaseForm: '그것',
-					englishHint: [h('That', 'direct'), h(' is a pencil.', 'none')],
+					englishHint: 'That is a pencil.',
 					introducedAtPosition: 5
 				},
 				{
@@ -384,7 +383,7 @@ export const lesson01: LessonSeed = {
 					answer: '그것',
 					alternateAnswers: ['그거'],
 					vocabBaseForm: '그것',
-					englishHint: [h('What is ', 'none'), h('that', 'direct'), h('?', 'none')],
+					englishHint: 'What is that?',
 					introducedAtPosition: 5
 				},
 				{
@@ -394,7 +393,7 @@ export const lesson01: LessonSeed = {
 					answer: '그것',
 					alternateAnswers: ['그거'],
 					vocabBaseForm: '그것',
-					englishHint: [h('That', 'direct'), h(' is a wallet.', 'none')],
+					englishHint: 'That is a wallet.',
 					introducedAtPosition: 5
 				}
 			]
@@ -424,7 +423,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저것은 학교예요.',
 					sentenceWithBlank: '___은 학교예요.',
 					answer: '저것',
-					englishHint: [h('That over there', 'direct'), h(' is a school.', 'none')],
+					englishHint: 'That over there is a school.',
 					order: 0
 				},
 				{
@@ -432,7 +431,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저것은 산이에요.',
 					sentenceWithBlank: '___은 산이에요.',
 					answer: '저것',
-					englishHint: [h('That over there', 'direct'), h(' is a mountain.', 'none')],
+					englishHint: 'That over there is a mountain.',
 					order: 1
 				}
 			],
@@ -444,7 +443,7 @@ export const lesson01: LessonSeed = {
 					answer: '저것',
 					alternateAnswers: ['저거'],
 					vocabBaseForm: '저것',
-					englishHint: [h('That over there', 'direct'), h(' is a school.', 'none')],
+					englishHint: 'That over there is a school.',
 					introducedAtPosition: 6
 				},
 				{
@@ -454,7 +453,7 @@ export const lesson01: LessonSeed = {
 					answer: '저것',
 					alternateAnswers: ['저거'],
 					vocabBaseForm: '저것',
-					englishHint: [h('What is ', 'none'), h('that over there', 'direct'), h('?', 'none')],
+					englishHint: 'What is that over there?',
 					introducedAtPosition: 6
 				},
 				{
@@ -464,7 +463,7 @@ export const lesson01: LessonSeed = {
 					answer: '저것',
 					alternateAnswers: ['저거'],
 					vocabBaseForm: '저것',
-					englishHint: [h('That over there', 'direct'), h(' is a hospital.', 'none')],
+					englishHint: 'That over there is a hospital.',
 					introducedAtPosition: 6
 				}
 			]
@@ -495,7 +494,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저의 이름은 민수예요.',
 					sentenceWithBlank: '저___ 이름은 민수예요.',
 					answer: '의',
-					englishHint: [h('My', 'direct'), h(' name is Minsu.', 'none')],
+					englishHint: 'My name is Minsu.',
 					order: 0,
 					notes: 'Uses 은/는 (GP3), 예요 (GP1).'
 				},
@@ -504,7 +503,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이것은 저의 책이에요.',
 					sentenceWithBlank: '이것은 저___ 책이에요.',
 					answer: '의',
-					englishHint: [h('This is ', 'none'), h('my', 'direct'), h(' book.', 'none')],
+					englishHint: 'This is my book.',
 					order: 1,
 					notes: 'Uses 이것 (GP4), 은/는 (GP3), 이에요 (GP1).'
 				}
@@ -517,7 +516,7 @@ export const lesson01: LessonSeed = {
 					answer: '의',
 					alternateAnswers: [],
 					vocabBaseForm: '의',
-					englishHint: [h('My', 'direct'), h(' name is Sujin.', 'none')],
+					englishHint: 'My name is Sujin.',
 					introducedAtPosition: 7
 				},
 				{
@@ -527,7 +526,7 @@ export const lesson01: LessonSeed = {
 					answer: '의',
 					alternateAnswers: [],
 					vocabBaseForm: '의',
-					englishHint: [h("Korea's", 'direct'), h(' food is delicious.', 'none')],
+					englishHint: "Korea's food is delicious.",
 					introducedAtPosition: 7
 				},
 				{
@@ -537,7 +536,7 @@ export const lesson01: LessonSeed = {
 					answer: '의',
 					alternateAnswers: [],
 					vocabBaseForm: '의',
-					englishHint: [h("Whose", 'direct'), h(' bag is this?', 'none')],
+					englishHint: 'Whose bag is this?',
 					introducedAtPosition: 7
 				}
 			]
@@ -568,7 +567,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '저도 학생이에요.',
 					sentenceWithBlank: '저___ 학생이에요.',
 					answer: '도',
-					englishHint: [h('I am ', 'none'), h('also', 'direct'), h(' a student.', 'none')],
+					englishHint: 'I am also a student.',
 					order: 0,
 					notes: 'Uses 이에요 (GP1). N+1 OK: only uses GPs 1–8.'
 				},
@@ -577,7 +576,7 @@ export const lesson01: LessonSeed = {
 					fullSentence: '이것도 저의 책이에요.',
 					sentenceWithBlank: '이것___ 저의 책이에요.',
 					answer: '도',
-					englishHint: [h('This is ', 'none'), h('also', 'direct'), h(' my book.', 'none')],
+					englishHint: 'This is also my book.',
 					order: 1,
 					notes: 'Uses 이것 (GP4), 의 (GP7), 이에요 (GP1).'
 				}
@@ -590,7 +589,7 @@ export const lesson01: LessonSeed = {
 					answer: '도',
 					alternateAnswers: [],
 					vocabBaseForm: '도',
-					englishHint: [h('I am ', 'none'), h('also', 'direct'), h(' a student.', 'none')],
+					englishHint: 'I am also a student.',
 					introducedAtPosition: 8
 				},
 				{
@@ -600,7 +599,7 @@ export const lesson01: LessonSeed = {
 					answer: '도',
 					alternateAnswers: [],
 					vocabBaseForm: '도',
-					englishHint: [h('That is ', 'none'), h('also', 'direct'), h(' good.', 'none')],
+					englishHint: 'That is also good.',
 					introducedAtPosition: 8
 				},
 				{
@@ -610,7 +609,7 @@ export const lesson01: LessonSeed = {
 					answer: '도',
 					alternateAnswers: [],
 					vocabBaseForm: '도',
-					englishHint: [h('Coffee is ', 'none'), h('also', 'direct'), h(' good.', 'none')],
+					englishHint: 'Coffee is also good.',
 					introducedAtPosition: 8
 				}
 			]

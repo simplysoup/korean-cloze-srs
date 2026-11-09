@@ -209,12 +209,10 @@ The cover links to the deck detail page.
   designed, the only pre-submit escape is a plain "Show Answer" button
   that reveals the answer, marks the card failed, and submits it so
   Next appears.
-- The English hint's 'direct' highlight is the English word for the
-  blanked Korean grammar — the copula ("I [am] a student"), the
-  preposition ("I go [to] school"), "also", "and"/"with", "Oh," — never
-  the noun it attaches to (build 17 fixed 48 cards/examples that
-  highlighted the noun or the whole phrase; the five instruction-style
-  practice hints have no word to highlight and stay unhighlighted).
+- The English hint is the plain English translation of the Korean
+  sentence, with no highlighting (build 25 removed it: English often
+  has no equivalent for Korean particles — 은/는, 이/가, 을/를 — so any
+  highlighted English word was a guess).
   The blank itself has a hard 3px dark underline and shows a visible
   line even when empty (a non-breaking-space filler), so the target is
   obvious before anything is typed.

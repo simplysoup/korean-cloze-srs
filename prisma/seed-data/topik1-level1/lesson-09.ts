@@ -11,7 +11,6 @@ import type { LessonSeed } from '../types';
 // Available: all L1–L8 grammar (pos 1–39).
 // ══════════════════════════════════════════════════════════════════════════════
 
-const h = (text: string, highlightType: 'none' | 'direct' | 'related' = 'none') => ({ text, highlightType });
 
 export const lesson09: LessonSeed = {
 	lessonNumber: 9,
@@ -43,7 +42,7 @@ export const lesson09: LessonSeed = {
 					fullSentence: '배가 고파서 밥을 먹었어요.',
 					sentenceWithBlank: '배가 ___ 밥을 먹었어요.',
 					answer: '고파서',
-					englishHint: [h('I ate ', 'none'), h('because', 'direct'), h(' I was hungry.', 'none')],
+					englishHint: 'I ate because I was hungry.',
 					order: 0
 				},
 				{
@@ -51,7 +50,7 @@ export const lesson09: LessonSeed = {
 					fullSentence: '피곤해서 집에 있었어요.',
 					sentenceWithBlank: '___ 집에 있었어요.',
 					answer: '피곤해서',
-					englishHint: [h('I stayed home ', 'none'), h('because', 'direct'), h(' I was tired.', 'none')],
+					englishHint: 'I stayed home because I was tired.',
 					order: 1
 				}
 			],
@@ -63,7 +62,7 @@ export const lesson09: LessonSeed = {
 					answer: '서',
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어서',
-					englishHint: [h('I ate ', 'none'), h('because', 'direct'), h(' I was hungry.', 'none')],
+					englishHint: 'I ate because I was hungry.',
 					introducedAtPosition: 40
 				},
 				{
@@ -73,7 +72,7 @@ export const lesson09: LessonSeed = {
 					answer: '서',
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어서',
-					englishHint: [h('I took an umbrella ', 'none'), h('because', 'direct'), h(' it was raining.', 'none')],
+					englishHint: 'I took an umbrella because it was raining.',
 					introducedAtPosition: 40
 				},
 				{
@@ -83,7 +82,7 @@ export const lesson09: LessonSeed = {
 					answer: '서',
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어서',
-					englishHint: [h('I took a taxi ', 'none'), h('because', 'direct'), h(' I was late.', 'none')],
+					englishHint: 'I took a taxi because I was late.',
 					introducedAtPosition: 40
 				}
 			]
@@ -115,7 +114,7 @@ export const lesson09: LessonSeed = {
 					fullSentence: '시간이 없으니까 빨리 가세요.',
 					sentenceWithBlank: '시간이 ___ 빨리 가세요.',
 					answer: '없으니까',
-					englishHint: [h('Please go quickly ', 'none'), h('because', 'direct'), h(" there's no time.", 'none')],
+					englishHint: "Please go quickly because there's no time.",
 					order: 0
 				},
 				{
@@ -123,7 +122,7 @@ export const lesson09: LessonSeed = {
 					fullSentence: '날씨가 추우니까 옷을 많이 입으세요.',
 					sentenceWithBlank: '날씨가 ___ 옷을 많이 입으세요.',
 					answer: '추우니까',
-					englishHint: [h('Please dress warmly ', 'none'), h('because', 'direct'), h(" it's cold.", 'none')],
+					englishHint: "Please dress warmly because it's cold.",
 					order: 1
 				}
 			],
@@ -135,7 +134,7 @@ export const lesson09: LessonSeed = {
 					answer: '니까',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)니까',
-					englishHint: [h('Please go quickly ', 'none'), h('because', 'direct'), h(" there's no time.", 'none')],
+					englishHint: "Please go quickly because there's no time.",
 					introducedAtPosition: 41
 				},
 				{
@@ -145,7 +144,7 @@ export const lesson09: LessonSeed = {
 					answer: '니까',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)니까',
-					englishHint: [h('Take an umbrella ', 'none'), h('because', 'direct'), h(" it's raining.", 'none')],
+					englishHint: "Take an umbrella because it's raining.",
 					introducedAtPosition: 41
 				},
 				{
@@ -155,7 +154,7 @@ export const lesson09: LessonSeed = {
 					answer: '니까',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)니까',
-					englishHint: [h('Please eat a lot ', 'none'), h('because', 'direct'), h(" it's delicious.", 'none')],
+					englishHint: "Please eat a lot because it's delicious.",
 					introducedAtPosition: 41
 				}
 			]
@@ -186,7 +185,7 @@ export const lesson09: LessonSeed = {
 					fullSentence: '배가 고팠어요. 그래서 밥을 먹었어요.',
 					sentenceWithBlank: '배가 고팠어요. ___ 밥을 먹었어요.',
 					answer: '그래서',
-					englishHint: [h('I was hungry. ', 'none'), h('So', 'direct'), h(' I ate.', 'none')],
+					englishHint: 'I was hungry. So I ate.',
 					order: 0
 				},
 				{
@@ -194,7 +193,7 @@ export const lesson09: LessonSeed = {
 					fullSentence: '비가 왔어요. 그래서 집에 있었어요.',
 					sentenceWithBlank: '비가 왔어요. ___ 집에 있었어요.',
 					answer: '그래서',
-					englishHint: [h('It rained. ', 'none'), h('So', 'direct'), h(' I stayed home.', 'none')],
+					englishHint: 'It rained. So I stayed home.',
 					order: 1
 				}
 			],
@@ -206,7 +205,7 @@ export const lesson09: LessonSeed = {
 					answer: '그래서',
 					alternateAnswers: [],
 					vocabBaseForm: '그래서',
-					englishHint: [h('I was hungry. ', 'none'), h('So', 'direct'), h(' I ate.', 'none')],
+					englishHint: 'I was hungry. So I ate.',
 					introducedAtPosition: 42
 				},
 				{
@@ -216,7 +215,7 @@ export const lesson09: LessonSeed = {
 					answer: '그래서',
 					alternateAnswers: [],
 					vocabBaseForm: '그래서',
-					englishHint: [h('I had no time. ', 'none'), h('So', 'direct'), h(' I took a taxi.', 'none')],
+					englishHint: 'I had no time. So I took a taxi.',
 					introducedAtPosition: 42
 				},
 				{
@@ -226,7 +225,7 @@ export const lesson09: LessonSeed = {
 					answer: '그래서',
 					alternateAnswers: [],
 					vocabBaseForm: '그래서',
-					englishHint: [h('I like Korean. ', 'none'), h('So', 'direct'), h(' I study every day.', 'none')],
+					englishHint: 'I like Korean. So I study every day.',
 					introducedAtPosition: 42
 				}
 			]

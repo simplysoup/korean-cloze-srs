@@ -29,7 +29,7 @@ export const clozeCards = sqliteTable('cloze_cards', {
   vocabBaseForm: text('vocab_base_form').notNull(),
   answer: text('answer').notNull(),
   alternateAnswers: text('alternate_answers').notNull().default('[]'), // JSON string[]
-  englishHint: text('english_hint').notNull().default('[]'), // JSON EnglishHintPart[]
+  englishHint: text('english_hint').notNull().default('""'), // JSON string
   introducedAtPosition: integer('introduced_at_position').notNull().default(0),
 });
 
@@ -47,7 +47,7 @@ export const lessonExamples = sqliteTable('lesson_examples', {
   fullSentence: text('full_sentence').notNull(),
   sentenceWithBlank: text('sentence_with_blank').notNull(),
   answer: text('answer').notNull(),
-  englishHint: text('english_hint').notNull().default('[]'), // JSON EnglishHintPart[]
+  englishHint: text('english_hint').notNull().default('""'), // JSON string
   order: integer('order').notNull().default(0),
   notes: text('notes'),
 });

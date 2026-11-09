@@ -16,7 +16,7 @@ import { calculateLevel } from '../lib/levels';
 import { generateSalt, hashPassword, isLogoutGraceActive, usernameFromEmail } from '../lib/auth';
 
 export const LOCAL_USER_ID = 'local';
-export const CONTENT_VERSION = 'topik1-level1-v4';
+export const CONTENT_VERSION = 'topik1-level1-v5';
 
 /** The id of the currently logged-in user; all queries below are scoped to
  * it. Defaults to 'local' until the auth layer sets the real account. */
@@ -54,9 +54,9 @@ function newId(prefix: string): string {
 
 const CREATE_TABLES_SQL = `
 CREATE TABLE IF NOT EXISTS grammar_points (id TEXT PRIMARY KEY, title TEXT NOT NULL, category TEXT NOT NULL, tense TEXT, register TEXT, hint TEXT NOT NULL, description TEXT NOT NULL, level INTEGER NOT NULL DEFAULT 1, tags TEXT NOT NULL DEFAULT '[]', structure_pattern TEXT, notes TEXT, related_point_ids TEXT NOT NULL DEFAULT '[]', lesson_number INTEGER NOT NULL, position INTEGER NOT NULL);
-CREATE TABLE IF NOT EXISTS cloze_cards (id TEXT PRIMARY KEY, grammar_point_id TEXT NOT NULL, full_sentence TEXT NOT NULL, sentence_with_blank TEXT NOT NULL, vocab_base_form TEXT NOT NULL, answer TEXT NOT NULL, alternate_answers TEXT NOT NULL DEFAULT '[]', english_hint TEXT NOT NULL DEFAULT '[]', introduced_at_position INTEGER NOT NULL DEFAULT 0);
+CREATE TABLE IF NOT EXISTS cloze_cards (id TEXT PRIMARY KEY, grammar_point_id TEXT NOT NULL, full_sentence TEXT NOT NULL, sentence_with_blank TEXT NOT NULL, vocab_base_form TEXT NOT NULL, answer TEXT NOT NULL, alternate_answers TEXT NOT NULL DEFAULT '[]', english_hint TEXT NOT NULL DEFAULT '""', introduced_at_position INTEGER NOT NULL DEFAULT 0);
 CREATE TABLE IF NOT EXISTS cloze_card_grammar_targets (id TEXT PRIMARY KEY, cloze_card_id TEXT NOT NULL, grammar_point_id TEXT NOT NULL, word_replacement TEXT NOT NULL, blank_index INTEGER NOT NULL DEFAULT 0, UNIQUE(cloze_card_id, grammar_point_id));
-CREATE TABLE IF NOT EXISTS lesson_examples (id TEXT PRIMARY KEY, grammar_point_id TEXT NOT NULL, full_sentence TEXT NOT NULL, sentence_with_blank TEXT NOT NULL, answer TEXT NOT NULL, english_hint TEXT NOT NULL DEFAULT '[]', "order" INTEGER NOT NULL DEFAULT 0, notes TEXT);
+CREATE TABLE IF NOT EXISTS lesson_examples (id TEXT PRIMARY KEY, grammar_point_id TEXT NOT NULL, full_sentence TEXT NOT NULL, sentence_with_blank TEXT NOT NULL, answer TEXT NOT NULL, english_hint TEXT NOT NULL DEFAULT '""', "order" INTEGER NOT NULL DEFAULT 0, notes TEXT);
 CREATE TABLE IF NOT EXISTS review_cards (id TEXT PRIMARY KEY, user_id TEXT NOT NULL DEFAULT 'local', grammar_point_id TEXT NOT NULL, stability REAL NOT NULL DEFAULT 0, difficulty REAL NOT NULL DEFAULT 0, reps INTEGER NOT NULL DEFAULT 0, lapses INTEGER NOT NULL DEFAULT 0, state INTEGER NOT NULL DEFAULT 0, due TEXT NOT NULL, last_review TEXT, streak_correct INTEGER NOT NULL DEFAULT 0, mastered_at TEXT, peak_stability REAL NOT NULL DEFAULT 0, last_cloze_card_id TEXT, UNIQUE(user_id, grammar_point_id));
 CREATE TABLE IF NOT EXISTS review_logs (id TEXT PRIMARY KEY, review_card_id TEXT NOT NULL, user_id TEXT NOT NULL DEFAULT 'local', rating INTEGER NOT NULL, reviewed_at TEXT NOT NULL, stability REAL NOT NULL, difficulty REAL NOT NULL, elapsed_days REAL NOT NULL, scheduled_days REAL NOT NULL);
 CREATE TABLE IF NOT EXISTS decks (id TEXT PRIMARY KEY, title TEXT NOT NULL, slug TEXT NOT NULL, description TEXT NOT NULL DEFAULT '', level INTEGER NOT NULL DEFAULT 1, topik_level TEXT NOT NULL DEFAULT 'topik1-1', sort_order INTEGER NOT NULL DEFAULT 0);
@@ -209,7 +209,7 @@ export interface ReviewQueueItem {
   vocabBaseForm: string;
   answers: string[];
   wordReplacement: string;
-  englishHint: { text: string; highlightType: string }[];
+  englishHint: string;
   grammar: { title: string; category: string; tense: string | null; register: string | null; hint: string; description: string };
   streakCorrect: number;
   masteredAt: string | null;
@@ -528,11 +528,11 @@ export function getGrammarDetail(id: string) {
     cards: cards.map((c) => ({
       ...c,
       alternateAnswers: JSON.parse(c.alternateAnswers) as string[],
-      englishHint: JSON.parse(c.englishHint) as { text: string; highlightType: string }[],
+      englishHint: JSON.parse(c.englishHint) as string,
     })),
     examples: examples.map((e) => ({
       ...e,
-      englishHint: JSON.parse(e.englishHint) as { text: string; highlightType: string }[],
+      englishHint: JSON.parse(e.englishHint) as string,
     })),
     reviewCard: reviewCard ?? null,
   };
@@ -913,7 +913,7 @@ export function completeLearnSession(grammarPointIds: string[]) {
   const database = getDb();
   const now = new Date();
   return withTransaction(database, (tx) => {
-    const quizCards: { id: string; grammarPointId: string; fullSentence: string; sentenceWithBlank: string; answer: string; alternateAnswers: string[]; englishHint: { text: string; highlightType: string }[] }[] = [];
+    const quizCards: { id: string; grammarPointId: string; fullSentence: string; sentenceWithBlank: string; answer: string; alternateAnswers: string[]; englishHint: string }[] = [];
     let newlyLearned = 0;
     for (const gpId of grammarPointIds) {
       const state = newFsrsState(now);
@@ -937,7 +937,7 @@ export function completeLearnSession(grammarPointIds: string[]) {
         quizCards.push({
           id: c.id, grammarPointId: gpId, fullSentence: c.fullSentence, sentenceWithBlank: c.sentenceWithBlank,
           answer: c.answer, alternateAnswers: JSON.parse(c.alternateAnswers) as string[],
-          englishHint: JSON.parse(c.englishHint) as { text: string; highlightType: string }[],
+          englishHint: JSON.parse(c.englishHint) as string,
         });
       }
     }

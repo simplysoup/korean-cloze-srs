@@ -11,7 +11,6 @@ import type { LessonSeed } from '../types';
 // Available: all L1–L10 grammar (pos 1–45).
 // ══════════════════════════════════════════════════════════════════════════════
 
-const h = (text: string, highlightType: 'none' | 'direct' | 'related' = 'none') => ({ text, highlightType });
 
 export const lesson11: LessonSeed = {
 	lessonNumber: 11,
@@ -43,7 +42,7 @@ export const lesson11: LessonSeed = {
 					fullSentence: '아침을 먹고 학교에 가요.',
 					sentenceWithBlank: '아침을 먹___ 학교에 가요.',
 					answer: '고',
-					englishHint: [h('I eat breakfast ', 'none'), h('and then', 'direct'), h(' go to school.', 'none')],
+					englishHint: 'I eat breakfast and then go to school.',
 					order: 0
 				},
 				{
@@ -51,7 +50,7 @@ export const lesson11: LessonSeed = {
 					fullSentence: '숙제를 하고 텔레비전을 봐요.',
 					sentenceWithBlank: '숙제를 하___ 텔레비전을 봐요.',
 					answer: '고',
-					englishHint: [h('I do homework ', 'none'), h('and then', 'direct'), h(' watch TV.', 'none')],
+					englishHint: 'I do homework and then watch TV.',
 					order: 1
 				}
 			],
@@ -63,7 +62,7 @@ export const lesson11: LessonSeed = {
 					answer: '고',
 					alternateAnswers: [],
 					vocabBaseForm: '-고',
-					englishHint: [h('I eat breakfast ', 'none'), h('and then', 'direct'), h(' go to school.', 'none')],
+					englishHint: 'I eat breakfast and then go to school.',
 					introducedAtPosition: 46
 				},
 				{
@@ -73,7 +72,7 @@ export const lesson11: LessonSeed = {
 					answer: '고',
 					alternateAnswers: [],
 					vocabBaseForm: '-고',
-					englishHint: [h('I showered ', 'none'), h('and then', 'direct'), h(' got dressed.', 'none')],
+					englishHint: 'I showered and then got dressed.',
 					introducedAtPosition: 46
 				},
 				{
@@ -83,7 +82,7 @@ export const lesson11: LessonSeed = {
 					answer: '고',
 					alternateAnswers: [],
 					vocabBaseForm: '-고',
-					englishHint: [h('I drink coffee ', 'none'), h('and then', 'direct'), h(' start work.', 'none')],
+					englishHint: 'I drink coffee and then start work.',
 					introducedAtPosition: 46
 				}
 			]
@@ -115,7 +114,7 @@ export const lesson11: LessonSeed = {
 					fullSentence: '제가 할게요.',
 					sentenceWithBlank: '제가 ___.',
 					answer: '할게요',
-					englishHint: [h('', 'none'), h("I'll do", 'direct'), h(' it.', 'none')],
+					englishHint: "I'll do it.",
 					order: 0
 				},
 				{
@@ -123,7 +122,7 @@ export const lesson11: LessonSeed = {
 					fullSentence: '내일 전화할게요.',
 					sentenceWithBlank: '내일 ___.',
 					answer: '전화할게요',
-					englishHint: [h('', 'none'), h("I'll call", 'direct'), h(' (you) tomorrow.', 'none')],
+					englishHint: "I'll call (you) tomorrow.",
 					order: 1
 				}
 			],
@@ -135,7 +134,7 @@ export const lesson11: LessonSeed = {
 					answer: '할게요',
 					alternateAnswers: [],
 					vocabBaseForm: '하다',
-					englishHint: [h('', 'none'), h("I'll do", 'direct'), h(' it.', 'none')],
+					englishHint: "I'll do it.",
 					introducedAtPosition: 47
 				},
 				{
@@ -145,7 +144,7 @@ export const lesson11: LessonSeed = {
 					answer: '갈게요',
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
-					englishHint: [h('', 'none'), h("I'll go", 'direct'), h(' tomorrow.', 'none')],
+					englishHint: "I'll go tomorrow.",
 					introducedAtPosition: 47
 				},
 				{
@@ -155,7 +154,7 @@ export const lesson11: LessonSeed = {
 					answer: '할게요',
 					alternateAnswers: [],
 					vocabBaseForm: '하다',
-					englishHint: [h('', 'none'), h("I'll try", 'direct'), h(' harder next time.', 'none')],
+					englishHint: "I'll try harder next time.",
 					introducedAtPosition: 47
 				}
 			]
@@ -187,7 +186,7 @@ export const lesson11: LessonSeed = {
 					fullSentence: '내일 한국어를 공부할 거예요.',
 					sentenceWithBlank: '내일 한국어를 공부할 ___.',
 					answer: '거예요',
-					englishHint: [h('I\'m ', 'none'), h('going to', 'direct'), h(' study Korean tomorrow.', 'none')],
+					englishHint: "I'm going to study Korean tomorrow.",
 					order: 0
 				},
 				{
@@ -195,7 +194,7 @@ export const lesson11: LessonSeed = {
 					fullSentence: '주말에 친구를 만날 거예요.',
 					sentenceWithBlank: '주말에 친구를 만날 ___.',
 					answer: '거예요',
-					englishHint: [h('I\'m ', 'none'), h('going to', 'direct'), h(' meet a friend on the weekend.', 'none')],
+					englishHint: "I'm going to meet a friend on the weekend.",
 					order: 1
 				}
 			],
@@ -207,7 +206,7 @@ export const lesson11: LessonSeed = {
 					answer: '거예요',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 거예요',
-					englishHint: [h('I\'m ', 'none'), h('going to', 'direct'), h(' study Korean tomorrow.', 'none')],
+					englishHint: "I'm going to study Korean tomorrow.",
 					introducedAtPosition: 48
 				},
 				{
@@ -217,7 +216,7 @@ export const lesson11: LessonSeed = {
 					answer: '거예요',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 거예요',
-					englishHint: [h('What are you ', 'none'), h('going to', 'direct'), h(' eat tonight?', 'none')],
+					englishHint: 'What are you going to eat tonight?',
 					introducedAtPosition: 48
 				},
 				{
@@ -227,7 +226,7 @@ export const lesson11: LessonSeed = {
 					answer: '거예요',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 거예요',
-					englishHint: [h('I\'m ', 'none'), h('going to', 'direct'), h(' go to Korea next year.', 'none')],
+					englishHint: "I'm going to go to Korea next year.",
 					introducedAtPosition: 48
 				}
 			]

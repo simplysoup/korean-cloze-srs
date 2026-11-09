@@ -11,7 +11,6 @@ import type { LessonSeed } from '../types';
 // Available: all L1–L6 grammar (pos 1–33).
 // ══════════════════════════════════════════════════════════════════════════════
 
-const h = (text: string, highlightType: 'none' | 'direct' | 'related' = 'none') => ({ text, highlightType });
 
 export const lesson07: LessonSeed = {
 	lessonNumber: 7,
@@ -42,7 +41,7 @@ export const lesson07: LessonSeed = {
 					fullSentence: '한국에 가고 싶어요.',
 					sentenceWithBlank: '한국에 가고 ___.',
 					answer: '싶어요',
-					englishHint: [h('I ', 'none'), h('want to', 'direct'), h(' go to Korea.', 'none')],
+					englishHint: 'I want to go to Korea.',
 					order: 0
 				},
 				{
@@ -50,7 +49,7 @@ export const lesson07: LessonSeed = {
 					fullSentence: '커피를 마시고 싶어요.',
 					sentenceWithBlank: '커피를 마시고 ___.',
 					answer: '싶어요',
-					englishHint: [h('I ', 'none'), h('want to', 'direct'), h(' drink coffee.', 'none')],
+					englishHint: 'I want to drink coffee.',
 					order: 1
 				}
 			],
@@ -62,7 +61,7 @@ export const lesson07: LessonSeed = {
 					answer: '싶어요',
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
-					englishHint: [h('I ', 'none'), h('want to', 'direct'), h(' go to Korea.', 'none')],
+					englishHint: 'I want to go to Korea.',
 					introducedAtPosition: 34
 				},
 				{
@@ -72,7 +71,7 @@ export const lesson07: LessonSeed = {
 					answer: '싶어요',
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
-					englishHint: [h('I ', 'none'), h('want to', 'direct'), h(' eat bulgogi.', 'none')],
+					englishHint: 'I want to eat bulgogi.',
 					introducedAtPosition: 34
 				},
 				{
@@ -82,7 +81,7 @@ export const lesson07: LessonSeed = {
 					answer: '싶어요',
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
-					englishHint: [h('I ', 'none'), h('want to', 'direct'), h(' watch a movie.', 'none')],
+					englishHint: 'I want to watch a movie.',
 					introducedAtPosition: 34
 				}
 			]
@@ -114,7 +113,7 @@ export const lesson07: LessonSeed = {
 					fullSentence: '한국어를 읽을 수 있어요.',
 					sentenceWithBlank: '한국어를 읽을 수 ___.',
 					answer: '있어요',
-					englishHint: [h('I ', 'none'), h('can', 'direct'), h(' read Korean.', 'none')],
+					englishHint: 'I can read Korean.',
 					order: 0
 				},
 				{
@@ -122,7 +121,7 @@ export const lesson07: LessonSeed = {
 					fullSentence: '매운 음식을 먹을 수 없어요.',
 					sentenceWithBlank: '매운 음식을 먹을 수 ___.',
 					answer: '없어요',
-					englishHint: [h('I ', 'none'), h('cannot', 'direct'), h(' eat spicy food.', 'none')],
+					englishHint: 'I cannot eat spicy food.',
 					order: 1
 				}
 			],
@@ -134,7 +133,7 @@ export const lesson07: LessonSeed = {
 					answer: '수',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 수 있다',
-					englishHint: [h('I ', 'none'), h('can', 'direct'), h(' read Korean.', 'none')],
+					englishHint: 'I can read Korean.',
 					introducedAtPosition: 35
 				},
 				{
@@ -144,7 +143,7 @@ export const lesson07: LessonSeed = {
 					answer: '수',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 수 있다',
-					englishHint: [h('I ', 'none'), h('can', 'direct'), h(' go tomorrow.', 'none')],
+					englishHint: 'I can go tomorrow.',
 					introducedAtPosition: 35
 				},
 				{
@@ -154,7 +153,7 @@ export const lesson07: LessonSeed = {
 					answer: '수',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 수 있다',
-					englishHint: [h('You ', 'none'), h('cannot', 'direct'), h(' swim here.', 'none')],
+					englishHint: 'You cannot swim here.',
 					introducedAtPosition: 35
 				}
 			]
@@ -186,7 +185,7 @@ export const lesson07: LessonSeed = {
 					fullSentence: '저는 매운 음식을 못 먹어요.',
 					sentenceWithBlank: '저는 매운 음식을 ___ 먹어요.',
 					answer: '못',
-					englishHint: [h('I ', 'none'), h("can't", 'direct'), h(' eat spicy food.', 'none')],
+					englishHint: "I can't eat spicy food.",
 					order: 0
 				},
 				{
@@ -194,7 +193,7 @@ export const lesson07: LessonSeed = {
 					fullSentence: '오늘은 운동 못 해요.',
 					sentenceWithBlank: '오늘은 운동 ___ 해요.',
 					answer: '못',
-					englishHint: [h('I ', 'none'), h("can't", 'direct'), h(' exercise today.', 'none')],
+					englishHint: "I can't exercise today.",
 					order: 1
 				}
 			],
@@ -206,7 +205,7 @@ export const lesson07: LessonSeed = {
 					answer: '못',
 					alternateAnswers: [],
 					vocabBaseForm: '못',
-					englishHint: [h('I ', 'none'), h("can't", 'direct'), h(' eat spicy food.', 'none')],
+					englishHint: "I can't eat spicy food.",
 					introducedAtPosition: 36
 				},
 				{
@@ -216,7 +215,7 @@ export const lesson07: LessonSeed = {
 					answer: '못',
 					alternateAnswers: [],
 					vocabBaseForm: '못',
-					englishHint: [h('I ', 'none'), h("can't", 'direct'), h(' read Korean.', 'none')],
+					englishHint: "I can't read Korean.",
 					introducedAtPosition: 36
 				},
 				{
@@ -226,7 +225,7 @@ export const lesson07: LessonSeed = {
 					answer: '못',
 					alternateAnswers: [],
 					vocabBaseForm: '못',
-					englishHint: [h('I ', 'none'), h("can't", 'direct'), h(' swim today.', 'none')],
+					englishHint: "I can't swim today.",
 					introducedAtPosition: 36
 				}
 			]

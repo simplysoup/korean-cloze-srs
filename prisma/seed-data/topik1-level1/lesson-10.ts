@@ -11,7 +11,6 @@ import type { LessonSeed } from '../types';
 // Available: all L1–L9 grammar (pos 1–42).
 // ══════════════════════════════════════════════════════════════════════════════
 
-const h = (text: string, highlightType: 'none' | 'direct' | 'related' = 'none') => ({ text, highlightType });
 
 export const lesson10: LessonSeed = {
 	lessonNumber: 10,
@@ -42,7 +41,7 @@ export const lesson10: LessonSeed = {
 					fullSentence: '시간이 있으면 같이 가요.',
 					sentenceWithBlank: '시간이 ___ 같이 가요.',
 					answer: '있으면',
-					englishHint: [h('', 'none'), h('If', 'direct'), h(' you have time, let\'s go together.', 'none')],
+					englishHint: "If you have time, let's go together.",
 					order: 0
 				},
 				{
@@ -50,7 +49,7 @@ export const lesson10: LessonSeed = {
 					fullSentence: '비가 오면 집에 있어요.',
 					sentenceWithBlank: '비가 ___ 집에 있어요.',
 					answer: '오면',
-					englishHint: [h('', 'none'), h('If', 'direct'), h(' it rains, I stay home.', 'none')],
+					englishHint: 'If it rains, I stay home.',
 					order: 1
 				}
 			],
@@ -62,7 +61,7 @@ export const lesson10: LessonSeed = {
 					answer: '면',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)면',
-					englishHint: [h('', 'none'), h('If', 'direct'), h(' you have time, let\'s go together.', 'none')],
+					englishHint: "If you have time, let's go together.",
 					introducedAtPosition: 43
 				},
 				{
@@ -72,7 +71,7 @@ export const lesson10: LessonSeed = {
 					answer: '면',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)면',
-					englishHint: [h('', 'none'), h('If', 'direct'), h(' I go to Korea, I want to eat bulgogi.', 'none')],
+					englishHint: 'If I go to Korea, I want to eat bulgogi.',
 					introducedAtPosition: 43
 				},
 				{
@@ -82,7 +81,7 @@ export const lesson10: LessonSeed = {
 					answer: '면',
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)면',
-					englishHint: [h('', 'none'), h('If', 'direct'), h(' the weather is nice, I go to the park.', 'none')],
+					englishHint: 'If the weather is nice, I go to the park.',
 					introducedAtPosition: 43
 				}
 			]
@@ -114,7 +113,7 @@ export const lesson10: LessonSeed = {
 					fullSentence: '비싸지만 맛있어요.',
 					sentenceWithBlank: '비싸___ 맛있어요.',
 					answer: '지만',
-					englishHint: [h("It's expensive ", 'none'), h('but', 'direct'), h(" it's delicious.", 'none')],
+					englishHint: "It's expensive but it's delicious.",
 					order: 0
 				},
 				{
@@ -122,7 +121,7 @@ export const lesson10: LessonSeed = {
 					fullSentence: '한국어는 어렵지만 재미있어요.',
 					sentenceWithBlank: '한국어는 어렵___ 재미있어요.',
 					answer: '지만',
-					englishHint: [h('Korean is difficult ', 'none'), h('but', 'direct'), h(' fun.', 'none')],
+					englishHint: 'Korean is difficult but fun.',
 					order: 1
 				}
 			],
@@ -134,7 +133,7 @@ export const lesson10: LessonSeed = {
 					answer: '지만',
 					alternateAnswers: [],
 					vocabBaseForm: '-지만',
-					englishHint: [h("It's expensive ", 'none'), h('but', 'direct'), h(" it's delicious.", 'none')],
+					englishHint: "It's expensive but it's delicious.",
 					introducedAtPosition: 44
 				},
 				{
@@ -144,7 +143,7 @@ export const lesson10: LessonSeed = {
 					answer: '지만',
 					alternateAnswers: [],
 					vocabBaseForm: '-지만',
-					englishHint: [h("I'm tired ", 'none'), h('but', 'direct'), h(' I have to study.', 'none')],
+					englishHint: "I'm tired but I have to study.",
 					introducedAtPosition: 44
 				},
 				{
@@ -154,7 +153,7 @@ export const lesson10: LessonSeed = {
 					answer: '지만',
 					alternateAnswers: [],
 					vocabBaseForm: '-지만',
-					englishHint: [h("It's small ", 'none'), h('but', 'direct'), h(' a nice house.', 'none')],
+					englishHint: "It's small but a nice house.",
 					introducedAtPosition: 44
 				}
 			]
@@ -186,7 +185,7 @@ export const lesson10: LessonSeed = {
 					fullSentence: '한국어는 어려워요. 하지만 재미있어요.',
 					sentenceWithBlank: '한국어는 어려워요. ___ 재미있어요.',
 					answer: '하지만',
-					englishHint: [h('Korean is hard. ', 'none'), h('But', 'direct'), h(" it's fun.", 'none')],
+					englishHint: "Korean is hard. But it's fun.",
 					order: 0
 				},
 				{
@@ -194,7 +193,7 @@ export const lesson10: LessonSeed = {
 					fullSentence: '비가 왔어요. 하지만 공원에 갔어요.',
 					sentenceWithBlank: '비가 왔어요. ___ 공원에 갔어요.',
 					answer: '하지만',
-					englishHint: [h('It rained. ', 'none'), h('But', 'direct'), h(' I went to the park.', 'none')],
+					englishHint: 'It rained. But I went to the park.',
 					order: 1
 				}
 			],
@@ -206,7 +205,7 @@ export const lesson10: LessonSeed = {
 					answer: '하지만',
 					alternateAnswers: [],
 					vocabBaseForm: '하지만',
-					englishHint: [h('Korean is hard. ', 'none'), h('But', 'direct'), h(" it's fun.", 'none')],
+					englishHint: "Korean is hard. But it's fun.",
 					introducedAtPosition: 45
 				},
 				{
@@ -216,7 +215,7 @@ export const lesson10: LessonSeed = {
 					answer: '하지만',
 					alternateAnswers: [],
 					vocabBaseForm: '하지만',
-					englishHint: [h('That restaurant is expensive. ', 'none'), h('But', 'direct'), h(" it's delicious.", 'none')],
+					englishHint: "That restaurant is expensive. But it's delicious.",
 					introducedAtPosition: 45
 				},
 				{
@@ -226,7 +225,7 @@ export const lesson10: LessonSeed = {
 					answer: '하지만',
 					alternateAnswers: [],
 					vocabBaseForm: '하지만',
-					englishHint: [h("I'm tired. ", 'none'), h('But', 'direct'), h(' I have to study.', 'none')],
+					englishHint: "I'm tired. But I have to study.",
 					introducedAtPosition: 45
 				}
 			]

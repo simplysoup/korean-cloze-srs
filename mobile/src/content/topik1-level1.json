@@ -49,20 +49,7 @@
               "fullSentence": "학생이에요.",
               "sentenceWithBlank": "학생___.",
               "answer": "이에요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "am",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am a student.",
               "order": 0
             },
             {
@@ -70,20 +57,7 @@
               "fullSentence": "사과예요.",
               "sentenceWithBlank": "사과___.",
               "answer": "예요",
-              "englishHint": [
-                {
-                  "text": "It",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "'s",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " an apple.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It's an apple.",
               "order": 1
             },
             {
@@ -91,20 +65,7 @@
               "fullSentence": "이것은 책이에요.",
               "sentenceWithBlank": "이것은 책___.",
               "answer": "이에요",
-              "englishHint": [
-                {
-                  "text": "This ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a book.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is a book.",
               "order": 2,
               "notes": "책 ends in ㄱ, so use 이에요. Compare 의자예요, where 의자 ends in a vowel. For “is not,” learn the separate form 아니에요."
             }
@@ -117,20 +78,7 @@
               "answer": "이에요",
               "alternateAnswers": [],
               "vocabBaseForm": "이에요/예요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "am",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am a student.",
               "introducedAtPosition": 1
             },
             {
@@ -140,20 +88,7 @@
               "answer": "예요",
               "alternateAnswers": [],
               "vocabBaseForm": "이에요/예요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "am",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a doctor.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am a doctor.",
               "introducedAtPosition": 1
             },
             {
@@ -163,20 +98,7 @@
               "answer": "이에요",
               "alternateAnswers": [],
               "vocabBaseForm": "이에요/예요",
-              "englishHint": [
-                {
-                  "text": "It",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "'s",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a teacher.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It's a teacher.",
               "introducedAtPosition": 1
             },
             {
@@ -186,20 +108,7 @@
               "answer": "예요",
               "alternateAnswers": [],
               "vocabBaseForm": "이에요/예요",
-              "englishHint": [
-                {
-                  "text": "It",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "'s",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " coffee.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It's coffee.",
               "introducedAtPosition": 1
             },
             {
@@ -210,20 +119,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 1,
-              "englishHint": [
-                {
-                  "text": "That over there ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a book.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "That over there is a book."
             },
             {
               "id": "cc_ieyo_variant_desk",
@@ -233,20 +129,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 1,
-              "englishHint": [
-                {
-                  "text": "This ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a chair.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "This is a chair."
             }
           ]
         },
@@ -286,16 +169,7 @@
               "fullSentence": "학생이다.",
               "sentenceWithBlank": "학생___.",
               "answer": "이다",
-              "englishHint": [
-                {
-                  "text": "Is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Is a student.",
               "order": 0
             },
             {
@@ -303,16 +177,7 @@
               "fullSentence": "한국 사람이다.",
               "sentenceWithBlank": "한국 사람___.",
               "answer": "이다",
-              "englishHint": [
-                {
-                  "text": "Is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a Korean person.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Is a Korean person.",
               "order": 1
             }
           ],
@@ -324,16 +189,7 @@
               "answer": "이다",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "englishHint": [
-                {
-                  "text": "Is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Is a student.",
               "introducedAtPosition": 2
             },
             {
@@ -343,16 +199,7 @@
               "answer": "이다",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "englishHint": [
-                {
-                  "text": "Is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a teacher.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Is a teacher.",
               "introducedAtPosition": 2
             },
             {
@@ -362,16 +209,7 @@
               "answer": "이다",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "englishHint": [
-                {
-                  "text": "Is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " an apple.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Is an apple.",
               "introducedAtPosition": 2
             }
           ]
@@ -409,20 +247,7 @@
               "fullSentence": "저는 학생이에요.",
               "sentenceWithBlank": "저___ 학생이에요.",
               "answer": "는",
-              "englishHint": [
-                {
-                  "text": "As for ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "me",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ", I am a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "As for me, I am a student.",
               "order": 0,
               "notes": "Uses 이에요/예요 (GP1). 저 ends in vowel → 는."
             },
@@ -431,20 +256,7 @@
               "fullSentence": "이름은 민수예요.",
               "sentenceWithBlank": "이름___ 민수예요.",
               "answer": "은",
-              "englishHint": [
-                {
-                  "text": "As for the ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "name",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ", it's Minsu.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "As for the name, it's Minsu.",
               "order": 1,
               "notes": "Uses 예요 (GP1). 이름 ends in consonant ㅁ → 은."
             },
@@ -453,20 +265,7 @@
               "fullSentence": "커피는 마셔요. 차는 안 마셔요.",
               "sentenceWithBlank": "커피___ 마셔요. 차는 안 마셔요.",
               "answer": "는",
-              "englishHint": [
-                {
-                  "text": "I drink coffee. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "As for tea",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ", I don’t drink it.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee. As for tea, I don’t drink it.",
               "order": 2,
               "notes": "는 contrasts coffee with tea. The contrast comes from the two sentences together."
             }
@@ -479,16 +278,7 @@
               "answer": "는",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": [
-                {
-                  "text": "I",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " am a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am a student.",
               "introducedAtPosition": 3
             },
             {
@@ -498,16 +288,7 @@
               "answer": "은",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": [
-                {
-                  "text": "The name",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is Minsu.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The name is Minsu.",
               "introducedAtPosition": 3
             },
             {
@@ -517,16 +298,7 @@
               "answer": "은",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": [
-                {
-                  "text": "Today",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is Monday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Today is Monday.",
               "introducedAtPosition": 3
             },
             {
@@ -536,16 +308,7 @@
               "answer": "는",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": [
-                {
-                  "text": "The weather",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is nice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The weather is nice.",
               "introducedAtPosition": 3
             },
             {
@@ -556,12 +319,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 3,
-              "englishHint": [
-                {
-                  "text": "I rest on Saturdays. On Sundays I work. Make Saturday the contrasting topic.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I rest on Saturdays. On Sundays I work. Make Saturday the contrasting topic."
             }
           ]
         },
@@ -598,16 +356,7 @@
               "fullSentence": "이것은 책이에요.",
               "sentenceWithBlank": "___은 책이에요.",
               "answer": "이것",
-              "englishHint": [
-                {
-                  "text": "This",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a book.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is a book.",
               "order": 0,
               "notes": "Uses 은/는 (GP3), 이에요/예요 (GP1)."
             },
@@ -616,16 +365,7 @@
               "fullSentence": "이것은 가방이에요.",
               "sentenceWithBlank": "___은 가방이에요.",
               "answer": "이것",
-              "englishHint": [
-                {
-                  "text": "This",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a bag.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is a bag.",
               "order": 1
             }
           ],
@@ -639,16 +379,7 @@
                 "이거"
               ],
               "vocabBaseForm": "이것",
-              "englishHint": [
-                {
-                  "text": "This",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a book.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is a book.",
               "introducedAtPosition": 4
             },
             {
@@ -660,20 +391,7 @@
                 "이거"
               ],
               "vocabBaseForm": "이것",
-              "englishHint": [
-                {
-                  "text": "What is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "this",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "What is this?",
               "introducedAtPosition": 4
             },
             {
@@ -685,16 +403,7 @@
                 "이거"
               ],
               "vocabBaseForm": "이것",
-              "englishHint": [
-                {
-                  "text": "This",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is an apple.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is an apple.",
               "introducedAtPosition": 4
             }
           ]
@@ -732,16 +441,7 @@
               "fullSentence": "그것은 연필이에요.",
               "sentenceWithBlank": "___은 연필이에요.",
               "answer": "그것",
-              "englishHint": [
-                {
-                  "text": "That",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a pencil.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That is a pencil.",
               "order": 0
             },
             {
@@ -749,16 +449,7 @@
               "fullSentence": "그것은 우유예요.",
               "sentenceWithBlank": "___은 우유예요.",
               "answer": "그것",
-              "englishHint": [
-                {
-                  "text": "That",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is milk.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That is milk.",
               "order": 1
             }
           ],
@@ -772,16 +463,7 @@
                 "그거"
               ],
               "vocabBaseForm": "그것",
-              "englishHint": [
-                {
-                  "text": "That",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a pencil.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That is a pencil.",
               "introducedAtPosition": 5
             },
             {
@@ -793,20 +475,7 @@
                 "그거"
               ],
               "vocabBaseForm": "그것",
-              "englishHint": [
-                {
-                  "text": "What is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "that",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "What is that?",
               "introducedAtPosition": 5
             },
             {
@@ -818,16 +487,7 @@
                 "그거"
               ],
               "vocabBaseForm": "그것",
-              "englishHint": [
-                {
-                  "text": "That",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a wallet.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That is a wallet.",
               "introducedAtPosition": 5
             }
           ]
@@ -865,16 +525,7 @@
               "fullSentence": "저것은 학교예요.",
               "sentenceWithBlank": "___은 학교예요.",
               "answer": "저것",
-              "englishHint": [
-                {
-                  "text": "That over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That over there is a school.",
               "order": 0
             },
             {
@@ -882,16 +533,7 @@
               "fullSentence": "저것은 산이에요.",
               "sentenceWithBlank": "___은 산이에요.",
               "answer": "저것",
-              "englishHint": [
-                {
-                  "text": "That over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a mountain.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That over there is a mountain.",
               "order": 1
             }
           ],
@@ -905,16 +547,7 @@
                 "저거"
               ],
               "vocabBaseForm": "저것",
-              "englishHint": [
-                {
-                  "text": "That over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That over there is a school.",
               "introducedAtPosition": 6
             },
             {
@@ -926,20 +559,7 @@
                 "저거"
               ],
               "vocabBaseForm": "저것",
-              "englishHint": [
-                {
-                  "text": "What is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "that over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "What is that over there?",
               "introducedAtPosition": 6
             },
             {
@@ -951,16 +571,7 @@
                 "저거"
               ],
               "vocabBaseForm": "저것",
-              "englishHint": [
-                {
-                  "text": "That over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a hospital.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That over there is a hospital.",
               "introducedAtPosition": 6
             }
           ]
@@ -998,16 +609,7 @@
               "fullSentence": "저의 이름은 민수예요.",
               "sentenceWithBlank": "저___ 이름은 민수예요.",
               "answer": "의",
-              "englishHint": [
-                {
-                  "text": "My",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " name is Minsu.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "My name is Minsu.",
               "order": 0,
               "notes": "Uses 은/는 (GP3), 예요 (GP1)."
             },
@@ -1016,20 +618,7 @@
               "fullSentence": "이것은 저의 책이에요.",
               "sentenceWithBlank": "이것은 저___ 책이에요.",
               "answer": "의",
-              "englishHint": [
-                {
-                  "text": "This is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "my",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " book.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is my book.",
               "order": 1,
               "notes": "Uses 이것 (GP4), 은/는 (GP3), 이에요 (GP1)."
             }
@@ -1042,16 +631,7 @@
               "answer": "의",
               "alternateAnswers": [],
               "vocabBaseForm": "의",
-              "englishHint": [
-                {
-                  "text": "My",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " name is Sujin.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "My name is Sujin.",
               "introducedAtPosition": 7
             },
             {
@@ -1061,16 +641,7 @@
               "answer": "의",
               "alternateAnswers": [],
               "vocabBaseForm": "의",
-              "englishHint": [
-                {
-                  "text": "Korea's",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " food is delicious.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Korea's food is delicious.",
               "introducedAtPosition": 7
             },
             {
@@ -1080,16 +651,7 @@
               "answer": "의",
               "alternateAnswers": [],
               "vocabBaseForm": "의",
-              "englishHint": [
-                {
-                  "text": "Whose",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " bag is this?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Whose bag is this?",
               "introducedAtPosition": 7
             }
           ]
@@ -1127,20 +689,7 @@
               "fullSentence": "저도 학생이에요.",
               "sentenceWithBlank": "저___ 학생이에요.",
               "answer": "도",
-              "englishHint": [
-                {
-                  "text": "I am ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "also",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am also a student.",
               "order": 0,
               "notes": "Uses 이에요 (GP1). N+1 OK: only uses GPs 1–8."
             },
@@ -1149,20 +698,7 @@
               "fullSentence": "이것도 저의 책이에요.",
               "sentenceWithBlank": "이것___ 저의 책이에요.",
               "answer": "도",
-              "englishHint": [
-                {
-                  "text": "This is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "also",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " my book.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is also my book.",
               "order": 1,
               "notes": "Uses 이것 (GP4), 의 (GP7), 이에요 (GP1)."
             }
@@ -1175,20 +711,7 @@
               "answer": "도",
               "alternateAnswers": [],
               "vocabBaseForm": "도",
-              "englishHint": [
-                {
-                  "text": "I am ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "also",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a student.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am also a student.",
               "introducedAtPosition": 8
             },
             {
@@ -1198,20 +721,7 @@
               "answer": "도",
               "alternateAnswers": [],
               "vocabBaseForm": "도",
-              "englishHint": [
-                {
-                  "text": "That is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "also",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " good.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That is also good.",
               "introducedAtPosition": 8
             },
             {
@@ -1221,20 +731,7 @@
               "answer": "도",
               "alternateAnswers": [],
               "vocabBaseForm": "도",
-              "englishHint": [
-                {
-                  "text": "Coffee is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "also",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " good.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Coffee is also good.",
               "introducedAtPosition": 8
             }
           ]
@@ -1278,20 +775,7 @@
               "fullSentence": "날씨가 좋아요.",
               "sentenceWithBlank": "날씨___ 좋아요.",
               "answer": "가",
-              "englishHint": [
-                {
-                  "text": "The ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "weather",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is nice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The weather is nice.",
               "order": 0,
               "notes": "날씨 ends in vowel → 가. Uses vocab 좋아요 (good)."
             },
@@ -1300,20 +784,7 @@
               "fullSentence": "물이 차가워요.",
               "sentenceWithBlank": "물___ 차가워요.",
               "answer": "이",
-              "englishHint": [
-                {
-                  "text": "The ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "water",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is cold.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The water is cold.",
               "order": 1,
               "notes": "물 ends in consonant ㄹ → 이."
             },
@@ -1322,20 +793,7 @@
               "fullSentence": "누가 왔어요? 친구가 왔어요.",
               "sentenceWithBlank": "누가 왔어요? 친구___ 왔어요.",
               "answer": "가",
-              "englishHint": [
-                {
-                  "text": "Who came? ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "A friend",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " came.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Who came? A friend came.",
               "order": 2,
               "notes": "가 identifies the person who came. 누가 means “who” as the subject."
             }
@@ -1348,16 +806,7 @@
               "answer": "가",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": [
-                {
-                  "text": "The weather",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is nice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The weather is nice.",
               "introducedAtPosition": 9
             },
             {
@@ -1367,16 +816,7 @@
               "answer": "이",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": [
-                {
-                  "text": "The water",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is cold.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The water is cold.",
               "introducedAtPosition": 9
             },
             {
@@ -1386,16 +826,7 @@
               "answer": "가",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": [
-                {
-                  "text": "The cat",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is sleeping.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The cat is sleeping.",
               "introducedAtPosition": 9
             },
             {
@@ -1405,20 +836,7 @@
               "answer": "이",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": [
-                {
-                  "text": "There is no ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "time",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is no time.",
               "introducedAtPosition": 9
             },
             {
@@ -1429,12 +847,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 9,
-              "englishHint": [
-                {
-                  "text": "Who called? The teacher called. Identify who did it.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "Who called? The teacher called. Identify who did it."
             }
           ]
         },
@@ -1466,20 +879,7 @@
               "fullSentence": "커피를 마셔요.",
               "sentenceWithBlank": "커피___ 마셔요.",
               "answer": "를",
-              "englishHint": [
-                {
-                  "text": "I drink ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "coffee",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee.",
               "order": 0,
               "notes": "커피 ends in vowel → 를."
             },
@@ -1488,20 +888,7 @@
               "fullSentence": "책을 읽어요.",
               "sentenceWithBlank": "책___ 읽어요.",
               "answer": "을",
-              "englishHint": [
-                {
-                  "text": "I read a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "book",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I read a book.",
               "order": 1,
               "notes": "책 ends in consonant ㄱ → 을."
             }
@@ -1514,20 +901,7 @@
               "answer": "를",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": [
-                {
-                  "text": "I drink ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "coffee",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee.",
               "introducedAtPosition": 10
             },
             {
@@ -1537,20 +911,7 @@
               "answer": "을",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": [
-                {
-                  "text": "I read a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "book",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I read a book.",
               "introducedAtPosition": 10
             },
             {
@@ -1560,20 +921,7 @@
               "answer": "을",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": [
-                {
-                  "text": "I listen to ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "music",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I listen to music.",
               "introducedAtPosition": 10
             },
             {
@@ -1583,20 +931,7 @@
               "answer": "를",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": [
-                {
-                  "text": "I watch a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "movie",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I watch a movie.",
               "introducedAtPosition": 10
             }
           ]
@@ -1634,20 +969,7 @@
               "fullSentence": "저는 한국어를 공부해요.",
               "sentenceWithBlank": "저는 한국어를 공부___.",
               "answer": "해요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "study",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Korean.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study Korean.",
               "order": 0,
               "notes": "Uses 은/는 (GP3), 을/를 (GP10). 공부하다 → 공부해요."
             },
@@ -1656,20 +978,7 @@
               "fullSentence": "저는 밥을 먹어요.",
               "sentenceWithBlank": "저는 밥을 먹___.",
               "answer": "어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "eat",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " rice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat rice.",
               "order": 1,
               "notes": "Uses 은/는 (GP3), 을/를 (GP10). 먹다 → 먹어요 (stem 먹 has ㅓ vowel)."
             },
@@ -1678,20 +987,7 @@
               "fullSentence": "학교에 가요.",
               "sentenceWithBlank": "학교에 ___.",
               "answer": "가요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "go",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " to school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go to school.",
               "order": 2,
               "notes": "가다 → 가요 (stem 가 has ㅏ vowel → 아요 contracts to 가요)."
             },
@@ -1700,20 +996,7 @@
               "fullSentence": "영화를 봐요.",
               "sentenceWithBlank": "영화를 ___.",
               "answer": "봐요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "watch",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a movie.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I watch a movie.",
               "order": 3,
               "notes": "보다 → 봐요. The stem 보 and 아 combine to make 봐."
             }
@@ -1726,20 +1009,7 @@
               "answer": "해요",
               "alternateAnswers": [],
               "vocabBaseForm": "공부하다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "study",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Korean.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study Korean.",
               "introducedAtPosition": 11
             },
             {
@@ -1749,20 +1019,7 @@
               "answer": "어요",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "eat",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " rice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat rice.",
               "introducedAtPosition": 11
             },
             {
@@ -1774,20 +1031,7 @@
                 "시어요"
               ],
               "vocabBaseForm": "마시다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "drink",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " water.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink water.",
               "introducedAtPosition": 11
             },
             {
@@ -1797,20 +1041,7 @@
               "answer": "가요",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "go",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " to school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go to school.",
               "introducedAtPosition": 11
             },
             {
@@ -1820,20 +1051,7 @@
               "answer": "봐요",
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "watch",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " TV.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I watch TV.",
               "introducedAtPosition": 11
             },
             {
@@ -1844,20 +1062,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "앉다",
               "introducedAtPosition": 11,
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "sit",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " here.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I sit here."
             },
             {
               "id": "cc_present_variant_read",
@@ -1867,20 +1072,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "읽다",
               "introducedAtPosition": 11,
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "read",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the newspaper.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I read the newspaper."
             },
             {
               "id": "cc_present_variant_exercise",
@@ -1890,20 +1082,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "운동하다",
               "introducedAtPosition": 11,
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "exercise",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " every day.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I exercise every day."
             }
           ]
         },
@@ -1940,20 +1119,7 @@
               "fullSentence": "저는 커피를 안 마셔요.",
               "sentenceWithBlank": "저는 커피를 ___ 마셔요.",
               "answer": "안",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "don't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " drink coffee.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I don't drink coffee.",
               "order": 0,
               "notes": "Uses 은/는 (GP3), 을/를 (GP10), -아요/어요 (GP11)."
             },
@@ -1962,20 +1128,7 @@
               "fullSentence": "오늘은 공부 안 해요.",
               "sentenceWithBlank": "오늘은 공부 ___ 해요.",
               "answer": "안",
-              "englishHint": [
-                {
-                  "text": "I'm ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "not",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " studying today.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm not studying today.",
               "order": 1,
               "notes": "Uses 은/는 (GP3), -아요/어요 (GP11). 하다 verb split: 공부 안 해요."
             }
@@ -1988,20 +1141,7 @@
               "answer": "안",
               "alternateAnswers": [],
               "vocabBaseForm": "안",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "don't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " drink coffee.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I don't drink coffee.",
               "introducedAtPosition": 12
             },
             {
@@ -2011,20 +1151,7 @@
               "answer": "안",
               "alternateAnswers": [],
               "vocabBaseForm": "안",
-              "englishHint": [
-                {
-                  "text": "I'm ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "not",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " studying today.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm not studying today.",
               "introducedAtPosition": 12
             },
             {
@@ -2034,20 +1161,7 @@
               "answer": "안",
               "alternateAnswers": [],
               "vocabBaseForm": "안",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "don't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat meat.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I don't eat meat.",
               "introducedAtPosition": 12
             },
             {
@@ -2058,12 +1172,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 12,
-              "englishHint": [
-                {
-                  "text": "Today I don’t drink coffee. Use the short negative form.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "Today I don’t drink coffee. Use the short negative form."
             }
           ]
         },
@@ -2100,20 +1209,7 @@
               "fullSentence": "빵하고 우유를 먹어요.",
               "sentenceWithBlank": "빵___ 우유를 먹어요.",
               "answer": "하고",
-              "englishHint": [
-                {
-                  "text": "I eat bread ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " milk.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat bread and milk.",
               "order": 0,
               "notes": "Uses 을/를 (GP10), -아요/어요 (GP11)."
             },
@@ -2122,20 +1218,7 @@
               "fullSentence": "친구하고 같이 가요.",
               "sentenceWithBlank": "친구___ 같이 가요.",
               "answer": "하고",
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "with",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a friend.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go with a friend.",
               "order": 1,
               "notes": "Uses -아요/어요 (GP11)."
             }
@@ -2151,20 +1234,7 @@
                 "이랑"
               ],
               "vocabBaseForm": "하고",
-              "englishHint": [
-                {
-                  "text": "I eat bread ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " milk.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat bread and milk.",
               "introducedAtPosition": 13
             },
             {
@@ -2177,20 +1247,7 @@
                 "랑"
               ],
               "vocabBaseForm": "하고",
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "with",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a friend.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go with a friend.",
               "introducedAtPosition": 13
             },
             {
@@ -2203,20 +1260,7 @@
                 "랑"
               ],
               "vocabBaseForm": "하고",
-              "englishHint": [
-                {
-                  "text": "Please give me coffee ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " cake.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please give me coffee and cake.",
               "introducedAtPosition": 13
             },
             {
@@ -2230,20 +1274,7 @@
               ],
               "vocabBaseForm": "",
               "introducedAtPosition": 13,
-              "englishHint": [
-                {
-                  "text": "I buy milk ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " bread.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I buy milk and bread."
             }
           ]
         },
@@ -2275,16 +1306,7 @@
               "fullSentence": "여기는 학교예요.",
               "sentenceWithBlank": "___는 학교예요.",
               "answer": "여기",
-              "englishHint": [
-                {
-                  "text": "Here",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Here is a school.",
               "order": 0,
               "notes": "Uses 은/는 (GP3), 예요 (GP1)."
             },
@@ -2293,20 +1315,7 @@
               "fullSentence": "여기 앉으세요.",
               "sentenceWithBlank": "___ 앉으세요.",
               "answer": "여기",
-              "englishHint": [
-                {
-                  "text": "Please sit ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "here",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please sit here.",
               "order": 1
             }
           ],
@@ -2318,16 +1327,7 @@
               "answer": "여기",
               "alternateAnswers": [],
               "vocabBaseForm": "여기",
-              "englishHint": [
-                {
-                  "text": "Here",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Here is a school.",
               "introducedAtPosition": 14
             },
             {
@@ -2337,20 +1337,7 @@
               "answer": "여기",
               "alternateAnswers": [],
               "vocabBaseForm": "여기",
-              "englishHint": [
-                {
-                  "text": "Please sit ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "here",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please sit here.",
               "introducedAtPosition": 14
             },
             {
@@ -2360,16 +1347,7 @@
               "answer": "여기",
               "alternateAnswers": [],
               "vocabBaseForm": "여기",
-              "englishHint": [
-                {
-                  "text": "Here",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is good.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Here is good.",
               "introducedAtPosition": 14
             },
             {
@@ -2380,20 +1358,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 14,
-              "englishHint": [
-                {
-                  "text": "I put the book ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "here",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ", next to me.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I put the book here, next to me."
             }
           ]
         },
@@ -2425,20 +1390,7 @@
               "fullSentence": "거기는 어디예요?",
               "sentenceWithBlank": "___는 어디예요?",
               "answer": "거기",
-              "englishHint": [
-                {
-                  "text": "Where is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Where is there?",
               "order": 0
             },
             {
@@ -2446,16 +1398,7 @@
               "fullSentence": "거기도 좋아요.",
               "sentenceWithBlank": "___도 좋아요.",
               "answer": "거기",
-              "englishHint": [
-                {
-                  "text": "There",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is also good.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is also good.",
               "order": 1
             }
           ],
@@ -2467,20 +1410,7 @@
               "answer": "거기",
               "alternateAnswers": [],
               "vocabBaseForm": "거기",
-              "englishHint": [
-                {
-                  "text": "Where is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Where is there?",
               "introducedAtPosition": 15
             },
             {
@@ -2490,16 +1420,7 @@
               "answer": "거기",
               "alternateAnswers": [],
               "vocabBaseForm": "거기",
-              "englishHint": [
-                {
-                  "text": "There",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is also good.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is also good.",
               "introducedAtPosition": 15
             },
             {
@@ -2509,16 +1430,7 @@
               "answer": "거기",
               "alternateAnswers": [],
               "vocabBaseForm": "거기",
-              "englishHint": [
-                {
-                  "text": "There",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a café.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a café.",
               "introducedAtPosition": 15
             },
             {
@@ -2529,20 +1441,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 15,
-              "englishHint": [
-                {
-                  "text": "What is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " where you are?",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "What is there where you are?"
             }
           ]
         },
@@ -2574,16 +1473,7 @@
               "fullSentence": "저기는 공원이에요.",
               "sentenceWithBlank": "___는 공원이에요.",
               "answer": "저기",
-              "englishHint": [
-                {
-                  "text": "Over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a park.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Over there is a park.",
               "order": 0
             },
             {
@@ -2591,16 +1481,7 @@
               "fullSentence": "저기가 학교예요.",
               "sentenceWithBlank": "___가 학교예요.",
               "answer": "저기",
-              "englishHint": [
-                {
-                  "text": "Over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is the school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Over there is the school.",
               "order": 1
             }
           ],
@@ -2612,16 +1493,7 @@
               "answer": "저기",
               "alternateAnswers": [],
               "vocabBaseForm": "저기",
-              "englishHint": [
-                {
-                  "text": "Over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is a park.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Over there is a park.",
               "introducedAtPosition": 16
             },
             {
@@ -2631,16 +1503,7 @@
               "answer": "저기",
               "alternateAnswers": [],
               "vocabBaseForm": "저기",
-              "englishHint": [
-                {
-                  "text": "Over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is the school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Over there is the school.",
               "introducedAtPosition": 16
             },
             {
@@ -2650,16 +1513,7 @@
               "answer": "저기",
               "alternateAnswers": [],
               "vocabBaseForm": "저기",
-              "englishHint": [
-                {
-                  "text": "Over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " is also a restaurant.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Over there is also a restaurant.",
               "introducedAtPosition": 16
             },
             {
@@ -2670,20 +1524,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 16,
-              "englishHint": [
-                {
-                  "text": "There is a bank ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "over there",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " away from both of us.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "There is a bank over there away from both of us."
             }
           ]
         },
@@ -2720,16 +1561,7 @@
               "fullSentence": "날씨가 좋네요.",
               "sentenceWithBlank": "날씨가 좋___.",
               "answer": "네요",
-              "englishHint": [
-                {
-                  "text": "Oh,",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the weather is nice!",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Oh, the weather is nice!",
               "order": 0,
               "notes": "Uses 이/가 (GP9). Stem 좋 + 네요."
             },
@@ -2738,16 +1570,7 @@
               "fullSentence": "이것은 맛있네요.",
               "sentenceWithBlank": "이것은 맛있___.",
               "answer": "네요",
-              "englishHint": [
-                {
-                  "text": "Oh,",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " this is delicious!",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Oh, this is delicious!",
               "order": 1,
               "notes": "Uses 이것 (GP4), 은/는 (GP3). Stem 맛있 + 네요."
             }
@@ -2760,16 +1583,7 @@
               "answer": "네요",
               "alternateAnswers": [],
               "vocabBaseForm": "좋다",
-              "englishHint": [
-                {
-                  "text": "Oh,",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the weather is nice!",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Oh, the weather is nice!",
               "introducedAtPosition": 17
             },
             {
@@ -2779,16 +1593,7 @@
               "answer": "네요",
               "alternateAnswers": [],
               "vocabBaseForm": "맛있다",
-              "englishHint": [
-                {
-                  "text": "Oh,",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " this food is delicious!",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Oh, this food is delicious!",
               "introducedAtPosition": 17
             },
             {
@@ -2798,16 +1603,7 @@
               "answer": "네요",
               "alternateAnswers": [],
               "vocabBaseForm": "잘하다",
-              "englishHint": [
-                {
-                  "text": "Oh,",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " you're good at Korean!",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Oh, you're good at Korean!",
               "introducedAtPosition": 17
             }
           ]
@@ -2845,20 +1641,7 @@
               "fullSentence": "한국어는 재미있지요?",
               "sentenceWithBlank": "한국어는 재미있___?",
               "answer": "지요",
-              "englishHint": [
-                {
-                  "text": "Korean is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "fun, right",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Korean is fun, right?",
               "order": 0,
               "notes": "Uses 은/는 (GP3). Stem 재미있 + 지요."
             },
@@ -2867,20 +1650,7 @@
               "fullSentence": "이것은 좋죠?",
               "sentenceWithBlank": "이것은 좋___?",
               "answer": "죠",
-              "englishHint": [
-                {
-                  "text": "This is good, ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "right",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This is good, right?",
               "order": 1,
               "notes": "Uses 이것 (GP4), 은/는 (GP3). Contracted form 죠."
             }
@@ -2895,20 +1665,7 @@
                 "죠"
               ],
               "vocabBaseForm": "재미있다",
-              "englishHint": [
-                {
-                  "text": "Korean is fun, ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "right",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Korean is fun, right?",
               "introducedAtPosition": 18
             },
             {
@@ -2920,20 +1677,7 @@
                 "지요"
               ],
               "vocabBaseForm": "맛있다",
-              "englishHint": [
-                {
-                  "text": "It's delicious, ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "right",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It's delicious, right?",
               "introducedAtPosition": 18
             },
             {
@@ -2945,20 +1689,7 @@
                 "지요"
               ],
               "vocabBaseForm": "재미있다",
-              "englishHint": [
-                {
-                  "text": "This movie is fun, ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "right",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This movie is fun, right?",
               "introducedAtPosition": 18
             }
           ]
@@ -3002,20 +1733,7 @@
               "fullSentence": "학교에 가요.",
               "sentenceWithBlank": "학교___ 가요.",
               "answer": "에",
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go to school.",
               "order": 0
             },
             {
@@ -3023,20 +1741,7 @@
               "fullSentence": "집에 있어요.",
               "sentenceWithBlank": "집___ 있어요.",
               "answer": "에",
-              "englishHint": [
-                {
-                  "text": "I am ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " home.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am at home.",
               "order": 1
             },
             {
@@ -3044,20 +1749,7 @@
               "fullSentence": "도서관에 가요.",
               "sentenceWithBlank": "도서관___ 가요.",
               "answer": "에",
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the library.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go to the library.",
               "order": 2,
               "notes": "The library is the destination. Compare 도서관에서 공부해요, where the library is the place of the action."
             },
@@ -3066,20 +1758,7 @@
               "fullSentence": "도서관에 있어요.",
               "sentenceWithBlank": "도서관___ 있어요.",
               "answer": "에",
-              "englishHint": [
-                {
-                  "text": "I am ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the library.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am at the library.",
               "order": 3,
               "notes": "있어요 tells you where someone or something is."
             }
@@ -3094,20 +1773,7 @@
                 "로"
               ],
               "vocabBaseForm": "에",
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go to school.",
               "introducedAtPosition": 19
             },
             {
@@ -3117,20 +1783,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": [
-                {
-                  "text": "I am ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " home.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am at home.",
               "introducedAtPosition": 19
             },
             {
@@ -3142,20 +1795,7 @@
                 "로"
               ],
               "vocabBaseForm": "에",
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " work.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go to work.",
               "introducedAtPosition": 19
             },
             {
@@ -3168,20 +1808,7 @@
               ],
               "vocabBaseForm": "",
               "introducedAtPosition": 19,
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the park.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I go to the park."
             },
             {
               "id": "cc_e_variant_school",
@@ -3191,20 +1818,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 19,
-              "englishHint": [
-                {
-                  "text": "My friend is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " school.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "My friend is at school."
             },
             {
               "id": "cc_e_variant_store",
@@ -3216,20 +1830,7 @@
               ],
               "vocabBaseForm": "",
               "introducedAtPosition": 19,
-              "englishHint": [
-                {
-                  "text": "I go ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the store.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I go to the store."
             }
           ]
         },
@@ -3266,20 +1867,7 @@
               "fullSentence": "고양이가 있어요.",
               "sentenceWithBlank": "고양이가 ___.",
               "answer": "있어요",
-              "englishHint": [
-                {
-                  "text": "There is a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "cat",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": ".",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a cat.",
               "order": 0
             },
             {
@@ -3287,20 +1875,7 @@
               "fullSentence": "저는 시간이 있어요.",
               "sentenceWithBlank": "저는 시간이 ___.",
               "answer": "있어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "have",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " time.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have time.",
               "order": 1
             }
           ],
@@ -3312,20 +1887,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "englishHint": [
-                {
-                  "text": "There ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a cat.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a cat.",
               "introducedAtPosition": 20
             },
             {
@@ -3335,20 +1897,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "have",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " time.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have time.",
               "introducedAtPosition": 20
             },
             {
@@ -3358,20 +1907,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "englishHint": [
-                {
-                  "text": "The book ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " on the desk.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The book is on the desk.",
               "introducedAtPosition": 20
             },
             {
@@ -3382,20 +1918,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
               "introducedAtPosition": 20,
-              "englishHint": [
-                {
-                  "text": "There ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "is",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a book in the bag.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "There is a book in the bag."
             }
           ]
         },
@@ -3432,20 +1955,7 @@
               "fullSentence": "시간이 없어요.",
               "sentenceWithBlank": "시간이 ___.",
               "answer": "없어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "don't have",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " time.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I don't have time.",
               "order": 0
             },
             {
@@ -3453,20 +1963,7 @@
               "fullSentence": "여기에 사람이 없어요.",
               "sentenceWithBlank": "여기에 사람이 ___.",
               "answer": "없어요",
-              "englishHint": [
-                {
-                  "text": "There is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "nobody",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " here.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is nobody here.",
               "order": 1
             }
           ],
@@ -3478,20 +1975,7 @@
               "answer": "없어요",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "don't have",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " time.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I don't have time.",
               "introducedAtPosition": 21
             },
             {
@@ -3501,20 +1985,7 @@
               "answer": "없어요",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "don't have",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " money.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I don't have money.",
               "introducedAtPosition": 21
             },
             {
@@ -3524,20 +1995,7 @@
               "answer": "없어요",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "englishHint": [
-                {
-                  "text": "There is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "no chair",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " here.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is no chair here.",
               "introducedAtPosition": 21
             }
           ]
@@ -3570,20 +2028,7 @@
               "fullSentence": "도서관에서 공부해요.",
               "sentenceWithBlank": "도서관___ 공부해요.",
               "answer": "에서",
-              "englishHint": [
-                {
-                  "text": "I study ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the library.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study at the library.",
               "order": 0
             },
             {
@@ -3591,20 +2036,7 @@
               "fullSentence": "카페에서 커피를 마셔요.",
               "sentenceWithBlank": "카페___ 커피를 마셔요.",
               "answer": "에서",
-              "englishHint": [
-                {
-                  "text": "I drink coffee ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the café.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee at the café.",
               "order": 1
             },
             {
@@ -3612,20 +2044,7 @@
               "fullSentence": "도서관에서 책을 읽어요.",
               "sentenceWithBlank": "도서관___ 책을 읽어요.",
               "answer": "에서",
-              "englishHint": [
-                {
-                  "text": "I read a book ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the library.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I read a book at the library.",
               "order": 2,
               "notes": "Reading is the action. The library tells you where it happens."
             }
@@ -3638,20 +2057,7 @@
               "answer": "에서",
               "alternateAnswers": [],
               "vocabBaseForm": "에서",
-              "englishHint": [
-                {
-                  "text": "I study ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the library.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study at the library.",
               "introducedAtPosition": 22
             },
             {
@@ -3661,20 +2067,7 @@
               "answer": "에서",
               "alternateAnswers": [],
               "vocabBaseForm": "에서",
-              "englishHint": [
-                {
-                  "text": "I drink coffee ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the café.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee at the café.",
               "introducedAtPosition": 22
             },
             {
@@ -3684,20 +2077,7 @@
               "answer": "에서",
               "alternateAnswers": [],
               "vocabBaseForm": "에서",
-              "englishHint": [
-                {
-                  "text": "I work ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the office.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I work at the office.",
               "introducedAtPosition": 22
             },
             {
@@ -3708,20 +2088,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 22,
-              "englishHint": [
-                {
-                  "text": "I exercise ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the park.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I exercise at the park."
             },
             {
               "id": "cc_eseo_variant_home",
@@ -3731,20 +2098,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 22,
-              "englishHint": [
-                {
-                  "text": "I eat ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " home.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I eat at home."
             },
             {
               "id": "cc_eseo_variant_school",
@@ -3754,20 +2108,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 22,
-              "englishHint": [
-                {
-                  "text": "I learn Korean ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " school.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I learn Korean at school."
             }
           ]
         },
@@ -3804,20 +2145,7 @@
               "fullSentence": "책이 책상 위에 있어요.",
               "sentenceWithBlank": "책이 책상 ___에 있어요.",
               "answer": "위",
-              "englishHint": [
-                {
-                  "text": "The book is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "on",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the desk.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The book is on the desk.",
               "order": 0
             },
             {
@@ -3825,20 +2153,7 @@
               "fullSentence": "고양이가 의자 아래에 있어요.",
               "sentenceWithBlank": "고양이가 의자 ___에 있어요.",
               "answer": "아래",
-              "englishHint": [
-                {
-                  "text": "The cat is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "under",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the chair.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The cat is under the chair.",
               "order": 1
             },
             {
@@ -3846,20 +2161,7 @@
               "fullSentence": "집 뒤에 나무가 있어요.",
               "sentenceWithBlank": "집 ___에 나무가 있어요.",
               "answer": "뒤",
-              "englishHint": [
-                {
-                  "text": "There is a tree ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "behind",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the house.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a tree behind the house.",
               "order": 2,
               "notes": "집 뒤에 literally puts the house first, then “behind,” then the location particle."
             }
@@ -3872,20 +2174,7 @@
               "answer": "위",
               "alternateAnswers": [],
               "vocabBaseForm": "위/아래/앞/뒤/옆",
-              "englishHint": [
-                {
-                  "text": "The book is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "on",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the desk.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The book is on the desk.",
               "introducedAtPosition": 23
             },
             {
@@ -3897,20 +2186,7 @@
                 "밑"
               ],
               "vocabBaseForm": "위/아래/앞/뒤/옆",
-              "englishHint": [
-                {
-                  "text": "The cat is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "under",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the chair.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The cat is under the chair.",
               "introducedAtPosition": 23
             },
             {
@@ -3920,20 +2196,7 @@
               "answer": "앞",
               "alternateAnswers": [],
               "vocabBaseForm": "위/아래/앞/뒤/옆",
-              "englishHint": [
-                {
-                  "text": "There is a store ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "in front of",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a store in front of the school.",
               "introducedAtPosition": 23
             },
             {
@@ -3943,20 +2206,7 @@
               "answer": "옆",
               "alternateAnswers": [],
               "vocabBaseForm": "위/아래/앞/뒤/옆",
-              "englishHint": [
-                {
-                  "text": "There is a café ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "next to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the bank.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a café next to the bank.",
               "introducedAtPosition": 23
             },
             {
@@ -3967,20 +2217,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 23,
-              "englishHint": [
-                {
-                  "text": "There is a park ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "behind",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the school.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "There is a park behind the school."
             }
           ]
         }
@@ -4023,20 +2260,7 @@
               "fullSentence": "월요일에 한국어를 공부해요.",
               "sentenceWithBlank": "월요일___ 한국어를 공부해요.",
               "answer": "에",
-              "englishHint": [
-                {
-                  "text": "I study Korean ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "on",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Monday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study Korean on Monday.",
               "order": 0
             },
             {
@@ -4044,20 +2268,7 @@
               "fullSentence": "9시에 학교에 가요.",
               "sentenceWithBlank": "9시___ 학교에 가요.",
               "answer": "에",
-              "englishHint": [
-                {
-                  "text": "I go to school ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 9 o'clock.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go to school at 9 o'clock.",
               "order": 1
             }
           ],
@@ -4069,20 +2280,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": [
-                {
-                  "text": "I study Korean ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "on",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Monday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study Korean on Monday.",
               "introducedAtPosition": 24
             },
             {
@@ -4092,20 +2290,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": [
-                {
-                  "text": "I exercise ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "in",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the morning.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I exercise in the morning.",
               "introducedAtPosition": 24
             },
             {
@@ -4115,20 +2300,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": [
-                {
-                  "text": "I eat ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 7 PM.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat at 7 PM.",
               "introducedAtPosition": 24
             }
           ]
@@ -4166,20 +2338,7 @@
               "fullSentence": "9시부터 일해요.",
               "sentenceWithBlank": "9시___ 일해요.",
               "answer": "부터",
-              "englishHint": [
-                {
-                  "text": "I work ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "from",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 9.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I work from 9.",
               "order": 0
             },
             {
@@ -4187,20 +2346,7 @@
               "fullSentence": "월요일부터 금요일까지 공부해요.",
               "sentenceWithBlank": "월요일___ 금요일까지 공부해요.",
               "answer": "부터",
-              "englishHint": [
-                {
-                  "text": "I study ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "from",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Monday to Friday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study from Monday to Friday.",
               "order": 1
             }
           ],
@@ -4212,20 +2358,7 @@
               "answer": "부터",
               "alternateAnswers": [],
               "vocabBaseForm": "부터",
-              "englishHint": [
-                {
-                  "text": "I work ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "from",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 9 to 6.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I work from 9 to 6.",
               "introducedAtPosition": 25
             },
             {
@@ -4235,20 +2368,7 @@
               "answer": "부터",
               "alternateAnswers": [],
               "vocabBaseForm": "부터",
-              "englishHint": [
-                {
-                  "text": "I have class ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "from",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Monday to Friday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have class from Monday to Friday.",
               "introducedAtPosition": 25
             },
             {
@@ -4258,20 +2378,7 @@
               "answer": "부터",
               "alternateAnswers": [],
               "vocabBaseForm": "부터",
-              "englishHint": [
-                {
-                  "text": "I study ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "from",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " morning until evening.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study from morning until evening.",
               "introducedAtPosition": 25
             }
           ]
@@ -4304,20 +2411,7 @@
               "fullSentence": "6시까지 일해요.",
               "sentenceWithBlank": "6시___ 일해요.",
               "answer": "까지",
-              "englishHint": [
-                {
-                  "text": "I work ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "until",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 6.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I work until 6.",
               "order": 0
             },
             {
@@ -4325,20 +2419,7 @@
               "fullSentence": "아침부터 저녁까지 공부해요.",
               "sentenceWithBlank": "아침부터 저녁___ 공부해요.",
               "answer": "까지",
-              "englishHint": [
-                {
-                  "text": "I study from morning ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "until",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " evening.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study from morning until evening.",
               "order": 1
             }
           ],
@@ -4350,20 +2431,7 @@
               "answer": "까지",
               "alternateAnswers": [],
               "vocabBaseForm": "까지",
-              "englishHint": [
-                {
-                  "text": "I work from 9 ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "until",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 6.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I work from 9 until 6.",
               "introducedAtPosition": 26
             },
             {
@@ -4373,20 +2441,7 @@
               "answer": "까지",
               "alternateAnswers": [],
               "vocabBaseForm": "까지",
-              "englishHint": [
-                {
-                  "text": "From Seoul ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Busan it's far.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "From Seoul to Busan it's far.",
               "introducedAtPosition": 26
             },
             {
@@ -4396,20 +2451,7 @@
               "answer": "까지",
               "alternateAnswers": [],
               "vocabBaseForm": "까지",
-              "englishHint": [
-                {
-                  "text": "I do homework ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "by",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Friday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I do homework by Friday.",
               "introducedAtPosition": 26
             }
           ]
@@ -4442,20 +2484,7 @@
               "fullSentence": "수업 전에 커피를 마셔요.",
               "sentenceWithBlank": "수업 ___ 커피를 마셔요.",
               "answer": "전에",
-              "englishHint": [
-                {
-                  "text": "I drink coffee ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "before",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " class.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee before class.",
               "order": 0
             },
             {
@@ -4463,20 +2492,7 @@
               "fullSentence": "12시 전에 점심을 먹어요.",
               "sentenceWithBlank": "12시 ___ 점심을 먹어요.",
               "answer": "전에",
-              "englishHint": [
-                {
-                  "text": "I eat lunch ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "before",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 12.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat lunch before 12.",
               "order": 1
             }
           ],
@@ -4488,20 +2504,7 @@
               "answer": "전에",
               "alternateAnswers": [],
               "vocabBaseForm": "전에",
-              "englishHint": [
-                {
-                  "text": "I drink coffee ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "before",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " class.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee before class.",
               "introducedAtPosition": 27
             },
             {
@@ -4511,20 +2514,7 @@
               "answer": "전에",
               "alternateAnswers": [],
               "vocabBaseForm": "전에",
-              "englishHint": [
-                {
-                  "text": "I read a book ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "before",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " sleeping.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I read a book before sleeping.",
               "introducedAtPosition": 27
             },
             {
@@ -4534,20 +2524,7 @@
               "answer": "전에",
               "alternateAnswers": [],
               "vocabBaseForm": "전에",
-              "englishHint": [
-                {
-                  "text": "I go home ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "before",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " 10.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I go home before 10.",
               "introducedAtPosition": 27
             }
           ]
@@ -4585,20 +2562,7 @@
               "fullSentence": "수업 후에 운동해요.",
               "sentenceWithBlank": "수업 ___ 운동해요.",
               "answer": "후에",
-              "englishHint": [
-                {
-                  "text": "I exercise ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "after",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " class.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I exercise after class.",
               "order": 0
             },
             {
@@ -4606,20 +2570,7 @@
               "fullSentence": "점심 후에 커피를 마셔요.",
               "sentenceWithBlank": "점심 ___ 커피를 마셔요.",
               "answer": "후에",
-              "englishHint": [
-                {
-                  "text": "I drink coffee ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "after",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " lunch.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee after lunch.",
               "order": 1
             }
           ],
@@ -4633,20 +2584,7 @@
                 "다음에"
               ],
               "vocabBaseForm": "후에",
-              "englishHint": [
-                {
-                  "text": "I exercise ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "after",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " class.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I exercise after class.",
               "introducedAtPosition": 28
             },
             {
@@ -4658,20 +2596,7 @@
                 "다음에"
               ],
               "vocabBaseForm": "후에",
-              "englishHint": [
-                {
-                  "text": "I meet a friend ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "after",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " work.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I meet a friend after work.",
               "introducedAtPosition": 28
             },
             {
@@ -4683,20 +2608,7 @@
                 "다음에"
               ],
               "vocabBaseForm": "후에",
-              "englishHint": [
-                {
-                  "text": "I take a walk ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "after",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " dinner.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I take a walk after dinner.",
               "introducedAtPosition": 28
             }
           ]
@@ -4740,20 +2652,7 @@
               "fullSentence": "어제 학교에 갔어요.",
               "sentenceWithBlank": "어제 학교에 ___.",
               "answer": "갔어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "went",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " to school yesterday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I went to school yesterday.",
               "order": 0
             },
             {
@@ -4761,20 +2660,7 @@
               "fullSentence": "저는 밥을 먹었어요.",
               "sentenceWithBlank": "저는 밥을 ___.",
               "answer": "먹었어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "ate",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " rice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I ate rice.",
               "order": 1
             },
             {
@@ -4782,20 +2668,7 @@
               "fullSentence": "어제 한국어를 공부했어요.",
               "sentenceWithBlank": "어제 한국어를 ___.",
               "answer": "공부했어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "studied",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Korean yesterday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I studied Korean yesterday.",
               "order": 2
             },
             {
@@ -4803,20 +2676,7 @@
               "fullSentence": "영화를 봤어요.",
               "sentenceWithBlank": "영화를 ___.",
               "answer": "봤어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "watched",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a movie.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I watched a movie.",
               "order": 3,
               "notes": "보다 → 봤어요. 보 and 았 combine to make 봤."
             }
@@ -4829,20 +2689,7 @@
               "answer": "갔어요",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "went",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " to school yesterday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I went to school yesterday.",
               "introducedAtPosition": 29
             },
             {
@@ -4852,20 +2699,7 @@
               "answer": "먹었어요",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "ate",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " rice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I ate rice.",
               "introducedAtPosition": 29
             },
             {
@@ -4875,20 +2709,7 @@
               "answer": "봤어요",
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "watched",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a movie yesterday.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I watched a movie yesterday.",
               "introducedAtPosition": 29
             },
             {
@@ -4898,20 +2719,7 @@
               "answer": "마셨어요",
               "alternateAnswers": [],
               "vocabBaseForm": "마시다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "drank",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " coffee.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drank coffee.",
               "introducedAtPosition": 29
             },
             {
@@ -4921,20 +2729,7 @@
               "answer": "했어요",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "did",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " (my) homework.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I did (my) homework.",
               "introducedAtPosition": 29
             },
             {
@@ -4945,20 +2740,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "앉다",
               "introducedAtPosition": 29,
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "sat",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " here.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I sat here."
             }
           ]
         },
@@ -4995,20 +2777,7 @@
               "fullSentence": "저는 고기를 먹지 않아요.",
               "sentenceWithBlank": "저는 고기를 먹지 ___.",
               "answer": "않아요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "do not",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat meat.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I do not eat meat.",
               "order": 0
             },
             {
@@ -5016,20 +2785,7 @@
               "fullSentence": "오늘은 공부하지 않아요.",
               "sentenceWithBlank": "오늘은 공부하지 ___.",
               "answer": "않아요",
-              "englishHint": [
-                {
-                  "text": "I am ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "not",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " studying today.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am not studying today.",
               "order": 1
             }
           ],
@@ -5041,20 +2797,7 @@
               "answer": "않아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 않다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "do not",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat meat.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I do not eat meat.",
               "introducedAtPosition": 30
             },
             {
@@ -5064,20 +2807,7 @@
               "answer": "않아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 않다",
-              "englishHint": [
-                {
-                  "text": "I am ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "not",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " exercising today.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I am not exercising today.",
               "introducedAtPosition": 30
             },
             {
@@ -5087,20 +2817,7 @@
               "answer": "않아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 않다",
-              "englishHint": [
-                {
-                  "text": "This food is ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "not",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " delicious.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This food is not delicious.",
               "introducedAtPosition": 30
             }
           ]
@@ -5144,20 +2861,7 @@
               "fullSentence": "큰 가방이 있어요.",
               "sentenceWithBlank": "___ 가방이 있어요.",
               "answer": "큰",
-              "englishHint": [
-                {
-                  "text": "There is a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "big",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " bag.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a big bag.",
               "order": 0
             },
             {
@@ -5165,20 +2869,7 @@
               "fullSentence": "작은 고양이가 있어요.",
               "sentenceWithBlank": "___ 고양이가 있어요.",
               "answer": "작은",
-              "englishHint": [
-                {
-                  "text": "There is a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "small",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " cat.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "There is a small cat.",
               "order": 1
             }
           ],
@@ -5190,20 +2881,7 @@
               "answer": "큰",
               "alternateAnswers": [],
               "vocabBaseForm": "크다",
-              "englishHint": [
-                {
-                  "text": "I bought a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "big",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " bag.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I bought a big bag.",
               "introducedAtPosition": 31
             },
             {
@@ -5213,20 +2891,7 @@
               "answer": "작은",
               "alternateAnswers": [],
               "vocabBaseForm": "작다",
-              "englishHint": [
-                {
-                  "text": "I live in a ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "small",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " house.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I live in a small house.",
               "introducedAtPosition": 31
             },
             {
@@ -5236,20 +2901,7 @@
               "answer": "좋은",
               "alternateAnswers": [],
               "vocabBaseForm": "좋다",
-              "englishHint": [
-                {
-                  "text": "I ate ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "good",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " food.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I ate good food.",
               "introducedAtPosition": 31
             },
             {
@@ -5259,20 +2911,7 @@
               "answer": "비싼",
               "alternateAnswers": [],
               "vocabBaseForm": "비싸다",
-              "englishHint": [
-                {
-                  "text": "I don't buy ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "expensive",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " clothes.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I don't buy expensive clothes.",
               "introducedAtPosition": 31
             }
           ]
@@ -5310,20 +2949,7 @@
               "fullSentence": "물만 마셔요.",
               "sentenceWithBlank": "물___ 마셔요.",
               "answer": "만",
-              "englishHint": [
-                {
-                  "text": "I drink ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "only",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " water.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink only water.",
               "order": 0
             },
             {
@@ -5331,20 +2957,7 @@
               "fullSentence": "저는 한국어만 공부해요.",
               "sentenceWithBlank": "저는 한국어___ 공부해요.",
               "answer": "만",
-              "englishHint": [
-                {
-                  "text": "I study ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "only",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " Korean.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I study only Korean.",
               "order": 1
             }
           ],
@@ -5356,20 +2969,7 @@
               "answer": "만",
               "alternateAnswers": [],
               "vocabBaseForm": "만",
-              "englishHint": [
-                {
-                  "text": "I drink ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "only",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " water.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink only water.",
               "introducedAtPosition": 32
             },
             {
@@ -5379,20 +2979,7 @@
               "answer": "만",
               "alternateAnswers": [],
               "vocabBaseForm": "만",
-              "englishHint": [
-                {
-                  "text": "Please give me ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "just",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " one.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please give me just one.",
               "introducedAtPosition": 32
             },
             {
@@ -5402,20 +2989,7 @@
               "answer": "만",
               "alternateAnswers": [],
               "vocabBaseForm": "만",
-              "englishHint": [
-                {
-                  "text": "I rest ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "only",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " on weekends.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I rest only on weekends.",
               "introducedAtPosition": 32
             }
           ]
@@ -5456,20 +3030,7 @@
               "fullSentence": "이 음식은 비싼 것 같아요.",
               "sentenceWithBlank": "이 음식은 비싼 것 ___.",
               "answer": "같아요",
-              "englishHint": [
-                {
-                  "text": "This food ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "seems",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " expensive.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This food seems expensive.",
               "order": 0
             },
             {
@@ -5477,20 +3038,7 @@
               "fullSentence": "오늘은 추운 것 같아요.",
               "sentenceWithBlank": "오늘은 추운 것 ___.",
               "answer": "같아요",
-              "englishHint": [
-                {
-                  "text": "Today ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "seems",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " cold.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Today seems cold.",
               "order": 1
             }
           ],
@@ -5502,20 +3050,7 @@
               "answer": "같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ 것 같다",
-              "englishHint": [
-                {
-                  "text": "This bag ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "seems",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " expensive.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "This bag seems expensive.",
               "introducedAtPosition": 33
             },
             {
@@ -5525,20 +3060,7 @@
               "answer": "같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ 것 같다",
-              "englishHint": [
-                {
-                  "text": "The weather ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "seems",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " nice.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "The weather seems nice.",
               "introducedAtPosition": 33
             },
             {
@@ -5548,20 +3070,7 @@
               "answer": "같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ 것 같다",
-              "englishHint": [
-                {
-                  "text": "That person ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "seems",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " to be Korean.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That person seems to be Korean.",
               "introducedAtPosition": 33
             }
           ]
@@ -5605,20 +3114,7 @@
               "fullSentence": "한국에 가고 싶어요.",
               "sentenceWithBlank": "한국에 가고 ___.",
               "answer": "싶어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "want to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " go to Korea.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I want to go to Korea.",
               "order": 0
             },
             {
@@ -5626,20 +3122,7 @@
               "fullSentence": "커피를 마시고 싶어요.",
               "sentenceWithBlank": "커피를 마시고 ___.",
               "answer": "싶어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "want to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " drink coffee.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I want to drink coffee.",
               "order": 1
             }
           ],
@@ -5651,20 +3134,7 @@
               "answer": "싶어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 싶다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "want to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " go to Korea.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I want to go to Korea.",
               "introducedAtPosition": 34
             },
             {
@@ -5674,20 +3144,7 @@
               "answer": "싶어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 싶다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "want to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat bulgogi.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I want to eat bulgogi.",
               "introducedAtPosition": 34
             },
             {
@@ -5697,20 +3154,7 @@
               "answer": "싶어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 싶다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "want to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " watch a movie.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I want to watch a movie.",
               "introducedAtPosition": 34
             }
           ]
@@ -5751,20 +3195,7 @@
               "fullSentence": "한국어를 읽을 수 있어요.",
               "sentenceWithBlank": "한국어를 읽을 수 ___.",
               "answer": "있어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " read Korean.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can read Korean.",
               "order": 0
             },
             {
@@ -5772,20 +3203,7 @@
               "fullSentence": "매운 음식을 먹을 수 없어요.",
               "sentenceWithBlank": "매운 음식을 먹을 수 ___.",
               "answer": "없어요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "cannot",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat spicy food.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I cannot eat spicy food.",
               "order": 1
             },
             {
@@ -5793,20 +3211,7 @@
               "fullSentence": "수영할 수 없어요.",
               "sentenceWithBlank": "수영할 ___ 없어요.",
               "answer": "수",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can’t",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " swim.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can’t swim.",
               "order": 2,
               "notes": "없어요 gives the negative meaning. 수 is separated from the verb by a space."
             }
@@ -5819,20 +3224,7 @@
               "answer": "수",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 수 있다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " read Korean.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can read Korean.",
               "introducedAtPosition": 35
             },
             {
@@ -5842,20 +3234,7 @@
               "answer": "수",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 수 있다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " go tomorrow.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can go tomorrow.",
               "introducedAtPosition": 35
             },
             {
@@ -5865,20 +3244,7 @@
               "answer": "수",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 수 있다",
-              "englishHint": [
-                {
-                  "text": "You ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "cannot",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " swim here.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "You cannot swim here.",
               "introducedAtPosition": 35
             },
             {
@@ -5889,12 +3255,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 35,
-              "englishHint": [
-                {
-                  "text": "I can’t go today. Use the 수 pattern.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I can’t go today. Use the 수 pattern."
             },
             {
               "id": "cc_ability_conjugation_variant",
@@ -5904,20 +3265,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "만들다",
               "introducedAtPosition": 35,
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " make bread.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "I can make bread."
             }
           ]
         },
@@ -5959,20 +3307,7 @@
               "fullSentence": "저는 매운 음식을 못 먹어요.",
               "sentenceWithBlank": "저는 매운 음식을 ___ 먹어요.",
               "answer": "못",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat spicy food.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can't eat spicy food.",
               "order": 0
             },
             {
@@ -5980,20 +3315,7 @@
               "fullSentence": "오늘은 운동 못 해요.",
               "sentenceWithBlank": "오늘은 운동 ___ 해요.",
               "answer": "못",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " exercise today.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can't exercise today.",
               "order": 1
             }
           ],
@@ -6005,20 +3327,7 @@
               "answer": "못",
               "alternateAnswers": [],
               "vocabBaseForm": "못",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat spicy food.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can't eat spicy food.",
               "introducedAtPosition": 36
             },
             {
@@ -6028,20 +3337,7 @@
               "answer": "못",
               "alternateAnswers": [],
               "vocabBaseForm": "못",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " read Korean.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can't read Korean.",
               "introducedAtPosition": 36
             },
             {
@@ -6051,20 +3347,7 @@
               "answer": "못",
               "alternateAnswers": [],
               "vocabBaseForm": "못",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "can't",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " swim today.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I can't swim today.",
               "introducedAtPosition": 36
             }
           ]
@@ -6108,20 +3391,7 @@
               "fullSentence": "내일 학교에 가야 해요.",
               "sentenceWithBlank": "내일 학교에 가야 ___.",
               "answer": "해요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "have to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " go to school tomorrow.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have to go to school tomorrow.",
               "order": 0
             },
             {
@@ -6129,20 +3399,7 @@
               "fullSentence": "숙제를 해야 해요.",
               "sentenceWithBlank": "숙제를 해야 ___.",
               "answer": "해요",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "have to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " do homework.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have to do homework.",
               "order": 1
             }
           ],
@@ -6154,20 +3411,7 @@
               "answer": "가야",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "have to go",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " to school tomorrow.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have to go to school tomorrow.",
               "introducedAtPosition": 37
             },
             {
@@ -6177,20 +3421,7 @@
               "answer": "먹어야",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "have to take",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " medicine.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have to take medicine.",
               "introducedAtPosition": 37
             },
             {
@@ -6200,20 +3431,7 @@
               "answer": "공부해야",
               "alternateAnswers": [],
               "vocabBaseForm": "공부하다",
-              "englishHint": [
-                {
-                  "text": "I ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "have to study",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " now.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I have to study now.",
               "introducedAtPosition": 37
             }
           ]
@@ -6252,20 +3470,7 @@
               "fullSentence": "여기에 앉으세요.",
               "sentenceWithBlank": "여기에 ___.",
               "answer": "앉으세요",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "sit",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " here.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please sit here.",
               "order": 0
             },
             {
@@ -6273,20 +3478,7 @@
               "fullSentence": "이것을 보세요.",
               "sentenceWithBlank": "이것을 ___.",
               "answer": "보세요",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "look at",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " this.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please look at this.",
               "order": 1
             }
           ],
@@ -6298,20 +3490,7 @@
               "answer": "앉으세요",
               "alternateAnswers": [],
               "vocabBaseForm": "앉다",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "sit",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " here.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please sit here.",
               "introducedAtPosition": 38
             },
             {
@@ -6321,20 +3500,7 @@
               "answer": "가세요",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "go",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " slowly.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please go slowly.",
               "introducedAtPosition": 38
             },
             {
@@ -6344,20 +3510,7 @@
               "answer": "읽으세요",
               "alternateAnswers": [],
               "vocabBaseForm": "읽다",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "read",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " this book.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please read this book.",
               "introducedAtPosition": 38
             }
           ]
@@ -6398,20 +3551,7 @@
               "fullSentence": "사진을 찍어 주세요.",
               "sentenceWithBlank": "사진을 찍어 ___.",
               "answer": "주세요",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "take",
-                  "highlightType": "none"
-                },
-                {
-                  "text": " a photo (for me).",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please take a photo (for me).",
               "order": 0
             },
             {
@@ -6419,16 +3559,7 @@
               "fullSentence": "천천히 말해 주세요.",
               "sentenceWithBlank": "천천히 말해 ___.",
               "answer": "주세요",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "speak slowly (for me).",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please speak slowly (for me).",
               "order": 1
             }
           ],
@@ -6440,16 +3571,7 @@
               "answer": "주세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 주세요",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "take a photo (for me).",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please take a photo (for me).",
               "introducedAtPosition": 39
             },
             {
@@ -6459,16 +3581,7 @@
               "answer": "주세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 주세요",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "open the door (for me).",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please open the door (for me).",
               "introducedAtPosition": 39
             },
             {
@@ -6478,16 +3591,7 @@
               "answer": "주세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 주세요",
-              "englishHint": [
-                {
-                  "text": "Please ",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": "speak in Korean (for me).",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please speak in Korean (for me).",
               "introducedAtPosition": 39
             }
           ]
@@ -6534,20 +3638,7 @@
               "fullSentence": "배가 고파서 밥을 먹었어요.",
               "sentenceWithBlank": "배가 ___ 밥을 먹었어요.",
               "answer": "고파서",
-              "englishHint": [
-                {
-                  "text": "I ate ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I was hungry.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I ate because I was hungry.",
               "order": 0
             },
             {
@@ -6555,20 +3646,7 @@
               "fullSentence": "피곤해서 집에 있었어요.",
               "sentenceWithBlank": "___ 집에 있었어요.",
               "answer": "피곤해서",
-              "englishHint": [
-                {
-                  "text": "I stayed home ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I was tired.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I stayed home because I was tired.",
               "order": 1
             }
           ],
@@ -6580,20 +3658,7 @@
               "answer": "서",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서",
-              "englishHint": [
-                {
-                  "text": "I ate ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I was hungry.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I ate because I was hungry.",
               "introducedAtPosition": 40
             },
             {
@@ -6603,20 +3668,7 @@
               "answer": "서",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서",
-              "englishHint": [
-                {
-                  "text": "I took an umbrella ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it was raining.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I took an umbrella because it was raining.",
               "introducedAtPosition": 40
             },
             {
@@ -6626,20 +3678,7 @@
               "answer": "서",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서",
-              "englishHint": [
-                {
-                  "text": "I took a taxi ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I was late.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I took a taxi because I was late.",
               "introducedAtPosition": 40
             }
           ]
@@ -6680,20 +3719,7 @@
               "fullSentence": "시간이 없으니까 빨리 가세요.",
               "sentenceWithBlank": "시간이 ___ 빨리 가세요.",
               "answer": "없으니까",
-              "englishHint": [
-                {
-                  "text": "Please go quickly ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " there's no time.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please go quickly because there's no time.",
               "order": 0
             },
             {
@@ -6701,20 +3727,7 @@
               "fullSentence": "날씨가 추우니까 옷을 많이 입으세요.",
               "sentenceWithBlank": "날씨가 ___ 옷을 많이 입으세요.",
               "answer": "추우니까",
-              "englishHint": [
-                {
-                  "text": "Please dress warmly ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's cold.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please dress warmly because it's cold.",
               "order": 1
             }
           ],
@@ -6726,20 +3739,7 @@
               "answer": "니까",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)니까",
-              "englishHint": [
-                {
-                  "text": "Please go quickly ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " there's no time.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please go quickly because there's no time.",
               "introducedAtPosition": 41
             },
             {
@@ -6749,20 +3749,7 @@
               "answer": "니까",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)니까",
-              "englishHint": [
-                {
-                  "text": "Take an umbrella ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's raining.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Take an umbrella because it's raining.",
               "introducedAtPosition": 41
             },
             {
@@ -6772,20 +3759,7 @@
               "answer": "니까",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)니까",
-              "englishHint": [
-                {
-                  "text": "Please eat a lot ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "because",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's delicious.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Please eat a lot because it's delicious.",
               "introducedAtPosition": 41
             }
           ]
@@ -6823,20 +3797,7 @@
               "fullSentence": "배가 고팠어요. 그래서 밥을 먹었어요.",
               "sentenceWithBlank": "배가 고팠어요. ___ 밥을 먹었어요.",
               "answer": "그래서",
-              "englishHint": [
-                {
-                  "text": "I was hungry. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "So",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I ate.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I was hungry. So I ate.",
               "order": 0
             },
             {
@@ -6844,20 +3805,7 @@
               "fullSentence": "비가 왔어요. 그래서 집에 있었어요.",
               "sentenceWithBlank": "비가 왔어요. ___ 집에 있었어요.",
               "answer": "그래서",
-              "englishHint": [
-                {
-                  "text": "It rained. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "So",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I stayed home.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It rained. So I stayed home.",
               "order": 1
             }
           ],
@@ -6869,20 +3817,7 @@
               "answer": "그래서",
               "alternateAnswers": [],
               "vocabBaseForm": "그래서",
-              "englishHint": [
-                {
-                  "text": "I was hungry. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "So",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I ate.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I was hungry. So I ate.",
               "introducedAtPosition": 42
             },
             {
@@ -6892,20 +3827,7 @@
               "answer": "그래서",
               "alternateAnswers": [],
               "vocabBaseForm": "그래서",
-              "englishHint": [
-                {
-                  "text": "I had no time. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "So",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I took a taxi.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I had no time. So I took a taxi.",
               "introducedAtPosition": 42
             },
             {
@@ -6915,20 +3837,7 @@
               "answer": "그래서",
               "alternateAnswers": [],
               "vocabBaseForm": "그래서",
-              "englishHint": [
-                {
-                  "text": "I like Korean. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "So",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I study every day.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I like Korean. So I study every day.",
               "introducedAtPosition": 42
             }
           ]
@@ -6972,20 +3881,7 @@
               "fullSentence": "시간이 있으면 같이 가요.",
               "sentenceWithBlank": "시간이 ___ 같이 가요.",
               "answer": "있으면",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "If",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " you have time, let's go together.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "If you have time, let's go together.",
               "order": 0
             },
             {
@@ -6993,20 +3889,7 @@
               "fullSentence": "비가 오면 집에 있어요.",
               "sentenceWithBlank": "비가 ___ 집에 있어요.",
               "answer": "오면",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "If",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it rains, I stay home.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "If it rains, I stay home.",
               "order": 1
             }
           ],
@@ -7018,20 +3901,7 @@
               "answer": "면",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "If",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " you have time, let's go together.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "If you have time, let's go together.",
               "introducedAtPosition": 43
             },
             {
@@ -7041,20 +3911,7 @@
               "answer": "면",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "If",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I go to Korea, I want to eat bulgogi.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "If I go to Korea, I want to eat bulgogi.",
               "introducedAtPosition": 43
             },
             {
@@ -7064,20 +3921,7 @@
               "answer": "면",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "If",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " the weather is nice, I go to the park.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "If the weather is nice, I go to the park.",
               "introducedAtPosition": 43
             }
           ]
@@ -7118,20 +3962,7 @@
               "fullSentence": "비싸지만 맛있어요.",
               "sentenceWithBlank": "비싸___ 맛있어요.",
               "answer": "지만",
-              "englishHint": [
-                {
-                  "text": "It's expensive ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "but",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's delicious.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It's expensive but it's delicious.",
               "order": 0
             },
             {
@@ -7139,20 +3970,7 @@
               "fullSentence": "한국어는 어렵지만 재미있어요.",
               "sentenceWithBlank": "한국어는 어렵___ 재미있어요.",
               "answer": "지만",
-              "englishHint": [
-                {
-                  "text": "Korean is difficult ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "but",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " fun.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Korean is difficult but fun.",
               "order": 1
             }
           ],
@@ -7164,20 +3982,7 @@
               "answer": "지만",
               "alternateAnswers": [],
               "vocabBaseForm": "-지만",
-              "englishHint": [
-                {
-                  "text": "It's expensive ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "but",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's delicious.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It's expensive but it's delicious.",
               "introducedAtPosition": 44
             },
             {
@@ -7187,20 +3992,7 @@
               "answer": "지만",
               "alternateAnswers": [],
               "vocabBaseForm": "-지만",
-              "englishHint": [
-                {
-                  "text": "I'm tired ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "but",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I have to study.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm tired but I have to study.",
               "introducedAtPosition": 44
             },
             {
@@ -7210,20 +4002,7 @@
               "answer": "지만",
               "alternateAnswers": [],
               "vocabBaseForm": "-지만",
-              "englishHint": [
-                {
-                  "text": "It's small ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "but",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " a nice house.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It's small but a nice house.",
               "introducedAtPosition": 44
             }
           ]
@@ -7264,20 +4043,7 @@
               "fullSentence": "한국어는 어려워요. 하지만 재미있어요.",
               "sentenceWithBlank": "한국어는 어려워요. ___ 재미있어요.",
               "answer": "하지만",
-              "englishHint": [
-                {
-                  "text": "Korean is hard. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "But",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's fun.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Korean is hard. But it's fun.",
               "order": 0
             },
             {
@@ -7285,20 +4051,7 @@
               "fullSentence": "비가 왔어요. 하지만 공원에 갔어요.",
               "sentenceWithBlank": "비가 왔어요. ___ 공원에 갔어요.",
               "answer": "하지만",
-              "englishHint": [
-                {
-                  "text": "It rained. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "But",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I went to the park.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "It rained. But I went to the park.",
               "order": 1
             }
           ],
@@ -7310,20 +4063,7 @@
               "answer": "하지만",
               "alternateAnswers": [],
               "vocabBaseForm": "하지만",
-              "englishHint": [
-                {
-                  "text": "Korean is hard. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "But",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's fun.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Korean is hard. But it's fun.",
               "introducedAtPosition": 45
             },
             {
@@ -7333,20 +4073,7 @@
               "answer": "하지만",
               "alternateAnswers": [],
               "vocabBaseForm": "하지만",
-              "englishHint": [
-                {
-                  "text": "That restaurant is expensive. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "But",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it's delicious.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "That restaurant is expensive. But it's delicious.",
               "introducedAtPosition": 45
             },
             {
@@ -7356,20 +4083,7 @@
               "answer": "하지만",
               "alternateAnswers": [],
               "vocabBaseForm": "하지만",
-              "englishHint": [
-                {
-                  "text": "I'm tired. ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "But",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " I have to study.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm tired. But I have to study.",
               "introducedAtPosition": 45
             }
           ]
@@ -7416,20 +4130,7 @@
               "fullSentence": "아침을 먹고 학교에 가요.",
               "sentenceWithBlank": "아침을 먹___ 학교에 가요.",
               "answer": "고",
-              "englishHint": [
-                {
-                  "text": "I eat breakfast ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and then",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " go to school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat breakfast and then go to school.",
               "order": 0
             },
             {
@@ -7437,20 +4138,7 @@
               "fullSentence": "숙제를 하고 텔레비전을 봐요.",
               "sentenceWithBlank": "숙제를 하___ 텔레비전을 봐요.",
               "answer": "고",
-              "englishHint": [
-                {
-                  "text": "I do homework ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and then",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " watch TV.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I do homework and then watch TV.",
               "order": 1
             }
           ],
@@ -7462,20 +4150,7 @@
               "answer": "고",
               "alternateAnswers": [],
               "vocabBaseForm": "-고",
-              "englishHint": [
-                {
-                  "text": "I eat breakfast ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and then",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " go to school.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I eat breakfast and then go to school.",
               "introducedAtPosition": 46
             },
             {
@@ -7485,20 +4160,7 @@
               "answer": "고",
               "alternateAnswers": [],
               "vocabBaseForm": "-고",
-              "englishHint": [
-                {
-                  "text": "I showered ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and then",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " got dressed.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I showered and then got dressed.",
               "introducedAtPosition": 46
             },
             {
@@ -7508,20 +4170,7 @@
               "answer": "고",
               "alternateAnswers": [],
               "vocabBaseForm": "-고",
-              "englishHint": [
-                {
-                  "text": "I drink coffee ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "and then",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " start work.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I drink coffee and then start work.",
               "introducedAtPosition": 46
             }
           ]
@@ -7563,20 +4212,7 @@
               "fullSentence": "제가 할게요.",
               "sentenceWithBlank": "제가 ___.",
               "answer": "할게요",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "I'll do",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'll do it.",
               "order": 0
             },
             {
@@ -7584,20 +4220,7 @@
               "fullSentence": "내일 전화할게요.",
               "sentenceWithBlank": "내일 ___.",
               "answer": "전화할게요",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "I'll call",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " (you) tomorrow.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'll call (you) tomorrow.",
               "order": 1
             },
             {
@@ -7605,20 +4228,7 @@
               "fullSentence": "짐이 무거워요? 제가 들어 줄게요.",
               "sentenceWithBlank": "짐이 무거워요? 제가 들어 ___.",
               "answer": "줄게요",
-              "englishHint": [
-                {
-                  "text": "Is your bag heavy? ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "I’ll carry it",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " for you.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "Is your bag heavy? I’ll carry it for you.",
               "order": 2,
               "notes": "The speaker offers to do something for the listener."
             }
@@ -7631,20 +4241,7 @@
               "answer": "할게요",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "I'll do",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " it.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'll do it.",
               "introducedAtPosition": 47
             },
             {
@@ -7654,20 +4251,7 @@
               "answer": "갈게요",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "I'll go",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " tomorrow.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'll go tomorrow.",
               "introducedAtPosition": 47
             },
             {
@@ -7677,20 +4261,7 @@
               "answer": "할게요",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "englishHint": [
-                {
-                  "text": "",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "I'll try",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " harder next time.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'll try harder next time.",
               "introducedAtPosition": 47
             },
             {
@@ -7701,12 +4272,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "열다",
               "introducedAtPosition": 47,
-              "englishHint": [
-                {
-                  "text": "Shall I open the door? I’ll open it. Make an offer to the listener.",
-                  "highlightType": "none"
-                }
-              ]
+              "englishHint": "Shall I open the door? I’ll open it. Make an offer to the listener."
             }
           ]
         },
@@ -7747,20 +4313,7 @@
               "fullSentence": "내일 한국어를 공부할 거예요.",
               "sentenceWithBlank": "내일 한국어를 공부할 ___.",
               "answer": "거예요",
-              "englishHint": [
-                {
-                  "text": "I'm ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "going to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " study Korean tomorrow.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm going to study Korean tomorrow.",
               "order": 0
             },
             {
@@ -7768,20 +4321,7 @@
               "fullSentence": "주말에 친구를 만날 거예요.",
               "sentenceWithBlank": "주말에 친구를 만날 ___.",
               "answer": "거예요",
-              "englishHint": [
-                {
-                  "text": "I'm ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "going to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " meet a friend on the weekend.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm going to meet a friend on the weekend.",
               "order": 1
             }
           ],
@@ -7793,20 +4333,7 @@
               "answer": "거예요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 거예요",
-              "englishHint": [
-                {
-                  "text": "I'm ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "going to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " study Korean tomorrow.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm going to study Korean tomorrow.",
               "introducedAtPosition": 48
             },
             {
@@ -7816,20 +4343,7 @@
               "answer": "거예요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 거예요",
-              "englishHint": [
-                {
-                  "text": "What are you ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "going to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " eat tonight?",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "What are you going to eat tonight?",
               "introducedAtPosition": 48
             },
             {
@@ -7839,20 +4353,7 @@
               "answer": "거예요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 거예요",
-              "englishHint": [
-                {
-                  "text": "I'm ",
-                  "highlightType": "none"
-                },
-                {
-                  "text": "going to",
-                  "highlightType": "direct"
-                },
-                {
-                  "text": " go to Korea next year.",
-                  "highlightType": "none"
-                }
-              ],
+              "englishHint": "I'm going to go to Korea next year.",
               "introducedAtPosition": 48
             }
           ]

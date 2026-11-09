@@ -222,7 +222,7 @@ export default function CramScreen() {
           altIndex={altIndex}
           placeholder=""
         />
-        <EnglishHint parts={currentCard.englishHint} />
+        <EnglishHint text={currentCard.englishHint} />
         {hintStage > 0 ? <Text style={styles.hint}>Hint: {hintText}</Text> : null}
         {!submitted && !answerRevealed ? (
           <View style={styles.inputRow}>

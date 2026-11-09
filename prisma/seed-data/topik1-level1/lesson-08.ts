@@ -11,7 +11,6 @@ import type { LessonSeed } from '../types';
 // Available: all L1–L7 grammar (pos 1–36).
 // ══════════════════════════════════════════════════════════════════════════════
 
-const h = (text: string, highlightType: 'none' | 'direct' | 'related' = 'none') => ({ text, highlightType });
 
 export const lesson08: LessonSeed = {
 	lessonNumber: 8,
@@ -42,7 +41,7 @@ export const lesson08: LessonSeed = {
 					fullSentence: '내일 학교에 가야 해요.',
 					sentenceWithBlank: '내일 학교에 가야 ___.',
 					answer: '해요',
-					englishHint: [h('I ', 'none'), h('have to', 'direct'), h(' go to school tomorrow.', 'none')],
+					englishHint: 'I have to go to school tomorrow.',
 					order: 0
 				},
 				{
@@ -50,7 +49,7 @@ export const lesson08: LessonSeed = {
 					fullSentence: '숙제를 해야 해요.',
 					sentenceWithBlank: '숙제를 해야 ___.',
 					answer: '해요',
-					englishHint: [h('I ', 'none'), h('have to', 'direct'), h(' do homework.', 'none')],
+					englishHint: 'I have to do homework.',
 					order: 1
 				}
 			],
@@ -62,7 +61,7 @@ export const lesson08: LessonSeed = {
 					answer: '가야',
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
-					englishHint: [h('I ', 'none'), h('have to go', 'direct'), h(' to school tomorrow.', 'none')],
+					englishHint: 'I have to go to school tomorrow.',
 					introducedAtPosition: 37
 				},
 				{
@@ -72,7 +71,7 @@ export const lesson08: LessonSeed = {
 					answer: '먹어야',
 					alternateAnswers: [],
 					vocabBaseForm: '먹다',
-					englishHint: [h('I ', 'none'), h('have to take', 'direct'), h(' medicine.', 'none')],
+					englishHint: 'I have to take medicine.',
 					introducedAtPosition: 37
 				},
 				{
@@ -82,7 +81,7 @@ export const lesson08: LessonSeed = {
 					answer: '공부해야',
 					alternateAnswers: [],
 					vocabBaseForm: '공부하다',
-					englishHint: [h('I ', 'none'), h('have to study', 'direct'), h(' now.', 'none')],
+					englishHint: 'I have to study now.',
 					introducedAtPosition: 37
 				}
 			]
@@ -113,7 +112,7 @@ export const lesson08: LessonSeed = {
 					fullSentence: '여기에 앉으세요.',
 					sentenceWithBlank: '여기에 ___.',
 					answer: '앉으세요',
-					englishHint: [h('Please ', 'direct'), h('sit', 'direct'), h(' here.', 'none')],
+					englishHint: 'Please sit here.',
 					order: 0
 				},
 				{
@@ -121,7 +120,7 @@ export const lesson08: LessonSeed = {
 					fullSentence: '이것을 보세요.',
 					sentenceWithBlank: '이것을 ___.',
 					answer: '보세요',
-					englishHint: [h('Please ', 'direct'), h('look at', 'direct'), h(' this.', 'none')],
+					englishHint: 'Please look at this.',
 					order: 1
 				}
 			],
@@ -133,7 +132,7 @@ export const lesson08: LessonSeed = {
 					answer: '앉으세요',
 					alternateAnswers: [],
 					vocabBaseForm: '앉다',
-					englishHint: [h('Please ', 'direct'), h('sit', 'direct'), h(' here.', 'none')],
+					englishHint: 'Please sit here.',
 					introducedAtPosition: 38
 				},
 				{
@@ -143,7 +142,7 @@ export const lesson08: LessonSeed = {
 					answer: '가세요',
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
-					englishHint: [h('Please ', 'direct'), h('go', 'direct'), h(' slowly.', 'none')],
+					englishHint: 'Please go slowly.',
 					introducedAtPosition: 38
 				},
 				{
@@ -153,7 +152,7 @@ export const lesson08: LessonSeed = {
 					answer: '읽으세요',
 					alternateAnswers: [],
 					vocabBaseForm: '읽다',
-					englishHint: [h('Please ', 'direct'), h('read', 'direct'), h(' this book.', 'none')],
+					englishHint: 'Please read this book.',
 					introducedAtPosition: 38
 				}
 			]
@@ -185,7 +184,7 @@ export const lesson08: LessonSeed = {
 					fullSentence: '사진을 찍어 주세요.',
 					sentenceWithBlank: '사진을 찍어 ___.',
 					answer: '주세요',
-					englishHint: [h('Please ', 'direct'), h('take', 'none'), h(' a photo (for me).', 'none')],
+					englishHint: 'Please take a photo (for me).',
 					order: 0
 				},
 				{
@@ -193,7 +192,7 @@ export const lesson08: LessonSeed = {
 					fullSentence: '천천히 말해 주세요.',
 					sentenceWithBlank: '천천히 말해 ___.',
 					answer: '주세요',
-					englishHint: [h('Please ', 'direct'), h('speak slowly (for me).', 'none')],
+					englishHint: 'Please speak slowly (for me).',
 					order: 1
 				}
 			],
@@ -205,7 +204,7 @@ export const lesson08: LessonSeed = {
 					answer: '주세요',
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어 주세요',
-					englishHint: [h('Please ', 'direct'), h('take a photo (for me).', 'none')],
+					englishHint: 'Please take a photo (for me).',
 					introducedAtPosition: 39
 				},
 				{
@@ -215,7 +214,7 @@ export const lesson08: LessonSeed = {
 					answer: '주세요',
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어 주세요',
-					englishHint: [h('Please ', 'direct'), h('open the door (for me).', 'none')],
+					englishHint: 'Please open the door (for me).',
 					introducedAtPosition: 39
 				},
 				{
@@ -225,7 +224,7 @@ export const lesson08: LessonSeed = {
 					answer: '주세요',
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어 주세요',
-					englishHint: [h('Please ', 'direct'), h('speak in Korean (for me).', 'none')],
+					englishHint: 'Please speak in Korean (for me).',
 					introducedAtPosition: 39
 				}
 			]

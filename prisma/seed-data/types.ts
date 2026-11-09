@@ -2,11 +2,6 @@
 // Shared types for seed data modules
 // ══════════════════════════════════════════════════════════════════════════════
 
-export interface EnglishHintPart {
-	text: string;
-	highlightType: 'none' | 'direct' | 'related';
-}
-
 export interface ClozeCardSeed {
 	id: string;
 	fullSentence: string;
@@ -14,7 +9,10 @@ export interface ClozeCardSeed {
 	vocabBaseForm: string;
 	answer: string;
 	alternateAnswers: string[];
-	englishHint: EnglishHintPart[];
+	// Plain English translation. No highlighting: English often has no
+	// equivalent for Korean particles (은/는, 이/가, 을/를), so any
+	// highlighted English word is a guess. (Build 25 removed it.)
+	englishHint: string;
 	/** Curriculum position of the most-advanced GP this card tests.
 	 *  For single-target cards, equals the owning GP's position. */
 	introducedAtPosition: number;
@@ -27,7 +25,7 @@ export interface LessonExampleSeed {
 	fullSentence: string;
 	sentenceWithBlank: string;
 	answer: string;
-	englishHint: EnglishHintPart[];
+	englishHint: string;
 	order: number;
 	notes?: string;
 }
