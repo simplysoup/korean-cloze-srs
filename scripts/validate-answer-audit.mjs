@@ -36,6 +36,20 @@ for(const row of audit.cards){
  check(JSON.stringify(actual)===JSON.stringify(src.alternateAnswers),`${row.cardId}: accepted alternatives disagree with source card`);
  check(new Set([src.answer,...actual]).size===actual.length+1,`${row.cardId}: duplicate answer value`);
  if(actual.length){altCards++;alternatives+=actual.length;}
+ // A whole-sentence variant only works if its particle matches the preceding noun's 받침.
+ // This checks spelling/attachment, NOT whether an alternative is pragmatically appropriate.
+ if(['gp_gap_wa_gwa','gp_gap_irang'].includes(row.grammarPointId)){
+  const prefix = row.sentenceWithBlank.split('___')[0];
+  const letter = prefix.charCodeAt(prefix.length - 1);
+  check(letter>=0xAC00 && letter<=0xD7A3,`${row.cardId}: connector does not follow a Hangul noun`);
+  if(letter>=0xAC00 && letter<=0xD7A3){
+   const hasBatchim=(letter-0xAC00)%28!==0;
+   const permitted=hasBatchim?['과','이랑','하고']:['와','랑','하고'];
+   for(const value of [row.canonicalAnswer,...actual]){
+    check(permitted.includes(value),`${row.cardId}: connector ${value} violates 받침 form selection`);
+   }
+  }
+ }
  for(const alternative of row.acceptedAlternatives){
   check(alternative.classification?.length>4,`${row.cardId}: missing variant class`);
   check(alternative.explanation?.length>=50,`${row.cardId}: missing rationale for ${alternative.input}`);
