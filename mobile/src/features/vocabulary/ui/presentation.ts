@@ -58,10 +58,20 @@ export function promptContext(
   entry: FoundationEntry | null,
 ): string[] {
   const parts = [deckTitle];
-  if (prompt.contextKorean) parts.push(prompt.contextKorean);
-  if (prompt.contextEnglish) parts.push(prompt.contextEnglish);
+  // Recognition must not expose the English answer in its context.
+  // Production must not expose the Korean answer in its example.
+  if (prompt.contextKorean) {
+    parts.push(prompt.direction === 'korean_to_english'
+      ? prompt.contextKorean
+      : prompt.contextKorean.split(prompt.canonicalAnswer).join('___'));
+  }
+  if (prompt.contextEnglish && prompt.direction !== 'korean_to_english') {
+    parts.push(prompt.contextEnglish);
+  }
   if (!prompt.contextKorean && !prompt.contextEnglish && entry?.usageExample) {
-    // Avoid disclosing the target answer in the supporting example.\n    parts.push(prompt.direction === 'korean_to_english'\n      ? entry.usageExample.korean\n      : entry.usageExample.english);
+    parts.push(prompt.direction === 'korean_to_english'
+      ? entry.usageExample.korean
+      : entry.usageExample.english);
   }
   if (entry?.variant && prompt.canonicalAnswer === entry.variant) {
     parts.push('Shortened form in its example context');
