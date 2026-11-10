@@ -450,7 +450,12 @@ export async function activateVerifiedAccount(id: string): Promise<boolean> {
   const lease = getAccountSessionLease();
   if (!lease) return false;
   try {
-    const cached = await idbGet(accountDocumentKey(id));
+    const key = accountDocumentKey(id);
+    // A rapid A -> logout -> A re-login must await A's captured flush
+    // before reading A's namespace, or it could restore stale data.
+    await pendingWrites.get(key)?.catch(() => undefined);
+    if (!isAccountSessionLeaseCurrent(lease)) return false;
+    const cached = await idbGet(key);
     if (!isAccountSessionLeaseCurrent(lease)) return false;
     if (isAccountSnapshot(cached, id)) {
       s.doc = cached.doc;
