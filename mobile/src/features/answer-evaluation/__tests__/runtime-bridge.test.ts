@@ -75,7 +75,7 @@ describe('Agent 12 live-screen answer request adapter', () => {
 
   it('fails closed on missing IDs, metadata, stale content, canonicals, or alternatives', () => {
     const source = review('cc_e_loc_01');
-    const variants = [
+    const variants: [ReviewAnswerItem, string][] = [
       [{ ...source.item, clozeCardId: '' }, 'missing_exercise_id'],
       [{ ...source.item, grammarPointId: '' }, 'missing_grammar_point_id'],
       [{ ...source.item, clozeCardId: 'not-real' }, 'missing_authored_metadata'],
@@ -84,7 +84,7 @@ describe('Agent 12 live-screen answer request adapter', () => {
       [{ ...source.item, fullSentence: '다른 문장.' }, 'stale_full_sentence'],
       [{ ...source.item, answers: ['로'] }, 'stale_canonical_answer'],
       [{ ...source.item, answers: ['에'] }, 'stale_accepted_alternatives'],
-    ] as const;
+    ];
     for (const [item, expected] of variants) {
       const value = prepareLiveAnswerRequest({ kind: 'review', item }, ['에'], catalog);
       expect(value.status).toBe('unavailable');
