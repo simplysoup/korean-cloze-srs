@@ -71,12 +71,12 @@
           "prompt": "What is Jisu mainly doing?",
           "answerLanguage": "en",
           "choices": [
-            "Looking for an easy Korean book",
             "Buying a school uniform",
             "Meeting a friend at a cafe",
+            "Looking for an easy Korean book",
             "Returning a lost phone"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "evidence": "지수는 쉬운 책을 원해요.",
           "explanation": "Jisu wants an easy book, tries the staff member's suggestion, and borrows it."
         },
@@ -101,12 +101,12 @@
           "prompt": "In '그 책을 빌려요', which book does '그 책' mean?",
           "answerLanguage": "en",
           "choices": [
-            "The easy book the employee recommends",
             "A book at Jisu's home",
             "A large book Jisu did not open",
-            "The employee's personal notebook"
+            "The employee's personal notebook",
+            "The easy book the employee recommends"
           ],
-          "correctIndex": 0,
+          "correctIndex": 3,
           "evidence": "“이 책은 쉬워요. 그림도 많아요.”",
           "explanation": "The demonstrative refers back to the easy illustrated book Jisu just read."
         },
@@ -116,12 +116,12 @@
           "prompt": "Why does Jisu choose that book?",
           "answerLanguage": "en",
           "choices": [
-            "It is manageable for her to read",
             "It is the most expensive book",
+            "It is manageable for her to read",
             "She needs it for a library job",
             "She cannot borrow any other book"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "evidence": "어렵지 않아요.",
           "explanation": "Jisu reads it and finds it is not difficult; the other motivations do not appear in the passage."
         }
@@ -144,7 +144,7 @@
       ],
       "paragraphs": [
         "민수는 오늘 친구를 만나요. 오후 세 시에 지하철역 앞에서 만나요. 하지만 민수는 지하철역을 몰라요. 휴대전화도 없어요. 민수는 길 옆에 작은 가게를 봐요. 가게에 들어가요.",
-        "민수가 직원에게 물어요. “지하철역이 어디에 있어요?” 직원이 말해요. “이 길로 쭉 가세요. 은행 옆에 있어요.” 민수는 “감사합니다!”라고 말해요. 밖으로 나가요. 길을 걸어요. 은행이 보여요. 은행 옆에 지하철역이 있어요. 민수는 역 앞에서 친구를 만나요."
+        "민수가 직원에게 물어요. “지하철역이 어디에 있어요?” 직원이 말해요. “이 길로 쭉 가세요. 은행 옆에 있어요.” 민수는 “감사합니다!” 민수는 밖으로 나가요. 길을 걸어요. 은행이 보여요. 은행 옆에 지하철역이 있어요. 민수는 역 앞에서 친구를 만나요."
       ],
       "wordCount": 57,
       "vocabularyNotes": [
@@ -189,12 +189,12 @@
           "prompt": "What problem does Minsu solve?",
           "answerLanguage": "en",
           "choices": [
-            "How to find the subway station",
             "How to buy a mobile phone",
             "Where to eat dinner",
+            "How to find the subway station",
             "How to change a train ticket"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "evidence": "민수는 지하철역을 몰라요.",
           "explanation": "Minsu does not know the station's location and asks for directions."
         },
@@ -219,12 +219,12 @@
           "prompt": "Why does the shop employee say '쭉 가세요'?",
           "answerLanguage": "en",
           "choices": [
-            "To tell Minsu which way to walk",
             "To invite Minsu to work in the shop",
             "To tell Minsu to go home",
-            "To ask Minsu for money"
+            "To ask Minsu for money",
+            "To tell Minsu which way to walk"
           ],
-          "correctIndex": 0,
+          "correctIndex": 3,
           "evidence": "“이 길로 쭉 가세요. 은행 옆에 있어요.”",
           "explanation": "The employee is giving walking directions toward the bank and station."
         },
@@ -234,12 +234,12 @@
           "prompt": "What is beside the bank?",
           "answerLanguage": "en",
           "choices": [
-            "The subway station",
             "Minsu's home",
+            "The subway station",
             "Minsu's school",
             "The friend's office"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "evidence": "은행 옆에 지하철역이 있어요.",
           "explanation": "The station is located next to the bank, as stated near the end."
         }
@@ -308,12 +308,12 @@
           "prompt": "What is the passage mainly about?",
           "answerLanguage": "en",
           "choices": [
-            "Friends changing their lunch plans because of rain",
             "Someone learning to cook rice",
             "A person moving to a new apartment",
+            "Friends changing their lunch plans because of rain",
             "Friends cancelling their friendship"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "evidence": "세 사람은 공원 대신 소라의 집에서 만나기로 했어요.",
           "explanation": "Rain makes the outdoor picnic inconvenient, so the friends have lunch at Sora's house."
         },
@@ -338,12 +338,12 @@
           "prompt": "What does '만나기로 했어요' tell us in this story?",
           "answerLanguage": "en",
           "choices": [
-            "The friends decided to meet at Sora's home",
             "The friends were forbidden to meet",
             "The friends had already left for the park",
-            "The friends only imagined meeting"
+            "The friends only imagined meeting",
+            "The friends decided to meet at Sora's home"
           ],
-          "correctIndex": 0,
+          "correctIndex": 3,
           "evidence": "세 사람은 공원 대신 소라의 집에서 만나기로 했어요.",
           "explanation": "-기로 하다 expresses a decision or agreement, not a completed meeting or prohibition."
         },
@@ -353,12 +353,12 @@
           "prompt": "What can we conclude about the lunch?",
           "answerLanguage": "en",
           "choices": [
-            "They still enjoyed eating together indoors",
             "They ate outside despite the rain",
+            "They still enjoyed eating together indoors",
             "They did not meet at all",
             "Sora forgot to prepare any food"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "evidence": "세 사람은 함께 점심을 맛있게 먹었어요.",
           "explanation": "The ending says they ate lunch together and enjoyed it, despite the changed location."
         }
@@ -377,14 +377,16 @@
         "gp_eul_ttae",
         "gp_giro_hada",
         "gp_aya_hada",
-        "gp_go_seq"
+        "gp_go_seq",
+        "gp_ani_eyo",
+        "gp_a_juseyo"
       ],
       "paragraphs": [
-        "유나는 동네 문화센터에서 도자기 수업을 들어요. 원래 수업은 금요일 저녁 여섯 시에 시작해요. 유나는 퇴근하고 나서 바로 문화센터에 가는 편이에요.",
-        "이번 주 목요일에 문화센터에서 문자 메시지가 왔어요. 선생님이 아파서 금요일 수업을 토요일 오전 열 시로 옮겼다는 내용이었어요. 유나는 메시지를 읽고 나서 달력을 확인했어요. 토요일 아침에는 다른 약속이 없었어요.",
-        "유나는 수업에 가기로 하고, 금요일 저녁에는 집에서 쉬었어요. 토요일에는 수업이 시작하기 전에 조금 일찍 도착했어요. 친구가 왜 금요일에 오지 않았냐고 물었어요. 유나는 시간표가 바뀌었다고 설명했어요. 둘은 함께 새 컵을 만들었어요."
+        "유나는 동네 문화센터에서 도자기 수업을 들어요. 원래 수업은 금요일 저녁 여섯 시에 시작해요. 유나는 퇴근하고 나서 바로 문화센터에 가요.",
+        "이번 주 목요일에 문화센터에서 문자 메시지가 왔어요. 선생님이 아팠어요. 그래서 이번 주 수업은 금요일이 아니라 토요일 오전 열 시에 있어요. 유나는 메시지를 읽고 나서 달력을 확인했어요. 토요일 아침에는 다른 약속이 없었어요.",
+        "유나는 수업에 가기로 하고, 금요일 저녁에는 집에서 쉬었어요. 토요일에는 수업이 시작하기 전에 조금 일찍 도착했어요. 친구도 토요일 수업에 왔어요. 유나는 친구에게 새 시간표를 보여 줬어요. 둘은 함께 새 컵을 만들었어요."
       ],
-      "wordCount": 78,
+      "wordCount": 80,
       "vocabularyNotes": [
         {
           "term": "문화센터",
@@ -427,13 +429,13 @@
           "prompt": "Which event drives the story?",
           "answerLanguage": "en",
           "choices": [
-            "A pottery class is rescheduled",
             "Yuna decides to stop pottery forever",
             "The cultural centre closes permanently",
+            "A pottery class is rescheduled",
             "Yuna loses a finished cup"
           ],
-          "correctIndex": 0,
-          "evidence": "금요일 수업을 토요일 오전 열 시로 옮겼다는 내용이었어요.",
+          "correctIndex": 2,
+          "evidence": "이번 주 수업은 금요일이 아니라 토요일 오전 열 시에 있어요.",
           "explanation": "A message announces a move from Friday evening to Saturday morning."
         },
         {
@@ -448,7 +450,7 @@
             "Sunday at 10 a.m."
           ],
           "correctIndex": 0,
-          "evidence": "토요일 오전 열 시로 옮겼다는 내용이었어요.",
+          "evidence": "토요일 오전 열 시에 있어요.",
           "explanation": "The updated time is Saturday morning at ten."
         },
         {
@@ -457,12 +459,12 @@
           "prompt": "In '메시지를 읽고 나서 달력을 확인했어요', which happened first?",
           "answerLanguage": "en",
           "choices": [
-            "Yuna read the message",
             "Yuna checked the calendar",
             "Yuna went to the Saturday class",
-            "Yuna made a cup"
+            "Yuna made a cup",
+            "Yuna read the message"
           ],
-          "correctIndex": 0,
+          "correctIndex": 3,
           "evidence": "메시지를 읽고 나서 달력을 확인했어요.",
           "explanation": "-고 나서 marks the first finished action before the following one."
         },
@@ -472,12 +474,12 @@
           "prompt": "Why was Yuna able to attend the new session?",
           "answerLanguage": "en",
           "choices": [
-            "She had no other plan on Saturday morning",
             "She persuaded the teacher to move it again",
+            "She had no other plan on Saturday morning",
             "She took time off from her Saturday job",
             "She did not receive the notice"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "evidence": "토요일 아침에는 다른 약속이 없었어요.",
           "explanation": "Her calendar has no conflicting appointment on Saturday morning."
         }
@@ -555,12 +557,12 @@
           "prompt": "What is the central outcome of the incident?",
           "answerLanguage": "en",
           "choices": [
-            "A lost wallet reaches its owner through the information desk",
             "Seon-u keeps cash found on the bus",
             "The bus driver changes the route",
+            "A lost wallet reaches its owner through the information desk",
             "The owner buys a new wallet"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "evidence": "다행히 주인이 지갑을 돌려받았어요.",
           "explanation": "The lost wallet was recorded and returned to its owner."
         },
@@ -585,12 +587,12 @@
           "prompt": "What relationship does '분실 신고를 하자마자' express?",
           "answerLanguage": "en",
           "choices": [
-            "Staff compared records immediately after the owner reported the loss",
             "Staff compared records before the owner lost anything",
             "The owner could not report the loss",
-            "Staff waited many weeks before checking"
+            "Staff waited many weeks before checking",
+            "Staff compared records immediately after the owner reported the loss"
           ],
-          "correctIndex": 0,
+          "correctIndex": 3,
           "evidence": "지갑 주인이 분실 신고를 하자마자 직원이 보관 중인 지갑과 정보를 대조했다고 해요.",
           "explanation": "-자마자 marks one action following immediately upon the other."
         },
@@ -600,12 +602,12 @@
           "prompt": "Why does Seon-u prefer handing the wallet to staff?",
           "answerLanguage": "en",
           "choices": [
-            "He thinks an official handover is safer than searching alone",
             "He wants staff to count the cash for him",
+            "He thinks an official handover is safer than searching alone",
             "He knows the owner personally",
             "He plans to claim the wallet next week"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "evidence": "직원에게 바로 맡기는 편이 안전하다고 생각했기 때문이에요.",
           "explanation": "His stated reason is safety, rather than a reward or a personal connection."
         }
@@ -684,12 +686,12 @@
           "prompt": "What best captures the event's result?",
           "answerLanguage": "en",
           "choices": [
-            "A rain-disrupted book swap succeeds indoors and informs future planning",
             "A planned event is cancelled with no exchange",
             "Residents decide never to share books again",
+            "A rain-disrupted book swap succeeds indoors and informs future planning",
             "All books are damaged before the event begins"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "evidence": "계획은 바뀌었지만 주민들은 책뿐 아니라 다음 행사를 위한 좋은 생각도 나눴어요.",
           "explanation": "The indoor relocation succeeds, and residents learn how to plan future events."
         },
@@ -714,12 +716,12 @@
           "prompt": "What does '오는 바람에' indicate about the rain?",
           "answerLanguage": "en",
           "choices": [
-            "It unexpectedly caused a problem for the outdoor setup",
             "It was the original purpose of the event",
             "It made moving books unnecessary",
-            "It was a welcome reason to keep the books outside"
+            "It was a welcome reason to keep the books outside",
+            "It unexpectedly caused a problem for the outdoor setup"
           ],
-          "correctIndex": 0,
+          "correctIndex": 3,
           "evidence": "갑자기 비가 많이 오는 바람에 야외 책장이 젖을 위험이 생겼어요.",
           "explanation": "-는 바람에 presents an unexpected, troublesome cause: the outdoor shelves risk getting wet."
         },
@@ -729,12 +731,12 @@
           "prompt": "Which change is most likely at the next event?",
           "answerLanguage": "en",
           "choices": [
-            "Organizers will identify a backup indoor venue early",
             "Organizers will refuse to post signs",
+            "Organizers will identify a backup indoor venue early",
             "Organizers will only accept cookbooks",
             "Organizers will forbid volunteers"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "evidence": "비가 올 때 사용할 실내 장소를 처음부터 정해 두자고 제안했어요.",
           "explanation": "Suhyeon explicitly proposes reserving or choosing an indoor backup at the planning stage."
         }
