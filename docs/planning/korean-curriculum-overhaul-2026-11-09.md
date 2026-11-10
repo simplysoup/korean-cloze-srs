@@ -86,6 +86,41 @@ For each GP page, expose **Meaning**, **Structure**, **Formation**, **Register /
 
 Suggested progress evidence: **number of mastered grammar points**, **percent of lesson points mastered**, and **mixed-review accuracy on recently learned contrasts**, with neutral presentation (not unsupported 'fluent' or 'can speak Korean' claims).
 
+## Beginner-readable grammar-page teaching contract
+
+Each of the **102 grammar points** now has an authored teaching guide in:
+- `prisma/seed-data/teaching-guides/level1.ts` (50 entries)
+- `prisma/seed-data/teaching-guides/level2.ts` (52 entries)
+
+`teachLesson()` in `prisma/seed-data/teaching-guides/index.ts` uses these guides for every lesson's **description** and the first three **notes**. It keeps the existing lesson, grammar-point, worked-example, and cloze-card IDs unchanged. This is a source-data change: both the old port script and the lesson-detail UI already support a description plus typed notes, but a regenerated JSON snapshot is required before the updated teaching text appears in the mobile app.
+
+Every grammar page now has the same learning order:
+1. **What it means** in everyday English, with a communicative use.
+2. **Structure**, from the original `structurePattern`.
+3. **Build it step by step**, naming where to attach the ending, particle, or connective, including relevant final-consonant cases.
+4. **Worked example**, using an actual example sentence from the point, its English meaning, and an explanation of how the construction was formed and why it is used there.
+5. **Common trap**, naming a specific wrong formation or a nearby confusing grammar point.
+6. Original extra tips and cautions, when useful, followed by independent SRS review cards.
+
+**Example — noun negation:** the learn sentence `학생이 아니에요.` is filled as `학생___` → `이 아니에요`, not merely `이`. The explanation says that 학생 ends in a final consonant, so the noun uses 이 before 아니에요. The trap distinguishes this from `안 + verb` and the misspelling `아니예요`.
+
+**Example — subject honorific:** `선생님이 오세요.` uses `-(으)시-` to respect the teacher who is coming. The trap contrasts an honorific statement about the subject with a polite instruction `가세요` to the listener.
+
+**Example — formal noun copula:** `저는 학생입니다.` has `학생 + 입니다`. The trap contrasts the noun ending `입니다` with the ordinary verb formal endings `-ㅂ니다/-습니다`.
+
+New review cards are not just copies of the lesson example. They still use the original `sentenceWithBlank` mechanics and are intended to test form production in a fresh sentence.
+
+### Source quality gates
+
+`bun scripts/validate-grammar-catalogue.ts` now checks:
+- every point has a complete authored guide, not just a translation;
+- four distinct guide elements—meaning, formation, worked reasoning, common trap—meet a minimal instructional-length check;
+- enriched lessons expose the notes and the worked note references its actual first lesson example;
+- noun-negation review cards test `아니에요`, rather than only the subject particle;
+- all existing ID, cloze, order, link and content-count invariants still hold.
+
+A minimum length check cannot detect all Korean inaccuracies or confusing explanations. Independent educator QA, especially of honorific and subtle clause-connection nuances, is still needed.
+
 ## Repo implementation and QA
 
 Source files:
