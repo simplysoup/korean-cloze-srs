@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
-  ActivityIndicator, Pressable, StyleSheet, Text, TextInput,
+  ActivityIndicator, StyleSheet, Text, TextInput,
   useWindowDimensions, View,
 } from 'react-native';
 import { colors } from '../../../components/theme';
@@ -77,7 +77,7 @@ function Feedback({
 
 export function VocabularySessionScreen({
   state, deckTitle, saving, error, submit, reveal, next, retry,
-  leave, reviewMissed, retrySave,
+  leave, reviewMissed,
 }: {
   state: VocabularySessionState;
   deckTitle: string;
@@ -89,7 +89,6 @@ export function VocabularySessionScreen({
   retry: () => void;
   leave: () => void;
   reviewMissed: () => void;
-  retrySave: () => void;
 }) {
   const [answer, setAnswer] = useState('');
   const [focused, setFocused] = useState(false);
@@ -245,7 +244,7 @@ export function VocabularySessionScreen({
                 {error ? (
                   <View style={styles.error} accessibilityLiveRegion="assertive">
                     <Text style={styles.errorText}>{error}</Text>
-                    <VocabButton label="Retry saving answer" onPress={retrySave} variant="secondary" />
+                    <VocabButton label="Retry saving answer" onPress={() => submit(answer)} variant="secondary" />
                   </View>
                 ) : null}
                 <VocabButton label={saving ? 'Checking…' : 'Check answer'} onPress={() => submit(answer)} disabled={saving || !answer.trim()} />
