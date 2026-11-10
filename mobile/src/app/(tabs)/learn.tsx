@@ -11,6 +11,7 @@ import {
 } from '../../store';
 import { checkAnswers } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
+import { useEnterToAdvance } from '../../lib/use-enter-advance';
 import { syncNow } from '../../lib/sync';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
@@ -199,6 +200,11 @@ export default function LearnScreen() {
       resetQuizCard();
     }
   }
+
+  // After a quiz answer is submitted, Enter advances to the next card
+  // (the same as the Next button) — the input is unmounted then, so
+  // Enter has no other job. While typing, Enter submits (onSubmitEditing).
+  useEnterToAdvance(phase === 'quiz' && quizSubmitted && !!currentQuizCard, nextQuizCard);
 
   // ── Vacation mode ────────────────────────────────────────────────────────
   if (session?.vacation) {

@@ -7,6 +7,7 @@ import {
   type HangulBatch,
   type HangulJamo,
 } from '../content/hangul';
+import { useEnterToAdvance } from '../lib/use-enter-advance';
 import { colors, commonStyles } from '../components/theme';
 
 /**
@@ -94,6 +95,11 @@ export default function HangulScreen() {
     setCramInput('');
     setCramSubmitted(false);
   }
+
+  // After a cram answer is checked, Enter advances to the next jamo (the
+  // same as the Next button) — the input is unmounted then, so Enter has
+  // no other job. While typing, Enter checks (onSubmitEditing).
+  useEnterToAdvance(phase === 'cram' && cramSubmitted && !!currentCram, nextCramCard);
 
   // ── Summary ──────────────────────────────────────────────────────────────
   if (phase === 'summary' && batch) {

@@ -13,6 +13,7 @@ import {
 } from '../../store';
 import { formatNextReview, ratingForCheck, srsRankLabel, answerExplanation } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
+import { useEnterToAdvance } from '../../lib/use-enter-advance';
 import { syncNow } from '../../lib/sync';
 import ClozeSentence from '../../components/ClozeSentence';
 import EnglishHint from '../../components/EnglishHint';
@@ -200,6 +201,11 @@ export default function ReviewScreen() {
       void syncNow();
     }
   }
+
+  // After an answer is submitted, Enter advances to the next card (the
+  // same as the Next button) — the input is unmounted then, so Enter has
+  // no other job. While typing, Enter submits (onSubmitEditing).
+  useEnterToAdvance(submitted && !saving && !!currentCard, () => void next(isCorrect));
 
   // ── Summary screen ─────────────────────────────────────────────────────────
   if (summary) {
