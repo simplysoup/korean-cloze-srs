@@ -1,0 +1,1302 @@
+{
+  "version": "2026-11-10",
+  "scope": "93 newly authored SRS review cards in the 31 grammar-system gaps; existing 628 grammar review cards require a separate later audit",
+  "guidance": "Record both natural sentence acceptability and whether the reviewed target grammar was demonstrated. Do not label correct Korean wrong merely because it uses a different construction. Hints should identify the exact tense, register, honorific, aspect or formation difference. Never assert a generic LLM equivalence as fact without contextual validation.",
+  "status": "editorial first-pass examples for future answer grader and educator review; NOT executable grading logic",
+  "defaultWhenNoNearMissListed": "No special near-miss rule annotated yet, not a claim that all other answers are impossible.",
+  "counts": {
+    "total": 93,
+    "withAlts": 12,
+    "totalAltStrings": 18,
+    "withNearMisses": 14
+  },
+  "cards": [
+    {
+      "cardId": "cc_gap_b_irregular_01",
+      "grammarPointId": "gp_gap_b_irregular",
+      "canonicalAnswer": "가벼워요",
+      "fullSentence": "이 가방은 가벼워요.",
+      "sentenceWithBlank": "이 가방은 ___.",
+      "englishHint": "This bag is light.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "가볍어요",
+          "classification": "incorrect_irregular_form",
+          "dimension": "morphology",
+          "feedback": "The stem is right. This is a ㅂ-irregular descriptive verb: 가볍다 changes to 가벼워요 before the polite ending.",
+          "humanReview": "pending",
+          "replacementSentence": "이 가방은 가볍어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_b_irregular_02",
+      "grammarPointId": "gp_gap_b_irregular",
+      "canonicalAnswer": "도와요",
+      "fullSentence": "친구를 도와요.",
+      "sentenceWithBlank": "친구를 ___.",
+      "englishHint": "I help my friend.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_b_irregular_03",
+      "grammarPointId": "gp_gap_b_irregular",
+      "canonicalAnswer": "더워요",
+      "fullSentence": "오늘은 더워요.",
+      "sentenceWithBlank": "오늘은 ___.",
+      "englishHint": "It's hot today.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_d_irregular_01",
+      "grammarPointId": "gp_gap_d_irregular",
+      "canonicalAnswer": "들어요",
+      "fullSentence": "잘 들어요.",
+      "sentenceWithBlank": "잘 ___.",
+      "englishHint": "I listen carefully.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "듣어요",
+          "classification": "incorrect_irregular_form",
+          "dimension": "morphology",
+          "feedback": "The verb is right. For 듣다 before a vowel-starting ending, ㄷ changes to ㄹ: 들 + 어요 → 들어요.",
+          "humanReview": "pending",
+          "replacementSentence": "잘 듣어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_d_irregular_02",
+      "grammarPointId": "gp_gap_d_irregular",
+      "canonicalAnswer": "걸어요",
+      "fullSentence": "학교까지 걸어요.",
+      "sentenceWithBlank": "학교까지 ___.",
+      "englishHint": "I walk to school.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_d_irregular_03",
+      "grammarPointId": "gp_gap_d_irregular",
+      "canonicalAnswer": "들었어요",
+      "fullSentence": "그 말을 들었어요.",
+      "sentenceWithBlank": "그 말을 ___.",
+      "englishHint": "I heard those words.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_reu_irregular_01",
+      "grammarPointId": "gp_gap_reu_irregular",
+      "canonicalAnswer": "빨라요",
+      "fullSentence": "기차가 빨라요.",
+      "sentenceWithBlank": "기차가 ___.",
+      "englishHint": "The train is fast.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_reu_irregular_02",
+      "grammarPointId": "gp_gap_reu_irregular",
+      "canonicalAnswer": "달라요",
+      "fullSentence": "생각이 달라요.",
+      "sentenceWithBlank": "생각이 ___.",
+      "englishHint": "Our thoughts are different.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_reu_irregular_03",
+      "grammarPointId": "gp_gap_reu_irregular",
+      "canonicalAnswer": "불러요",
+      "fullSentence": "노래를 불러요.",
+      "sentenceWithBlank": "노래를 ___.",
+      "englishHint": "I sing a song.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_eu_drop_01",
+      "grammarPointId": "gp_gap_eu_drop",
+      "canonicalAnswer": "슬퍼요",
+      "fullSentence": "그 영화는 슬퍼요.",
+      "sentenceWithBlank": "그 영화는 ___.",
+      "englishHint": "That movie is sad.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_eu_drop_02",
+      "grammarPointId": "gp_gap_eu_drop",
+      "canonicalAnswer": "예뻐요",
+      "fullSentence": "이 옷은 예뻐요.",
+      "sentenceWithBlank": "이 옷은 ___.",
+      "englishHint": "These clothes are pretty.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_eu_drop_03",
+      "grammarPointId": "gp_gap_eu_drop",
+      "canonicalAnswer": "써요",
+      "fullSentence": "이 글씨를 써요.",
+      "sentenceWithBlank": "이 글씨를 ___.",
+      "englishHint": "I write these characters.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_informal_haeche_01",
+      "grammarPointId": "gp_gap_informal_haeche",
+      "canonicalAnswer": "전화해",
+      "fullSentence": "나중에 전화해.",
+      "sentenceWithBlank": "나중에 ___.",
+      "englishHint": "Call me later.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_informal_haeche_02",
+      "grammarPointId": "gp_gap_informal_haeche",
+      "canonicalAnswer": "먹어",
+      "fullSentence": "밥 먹어.",
+      "sentenceWithBlank": "밥 ___.",
+      "englishHint": "Eat your meal.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "먹어요",
+          "classification": "valid_other_register",
+          "dimension": "register",
+          "feedback": "먹어요 is grammatical, but it is polite. This exercise targets casual speech without 요: 먹어.",
+          "humanReview": "pending",
+          "replacementSentence": "밥 먹어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_informal_haeche_03",
+      "grammarPointId": "gp_gap_informal_haeche",
+      "canonicalAnswer": "앉아",
+      "fullSentence": "여기 앉아.",
+      "sentenceWithBlank": "여기 ___.",
+      "englishHint": "Sit here.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_recipient_ege_hante_01",
+      "grammarPointId": "gp_gap_recipient_ege_hante",
+      "canonicalAnswer": "한테",
+      "fullSentence": "엄마한테 전화해요.",
+      "sentenceWithBlank": "엄마___ 전화해요.",
+      "englishHint": "I call Mom.",
+      "acceptedAlternatives": [
+        {
+          "input": "에게",
+          "classification": "same_recipient_relation_different_style",
+          "explanation": "Equivalent recipient/source particle in this context, with a spoken-versus-written preference.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=69713&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [
+        {
+          "input": "에",
+          "classification": "wrong_recipient_particle",
+          "dimension": "particle_role",
+          "feedback": "엄마 is a person, not a location. Use a recipient particle such as 한테 or 에게 for this meaning.",
+          "humanReview": "pending",
+          "replacementSentence": "엄마에 전화해요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_recipient_ege_hante_02",
+      "grammarPointId": "gp_gap_recipient_ege_hante",
+      "canonicalAnswer": "에게",
+      "fullSentence": "친구에게 사진을 보내요.",
+      "sentenceWithBlank": "친구___ 사진을 보내요.",
+      "englishHint": "I send a photo to a friend.",
+      "acceptedAlternatives": [
+        {
+          "input": "한테",
+          "classification": "same_recipient_relation_different_style",
+          "explanation": "Equivalent recipient/source particle in this context, with a spoken-versus-written preference.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=69713&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_recipient_ege_hante_03",
+      "grammarPointId": "gp_gap_recipient_ege_hante",
+      "canonicalAnswer": "한테",
+      "fullSentence": "아이한테 물을 줘요.",
+      "sentenceWithBlank": "아이___ 물을 줘요.",
+      "englishHint": "I give water to a child.",
+      "acceptedAlternatives": [
+        {
+          "input": "에게",
+          "classification": "same_recipient_relation_different_style",
+          "explanation": "Equivalent recipient/source particle in this context, with a spoken-versus-written preference.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=69713&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_source_hanteseo_01",
+      "grammarPointId": "gp_gap_source_hanteseo",
+      "canonicalAnswer": "에게서",
+      "fullSentence": "동생에게서 소식을 들었어요.",
+      "sentenceWithBlank": "동생___ 소식을 들었어요.",
+      "englishHint": "I heard news from my younger sibling.",
+      "acceptedAlternatives": [
+        {
+          "input": "한테서",
+          "classification": "same_person_source_relation_different_style",
+          "explanation": "Equivalent recipient/source particle in this context, with a spoken-versus-written preference.",
+          "evidence": null,
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_source_hanteseo_02",
+      "grammarPointId": "gp_gap_source_hanteseo",
+      "canonicalAnswer": "한테서",
+      "fullSentence": "친구한테서 책을 빌렸어요.",
+      "sentenceWithBlank": "친구___ 책을 빌렸어요.",
+      "englishHint": "I borrowed a book from a friend.",
+      "acceptedAlternatives": [
+        {
+          "input": "에게서",
+          "classification": "same_person_source_relation_different_style",
+          "explanation": "Equivalent recipient/source particle in this context, with a spoken-versus-written preference.",
+          "evidence": null,
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_source_hanteseo_03",
+      "grammarPointId": "gp_gap_source_hanteseo",
+      "canonicalAnswer": "한테서",
+      "fullSentence": "엄마한테서 선물을 받았어요.",
+      "sentenceWithBlank": "엄마___ 선물을 받았어요.",
+      "englishHint": "I got a gift from Mom.",
+      "acceptedAlternatives": [
+        {
+          "input": "에게서",
+          "classification": "same_person_source_relation_different_style",
+          "explanation": "Equivalent recipient/source particle in this context, with a spoken-versus-written preference.",
+          "evidence": null,
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_neg_ji_mot_01",
+      "grammarPointId": "gp_gap_neg_ji_mot",
+      "canonicalAnswer": "지 못해요",
+      "fullSentence": "지금은 운전하지 못해요.",
+      "sentenceWithBlank": "지금은 운전하___.",
+      "englishHint": "I can't drive now.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_neg_ji_mot_02",
+      "grammarPointId": "gp_gap_neg_ji_mot",
+      "canonicalAnswer": "지 못했어요",
+      "fullSentence": "그 말을 이해하지 못했어요.",
+      "sentenceWithBlank": "그 말을 이해하___.",
+      "englishHint": "I couldn't understand those words.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "지 못해요",
+          "classification": "valid_other_tense",
+          "dimension": "tense",
+          "feedback": "You have the inability construction right. The English sentence describes the past, so the expected form is 지 못했어요.",
+          "humanReview": "pending",
+          "replacementSentence": "그 말을 이해하지 못해요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_neg_ji_mot_03",
+      "grammarPointId": "gp_gap_neg_ji_mot",
+      "canonicalAnswer": "지 못해요",
+      "fullSentence": "오늘은 운동하지 못해요.",
+      "sentenceWithBlank": "오늘은 운동하___.",
+      "englishHint": "I can't exercise today.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_s_irregular_01",
+      "grammarPointId": "gp_gap_s_irregular",
+      "canonicalAnswer": "지어요",
+      "fullSentence": "여기에서 집을 지어요.",
+      "sentenceWithBlank": "여기에서 집을 ___.",
+      "englishHint": "They build a house here.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_s_irregular_02",
+      "grammarPointId": "gp_gap_s_irregular",
+      "canonicalAnswer": "나아요",
+      "fullSentence": "병이 빨리 나아요.",
+      "sentenceWithBlank": "병이 빨리 ___.",
+      "englishHint": "The illness gets better quickly.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_s_irregular_03",
+      "grammarPointId": "gp_gap_s_irregular",
+      "canonicalAnswer": "지었어요",
+      "fullSentence": "집을 지었어요.",
+      "sentenceWithBlank": "집을 ___.",
+      "englishHint": "We built a house.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_h_irregular_01",
+      "grammarPointId": "gp_gap_h_irregular",
+      "canonicalAnswer": "빨개요",
+      "fullSentence": "꽃이 빨개요.",
+      "sentenceWithBlank": "꽃이 ___.",
+      "englishHint": "The flower is red.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_h_irregular_02",
+      "grammarPointId": "gp_gap_h_irregular",
+      "canonicalAnswer": "어때요",
+      "fullSentence": "오늘 기분이 어때요?",
+      "sentenceWithBlank": "오늘 기분이 ___?",
+      "englishHint": "How do you feel today?",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_h_irregular_03",
+      "grammarPointId": "gp_gap_h_irregular",
+      "canonicalAnswer": "파래요",
+      "fullSentence": "오늘 하늘이 파래요.",
+      "sentenceWithBlank": "오늘 하늘이 ___.",
+      "englishHint": "The sky is blue today.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_l_deletion_01",
+      "grammarPointId": "gp_gap_l_deletion",
+      "canonicalAnswer": "압니다",
+      "fullSentence": "이름을 압니다.",
+      "sentenceWithBlank": "이름을 ___.",
+      "englishHint": "I know the name.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "알아요",
+          "classification": "valid_other_register",
+          "dimension": "register",
+          "feedback": "알아요 is an everyday polite form of 알다, but this lesson tests ㄹ dropping before the formal ending: 압니다.",
+          "humanReview": "pending",
+          "replacementSentence": "이름을 알아요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_l_deletion_02",
+      "grammarPointId": "gp_gap_l_deletion",
+      "canonicalAnswer": "사세요",
+      "fullSentence": "여기에서 사세요?",
+      "sentenceWithBlank": "여기에서 ___?",
+      "englishHint": "Do you live here? (honorific)",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_l_deletion_03",
+      "grammarPointId": "gp_gap_l_deletion",
+      "canonicalAnswer": "만듭니다",
+      "fullSentence": "매일 케이크를 만듭니다.",
+      "sentenceWithBlank": "매일 케이크를 ___.",
+      "englishHint": "I make cakes every day.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_wa_gwa_01",
+      "grammarPointId": "gp_gap_wa_gwa",
+      "canonicalAnswer": "와",
+      "fullSentence": "우유와 빵을 먹었어요.",
+      "sentenceWithBlank": "우유___ 빵을 먹었어요.",
+      "englishHint": "I had milk and bread.",
+      "acceptedAlternatives": [
+        {
+          "input": "랑",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        },
+        {
+          "input": "하고",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_wa_gwa_02",
+      "grammarPointId": "gp_gap_wa_gwa",
+      "canonicalAnswer": "와",
+      "fullSentence": "친구와 같이 가요.",
+      "sentenceWithBlank": "친구___ 같이 가요.",
+      "englishHint": "I go together with a friend.",
+      "acceptedAlternatives": [
+        {
+          "input": "랑",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        },
+        {
+          "input": "하고",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_wa_gwa_03",
+      "grammarPointId": "gp_gap_wa_gwa",
+      "canonicalAnswer": "과",
+      "fullSentence": "가방과 신발을 샀어요.",
+      "sentenceWithBlank": "가방___ 신발을 샀어요.",
+      "englishHint": "I bought a bag and shoes.",
+      "acceptedAlternatives": [
+        {
+          "input": "이랑",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        },
+        {
+          "input": "하고",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [
+        {
+          "input": "와",
+          "classification": "incorrect_consonant_selection",
+          "dimension": "particle_form",
+          "feedback": "The noun 가방 ends with a final consonant. Use 과 for this connector, or an accepted synonymous construction such as 이랑/하고.",
+          "humanReview": "pending",
+          "replacementSentence": "가방와 신발을 샀어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_irang_01",
+      "grammarPointId": "gp_gap_irang",
+      "canonicalAnswer": "랑",
+      "fullSentence": "엄마랑 이야기했어요.",
+      "sentenceWithBlank": "엄마___ 이야기했어요.",
+      "englishHint": "I talked with Mom.",
+      "acceptedAlternatives": [
+        {
+          "input": "와",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        },
+        {
+          "input": "하고",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_irang_02",
+      "grammarPointId": "gp_gap_irang",
+      "canonicalAnswer": "이랑",
+      "fullSentence": "밥이랑 김치를 먹어요.",
+      "sentenceWithBlank": "밥___ 김치를 먹어요.",
+      "englishHint": "I eat rice and kimchi.",
+      "acceptedAlternatives": [
+        {
+          "input": "과",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        },
+        {
+          "input": "하고",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_irang_03",
+      "grammarPointId": "gp_gap_irang",
+      "canonicalAnswer": "이랑",
+      "fullSentence": "동생이랑 놀아요.",
+      "sentenceWithBlank": "동생___ 놀아요.",
+      "englishHint": "I play with my younger sibling.",
+      "acceptedAlternatives": [
+        {
+          "input": "과",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        },
+        {
+          "input": "하고",
+          "classification": "equivalent_other_connector_register_shift",
+          "explanation": "Another grammatical noun connector; style/register can change, so target-pattern mastery should be distinguished from sentence acceptability.",
+          "evidence": "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng",
+          "humanReview": "pending"
+        }
+      ],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_subject_kkeseo_01",
+      "grammarPointId": "gp_gap_subject_kkeseo",
+      "canonicalAnswer": "께서",
+      "fullSentence": "교수님께서 말씀하세요.",
+      "sentenceWithBlank": "교수님___ 말씀하세요.",
+      "englishHint": "The professor speaks (respectfully).",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_subject_kkeseo_02",
+      "grammarPointId": "gp_gap_subject_kkeseo",
+      "canonicalAnswer": "께서",
+      "fullSentence": "아버지께서 집에 계세요.",
+      "sentenceWithBlank": "아버지___ 집에 계세요.",
+      "englishHint": "Father is home (respectfully).",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_subject_kkeseo_03",
+      "grammarPointId": "gp_gap_subject_kkeseo",
+      "canonicalAnswer": "께서",
+      "fullSentence": "선생님께서 책을 읽으세요.",
+      "sentenceWithBlank": "선생님___ 책을 읽으세요.",
+      "englishHint": "The teacher is reading a book.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_recipient_kke_01",
+      "grammarPointId": "gp_gap_recipient_kke",
+      "canonicalAnswer": "께",
+      "fullSentence": "부모님께 전화를 드려요.",
+      "sentenceWithBlank": "부모님___ 전화를 드려요.",
+      "englishHint": "I telephone my parents (respectfully).",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "한테",
+          "classification": "valid_other_honorific_level",
+          "dimension": "honorificity",
+          "feedback": "한테 can be grammatical with a family member, but 께 explicitly marks a respected recipient. Compare the social nuance, not just the noun.",
+          "humanReview": "pending",
+          "replacementSentence": "부모님한테 전화를 드려요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_recipient_kke_02",
+      "grammarPointId": "gp_gap_recipient_kke",
+      "canonicalAnswer": "께",
+      "fullSentence": "교수님께 질문을 드려요.",
+      "sentenceWithBlank": "교수님___ 질문을 드려요.",
+      "englishHint": "I ask the professor a question (respectfully).",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_recipient_kke_03",
+      "grammarPointId": "gp_gap_recipient_kke",
+      "canonicalAnswer": "께",
+      "fullSentence": "할아버지께 꽃을 드려요.",
+      "sentenceWithBlank": "할아버지___ 꽃을 드려요.",
+      "englishHint": "I give Grandfather flowers.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_plain_declarative_01",
+      "grammarPointId": "gp_gap_plain_declarative",
+      "canonicalAnswer": "먹는다",
+      "fullSentence": "동생이 밥을 먹는다.",
+      "sentenceWithBlank": "동생이 밥을 ___.",
+      "englishHint": "My younger sibling eats rice.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "먹어요",
+          "classification": "valid_other_register",
+          "dimension": "register",
+          "feedback": "Good verb meaning. 먹어요 is everyday polite speech; this lesson is practicing the plain narrative form 먹는다.",
+          "humanReview": "pending",
+          "replacementSentence": "동생이 밥을 먹어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_plain_declarative_02",
+      "grammarPointId": "gp_gap_plain_declarative",
+      "canonicalAnswer": "온다",
+      "fullSentence": "내일 친구가 온다.",
+      "sentenceWithBlank": "내일 친구가 ___.",
+      "englishHint": "A friend is coming tomorrow.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_plain_declarative_03",
+      "grammarPointId": "gp_gap_plain_declarative",
+      "canonicalAnswer": "난다",
+      "fullSentence": "새가 하늘을 난다.",
+      "sentenceWithBlank": "새가 하늘을 ___.",
+      "englishHint": "A bird flies in the sky.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_honorific_special_verbs_01",
+      "grammarPointId": "gp_gap_honorific_special_verbs",
+      "canonicalAnswer": "드세요",
+      "fullSentence": "선생님이 차를 드세요.",
+      "sentenceWithBlank": "선생님이 차를 ___.",
+      "englishHint": "The teacher drinks tea.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_honorific_special_verbs_02",
+      "grammarPointId": "gp_gap_honorific_special_verbs",
+      "canonicalAnswer": "주무세요",
+      "fullSentence": "할아버지가 주무세요.",
+      "sentenceWithBlank": "할아버지가 ___.",
+      "englishHint": "Grandfather is sleeping.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_honorific_special_verbs_03",
+      "grammarPointId": "gp_gap_honorific_special_verbs",
+      "canonicalAnswer": "계세요",
+      "fullSentence": "어머니가 집에 계세요.",
+      "sentenceWithBlank": "어머니가 집에 ___.",
+      "englishHint": "Mother is at home.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "있어요",
+          "classification": "valid_nonhonorific",
+          "dimension": "honorificity",
+          "feedback": "있어요 describes presence, but this lesson calls for the respectful subject form 계세요.",
+          "humanReview": "pending",
+          "replacementSentence": "어머니가 집에 있어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_get_intention_01",
+      "grammarPointId": "gp_gap_get_intention",
+      "canonicalAnswer": "겠습니다",
+      "fullSentence": "제가 책임지겠습니다.",
+      "sentenceWithBlank": "제가 책임지___.",
+      "englishHint": "I'll take responsibility.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_get_intention_02",
+      "grammarPointId": "gp_gap_get_intention",
+      "canonicalAnswer": "겠어요",
+      "fullSentence": "열심히 노력하겠어요.",
+      "sentenceWithBlank": "열심히 노력하___.",
+      "englishHint": "I'll make a real effort.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_get_intention_03",
+      "grammarPointId": "gp_gap_get_intention",
+      "canonicalAnswer": "겠습니다",
+      "fullSentence": "내일 다시 오겠습니다.",
+      "sentenceWithBlank": "내일 다시 오___.",
+      "englishHint": "I'll come again tomorrow.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "겠어요",
+          "classification": "valid_other_register",
+          "dimension": "register",
+          "feedback": "The intention marker 겠 is correct. This example uses formal polite speech, so the target is 겠습니다 rather than 겠어요.",
+          "humanReview": "pending",
+          "replacementSentence": "내일 다시 오겠어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_get_inference_01",
+      "grammarPointId": "gp_gap_get_inference",
+      "canonicalAnswer": "겠어요",
+      "fullSentence": "날씨가 춥겠어요.",
+      "sentenceWithBlank": "날씨가 춥___.",
+      "englishHint": "It must be cold outside.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_get_inference_02",
+      "grammarPointId": "gp_gap_get_inference",
+      "canonicalAnswer": "겠네요",
+      "fullSentence": "좋은 소식이겠네요.",
+      "sentenceWithBlank": "좋은 소식이___.",
+      "englishHint": "That must be good news.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_get_inference_03",
+      "grammarPointId": "gp_gap_get_inference",
+      "canonicalAnswer": "겠어요",
+      "fullSentence": "정말 어렵겠어요.",
+      "sentenceWithBlank": "정말 어렵___.",
+      "englishHint": "That must be really difficult.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_benefactive_a_juda_01",
+      "grammarPointId": "gp_gap_benefactive_a_juda",
+      "canonicalAnswer": "열어 줬어요",
+      "fullSentence": "아이가 문을 열어 줬어요.",
+      "sentenceWithBlank": "아이가 문을 ___.",
+      "englishHint": "The child opened the door for me.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_benefactive_a_juda_02",
+      "grammarPointId": "gp_gap_benefactive_a_juda",
+      "canonicalAnswer": "찍어 줬어요",
+      "fullSentence": "친구가 사진을 찍어 줬어요.",
+      "sentenceWithBlank": "친구가 사진을 ___.",
+      "englishHint": "A friend took a photo for me.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_benefactive_a_juda_03",
+      "grammarPointId": "gp_gap_benefactive_a_juda",
+      "canonicalAnswer": "골라 줬어요",
+      "fullSentence": "엄마가 옷을 골라 줬어요.",
+      "sentenceWithBlank": "엄마가 옷을 ___.",
+      "englishHint": "Mom chose clothes for me.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_resultative_eo_itda_01",
+      "grammarPointId": "gp_gap_resultative_eo_itda",
+      "canonicalAnswer": "서 있어요",
+      "fullSentence": "사람들이 서 있어요.",
+      "sentenceWithBlank": "사람들이 ___.",
+      "englishHint": "People are standing.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "서고 있어요",
+          "classification": "different_aspect",
+          "dimension": "aspect",
+          "feedback": "서고 있어요 focuses on the action of standing up or taking a position; 서 있어요 means the people are already standing.",
+          "humanReview": "pending",
+          "replacementSentence": "사람들이 서고 있어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_resultative_eo_itda_02",
+      "grammarPointId": "gp_gap_resultative_eo_itda",
+      "canonicalAnswer": "누워 있어요",
+      "fullSentence": "고양이가 누워 있어요.",
+      "sentenceWithBlank": "고양이가 ___.",
+      "englishHint": "The cat is lying down.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_resultative_eo_itda_03",
+      "grammarPointId": "gp_gap_resultative_eo_itda",
+      "canonicalAnswer": "켜져 있어요",
+      "fullSentence": "불이 켜져 있어요.",
+      "sentenceWithBlank": "불이 ___.",
+      "englishHint": "The light is on.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_indefinite_negation_01",
+      "grammarPointId": "gp_gap_indefinite_negation",
+      "canonicalAnswer": "아무도 안",
+      "fullSentence": "오늘 아무도 안 와요.",
+      "sentenceWithBlank": "오늘 ___ 와요.",
+      "englishHint": "Nobody is coming today.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_indefinite_negation_02",
+      "grammarPointId": "gp_gap_indefinite_negation",
+      "canonicalAnswer": "아무것도 못",
+      "fullSentence": "아무것도 못 봤어요.",
+      "sentenceWithBlank": "___ 봤어요.",
+      "englishHint": "I couldn't see anything.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_indefinite_negation_03",
+      "grammarPointId": "gp_gap_indefinite_negation",
+      "canonicalAnswer": "아무도 안",
+      "fullSentence": "이 방에는 아무도 안 살아요.",
+      "sentenceWithBlank": "이 방에는 ___ 살아요.",
+      "englishHint": "Nobody lives in this room.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_passive_suffix_01",
+      "grammarPointId": "gp_gap_passive_suffix",
+      "canonicalAnswer": "잡혔어요",
+      "fullSentence": "공이 잡혔어요.",
+      "sentenceWithBlank": "공이 ___.",
+      "englishHint": "The ball was caught.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_passive_suffix_02",
+      "grammarPointId": "gp_gap_passive_suffix",
+      "canonicalAnswer": "보여요",
+      "fullSentence": "그림이 잘 보여요.",
+      "sentenceWithBlank": "그림이 잘 ___.",
+      "englishHint": "The picture is easy to see.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_passive_suffix_03",
+      "grammarPointId": "gp_gap_passive_suffix",
+      "canonicalAnswer": "들려요",
+      "fullSentence": "소리가 들려요.",
+      "sentenceWithBlank": "소리가 ___.",
+      "englishHint": "The sound can be heard.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_passive_eojida_01",
+      "grammarPointId": "gp_gap_passive_eojida",
+      "canonicalAnswer": "외워져요",
+      "fullSentence": "이름이 잘 안 외워져요.",
+      "sentenceWithBlank": "이름이 잘 안 ___.",
+      "englishHint": "The name doesn't stick in my memory.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_passive_eojida_02",
+      "grammarPointId": "gp_gap_passive_eojida",
+      "canonicalAnswer": "지워져요",
+      "fullSentence": "글씨가 쉽게 지워져요.",
+      "sentenceWithBlank": "글씨가 쉽게 ___.",
+      "englishHint": "The writing erases easily.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_passive_eojida_03",
+      "grammarPointId": "gp_gap_passive_eojida",
+      "canonicalAnswer": "써졌어요",
+      "fullSentence": "문장이 잘 써졌어요.",
+      "sentenceWithBlank": "문장이 잘 ___.",
+      "englishHint": "The sentence came out well.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_causative_suffix_01",
+      "grammarPointId": "gp_gap_causative_suffix",
+      "canonicalAnswer": "입혀요",
+      "fullSentence": "엄마가 아이에게 옷을 입혀요.",
+      "sentenceWithBlank": "엄마가 아이에게 옷을 ___.",
+      "englishHint": "Mom dresses the child.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_causative_suffix_02",
+      "grammarPointId": "gp_gap_causative_suffix",
+      "canonicalAnswer": "깨워요",
+      "fullSentence": "아빠가 아기를 깨워요.",
+      "sentenceWithBlank": "아빠가 아기를 ___.",
+      "englishHint": "Dad wakes the baby.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_causative_suffix_03",
+      "grammarPointId": "gp_gap_causative_suffix",
+      "canonicalAnswer": "앉혀요",
+      "fullSentence": "선생님이 학생을 앉혀요.",
+      "sentenceWithBlank": "선생님이 학생을 ___.",
+      "englishHint": "The teacher seats the student.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_ge_hada_action_01",
+      "grammarPointId": "gp_gap_ge_hada_action",
+      "canonicalAnswer": "게 했어요",
+      "fullSentence": "의사가 환자를 걷게 했어요.",
+      "sentenceWithBlank": "의사가 환자를 걷___.",
+      "englishHint": "The doctor had the patient walk.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "게 해요",
+          "classification": "valid_other_tense",
+          "dimension": "tense",
+          "feedback": "The causative -게 하다 is correct. The prompt describes a completed past action: 게 했어요.",
+          "humanReview": "pending",
+          "replacementSentence": "의사가 환자를 걷게 해요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_ge_hada_action_02",
+      "grammarPointId": "gp_gap_ge_hada_action",
+      "canonicalAnswer": "게 했어요",
+      "fullSentence": "선생님이 저를 발표하게 했어요.",
+      "sentenceWithBlank": "선생님이 저를 발표하___.",
+      "englishHint": "The teacher had me present.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_ge_hada_action_03",
+      "grammarPointId": "gp_gap_ge_hada_action",
+      "canonicalAnswer": "게 했어요",
+      "fullSentence": "부모님이 아이를 쉬게 했어요.",
+      "sentenceWithBlank": "부모님이 아이를 쉬___.",
+      "englishHint": "The parents let the child rest.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_ge_hada_state_01",
+      "grammarPointId": "gp_gap_ge_hada_state",
+      "canonicalAnswer": "게 해요",
+      "fullSentence": "그 노래가 저를 행복하게 해요.",
+      "sentenceWithBlank": "그 노래가 저를 행복하___.",
+      "englishHint": "That song makes me happy.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_ge_hada_state_02",
+      "grammarPointId": "gp_gap_ge_hada_state",
+      "canonicalAnswer": "게 했어요",
+      "fullSentence": "그 소식이 모두를 놀라게 했어요.",
+      "sentenceWithBlank": "그 소식이 모두를 놀라___.",
+      "englishHint": "That news surprised everyone.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_ge_hada_state_03",
+      "grammarPointId": "gp_gap_ge_hada_state",
+      "canonicalAnswer": "게 했어요",
+      "fullSentence": "그 말이 친구를 화나게 했어요.",
+      "sentenceWithBlank": "그 말이 친구를 화나___.",
+      "englishHint": "Those words made my friend angry.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_go_sipeohada_01",
+      "grammarPointId": "gp_gap_go_sipeohada",
+      "canonicalAnswer": "고 싶어 해요",
+      "fullSentence": "아이가 더 자고 싶어 해요.",
+      "sentenceWithBlank": "아이가 더 자___.",
+      "englishHint": "The child wants to sleep more.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [
+        {
+          "input": "고 싶어요",
+          "classification": "third_person_framing",
+          "dimension": "perspective",
+          "feedback": "You have the desire construction, but the sentence reports what someone else wants. Use -고 싶어 해요 here.",
+          "humanReview": "pending",
+          "replacementSentence": "아이가 더 자고 싶어요."
+        }
+      ],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_go_sipeohada_02",
+      "grammarPointId": "gp_gap_go_sipeohada",
+      "canonicalAnswer": "고 싶어 해요",
+      "fullSentence": "민수는 영화를 보고 싶어 해요.",
+      "sentenceWithBlank": "민수는 영화를 보___.",
+      "englishHint": "Minsu wants to watch a movie.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_go_sipeohada_03",
+      "grammarPointId": "gp_gap_go_sipeohada",
+      "canonicalAnswer": "고 싶어 해요",
+      "fullSentence": "동생은 게임을 하고 싶어 해요.",
+      "sentenceWithBlank": "동생은 게임을 하___.",
+      "englishHint": "My sibling wants to play a game.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_deoragoyo_01",
+      "grammarPointId": "gp_gap_deoragoyo",
+      "canonicalAnswer": "더라고요",
+      "fullSentence": "영화가 정말 재미있더라고요.",
+      "sentenceWithBlank": "영화가 정말 재미있___.",
+      "englishHint": "I found the movie really interesting.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_deoragoyo_02",
+      "grammarPointId": "gp_gap_deoragoyo",
+      "canonicalAnswer": "더라고요",
+      "fullSentence": "그 카페가 조용하더라고요.",
+      "sentenceWithBlank": "그 카페가 조용하___.",
+      "englishHint": "The café was quiet when I went.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_deoragoyo_03",
+      "grammarPointId": "gp_gap_deoragoyo",
+      "canonicalAnswer": "더라고요",
+      "fullSentence": "그 사람은 한국어를 잘하더라고요.",
+      "sentenceWithBlank": "그 사람은 한국어를 잘하___.",
+      "englishHint": "I noticed that person speaks Korean well.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_na_boda_01",
+      "grammarPointId": "gp_gap_na_boda",
+      "canonicalAnswer": "있나 봐요",
+      "fullSentence": "누가 집에 있나 봐요.",
+      "sentenceWithBlank": "누가 집에 ___.",
+      "englishHint": "It looks like someone is home.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_na_boda_02",
+      "grammarPointId": "gp_gap_na_boda",
+      "canonicalAnswer": "피곤한가 봐요",
+      "fullSentence": "그 사람은 피곤한가 봐요.",
+      "sentenceWithBlank": "그 사람은 ___.",
+      "englishHint": "That person seems tired.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_na_boda_03",
+      "grammarPointId": "gp_gap_na_boda",
+      "canonicalAnswer": "오나 봐요",
+      "fullSentence": "버스가 곧 오나 봐요.",
+      "sentenceWithBlank": "버스가 곧 ___.",
+      "englishHint": "It looks like the bus is coming soon.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_eum_written_nominal_01",
+      "grammarPointId": "gp_gap_eum_written_nominal",
+      "canonicalAnswer": "함을",
+      "fullSentence": "서류가 필요함을 알려 드립니다.",
+      "sentenceWithBlank": "서류가 필요___ 알려 드립니다.",
+      "englishHint": "We inform you that the documents are required.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_eum_written_nominal_02",
+      "grammarPointId": "gp_gap_eum_written_nominal",
+      "canonicalAnswer": "음을",
+      "fullSentence": "문제가 해결됐음을 확인했습니다.",
+      "sentenceWithBlank": "문제가 해결됐___ 확인했습니다.",
+      "englishHint": "We confirmed that the problem was resolved.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    },
+    {
+      "cardId": "cc_gap_eum_written_nominal_03",
+      "grammarPointId": "gp_gap_eum_written_nominal",
+      "canonicalAnswer": "음을",
+      "fullSentence": "모두가 동의했음을 기록했습니다.",
+      "sentenceWithBlank": "모두가 동의했___ 기록했습니다.",
+      "englishHint": "We recorded that everyone had agreed.",
+      "acceptedAlternatives": [],
+      "nearMissExamples": [],
+      "sourceAudit": "mechanically checked for IDs and cloze shape; exact sentence variants and near-miss nuance await Korean educator sign-off"
+    }
+  ]
+}
