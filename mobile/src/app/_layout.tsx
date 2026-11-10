@@ -28,6 +28,7 @@ import AuthScreen from '../components/AuthScreen';
 import AppHeader from '../components/AppHeader';
 import BrandMark from '../components/BrandMark';
 import DashboardSkeleton from '../components/DashboardSkeleton';
+import ReadOnlyView from '../components/ReadOnlyView';
 import { colors, commonStyles } from '../components/theme';
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
@@ -59,6 +60,10 @@ export default function RootLayout() {
   const [initDone, setInitDone] = useState(false);
   const [dbError, setDbError] = useState<string | null>(null);
   const [attempt, setAttempt] = useState(0);
+  // Read-only mode: entered from the VFS error screen. The DB stays
+  // locked in this tab; progress is shown from the server sync document
+  // instead (see components/ReadOnlyView). Never set in normal flow.
+  const [readOnly, setReadOnly] = useState(false);
 
   // The DB init promise, started once on mount. The auth screen paints
   // immediately and does not wait for it — on web, expo-sqlite runs in a
@@ -206,6 +211,10 @@ export default function RootLayout() {
     setUser(null);
   }, [user]);
 
+  if (readOnly) {
+    return <ReadOnlyView onBack={() => setReadOnly(false)} />;
+  }
+
   if (dbError) {
     const vfsError = dbError.includes('Invalid VFS state');
     return (
@@ -216,24 +225,38 @@ export default function RootLayout() {
           <Text style={commonStyles.muted}>
             The database can only be opened by one tab at a time. If Munpro is open in another
             tab, close that tab first, then reload this one. Your progress is stored on this
-            device.
+            device. Or view your progress read-only from the server — no reviews or learning
+            in this tab.
           </Text>
         ) : (
           <Text style={commonStyles.muted}>Try restarting the app. Your progress is stored on this device.</Text>
         )}
-        <Pressable
-          onPress={() => {
-            if (vfsError) {
-              reloadApp();
-              return;
-            }
-            setDbError(null);
-            setAttempt((a) => a + 1);
-          }}
-          style={{ marginTop: 16, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.primary, borderRadius: 8 }}
-        >
-          <Text style={{ color: '#fff', fontWeight: '600' }}>{vfsError ? 'Reload app' : 'Retry'}</Text>
-        </Pressable>
+        {vfsError ? (
+          <>
+            <Pressable
+              onPress={() => setReadOnly(true)}
+              style={{ marginTop: 16, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.primary, borderRadius: 8 }}
+            >
+              <Text style={{ color: '#fff', fontWeight: '600' }}>View read-only</Text>
+            </Pressable>
+            <Pressable
+              onPress={() => reloadApp()}
+              style={{ marginTop: 12, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.border, borderRadius: 8 }}
+            >
+              <Text style={{ color: colors.text, fontWeight: '600' }}>Reload app</Text>
+            </Pressable>
+          </>
+        ) : (
+          <Pressable
+            onPress={() => {
+              setDbError(null);
+              setAttempt((a) => a + 1);
+            }}
+            style={{ marginTop: 16, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.primary, borderRadius: 8 }}
+          >
+            <Text style={{ color: '#fff', fontWeight: '600' }}>Retry</Text>
+          </Pressable>
+        )}
       </View>
     );
   }

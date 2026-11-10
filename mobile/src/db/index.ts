@@ -1556,17 +1556,67 @@ export function clearSyncDirty(): void {
 }
 
 /** The server session token (Bearer), or null when logged out / never
- * issued one. Stored in the device DB next to the password hash. */
+ * issued one. Stored in the device DB next to the password hash.
+ *
+ * Read-only mirror: the same token is also kept in web localStorage
+ * (build 29). The DB is the primary store; localStorage only matters
+ * when the DB cannot be opened at all (the OPFS one-tab lock), so a
+ * locked-out tab can still authenticate against the server for a
+ * read-only view. Native has no localStorage, so the mirror is web-only
+ * and every access is guarded — a missing or blocked storage must never
+ * throw. */
+const SESSION_TOKEN_LS_KEY = 'munpro.sessionToken';
+
+function lsStorage(): Storage | null {
+  try {
+    if (typeof window !== 'undefined' && window.localStorage) return window.localStorage;
+  } catch {
+    return null;
+  }
+  return null;
+}
+
 export function getSessionToken(): string | null {
-  return getMeta(SYNC_TOKEN_KEY) || null;
+  try {
+    const dbToken = getMeta(SYNC_TOKEN_KEY);
+    if (dbToken) return dbToken;
+  } catch {
+    // The DB is locked (OPFS one-tab limit) — fall through to the mirror.
+  }
+  try {
+    return lsStorage()?.getItem(SESSION_TOKEN_LS_KEY) || null;
+  } catch {
+    return null;
+  }
+}
+
+/** Write the token to localStorage only (no DB access). Used by the
+ * read-only login flow, where the DB is locked and setSessionToken
+ * would throw. */
+export function setSessionTokenMirror(token: string): void {
+  try {
+    lsStorage()?.setItem(SESSION_TOKEN_LS_KEY, token);
+  } catch {
+    // Storage unavailable — the token still lives in memory for this launch.
+  }
 }
 
 export function setSessionToken(token: string): void {
   setMeta(SYNC_TOKEN_KEY, token);
+  setSessionTokenMirror(token);
 }
 
 export function clearSessionToken(): void {
-  setMeta(SYNC_TOKEN_KEY, '');
+  try {
+    setMeta(SYNC_TOKEN_KEY, '');
+  } catch {
+    // The DB is locked — the mirror below still clears the token.
+  }
+  try {
+    lsStorage()?.removeItem(SESSION_TOKEN_LS_KEY);
+  } catch {
+    // Ignore — nothing else to clear.
+  }
 }
 
 /** The server sync version this device last synced to (0 = never). */
