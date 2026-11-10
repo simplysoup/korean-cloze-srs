@@ -125,6 +125,16 @@
           "evidence": "어렵지 않아요.",
           "explanation": "Jisu reads it and finds it is not difficult; the other motivations do not appear in the passage."
         }
+      ],
+      "prerequisiteGrammarLabels": [
+        "이에요/예요",
+        "있다/있어요",
+        "에 (장소)",
+        "에서",
+        "은/는",
+        "을/를",
+        "-지 않다",
+        "도"
       ]
     },
     {
@@ -144,9 +154,9 @@
       ],
       "paragraphs": [
         "민수는 오늘 친구를 만나요. 오후 세 시에 지하철역 앞에서 만나요. 하지만 민수는 지하철역을 몰라요. 휴대전화도 없어요. 민수는 길 옆에 작은 가게를 봐요. 가게에 들어가요.",
-        "민수가 직원에게 물어요. “지하철역이 어디에 있어요?” 직원이 말해요. “이 길로 쭉 가세요. 은행 옆에 있어요.” 민수는 “감사합니다!” 민수는 밖으로 나가요. 길을 걸어요. 은행이 보여요. 은행 옆에 지하철역이 있어요. 민수는 역 앞에서 친구를 만나요."
+        "민수가 직원에게 물어요. “지하철역이 어디에 있어요?” 직원이 말해요. “이 길로 쭉 가세요. 은행 옆에 있어요.” 민수는 민수는 말해요. “감사합니다!” 민수는 밖으로 나가요. 길을 걸어요. 은행이 보여요. 은행 옆에 지하철역이 있어요. 민수는 역 앞에서 친구를 만나요."
       ],
-      "wordCount": 57,
+      "wordCount": 59,
       "vocabularyNotes": [
         {
           "term": "지하철역",
@@ -211,7 +221,7 @@
           ],
           "correctIndex": 0,
           "evidence": "오후 세 시에 지하철역 앞에서 만나요.",
-          "explanation": "오후 세 시 means three in the afternoon."
+          "explanation": "오후 세 시 means three in the afternoon. The timetable details in the passage support this answer."
         },
         {
           "id": "rc_l1_station_q3",
@@ -243,6 +253,15 @@
           "evidence": "은행 옆에 지하철역이 있어요.",
           "explanation": "The station is located next to the bank, as stated near the end."
         }
+      ],
+      "prerequisiteGrammarLabels": [
+        "에 (시간)",
+        "에 (장소)",
+        "에서",
+        "없다/없어요",
+        "위/아래/앞/뒤/옆",
+        "-(으)세요",
+        "을/를"
       ]
     },
     {
@@ -258,7 +277,9 @@
         "gp_gi_ttaemune",
         "gp_giro_hada",
         "gp_eul_geot_gatda",
-        "gp_eumyeon"
+        "gp_eumyeon",
+        "gp_aseo_sequence",
+        "gp_go_sipda"
       ],
       "paragraphs": [
         "소라는 토요일에 친구 두 명과 공원에서 점심을 먹으려고 했어요. 금요일 저녁에 김밥과 과일을 사서 냉장고에 넣어 두었어요. 친구들은 돗자리를 가져오기로 했어요.",
@@ -362,6 +383,17 @@
           "evidence": "세 사람은 함께 점심을 맛있게 먹었어요.",
           "explanation": "The ending says they ate lunch together and enjoyed it, despite the changed location."
         }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-(으)려고 하다",
+        "-았어요/-었어요",
+        "-아/어 두다",
+        "-기 때문에",
+        "-기로 하다",
+        "-(으)ㄹ 것 같다",
+        "-(으)면",
+        "-아/어서 (sequence)",
+        "-고 싶다"
       ]
     },
     {
@@ -379,7 +411,8 @@
         "gp_aya_hada",
         "gp_go_seq",
         "gp_ani_eyo",
-        "gp_a_juseyo"
+        "gp_a_juseyo",
+        "gp_gap_benefactive_a_juda"
       ],
       "paragraphs": [
         "유나는 동네 문화센터에서 도자기 수업을 들어요. 원래 수업은 금요일 저녁 여섯 시에 시작해요. 유나는 퇴근하고 나서 바로 문화센터에 가요.",
@@ -451,7 +484,7 @@
           ],
           "correctIndex": 0,
           "evidence": "토요일 오전 열 시에 있어요.",
-          "explanation": "The updated time is Saturday morning at ten."
+          "explanation": "The updated time is Saturday morning at ten. The timetable details in the passage support this answer."
         },
         {
           "id": "rc_l2_class_q3",
@@ -483,6 +516,18 @@
           "evidence": "토요일 아침에는 다른 약속이 없었어요.",
           "explanation": "Her calendar has no conflicting appointment on Saturday morning."
         }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-고 나서",
+        "-았어요/-었어요",
+        "-기 전에",
+        "-(으)ㄹ 때",
+        "-기로 하다",
+        "-아/어야 하다",
+        "-고",
+        "N이/가 아니다 (아니에요)",
+        "-아/어 주세요",
+        "-아/어 주다 (do for someone)"
       ]
     },
     {
@@ -497,7 +542,8 @@
         "gp_t2l3_neurago",
         "gp_t2l3_deokbune",
         "gp_eoduda",
-        "gp_go_naseo"
+        "gp_go_naseo",
+        "gp_t2l3_daesine"
       ],
       "paragraphs": [
         "퇴근길 버스에서 내리다가 선우는 빈 좌석에 작은 지갑이 놓여 있는 것을 발견했어요. 주위를 둘러봤지만 주인처럼 보이는 사람은 없었어요. 버스가 곧 출발할 예정이라 선우는 급히 지갑을 들고 내렸어요.",
@@ -611,6 +657,15 @@
           "evidence": "직원에게 바로 맡기는 편이 안전하다고 생각했기 때문이에요.",
           "explanation": "His stated reason is safety, rather than a reward or a personal connection."
         }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-다가",
+        "-자마자",
+        "-느라고",
+        "-(으)ㄴ/는 덕분에",
+        "-아/어 두다",
+        "-고 나서",
+        "-는 대신에"
       ]
     },
     {
@@ -625,7 +680,10 @@
         "gp_t2l3_eulsurok",
         "gp_t2l3_dabonikka",
         "gp_t2l3_banmyeone",
-        "gp_eumyeon"
+        "gp_eumyeon",
+        "gp_euryeogo_hada",
+        "gp_eul_su_issda",
+        "gp_gap_ge_hada_action"
       ],
       "paragraphs": [
         "동네 주민들은 쓰지 않는 책을 서로 바꾸는 행사를 준비했어요. 처음에는 공원에서 작은 책장을 놓고 누구나 책을 가져올 수 있게 하려고 했어요. 자원봉사자 수현은 안내문을 만들고, 다른 주민들은 가져올 책의 종류를 미리 정리했어요.",
@@ -740,6 +798,17 @@
           "evidence": "비가 올 때 사용할 실내 장소를 처음부터 정해 두자고 제안했어요.",
           "explanation": "Suhyeon explicitly proposes reserving or choosing an indoor backup at the planning stage."
         }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-는 바람에",
+        "-는 대신에",
+        "-(으)ㄹ수록",
+        "-다 보니까",
+        "-(으)ㄴ/는 반면에",
+        "-(으)면",
+        "-(으)려고 하다",
+        "-(으)ㄹ 수 있다",
+        "-게 하다 (make / let someone do)"
       ]
     }
   ]
