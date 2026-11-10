@@ -1,0 +1,67 @@
+{
+  "schemaVersion": 1,
+  "recordType": "TEMPLATE_ONLY_NOT_AN_EDUCATOR_DECISION",
+  "sourceCommit": "ba94b9ee7ae9374cb6e92d8bab17db38f095f9b6",
+  "instructions": "Copy only after genuine human review. For each ID use sha256 sourceFingerprint from the current linguistic-QA educator packet. Do not add this example to reviews[] or set approved without reviewer evidence.",
+  "session": {
+    "reviewerIdentity": null,
+    "reviewerQualifications": null,
+    "reviewerRole": null,
+    "reviewDate": null,
+    "contentVersion": null,
+    "sourceCommit": null,
+    "reviewedItemIds": [],
+    "sourcesPersonallyChecked": [],
+    "unresolvedQuestions": []
+  },
+  "exampleItemDecision": {
+    "sourceItemId": null,
+    "status": "not_reviewed",
+    "sourceFingerprint": null,
+    "reviewer": {
+      "identity": null,
+      "role": null,
+      "type": null
+    },
+    "reviewDate": null,
+    "dimensions": {
+      "formationAccuracy": null,
+      "semanticAccuracy": null,
+      "registerAppropriateness": null,
+      "pragmaticNaturalness": null,
+      "morphologicalCorrectness": null,
+      "lexicalRestrictions": null,
+      "promptClarity": null
+    },
+    "curriculumChecks": {
+      "prerequisites": null,
+      "topikDifficultyCalibration": null,
+      "plausibleDistractors": null,
+      "honorificTenseConstraints": null,
+      "accessibilityAndExplanationClarity": null
+    },
+    "acceptedAlternativesReview": [],
+    "nearMissReview": [],
+    "evidence": [],
+    "decisionRationale": null,
+    "correctionsRequired": [],
+    "linkedIssueIds": [],
+    "history": []
+  },
+  "requiredAlternativeFields": [
+    "input",
+    "isValidKoreanInContext",
+    "demonstratesTargetConstruction",
+    "gradingClassification",
+    "reviewerRationale"
+  ],
+  "requiredEvidenceFields": [
+    "reference",
+    "locator_if_verified",
+    "claimSupported",
+    "classification",
+    "personallyChecked",
+    "remainingUncertainty"
+  ],
+  "approvedStateGate": "Requires real human educator, reviewed ID, matching fingerprint, ISO date, all seven dimensions pass/not_applicable, checked item-specific reference, rationale, append-only decision history."
+}
