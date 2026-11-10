@@ -41,6 +41,12 @@ jobs:
           cache: npm
           cache-dependency-path: mobile/package-lock.json
       - run: npm ci
+      - name: Verify all app content is reproducible from the authoring sources
+        run: |
+          bun ../scripts/port-content.ts
+          node ../scripts/port-vocabulary.mjs
+          node ../scripts/port-language-topics.mjs
+          git diff --exit-code -- src/content/
       - run: bun ../scripts/validate-grammar-catalogue.ts
       - run: node ../scripts/validate-content.mjs
       - run: node ../scripts/validate-vocabulary.mjs
