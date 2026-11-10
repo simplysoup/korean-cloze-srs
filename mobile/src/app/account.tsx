@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router } from 'expo-router';
-import { getSessionToken, getUserById, setUserPassword, userHasPassword } from '../db';
+import { getSessionToken, getUserById, setUserPassword, userHasPassword } from '../store';
 import { validatePasswordSet, verifyPassword } from '../lib/auth';
 import { setServerPassword } from '../lib/api';
 import { useAuth } from '../lib/auth-context';

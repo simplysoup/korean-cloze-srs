@@ -1,7 +1,7 @@
 import { useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, View } from 'react-native';
 import { router, useLocalSearchParams } from 'expo-router';
-import { getGrammarDetail, getGrammarList } from '../../db';
+import { getGrammarDetail, getGrammarList } from '../../store';
 import { srsRankLabel } from '../../lib/srs';
 import EnglishHint from '../../components/EnglishHint';
 import { colors, commonStyles } from '../../components/theme';

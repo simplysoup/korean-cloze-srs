@@ -8,17 +8,19 @@ import {
   getSessionToken,
   getUserByEmail,
   migrateLocalDataToUser,
+  recordServerUser,
   setSessionToken,
   setUserPassword,
   userHasPassword,
   type DbUser,
-} from '../db';
+} from '../store';
 import {
   loginPassword,
   requestCode as requestCodeApi,
   ServerUnreachable,
   setServerPassword,
   verifyCode as verifyCodeApi,
+  type ServerUser,
 } from '../lib/api';
 import {
   validateCode,
@@ -152,7 +154,7 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
     setFormError(null);
     setBusy(true);
     try {
-      const { status, ok, token, error } = await verifyCodeApi(
+      const { status, ok, token, user: serverUser, error } = await verifyCodeApi(
         email.trim().toLowerCase(),
         code.trim(),
       );
@@ -164,18 +166,26 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
       // the sync that runs on login can use it.
       if (token) setSessionToken(token);
       const normalized = email.trim().toLowerCase();
-      const existing = getUserByEmail(normalized);
       let user: DbUser;
       let isNew = false;
-      if (existing) {
-        user = existing;
+      if (serverUser) {
+        // The server knows this account: record it with the server user
+        // id (so device trust and the session key off the same id the
+        // server uses). New to this device when no local record existed.
+        isNew = getUserByEmail(normalized) === null;
+        user = recordServerUser(serverUser);
       } else {
-        const hadUsers = countUsers() > 0;
-        user = createUserByEmail(normalized);
-        isNew = true;
-        if (!hadUsers) {
-          // First account on this device inherits any pre-auth progress.
-          migrateLocalDataToUser(user.id);
+        const existing = getUserByEmail(normalized);
+        if (existing) {
+          user = existing;
+        } else {
+          const hadUsers = countUsers() > 0;
+          user = createUserByEmail(normalized);
+          isNew = true;
+          if (!hadUsers) {
+            // First account on this device inherits any pre-auth progress.
+            migrateLocalDataToUser(user.id);
+          }
         }
       }
       const authed = toAuthUser(user);
@@ -210,20 +220,26 @@ export default function AuthScreen({ lastEmail, deviceId, onAuthed }: AuthScreen
       // server is unreachable, or the account predates server passwords,
       // fall back to the local password check.
       let serverOk = false;
+      let serverUser: ServerUser | undefined;
       try {
-        const { status, ok, token } = await loginPassword(normalized, password);
+        const { status, ok, token, user } = await loginPassword(normalized, password);
         if (status === 200 && ok && token) {
           setSessionToken(token);
           serverOk = true;
+          serverUser = user;
         }
       } catch (e) {
         if (!(e instanceof ServerUnreachable)) throw e;
       }
       if (serverOk) {
-        // Ensure the local account exists (a new device has none yet).
-        let user = getUserByEmail(normalized);
-        if (!user) {
-          user = createUserByEmail(normalized);
+        // Ensure the local account exists (a new device has none yet),
+        // recorded with the server user id when the server returned one.
+        let user: DbUser;
+        if (serverUser) {
+          user = recordServerUser(serverUser);
+        } else {
+          const existing = getUserByEmail(normalized);
+          user = existing ?? createUserByEmail(normalized);
         }
         // Keep the local password in step so offline login still works.
         setUserPassword(user.id, password);

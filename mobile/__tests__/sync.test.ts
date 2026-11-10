@@ -144,7 +144,9 @@ describe('sync wiring (source-level)', () => {
     // Local progress created before sync existed never set the dirty
     // flag, so "never synced" alone must trigger the first push —
     // otherwise that progress would stay local-only forever.
-    const sync = src('lib/sync.ts');
+    // The sync protocol lives in the web store now (lib/sync.ts just
+    // re-exports it).
+    const sync = src('store/sync.ts');
     expect(sync).toContain('lastVersion === 0');
   });
 

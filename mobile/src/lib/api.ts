@@ -19,6 +19,8 @@ export interface ServerUser {
   id: string;
   email: string;
   username: string;
+  /** True when the server says this account has a password set. */
+  hasPassword?: boolean;
 }
 
 async function postJson<T>(path: string, body: unknown, token?: string | null): Promise<{ status: number; json: T }> {

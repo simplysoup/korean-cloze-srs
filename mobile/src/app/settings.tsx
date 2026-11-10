@@ -1,7 +1,7 @@
 import { useCallback, useState } from 'react';
 import { Link, useFocusEffect } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Switch, Text, View } from 'react-native';
-import { getLastSyncedAt, getSessionToken, getUserSettings, updateUserSettings, type UserSettings } from '../db';
+import { getLastSyncedAt, getSessionToken, getUserSettings, updateUserSettings, type UserSettings } from '../store';
 import { syncNow } from '../lib/sync';
 import Stepper from '../components/Stepper';
 import { colors, commonStyles } from '../components/theme';

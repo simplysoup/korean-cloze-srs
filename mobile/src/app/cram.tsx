@@ -12,7 +12,7 @@ import {
   type CramLessonRow,
   type CramSetKind,
   type ReviewQueueItem,
-} from '../db';
+} from '../store';
 import { romanToHangul } from '../lib/romanToHangul';
 import ClozeSentence from '../components/ClozeSentence';
 import EnglishHint from '../components/EnglishHint';

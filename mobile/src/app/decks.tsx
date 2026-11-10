@@ -6,7 +6,7 @@ import {
   getDecks,
   removeDeckFromLibrary,
   type DeckInfo,
-} from '../db';
+} from '../store';
 import { colors, commonStyles } from '../components/theme';
 
 /** The deck catalogue: every TOPIK level is its own deck, plus Non-TOPIK.

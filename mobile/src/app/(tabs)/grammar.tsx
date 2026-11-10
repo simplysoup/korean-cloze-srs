@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 import { router, useFocusEffect } from 'expo-router';
-import { getDecks, getGrammarList, type DeckInfo, type GrammarListItem } from '../../db';
+import { getDecks, getGrammarList, type DeckInfo, type GrammarListItem } from '../../store';
 import { hangulToRoman } from '../../lib/hangulToRoman';
 import { colors, commonStyles } from '../../components/theme';
 

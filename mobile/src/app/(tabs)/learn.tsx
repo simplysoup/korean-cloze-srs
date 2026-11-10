@@ -8,7 +8,7 @@ import {
   getLearnSession,
   markPointKnown,
   type LearnSession,
-} from '../../db';
+} from '../../store';
 import { checkAnswers } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
 import { syncNow } from '../../lib/sync';

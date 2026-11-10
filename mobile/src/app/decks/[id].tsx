@@ -9,7 +9,7 @@ import {
   isDeckInLibrary,
   removeDeckFromLibrary,
   type DeckInfo,
-} from '../../db';
+} from '../../store';
 import { colors, commonStyles } from '../../components/theme';
 
 /**

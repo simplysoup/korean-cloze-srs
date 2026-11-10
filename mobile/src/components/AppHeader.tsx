@@ -4,7 +4,7 @@ import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } fr
 import {
   getDashboardStats,
   getUserSettings,
-} from '../db';
+} from '../store';
 import { useAuth, type AuthUser } from '../lib/auth-context';
 import BrandMark from './BrandMark';
 import { BellIcon, HelpIcon, SearchIcon } from './icons';

@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, useWindowDimensions, View } from 'react-native';
 import { Link, useFocusEffect } from 'expo-router';
 import { formatNextReview } from '../../lib/srs';
-import { getDashboardStats, getUserSettings, type DashboardStats } from '../../db';
+import { getDashboardStats, getUserSettings, type DashboardStats } from '../../store';
 import { useAuth, type AuthUser } from '../../lib/auth-context';
 import DashboardSkeleton from '../../components/DashboardSkeleton';
 import { colors, commonStyles } from '../../components/theme';

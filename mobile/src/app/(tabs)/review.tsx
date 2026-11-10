@@ -9,7 +9,7 @@ import {
   submitReview,
   type ReviewQueueItem,
   type UserSettings,
-} from '../../db';
+} from '../../store';
 import { formatNextReview, ratingForCheck, srsRankLabel, answerExplanation } from '../../lib/srs';
 import { romanToHangul } from '../../lib/romanToHangul';
 import { syncNow } from '../../lib/sync';
