@@ -62,7 +62,6 @@ export default function VocabularySessionRoute() {
       next={runtime.next}
       retry={runtime.retry}
       leave={leave}
-      retrySave={() => runtime.clearError()}
       reviewMissed={() => {
         runtime.reviewMissed();
         router.replace({ pathname: '/vocabulary/session',
