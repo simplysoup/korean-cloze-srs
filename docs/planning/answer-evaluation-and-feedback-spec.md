@@ -43,7 +43,7 @@ Authoritative lexical reference: the National Institute of Korean Language's lea
 
 A teacher should still check the full sentence and whether the surrounding prompt requires a formal or casual style. **Do not mark `께` and `한테` interchangeable for a lesson explicitly about respected recipients.**
 
-The machine-readable first-pass audit is `docs/research/grammar-answer-ambiguity-audit.json`. It tracks **all 93 new cards**, the 12 with accepted variants, and **14** concrete near-miss examples, each awaiting Korean educator review. The other **628 existing review cards have not received a sentence-by-sentence ambiguity audit**; do not represent this as full-course coverage.
+The machine-readable first-pass audit is `docs/research/grammar-answer-ambiguity-audit.json`. It tracks **all 93 new cards**, the 12 with accepted variants, and **14** concrete near-miss examples, each awaiting Korean educator review. The other **628 inherited review cards** have received a *mechanical risk scan* in `docs/research/legacy-answer-ambiguity-backlog.json`: **190** are flagged for potentially ambiguous particles, endings/register or already-curated alternatives; **438** were not flagged by these heuristics. **None of the inherited cards has completed a full sentence-by-sentence educator adjudication**, including the 438 not flagged. Do not represent this as full-course linguistic verification.
 
 ## Near miss examples to recognize
 
