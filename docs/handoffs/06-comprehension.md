@@ -54,6 +54,12 @@ Only 145 foundational items in seven vocabulary decks currently exist; they do *
 
 **rc_l3_bookexchange**: 주민 — local resident; 자원봉사자 — volunteer; 안내문 — notice or sign; 회의실 — meeting room; 취소하다 — to cancel; 젖다 — to get wet; 요리책 — cookbook; 활발하다 — to be lively or active.
 
+## Frozen contracts and feature flag
+
+This branch incorporates Agent 00's frozen contract commit through an explicit two-parent merge; no shared history was rewritten. The adapter at `mobile/src/features/comprehension/practiceAdapter.ts` implements `mobile/src/features/contracts/practice.ts`: every reading passage and exercise has `contentReadiness: 'draft'`, each question has stable option IDs and evidence-based explanations, and every `PracticeFeedback.awardsGrammarMastery` is **false** (including correct, incorrect and unclassified submissions).
+
+Both `/comprehension` and `/comprehension/[id]` check `isCurriculumFeatureEnabled('readingComprehension')`; the Agent 00 default is **false**. While disabled, direct visits redirect to the existing not-yet-implemented screen. No URL flag, localStorage or hidden override is supplied. The standalone UI is implemented but **not live or user-accessible under the default release flag**. Agent 00 must make an explicit enablement decision after the appropriate review gates. `/reading` remains untouched until Agent 00 integrates routing.
+
 ## Source of truth, generated mobile content, code
 
 - Authoritative source: `prisma/seed-data/comprehension/pilot.json`
@@ -84,7 +90,7 @@ npm test -- --ci
 npx expo export --platform web
 ```
 
-Tests assert six loads, stable IDs, 24 questions, valid correct indices, evidence and draft status, inference ambiguity notes, scoring and completion, unsupported IDs, missing-audio handling, responsive layout dimensions and accessibility affordances. The source-code test also verifies reading UI does not import grammar store or database APIs.
+Tests assert six loads, stable IDs, 24 questions, valid correct indices, evidence and draft status, inference ambiguity notes, scoring and completion, unsupported IDs, missing-audio handling, responsive layout dimensions and accessibility affordances. A Jest suite executes the standalone Node content validator; another verifies Agent 00's practice adapter, stable option IDs, no grammar-mastery awarding, and both default-disabled route guards. The source-code test also verifies reading UI does not import grammar store or database APIs.
 
 **Release verification:** GitHub Mobile (Expo) runs typecheck, Jest tests, web export and existing content QA on this PR. Agent 00 should add `node scripts/port-comprehension.mjs` to CI's content-reproducibility step and `node scripts/validate-comprehension.mjs` to CI validation after integrating this PR. These edits are outside Agent 06 ownership.
 
@@ -94,8 +100,8 @@ On 320px phone, short-height phone, tablet and desktop: confirm paragraph wrappi
 
 ## Agent 00 — Integration instructions
 
-1. Merge this PR only into `integration/curriculum-v1`, after shared-contract compatibility and CI checks.
-2. Agent 00 owns the existing `mobile/src/app/reading.tsx`; replace the placeholder with `<Redirect href="/comprehension" />`. If desired, register `comprehension/index` and `comprehension/[id]` in `mobile/src/app/_layout.tsx`, though Expo Router discovers the new files.
+1. Merge this PR only into `integration/curriculum-v1`, after shared-contract compatibility and CI checks. The frozen contracts are already merged into this feature branch with history preserved.
+2. Agent 00 owns the existing `mobile/src/app/reading.tsx`; when approved to enable the reading pilot, replace the placeholder with `<Redirect href="/comprehension" />` and decide whether to enable the frozen `readingComprehension` flag. If desired, register `comprehension/index` and `comprehension/[id]` in `mobile/src/app/_layout.tsx`, though Expo Router discovers the new files.
 3. Keep the current header/navigation link to `/reading` until the redirect works. Do **not** change grammar SRS state when opening/answering a reading.
 4. Add the two scripts to integrated CI as described above. If persistent reading results are desired later, define separate account/storage contracts before any change—no grammar SRS review history should be repurposed.
 5. Preserve unrelated stacked PR history. Do not merge to main or deploy without authorization.
