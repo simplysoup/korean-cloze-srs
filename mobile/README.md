@@ -348,3 +348,25 @@ point, and the prerequisite order (이에요/예요 before 아니다 before
   `metro.config.js`, which adds `wasm` to Metro's asset extensions —
   without it, bundling fails resolving
   `expo-sqlite/web/wa-sqlite/wa-sqlite.wasm` even though the file exists.
+- **Firefox on web needs a patch to expo-sqlite** (`scripts/patch-expo-sqlite.js`,
+  run from the `postinstall` hook). The app uses expo-sqlite's
+  synchronous API throughout (Drizzle's expo-sqlite driver is sync-only:
+  `openDatabaseSync`, `prepareSync`, `executeSync`, `getAllSync`,
+  `getFirstSync`). On web those busy-spin the main thread on a
+  SharedArrayBuffer lock while the SQLite worker answers, and the spin
+  loop uses `Atomics.pause()` when the engine has it. Firefox
+  miscompiles that pattern (bug 1752287, closed WONTFIX): the JIT stops
+  re-reading the SharedArrayBuffer inside a pause spin loop, so the
+  worker's response is never seen and every sync call throws 'Sync
+  operation timeout'. Chrome is unaffected, which is why the app worked
+  in Chrome and failed identically on both origins in Firefox for
+  Android. The patch forces the plain `Atomics.load` busy loop (no
+  `Atomics.pause()`), which re-reads correctly in every engine. It is
+  a string replacement on `node_modules/expo-sqlite/web/WorkerChannel.ts`,
+  idempotent, and fails loudly if upstream changes the text — so it
+  survives `npm install` / `npm ci` (including on the VPS deploy) and
+  cannot silently drop on an expo-sqlite update. If upstream fixes the
+  Firefox behaviour, delete the script and the hook. The long-term fix
+  is to move off the sync API entirely (async-only DB access), which
+  would mean replacing Drizzle's sync driver — not done, out of scope
+  for this patch.

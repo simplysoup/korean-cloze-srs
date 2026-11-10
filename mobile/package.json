@@ -39,7 +39,8 @@
     "validate": "node ../scripts/validate-content.mjs",
     "export": "npx expo export",
     "start": "expo start",
-    "lint": "expo lint"
+    "lint": "expo lint",
+    "postinstall": "node scripts/patch-expo-sqlite.js"
   },
   "private": true
 }
