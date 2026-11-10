@@ -77,7 +77,7 @@ export const level1Guides: Record<string, TeachingGuide> = {
   "gp_ayo_eoyo": {
     "meaning": "This is the basic polite ending for everyday actions and descriptions, like 'eat', 'go', or 'is good'.",
     "formation": "Remove 다 from the dictionary form. With many regular verbs, use 아요 after a last stem vowel ㅏ/ㅗ and 어요 otherwise; 하다 becomes 해요.",
-    "worked": "공부하다 → 공부하 + 여요 → 공부해요. 저 는 공부해요 is 'I study' in everyday polite speech.",
+    "worked": "공부하다 → 공부하 + 여요 → 공부해요. 저는 공부해요 is 'I study' in everyday polite speech.",
     "trap": "Many verbs contract: 가다 → 가요, 보다 → 봐요. Irregular verbs need extra rules; don't mechanically paste 아요/어요 onto every spelling."
   },
   "gp_eul_reul": {
