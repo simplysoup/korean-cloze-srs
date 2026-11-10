@@ -128,7 +128,7 @@ function ReadingActivity({ passage }: { passage: ReadingPassage }) {
     <ScrollView
       ref={scroll}
       style={commonStyles.screen}
-      contentContainerStyle={[styles.content, { maxWidth: Math.max(288, metrics.contentWidth) }]}
+      contentContainerStyle={[styles.content, { maxWidth: metrics.contentWidth || 760 }]}
       keyboardShouldPersistTaps="handled"
       accessibilityLabel="Korean reading and comprehension session"
     >

@@ -30,7 +30,7 @@ describe('reading pilot catalogue', () => {
 
   test('inference and potential ambiguity have documented editorial rationale', () => {
     const inferential = passages.flatMap((p) => p.questions).filter((q) => q.type === 'inference');
-    expect(inferential).toHaveLength(4);
+    expect(inferential).toHaveLength(5);
     for (const question of inferential) {
       expect(question.interpretationNote?.length).toBeGreaterThan(80);
     }

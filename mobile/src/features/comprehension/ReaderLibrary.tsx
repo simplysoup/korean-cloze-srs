@@ -15,7 +15,7 @@ export default function ReaderLibrary() {
   const passages = allPassages().filter((passage) => filter === 0 || passage.level === filter);
 
   return (
-    <ScrollView style={commonStyles.screen} contentContainerStyle={[styles.content, { maxWidth: Math.max(288, metrics.contentWidth) }]}>
+    <ScrollView style={commonStyles.screen} contentContainerStyle={[styles.content, { maxWidth: metrics.contentWidth || 760 }]}>
       <Text style={commonStyles.title}>Reading comprehension</Text>
       <Text style={[commonStyles.subtitle, styles.intro]}>
         Short original Korean texts with questions about meaning, references and context. Read the passage before answering; this pilot does not affect grammar SRS.
