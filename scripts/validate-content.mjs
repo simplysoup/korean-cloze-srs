@@ -40,6 +40,10 @@ function flattenAll(bundles) {
 const levels = [
   { file: 'topik1-level1.json', level: 1, lessons: 11, gps: 50, cards: 184, examples: 113, posMin: 1, posMax: 50 },
   { file: 'topik1-level2.json', level: 2, lessons: 11, gps: 52, cards: 156, examples: 104, posMin: 51, posMax: 102 },
+  { file: 'topik2-level3.json', level: 3, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 103, posMax: 126 },
+  { file: 'topik2-level4.json', level: 4, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 127, posMax: 150 },
+  { file: 'topik2-level5.json', level: 5, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 151, posMax: 174 },
+  { file: 'topik2-level6.json', level: 6, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 175, posMax: 198 },
 ];
 
 const bundles = levels.map((spec) => {
@@ -54,6 +58,15 @@ const bundles = levels.map((spec) => {
   check(examples.length === spec.examples, `${spec.file}: lessonExamples: expected ${spec.examples}, got ${examples.length}`);
   return { ...spec, data, lessons, gps, cards, examples };
 });
+
+// The checked-in app content for TOPIK II must match its authored source
+// byte-for-byte after canonical JSON serialization. Avoid editing generated
+// mobile JSON by hand; run 'bun scripts/port-content.ts' instead.
+for (const level of [3, 4, 5, 6]) {
+  const src = JSON.parse(readFileSync(join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'topik2', `level-${level}.json`), 'utf8'));
+  const dest = bundles.find((entry) => entry.level === level)?.data;
+  check(JSON.stringify(src) === JSON.stringify(dest), `Level ${level}: generated mobile JSON differs from authored source`);
+}
 
 const all = flattenAll(bundles);
 const gpById = new Map(all.map(({ gp }) => [gp.id, gp]));
@@ -102,11 +115,11 @@ for (const { gp, position, level } of all) {
   }
 }
 
-// Positions are continuous 1-102 across both bundles in file order.
+// Positions are continuous 1-198 across all six bundles in file order.
 const positions = all.map(({ position }) => position);
 check(
-  positions.length === 102 && positions.every((p, i) => p === i + 1),
-  `global positions are not continuous 1-102 (got ${positions.length} points)`,
+  positions.length === 198 && positions.every((p, i) => p === i + 1),
+  `global positions are not continuous 1-198 (got ${positions.length} points)`,
 );
 
 if (errors.length > 0) {
@@ -115,4 +128,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 const totals = bundles.map((b) => `${b.file}: ${b.lessons.length} lessons, ${b.gps.length} GPs, ${b.cards.length} cards, ${b.examples.length} examples`).join('\n  ');
-console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-102`);
+console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-198`);
