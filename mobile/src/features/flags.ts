@@ -4,6 +4,7 @@
  * readiness checks have passed. Do not enable from an untrusted URL/localStorage.
  */
 export const CURRICULUM_FLAGS = Object.freeze({
+  topik2Grammar: false,
   vocabulary: false,
   answerFeedback: false,
   topics: false,

@@ -5,12 +5,17 @@
 // deck_grammar_points tables (see db/index.ts), so the query functions
 // can read the same shapes from here instead of SQL.
 //
-// The catalogue decks (TOPIK II levels + Non-TOPIK) have no content yet;
-// they are listed so the Decks page and the library can show them as
+// The catalogue shows unpublished TOPIK II levels + Non-TOPIK as coming soon;
+// they remain listed while their content flag is disabled, so learners see them as
 // coming soon, exactly as the DB catalogue rows did.
 
 import contentBundleLevel1 from '../content/topik1-level1.json';
 import contentBundleLevel2 from '../content/topik1-level2.json';
+import contentBundleLevel3 from '../content/topik2-level3.json';
+import contentBundleLevel4 from '../content/topik2-level4.json';
+import contentBundleLevel5 from '../content/topik2-level5.json';
+import contentBundleLevel6 from '../content/topik2-level6.json';
+import { CURRICULUM_FLAGS } from '../features/flags';
 import {
   flattenContent,
   type ClozeCardSeed,
@@ -23,7 +28,7 @@ export interface ContentPoint {
   gp: GrammarPointSeed;
   lessonNumber: number;
   lessonTitle: string;
-  /** Global 1-based position (Level 1: 1-50, Level 2: 51-102). */
+  /** Global 1-based position within all currently enabled content bundles. */
   position: number;
   /** 1-based position within its own bundle. */
   bundlePosition: number;
@@ -49,9 +54,19 @@ export interface CardTarget {
   blankIndex: number;
 }
 
+// Authored TOPIK II content exists but is not yet instructor-approved.
+// Keep it out of the learner-facing web catalogue until release gates pass.
 const CONTENT_BUNDLES: ContentBundle[] = [
   contentBundleLevel1 as unknown as ContentBundle,
   contentBundleLevel2 as unknown as ContentBundle,
+  ...(CURRICULUM_FLAGS.topik2Grammar
+    ? [
+        contentBundleLevel3 as unknown as ContentBundle,
+        contentBundleLevel4 as unknown as ContentBundle,
+        contentBundleLevel5 as unknown as ContentBundle,
+        contentBundleLevel6 as unknown as ContentBundle,
+      ]
+    : []),
 ];
 
 const DECK_DESCRIPTIONS: Record<string, string> = {
@@ -59,6 +74,10 @@ const DECK_DESCRIPTIONS: Record<string, string> = {
     'TOPIK I Level 1 grammar — audited and reorganised into a learner-first curriculum 2026-11-09.',
   deck_topik1_level2:
     'TOPIK I Level 2 grammar. Lesson 22 (reported speech) is an optional bridge.',
+  deck_topik2_level3: 'Curated TOPIK II Level 3 grammar — draft, educator approval pending.',
+  deck_topik2_level4: 'Curated TOPIK II Level 4 grammar — draft, educator approval pending.',
+  deck_topik2_level5: 'Curated TOPIK II Level 5 grammar — draft, educator approval pending.',
+  deck_topik2_level6: 'Curated TOPIK II Level 6 grammar — draft, educator approval pending.',
 };
 
 const CATALOGUE_DECKS: DeckMeta[] = [
@@ -80,7 +99,7 @@ export const DECKS: DeckMeta[] = [
     topikLevel: bundle.deck.topikLevel,
     sortOrder: index,
   })),
-  ...CATALOGUE_DECKS,
+  ...CATALOGUE_DECKS.filter((d) => !CONTENT_BUNDLES.some((b) => b.deck.id === d.id)),
 ];
 
 const deckById = new Map(DECKS.map((d) => [d.id, d] as const));

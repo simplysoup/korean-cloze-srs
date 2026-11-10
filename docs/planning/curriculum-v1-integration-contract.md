@@ -26,7 +26,8 @@ The web runtime reads `mobile/src/store/` and persists a
   explanation, alternatives, optional diagnostic, explicit target-mastery flag.
 - `mobile/src/features/contracts/practice.ts`: stable exercise IDs,
   prerequisites, readiness, response types, explanations and reading passages.
-- `mobile/src/features/flags.ts`: seven default-DISABLED static workstream flags.
+- `mobile/src/features/flags.ts`: eight default-DISABLED static workstream flags (including unpublished
+  TOPIK II grammar).
 
 Agent 00 exclusively owns contract changes, web-store, sync, auth API,
 navigation, existing screens, native DB, shared dependencies and CI files.
@@ -44,6 +45,18 @@ provides an unfamiliar response without enough linguistic evidence to call
 it incorrect. Display known valid alternatives after answering and give
 diagnostic hints only when supported. Preserve existing live grading behind
 the disabled `answerFeedback` flag until policy and migration tests pass.
+
+## Web/native content parity gate
+
+The original web `store/content.ts` bundled only TOPIK I despite six authored
+and generated grammar decks; native `db/index.ts` bundles all six. The web
+catalogue now knows about all six but the four advanced bundles are gated by
+`topik2Grammar: false` pending educator approval and release verification.
+Catalogue placeholders remain once each, with no duplicate deck IDs.
+Native seed short-circuits when `CONTENT_VERSION` is unchanged; therefore
+editorial fixes from PR #7 will *not* reseed existing native SQLite profiles
+unless a reviewed version migration is implemented. Native remains excluded
+from release until explicitly tested.
 
 ## State and sync blockers (do NOT bypass)
 

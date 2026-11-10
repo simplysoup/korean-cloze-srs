@@ -1,4 +1,5 @@
 import { CURRICULUM_FLAGS, isCurriculumFeatureEnabled } from '../src/features/flags';
+import { CONTENT_POINTS, DECKS } from '../src/store/content';
 import type { AnswerEvaluation, AnswerOutcome } from '../src/features/contracts/answers';
 import type { PracticeExercise, ReadingPassage } from '../src/features/contracts/practice';
 import type { VocabController, VocabPrompt, VocabReviewResult } from '../src/features/vocabulary/contracts';
@@ -11,11 +12,20 @@ describe('Curriculum v1 release gates', () => {
       'hangulEnhancements',
       'readingComprehension',
       'topics',
+      'topik2Grammar',
       'transferPractice',
       'vocabulary',
     ]);
     for (const flag of Object.keys(CURRICULUM_FLAGS) as (keyof typeof CURRICULUM_FLAGS)[]) {
       expect(isCurriculumFeatureEnabled(flag)).toBe(false);
+    }
+  });
+
+  it('keeps draft TOPIK II out of production web points without hiding its catalogue placeholders', () => {
+    expect(CONTENT_POINTS.every((item) => item.deckId.startsWith('deck_topik1_'))).toBe(true);
+    for (const level of [3, 4, 5, 6]) {
+      const matches = DECKS.filter((d) => d.id === `deck_topik2_level${level}`);
+      expect(matches).toHaveLength(1);
     }
   });
 
