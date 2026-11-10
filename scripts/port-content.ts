@@ -29,6 +29,7 @@ import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { LessonSeed } from '../prisma/seed-data/types';
 import { applyGrammarExpansions } from './curriculum-overlay.mjs';
+import { applyFlaggedCardFixes } from './flagged-card-overrides.mjs';
 
 const contentDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'mobile', 'src', 'content');
 
@@ -85,7 +86,9 @@ const gapBundles = [1, 2, 3, 4].map(level => JSON.parse(readFileSync(
   join(dirname(fileURLToPath(import.meta.url)), '..', 'prisma', 'seed-data', 'grammar-expansion', `level-${level}.json`), 'utf8',
 )));
 const expanded = applyGrammarExpansions(rawBundles, gapBundles);
-expanded.forEach((bundle, index) => {
+const reviewManifest = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'prisma', 'seed-data', 'review-qa', 'flagged-card-fixes.json'), 'utf8'));
+const reviewed = applyFlaggedCardFixes(expanded, reviewManifest);
+reviewed.forEach((bundle, index) => {
   const level = index + 1;
   portLevel(
     bundle.lessons,

@@ -14,10 +14,12 @@ import level5 from '../prisma/seed-data/topik2/level-5.json';
 import level6 from '../prisma/seed-data/topik2/level-6.json';
 import { teachingGuides } from '../prisma/seed-data/teaching-guides';
 import { applyGrammarExpansions } from './curriculum-overlay.mjs';
+import { applyFlaggedCardFixes } from './flagged-card-overrides.mjs';
 import gap1 from '../prisma/seed-data/grammar-expansion/level-1.json';
 import gap2 from '../prisma/seed-data/grammar-expansion/level-2.json';
 import gap3 from '../prisma/seed-data/grammar-expansion/level-3.json';
 import gap4 from '../prisma/seed-data/grammar-expansion/level-4.json';
+import reviewManifest from '../prisma/seed-data/review-qa/flagged-card-fixes.json';
 
 const baseLevel1 = level1Lessons.map(lesson => ({
   ...lesson,
@@ -34,7 +36,8 @@ const fullBundles = applyGrammarExpansions([
   { deck: { level: 2 }, lessons: level2Lessons },
   level3, level4, level5, level6,
 ], [gap1, gap2, gap3, gap4]);
-const lessons = fullBundles.flatMap(bundle => bundle.lessons);
+const reviewedBundles = applyFlaggedCardFixes(fullBundles, reviewManifest);
+const lessons = reviewedBundles.flatMap(bundle => bundle.lessons);
 const expected = { lessons: 46, grammarPoints: 229, examples: 471, cards: 721 };
 const ids = new Set<string>();
 const points = new Set<string>();

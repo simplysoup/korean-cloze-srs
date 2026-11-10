@@ -72,7 +72,7 @@
               "fullSentence": "시간이 없잖아요.",
               "sentenceWithBlank": "시간이 ___.",
               "answer": "없잖아요",
-              "englishHint": "You know there's no time.",
+              "englishHint": "You know there's no time. (Appeal to what the listener should already know.)",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
               "introducedAtPosition": 157
@@ -82,7 +82,7 @@
               "fullSentence": "제가 어제 말했잖아요.",
               "sentenceWithBlank": "제가 어제 ___.",
               "answer": "말했잖아요",
-              "englishHint": "I told you yesterday, remember?",
+              "englishHint": "I told you yesterday, remember? (Appeal to what the listener should already know.)",
               "alternateAnswers": [],
               "vocabBaseForm": "말하다",
               "introducedAtPosition": 157
@@ -92,7 +92,7 @@
               "fullSentence": "이 길이 더 빠르잖아요.",
               "sentenceWithBlank": "이 길이 더 ___.",
               "answer": "빠르잖아요",
-              "englishHint": "You know this road is faster.",
+              "englishHint": "You know this road is faster. (Appeal to what the listener should already know.)",
               "alternateAnswers": [],
               "vocabBaseForm": "빠르다",
               "introducedAtPosition": 157
@@ -508,7 +508,7 @@
               "fullSentence": "저는 괜찮은 척했어요.",
               "sentenceWithBlank": "저는 ___.",
               "answer": "괜찮은 척했어요",
-              "englishHint": "I pretended to be okay.",
+              "englishHint": "I pretended to be okay. (Describe pretense, not a genuine state or action.)",
               "alternateAnswers": [],
               "vocabBaseForm": "괜찮다",
               "introducedAtPosition": 162
@@ -518,7 +518,7 @@
               "fullSentence": "친구가 못 들은 척했어요.",
               "sentenceWithBlank": "친구가 못 ___.",
               "answer": "들은 척했어요",
-              "englishHint": "My friend pretended not to hear.",
+              "englishHint": "My friend pretended not to hear. (Describe pretense, not a genuine state or action.)",
               "alternateAnswers": [],
               "vocabBaseForm": "듣다",
               "introducedAtPosition": 162
@@ -528,7 +528,7 @@
               "fullSentence": "그는 바쁜 척했어요.",
               "sentenceWithBlank": "그는 ___.",
               "answer": "바쁜 척했어요",
-              "englishHint": "He pretended to be busy.",
+              "englishHint": "He pretended to be busy. (Describe pretense, not a genuine state or action.)",
               "alternateAnswers": [],
               "vocabBaseForm": "바쁘다",
               "introducedAtPosition": 162
@@ -594,7 +594,7 @@
               "fullSentence": "그가 약속을 잊었을 리가 없어요.",
               "sentenceWithBlank": "그가 약속을 ___.",
               "answer": "잊었을 리가 없어요",
-              "englishHint": "He can't have forgotten the appointment.",
+              "englishHint": "He can't have forgotten the appointment. (Express disbelief that the event could have happened.)",
               "alternateAnswers": [],
               "vocabBaseForm": "잊다",
               "introducedAtPosition": 163
@@ -604,7 +604,7 @@
               "fullSentence": "모두가 틀렸을 리가 없어요.",
               "sentenceWithBlank": "모두가 ___.",
               "answer": "틀렸을 리가 없어요",
-              "englishHint": "They can't all have been wrong.",
+              "englishHint": "They can't all have been wrong. (Express disbelief that the event could have happened.)",
               "alternateAnswers": [],
               "vocabBaseForm": "틀리다",
               "introducedAtPosition": 163
@@ -614,7 +614,7 @@
               "fullSentence": "그 이야기가 사실일 리가 없어요.",
               "sentenceWithBlank": "그 이야기가 ___.",
               "answer": "사실일 리가 없어요",
-              "englishHint": "That story can't possibly be true.",
+              "englishHint": "That story can't possibly be true. (Express disbelief that the event could have happened.)",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
               "introducedAtPosition": 163
@@ -680,7 +680,7 @@
               "fullSentence": "비가 와서 취소할 수밖에 없어요.",
               "sentenceWithBlank": "비가 와서 ___.",
               "answer": "취소할 수밖에 없어요",
-              "englishHint": "Because of the rain, we have to cancel.",
+              "englishHint": "Because of the rain, we have to cancel. (Show the absence of a practical alternative.)",
               "alternateAnswers": [],
               "vocabBaseForm": "취소하다",
               "introducedAtPosition": 164
@@ -690,7 +690,7 @@
               "fullSentence": "시간이 없어 택시를 탈 수밖에 없어요.",
               "sentenceWithBlank": "시간이 없어 택시를 ___.",
               "answer": "탈 수밖에 없어요",
-              "englishHint": "We're forced to take a taxi because of time.",
+              "englishHint": "We're forced to take a taxi because of time. (Show the absence of a practical alternative.)",
               "alternateAnswers": [],
               "vocabBaseForm": "타다",
               "introducedAtPosition": 164
@@ -700,7 +700,7 @@
               "fullSentence": "자료가 부족해서 다시 조사할 수밖에 없어요.",
               "sentenceWithBlank": "자료가 부족해서 다시 ___.",
               "answer": "조사할 수밖에 없어요",
-              "englishHint": "We must investigate again for lack of data.",
+              "englishHint": "We must investigate again for lack of data. (Show the absence of a practical alternative.)",
               "alternateAnswers": [],
               "vocabBaseForm": "조사하다",
               "introducedAtPosition": 164
@@ -1466,7 +1466,7 @@
               "fullSentence": "조금 더 공부했어야 했어요.",
               "sentenceWithBlank": "조금 더 ___.",
               "answer": "공부했어야 했어요",
-              "englishHint": "I should have studied a bit more.",
+              "englishHint": "I should have studied a bit more. (Express regret about something that should have happened.)",
               "alternateAnswers": [],
               "vocabBaseForm": "공부하다",
               "introducedAtPosition": 173
@@ -1476,7 +1476,7 @@
               "fullSentence": "우산을 가져왔어야 했어요.",
               "sentenceWithBlank": "우산을 ___.",
               "answer": "가져왔어야 했어요",
-              "englishHint": "I should have brought an umbrella.",
+              "englishHint": "I should have brought an umbrella. (Express regret about something that should have happened.)",
               "alternateAnswers": [],
               "vocabBaseForm": "가져오다",
               "introducedAtPosition": 173
@@ -1486,7 +1486,7 @@
               "fullSentence": "먼저 예약했어야 했어요.",
               "sentenceWithBlank": "먼저 ___.",
               "answer": "예약했어야 했어요",
-              "englishHint": "We should have booked first.",
+              "englishHint": "We should have booked first. (Express regret about something that should have happened.)",
               "alternateAnswers": [],
               "vocabBaseForm": "예약하다",
               "introducedAtPosition": 173
@@ -1908,7 +1908,7 @@
               "fullSentence": "선배가 일찍 만나자고 했어요.",
               "sentenceWithBlank": "선배가 일찍 ___.",
               "answer": "만나자고 했어요",
-              "englishHint": "A senior suggested meeting early.",
+              "englishHint": "A senior suggested meeting early. (Report a proposal to do something together.)",
               "alternateAnswers": [],
               "vocabBaseForm": "만나다",
               "introducedAtPosition": 178
@@ -1918,7 +1918,7 @@
               "fullSentence": "친구가 점심을 먹자고 했어요.",
               "sentenceWithBlank": "친구가 점심을 ___.",
               "answer": "먹자고 했어요",
-              "englishHint": "A friend proposed having lunch.",
+              "englishHint": "A friend proposed having lunch. (Report a proposal to do something together.)",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
               "introducedAtPosition": 178
@@ -1928,7 +1928,7 @@
               "fullSentence": "팀원이 다시 이야기하자고 했어요.",
               "sentenceWithBlank": "팀원이 다시 ___.",
               "answer": "이야기하자고 했어요",
-              "englishHint": "A teammate suggested discussing it again.",
+              "englishHint": "A teammate suggested discussing it again. (Report a proposal to do something together.)",
               "alternateAnswers": [],
               "vocabBaseForm": "이야기하다",
               "introducedAtPosition": 178
@@ -1994,7 +1994,7 @@
               "fullSentence": "의사가 쉬라고 했어요.",
               "sentenceWithBlank": "의사가 ___.",
               "answer": "쉬라고 했어요",
-              "englishHint": "The doctor told me to rest.",
+              "englishHint": "The doctor told me to rest. (Report another person's instruction or command.)",
               "alternateAnswers": [],
               "vocabBaseForm": "쉬다",
               "introducedAtPosition": 179
@@ -2004,7 +2004,7 @@
               "fullSentence": "친구가 문을 닫으라고 했어요.",
               "sentenceWithBlank": "친구가 문을 ___.",
               "answer": "닫으라고 했어요",
-              "englishHint": "My friend told me to close the door.",
+              "englishHint": "My friend told me to close the door. (Report another person's instruction or command.)",
               "alternateAnswers": [],
               "vocabBaseForm": "닫다",
               "introducedAtPosition": 179
@@ -2014,7 +2014,7 @@
               "fullSentence": "상사가 다시 확인하라고 했어요.",
               "sentenceWithBlank": "상사가 다시 ___.",
               "answer": "확인하라고 했어요",
-              "englishHint": "My boss told me to check again.",
+              "englishHint": "My boss told me to check again. (Report another person's instruction or command.)",
               "alternateAnswers": [],
               "vocabBaseForm": "확인하다",
               "introducedAtPosition": 179
@@ -2080,7 +2080,7 @@
               "fullSentence": "아이가 왜 웃냐고 물었어요.",
               "sentenceWithBlank": "아이가 왜 ___.",
               "answer": "웃냐고 물었어요",
-              "englishHint": "The child asked why I was laughing.",
+              "englishHint": "The child asked why I was laughing. (Report another person's question.)",
               "alternateAnswers": [],
               "vocabBaseForm": "웃다",
               "introducedAtPosition": 180
@@ -2090,8 +2090,10 @@
               "fullSentence": "선생님이 준비됐냐고 물었어요.",
               "sentenceWithBlank": "선생님이 준비___.",
               "answer": "됐냐고 물었어요",
-              "englishHint": "The teacher asked if I was ready.",
-              "alternateAnswers": [],
+              "englishHint": "The teacher asked if I was ready. (Report another person's question.)",
+              "alternateAnswers": [
+                "되었냐고 물었어요"
+              ],
               "vocabBaseForm": "되다",
               "introducedAtPosition": 180
             },
@@ -2100,7 +2102,7 @@
               "fullSentence": "친구가 뭐 먹냐고 물었어요.",
               "sentenceWithBlank": "친구가 뭐 ___.",
               "answer": "먹냐고 물었어요",
-              "englishHint": "My friend asked what I was eating.",
+              "englishHint": "My friend asked what I was eating. (Report another person's question.)",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
               "introducedAtPosition": 180

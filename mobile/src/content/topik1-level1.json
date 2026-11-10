@@ -331,7 +331,7 @@
               "answer": "는",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": "I am a student.",
+              "englishHint": "I am a student. (Treat the noun as the topic, rather than the newly identified subject.)",
               "introducedAtPosition": 3
             },
             {
@@ -341,7 +341,7 @@
               "answer": "은",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": "The name is Minsu.",
+              "englishHint": "The name is Minsu. (Treat the noun as the topic, rather than the newly identified subject.)",
               "introducedAtPosition": 3
             },
             {
@@ -351,7 +351,7 @@
               "answer": "은",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": "Today is Monday.",
+              "englishHint": "Today is Monday. (Treat the noun as the topic, rather than the newly identified subject.)",
               "introducedAtPosition": 3
             },
             {
@@ -361,7 +361,7 @@
               "answer": "은",
               "alternateAnswers": [],
               "vocabBaseForm": "은/는",
-              "englishHint": "The name is Sujin.",
+              "englishHint": "The name is Sujin. (Treat the noun as the topic, rather than the newly identified subject.)",
               "introducedAtPosition": 3
             },
             {
@@ -372,7 +372,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 3,
-              "englishHint": "Today is Monday. Tomorrow is Tuesday."
+              "englishHint": "Today is Monday. Tomorrow is Tuesday. (Treat the noun as the topic, rather than the newly identified subject.)"
             }
           ]
         },
@@ -924,7 +924,7 @@
               "answer": "이다",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "englishHint": "He is a student.",
+              "englishHint": "He is a student. (Use a plain, non-honorific noun statement, not polite conversation.)",
               "introducedAtPosition": 9
             },
             {
@@ -934,7 +934,7 @@
               "answer": "이다",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "englishHint": "She is a teacher.",
+              "englishHint": "She is a teacher. (Use a plain, non-honorific noun statement, not polite conversation.)",
               "introducedAtPosition": 9
             },
             {
@@ -944,7 +944,7 @@
               "answer": "이다",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "englishHint": "It is an apple.",
+              "englishHint": "It is an apple. (Use a plain, non-honorific noun statement, not polite conversation.)",
               "introducedAtPosition": 9
             }
           ]
@@ -1031,7 +1031,7 @@
               "answer": "이",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": "The name is Minsu.",
+              "englishHint": "The name is Minsu. (Identify the focused subject rather than introduce a topic.)",
               "introducedAtPosition": 10
             },
             {
@@ -1041,7 +1041,7 @@
               "answer": "이",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": "This is water.",
+              "englishHint": "This is water. (Identify the focused subject rather than introduce a topic.)",
               "introducedAtPosition": 10
             },
             {
@@ -1051,7 +1051,7 @@
               "answer": "이",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": "That over there is a cat.",
+              "englishHint": "That over there is a cat. (Identify the focused subject rather than introduce a topic.)",
               "introducedAtPosition": 10
             },
             {
@@ -1061,7 +1061,7 @@
               "answer": "이",
               "alternateAnswers": [],
               "vocabBaseForm": "이/가",
-              "englishHint": "That person is a doctor.",
+              "englishHint": "That person is a doctor. (Identify the focused subject rather than introduce a topic.)",
               "introducedAtPosition": 10
             },
             {
@@ -1072,7 +1072,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 10,
-              "englishHint": "Who is the teacher? Minsu is the teacher."
+              "englishHint": "Who is the teacher? Minsu is the teacher. (Identify the focused subject rather than introduce a topic.)"
             }
           ]
         },
@@ -1144,7 +1144,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "englishHint": "There is a cat.",
+              "englishHint": "There is a cat. (Use a polite present statement of existence or possession.)",
               "introducedAtPosition": 11
             },
             {
@@ -1154,7 +1154,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "englishHint": "I have time.",
+              "englishHint": "I have time. (Use a polite present statement of existence or possession.)",
               "introducedAtPosition": 11
             },
             {
@@ -1164,7 +1164,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "englishHint": "There is a book.",
+              "englishHint": "There is a book. (Use a polite present statement of existence or possession.)",
               "introducedAtPosition": 11
             },
             {
@@ -1175,7 +1175,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
               "introducedAtPosition": 11,
-              "englishHint": "There is a book in the bag."
+              "englishHint": "There is a book in the bag. (Use a polite present statement of existence or possession.)"
             }
           ]
         },
@@ -1247,7 +1247,7 @@
               "answer": "없어요",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "englishHint": "I don't have time.",
+              "englishHint": "I don't have time. (Use a polite present statement of absence or non-possession.)",
               "introducedAtPosition": 12
             },
             {
@@ -1257,7 +1257,7 @@
               "answer": "없어요",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "englishHint": "I don't have money.",
+              "englishHint": "I don't have money. (Use a polite present statement of absence or non-possession.)",
               "introducedAtPosition": 12
             },
             {
@@ -1267,7 +1267,7 @@
               "answer": "없어요",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "englishHint": "There is no chair.",
+              "englishHint": "There is no chair. (Use a polite present statement of absence or non-possession.)",
               "introducedAtPosition": 12
             }
           ]
@@ -1376,7 +1376,7 @@
               "answer": "어요",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "englishHint": "I eat.",
+              "englishHint": "I eat. (Use an everyday polite present-tense statement.)",
               "introducedAtPosition": 13
             },
             {
@@ -1388,7 +1388,7 @@
                 "시어요"
               ],
               "vocabBaseForm": "마시다",
-              "englishHint": "I drink.",
+              "englishHint": "I drink. (Use an everyday polite present-tense statement.)",
               "introducedAtPosition": 13
             },
             {
@@ -1419,7 +1419,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "앉다",
               "introducedAtPosition": 13,
-              "englishHint": "I am sitting down now."
+              "englishHint": "I am sitting down now. (Use an everyday polite present-tense statement.)"
             },
             {
               "id": "cc_present_variant_read",
@@ -1429,7 +1429,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "읽다",
               "introducedAtPosition": 13,
-              "englishHint": "I read the newspaper."
+              "englishHint": "I read the newspaper. (Use an everyday polite present-tense statement.)"
             },
             {
               "id": "cc_present_variant_exercise",
@@ -1942,7 +1942,7 @@
               "answer": "를",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": "I drink coffee.",
+              "englishHint": "I drink coffee. (Mark the direct object receiving the action.)",
               "introducedAtPosition": 19
             },
             {
@@ -1952,7 +1952,7 @@
               "answer": "을",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": "I read a book.",
+              "englishHint": "I read a book. (Mark the direct object receiving the action.)",
               "introducedAtPosition": 19
             },
             {
@@ -1962,7 +1962,7 @@
               "answer": "을",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": "I listen to music.",
+              "englishHint": "I listen to music. (Mark the direct object receiving the action.)",
               "introducedAtPosition": 19
             },
             {
@@ -1972,7 +1972,7 @@
               "answer": "를",
               "alternateAnswers": [],
               "vocabBaseForm": "을/를",
-              "englishHint": "I watch a movie.",
+              "englishHint": "I watch a movie. (Mark the direct object receiving the action.)",
               "introducedAtPosition": 19
             }
           ]
@@ -2344,7 +2344,7 @@
               "answer": "않아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 않다",
-              "englishHint": "I do not eat meat.",
+              "englishHint": "I do not eat meat. (Use a long-form negative, in polite present speech.)",
               "introducedAtPosition": 23
             },
             {
@@ -2354,7 +2354,7 @@
               "answer": "않아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 않다",
-              "englishHint": "I am not exercising today.",
+              "englishHint": "I am not exercising today. (Use a long-form negative, in polite present speech.)",
               "introducedAtPosition": 23
             },
             {
@@ -2364,7 +2364,7 @@
               "answer": "않아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 않다",
-              "englishHint": "This food is not delicious.",
+              "englishHint": "This food is not delicious. (Use a long-form negative, in polite present speech.)",
               "introducedAtPosition": 23
             }
           ]
@@ -2948,7 +2948,7 @@
                 "로"
               ],
               "vocabBaseForm": "에",
-              "englishHint": "I go to school.",
+              "englishHint": "I go to school. (Specify a destination or static location, not merely a direction of travel.)",
               "introducedAtPosition": 29
             },
             {
@@ -2958,7 +2958,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": "I come home.",
+              "englishHint": "I come home. (Specify a destination or static location, not merely a direction of travel.)",
               "introducedAtPosition": 29
             },
             {
@@ -2970,7 +2970,7 @@
                 "로"
               ],
               "vocabBaseForm": "에",
-              "englishHint": "I go to work.",
+              "englishHint": "I go to work. (Specify a destination or static location, not merely a direction of travel.)",
               "introducedAtPosition": 29
             },
             {
@@ -2983,7 +2983,7 @@
               ],
               "vocabBaseForm": "",
               "introducedAtPosition": 29,
-              "englishHint": "I go to the park."
+              "englishHint": "I go to the park. (Specify a destination or static location, not merely a direction of travel.)"
             },
             {
               "id": "cc_e_variant_school",
@@ -2993,7 +2993,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 29,
-              "englishHint": "My friend is at school."
+              "englishHint": "My friend is at school. (Specify a destination or static location, not merely a direction of travel.)"
             },
             {
               "id": "cc_e_variant_store",
@@ -3005,7 +3005,7 @@
               ],
               "vocabBaseForm": "",
               "introducedAtPosition": 29,
-              "englishHint": "I go to the store."
+              "englishHint": "I go to the store. (Specify a destination or static location, not merely a direction of travel.)"
             }
           ]
         },
@@ -3084,7 +3084,7 @@
               "answer": "에서",
               "alternateAnswers": [],
               "vocabBaseForm": "에서",
-              "englishHint": "I study at the library.",
+              "englishHint": "I study at the library. (Mark the location where an action takes place.)",
               "introducedAtPosition": 30
             },
             {
@@ -3094,7 +3094,7 @@
               "answer": "에서",
               "alternateAnswers": [],
               "vocabBaseForm": "에서",
-              "englishHint": "I drink coffee at the café.",
+              "englishHint": "I drink coffee at the café. (Mark the location where an action takes place.)",
               "introducedAtPosition": 30
             },
             {
@@ -3104,7 +3104,7 @@
               "answer": "에서",
               "alternateAnswers": [],
               "vocabBaseForm": "에서",
-              "englishHint": "I work at the office.",
+              "englishHint": "I work at the office. (Mark the location where an action takes place.)",
               "introducedAtPosition": 30
             },
             {
@@ -3115,7 +3115,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 30,
-              "englishHint": "I exercise at the park."
+              "englishHint": "I exercise at the park. (Mark the location where an action takes place.)"
             },
             {
               "id": "cc_eseo_variant_home",
@@ -3125,7 +3125,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 30,
-              "englishHint": "I eat at home."
+              "englishHint": "I eat at home. (Mark the location where an action takes place.)"
             },
             {
               "id": "cc_eseo_variant_school",
@@ -3135,7 +3135,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 30,
-              "englishHint": "I learn Korean at school."
+              "englishHint": "I learn Korean at school. (Mark the location where an action takes place.)"
             }
           ]
         },
@@ -3228,7 +3228,7 @@
                 "밑"
               ],
               "vocabBaseForm": "위/아래/앞/뒤/옆",
-              "englishHint": "The cat is under the chair.",
+              "englishHint": "The cat is under the chair. (Specify a position beneath the object.)",
               "introducedAtPosition": 31
             },
             {
@@ -3337,7 +3337,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": "I study Korean on Monday.",
+              "englishHint": "I study Korean on Monday. (Mark the specific time point rather than every occurrence.)",
               "introducedAtPosition": 32
             },
             {
@@ -3347,7 +3347,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": "I exercise in the morning.",
+              "englishHint": "I exercise in the morning. (Mark the specific time point rather than every occurrence.)",
               "introducedAtPosition": 32
             },
             {
@@ -3357,7 +3357,7 @@
               "answer": "에",
               "alternateAnswers": [],
               "vocabBaseForm": "에",
-              "englishHint": "I eat at 7 PM.",
+              "englishHint": "I eat at 7 PM. (Mark the specific time point rather than every occurrence.)",
               "introducedAtPosition": 32
             }
           ]
@@ -3701,7 +3701,7 @@
                 "다음에"
               ],
               "vocabBaseForm": "후에",
-              "englishHint": "I exercise after class.",
+              "englishHint": "I exercise after class. (Place the second event after the noun-denoted event.)",
               "introducedAtPosition": 36
             },
             {
@@ -3713,7 +3713,7 @@
                 "다음에"
               ],
               "vocabBaseForm": "후에",
-              "englishHint": "I meet a friend after work.",
+              "englishHint": "I meet a friend after work. (Place the second event after the noun-denoted event.)",
               "introducedAtPosition": 36
             },
             {
@@ -3725,7 +3725,7 @@
                 "다음에"
               ],
               "vocabBaseForm": "후에",
-              "englishHint": "I take a walk after dinner.",
+              "englishHint": "I take a walk after dinner. (Place the second event after the noun-denoted event.)",
               "introducedAtPosition": 36
             }
           ]
@@ -3821,7 +3821,7 @@
               "answer": "갔어요",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "englishHint": "I went to school yesterday.",
+              "englishHint": "I went to school yesterday. (Use the polite past for a completed action.)",
               "introducedAtPosition": 37
             },
             {
@@ -3831,7 +3831,7 @@
               "answer": "먹었어요",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "englishHint": "I ate rice.",
+              "englishHint": "I ate rice. (Use the polite past for a completed action.)",
               "introducedAtPosition": 37
             },
             {
@@ -3839,9 +3839,11 @@
               "fullSentence": "어제 영화를 봤어요.",
               "sentenceWithBlank": "어제 영화를 ___.",
               "answer": "봤어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "보았어요"
+              ],
               "vocabBaseForm": "보다",
-              "englishHint": "I watched a movie yesterday.",
+              "englishHint": "I watched a movie yesterday. (Use the polite past for a completed action.)",
               "introducedAtPosition": 37
             },
             {
@@ -3851,7 +3853,7 @@
               "answer": "마셨어요",
               "alternateAnswers": [],
               "vocabBaseForm": "마시다",
-              "englishHint": "I drank coffee.",
+              "englishHint": "I drank coffee. (Use the polite past for a completed action.)",
               "introducedAtPosition": 37
             },
             {
@@ -3861,7 +3863,7 @@
               "answer": "했어요",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "englishHint": "I did (my) homework.",
+              "englishHint": "I did (my) homework. (Use the polite past for a completed action.)",
               "introducedAtPosition": 37
             },
             {
@@ -3872,7 +3874,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "앉다",
               "introducedAtPosition": 37,
-              "englishHint": "I sat here."
+              "englishHint": "I sat here. (Use the polite past for a completed action.)"
             }
           ]
         },
@@ -4406,7 +4408,7 @@
                 "이랑"
               ],
               "vocabBaseForm": "하고",
-              "englishHint": "I buy bread and milk.",
+              "englishHint": "I buy bread and milk. (Join nouns or mark a companion in everyday speech.)",
               "introducedAtPosition": 43
             },
             {
@@ -4419,7 +4421,7 @@
                 "랑"
               ],
               "vocabBaseForm": "하고",
-              "englishHint": "I go with a friend.",
+              "englishHint": "I go with a friend. (Join nouns or mark a companion in everyday speech.)",
               "introducedAtPosition": 43
             },
             {
@@ -4432,7 +4434,7 @@
                 "랑"
               ],
               "vocabBaseForm": "하고",
-              "englishHint": "I eat bread and cake.",
+              "englishHint": "I eat bread and cake. (Join nouns or mark a companion in everyday speech.)",
               "introducedAtPosition": 43
             },
             {
@@ -4446,7 +4448,7 @@
               ],
               "vocabBaseForm": "",
               "introducedAtPosition": 43,
-              "englishHint": "I buy milk and bread."
+              "englishHint": "I buy milk and bread. (Join nouns or mark a companion in everyday speech.)"
             }
           ]
         },
@@ -4724,7 +4726,7 @@
               "fullSentence": "할머니가 쉬세요.",
               "sentenceWithBlank": "할머니가 ___.",
               "answer": "쉬세요",
-              "englishHint": "Grandmother is resting.",
+              "englishHint": "Grandmother is resting. (Respect the subject of the sentence, in polite present speech.)",
               "alternateAnswers": [],
               "vocabBaseForm": "쉬다",
               "introducedAtPosition": 46
@@ -4734,7 +4736,7 @@
               "fullSentence": "어머니가 일하세요.",
               "sentenceWithBlank": "어머니가 ___.",
               "answer": "일하세요",
-              "englishHint": "Mother is working.",
+              "englishHint": "Mother is working. (Respect the subject of the sentence, in polite present speech.)",
               "alternateAnswers": [],
               "vocabBaseForm": "일하다",
               "introducedAtPosition": 46
@@ -4744,7 +4746,7 @@
               "fullSentence": "선생님이 앉으세요.",
               "sentenceWithBlank": "선생님이 ___.",
               "answer": "앉으세요",
-              "englishHint": "The teacher is sitting down.",
+              "englishHint": "The teacher is sitting down. (Respect the subject of the sentence, in polite present speech.)",
               "alternateAnswers": [],
               "vocabBaseForm": "앉다",
               "introducedAtPosition": 46
@@ -4825,7 +4827,7 @@
               "answer": "앉으세요",
               "alternateAnswers": [],
               "vocabBaseForm": "앉다",
-              "englishHint": "Please sit here.",
+              "englishHint": "Please sit here. (Address the listener with a polite request.)",
               "introducedAtPosition": 47
             },
             {
@@ -4835,7 +4837,7 @@
               "answer": "가세요",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "englishHint": "Please go slowly.",
+              "englishHint": "Please go slowly. (Address the listener with a polite request.)",
               "introducedAtPosition": 47
             },
             {
@@ -4845,7 +4847,7 @@
               "answer": "읽으세요",
               "alternateAnswers": [],
               "vocabBaseForm": "읽다",
-              "englishHint": "Please read this book.",
+              "englishHint": "Please read this book. (Address the listener with a polite request.)",
               "introducedAtPosition": 47
             }
           ]
@@ -5097,7 +5099,7 @@
               "answer": "주세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 주세요",
-              "englishHint": "Please take a photo (for me).",
+              "englishHint": "Please take a photo (for me). (Ask politely for someone to do this for another person's benefit.)",
               "introducedAtPosition": 50
             },
             {
@@ -5107,7 +5109,7 @@
               "answer": "주세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 주세요",
-              "englishHint": "Please open the door (for me).",
+              "englishHint": "Please open the door (for me). (Ask politely for someone to do this for another person's benefit.)",
               "introducedAtPosition": 50
             },
             {
@@ -5117,7 +5119,7 @@
               "answer": "주세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 주세요",
-              "englishHint": "Please speak in Korean (for me).",
+              "englishHint": "Please speak in Korean (for me). (Ask politely for someone to do this for another person's benefit.)",
               "introducedAtPosition": 50
             }
           ]
@@ -5283,7 +5285,7 @@
               "answer": "싶어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 싶다",
-              "englishHint": "I want to go to Korea.",
+              "englishHint": "I want to go to Korea. (Express the speaker's own wish in polite present speech.)",
               "introducedAtPosition": 52
             },
             {
@@ -5293,7 +5295,7 @@
               "answer": "싶어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 싶다",
-              "englishHint": "I want to eat bulgogi.",
+              "englishHint": "I want to eat bulgogi. (Express the speaker's own wish in polite present speech.)",
               "introducedAtPosition": 52
             },
             {
@@ -5303,7 +5305,7 @@
               "answer": "싶어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 싶다",
-              "englishHint": "I want to watch a movie.",
+              "englishHint": "I want to watch a movie. (Express the speaker's own wish in polite present speech.)",
               "introducedAtPosition": 52
             }
           ]
@@ -5425,7 +5427,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 53,
-              "englishHint": "I can’t go today."
+              "englishHint": "I can’t go today. (Express inability, rather than unwillingness, in polite speech.)"
             },
             {
               "id": "cc_ability_conjugation_variant",
@@ -6503,7 +6505,7 @@
                 "죠"
               ],
               "vocabBaseForm": "재미있다",
-              "englishHint": "Korean is fun, right?",
+              "englishHint": "Korean is fun, right? (Seek confirmation of shared knowledge in polite speech.)",
               "introducedAtPosition": 64
             },
             {
@@ -6515,7 +6517,7 @@
                 "지요"
               ],
               "vocabBaseForm": "맛있다",
-              "englishHint": "It's delicious, right?",
+              "englishHint": "It's delicious, right? (Seek confirmation of shared knowledge in polite speech.)",
               "introducedAtPosition": 64
             },
             {
@@ -6527,7 +6529,7 @@
                 "지요"
               ],
               "vocabBaseForm": "재미있다",
-              "englishHint": "This movie is fun, right?",
+              "englishHint": "This movie is fun, right? (Seek confirmation of shared knowledge in polite speech.)",
               "introducedAtPosition": 64
             }
           ]
@@ -6603,7 +6605,7 @@
               "answer": "같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ 것 같다",
-              "englishHint": "This bag seems expensive.",
+              "englishHint": "This bag seems expensive. (Offer a tentative judgement rather than a certain fact.)",
               "introducedAtPosition": 65
             },
             {
@@ -6613,7 +6615,7 @@
               "answer": "같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ 것 같다",
-              "englishHint": "The weather seems nice.",
+              "englishHint": "The weather seems nice. (Offer a tentative judgement rather than a certain fact.)",
               "introducedAtPosition": 65
             },
             {
@@ -6623,7 +6625,7 @@
               "answer": "같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ 것 같다",
-              "englishHint": "That person seems to be Korean.",
+              "englishHint": "That person seems to be Korean. (Offer a tentative judgement rather than a certain fact.)",
               "introducedAtPosition": 65
             }
           ]

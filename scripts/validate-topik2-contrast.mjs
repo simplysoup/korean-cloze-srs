@@ -6,12 +6,14 @@
 import { readFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applyFlaggedCardFixes } from './flagged-card-overrides.mjs';
 const root=join(dirname(fileURLToPath(import.meta.url)),'..');
 const load=p=>JSON.parse(readFileSync(join(root,p),'utf8'));
 const fail=[],check=(condition,message)=>{if(!condition)fail.push(message)};
+const remediation=load('prisma/seed-data/review-qa/flagged-card-fixes.json');
 const base=new Map(),bundles=[];
 for(const level of [3,4,5,6]){
- const src=load(`prisma/seed-data/topik2/level-${level}.json`);
+ const src=applyFlaggedCardFixes([load(`prisma/seed-data/topik2/level-${level}.json`)],{rows:remediation.rows.filter(r=>r.level===level)})[0];
  const generated=load(`mobile/src/content/topik2-level${level}.json`);
  const sourcePoints=src.lessons.flatMap(l=>l.grammarPoints);
  const mobilePoints=generated.lessons.flatMap(l=>l.grammarPoints);

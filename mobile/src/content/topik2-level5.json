@@ -244,7 +244,7 @@
               "fullSentence": "사람에 따라 생각이 달라요.",
               "sentenceWithBlank": "사람___ 생각이 달라요.",
               "answer": "에 따라",
-              "englishHint": "Opinions differ from person to person.",
+              "englishHint": "Opinions differ from person to person. (Indicate variation by a factor or following a stated standard.)",
               "alternateAnswers": [
                 "에 따라서"
               ],
@@ -256,7 +256,7 @@
               "fullSentence": "규정에 따라서 처리해 주세요.",
               "sentenceWithBlank": "규정___ 처리해 주세요.",
               "answer": "에 따라서",
-              "englishHint": "Please handle it according to the rules.",
+              "englishHint": "Please handle it according to the rules. (Indicate variation by a factor or following a stated standard.)",
               "alternateAnswers": [
                 "에 따라"
               ],
@@ -268,7 +268,7 @@
               "fullSentence": "날씨에 따라 일정이 바뀔 수 있어요.",
               "sentenceWithBlank": "날씨___ 일정이 바뀔 수 있어요.",
               "answer": "에 따라",
-              "englishHint": "The schedule may change depending on weather.",
+              "englishHint": "The schedule may change depending on weather. (Indicate variation by a factor or following a stated standard.)",
               "alternateAnswers": [
                 "에 따라서"
               ],
@@ -1212,9 +1212,9 @@
             {
               "id": "cc_t2l5_eulgyeoreul_01",
               "fullSentence": "생각할 겨를도 없었어요.",
-              "sentenceWithBlank": "___.",
-              "answer": "생각할 겨를도 없었어요",
-              "englishHint": "I didn't even have time to think.",
+              "sentenceWithBlank": "생각___ 없었어요.",
+              "answer": "할 겨를도",
+              "englishHint": "I didn't even have time to think. (Express lacking even the time or chance to attempt this.)",
               "alternateAnswers": [],
               "vocabBaseForm": "생각하다",
               "introducedAtPosition": 195
@@ -1222,9 +1222,9 @@
             {
               "id": "cc_t2l5_eulgyeoreul_02",
               "fullSentence": "인사할 겨를이 없었어요.",
-              "sentenceWithBlank": "___.",
-              "answer": "인사할 겨를이 없었어요",
-              "englishHint": "I had no time to say hello.",
+              "sentenceWithBlank": "인사___ 없었어요.",
+              "answer": "할 겨를이",
+              "englishHint": "I had no time to say hello. (Express lacking even the time or chance to attempt this.)",
               "alternateAnswers": [],
               "vocabBaseForm": "인사하다",
               "introducedAtPosition": 195
@@ -1234,7 +1234,7 @@
               "fullSentence": "주변을 볼 겨를이 없어요.",
               "sentenceWithBlank": "주변을 ___.",
               "answer": "볼 겨를이 없어요",
-              "englishHint": "I have no chance to look around.",
+              "englishHint": "I have no chance to look around. (Express lacking even the time or chance to attempt this.)",
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
               "introducedAtPosition": 195
@@ -1756,7 +1756,7 @@
               "fullSentence": "그 일은 작은 실수에 불과했어요.",
               "sentenceWithBlank": "그 일은 작은 실수___.",
               "answer": "에 불과했어요",
-              "englishHint": "That was just a minor mistake.",
+              "englishHint": "That was just a minor mistake. (Downplay the thing as only the stated amount or status.)",
               "alternateAnswers": [],
               "vocabBaseForm": "실수",
               "introducedAtPosition": 201
@@ -1828,7 +1828,7 @@
               "fullSentence": "의견을 듣고자 합니다.",
               "sentenceWithBlank": "의견을 ___.",
               "answer": "듣고자 합니다",
-              "englishHint": "We would like to hear opinions.",
+              "englishHint": "We would like to hear opinions. (Express formal intention in written or public speech.)",
               "alternateAnswers": [],
               "vocabBaseForm": "듣다",
               "introducedAtPosition": 202
@@ -1914,7 +1914,7 @@
               "fullSentence": "참지 못하고 웃고 말았어요.",
               "sentenceWithBlank": "참지 못하고 ___.",
               "answer": "웃고 말았어요",
-              "englishHint": "I couldn't help laughing in the end.",
+              "englishHint": "I couldn't help laughing in the end. (Describe an eventual and often unwelcome outcome.)",
               "alternateAnswers": [],
               "vocabBaseForm": "웃다",
               "introducedAtPosition": 203
@@ -1924,7 +1924,7 @@
               "fullSentence": "실수로 파일을 지우고 말았어요.",
               "sentenceWithBlank": "실수로 파일을 ___.",
               "answer": "지우고 말았어요",
-              "englishHint": "I ended up deleting the file by mistake.",
+              "englishHint": "I ended up deleting the file by mistake. (Describe an eventual and often unwelcome outcome.)",
               "alternateAnswers": [],
               "vocabBaseForm": "지우다",
               "introducedAtPosition": 203
@@ -1934,7 +1934,7 @@
               "fullSentence": "결국 약속을 어기고 말았어요.",
               "sentenceWithBlank": "결국 약속을 ___.",
               "answer": "어기고 말았어요",
-              "englishHint": "I ended up breaking my promise.",
+              "englishHint": "I ended up breaking my promise. (Describe an eventual and often unwelcome outcome.)",
               "alternateAnswers": [],
               "vocabBaseForm": "어기다",
               "introducedAtPosition": 203
@@ -1998,9 +1998,9 @@
             {
               "id": "cc_t2l5_eodo_soyongeopda_01",
               "fullSentence": "후회해도 소용없어요.",
-              "sentenceWithBlank": "___.",
-              "answer": "후회해도 소용없어요",
-              "englishHint": "Regretting it is pointless.",
+              "sentenceWithBlank": "후회___ 소용없어요.",
+              "answer": "해도",
+              "englishHint": "Regretting it is pointless. (Concede the action but show it would be futile.)",
               "alternateAnswers": [],
               "vocabBaseForm": "후회하다",
               "introducedAtPosition": 204
@@ -2010,7 +2010,7 @@
               "fullSentence": "혼자 걱정해도 소용없어요.",
               "sentenceWithBlank": "혼자 ___.",
               "answer": "걱정해도 소용없어요",
-              "englishHint": "Worrying alone won't help.",
+              "englishHint": "Worrying alone won't help. (Concede the action but show it would be futile.)",
               "alternateAnswers": [],
               "vocabBaseForm": "걱정하다",
               "introducedAtPosition": 204
@@ -2020,7 +2020,7 @@
               "fullSentence": "계속 기다려도 소용없어요.",
               "sentenceWithBlank": "계속 ___.",
               "answer": "기다려도 소용없어요",
-              "englishHint": "Waiting longer won't help.",
+              "englishHint": "Waiting longer won't help. (Concede the action but show it would be futile.)",
               "alternateAnswers": [],
               "vocabBaseForm": "기다리다",
               "introducedAtPosition": 204

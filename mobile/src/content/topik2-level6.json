@@ -330,7 +330,7 @@
               "fullSentence": "노력 끝에 목표를 달성하기에 이르렀어요.",
               "sentenceWithBlank": "노력 끝에 목표를 ___.",
               "answer": "달성하기에 이르렀어요",
-              "englishHint": "Eventually I achieved the goal after much effort.",
+              "englishHint": "Eventually I achieved the goal after much effort. (Use an elevated expression for the eventual end-point.)",
               "alternateAnswers": [],
               "vocabBaseForm": "달성하다",
               "introducedAtPosition": 209
@@ -340,7 +340,7 @@
               "fullSentence": "논의 끝에 합의하기에 이르렀어요.",
               "sentenceWithBlank": "논의 끝에 ___.",
               "answer": "합의하기에 이르렀어요",
-              "englishHint": "The discussion eventually reached agreement.",
+              "englishHint": "The discussion eventually reached agreement. (Use an elevated expression for the eventual end-point.)",
               "alternateAnswers": [],
               "vocabBaseForm": "합의하다",
               "introducedAtPosition": 209
@@ -350,7 +350,7 @@
               "fullSentence": "상황이 나빠져 폐업하기에 이르렀어요.",
               "sentenceWithBlank": "상황이 나빠져 ___.",
               "answer": "폐업하기에 이르렀어요",
-              "englishHint": "Things worsened until the business closed.",
+              "englishHint": "Things worsened until the business closed. (Use an elevated expression for the eventual end-point.)",
               "alternateAnswers": [],
               "vocabBaseForm": "폐업하다",
               "introducedAtPosition": 209
@@ -942,9 +942,9 @@
             {
               "id": "cc_t2l6_euryeoya_01",
               "fullSentence": "믿으려야 믿을 수 없어요.",
-              "sentenceWithBlank": "___.",
-              "answer": "믿으려야 믿을 수 없어요",
-              "englishHint": "I can't bring myself to believe it.",
+              "sentenceWithBlank": "믿___ 믿을 수 없어요.",
+              "answer": "으려야",
+              "englishHint": "I can't bring myself to believe it. (Describe inability even despite trying or wanting to.)",
               "alternateAnswers": [],
               "vocabBaseForm": "믿다",
               "introducedAtPosition": 216
@@ -952,9 +952,9 @@
             {
               "id": "cc_t2l6_euryeoya_02",
               "fullSentence": "참으려야 참을 수 없어요.",
-              "sentenceWithBlank": "___.",
-              "answer": "참으려야 참을 수 없어요",
-              "englishHint": "I simply can't hold it in.",
+              "sentenceWithBlank": "참___ 참을 수 없어요.",
+              "answer": "으려야",
+              "englishHint": "I simply can't hold it in. (Describe inability even despite trying or wanting to.)",
               "alternateAnswers": [],
               "vocabBaseForm": "참다",
               "introducedAtPosition": 216
@@ -962,9 +962,9 @@
             {
               "id": "cc_t2l6_euryeoya_03",
               "fullSentence": "막으려야 막을 수 없어요.",
-              "sentenceWithBlank": "___.",
-              "answer": "막으려야 막을 수 없어요",
-              "englishHint": "It cannot be stopped no matter what.",
+              "sentenceWithBlank": "막___ 막을 수 없어요.",
+              "answer": "으려야",
+              "englishHint": "It cannot be stopped no matter what. (Describe inability even despite trying or wanting to.)",
               "alternateAnswers": [],
               "vocabBaseForm": "막다",
               "introducedAtPosition": 216
@@ -1122,7 +1122,7 @@
               "fullSentence": "상황이 안타깝기 짝이 없어요.",
               "sentenceWithBlank": "상황이 ___.",
               "answer": "안타깝기 짝이 없어요",
-              "englishHint": "The situation is terribly regrettable.",
+              "englishHint": "The situation is terribly regrettable. (Make an emphatic negative evaluation.)",
               "alternateAnswers": [],
               "vocabBaseForm": "안타깝다",
               "introducedAtPosition": 218
@@ -1132,7 +1132,7 @@
               "fullSentence": "행동이 어리석기 짝이 없어요.",
               "sentenceWithBlank": "행동이 ___.",
               "answer": "어리석기 짝이 없어요",
-              "englishHint": "That behavior is utterly foolish.",
+              "englishHint": "That behavior is utterly foolish. (Make an emphatic negative evaluation.)",
               "alternateAnswers": [],
               "vocabBaseForm": "어리석다",
               "introducedAtPosition": 218
@@ -1142,7 +1142,7 @@
               "fullSentence": "그 설명은 부정확하기 짝이 없어요.",
               "sentenceWithBlank": "그 설명은 ___.",
               "answer": "부정확하기 짝이 없어요",
-              "englishHint": "That explanation is extremely inaccurate.",
+              "englishHint": "That explanation is extremely inaccurate. (Make an emphatic negative evaluation.)",
               "alternateAnswers": [],
               "vocabBaseForm": "부정확하다",
               "introducedAtPosition": 218
@@ -1380,7 +1380,7 @@
               "fullSentence": "아기가 울어 댔어요.",
               "sentenceWithBlank": "아기가 ___.",
               "answer": "울어 댔어요",
-              "englishHint": "The baby kept crying loudly.",
+              "englishHint": "The baby kept crying loudly. (Describe excessive or persistent repeated action.)",
               "alternateAnswers": [],
               "vocabBaseForm": "울다",
               "introducedAtPosition": 221
@@ -1390,7 +1390,7 @@
               "fullSentence": "그는 불평해 댔어요.",
               "sentenceWithBlank": "그는 ___.",
               "answer": "불평해 댔어요",
-              "englishHint": "He kept complaining.",
+              "englishHint": "He kept complaining. (Describe excessive or persistent repeated action.)",
               "alternateAnswers": [],
               "vocabBaseForm": "불평하다",
               "introducedAtPosition": 221
@@ -1400,7 +1400,7 @@
               "fullSentence": "사람들이 질문을 쏟아 댔어요.",
               "sentenceWithBlank": "사람들이 질문을 ___.",
               "answer": "쏟아 댔어요",
-              "englishHint": "People bombarded me with questions.",
+              "englishHint": "People bombarded me with questions. (Describe excessive or persistent repeated action.)",
               "alternateAnswers": [],
               "vocabBaseForm": "쏟다",
               "introducedAtPosition": 221
@@ -1472,7 +1472,7 @@
               "fullSentence": "시험 전에는 도서관에서 살다시피 했어요.",
               "sentenceWithBlank": "시험 전에는 도서관에서 ___.",
               "answer": "살다시피 했어요",
-              "englishHint": "I practically lived in the library before exams.",
+              "englishHint": "I practically lived in the library before exams. (Say an action occurred almost to the point of being literally true.)",
               "alternateAnswers": [],
               "vocabBaseForm": "살다",
               "introducedAtPosition": 222
@@ -1482,7 +1482,7 @@
               "fullSentence": "회의 내내 서 있다시피 했어요.",
               "sentenceWithBlank": "회의 내내 서 ___.",
               "answer": "있다시피 했어요",
-              "englishHint": "I was practically standing through the meeting.",
+              "englishHint": "I was practically standing through the meeting. (Say an action occurred almost to the point of being literally true.)",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
               "introducedAtPosition": 222
@@ -1492,7 +1492,7 @@
               "fullSentence": "바빠서 식사를 거르다시피 했어요.",
               "sentenceWithBlank": "바빠서 식사를 ___.",
               "answer": "거르다시피 했어요",
-              "englishHint": "I practically skipped meals because I was busy.",
+              "englishHint": "I practically skipped meals because I was busy. (Say an action occurred almost to the point of being literally true.)",
               "alternateAnswers": [],
               "vocabBaseForm": "거르다",
               "introducedAtPosition": 222

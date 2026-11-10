@@ -17,6 +17,7 @@ import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { applyGrammarExpansions } from './curriculum-overlay.mjs';
+import { applyFlaggedCardFixes } from './flagged-card-overrides.mjs';
 
 const contentDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'mobile', 'src', 'content');
 const errors = [];
@@ -72,8 +73,10 @@ const expandedSources = applyGrammarExpansions([
 ], [3, 4].map(level => JSON.parse(readFileSync(
   join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'grammar-expansion', `level-${level}.json`), 'utf8',
 ))));
+const reviewManifest = JSON.parse(readFileSync(join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'review-qa', 'flagged-card-fixes.json'), 'utf8'));
+const reviewedSources = applyFlaggedCardFixes(expandedSources, reviewManifest);
 for (const level of [3, 4, 5, 6]) {
-  const expected = expandedSources[level - 1];
+  const expected = reviewedSources[level - 1];
   const actual = bundles[level - 1].data;
   check(JSON.stringify(expected) === JSON.stringify(actual), `Level ${level}: generated mobile JSON differs from assembled authored source`);
 }

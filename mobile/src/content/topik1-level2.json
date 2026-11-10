@@ -505,7 +505,7 @@
               "answer": "사러 갔어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)러 가다",
-              "englishHint": "I went to buy a book.",
+              "englishHint": "I went to buy a book. (Give the purpose of a completed journey.)",
               "introducedAtPosition": 71
             },
             {
@@ -578,7 +578,7 @@
               "answer": "공부합시다",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
-              "englishHint": "Let's study together.",
+              "englishHint": "Let's study together. (Make an inclusive, formal suggestion rather than an ordinary statement.)",
               "introducedAtPosition": 72
             },
             {
@@ -588,7 +588,7 @@
               "answer": "만납시다",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
-              "englishHint": "Let us meet again tomorrow.",
+              "englishHint": "Let us meet again tomorrow. (Make an inclusive, formal suggestion rather than an ordinary statement.)",
               "introducedAtPosition": 72
             },
             {
@@ -598,7 +598,7 @@
               "answer": "쉽시다",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
-              "englishHint": "Let us rest here for a moment.",
+              "englishHint": "Let us rest here for a moment. (Make an inclusive, formal suggestion rather than an ordinary statement.)",
               "introducedAtPosition": 72
             }
           ]
@@ -670,7 +670,7 @@
               "answer": "다닙니다",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
-              "englishHint": "I work for a company.",
+              "englishHint": "I work for a company. (Use a formal-polite declarative register.)",
               "introducedAtPosition": 73
             },
             {
@@ -680,7 +680,7 @@
               "answer": "좋습니다",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
-              "englishHint": "The weather is nice today.",
+              "englishHint": "The weather is nice today. (Use a formal-polite declarative register.)",
               "introducedAtPosition": 73
             },
             {
@@ -690,7 +690,7 @@
               "answer": "없습니다",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
-              "englishHint": "I do not have time now.",
+              "englishHint": "I do not have time now. (Use a formal-polite declarative register.)",
               "introducedAtPosition": 73
             }
           ]
@@ -938,7 +938,7 @@
               "fullSentence": "저는 의사입니다.",
               "sentenceWithBlank": "저는 의사___.",
               "answer": "입니다",
-              "englishHint": "I am a doctor.",
+              "englishHint": "I am a doctor. (Use the formal-polite noun copula.)",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
               "introducedAtPosition": 76
@@ -958,7 +958,7 @@
               "fullSentence": "여기는 병원입니다.",
               "sentenceWithBlank": "여기는 병원___.",
               "answer": "입니다",
-              "englishHint": "This place is a hospital.",
+              "englishHint": "This place is a hospital. (Use the formal-polite noun copula.)",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
               "introducedAtPosition": 76
@@ -1363,7 +1363,7 @@
               "answer": "떠나지 마세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
-              "englishHint": "Please don't leave now.",
+              "englishHint": "Please don't leave now. (Ask the listener politely not to do the action.)",
               "introducedAtPosition": 81
             },
             {
@@ -1373,7 +1373,7 @@
               "answer": "먹지 마세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
-              "englishHint": "Please do not eat too much.",
+              "englishHint": "Please do not eat too much. (Ask the listener politely not to do the action.)",
               "introducedAtPosition": 81
             },
             {
@@ -1383,7 +1383,7 @@
               "answer": "열지 마세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
-              "englishHint": "Please do not open the door now.",
+              "englishHint": "Please do not open the door now. (Ask the listener politely not to do the action.)",
               "introducedAtPosition": 81
             }
           ]
@@ -1879,7 +1879,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
-              "englishHint": "I'm listening to music right now.",
+              "englishHint": "I'm listening to music right now. (Describe an action in progress at that time.)",
               "introducedAtPosition": 87
             },
             {
@@ -1889,7 +1889,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
-              "englishHint": "Mom is cooking.",
+              "englishHint": "Mom is cooking. (Describe an action in progress at that time.)",
               "introducedAtPosition": 87
             },
             {
@@ -1899,7 +1899,7 @@
               "answer": "있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
-              "englishHint": "It is raining now.",
+              "englishHint": "It is raining now. (Describe an action in progress at that time.)",
               "introducedAtPosition": 87
             }
           ]
@@ -2644,9 +2644,11 @@
               "fullSentence": "김치를 먹어 봤어요.",
               "sentenceWithBlank": "김치를 먹어 ___.",
               "answer": "봤어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "보았어요"
+              ],
               "vocabBaseForm": "-아/어 보다",
-              "englishHint": "I've tried kimchi.",
+              "englishHint": "I've tried kimchi. (Describe trying something or a polite invitation to try.)",
               "introducedAtPosition": 96
             },
             {
@@ -2656,7 +2658,7 @@
               "answer": "보세요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 보다",
-              "englishHint": "Please try it on.",
+              "englishHint": "Please try it on. (Describe trying something or a polite invitation to try.)",
               "introducedAtPosition": 96
             },
             {
@@ -2664,9 +2666,11 @@
               "fullSentence": "그 옷을 입어 봤어요.",
               "sentenceWithBlank": "그 옷을 입어 ___.",
               "answer": "봤어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "보았어요"
+              ],
               "vocabBaseForm": "-아/어 보다",
-              "englishHint": "I tried wearing those clothes.",
+              "englishHint": "I tried wearing those clothes. (Describe trying something or a polite invitation to try.)",
               "introducedAtPosition": 96
             }
           ]
@@ -2729,7 +2733,7 @@
               "answer": "적이 있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
-              "englishHint": "I've been to Busan before.",
+              "englishHint": "I've been to Busan before. (Say whether an event has ever happened in someone's experience.)",
               "introducedAtPosition": 97
             },
             {
@@ -2739,7 +2743,7 @@
               "answer": "적이 없어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
-              "englishHint": "I have never eaten that food.",
+              "englishHint": "I have never eaten that food. (Say whether an event has ever happened in someone's experience.)",
               "introducedAtPosition": 97
             },
             {
@@ -2749,7 +2753,7 @@
               "answer": "적이 있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
-              "englishHint": "I have lived in Seoul before.",
+              "englishHint": "I have lived in Seoul before. (Say whether an event has ever happened in someone's experience.)",
               "introducedAtPosition": 97
             }
           ]
@@ -2812,7 +2816,7 @@
               "answer": "본 적이 있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
-              "englishHint": "I've tried driving on Jeju Island.",
+              "englishHint": "I've tried driving on Jeju Island. (Describe the experience of trying or having done an action.)",
               "introducedAtPosition": 98
             },
             {
@@ -2822,7 +2826,7 @@
               "answer": "본 적이 있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
-              "englishHint": "I have read that book before.",
+              "englishHint": "I have read that book before. (Describe the experience of trying or having done an action.)",
               "introducedAtPosition": 98
             },
             {
@@ -2832,7 +2836,7 @@
               "answer": "본 적이 있어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
-              "englishHint": "I have visited Jeju Island before.",
+              "englishHint": "I have visited Jeju Island before. (Describe the experience of trying or having done an action.)",
               "introducedAtPosition": 98
             }
           ]
@@ -2980,7 +2984,7 @@
               "answer": "올 것 같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
-              "englishHint": "I think it might snow tomorrow.",
+              "englishHint": "I think it might snow tomorrow. (Offer a tentative future expectation rather than a certain fact.)",
               "introducedAtPosition": 100
             },
             {
@@ -2990,7 +2994,7 @@
               "answer": "매울 것 같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
-              "englishHint": "I think this food will be spicy.",
+              "englishHint": "I think this food will be spicy. (Offer a tentative future expectation rather than a certain fact.)",
               "introducedAtPosition": 100
             },
             {
@@ -3000,7 +3004,7 @@
               "answer": "올 것 같아요",
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
-              "englishHint": "I think my friend will arrive soon.",
+              "englishHint": "I think my friend will arrive soon. (Offer a tentative future expectation rather than a certain fact.)",
               "introducedAtPosition": 100
             }
           ]
@@ -3493,7 +3497,7 @@
               "answer": "졌어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
-              "englishHint": "The weather has gotten cooler.",
+              "englishHint": "The weather has gotten cooler. (Emphasize a resulting change of state.)",
               "introducedAtPosition": 106
             },
             {
@@ -3503,7 +3507,7 @@
               "answer": "졌어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
-              "englishHint": "The weather got warmer.",
+              "englishHint": "The weather got warmer. (Emphasize a resulting change of state.)",
               "introducedAtPosition": 106
             },
             {
@@ -3513,7 +3517,7 @@
               "answer": "졌어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
-              "englishHint": "The room became clean.",
+              "englishHint": "The room became clean. (Emphasize a resulting change of state.)",
               "introducedAtPosition": 106
             }
           ]
@@ -3657,9 +3661,11 @@
               "fullSentence": "다음 주부터 야근하게 됐어요.",
               "sentenceWithBlank": "다음 주부터 야근하게 ___.",
               "answer": "됐어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "되었어요"
+              ],
               "vocabBaseForm": "-게 되다",
-              "englishHint": "I have ended up having to work overtime starting next week.",
+              "englishHint": "I have ended up having to work overtime starting next week. (Emphasize a change of circumstances or resulting situation.)",
               "introducedAtPosition": 108
             },
             {
@@ -3667,9 +3673,11 @@
               "fullSentence": "한국 친구를 만나서 한국어를 배우게 됐어요.",
               "sentenceWithBlank": "한국 친구를 만나서 한국어를 배우게 ___.",
               "answer": "됐어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "되었어요"
+              ],
               "vocabBaseForm": "-게 되다",
-              "englishHint": "I started learning Korean after meeting a Korean friend.",
+              "englishHint": "I started learning Korean after meeting a Korean friend. (Emphasize a change of circumstances or resulting situation.)",
               "introducedAtPosition": 108
             },
             {
@@ -3677,9 +3685,11 @@
               "fullSentence": "이제 아침에 일찍 일어나게 됐어요.",
               "sentenceWithBlank": "이제 아침에 일찍 일어나게 ___.",
               "answer": "됐어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "되었어요"
+              ],
               "vocabBaseForm": "-게 되다",
-              "englishHint": "I have come to get up early in the morning.",
+              "englishHint": "I have come to get up early in the morning. (Emphasize a change of circumstances or resulting situation.)",
               "introducedAtPosition": 108
             }
           ]
@@ -3740,9 +3750,11 @@
               "fullSentence": "미리 숙제를 해 뒀어요.",
               "sentenceWithBlank": "미리 숙제를 해 ___.",
               "answer": "뒀어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "두었어요"
+              ],
               "vocabBaseForm": "-아/어 두다",
-              "englishHint": "I did my homework ahead of time.",
+              "englishHint": "I did my homework ahead of time. (The action was done in advance and its result retained.)",
               "introducedAtPosition": 109
             },
             {
@@ -3750,9 +3762,11 @@
               "fullSentence": "전화번호를 적어 뒀어요.",
               "sentenceWithBlank": "전화번호를 적어 ___.",
               "answer": "뒀어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "두었어요"
+              ],
               "vocabBaseForm": "-아/어 두다",
-              "englishHint": "I wrote down the phone number for later.",
+              "englishHint": "I wrote down the phone number for later. (The action was done in advance and its result retained.)",
               "introducedAtPosition": 109
             },
             {
@@ -3760,9 +3774,11 @@
               "fullSentence": "물을 미리 사 뒀어요.",
               "sentenceWithBlank": "물을 미리 사 ___.",
               "answer": "뒀어요",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "두었어요"
+              ],
               "vocabBaseForm": "-아/어 두다",
-              "englishHint": "I bought water in advance.",
+              "englishHint": "I bought water in advance. (The action was done in advance and its result retained.)",
               "introducedAtPosition": 109
             }
           ]
@@ -4252,7 +4268,7 @@
               "answer": "버렸어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
-              "englishHint": "I ended up spending all the money.",
+              "englishHint": "I ended up spending all the money. (Emphasize completion and its resulting emotional significance.)",
               "introducedAtPosition": 115
             },
             {
@@ -4262,7 +4278,7 @@
               "answer": "버렸어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
-              "englishHint": "I ate the entire cake.",
+              "englishHint": "I ate the entire cake. (Emphasize completion and its resulting emotional significance.)",
               "introducedAtPosition": 115
             },
             {
@@ -4272,7 +4288,7 @@
               "answer": "버렸어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
-              "englishHint": "I drank all the water.",
+              "englishHint": "I drank all the water. (Emphasize completion and its resulting emotional significance.)",
               "introducedAtPosition": 115
             }
           ]
@@ -4785,7 +4801,7 @@
               "answer": "간다고 했어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ/는다고 하다",
-              "englishHint": "My younger sibling said they were going to school.",
+              "englishHint": "My younger sibling said they were going to school. (Report another person's statement, not a direct quotation.)",
               "introducedAtPosition": 121
             },
             {
@@ -4874,7 +4890,7 @@
               "answer": "춥다고 했어요",
               "alternateAnswers": [],
               "vocabBaseForm": "-다고 하다 (adjective)",
-              "englishHint": "My younger sibling said it was very cold.",
+              "englishHint": "My younger sibling said it was very cold. (Report someone else's descriptive judgement.)",
               "introducedAtPosition": 122
             },
             {

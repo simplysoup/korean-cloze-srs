@@ -23,9 +23,17 @@ For a future review outcome, use the following classes rather than a flat correc
 
 This is a **proposal for SRS policy**, not a live change to grading. The app's current `correctAnswersForCard` function accepts `alternateAnswers`, while `checkAnswers` returns a Boolean and `answerExplanation` has only a handful of special cases. The other maintainer will need to add the structured result, UI and separate target-mastery outcome.
 
+## Individual review of the 193 inherited-card risks
+
+The content QA manifest `prisma/seed-data/review-qa/flagged-card-fixes.json` records a precise before/after review for **each of the 193 flagged inherited cards**. Source and all six generated decks are kept in sync by `scripts/flagged-card-overrides.mjs`. The editorial pass added **187 context-sensitive prompt clarifications**, rewrote **6 unbounded cloze spans** to ask for a productive grammar segment, added **13 per-sentence contracted/expanded variants**, and dismissed **6 false-positive flaggings** of ordinary comparison/frequency particles. This brings inherited cards with existing accepted alternative strings to **32**.
+
+**No learner response should be called ungrammatical solely because it is natural Korean outside the precise target construction.** Particularly, directional `-로/(으)로` can be a natural sentence in some destination contexts, yet does not demonstrate mastery of destination `-에`. The machine-readable manifest marks such alternatives as `natural_other_construction`, whereas contractions such as `-지요/-죠` are `same_target_construction`. The current binary review runtime cannot yet reflect that distinction in SRS grading; the other maintainer still owns structured answer feedback and mastery tracking.
+
+This is **editor-level remediation, not Korean educator approval**. All 193 remain flagged for an independent Korean-language review, and 435 additional unflagged inherited cards are not automatically certified.
+
 ## Additional TOPIK II form-contrast review (2026-11-10)
 
-Three Level 5 `N에 따라(서)` review cards now accept the reciprocal `에 따라` and `에 따라서` variants **in their specific complete sentences**. These are *additional* to the earlier 12 grammar-gap cards/18 alternatives and are included in the inherited-card review backlog (now 19 legacy cards with an authored alternative). A Korean educator has not yet certified these sentences. The two uses — factor-dependent variation and following a rule — are explained separately in the corresponding lesson. The complete morphology and near-miss handoff is in `docs/research/topik2-form-contrast-qa-2026-11-10.md`.
+Three Level 5 `N에 따라(서)` review cards now accept the reciprocal `에 따라` and `에 따라서` variants **in their specific complete sentences**. These are *additional* to the earlier 12 grammar-gap cards/18 alternatives and are included in the inherited-card review backlog (now 32 inherited cards with an authored alternative after the 193-card editorial QA pass). A Korean educator has not yet certified these sentences. The two uses — factor-dependent variation and following a rule — are explained separately in the corresponding lesson. The complete morphology and near-miss handoff is in `docs/research/topik2-form-contrast-qa-2026-11-10.md`.
 
 ## Immediately curated accepted alternatives
 
@@ -47,7 +55,7 @@ Authoritative lexical reference: the National Institute of Korean Language's lea
 
 A teacher should still check the full sentence and whether the surrounding prompt requires a formal or casual style. **Do not mark `께` and `한테` interchangeable for a lesson explicitly about respected recipients.**
 
-The machine-readable first-pass audit is `docs/research/grammar-answer-ambiguity-audit.json`. It tracks **all 93 new cards**, the 12 with accepted variants, and **14** concrete near-miss examples, each awaiting Korean educator review. The other **628 inherited review cards** have received a *mechanical risk scan* in `docs/research/legacy-answer-ambiguity-backlog.json`: **193** are flagged for potentially ambiguous particles, endings/register or already-curated alternatives; **435** were not flagged by these heuristics. **None of the inherited cards has completed a full sentence-by-sentence educator adjudication**, including the 438 not flagged. Do not represent this as full-course linguistic verification.
+The machine-readable first-pass audit is `docs/research/grammar-answer-ambiguity-audit.json`. It tracks **all 93 new cards**, the 12 with accepted variants, and **14** concrete near-miss examples, each awaiting Korean educator review. The other **628 inherited review cards** have received a *mechanical risk scan* in `docs/research/legacy-answer-ambiguity-backlog.json`: **193** are flagged for potentially ambiguous particles, endings/register or already-curated alternatives; **435** were not flagged by these heuristics. **None of the inherited cards has completed a full sentence-by-sentence educator adjudication**, including the 435 not flagged. Do not represent this as full-course linguistic verification.
 
 ## Near miss examples to recognize
 
