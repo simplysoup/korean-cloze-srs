@@ -195,6 +195,7 @@ describe('pure attempt lifecycle and single-write FSRS disposition', () => {
     expect(submitAnswerAttempt(correct, 'target_correct')).toBe(correct);
     const revealed = revealAnswerAttempt(correct);
     expect(revealed.revealed).toBe(true);
+    expect(revealAnswerAttempt(revealed)).toBe(revealed);
     const { state, intent } = prepareReviewCommit(revealed);
     expect(intent).toEqual({ exerciseId: 'cc_e_loc_01', grade: 1, recycleMiss: true });
     expect(prepareReviewCommit(state).intent).toBeNull();
