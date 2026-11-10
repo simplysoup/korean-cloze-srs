@@ -58,7 +58,7 @@ export const level1Guides: Record<string, TeachingGuide> = {
   },
   "gp_i_ga": {
     "meaning": "이/가 identifies who or what is doing something, or what exists. It is often especially useful when answering 'who?' or 'what?'.",
-    "formation": "After a final consonant add 이; after a vowel add 가.",
+    "formation": "First identify who or what the sentence is about. Add 이 after a noun with a final consonant, or 가 after a noun ending in a vowel.",
     "worked": "이름이 민수예요: 이름 ends with ㅁ, so take 이. 민수가 학생이에요 identifies Minsu as the student.",
     "trap": "은/는 sets a topic or contrast; 이/가 marks a subject. Sometimes both work but change what the listener focuses on."
   },
@@ -119,7 +119,7 @@ export const level1Guides: Record<string, TeachingGuide> = {
   "gp_jeogi": {
     "meaning": "저기 means 'over there', for a location away from speaker and listener.",
     "formation": "Use 저기 for a distant place. Add the particle demanded by the sentence: 저기는, 저기에, 저기에서.",
-    "worked": "저기는 공원이에요 describes the park visible over there.",
+    "worked": "저기는 공원이에요: 저기 points to a place far from both speakers. 는 marks that place as the topic, and 공원이에요 identifies it.",
     "trap": "저기 can also be used to get someone's attention; that separate conversational use is not the location pattern practiced here."
   },
   "gp_e_loc": {
@@ -142,7 +142,7 @@ export const level1Guides: Record<string, TeachingGuide> = {
   },
   "gp_e_time": {
     "meaning": "에 also marks when something happens, such as a clock time or a specific day.",
-    "formation": "Put 에 after the time word: 월요일에, 세 시에, 아침에.",
+    "formation": "Find the day or clock time that answers 'when?'. Put 에 immediately after that time: 월요일에, 세 시에, 아침에.",
     "worked": "월요일에 한국어를 공부해요 means studying happens on Monday. 에 gives the time of the action.",
     "trap": "Don't automatically add 에 after every time word: 오늘, 내일, 어제 and 지금 normally stand without it."
   },
@@ -154,20 +154,20 @@ export const level1Guides: Record<string, TeachingGuide> = {
   },
   "gp_kkaji": {
     "meaning": "까지 marks the end of a time, range, or destination: 'until', 'up to', or 'as far as'.",
-    "formation": "Put 까지 after the finishing point: 여섯 시까지, 학교까지.",
+    "formation": "Choose the finishing time or destination, then add 까지: 여섯 시까지, 학교까지. To name the starting point as well, use 부터 there.",
     "worked": "6시까지 일해요: work lasts until six; 까지 points to the cutoff.",
     "trap": "Don't swap 까지 and 부터. A full interval is usually X부터 Y까지 (from X to Y)."
   },
   "gp_jeone": {
     "meaning": "전에 means 'before' when put after a noun or named event.",
     "formation": "Put the noun/event first and add 전에: 수업 전에 ('before class'). Verbs need -기 전에, which is introduced later.",
-    "worked": "수업 전에 커피를 마셔요: the coffee comes before class starts.",
+    "worked": "수업 전에 커피를 마셔요: 수업 ('class') is the event. Put 전에 after 수업; the coffee-drinking happens before that event.",
     "trap": "Don't attach 전에 directly to a plain verb stem. 먹기 전에 is 'before eating'; 먹전에 is not Korean."
   },
   "gp_hue": {
-    "meaning": "후에 means 'after' when put after a noun or named event.",
+    "meaning": "후에 means 'after' when placed after a noun or named event. It tells the listener which event finishes before the next action.",
     "formation": "Put the noun/event first and add 후에: 수업 후에 ('after class'). For a completed verb action, use -(으)ㄴ 후에 later.",
-    "worked": "수업 후에 운동해요: exercise happens after class.",
+    "worked": "수업 후에 운동해요: 수업 is 'class', and 후에 places exercise AFTER that class. No verb ending is needed on the noun 수업.",
     "trap": "Don't use 후에 directly after an unconjugated verb stem. 먹은 후에 is 'after eating', not 먹후에."
   },
   "gp_asseoyo": {
@@ -179,18 +179,18 @@ export const level1Guides: Record<string, TeachingGuide> = {
   "gp_eun_modifier": {
     "meaning": "Descriptive verbs (often called adjectives) can go before a noun using -(으)ㄴ: a 'big bag', 'small cat', or 'good book'.",
     "formation": "Remove 다 from a descriptive verb. Add 은 after most consonant-ending stems or ㄴ after vowel-ending stems: 작다 → 작은, 크다 → 큰.",
-    "worked": "큰 가방이 있어요: 크다 → 큰 describes the bag BEFORE 가방.",
+    "worked": "큰 가방이 있어요: start with 크다 ('to be big'), remove 다, and add ㄴ to 크 to form 큰. Put 큰 directly before 가방 ('bag').",
     "trap": "This is not the present modifier of an action verb: 'a person who reads' needs 읽는 사람. ㄹ-final and some irregular stems also change."
   },
   "gp_man": {
     "meaning": "만 means 'only' or 'just', limiting the person or thing you mean.",
     "formation": "Attach 만 directly to the noun or phrase being restricted: 물만, 나만.",
-    "worked": "물만 마셔요 means the speaker drinks only water.",
+    "worked": "물만 마셔요: 물 means 'water'. Attach 만 immediately after 물 to limit the drinks to water, rather than saying water is one of several drinks.",
     "trap": "Don't confuse 만 with 도: 물도 means 'water too', but 물만 means 'water and nothing else' in the relevant set."
   },
   "gp_hago": {
     "meaning": "하고 can connect nouns: 'A and B' or 'with someone'. It is commonly used in casual conversation.",
-    "formation": "Put 하고 after the first noun, then the second: 빵하고 우유.",
+    "formation": "Name the first noun, add 하고, then name the second: 빵하고 우유. If the pair is an object, put 을/를 on the final noun.",
     "worked": "빵하고 우유를 사요 means 'I buy bread and milk'; 를 goes on the whole noun grouping's last word.",
     "trap": "Don't confuse noun-connecting 하고 with action-connecting -고. 먹고 means 'eat and (then)'; 빵하고 means 'bread and'."
   },
@@ -251,11 +251,11 @@ export const level1Guides: Record<string, TeachingGuide> = {
   "gp_eumyeon": {
     "meaning": "Use -(으)면 to say 'if' or 'when' one condition makes another possible.",
     "formation": "Add 으면 after most consonant-ending verb stems and 면 after vowel-ending stems: 있다 → 있으면.",
-    "worked": "시간이 있으면 같이 가요: going together depends on having time.",
+    "worked": "시간이 있으면 같이 가요: start with 있다 ('to have'), add 으면 to get 있으면 ('if there is'). Going together depends on having time.",
     "trap": "A final ㄹ stays: 살다 → 살면, not 사으면. For a mere reason ('because'), choose a reason connective instead."
   },
   "gp_jiman": {
-    "meaning": "-지만 connects two contrasting clauses: 'X, but Y'.",
+    "meaning": "-지만 joins two facts that contrast, meaning 'but'. One fact remains true even though another might make you expect the opposite.",
     "formation": "Attach 지만 directly to the stem of a verb or descriptive verb; no vowel-choice rule: 비싸다 → 비싸지만.",
     "worked": "비싸지만 맛있어요: it is expensive but tasty; the two facts contrast.",
     "trap": "Do not confuse -지만 (inside one sentence) with 하지만 (at the start of a second sentence)."
@@ -275,18 +275,18 @@ export const level1Guides: Record<string, TeachingGuide> = {
   "gp_eulgeyo": {
     "meaning": "Use -(으)ㄹ게요 when the SPEAKER is committing to doing something, often considering the listener.",
     "formation": "After a consonant stem add 을게요; after a vowel stem add ㄹ게요: 하다 → 할게요.",
-    "worked": "제가 할게요: the speaker volunteers or promises to do it.",
+    "worked": "제가 할게요: 하다 becomes 할게요. The speaker volunteers to do the action and signals that promise to the listener.",
     "trap": "Don't use -(으)ㄹ게요 for a neutral prediction about someone else. -(으)ㄹ 거예요 is used for plans or predictions."
   },
   "gp_eul_geoyeyo": {
     "meaning": "Use -(으)ㄹ 거예요 for a future plan or prediction: 'will', 'going to', 'probably'.",
     "formation": "Use 을 after most consonant stems or ㄹ after vowel stems, then write 거예요 separately: 가다 → 갈 거예요.",
-    "worked": "내일 한국어를 공부할 거예요: the speaker plans to study tomorrow.",
+    "worked": "내일 한국어를 공부할 거예요: 공부하다 becomes 공부할. Add 거예요 separately to express the speaker's future study plan.",
     "trap": "Keep 거예요 as a separate word. Compare 제가 할게요 (commitment) with 제가 할 거예요 (plan)."
   },
   "gp_neyo": {
     "meaning": "-네요 shows the speaker has just noticed or reacted to something: 'Oh, it's...'",
-    "formation": "Attach 네요 directly to the stem: 좋다 → 좋네요.",
+    "formation": "Take off 다 from the dictionary form and add 네요: 좋다 → 좋네요. Use this ending when reacting to something you have noticed.",
     "worked": "날씨가 좋네요: the speaker notices and reacts to the pleasant weather.",
     "trap": "-네요 is not just a normal fact-reporting -아요/어요 ending; it carries a feeling of discovery or reaction."
   },

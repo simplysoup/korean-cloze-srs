@@ -52,19 +52,19 @@ export const level2Guides: Record<string, TeachingGuide> = {
   },
   "gp_eodo_doeda": {
     "meaning": "Use -아/어도 되다 to ask for or give permission: 'May I...?' or 'It's okay to...'.",
-    "formation": "Make the verb's 아/어 form, add 도, then 돼요: 앉다 → 앉아도 돼요.",
-    "worked": "여기 앉아도 돼요? asks whether sitting here is allowed.",
+    "formation": "First make the action's 아/어 form: 앉다 → 앉아. Then add 도 돼요: 앉아도 돼요, literally saying that sitting is okay.",
+    "worked": "여기 앉아도 돼요? asks whether sitting here is allowed. 앉아도 is the possible action; 돼요? asks whether it is acceptable.",
     "trap": "돼요 is the correct spelling of 되어요 here, not 되요. Compare permission with obligation -아/어야 해요."
   },
   "gp_eumyeon_an_doeda": {
     "meaning": "Use -(으)면 안 되다 to say an action is NOT allowed: 'must not' or 'shouldn't'.",
     "formation": "Add 으면 or 면 to the verb stem, then 안 돼요: 늦다 → 늦으면 안 돼요.",
-    "worked": "여기에서 담배를 피우면 안 돼요 means smoking here is prohibited.",
+    "worked": "여기에서 담배를 피우면 안 돼요: 피우다 → 피우면 names the condition 'if you smoke'. 안 돼요 marks that action as not allowed.",
     "trap": "This is stronger than not wanting to do it (안). Don't confuse 'must not' with 'don't have to'."
   },
   "gp_ji_maseyo": {
     "meaning": "Use -지 마세요 to politely tell someone NOT to do an action: 'Please don't...'.",
-    "formation": "Attach 지 to the verb stem, then 마세요: 뛰다 → 뛰지 마세요.",
+    "formation": "Start with the action stem: 뛰다 → 뛰. Attach 지 마세요 to tell the other person politely not to do it: 뛰지 마세요.",
     "worked": "여기에서 뛰지 마세요 directly asks the listener not to run here.",
     "trap": "Don't use 안 + -세요 as the usual prohibition. -지 마세요 targets the listener; -(으)면 안 돼요 expresses a rule or prohibition."
   },
@@ -77,7 +77,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_go_naseo": {
     "meaning": "Use -고 나서 to make it clear that one action FINISHES before another begins.",
     "formation": "Add 고 나서 to the first action stem, then state the next action: 먹다 → 먹고 나서.",
-    "worked": "밥을 먹고 나서 커피를 마셔요: finish eating, then drink coffee.",
+    "worked": "밥을 먹고 나서 커피를 마셔요: 먹다 becomes 먹고 나서, meaning the meal is finished first. Coffee comes afterward.",
     "trap": "Plain -고 can simply join actions; -고 나서 stresses the first is completed. Don't use it as if the actions happen together."
   },
   "gp_eun_hue": {
@@ -87,9 +87,9 @@ export const level2Guides: Record<string, TeachingGuide> = {
     "trap": "수업 후에 is 'after class' with a noun. With a verb, don't attach 후에 directly to the bare stem: 먹후에 is wrong."
   },
   "gp_gi_jeone": {
-    "meaning": "Use -기 전에 to say 'before doing an action'.",
-    "formation": "Add 기 to the verb stem and then 전에: 자다 → 자기 전에.",
-    "worked": "자기 전에 이를 닦아요: brushing teeth happens BEFORE sleeping.",
+    "meaning": "Use -기 전에 to say one action happens before another action. The first action is treated like an event you can refer to.",
+    "formation": "Remove 다 from the verb, add 기, then put 전에 after it: 자다 → 자기 전에. Continue with the earlier action.",
+    "worked": "자기 전에 이를 닦아요: 자다 ('sleep') becomes 자기, and 전에 means 'before'. Toothbrushing happens before sleep.",
     "trap": "Don't confuse 전에 after a noun (수업 전에) with verb + 기 전에 (먹기 전에)."
   },
   "gp_eul_ttae": {
@@ -101,13 +101,13 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_go_itda": {
     "meaning": "Use -고 있다 for an action that is in progress: 'am reading', 'is studying'.",
     "formation": "Take the action stem, attach 고, and add 있어요: 읽다 → 읽고 있어요.",
-    "worked": "지금 책을 읽고 있어요: the reading is happening right now.",
+    "worked": "지금 책을 읽고 있어요: 읽다 becomes 읽고, followed by 있어요. The two-part form shows that reading is happening now.",
     "trap": "Don't automatically use it for every English '-ing'. Some Korean verbs describe states, and their natural ongoing forms may differ."
   },
   "gp_neun_jung": {
-    "meaning": "Use -는 중이다 to stress being IN THE MIDDLE OF an action.",
+    "meaning": "Use -는 중이다 to emphasize that someone is currently busy doing an action. It feels like 'in the middle of doing it'.",
     "formation": "Make the present action modifier -는, then add 중이에요: 공부하다 → 공부하는 중이에요.",
-    "worked": "지금 공부하는 중이에요 emphasizes that studying is underway.",
+    "worked": "지금 공부하는 중이에요: 공부하다 becomes 공부하는, followed by 중이에요. Together they emphasize being in the middle of studying.",
     "trap": "중 is a separate noun-like word. Contrast -고 있어요 (ongoing action) with -는 중이에요 (busy in the middle of it)."
   },
   "gp_geona": {
@@ -149,7 +149,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_eoboda": {
     "meaning": "Use -아/어 보다 to mean 'try doing something' or 'have tried it'.",
     "formation": "Take the verb's 아/어 form and add 보다: 먹다 → 먹어 보다 → 먹어 보세요.",
-    "worked": "이 음식을 먹어 보세요 invites someone to try this food.",
+    "worked": "이 음식을 먹어 보세요: 먹다 becomes 먹어; 보세요 politely invites the listener to TRY the food, not simply to look at it.",
     "trap": "This auxiliary 보다 is not the verb 'to see' used literally. The spacing 먹어 보다 is a safe teaching default."
   },
   "gp_eun_jeok": {
@@ -161,7 +161,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_eobon_jeok": {
     "meaning": "Use -아/어 본 적이 있다 to say you have experienced TRYING an action before.",
     "formation": "Make the 아/어 보다 auxiliary into its past modifier: 먹어 보다 → 먹어 본, then 적이 있어요.",
-    "worked": "김치를 먹어 본 적이 있어요 says 'I've tried kimchi before'.",
+    "worked": "김치를 먹어 본 적이 있어요: 먹다 → 먹어 보다 → 먹어 본. The phrase 적이 있어요 says the speaker has had that experience.",
     "trap": "본 refers to having tried an action; don't translate it as literally seeing something with your eyes."
   },
   "gp_giro_hada": {
@@ -172,7 +172,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   },
   "gp_eul_geot_gatda": {
     "meaning": "Use -(으)ㄹ 것 같다 to express a guess or prediction: 'I think it will...' or 'It seems likely...'.",
-    "formation": "Make the -(으)ㄹ form and add 것 같아요: 오다 → 올 것 같아요.",
+    "formation": "Make the -(으)ㄹ form of the verb first: 오다 → 올. Then add the separate words 것 같아요 to express a prediction.",
     "worked": "내일 비가 올 것 같아요 is a prediction that rain will come tomorrow.",
     "trap": "Don't confuse this with -(으)ㄴ 것 같아요 for a present descriptive state. The form before 것 changes with what you are judging."
   },
@@ -184,7 +184,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   },
   "gp_neunde": {
     "meaning": "Use -는데 after an ACTION verb to give background, create contrast, or lead into what comes next.",
-    "formation": "Attach 는데 to a present action-verb stem: 오다 → 오는데.",
+    "formation": "For a present action verb, remove 다 and attach 는데: 오다 → 오는데. Then follow with the new information or contrast.",
     "worked": "비가 오는데 우산이 없어요: it is raining, and the speaker provides the background for having no umbrella.",
     "trap": "-는데 is not always English 'but'. Sometimes it introduces a situation or gently sets up a request; descriptive verbs take another form."
   },
@@ -209,13 +209,13 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_eojida": {
     "meaning": "Use -아/어지다 to describe a change in a quality: 'become colder', 'get easier'.",
     "formation": "Take a descriptive stem and add 아/어지다: 춥다 → 추워지다 → 추워졌어요.",
-    "worked": "날씨가 많이 추워졌어요: the weather has become much colder.",
+    "worked": "날씨가 많이 추워졌어요: 춥다 becomes 추워지다 ('grow cold'), then 추워졌어요 in the past. The weather changed into a colder state.",
     "trap": "Don't confuse change in a state (-아/어지다) with a change of circumstances leading someone to do something (-게 되다)."
   },
   "gp_ge_adverb": {
     "meaning": "-게 changes many descriptive verbs into a way of DOING an action: 'quietly', 'clearly', 'carefully'.",
     "formation": "Attach 게 to the descriptive-verb stem, then put it before the action: 조용하다 → 조용하게.",
-    "worked": "조용하게 말해 주세요: 조용하게 tells HOW to speak.",
+    "worked": "조용하게 말해 주세요: 조용하다 ('quiet') becomes 조용하게 ('quietly'). That word explains HOW the speaking should happen.",
     "trap": "Not every English '-ly' translates mechanically to -게, and this -게 is different from the -게 in -게 되다."
   },
   "gp_ge_doeda": {
@@ -227,7 +227,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_eoduda": {
     "meaning": "Use -아/어 두다 when you do something now and leave the result ready for later.",
     "formation": "Take the action's 아/어 form and add 두다: 열다 → 열어 두다 → 열어 두세요.",
-    "worked": "문을 열어 두세요: open the door AND leave it open.",
+    "worked": "문을 열어 두세요: 열다 becomes 열어; 두세요 asks to keep the result in place. The door should remain open afterward.",
     "trap": "This is different from merely opening a door once. The important idea is preserving the result."
   },
   "gp_boda_compare": {
@@ -239,7 +239,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_cheoreom": {
     "meaning": "처럼 after a noun means 'like' or 'as', comparing manner or resemblance.",
     "formation": "Put 처럼 right after the person or thing used as a model: 가수처럼.",
-    "worked": "그 사람은 가수처럼 노래해요: that person sings LIKE a singer.",
+    "worked": "그 사람은 가수처럼 노래해요: 가수 means 'singer'. Adding 처럼 says the singing resembles that of a singer, without claiming the person is a singer.",
     "trap": "처럼 expresses resemblance, not a literal identity. For 'is a singer', use 가수예요."
   },
   "gp_euro_means": {
@@ -250,8 +250,8 @@ export const level2Guides: Record<string, TeachingGuide> = {
   },
   "gp_mada": {
     "meaning": "마다 means 'every' for a recurring time or individual item.",
-    "formation": "Attach 마다 to the time or noun: 아침마다, 주말마다, 사람마다.",
-    "worked": "저는 아침마다 운동해요 means the exercise happens every morning.",
+    "formation": "Choose the recurring time or group and attach 마다 directly: 아침마다, 주말마다, 사람마다. It means each occurrence or member.",
+    "worked": "저는 아침마다 운동해요: 아침 is 'morning'. Adding 마다 makes the exercise a repeated habit, not just something done one morning.",
     "trap": "마다 implies repetition. It is different from 한 번 ('once') or 때마다 ('whenever') in more complex constructions."
   },
   "gp_bakke": {
@@ -262,14 +262,14 @@ export const level2Guides: Record<string, TeachingGuide> = {
   },
   "gp_eobeorida": {
     "meaning": "-아/어 버리다 means an action gets completely finished, often with feelings such as relief, regret, or surprise.",
-    "formation": "Use the verb's 아/어 form + 버리다: 하다 → 해 버리다 → 해 버렸어요.",
+    "formation": "Form the verb's 아/어 shape first: 하다 → 해. Then add 버리다 and conjugate it: 해 버렸어요 (finished doing it).",
     "worked": "숙제를 다 해 버렸어요 means the homework got finished completely; it can carry relief.",
     "trap": "It does not always mean a bad outcome. The emotion depends on context: finishing an unpleasant task may feel good."
   },
   "gp_eodo_concession": {
     "meaning": "-아/어도 means 'even if' or 'although', saying the next result still happens.",
     "formation": "Add 아/어도 to the first clause and state the unchanged outcome: 오다 → 와도.",
-    "worked": "비가 와도 가요: the speaker goes EVEN IF it rains.",
+    "worked": "비가 와도 가요: 오다 becomes 와도 ('even if it rains'). The main action 가요 still happens despite that condition.",
     "trap": "Do not confuse concession -아/어도 with permission -아/어도 돼요. The following words determine the meaning."
   },
   "gp_geureonde": {
@@ -287,7 +287,7 @@ export const level2Guides: Record<string, TeachingGuide> = {
   "gp_aseo_sequence": {
     "meaning": "-아/어서 can also link a first action to a next one: 'do A and then B'. Here it is SEQUENCE, not 'because'.",
     "formation": "Add 아서/어서 to the first verb stem; continue with a natural next action: 일어나다 → 일어나서.",
-    "worked": "아침에 일어나서 세수해요: the speaker gets up and then washes up.",
+    "worked": "아침에 일어나서 세수해요: 일어나다 becomes 일어나서. Getting up comes first; washing up follows as a natural next action.",
     "trap": "Don't confuse sequential -아/어서 with causal -아/어서; the full sentence's meaning determines whether you hear 'and then' or 'because'."
   },
   "gp_neundago_hada": {
