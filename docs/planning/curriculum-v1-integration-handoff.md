@@ -83,13 +83,20 @@ Local gates run on `integration/curriculum-v1` at `c4bbfd7` (this pass, all pass
 
 ## 6. Unresolved blockers
 
-1. **Vocabulary engine missing (step 1).** No `VocabController` implementation exists in any branch. `feat/vocabulary-ui` accepts `controller: VocabController | null`, so it can merge inert behind the flag, but the vocabulary workstream cannot function until the engine is built. This is Agent 00-owned work.
-2. **Answer evaluation missing (step 3).** No branch implements the `AnswerEvaluator` from `contracts/answers.ts`. The historical Boolean grammar grader remains the production grader.
+Tracked as GitHub issues (all OPEN):
+
+- **#9 — Release blocker: verify server sync schema preservation and multi-device compare-and-swap.** Unknown-field preservation and concurrent-push behavior of `~/korean-auth/server.js` are not proven. This blocks enabling synced vocabulary progress.
+- **#10 — Release blocker: isolate IndexedDB progress by authenticated account and invalidate stale sync work.** Account-switching/logout isolation against IndexedDB snapshots is unverified.
+- **#11 — Release blocker: native content versioning and six-deck web/native parity.** Native SQLite seed short-circuits when `CONTENT_VERSION` is unchanged, so PR #7 fixes will not reseed existing native profiles unless a reviewed version migration is implemented.
+
+Other blockers:
+
+1. **Vocabulary engine missing (step 1).** No `VocabController` implementation exists in any branch. `feat/vocabulary-ui` accepts `controller: VocabController | null`, so it can merge inert behind the flag, but the vocabulary workstream cannot function until the engine is built. Per `docs/planning/curriculum-v1-parallel-workstreams.md`, the engine lives in `mobile/src/features/vocabulary/engine/**` (specialist-owned); Agent 00 integrates the controller facade, store/state, and sync.
+2. **Answer evaluation missing (step 3).** No branch implements the `AnswerEvaluator` from `contracts/answers.ts`. The historical Boolean grammar grader remains the production grader. Per the parallel-workstreams doc, it lives in `mobile/src/features/answer-evaluation/**`.
 3. **Four feature branches have no PRs.** `feat/vocabulary-ui`, `feat/reading-comprehension`, `feat/grammar-transfer`, `feat/language-foundations` need PRs targeting `integration/curriculum-v1` before review/merge.
 4. **Four feature branches based pre-contract** (see §3). Mergeable as-is (verified clean), but the base should be noted in each PR.
-5. **Server sync behavior unverified.** Unknown-field preservation and concurrent-push behavior of `~/korean-auth/server.js` are not proven. This blocks enabling synced vocabulary progress.
-6. **Educator approval pending.** Content is not educator-certified; the 193-card remediation is "human review pending" and TOPIK II contrast review status is "pending". Do not present any of it as educator-certified or official TOPIK material.
-7. **PR #12 has no CI checks reported.** Verify the workflow runs on its branch before merging.
+5. **Educator approval pending.** Content is not educator-certified; the 193-card remediation is "human review pending" and TOPIK II contrast review status is "pending". Do not present any of it as educator-certified or official TOPIK material.
+6. **PR #12 has no CI checks reported.** Verify the workflow runs on its branch before merging.
 
 ## 7. Feature flag state (every workstream)
 
