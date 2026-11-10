@@ -1,3 +1,5 @@
+import { execFileSync } from 'node:child_process';
+import { resolve } from 'node:path';
 import pilot from '../../../content/practice-pilot.json';
 import { ambiguousChoices, gradeExercise, normalizeAnswer } from '../scoring';
 import { availableExercises, availableUnits, currentExercise, practiceLayoutWidth, recordAttempt, reviewMissed, startSession, summarizeSession } from '../session';
@@ -85,4 +87,12 @@ test('responsive single-column panel fits phone, tablet and desktop widths', () 
     expect(practiceLayoutWidth(width)).toBeLessThanOrEqual(720);
     expect(practiceLayoutWidth(width)).toBeGreaterThan(0);
   }
+});
+
+// Run the repository-wide authoring validator in the existing mobile Jest CI job.
+// This avoids editing Agent 00's shared workflow configuration.
+test('practice source, existing grammar references, and editorial constraints validate end to end', () => {
+  const script = resolve(__dirname, '../../../../../scripts/validate-practice.mjs');
+  const output = execFileSync(process.execPath, [script], { encoding: 'utf8' });
+  expect(output).toMatch(/^OK: 52 exercises/m);
 });
