@@ -16,6 +16,7 @@ export type ReadingQuestion = {
   correctIndex: number;
   evidence: string;
   explanation: string;
+  interpretationNote?: string;
 };
 
 export type ReadingPassage = {

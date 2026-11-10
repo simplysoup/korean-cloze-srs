@@ -28,6 +28,16 @@ describe('reading pilot catalogue', () => {
     expect(ids.size).toBe(30);
   });
 
+  test('inference and potential ambiguity have documented editorial rationale', () => {
+    const inferential = passages.flatMap((p) => p.questions).filter((q) => q.type === 'inference');
+    expect(inferential).toHaveLength(4);
+    for (const question of inferential) {
+      expect(question.interpretationNote?.length).toBeGreaterThan(80);
+    }
+    // The Level 3 future event question explicitly avoids claiming certainty.
+    expect(passages[5].questions[3].prompt).toContain('most likely');
+  });
+
   test('audio is optional; reading-only sessions never require playback', () => {
     expect(passages.every((p) => p.audio === null)).toBe(true);
   });

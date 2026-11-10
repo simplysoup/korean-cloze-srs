@@ -64,6 +64,7 @@ for (const passage of data.passages ?? []) {
     assert(Number.isInteger(q.correctIndex) && q.correctIndex >= 0 && q.correctIndex < 4, q.id + ': invalid correct index.');
     assert(isText(q.evidence, 8) && story.includes(q.evidence), q.id + ': evidence missing from passage.');
     assert(isText(q.explanation, 45), q.id + ': too-short explanation.');
+    if (q.type === 'inference') assert(isText(q.interpretationNote, 80), q.id + ': inference needs an ambiguity-review rationale.');
     assert(!('grammarPointId' in q) && !('reviewCardId' in q), q.id + ': comprehension must not update grammar SRS.');
   }
 }

@@ -123,7 +123,8 @@
           ],
           "correctIndex": 1,
           "evidence": "어렵지 않아요.",
-          "explanation": "Jisu reads it and finds it is not difficult; the other motivations do not appear in the passage."
+          "explanation": "Jisu reads it and finds it is not difficult; the other motivations do not appear in the passage.",
+          "interpretationNote": "The text does not explicitly say why Jisu borrows the book, but her stated goal is an easy book and she confirms this one is not difficult. Price and employment are never mentioned."
         }
       ],
       "prerequisiteGrammarLabels": [
@@ -236,7 +237,8 @@
           ],
           "correctIndex": 3,
           "evidence": "“이 길로 쭉 가세요. 은행 옆에 있어요.”",
-          "explanation": "The employee is giving walking directions toward the bank and station."
+          "explanation": "The employee is giving walking directions toward the bank and station.",
+          "interpretationNote": "The imperative could generally be used for requests, but here the employee responds to a location question and names a landmark, so these are directions rather than a shop invitation."
         },
         {
           "id": "rc_l1_station_q4",
@@ -381,7 +383,8 @@
           ],
           "correctIndex": 1,
           "evidence": "세 사람은 함께 점심을 맛있게 먹었어요.",
-          "explanation": "The ending says they ate lunch together and enjoyed it, despite the changed location."
+          "explanation": "The ending says they ate lunch together and enjoyed it, despite the changed location.",
+          "interpretationNote": "A move indoors might be interpreted as a disappointing picnic, but the text explicitly says they ate together deliciously; nothing states that they failed to meet."
         }
       ],
       "prerequisiteGrammarLabels": [
@@ -514,7 +517,8 @@
           ],
           "correctIndex": 1,
           "evidence": "토요일 아침에는 다른 약속이 없었어요.",
-          "explanation": "Her calendar has no conflicting appointment on Saturday morning."
+          "explanation": "Her calendar has no conflicting appointment on Saturday morning.",
+          "interpretationNote": "Free Saturday time supports the ability to attend; the story does not claim leave from work or a second schedule change. This is an inference, not a stated motive."
         }
       ],
       "prerequisiteGrammarLabels": [
@@ -655,7 +659,8 @@
           ],
           "correctIndex": 1,
           "evidence": "직원에게 바로 맡기는 편이 안전하다고 생각했기 때문이에요.",
-          "explanation": "His stated reason is safety, rather than a reward or a personal connection."
+          "explanation": "His stated reason is safety, rather than a reward or a personal connection.",
+          "interpretationNote": "Handing over to the desk is contrasted with searching alone, and safety is given as the explicit reason. Cash-counting and personal familiarity are unsupported motives."
         }
       ],
       "prerequisiteGrammarLabels": [
@@ -796,7 +801,8 @@
           ],
           "correctIndex": 1,
           "evidence": "비가 올 때 사용할 실내 장소를 처음부터 정해 두자고 제안했어요.",
-          "explanation": "Suhyeon explicitly proposes reserving or choosing an indoor backup at the planning stage."
+          "explanation": "Suhyeon explicitly proposes reserving or choosing an indoor backup at the planning stage.",
+          "interpretationNote": "The proposal describes a future intention, not an established policy. 'Most likely' is deliberately qualified; do not reword as 'What definitely happens next?'"
         }
       ],
       "prerequisiteGrammarLabels": [
