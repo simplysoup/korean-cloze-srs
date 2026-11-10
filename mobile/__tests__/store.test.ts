@@ -206,10 +206,12 @@ describe('4am day gate', () => {
     expect(getDueQueue()).toHaveLength(1);
   });
 
-  it('a point learned today is gated (the Learn + quiz was today’s review)', () => {
-    // New card, never reviewed, due = its creation time (today).
+  it('a point learned today goes straight into today’s reviews', () => {
+    // New card, never reviewed, due = its creation time (today). It is
+    // NOT gated: the Learn + quiz was the first exposure, and the review
+    // queue is the second review on day 1.
     getState().doc.reviewCards = [card({ state: 0, reps: 0, lastReview: null, due: new Date().toISOString() })];
-    expect(getDueQueue()).toHaveLength(0);
+    expect(getDueQueue()).toHaveLength(1);
   });
 
   it('a point learned before today 4am is due (its first review)', () => {

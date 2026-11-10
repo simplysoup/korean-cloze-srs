@@ -79,23 +79,18 @@ function latestLogByGp(): Map<string, { reviewedAt: string; rating: number }> {
 
 /**
  * True when a review card is done for today and must not appear in the
- * review queue until tomorrow 4am:
- * - answered correctly since today's 4am boundary (the latest log is a
- *   correct review at/after the boundary), or
- * - learned today and never reviewed (a New card whose due — its creation
- *   time — is at/after the boundary; the Learn + immediate quiz was
- *   today's review for it).
- * A card answered wrong today (latest log wrong) or learned on an earlier
- * day-cycle is NOT gated — it still needs to be gotten right.
+ * review queue until tomorrow 4am: answered correctly since today's 4am
+ * boundary (the latest log is a correct review at/after the boundary).
+ * A card answered wrong today (latest log wrong) is NOT gated — it still
+ * needs to be gotten right. A point learned today is NOT gated either:
+ * it goes straight into today's reviews (the Learn + immediate quiz was
+ * the first exposure; the review queue is the second review on day 1).
  */
 function isGatedToday(
-  rc: { grammarPointId: string; state: number; due: string; lastReview: string | null },
   latestLog: { reviewedAt: string; rating: number } | undefined,
   boundaryIso: string,
 ): boolean {
-  if (latestLog && latestLog.rating >= 3 && latestLog.reviewedAt >= boundaryIso) return true;
-  if (rc.state === 0 && rc.lastReview === null && rc.due >= boundaryIso) return true;
-  return false;
+  return Boolean(latestLog && latestLog.rating >= 3 && latestLog.reviewedAt >= boundaryIso);
 }
 
 /**
@@ -197,10 +192,11 @@ export function getDueQueue(limit = 10): ReviewQueueItem[] {
   // applies after the library filter, so a removed deck can't starve
   // the queue.
   const libraryGpIds = new Set(getLibraryGrammarPointIds());
-  // Day gate (4am): a card answered correctly today, or learned today,
-  // is done until tomorrow 4am — even when its FSRS due is sooner. The
-  // recorded due is kept untouched (the "true" interval); this only
-  // controls what the queue shows.
+  // Day gate (4am): a card answered correctly today is done until
+  // tomorrow 4am — even when its FSRS due is sooner. The recorded due
+  // is kept untouched (the "true" interval); this only controls what
+  // the queue shows. A point learned today is NOT gated: it goes
+  // straight into today's reviews.
   const boundaryIso = dayBoundary4am().toISOString();
   const latestLogs = latestLogByGp();
   const due = getState()
@@ -209,7 +205,7 @@ export function getDueQueue(limit = 10): ReviewQueueItem[] {
         rc.due <= nowIso &&
         !rc.masteredAt &&
         libraryGpIds.has(rc.grammarPointId) &&
-        !isGatedToday(rc, latestLogs.get(rc.grammarPointId), boundaryIso),
+        !isGatedToday(latestLogs.get(rc.grammarPointId), boundaryIso),
     )
     .sort(byDueAsc)
     .slice(0, effectiveLimit);
@@ -240,7 +236,7 @@ export function getNextReviewAt(): string | null {
     if (c.masteredAt || !libraryGpIds.has(c.grammarPointId)) continue;
     // A gated card's next appearance is tomorrow 4am at the earliest
     // (its recorded due is sooner); otherwise its due stands.
-    const gated = isGatedToday(c, latestLogs.get(c.grammarPointId), boundaryIso);
+    const gated = isGatedToday(latestLogs.get(c.grammarPointId), boundaryIso);
     const eff = gated ? (c.due > tomorrow4amIso ? c.due : tomorrow4amIso) : c.due;
     if (earliest === null || eff < earliest) earliest = eff;
   }
@@ -268,7 +264,7 @@ export function getDashboardStats(): DashboardStats {
       c.due <= nowIso &&
       !c.masteredAt &&
       libraryGpIds.has(c.grammarPointId) &&
-      !isGatedToday(c, latestLogs.get(c.grammarPointId), boundaryIso),
+      !isGatedToday(latestLogs.get(c.grammarPointId), boundaryIso),
   ).length;
   const dueCount = settings.vacationMode
     ? 0
