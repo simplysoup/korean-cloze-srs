@@ -2,7 +2,7 @@
 
 **Repository:** `simplysoup/korean-cloze-srs`  
 **Branch:** `qa/curriculum-v1-readiness`  
-**PR target:** `integration/curriculum-v1` — **draft**; only Agent 00 may merge.  
+**Draft PR:** https://github.com/simplysoup/korean-cloze-srs/pull/24 → `integration/curriculum-v1`; only Agent 00 may merge.  
 **Correct Phase 2 start SHA:** `ba94b9ee7ae9374cb6e92d8bab17db38f095f9b6`.  
 **As-of:** 2026-11-10. No release, main merge, deploy, flags or curriculum writes authorized.
 
