@@ -1,0 +1,245 @@
+[
+  {
+    "id": "A01",
+    "track": "A",
+    "requirement": "Eight production flags OFF; no runtime overrides",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A02",
+    "track": "A",
+    "requirement": "Build-36 TOPIK I IDs, deck ordering and navigation parity",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A03",
+    "track": "A",
+    "requirement": "Fresh account, empty library, learn and first review",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A04",
+    "track": "A",
+    "requirement": "Existing grammar logs, due scheduling, 4am rollover and mastery unchanged",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A05",
+    "track": "A",
+    "requirement": "Answer correctness, reveal, undo and grammar queue unchanged with flags OFF",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A06",
+    "track": "A",
+    "requirement": "Offline review, reload, IndexedDB persistence and reconnect",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A07",
+    "track": "A",
+    "requirement": "Expired token, recovery, logout and navigation authorization",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A08",
+    "track": "A",
+    "requirement": "Responsive web, keyboard and screen-reader focus order",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "A09",
+    "track": "A",
+    "requirement": "Build-36 vs candidate deterministic synthetic event/progress snapshot diff",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B01",
+    "track": "B",
+    "requirement": "Vocabulary seven decks, 145 unique lexical IDs",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B02",
+    "track": "B",
+    "requirement": "Vocabulary introduction/learn/review/reveal/cram and independent FSRS due dates",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B03",
+    "track": "B",
+    "requirement": "Vocabulary wrong/near/unknown, undo, offline and storage failure",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B04",
+    "track": "B",
+    "requirement": "Answer feedback five outcomes, target-only mastery, curated alternatives",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B05",
+    "track": "B",
+    "requirement": "Answer feedback unknown-context abstention, reveal/undo and hint scope",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B06",
+    "track": "B",
+    "requirement": "Topics and Hangul routes, prerequisites, error and accessibility",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B07",
+    "track": "B",
+    "requirement": "52 contrast/transfer exercises, prereqs and no grammar mastery",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B08",
+    "track": "B",
+    "requirement": "Six readings, 24 questions, explanations, empty/error/focus",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B09",
+    "track": "B",
+    "requirement": "TOPIK II OFF no active drafts / ON six unique ordered decks",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "B10",
+    "track": "B",
+    "requirement": "Mobile/narrow/desktop accessibility in isolated per-flag test builds",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "SEC01",
+    "track": "SEC",
+    "requirement": "A→B browser account isolation, offline cache and outbound payloads",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "Account isolation runtime fix and frozen candidate not yet available.",
+    "issue": "#10"
+  },
+  {
+    "id": "SEC02",
+    "track": "SEC",
+    "requirement": "Delayed A sync resolved after B login cannot mutate or push",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "Session invalidation fix and frozen candidate not yet available.",
+    "issue": "#10"
+  },
+  {
+    "id": "SEC03",
+    "track": "SEC",
+    "requirement": "Staging concurrent independent grammar/vocab events survive CAS conflicts",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "No authorized disposable staging server, CAS deployment or synthetic two-device users.",
+    "issue": "#9"
+  },
+  {
+    "id": "SEC04",
+    "track": "SEC",
+    "requirement": "Staging unknown sync keys and old snapshots preserved on round-trip",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "Actual backend schema unknown; no authorized staging verification.",
+    "issue": "#9"
+  },
+  {
+    "id": "SEC05",
+    "track": "SEC",
+    "requirement": "Staging reinstall/recovery restores existing history with no data loss",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "Actual backend server not verified for old snapshots/recovery.",
+    "issue": "#9"
+  },
+  {
+    "id": "SEC06",
+    "track": "SEC",
+    "requirement": "Timeout/storage quota failures cannot cross user or drop reviews",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "Web storage/session fix not frozen; browser error-injection environment unavailable.",
+    "issue": "#10"
+  },
+  {
+    "id": "NATIVE01",
+    "track": "NATIVE",
+    "requirement": "Pre-fix SQLite profile upgrade migrates fixed cards preserving history",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "No approved native migration and simulator/device evidence.",
+    "issue": "#11"
+  },
+  {
+    "id": "NATIVE02",
+    "track": "NATIVE",
+    "requirement": "iOS/Android six-deck catalogue and version parity",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "No approved native migration and simulator/device evidence.",
+    "issue": "#11"
+  },
+  {
+    "id": "NATIVE03",
+    "track": "NATIVE",
+    "requirement": "Native restart/reinstall, offline, accessibility and rollback",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "No approved native migration and simulator/device evidence.",
+    "issue": "#11"
+  },
+  {
+    "id": "OPS01",
+    "track": "OPS",
+    "requirement": "All authoring/content validators run on frozen SHA",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "OPS02",
+    "track": "OPS",
+    "requirement": "Lint, typecheck, Jest and Expo web export run on frozen SHA",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "OPS03",
+    "track": "OPS",
+    "requirement": "Exact PR SHA CI and Agent 13-only file ownership verified",
+    "status": "NOT RUN",
+    "evidence": null
+  },
+  {
+    "id": "OPS04",
+    "track": "OPS",
+    "requirement": "Explicit owner authorization, disabled flags and draft PR safeguards",
+    "status": "BLOCKED",
+    "evidence": null,
+    "reason": "Release forbidden until Agent 00 freezes candidate, owner approves and all gates pass."
+  }
+]
