@@ -1505,7 +1505,7 @@
               "answer": "가벼워요",
               "englishHint": "This bag is light.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "가볍다",
               "introducedAtPosition": 14
             },
             {
@@ -1515,7 +1515,7 @@
               "answer": "도와요",
               "englishHint": "I help my friend.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "돕다",
               "introducedAtPosition": 14
             },
             {
@@ -1525,7 +1525,7 @@
               "answer": "더워요",
               "englishHint": "It's hot today.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "덥다",
               "introducedAtPosition": 14
             }
           ]
@@ -1592,7 +1592,7 @@
               "answer": "들어요",
               "englishHint": "I listen carefully.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "듣다",
               "introducedAtPosition": 15
             },
             {
@@ -1602,7 +1602,7 @@
               "answer": "걸어요",
               "englishHint": "I walk to school.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "걷다",
               "introducedAtPosition": 15
             },
             {
@@ -1612,7 +1612,7 @@
               "answer": "들었어요",
               "englishHint": "I heard those words.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "듣다",
               "introducedAtPosition": 15
             }
           ]
@@ -1678,7 +1678,7 @@
               "answer": "빨라요",
               "englishHint": "The train is fast.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "빠르다",
               "introducedAtPosition": 16
             },
             {
@@ -1688,7 +1688,7 @@
               "answer": "달라요",
               "englishHint": "Our thoughts are different.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "다르다",
               "introducedAtPosition": 16
             },
             {
@@ -1698,7 +1698,7 @@
               "answer": "불러요",
               "englishHint": "I sing a song.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "부르다",
               "introducedAtPosition": 16
             }
           ]
@@ -1765,7 +1765,7 @@
               "answer": "슬퍼요",
               "englishHint": "That movie is sad.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "슬프다",
               "introducedAtPosition": 17
             },
             {
@@ -1775,7 +1775,7 @@
               "answer": "예뻐요",
               "englishHint": "These clothes are pretty.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "예쁘다",
               "introducedAtPosition": 17
             },
             {
@@ -1785,7 +1785,7 @@
               "answer": "써요",
               "englishHint": "I write these letters.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "쓰다",
               "introducedAtPosition": 17
             }
           ]
@@ -1852,7 +1852,7 @@
               "answer": "전화해",
               "englishHint": "Call me later.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "전화하다",
               "introducedAtPosition": 18
             },
             {
@@ -1862,7 +1862,7 @@
               "answer": "먹어",
               "englishHint": "Eat your meal.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "먹다",
               "introducedAtPosition": 18
             },
             {
@@ -1872,7 +1872,7 @@
               "answer": "앉아",
               "englishHint": "Sit here.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "앉다",
               "introducedAtPosition": 18
             }
           ]
@@ -2039,7 +2039,7 @@
               "answer": "한테",
               "englishHint": "I call Mom.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "엄마",
               "introducedAtPosition": 20
             },
             {
@@ -2049,7 +2049,7 @@
               "answer": "에게",
               "englishHint": "I send a photo to a friend.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "친구",
               "introducedAtPosition": 20
             },
             {
@@ -2059,7 +2059,7 @@
               "answer": "한테",
               "englishHint": "I give water to a child.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "아이",
               "introducedAtPosition": 20
             }
           ]
@@ -2125,7 +2125,7 @@
               "answer": "에게서",
               "englishHint": "I heard news from my younger sibling.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "동생",
               "introducedAtPosition": 21
             },
             {
@@ -2135,7 +2135,7 @@
               "answer": "한테서",
               "englishHint": "I borrowed a book from a friend.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "친구",
               "introducedAtPosition": 21
             },
             {
@@ -2145,7 +2145,7 @@
               "answer": "한테서",
               "englishHint": "I got a gift from Mom.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "엄마",
               "introducedAtPosition": 21
             }
           ]
@@ -2519,7 +2519,7 @@
               "answer": "지 못해요",
               "englishHint": "I can't drive now.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "운전하다",
               "introducedAtPosition": 25
             },
             {
@@ -2529,7 +2529,7 @@
               "answer": "지 못했어요",
               "englishHint": "I couldn't understand those words.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "이해하다",
               "introducedAtPosition": 25
             },
             {
@@ -2539,7 +2539,7 @@
               "answer": "지 못해요",
               "englishHint": "I can't exercise today.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "운동하다",
               "introducedAtPosition": 25
             }
           ]
@@ -3926,7 +3926,7 @@
               "answer": "지어요",
               "englishHint": "They build a house here.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "짓다",
               "introducedAtPosition": 38
             },
             {
@@ -3936,7 +3936,7 @@
               "answer": "나아요",
               "englishHint": "The illness gets better quickly.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "낫다",
               "introducedAtPosition": 38
             },
             {
@@ -3946,7 +3946,7 @@
               "answer": "지었어요",
               "englishHint": "We built a house.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "짓다",
               "introducedAtPosition": 38
             }
           ]
@@ -4013,7 +4013,7 @@
               "answer": "빨개요",
               "englishHint": "The flower is red.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "빨갛다",
               "introducedAtPosition": 39
             },
             {
@@ -4023,7 +4023,7 @@
               "answer": "어때요",
               "englishHint": "How do you feel today?",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "어떻다",
               "introducedAtPosition": 39
             },
             {
@@ -4033,7 +4033,7 @@
               "answer": "파래요",
               "englishHint": "The sky is blue today.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "파랗다",
               "introducedAtPosition": 39
             }
           ]
@@ -4100,7 +4100,7 @@
               "answer": "압니다",
               "englishHint": "I know the name.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "알다",
               "introducedAtPosition": 40
             },
             {
@@ -4110,7 +4110,7 @@
               "answer": "사세요",
               "englishHint": "Do you live here? (honorific)",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "살다",
               "introducedAtPosition": 40
             },
             {
@@ -4120,7 +4120,7 @@
               "answer": "만듭니다",
               "englishHint": "I make cakes every day.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "만들다",
               "introducedAtPosition": 40
             }
           ]
@@ -4500,7 +4500,7 @@
               "answer": "와",
               "englishHint": "I had milk and bread.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "우유",
               "introducedAtPosition": 44
             },
             {
@@ -4510,7 +4510,7 @@
               "answer": "와",
               "englishHint": "I go together with a friend.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "친구",
               "introducedAtPosition": 44
             },
             {
@@ -4520,7 +4520,7 @@
               "answer": "과",
               "englishHint": "I bought a bag and shoes.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "가방",
               "introducedAtPosition": 44
             }
           ]
@@ -4587,7 +4587,7 @@
               "answer": "랑",
               "englishHint": "I talked with Mom.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "엄마",
               "introducedAtPosition": 45
             },
             {
@@ -4597,7 +4597,7 @@
               "answer": "이랑",
               "englishHint": "I eat rice and kimchi.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "밥",
               "introducedAtPosition": 45
             },
             {
@@ -4607,7 +4607,7 @@
               "answer": "이랑",
               "englishHint": "I play with my younger sibling.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "동생",
               "introducedAtPosition": 45
             }
           ]
@@ -4883,7 +4883,7 @@
               "answer": "께서",
               "englishHint": "The professor speaks (respectfully).",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "교수님",
               "introducedAtPosition": 48
             },
             {
@@ -4893,7 +4893,7 @@
               "answer": "께서",
               "englishHint": "Father is home (respectfully).",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "아버지",
               "introducedAtPosition": 48
             },
             {
@@ -4903,7 +4903,7 @@
               "answer": "께서",
               "englishHint": "The teacher is reading a book.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "선생님",
               "introducedAtPosition": 48
             }
           ]
@@ -4970,7 +4970,7 @@
               "answer": "께",
               "englishHint": "I telephone my parents (respectfully).",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "부모님",
               "introducedAtPosition": 49
             },
             {
@@ -4980,7 +4980,7 @@
               "answer": "께",
               "englishHint": "I ask the professor a question (respectfully).",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "교수님",
               "introducedAtPosition": 49
             },
             {
@@ -4990,7 +4990,7 @@
               "answer": "께",
               "englishHint": "I give Grandfather flowers.",
               "alternateAnswers": [],
-              "vocabBaseForm": "",
+              "vocabBaseForm": "할아버지",
               "introducedAtPosition": 49
             }
           ]
