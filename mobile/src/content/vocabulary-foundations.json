@@ -1,0 +1,2550 @@
+{
+  "version": "2026-11-10",
+  "type": "vocabulary-collection",
+  "status": "Foundational vocabulary content authored; not yet wired into independent in-app vocabulary SRS",
+  "provenance": "Original examples and glosses based on standard Korean patterns; native educator review required. Darakwon KGI Beginning Getting Ready and NIKL dictionary guide coverage, not copied text.",
+  "decks": [
+    {
+      "deck": {
+        "id": "vocab_foundations_native_numbers",
+        "type": "vocabulary",
+        "title": "Native Korean numbers",
+        "sortOrder": 0,
+        "goal": "Recognize native forms and select shortened counter forms."
+      },
+      "entries": [
+        {
+          "id": "vocab_native_numbers_001",
+          "front": "하나",
+          "meaning": "one",
+          "spokenForm": null,
+          "variant": "한",
+          "usageExample": {
+            "korean": "사과 한 개",
+            "english": "one apple"
+          },
+          "usageNote": "Before counters, 하나 becomes 한.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_002",
+          "front": "둘",
+          "meaning": "two",
+          "spokenForm": null,
+          "variant": "두",
+          "usageExample": {
+            "korean": "사과 두 개",
+            "english": "two apples"
+          },
+          "usageNote": "Before counters, 둘 becomes 두.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_003",
+          "front": "셋",
+          "meaning": "three",
+          "spokenForm": null,
+          "variant": "세",
+          "usageExample": {
+            "korean": "사과 세 개",
+            "english": "three apples"
+          },
+          "usageNote": "Before counters, 셋 becomes 세.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_004",
+          "front": "넷",
+          "meaning": "four",
+          "spokenForm": null,
+          "variant": "네",
+          "usageExample": {
+            "korean": "사과 네 개",
+            "english": "four apples"
+          },
+          "usageNote": "Before counters, 넷 becomes 네.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_005",
+          "front": "다섯",
+          "meaning": "five",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 다섯 개",
+            "english": "five apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_006",
+          "front": "여섯",
+          "meaning": "six",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 여섯 개",
+            "english": "six apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_007",
+          "front": "일곱",
+          "meaning": "seven",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 일곱 개",
+            "english": "seven apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_008",
+          "front": "여덟",
+          "meaning": "eight",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 여덟 개",
+            "english": "eight apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_009",
+          "front": "아홉",
+          "meaning": "nine",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 아홉 개",
+            "english": "nine apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_010",
+          "front": "열",
+          "meaning": "ten",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 열 개",
+            "english": "ten apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_011",
+          "front": "열하나",
+          "meaning": "eleven",
+          "spokenForm": null,
+          "variant": "열한",
+          "usageExample": {
+            "korean": "사과 열한 개",
+            "english": "eleven apples"
+          },
+          "usageNote": "Before counters, 열하나 becomes 열한.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_012",
+          "front": "열둘",
+          "meaning": "twelve",
+          "spokenForm": null,
+          "variant": "열두",
+          "usageExample": {
+            "korean": "사과 열두 개",
+            "english": "twelve apples"
+          },
+          "usageNote": "Before counters, 열둘 becomes 열두.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_013",
+          "front": "열셋",
+          "meaning": "thirteen",
+          "spokenForm": null,
+          "variant": "열세",
+          "usageExample": {
+            "korean": "사과 열세 개",
+            "english": "thirteen apples"
+          },
+          "usageNote": "Before counters, 열셋 becomes 열세.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_014",
+          "front": "열넷",
+          "meaning": "fourteen",
+          "spokenForm": null,
+          "variant": "열네",
+          "usageExample": {
+            "korean": "사과 열네 개",
+            "english": "fourteen apples"
+          },
+          "usageNote": "Before counters, 열넷 becomes 열네.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_015",
+          "front": "열다섯",
+          "meaning": "fifteen",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 열다섯 개",
+            "english": "fifteen apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_016",
+          "front": "열여섯",
+          "meaning": "sixteen",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 열여섯 개",
+            "english": "sixteen apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_017",
+          "front": "열일곱",
+          "meaning": "seventeen",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 열일곱 개",
+            "english": "seventeen apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_018",
+          "front": "열여덟",
+          "meaning": "eighteen",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 열여덟 개",
+            "english": "eighteen apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_019",
+          "front": "열아홉",
+          "meaning": "nineteen",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 열아홉 개",
+            "english": "nineteen apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_020",
+          "front": "스물",
+          "meaning": "twenty",
+          "spokenForm": null,
+          "variant": "스무",
+          "usageExample": {
+            "korean": "사과 스무 개",
+            "english": "twenty apples"
+          },
+          "usageNote": "Before a counter, exactly 20 is 스무 rather than 스물.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_021",
+          "front": "스물하나",
+          "meaning": "twenty-one",
+          "spokenForm": null,
+          "variant": "스물한",
+          "usageExample": {
+            "korean": "사과 스물한 개",
+            "english": "twenty-one apples"
+          },
+          "usageNote": "Before counters, final 하나 becomes 한.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_022",
+          "front": "서른",
+          "meaning": "thirty",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 서른 개",
+            "english": "thirty apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_023",
+          "front": "마흔",
+          "meaning": "forty",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 마흔 개",
+            "english": "forty apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_024",
+          "front": "쉰",
+          "meaning": "fifty",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 쉰 개",
+            "english": "fifty apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_025",
+          "front": "예순",
+          "meaning": "sixty",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 예순 개",
+            "english": "sixty apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_026",
+          "front": "일흔",
+          "meaning": "seventy",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 일흔 개",
+            "english": "seventy apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_027",
+          "front": "여든",
+          "meaning": "eighty",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 여든 개",
+            "english": "eighty apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        },
+        {
+          "id": "vocab_native_numbers_028",
+          "front": "아흔",
+          "meaning": "ninety",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 아흔 개",
+            "english": "ninety apples"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "native_numbers"
+          ]
+        }
+      ]
+    },
+    {
+      "deck": {
+        "id": "vocab_foundations_sino_numbers",
+        "type": "vocabulary",
+        "title": "Sino-Korean numbers",
+        "sortOrder": 1,
+        "goal": "Read prices, dates and minutes in the Sino number system."
+      },
+      "entries": [
+        {
+          "id": "vocab_sino_numbers_001",
+          "front": "영",
+          "meaning": "zero (general number)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "영 도",
+            "english": "zero degrees"
+          },
+          "usageNote": "영 is common in temperatures, math and measurements.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_002",
+          "front": "공",
+          "meaning": "zero (digit readout)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "공일공",
+            "english": "zero-one-zero"
+          },
+          "usageNote": "Often used when reading phone numbers or individual digits.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_003",
+          "front": "일",
+          "meaning": "one (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "일 분",
+            "english": "one minute"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_004",
+          "front": "이",
+          "meaning": "two (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "이 분",
+            "english": "two minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_005",
+          "front": "삼",
+          "meaning": "three (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "삼 분",
+            "english": "three minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_006",
+          "front": "사",
+          "meaning": "four (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사 분",
+            "english": "four minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_007",
+          "front": "오",
+          "meaning": "five (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "오 분",
+            "english": "five minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_008",
+          "front": "육",
+          "meaning": "six (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "육 분",
+            "english": "six minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_009",
+          "front": "칠",
+          "meaning": "seven (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "칠 분",
+            "english": "seven minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_010",
+          "front": "팔",
+          "meaning": "eight (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "팔 분",
+            "english": "eight minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_011",
+          "front": "구",
+          "meaning": "nine (Sino-Korean)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "구 분",
+            "english": "nine minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_012",
+          "front": "십",
+          "meaning": "ten",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "십 분",
+            "english": "ten minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_013",
+          "front": "이십",
+          "meaning": "twenty",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "이십 분",
+            "english": "twenty minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_014",
+          "front": "삼십",
+          "meaning": "thirty",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "삼십 분",
+            "english": "thirty minutes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_015",
+          "front": "백",
+          "meaning": "one hundred",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "백 원",
+            "english": "one hundred won"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_016",
+          "front": "천",
+          "meaning": "one thousand",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "천 원",
+            "english": "one thousand won"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_017",
+          "front": "만",
+          "meaning": "ten thousand",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "만 원",
+            "english": "ten thousand won"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        },
+        {
+          "id": "vocab_sino_numbers_018",
+          "front": "억",
+          "meaning": "one hundred million",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "일억 원",
+            "english": "one hundred million won"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "sino_numbers"
+          ]
+        }
+      ]
+    },
+    {
+      "deck": {
+        "id": "vocab_foundations_counters",
+        "type": "vocabulary",
+        "title": "Counters and classifiers",
+        "sortOrder": 2,
+        "goal": "Select lexical counters and appropriate number forms in noun phrases."
+      },
+      "entries": [
+        {
+          "id": "vocab_counters_001",
+          "front": "개",
+          "meaning": "general object counter",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "사과 두 개",
+            "english": "two apples"
+          },
+          "usageNote": "Uses native counting forms.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_002",
+          "front": "명",
+          "meaning": "people counter",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "학생 세 명",
+            "english": "three students"
+          },
+          "usageNote": "Neutral people counter; 분 is a respectful variant.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_003",
+          "front": "분",
+          "meaning": "respected people counter",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "선생님 두 분",
+            "english": "two teachers (respectful)"
+          },
+          "usageNote": "Not the same use as 분 meaning minute.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_004",
+          "front": "권",
+          "meaning": "books / bound volumes",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "책 네 권",
+            "english": "four books"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_005",
+          "front": "마리",
+          "meaning": "animals",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "고양이 한 마리",
+            "english": "one cat"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_006",
+          "front": "잔",
+          "meaning": "cups / glasses",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "커피 두 잔",
+            "english": "two cups of coffee"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_007",
+          "front": "병",
+          "meaning": "bottles",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "물 세 병",
+            "english": "three bottles of water"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_008",
+          "front": "그릇",
+          "meaning": "bowls",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "밥 한 그릇",
+            "english": "one bowl of rice"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_009",
+          "front": "장",
+          "meaning": "flat sheets / paper",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "종이 두 장",
+            "english": "two sheets of paper"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_010",
+          "front": "대",
+          "meaning": "vehicles / machines",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "차 한 대",
+            "english": "one car"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_011",
+          "front": "켤레",
+          "meaning": "pairs of shoes / socks",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "신발 두 켤레",
+            "english": "two pairs of shoes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_012",
+          "front": "벌",
+          "meaning": "sets of clothing",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "옷 세 벌",
+            "english": "three sets of clothes"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_013",
+          "front": "송이",
+          "meaning": "flowers",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "꽃 한 송이",
+            "english": "one flower"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_014",
+          "front": "번",
+          "meaning": "occurrences / times",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "두 번",
+            "english": "twice"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_015",
+          "front": "층",
+          "meaning": "floors of a building",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "삼 층",
+            "english": "third floor"
+          },
+          "usageNote": "Ordinarily uses Sino-Korean numbers, unlike many other counters.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_016",
+          "front": "살",
+          "meaning": "years of age (native numbers)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "스무 살",
+            "english": "twenty years old"
+          },
+          "usageNote": "Uses native numbers; 20 before 살 is 스무.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_017",
+          "front": "시",
+          "meaning": "clock-hour counter",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "세 시",
+            "english": "three o'clock"
+          },
+          "usageNote": "Uses native numbers for hours.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_018",
+          "front": "분 (minute)",
+          "meaning": "minutes on a clock",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "삼십 분",
+            "english": "thirty minutes"
+          },
+          "usageNote": "Uses Sino-Korean numbers for minutes.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_019",
+          "front": "원",
+          "meaning": "Korean won",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "오천 원",
+            "english": "five thousand won"
+          },
+          "usageNote": "Uses Sino-Korean numbers.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_020",
+          "front": "달",
+          "meaning": "months as a duration",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "두 달",
+            "english": "two months"
+          },
+          "usageNote": "Native counting often applies to durations.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        },
+        {
+          "id": "vocab_counters_021",
+          "front": "개월",
+          "meaning": "months as counted duration",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "삼 개월",
+            "english": "three months"
+          },
+          "usageNote": "Uses Sino-Korean numbers for this counter.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "counters"
+          ]
+        }
+      ]
+    },
+    {
+      "deck": {
+        "id": "vocab_foundations_calendar",
+        "type": "vocabulary",
+        "title": "Calendar and dates",
+        "sortOrder": 3,
+        "goal": "Recognize weekdays, date expressions and irregular month readings."
+      },
+      "entries": [
+        {
+          "id": "vocab_calendar_001",
+          "front": "월요일",
+          "meaning": "Monday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "월요일에 만나요.",
+            "english": "See you on Monday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_002",
+          "front": "화요일",
+          "meaning": "Tuesday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "화요일에 일해요.",
+            "english": "I work on Tuesday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_003",
+          "front": "수요일",
+          "meaning": "Wednesday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "수요일에 공부해요.",
+            "english": "I study on Wednesday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_004",
+          "front": "목요일",
+          "meaning": "Thursday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "목요일에 전화해요.",
+            "english": "I'll call on Thursday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_005",
+          "front": "금요일",
+          "meaning": "Friday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "금요일에 쉬어요.",
+            "english": "I rest on Friday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_006",
+          "front": "토요일",
+          "meaning": "Saturday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "토요일에 여행해요.",
+            "english": "I travel on Saturday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_007",
+          "front": "일요일",
+          "meaning": "Sunday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "일요일에 집에 있어요.",
+            "english": "I'm at home on Sunday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_008",
+          "front": "오늘",
+          "meaning": "today",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "오늘은 바빠요.",
+            "english": "I'm busy today."
+          },
+          "usageNote": "Usually no temporal 에.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_009",
+          "front": "내일",
+          "meaning": "tomorrow",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "내일 만나요.",
+            "english": "See you tomorrow."
+          },
+          "usageNote": "Usually no temporal 에.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_010",
+          "front": "어제",
+          "meaning": "yesterday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "어제 공부했어요.",
+            "english": "I studied yesterday."
+          },
+          "usageNote": "Usually no temporal 에.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_011",
+          "front": "모레",
+          "meaning": "the day after tomorrow",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "모레 출발해요.",
+            "english": "We leave the day after tomorrow."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_012",
+          "front": "그제",
+          "meaning": "the day before yesterday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "그제 친구를 만났어요.",
+            "english": "I met a friend the day before yesterday."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_013",
+          "front": "1월",
+          "meaning": "month 1",
+          "spokenForm": "일월",
+          "variant": null,
+          "usageExample": {
+            "korean": "1월에 여행해요.",
+            "english": "I travel in month 1."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_014",
+          "front": "2월",
+          "meaning": "month 2",
+          "spokenForm": "이월",
+          "variant": null,
+          "usageExample": {
+            "korean": "2월에 여행해요.",
+            "english": "I travel in month 2."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_015",
+          "front": "3월",
+          "meaning": "month 3",
+          "spokenForm": "삼월",
+          "variant": null,
+          "usageExample": {
+            "korean": "3월에 여행해요.",
+            "english": "I travel in month 3."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_016",
+          "front": "4월",
+          "meaning": "month 4",
+          "spokenForm": "사월",
+          "variant": null,
+          "usageExample": {
+            "korean": "4월에 여행해요.",
+            "english": "I travel in month 4."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_017",
+          "front": "5월",
+          "meaning": "month 5",
+          "spokenForm": "오월",
+          "variant": null,
+          "usageExample": {
+            "korean": "5월에 여행해요.",
+            "english": "I travel in month 5."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_018",
+          "front": "6월",
+          "meaning": "month 6",
+          "spokenForm": "유월",
+          "variant": null,
+          "usageExample": {
+            "korean": "6월에 여행해요.",
+            "english": "I travel in month 6."
+          },
+          "usageNote": "6월 is pronounced 유월, not 육월.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_019",
+          "front": "7월",
+          "meaning": "month 7",
+          "spokenForm": "칠월",
+          "variant": null,
+          "usageExample": {
+            "korean": "7월에 여행해요.",
+            "english": "I travel in month 7."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_020",
+          "front": "8월",
+          "meaning": "month 8",
+          "spokenForm": "팔월",
+          "variant": null,
+          "usageExample": {
+            "korean": "8월에 여행해요.",
+            "english": "I travel in month 8."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_021",
+          "front": "9월",
+          "meaning": "month 9",
+          "spokenForm": "구월",
+          "variant": null,
+          "usageExample": {
+            "korean": "9월에 여행해요.",
+            "english": "I travel in month 9."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_022",
+          "front": "10월",
+          "meaning": "month 10",
+          "spokenForm": "시월",
+          "variant": null,
+          "usageExample": {
+            "korean": "10월에 여행해요.",
+            "english": "I travel in month 10."
+          },
+          "usageNote": "10월 is pronounced 시월, not 십월.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_023",
+          "front": "11월",
+          "meaning": "month 11",
+          "spokenForm": "십일월",
+          "variant": null,
+          "usageExample": {
+            "korean": "11월에 여행해요.",
+            "english": "I travel in month 11."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_024",
+          "front": "12월",
+          "meaning": "month 12",
+          "spokenForm": "십이월",
+          "variant": null,
+          "usageExample": {
+            "korean": "12월에 여행해요.",
+            "english": "I travel in month 12."
+          },
+          "usageNote": "Month numbers use Sino-Korean readings.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_025",
+          "front": "년",
+          "meaning": "year (calendar)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "2026년",
+            "english": "the year 2026"
+          },
+          "usageNote": "Sino-Korean number readings are used when reading years.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_026",
+          "front": "월",
+          "meaning": "month marker",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "11월",
+            "english": "November"
+          },
+          "usageNote": "Month counting is a lexical calendar topic.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        },
+        {
+          "id": "vocab_calendar_027",
+          "front": "일",
+          "meaning": "day of month",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "10일",
+            "english": "the 10th day of a month"
+          },
+          "usageNote": "Context distinguishes the day marker from Sino 일 meaning one.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "calendar"
+          ]
+        }
+      ]
+    },
+    {
+      "deck": {
+        "id": "vocab_foundations_clock",
+        "type": "vocabulary",
+        "title": "Time expressions",
+        "sortOrder": 4,
+        "goal": "Understand common clock forms, AM/PM and everyday schedules."
+      },
+      "entries": [
+        {
+          "id": "vocab_clock_001",
+          "front": "오전",
+          "meaning": "a.m. / before noon",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "오전 아홉 시",
+            "english": "9 a.m."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_002",
+          "front": "오후",
+          "meaning": "p.m. / after noon",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "오후 두 시",
+            "english": "2 p.m."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_003",
+          "front": "아침",
+          "meaning": "morning",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "아침에 일어나요.",
+            "english": "I wake up in the morning."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_004",
+          "front": "점심",
+          "meaning": "lunch / midday",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "점심에 만나요.",
+            "english": "Let's meet at lunchtime."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_005",
+          "front": "저녁",
+          "meaning": "evening / dinner",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "저녁에 공부해요.",
+            "english": "I study in the evening."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_006",
+          "front": "밤",
+          "meaning": "night",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "밤에 쉬어요.",
+            "english": "I rest at night."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_007",
+          "front": "새벽",
+          "meaning": "dawn / early morning",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "새벽에 일어났어요.",
+            "english": "I woke up at dawn."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_008",
+          "front": "정오",
+          "meaning": "noon",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "정오에 만나요.",
+            "english": "Let's meet at noon."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_009",
+          "front": "자정",
+          "meaning": "midnight",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "자정에 도착했어요.",
+            "english": "We arrived at midnight."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_010",
+          "front": "반",
+          "meaning": "half past (clock)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "두 시 반",
+            "english": "2:30"
+          },
+          "usageNote": "Use with native hour forms.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_011",
+          "front": "초",
+          "meaning": "second",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "삼십 초",
+            "english": "thirty seconds"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_012",
+          "front": "한 시",
+          "meaning": "one o'clock",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "한 시에 출발해요.",
+            "english": "We depart at one o'clock."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_013",
+          "front": "두 시",
+          "meaning": "two o'clock",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "두 시에 만나요.",
+            "english": "Let's meet at two o'clock."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_014",
+          "front": "세 시",
+          "meaning": "three o'clock",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "세 시에 시작해요.",
+            "english": "It begins at three o'clock."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_015",
+          "front": "다섯 시 반",
+          "meaning": "5:30",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "다섯 시 반에 와요.",
+            "english": "Come at 5:30."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        },
+        {
+          "id": "vocab_clock_016",
+          "front": "세 시 십오 분",
+          "meaning": "3:15",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "세 시 십오 분에 출발해요.",
+            "english": "We leave at 3:15."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "clock"
+          ]
+        }
+      ]
+    },
+    {
+      "deck": {
+        "id": "vocab_foundations_prices_age",
+        "type": "vocabulary",
+        "title": "Prices, amounts and age",
+        "sortOrder": 5,
+        "goal": "Handle everyday money and age phrases without counting them as grammar."
+      },
+      "entries": [
+        {
+          "id": "vocab_prices_age_001",
+          "front": "돈",
+          "meaning": "money",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "돈이 없어요.",
+            "english": "I don't have money."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_002",
+          "front": "가격",
+          "meaning": "price",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "가격이 비싸요.",
+            "english": "The price is high."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_003",
+          "front": "값",
+          "meaning": "price / value",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "값이 올랐어요.",
+            "english": "The price went up."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_004",
+          "front": "할인",
+          "meaning": "discount",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "할인이 있어요.",
+            "english": "There's a discount."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_005",
+          "front": "영수증",
+          "meaning": "receipt",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "영수증 주세요.",
+            "english": "Please give me a receipt."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_006",
+          "front": "현금",
+          "meaning": "cash",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "현금으로 낼게요.",
+            "english": "I'll pay in cash."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_007",
+          "front": "카드",
+          "meaning": "card",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "카드로 결제해요.",
+            "english": "I pay by card."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_008",
+          "front": "천 원",
+          "meaning": "one thousand won",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "천 원이에요.",
+            "english": "It's 1,000 won."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_009",
+          "front": "오천 원",
+          "meaning": "five thousand won",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "오천 원이에요.",
+            "english": "It's 5,000 won."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_010",
+          "front": "만 원",
+          "meaning": "ten thousand won",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "만 원이에요.",
+            "english": "It's 10,000 won."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_011",
+          "front": "이만 원",
+          "meaning": "twenty thousand won",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "이만 원이에요.",
+            "english": "It's 20,000 won."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_012",
+          "front": "한 살",
+          "meaning": "one year old",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "아기는 한 살이에요.",
+            "english": "The baby is one year old."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_013",
+          "front": "스무 살",
+          "meaning": "twenty years old",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "저는 스무 살이에요.",
+            "english": "I'm twenty years old."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_014",
+          "front": "스물다섯 살",
+          "meaning": "twenty-five years old",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "저는 스물다섯 살이에요.",
+            "english": "I'm twenty-five years old."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_015",
+          "front": "몇 살",
+          "meaning": "how old",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "몇 살이에요?",
+            "english": "How old are you?"
+          },
+          "usageNote": "Age questions depend on social context; be considerate.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        },
+        {
+          "id": "vocab_prices_age_016",
+          "front": "얼마예요?",
+          "meaning": "How much is it?",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "이거 얼마예요?",
+            "english": "How much is this?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "prices_age"
+          ]
+        }
+      ]
+    },
+    {
+      "deck": {
+        "id": "vocab_foundations_question_words",
+        "type": "vocabulary",
+        "title": "Question and indefinite words",
+        "sortOrder": 6,
+        "goal": "Acquire question and indefinite expressions separately from grammar rules."
+      },
+      "entries": [
+        {
+          "id": "vocab_question_words_001",
+          "front": "누구",
+          "meaning": "who",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "저 사람은 누구예요?",
+            "english": "Who is that person?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_002",
+          "front": "누가",
+          "meaning": "who (subject form)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "누가 왔어요?",
+            "english": "Who came?"
+          },
+          "usageNote": "누구 + 가 contracts to 누가.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_003",
+          "front": "뭐",
+          "meaning": "what (spoken)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "이거 뭐예요?",
+            "english": "What is this?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_004",
+          "front": "무엇",
+          "meaning": "what (formal)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "무엇을 찾으세요?",
+            "english": "What are you looking for?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_005",
+          "front": "어디",
+          "meaning": "where",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "어디에 가요?",
+            "english": "Where are you going?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_006",
+          "front": "언제",
+          "meaning": "when",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "언제 와요?",
+            "english": "When are you coming?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_007",
+          "front": "왜",
+          "meaning": "why",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "왜 안 가요?",
+            "english": "Why aren't you going?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_008",
+          "front": "어떻게",
+          "meaning": "how",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "어떻게 해요?",
+            "english": "How do you do it?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_009",
+          "front": "얼마",
+          "meaning": "how much",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "이거 얼마예요?",
+            "english": "How much is this?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_010",
+          "front": "몇",
+          "meaning": "how many / what number",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "몇 개 있어요?",
+            "english": "How many are there?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_011",
+          "front": "얼마나",
+          "meaning": "how much / how long",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "얼마나 걸려요?",
+            "english": "How long does it take?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_012",
+          "front": "무슨",
+          "meaning": "what kind / which (noun)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "무슨 영화예요?",
+            "english": "What kind of movie is it?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_013",
+          "front": "어떤",
+          "meaning": "what sort / which (descriptive)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "어떤 책을 좋아해요?",
+            "english": "What sort of books do you like?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_014",
+          "front": "어느",
+          "meaning": "which (among options)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "어느 학교에 다녀요?",
+            "english": "Which school do you attend?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_015",
+          "front": "누구의",
+          "meaning": "whose",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "이 가방은 누구의 거예요?",
+            "english": "Whose bag is this?"
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_016",
+          "front": "아무도",
+          "meaning": "nobody (with negation)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "아무도 안 왔어요.",
+            "english": "Nobody came."
+          },
+          "usageNote": "Requires a negative predicate for the 'nobody' reading.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_017",
+          "front": "아무것도",
+          "meaning": "nothing (with negation)",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "아무것도 없어요.",
+            "english": "There is nothing."
+          },
+          "usageNote": "Normally pairs with a negative predicate.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_018",
+          "front": "누구나",
+          "meaning": "anyone / everyone",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "누구나 할 수 있어요.",
+            "english": "Anyone can do it."
+          },
+          "usageNote": "",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        },
+        {
+          "id": "vocab_question_words_019",
+          "front": "아무나",
+          "meaning": "just anyone / whoever",
+          "spokenForm": null,
+          "variant": null,
+          "usageExample": {
+            "korean": "아무나 오세요.",
+            "english": "Anyone may come."
+          },
+          "usageNote": "Contrast with 아무도 + negation.",
+          "reviewType": "lexical",
+          "tags": [
+            "foundations",
+            "question_words"
+          ]
+        }
+      ]
+    }
+  ]
+}
