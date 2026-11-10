@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
-import { Link, useFocusEffect } from 'expo-router';
+import { Link, router, useFocusEffect } from 'expo-router';
 import {
   completeLearnSession,
   completeLearnSessionWithRetry,
@@ -407,6 +407,27 @@ export default function LearnScreen() {
           </Text>
         ) : null}
 
+        {/* Grammar info after answering — same card as the review queue. */}
+        {quizSubmitted ? (
+          <View style={commonStyles.card}>
+            <Text style={styles.grammarTitle}>{currentQuizCard.grammar.title}</Text>
+            <Text style={commonStyles.muted}>
+              {currentQuizCard.grammar.category}
+              {currentQuizCard.grammar.tense ? ` · ${currentQuizCard.grammar.tense}` : ''}
+              {currentQuizCard.grammar.register ? ` · ${currentQuizCard.grammar.register}` : ''}
+            </Text>
+            <Text style={[commonStyles.body, styles.grammarDescription]}>
+              {currentQuizCard.grammar.description}
+            </Text>
+            <Pressable
+              onPress={() => router.push(`/grammar/${currentQuizCard.grammarPointId}`)}
+              style={[commonStyles.btn, commonStyles.btnSecondary, styles.viewGrammarButton]}
+            >
+              <Text style={commonStyles.btnTextDark}>View Grammar →</Text>
+            </Pressable>
+          </View>
+        ) : null}
+
         <View style={styles.controls}>
           {!quizSubmitted ? (
             <Pressable
@@ -657,6 +678,18 @@ const styles = StyleSheet.create({
   },
   resultIncorrect: {
     color: colors.red,
+  },
+  grammarTitle: {
+    fontSize: 18,
+    fontWeight: '700',
+    color: colors.text,
+  },
+  grammarDescription: {
+    marginTop: 8,
+  },
+  viewGrammarButton: {
+    marginTop: 12,
+    alignSelf: 'flex-start',
   },
   controls: {
     flexDirection: 'row',

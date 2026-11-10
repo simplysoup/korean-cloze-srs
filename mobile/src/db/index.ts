@@ -962,7 +962,7 @@ export function completeLearnSession(grammarPointIds: string[]) {
   const database = getDb();
   const now = new Date();
   const quizCards = withTransaction(database, (tx) => {
-    const quizCards: { id: string; grammarPointId: string; fullSentence: string; sentenceWithBlank: string; answer: string; alternateAnswers: string[]; englishHint: string }[] = [];
+    const quizCards: { id: string; grammarPointId: string; fullSentence: string; sentenceWithBlank: string; answer: string; alternateAnswers: string[]; englishHint: string; grammar: { title: string; category: string; tense: string | null; register: string | null; hint: string; description: string } }[] = [];
     let newlyLearned = 0;
     for (const gpId of grammarPointIds) {
       const state = newFsrsState(now);
@@ -983,10 +983,15 @@ export function completeLearnSession(grammarPointIds: string[]) {
       if (cards.length > 0) {
         cards.sort((a, b) => a.introducedAtPosition - b.introducedAtPosition);
         const c = cards[0];
+        // Grammar info for the quiz card — the learn wrap-up quiz shows
+        // the same tense/register details as the review queue.
+        const gp = tx.select().from(schema.grammarPoints).where(eq(schema.grammarPoints.id, gpId)).get();
+        if (!gp) continue;
         quizCards.push({
           id: c.id, grammarPointId: gpId, fullSentence: c.fullSentence, sentenceWithBlank: c.sentenceWithBlank,
           answer: c.answer, alternateAnswers: JSON.parse(c.alternateAnswers) as string[],
           englishHint: JSON.parse(c.englishHint) as string,
+          grammar: { title: gp.title, category: gp.category, tense: gp.tense, register: gp.register, hint: gp.hint, description: gp.description },
         });
       }
     }
