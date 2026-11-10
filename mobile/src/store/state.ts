@@ -170,6 +170,18 @@ async function idbPut(key: string, value: AccountPersistedSnapshot): Promise<voi
 let state: WebState | null = null;
 let sessionEpoch = 0;
 let removeStorageListener: (() => void) | null = null;
+const accountSessionListeners = new Set<() => void>();
+
+/** Lead-owned layout must subscribe and immediately clear its React auth
+ * state when a different browser tab revokes or switches the session. */
+export function subscribeAccountSessionChange(listener: () => void): () => void {
+  accountSessionListeners.add(listener);
+  return () => { accountSessionListeners.delete(listener); };
+}
+
+function notifyAccountSessionChange(): void {
+  for (const listener of accountSessionListeners) listener();
+}
 
 function bumpEpoch(): number {
   sessionEpoch += 1;
@@ -411,6 +423,7 @@ export function endAccountSession(): void {
   state.lastSyncedVersion = 0;
   state.lastSyncedAt = null;
   state.syncDirty = false;
+  notifyAccountSessionChange();
 }
 
 /** Must be awaited by the auth shell before mounting learner screens or
@@ -425,6 +438,7 @@ export async function activateVerifiedAccount(id: string): Promise<boolean> {
   if (s.activeAccountId === id) return true;
   endAccountSession();
   s.activeAccountId = id;
+  notifyAccountSessionChange();
   const lease = getAccountSessionLease();
   if (!lease) return false;
   try {
