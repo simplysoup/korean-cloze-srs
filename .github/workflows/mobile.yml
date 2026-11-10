@@ -11,6 +11,8 @@ on:
       - 'scripts/curriculum-overlay.mjs'
       - 'scripts/port-vocabulary.mjs'
       - 'scripts/validate-vocabulary.mjs'
+      - 'docs/research/grammar-answer-ambiguity-audit.json'
+      - 'scripts/validate-answer-audit.mjs'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
   pull_request:
@@ -23,6 +25,8 @@ on:
       - 'scripts/curriculum-overlay.mjs'
       - 'scripts/port-vocabulary.mjs'
       - 'scripts/validate-vocabulary.mjs'
+      - 'docs/research/grammar-answer-ambiguity-audit.json'
+      - 'scripts/validate-answer-audit.mjs'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
 
@@ -50,6 +54,7 @@ jobs:
       - run: bun ../scripts/validate-grammar-catalogue.ts
       - run: node ../scripts/validate-content.mjs
       - run: node ../scripts/validate-vocabulary.mjs
+      - run: node ../scripts/validate-answer-audit.mjs
       - run: node ../scripts/validate-language-topics.mjs
       - run: npm run typecheck
       - run: npm test -- --ci

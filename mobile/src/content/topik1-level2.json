@@ -208,7 +208,7 @@
             {
               "type": "tip",
               "title": "Worked example",
-              "content": "제가 먼저 하겠습니다. — I'll go first (I intend to). 제가 먼저 하겠습니다 uses 겠 to express the speaker's intention to go first rather than a factual prediction."
+              "content": "제가 먼저 하겠습니다. — I'll do it first. 제가 먼저 하겠습니다 uses 겠 to express the speaker's intention to go first rather than a factual prediction."
             },
             {
               "type": "caution",
@@ -222,7 +222,7 @@
               "fullSentence": "제가 먼저 하겠습니다.",
               "sentenceWithBlank": "제가 먼저 하___.",
               "answer": "겠습니다",
-              "englishHint": "I'll go first (I intend to).",
+              "englishHint": "I'll do it first.",
               "order": 0
             },
             {

@@ -367,7 +367,7 @@
             "fullSentence": "이 글씨를 써요.",
             "sentenceWithBlank": "이 글씨를 ___.",
             "answer": "써요",
-            "englishHint": "I write these letters.",
+            "englishHint": "I write these characters.",
             "alternateAnswers": [],
             "vocabBaseForm": "쓰다",
             "introducedAtPosition": 0
@@ -536,7 +536,9 @@
             "sentenceWithBlank": "엄마___ 전화해요.",
             "answer": "한테",
             "englishHint": "I call Mom.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "에게"
+            ],
             "vocabBaseForm": "엄마",
             "introducedAtPosition": 0
           },
@@ -546,7 +548,9 @@
             "sentenceWithBlank": "친구___ 사진을 보내요.",
             "answer": "에게",
             "englishHint": "I send a photo to a friend.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "한테"
+            ],
             "vocabBaseForm": "친구",
             "introducedAtPosition": 0
           },
@@ -556,7 +560,9 @@
             "sentenceWithBlank": "아이___ 물을 줘요.",
             "answer": "한테",
             "englishHint": "I give water to a child.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "에게"
+            ],
             "vocabBaseForm": "아이",
             "introducedAtPosition": 0
           }
@@ -629,7 +635,9 @@
             "sentenceWithBlank": "동생___ 소식을 들었어요.",
             "answer": "에게서",
             "englishHint": "I heard news from my younger sibling.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "한테서"
+            ],
             "vocabBaseForm": "동생",
             "introducedAtPosition": 0
           },
@@ -639,7 +647,9 @@
             "sentenceWithBlank": "친구___ 책을 빌렸어요.",
             "answer": "한테서",
             "englishHint": "I borrowed a book from a friend.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "에게서"
+            ],
             "vocabBaseForm": "친구",
             "introducedAtPosition": 0
           },
@@ -649,7 +659,9 @@
             "sentenceWithBlank": "엄마___ 선물을 받았어요.",
             "answer": "한테서",
             "englishHint": "I got a gift from Mom.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "에게서"
+            ],
             "vocabBaseForm": "엄마",
             "introducedAtPosition": 0
           }
@@ -1100,7 +1112,10 @@
             "sentenceWithBlank": "우유___ 빵을 먹었어요.",
             "answer": "와",
             "englishHint": "I had milk and bread.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "랑",
+              "하고"
+            ],
             "vocabBaseForm": "우유",
             "introducedAtPosition": 0
           },
@@ -1110,7 +1125,10 @@
             "sentenceWithBlank": "친구___ 같이 가요.",
             "answer": "와",
             "englishHint": "I go together with a friend.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "랑",
+              "하고"
+            ],
             "vocabBaseForm": "친구",
             "introducedAtPosition": 0
           },
@@ -1120,7 +1138,10 @@
             "sentenceWithBlank": "가방___ 신발을 샀어요.",
             "answer": "과",
             "englishHint": "I bought a bag and shoes.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "이랑",
+              "하고"
+            ],
             "vocabBaseForm": "가방",
             "introducedAtPosition": 0
           }
@@ -1194,7 +1215,10 @@
             "sentenceWithBlank": "엄마___ 이야기했어요.",
             "answer": "랑",
             "englishHint": "I talked with Mom.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "와",
+              "하고"
+            ],
             "vocabBaseForm": "엄마",
             "introducedAtPosition": 0
           },
@@ -1204,7 +1228,10 @@
             "sentenceWithBlank": "밥___ 김치를 먹어요.",
             "answer": "이랑",
             "englishHint": "I eat rice and kimchi.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "과",
+              "하고"
+            ],
             "vocabBaseForm": "밥",
             "introducedAtPosition": 0
           },
@@ -1214,7 +1241,10 @@
             "sentenceWithBlank": "동생___ 놀아요.",
             "answer": "이랑",
             "englishHint": "I play with my younger sibling.",
-            "alternateAnswers": [],
+            "alternateAnswers": [
+              "과",
+              "하고"
+            ],
             "vocabBaseForm": "동생",
             "introducedAtPosition": 0
           }

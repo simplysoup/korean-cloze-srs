@@ -301,7 +301,7 @@
           "core-system",
           "grammar"
         ],
-        "structurePattern": "[Stem / noun as specified] + -게 하다 (make / let someone do)",
+        "structurePattern": "[Action-verb stem] + 게 하다 (cause / allow someone to act)",
         "relatedPointIds": [
           "gp_gap_causative_suffix",
           "gp_gap_ge_hada_state"
@@ -327,16 +327,16 @@
           {
             "id": "le_gap_ge_hada_action_01",
             "fullSentence": "선생님이 학생들에게 책을 읽게 했어요.",
-            "sentenceWithBlank": "선생님이 학생들에게 책을 ___.",
-            "answer": "읽게 했어요",
+            "sentenceWithBlank": "선생님이 학생들에게 책을 읽___.",
+            "answer": "게 했어요",
             "englishHint": "The teacher made the students read books.",
             "order": 0
           },
           {
             "id": "le_gap_ge_hada_action_02",
             "fullSentence": "엄마가 아이에게 숙제를 하게 했어요.",
-            "sentenceWithBlank": "엄마가 아이에게 숙제를 ___.",
-            "answer": "하게 했어요",
+            "sentenceWithBlank": "엄마가 아이에게 숙제를 하___.",
+            "answer": "게 했어요",
             "englishHint": "Mom made the child do homework.",
             "order": 1
           }
@@ -345,8 +345,8 @@
           {
             "id": "cc_gap_ge_hada_action_01",
             "fullSentence": "의사가 환자를 걷게 했어요.",
-            "sentenceWithBlank": "의사가 환자를 ___.",
-            "answer": "걷게 했어요",
+            "sentenceWithBlank": "의사가 환자를 걷___.",
+            "answer": "게 했어요",
             "englishHint": "The doctor had the patient walk.",
             "alternateAnswers": [],
             "vocabBaseForm": "걷다",
@@ -355,8 +355,8 @@
           {
             "id": "cc_gap_ge_hada_action_02",
             "fullSentence": "선생님이 저를 발표하게 했어요.",
-            "sentenceWithBlank": "선생님이 저를 ___.",
-            "answer": "발표하게 했어요",
+            "sentenceWithBlank": "선생님이 저를 발표하___.",
+            "answer": "게 했어요",
             "englishHint": "The teacher had me present.",
             "alternateAnswers": [],
             "vocabBaseForm": "발표하다",
@@ -365,8 +365,8 @@
           {
             "id": "cc_gap_ge_hada_action_03",
             "fullSentence": "부모님이 아이를 쉬게 했어요.",
-            "sentenceWithBlank": "부모님이 아이를 ___.",
-            "answer": "쉬게 했어요",
+            "sentenceWithBlank": "부모님이 아이를 쉬___.",
+            "answer": "게 했어요",
             "englishHint": "The parents let the child rest.",
             "alternateAnswers": [],
             "vocabBaseForm": "쉬다",
@@ -388,14 +388,14 @@
         "tense": null,
         "register": null,
         "hint": "The same -게 하다 structure can make someone or something become a particular way, such as happy, sad, anxious or comfortable.",
-        "description": "The same -게 하다 structure can make someone or something become a particular way, such as happy, sad, anxious or comfortable. This uses a descriptive stem.",
+        "description": "Use -게 하다 when an event or someone's actions cause another person or thing to feel or become a certain way. This works with descriptive verbs and certain intransitive predicates that describe emotions or resulting states.",
         "level": 3,
         "tags": [
           "TOPIK2",
           "core-system",
           "grammar"
         ],
-        "structurePattern": "[Stem / noun as specified] + -게 하다 (cause a state)",
+        "structurePattern": "[Emotion / state predicate stem] + 게 하다 (cause a state)",
         "relatedPointIds": [
           "gp_gap_ge_hada_action",
           "gp_ge_adverb"
@@ -404,7 +404,7 @@
           {
             "type": "tip",
             "title": "Build it step by step",
-            "content": "Attach 게 하다 to the descriptive stem: 기쁘다 → 기쁘게 하다; 슬프다 → 슬프게 하다. The subject or event causes the resulting state."
+            "content": "Add 게 하다 to a predicate that describes a quality, emotion or resulting state: 기쁘다 → 기쁘게 하다; 놀라다 → 놀라게 하다; 화나다 → 화나게 하다. Conjugate 하다 for tense: 기쁘게 했어요 / 행복하게 해요."
           },
           {
             "type": "tip",
@@ -421,16 +421,16 @@
           {
             "id": "le_gap_ge_hada_state_01",
             "fullSentence": "그 말이 저를 기쁘게 했어요.",
-            "sentenceWithBlank": "그 말이 저를 ___.",
-            "answer": "기쁘게 했어요",
+            "sentenceWithBlank": "그 말이 저를 기쁘___.",
+            "answer": "게 했어요",
             "englishHint": "Those words made me happy.",
             "order": 0
           },
           {
             "id": "le_gap_ge_hada_state_02",
             "fullSentence": "그 영화는 저를 슬프게 했어요.",
-            "sentenceWithBlank": "그 영화는 저를 ___.",
-            "answer": "슬프게 했어요",
+            "sentenceWithBlank": "그 영화는 저를 슬프___.",
+            "answer": "게 했어요",
             "englishHint": "That film made me sad.",
             "order": 1
           }
@@ -439,8 +439,8 @@
           {
             "id": "cc_gap_ge_hada_state_01",
             "fullSentence": "그 노래가 저를 행복하게 해요.",
-            "sentenceWithBlank": "그 노래가 저를 ___.",
-            "answer": "행복하게 해요",
+            "sentenceWithBlank": "그 노래가 저를 행복하___.",
+            "answer": "게 해요",
             "englishHint": "That song makes me happy.",
             "alternateAnswers": [],
             "vocabBaseForm": "행복하다",
@@ -449,8 +449,8 @@
           {
             "id": "cc_gap_ge_hada_state_02",
             "fullSentence": "그 소식이 모두를 놀라게 했어요.",
-            "sentenceWithBlank": "그 소식이 모두를 ___.",
-            "answer": "놀라게 했어요",
+            "sentenceWithBlank": "그 소식이 모두를 놀라___.",
+            "answer": "게 했어요",
             "englishHint": "That news surprised everyone.",
             "alternateAnswers": [],
             "vocabBaseForm": "놀라다",
@@ -459,8 +459,8 @@
           {
             "id": "cc_gap_ge_hada_state_03",
             "fullSentence": "그 말이 친구를 화나게 했어요.",
-            "sentenceWithBlank": "그 말이 친구를 ___.",
-            "answer": "화나게 했어요",
+            "sentenceWithBlank": "그 말이 친구를 화나___.",
+            "answer": "게 했어요",
             "englishHint": "Those words made my friend angry.",
             "alternateAnswers": [],
             "vocabBaseForm": "화나다",
@@ -489,7 +489,7 @@
           "core-system",
           "grammar"
         ],
-        "structurePattern": "[Stem / noun as specified] + -고 싶어 하다 (someone else's wishes)",
+        "structurePattern": "[Action-verb stem] + 고 싶어 하다 → -고 싶어 해요 (report another person's desire)",
         "relatedPointIds": [
           "gp_go_sipda",
           "gp_gap_ge_hada_action"
@@ -515,16 +515,16 @@
           {
             "id": "le_gap_go_sipeohada_01",
             "fullSentence": "동생은 놀고 싶어 해요.",
-            "sentenceWithBlank": "동생은 놀고 ___.",
-            "answer": "싶어 해요",
+            "sentenceWithBlank": "동생은 놀___.",
+            "answer": "고 싶어 해요",
             "englishHint": "My younger sibling wants to play.",
             "order": 0
           },
           {
             "id": "le_gap_go_sipeohada_02",
             "fullSentence": "친구는 한국에 가고 싶어 해요.",
-            "sentenceWithBlank": "친구는 한국에 가고 ___.",
-            "answer": "싶어 해요",
+            "sentenceWithBlank": "친구는 한국에 가___.",
+            "answer": "고 싶어 해요",
             "englishHint": "My friend wants to go to Korea.",
             "order": 1
           }
@@ -533,8 +533,8 @@
           {
             "id": "cc_gap_go_sipeohada_01",
             "fullSentence": "아이가 더 자고 싶어 해요.",
-            "sentenceWithBlank": "아이가 더 자고 ___.",
-            "answer": "싶어 해요",
+            "sentenceWithBlank": "아이가 더 자___.",
+            "answer": "고 싶어 해요",
             "englishHint": "The child wants to sleep more.",
             "alternateAnswers": [],
             "vocabBaseForm": "자다",
@@ -543,8 +543,8 @@
           {
             "id": "cc_gap_go_sipeohada_02",
             "fullSentence": "민수는 영화를 보고 싶어 해요.",
-            "sentenceWithBlank": "민수는 영화를 보고 ___.",
-            "answer": "싶어 해요",
+            "sentenceWithBlank": "민수는 영화를 보___.",
+            "answer": "고 싶어 해요",
             "englishHint": "Minsu wants to watch a movie.",
             "alternateAnswers": [],
             "vocabBaseForm": "보다",
@@ -553,8 +553,8 @@
           {
             "id": "cc_gap_go_sipeohada_03",
             "fullSentence": "동생은 게임을 하고 싶어 해요.",
-            "sentenceWithBlank": "동생은 게임을 하고 ___.",
-            "answer": "싶어 해요",
+            "sentenceWithBlank": "동생은 게임을 하___.",
+            "answer": "고 싶어 해요",
             "englishHint": "My sibling wants to play a game.",
             "alternateAnswers": [],
             "vocabBaseForm": "하다",
