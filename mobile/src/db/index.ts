@@ -15,6 +15,10 @@ import contentBundleLevel4 from '../content/topik2-level4.json';
 import contentBundleLevel5 from '../content/topik2-level5.json';
 import contentBundleLevel6 from '../content/topik2-level6.json';
 import { flattenContent, type ContentBundle, type GrammarPointSeed } from '../content/types';
+import {
+  NATIVE_CONTENT_COLUMNS, buildNativeSeedManifest, isNativeDeckPublished,
+  missingNativeContentColumns, relationKey,
+} from './native-content';
 import { checkAnswers, computeFsrsReview, correctAnswersForCard, newFsrsState, stageForCard, type Grade } from '../lib/srs';
 import { orderLibraryPoints } from '../lib/library';
 import { calculateLevel } from '../lib/levels';
@@ -23,7 +27,8 @@ import { mergeDailyLearned, mergeStreaks, serverCardWins } from '../lib/sync-mer
 import type { SyncDocument } from '../lib/sync-types';
 
 export const LOCAL_USER_ID = 'local';
-export const CONTENT_VERSION = 'grammar-gaps-v2-20261110';
+/** Previous shipped native version: grammar-gaps-v2-20261110. */
+export const CONTENT_VERSION = 'native-parity-v3-20261110';
 
 /** The id of the currently logged-in user; all queries below are scoped to
  * it. Defaults to 'local' until the auth layer sets the real account. */
@@ -114,147 +119,227 @@ function allContentGrammarPoints(): {
   return out;
 }
 
-/** Create tables and seed the TOPIK I Level 1 + Level 2 content. Idempotent. */
+/** Add columns absent in known older content schemas; never alter user tables.
+ * Runs before the content version check because a pre-versioned install may
+ * still have old table shapes. SQLite DDL is transactional here. */
+function ensureNativeContentColumns(database: Db): void {
+  const missing: string[] = [];
+  for (const tableName of Object.keys(NATIVE_CONTENT_COLUMNS)) {
+    const existing = sqliteDb!.getAllSync<{ name: string }>(
+      `PRAGMA table_info("${tableName}")`,
+    ).map((row) => row.name);
+    missing.push(...missingNativeContentColumns(tableName, existing));
+  }
+  if (missing.length === 0) return;
+  withTransaction(database, (tx) => {
+    for (const ddl of missing) tx.run(sql.raw(ddl));
+  });
+}
+
+/** Only future versions of our own migration series may bypass reseeding.
+ * An unrecognised/older content version must still receive corrections. */
+function isFutureNativeContentVersion(value: string | undefined): boolean {
+  const matched = /^native-parity-v(\d+)-/.exec(value ?? '');
+  return matched != null && Number(matched[1]) > 3;
+}
+
+/** Public grammar is two TOPIK I decks while curriculum flags are off. */
+function isNativeGrammarPointPublished(id: string): boolean {
+  return allContentGrammarPoints().some(
+    ({ gp, bundle }) => gp.id === id && isNativeDeckPublished(bundle.deck.id),
+  );
+}
+
+/** Create tables and atomically reseed all six authored bundles. Idempotent. */
 export function initDb(): Db {
   const database = getDb();
-  // execSync lives on the raw expo-sqlite handle, not on the Drizzle wrapper.
   sqliteDb!.execSync(CREATE_TABLES_SQL);
-  // One-time cleanup of the pre-v2 remembered session (see SESSION_META_KEY).
-  database.delete(schema.meta).where(eq(schema.meta.key, 'sessionUserId')).run();
-  // One-time library migration (build 16): the library replaces the
-  // single active deck. Users who already learned points keep running —
-  // every deck containing one of their learned grammar points joins
-  // their library. New users start with an empty library and add decks
-  // from the catalogue. Runs before the version check so it also runs
-  // on devices whose content is already current.
-  migrateLibrary(database);
-  const version = database
-    .select()
-    .from(schema.meta)
-    .where(eq(schema.meta.key, 'contentVersion'))
-    .get();
-  if (version?.value === CONTENT_VERSION) return database;
+  ensureNativeContentColumns(database);
+  // No auth/session, user history, settings or sync metadata is changed by
+  // the native content migration.
 
-  const grammarPoints = allContentGrammarPoints();
-  const nowIso = new Date().toISOString();
-
-  // Each content deck row is upserted (not insert-if-absent) so a
-  // corrected title/description reaches devices that already seeded an
-  // earlier version. sortOrder is the bundle's index in CONTENT_BUNDLES
-  // (Levels 1–6: 0–5), matching the catalogue order.
-  const deckDescriptions: Record<string, string> = {
-    deck_topik1_level1: 'TOPIK I Level 1 grammar — audited and reorganised into a learner-first curriculum 2026-11-09.',
-    deck_topik1_level2: 'TOPIK I Level 2 grammar. Lesson 22 (reported speech) is an optional bridge.',
-    deck_topik2_level3: 'Curated TOPIK II Level 3 grammar practice — editorial selection, not a complete official exam syllabus.',
-    deck_topik2_level4: 'Curated TOPIK II Level 4 grammar practice — editorial selection, not a complete official exam syllabus.',
-    deck_topik2_level5: 'Curated TOPIK II Level 5 grammar practice — editorial selection, not a complete official exam syllabus.',
-    deck_topik2_level6: 'Curated TOPIK II Level 6 grammar practice — editorial selection, not a complete official exam syllabus.',
-  };
-  CONTENT_BUNDLES.forEach((bundle, index) => {
-    database.insert(schema.decks).values({
-      id: bundle.deck.id,
-      title: bundle.deck.title,
-      slug: bundle.deck.slug,
-      description: deckDescriptions[bundle.deck.id] ?? '',
-      level: bundle.deck.level,
-      topikLevel: bundle.deck.topikLevel,
-      sortOrder: index,
-    }).onConflictDoUpdate({
-      target: schema.decks.id,
-      set: {
-        title: bundle.deck.title,
-        slug: bundle.deck.slug,
-        description: deckDescriptions[bundle.deck.id] ?? '',
-        level: bundle.deck.level,
-        topikLevel: bundle.deck.topikLevel,
-        sortOrder: index,
-      },
-    }).run();
-  });
-
-  // The deck catalogue: the TOPIK levels without content yet, plus a
-  // Non-TOPIK deck. These are catalogue entries (no grammar points yet)
-  // so the Decks page and the library can list them as coming soon.
-  const catalogue: {
-    id: string; title: string; slug: string; description: string;
-    level: number; topikLevel: string; sortOrder: number;
-  }[] = [
-    { id: 'deck_topik2_level3', title: 'TOPIK II Level 3', slug: 'topik-level-3', description: 'TOPIK II Level 3 grammar.', level: 3, topikLevel: 'topik2-3', sortOrder: 2 },
-    { id: 'deck_topik2_level4', title: 'TOPIK II Level 4', slug: 'topik-level-4', description: 'TOPIK II Level 4 grammar.', level: 4, topikLevel: 'topik2-4', sortOrder: 3 },
-    { id: 'deck_topik2_level5', title: 'TOPIK II Level 5', slug: 'topik-level-5', description: 'TOPIK II Level 5 grammar.', level: 5, topikLevel: 'topik2-5', sortOrder: 4 },
-    { id: 'deck_topik2_level6', title: 'TOPIK II Level 6', slug: 'topik-level-6', description: 'TOPIK II Level 6 grammar.', level: 6, topikLevel: 'topik2-6', sortOrder: 5 },
-    { id: 'deck_non_topik', title: 'Non-TOPIK', slug: 'non-topik', description: 'Grammar outside the TOPIK syllabus.', level: 0, topikLevel: 'non-topik', sortOrder: 6 },
-  ];
-  for (const deck of catalogue) {
-    database.insert(schema.decks).values(deck).onConflictDoNothing().run();
+  const version = database.select().from(schema.meta)
+    .where(eq(schema.meta.key, 'contentVersion')).get();
+  if (version?.value === CONTENT_VERSION || isFutureNativeContentVersion(version?.value)) {
+    migrateLibrary(database);
+    return database;
   }
 
-  // Content sync on a version bump: new rows are inserted AND changed
-  // text is updated (onConflictDoUpdate), so a content correction reaches
-  // devices that already seeded an earlier version. Review progress lives
-  // in review_cards / review_logs, which this never touches.
-  //
-  // The deck_grammar_points row is also upserted (not insert-if-absent):
-  // its lessonNumber and sortOrder are read by the dashboard per-level
-  // progress and the Cram lesson rows, so a curriculum reorder (as in
-  // the 2026-11-09 learner-first overhaul, which moved Level 1 points
-  // between lessons) must update them on existing devices.
-  for (const { gp, lessonNumber, position, bundlePosition, bundle } of grammarPoints) {
-    const gpRow = {
-      title: gp.title, category: gp.category, tense: gp.tense, register: gp.register,
-      hint: gp.hint, description: gp.description, level: gp.level,
-      tags: JSON.stringify(gp.tags), structurePattern: gp.structurePattern,
-      notes: gp.notes ? JSON.stringify(gp.notes) : null,
-      relatedPointIds: JSON.stringify(gp.relatedPointIds ?? []),
-      lessonNumber, position,
-    };
-    database.insert(schema.grammarPoints).values({ id: gp.id, ...gpRow })
-      .onConflictDoUpdate({ target: schema.grammarPoints.id, set: gpRow }).run();
+  // Validate the complete bundled manifest *before* any content writes.
+  const manifest = buildNativeSeedManifest(CONTENT_BUNDLES);
+  const grammarPoints = allContentGrammarPoints();
 
-    database.insert(schema.deckGrammarPoints).values({
-      id: `dgp_${bundle.deck.id}_${gp.id}`,
-      deckId: bundle.deck.id, grammarPointId: gp.id,
-      sortOrder: bundlePosition - 1, lessonNumber,
-    }).onConflictDoUpdate({
-      target: schema.deckGrammarPoints.id,
-      set: { sortOrder: bundlePosition - 1, lessonNumber },
-    }).run();
-
-    for (const card of gp.cards) {
-      const cardRow = {
-        grammarPointId: gp.id, fullSentence: card.fullSentence,
-        sentenceWithBlank: card.sentenceWithBlank, vocabBaseForm: card.vocabBaseForm,
-        answer: card.answer, alternateAnswers: JSON.stringify(card.alternateAnswers),
-        englishHint: JSON.stringify(card.englishHint), introducedAtPosition: card.introducedAtPosition,
+  // Atomic across six decks, all relations, corrections and the version marker.
+  // A crash/timeout rolls back the content marker and rows together; the next
+  // startup safely retries. In particular, never modify review/user tables.
+  withTransaction(database, (tx) => {
+      // Each content deck row is upserted (not insert-if-absent) so a
+      // corrected title/description reaches devices that already seeded an
+      // earlier version. sortOrder is the bundle's index in CONTENT_BUNDLES
+      // (Levels 1–6: 0–5), matching the catalogue order.
+      const deckDescriptions: Record<string, string> = {
+        deck_topik1_level1: 'TOPIK I Level 1 grammar — audited and reorganised into a learner-first curriculum 2026-11-09.',
+        deck_topik1_level2: 'TOPIK I Level 2 grammar. Lesson 22 (reported speech) is an optional bridge.',
+        deck_topik2_level3: 'Curated TOPIK II Level 3 grammar practice — editorial selection, not a complete official exam syllabus.',
+        deck_topik2_level4: 'Curated TOPIK II Level 4 grammar practice — editorial selection, not a complete official exam syllabus.',
+        deck_topik2_level5: 'Curated TOPIK II Level 5 grammar practice — editorial selection, not a complete official exam syllabus.',
+        deck_topik2_level6: 'Curated TOPIK II Level 6 grammar practice — editorial selection, not a complete official exam syllabus.',
       };
-      database.insert(schema.clozeCards).values({ id: card.id, ...cardRow })
-        .onConflictDoUpdate({ target: schema.clozeCards.id, set: cardRow }).run();
-      database.insert(schema.clozeCardGrammarTargets).values({
-        id: `tgt_${card.id}_${gp.id}`, clozeCardId: card.id, grammarPointId: gp.id,
-        wordReplacement: card.answer, blankIndex: 0,
-      }).onConflictDoNothing().run();
-      for (const extra of card.extraTargets ?? []) {
-        database.insert(schema.clozeCardGrammarTargets).values({
-          id: `tgt_${card.id}_${extra.grammarPointId}`, clozeCardId: card.id,
-          grammarPointId: extra.grammarPointId, wordReplacement: extra.wordReplacement,
-          blankIndex: extra.blankIndex,
-        }).onConflictDoNothing().run();
+      CONTENT_BUNDLES.forEach((bundle, index) => {
+        tx.insert(schema.decks).values({
+          id: bundle.deck.id,
+          title: bundle.deck.title,
+          slug: bundle.deck.slug,
+          description: deckDescriptions[bundle.deck.id] ?? '',
+          level: bundle.deck.level,
+          topikLevel: bundle.deck.topikLevel,
+          sortOrder: index,
+        }).onConflictDoUpdate({
+          target: schema.decks.id,
+          set: {
+            title: bundle.deck.title,
+            slug: bundle.deck.slug,
+            description: deckDescriptions[bundle.deck.id] ?? '',
+            level: bundle.deck.level,
+            topikLevel: bundle.deck.topikLevel,
+            sortOrder: index,
+          },
+        }).run();
+      });
+    
+      // The deck catalogue: the TOPIK levels without content yet, plus a
+      // Non-TOPIK deck. These are catalogue entries (no grammar points yet)
+      // so the Decks page and the library can list them as coming soon.
+      const catalogue: {
+        id: string; title: string; slug: string; description: string;
+        level: number; topikLevel: string; sortOrder: number;
+      }[] = [
+        { id: 'deck_topik2_level3', title: 'TOPIK II Level 3', slug: 'topik-level-3', description: 'TOPIK II Level 3 grammar.', level: 3, topikLevel: 'topik2-3', sortOrder: 2 },
+        { id: 'deck_topik2_level4', title: 'TOPIK II Level 4', slug: 'topik-level-4', description: 'TOPIK II Level 4 grammar.', level: 4, topikLevel: 'topik2-4', sortOrder: 3 },
+        { id: 'deck_topik2_level5', title: 'TOPIK II Level 5', slug: 'topik-level-5', description: 'TOPIK II Level 5 grammar.', level: 5, topikLevel: 'topik2-5', sortOrder: 4 },
+        { id: 'deck_topik2_level6', title: 'TOPIK II Level 6', slug: 'topik-level-6', description: 'TOPIK II Level 6 grammar.', level: 6, topikLevel: 'topik2-6', sortOrder: 5 },
+        { id: 'deck_non_topik', title: 'Non-TOPIK', slug: 'non-topik', description: 'Grammar outside the TOPIK syllabus.', level: 0, topikLevel: 'non-topik', sortOrder: 6 },
+      ];
+      for (const deck of catalogue) {
+        tx.insert(schema.decks).values(deck).onConflictDoNothing().run();
+      }
+    
+      // Content sync on a version bump: new rows are inserted AND changed
+      // text is updated (onConflictDoUpdate), so a content correction reaches
+      // devices that already seeded an earlier version. Review progress lives
+      // in review_cards / review_logs, which this never touches.
+      //
+      // The deck_grammar_points row is also upserted (not insert-if-absent):
+      // its lessonNumber and sortOrder are read by the dashboard per-level
+      // progress and the Cram lesson rows, so a curriculum reorder (as in
+      // the 2026-11-09 learner-first overhaul, which moved Level 1 points
+      // between lessons) must update them on existing devices.
+      for (const { gp, lessonNumber, position, bundlePosition, bundle } of grammarPoints) {
+        const gpRow = {
+          title: gp.title, category: gp.category, tense: gp.tense, register: gp.register,
+          hint: gp.hint, description: gp.description, level: gp.level,
+          tags: JSON.stringify(gp.tags), structurePattern: gp.structurePattern,
+          notes: gp.notes ? JSON.stringify(gp.notes) : null,
+          relatedPointIds: JSON.stringify(gp.relatedPointIds ?? []),
+          lessonNumber, position,
+        };
+        tx.insert(schema.grammarPoints).values({ id: gp.id, ...gpRow })
+          .onConflictDoUpdate({ target: schema.grammarPoints.id, set: gpRow }).run();
+    
+        tx.insert(schema.deckGrammarPoints).values({
+          id: `dgp_${bundle.deck.id}_${gp.id}`,
+          deckId: bundle.deck.id, grammarPointId: gp.id,
+          sortOrder: bundlePosition - 1, lessonNumber,
+        }).onConflictDoUpdate({
+          target: [schema.deckGrammarPoints.deckId, schema.deckGrammarPoints.grammarPointId],
+          set: { sortOrder: bundlePosition - 1, lessonNumber },
+        }).run();
+    
+        for (const card of gp.cards) {
+          const cardRow = {
+            grammarPointId: gp.id, fullSentence: card.fullSentence,
+            sentenceWithBlank: card.sentenceWithBlank, vocabBaseForm: card.vocabBaseForm,
+            answer: card.answer, alternateAnswers: JSON.stringify(card.alternateAnswers),
+            englishHint: JSON.stringify(card.englishHint), introducedAtPosition: card.introducedAtPosition,
+          };
+          tx.insert(schema.clozeCards).values({ id: card.id, ...cardRow })
+            .onConflictDoUpdate({ target: schema.clozeCards.id, set: cardRow }).run();
+          tx.insert(schema.clozeCardGrammarTargets).values({
+            id: `tgt_${card.id}_${gp.id}`, clozeCardId: card.id, grammarPointId: gp.id,
+            wordReplacement: card.answer, blankIndex: 0,
+          }).onConflictDoUpdate({
+            target: [schema.clozeCardGrammarTargets.clozeCardId, schema.clozeCardGrammarTargets.grammarPointId],
+            set: { wordReplacement: card.answer, blankIndex: 0 },
+          }).run();
+          for (const extra of card.extraTargets ?? []) {
+            tx.insert(schema.clozeCardGrammarTargets).values({
+              id: `tgt_${card.id}_${extra.grammarPointId}`, clozeCardId: card.id,
+              grammarPointId: extra.grammarPointId, wordReplacement: extra.wordReplacement,
+              blankIndex: extra.blankIndex,
+            }).onConflictDoUpdate({
+              target: [schema.clozeCardGrammarTargets.clozeCardId, schema.clozeCardGrammarTargets.grammarPointId],
+              set: { wordReplacement: extra.wordReplacement, blankIndex: extra.blankIndex },
+            }).run();
+          }
+        }
+        for (const ex of gp.lessonExamples) {
+          const exRow = {
+            grammarPointId: gp.id, fullSentence: ex.fullSentence,
+            sentenceWithBlank: ex.sentenceWithBlank, answer: ex.answer,
+            englishHint: JSON.stringify(ex.englishHint), order: ex.order, notes: ex.notes ?? null,
+          };
+          tx.insert(schema.lessonExamples).values({ id: ex.id, ...exRow })
+            .onConflictDoUpdate({ target: schema.lessonExamples.id, set: exRow }).run();
+        }
+      }
+    
+    
+    // Remove obsolete links for authored cards/grammar points. This repairs
+    // legacy stale cross-targets and deck memberships without deleting any
+    // user progress or content potentially referenced by review history.
+    for (const target of tx.select().from(schema.clozeCardGrammarTargets).all()) {
+      if (
+        manifest.cardIds.has(target.clozeCardId) &&
+        !manifest.targetPairs.has(relationKey(target.clozeCardId, target.grammarPointId))
+      ) {
+        tx.delete(schema.clozeCardGrammarTargets)
+          .where(eq(schema.clozeCardGrammarTargets.id, target.id)).run();
       }
     }
-    for (const ex of gp.lessonExamples) {
-      const exRow = {
-        grammarPointId: gp.id, fullSentence: ex.fullSentence,
-        sentenceWithBlank: ex.sentenceWithBlank, answer: ex.answer,
-        englishHint: JSON.stringify(ex.englishHint), order: ex.order, notes: ex.notes ?? null,
-      };
-      database.insert(schema.lessonExamples).values({ id: ex.id, ...exRow })
-        .onConflictDoUpdate({ target: schema.lessonExamples.id, set: exRow }).run();
+    for (const relation of tx.select().from(schema.deckGrammarPoints).all()) {
+      if (
+        manifest.pointIds.has(relation.grammarPointId) &&
+        !manifest.deckPointPairs.has(relationKey(relation.deckId, relation.grammarPointId))
+      ) {
+        tx.delete(schema.deckGrammarPoints)
+          .where(eq(schema.deckGrammarPoints.id, relation.id)).run();
+      }
     }
-  }
+    // Postconditions: managed content has exactly the authored relationships
+    // and no duplicates/orphans. Throwing here rolls the entire seed back.
+    const seededTargets = tx.select().from(schema.clozeCardGrammarTargets).all()
+      .filter((t) => manifest.cardIds.has(t.clozeCardId));
+    if (
+      seededTargets.length !== manifest.targetPairs.size ||
+      seededTargets.some((t) => !manifest.targetPairs.has(relationKey(t.clozeCardId, t.grammarPointId)))
+    ) {
+      throw new Error('Native content target parity verification failed');
+    }
+    const seededDeckRelations = tx.select().from(schema.deckGrammarPoints).all()
+      .filter((r) => manifest.pointIds.has(r.grammarPointId));
+    if (
+      seededDeckRelations.length !== manifest.deckPointPairs.size ||
+      seededDeckRelations.some((r) => !manifest.deckPointPairs.has(relationKey(r.deckId, r.grammarPointId)))
+    ) {
+      throw new Error('Native content deck relation parity verification failed');
+    }
+    tx.insert(schema.meta).values({ key: 'contentVersion', value: CONTENT_VERSION })
+      .onConflictDoUpdate({ target: schema.meta.key, set: { value: CONTENT_VERSION } }).run();
+  });
 
-  database.insert(schema.meta).values({ key: 'contentVersion', value: CONTENT_VERSION })
-    .onConflictDoUpdate({ target: schema.meta.key, set: { value: CONTENT_VERSION } }).run();
-  void nowIso;
+  // The historical library migration needs the *updated* deck membership.
+  // It inserts absent per-user library rows only; it never edits SRS history.
+  migrateLibrary(database);
   return database;
 }
 
@@ -475,7 +560,8 @@ export function getDashboardStats(): DashboardStats {
     stageCounts[stage] += 1;
     if (c.lapses > 0 && !c.masteredAt) stageCounts.ghost += 1;
   }
-  const totalGrammarPoints = database.select().from(schema.grammarPoints).all().length;
+  const totalGrammarPoints = allContentGrammarPoints()
+    .filter(({ bundle }) => isNativeDeckPublished(bundle.deck.id)).length;
   // Per-level progress: learned = grammar point has a review card. Each
   // TOPIK level is its own deck, so progress is grouped by deck (from the
   // decks table, not the content bundle) — a new level is just a new deck
@@ -487,11 +573,11 @@ export function getDashboardStats(): DashboardStats {
   }
   const decks = database.select().from(schema.decks).orderBy(asc(schema.decks.sortOrder)).all();
   const levelProgress = decks.map((deck) => {
-    const dgps = database
+    const dgps = isNativeDeckPublished(deck.id) ? database
       .select()
       .from(schema.deckGrammarPoints)
       .where(eq(schema.deckGrammarPoints.deckId, deck.id))
-      .all();
+      .all() : [];
     const lessons = new Map<number, { lessonTitle: string; total: number; learned: number }>();
     let learned = 0;
     for (const dgp of dgps) {
@@ -553,7 +639,9 @@ export function getGrammarList(): GrammarListItem[] {
   const deckById = new Map(
     database.select().from(schema.decks).all().map((d) => [d.id, d] as const),
   );
-  return grammarPoints.map(({ gp, lessonNumber, lessonTitle, position }) => {
+  return grammarPoints
+    .filter(({ bundle }) => isNativeDeckPublished(bundle.deck.id))
+    .map(({ gp, lessonNumber, lessonTitle, position }) => {
     const rc = reviewByGp.get(gp.id);
     const deck = deckById.get(deckByGp.get(gp.id) ?? '') ?? { id: '', title: '', topikLevel: '' };
     return {
@@ -567,6 +655,7 @@ export function getGrammarList(): GrammarListItem[] {
 }
 
 export function getGrammarDetail(id: string) {
+  if (!isNativeGrammarPointPublished(id)) return null;
   const database = getDb();
   const gp = database.select().from(schema.grammarPoints).where(eq(schema.grammarPoints.id, id)).get();
   if (!gp) return null;
@@ -671,8 +760,9 @@ export function getDecks(): DeckInfo[] {
   const gpToDeck = new Map(dgps.map((d) => [d.grammarPointId, d.deckId] as const));
   const libraryIds = new Set(getLibraryDeckIds());
   return decks.map((deck) => {
-    const deckGps = dgps.filter((d) => d.deckId === deck.id);
-    const deckCards = cards.filter((c) => gpToDeck.get(c.grammarPointId) === deck.id);
+    const published = isNativeDeckPublished(deck.id);
+    const deckGps = published ? dgps.filter((d) => d.deckId === deck.id) : [];
+    const deckCards = published ? cards.filter((c) => gpToDeck.get(c.grammarPointId) === deck.id) : [];
     return {
       id: deck.id,
       title: deck.title,
@@ -700,10 +790,12 @@ export function getLibraryDeckIds(): string[] {
     .where(eq(schema.libraryDecks.userId, uid()))
     .all()
     .map((r) => r.deckId)
+    .filter((deckId) => isNativeDeckPublished(deckId))
     .sort((a, b) => (order.get(a) ?? 0) - (order.get(b) ?? 0));
 }
 
 export function isDeckInLibrary(deckId: string): boolean {
+  if (!isNativeDeckPublished(deckId)) return false;
   return getDb()
     .select()
     .from(schema.libraryDecks)
@@ -713,6 +805,7 @@ export function isDeckInLibrary(deckId: string): boolean {
 
 /** Add a deck to the library. Only decks with content can be added. */
 export function addDeckToLibrary(deckId: string): void {
+  if (!isNativeDeckPublished(deckId)) return;
   const database = getDb();
   const deck = database.select().from(schema.decks).where(eq(schema.decks.id, deckId)).get();
   if (!deck) return;
@@ -971,6 +1064,9 @@ export function getLearnSession(selfStudy = false): LearnSession {
  * — a burst of separate writes can exceed the spin budget ("Sync operation
  * timeout") on a phone. One transaction = one fsync at COMMIT. */
 export function completeLearnSession(grammarPointIds: string[]) {
+  if (grammarPointIds.some((id) => !isNativeGrammarPointPublished(id))) {
+    throw new Error('Cannot learn an unpublished or unknown grammar point');
+  }
   const database = getDb();
   const now = new Date();
   const quizCards = withTransaction(database, (tx) => {
@@ -1222,6 +1318,7 @@ export function getCramLessonRows(): CramLessonRow[] {
 
 /** Grammar point ids learned in a lesson of a deck (for Custom Cram). */
 export function getCramPointIdsForLesson(deckId: string, lessonNumber: number): string[] {
+  if (!isNativeDeckPublished(deckId)) return [];
   const database = getDb();
   const learnedIds = new Set(
     database
@@ -1254,6 +1351,7 @@ export function getCramQueue(grammarPointIds: string[], limit: number): ReviewQu
   const ids = [...grammarPointIds].sort(() => Math.random() - 0.5).slice(0, limit);
   const queue: ReviewQueueItem[] = [];
   for (const gpId of ids) {
+    if (!isNativeGrammarPointPublished(gpId)) continue;
     const gp = database
       .select()
       .from(schema.grammarPoints)
@@ -1516,6 +1614,7 @@ export function deviceMayAutoLogin(trust: DeviceTrust | null, nowMs: number = Da
  * counts as learned.
  */
 export function markPointKnown(grammarPointId: string): void {
+  if (!isNativeGrammarPointPublished(grammarPointId)) return;
   const database = getDb();
   const now = new Date();
   // One transaction = one OPFS fsync at COMMIT (see completeLearnSession).
