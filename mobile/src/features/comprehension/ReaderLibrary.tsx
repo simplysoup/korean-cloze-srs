@@ -59,7 +59,7 @@ export default function ReaderLibrary() {
             <Pressable
               accessibilityRole="button"
               accessibilityLabel={'Read ' + passage.titleEn}
-              style={[commonStyles.btn, commonStyles.btnPrimary, styles.startButton]}
+              style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary, styles.startButton])}
             >
               <Text style={commonStyles.btnText}>Read passage</Text>
             </Pressable>

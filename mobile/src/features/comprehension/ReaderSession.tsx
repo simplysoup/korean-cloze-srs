@@ -21,7 +21,7 @@ function UnknownPassage() {
       <Text style={commonStyles.title}>Passage not found</Text>
       <Text style={commonStyles.subtitle}>That reading passage is not in this pilot.</Text>
       <Link href="/comprehension" asChild>
-        <Pressable style={[commonStyles.btn, commonStyles.btnPrimary]}>
+        <Pressable style={StyleSheet.flatten([commonStyles.btn, commonStyles.btnPrimary])}>
           <Text style={commonStyles.btnText}>Reading library</Text>
         </Pressable>
       </Link>
