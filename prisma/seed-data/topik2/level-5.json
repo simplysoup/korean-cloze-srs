@@ -28,7 +28,9 @@
             "grammar"
           ],
           "structurePattern": "N(으)로 인해(서)",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_gi_ttaemune"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -112,7 +114,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㅁ으로써",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_euro_means"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -196,7 +200,9 @@
             "grammar"
           ],
           "structurePattern": "N에 따라(서)",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_eulsurok"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -280,7 +286,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 바",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_bawa_gachi"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -370,7 +378,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 만큼",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_eulsurok"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -454,7 +464,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 법이다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_ge_maryeon"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -538,7 +550,9 @@
             "grammar"
           ],
           "structurePattern": "-게 마련이다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_neun_beob"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -622,7 +636,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ 따름이다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_man"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -712,7 +728,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ지라도",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_deorado"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -796,7 +814,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ망정",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l6_euljieonjeong"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -880,7 +900,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ들",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_euljirado"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -964,7 +986,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ 바에야",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l6_neuni_charari"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1054,7 +1078,9 @@
             "grammar"
           ],
           "structurePattern": "-기는커녕",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l6_gosahago"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1138,7 +1164,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ 겨를이 없다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eopseoyo"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1222,7 +1250,9 @@
             "grammar"
           ],
           "structurePattern": "-기가 무섭게",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_jamaja"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1306,7 +1336,9 @@
             "grammar"
           ],
           "structurePattern": "N조차",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_do"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1396,7 +1428,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 데 비해",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_banmyeone"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1480,7 +1514,9 @@
             "grammar"
           ],
           "structurePattern": "-는 대로 (immediately)",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_jamaja"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1564,7 +1600,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 바와 같이",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_neun_ba"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1574,7 +1612,7 @@
             {
               "type": "tip",
               "title": "Worked example",
-              "content": "앞에서 설명한 바와 같이 진행하세요. — Proceed as explained above. 앞에서 설명한 바와 같이 refers back to a prior explanation before giving instructions."
+              "content": "보고서에 적힌 바와 같이 진행하세요. — Proceed as written in the report. 적힌 바와 같이 refers to instructions already written in the report."
             },
             {
               "type": "caution",
@@ -1585,10 +1623,10 @@
           "lessonExamples": [
             {
               "id": "le_t2l5_bawa_gachi_01",
-              "fullSentence": "앞에서 설명한 바와 같이 진행하세요.",
-              "sentenceWithBlank": "앞에서 ___ 진행하세요.",
-              "answer": "설명한 바와 같이",
-              "englishHint": "Proceed as explained above.",
+              "fullSentence": "보고서에 적힌 바와 같이 진행하세요.",
+              "sentenceWithBlank": "보고서에 ___ 진행하세요.",
+              "answer": "적힌 바와 같이",
+              "englishHint": "Proceed as written in the report.",
               "order": 0
             },
             {
@@ -1648,7 +1686,9 @@
             "grammar"
           ],
           "structurePattern": "N에 불과하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_man"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1738,7 +1778,9 @@
             "grammar"
           ],
           "structurePattern": "-고자 하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_euryeogo_hada"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1822,7 +1864,9 @@
             "grammar"
           ],
           "structurePattern": "-고 말다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eobeorida"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1906,7 +1950,9 @@
             "grammar"
           ],
           "structurePattern": "-아/어도 소용없다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_eobwatja"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1990,7 +2036,9 @@
             "grammar"
           ],
           "structurePattern": "-기 십상이다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_ge_maryeon"
+          ],
           "notes": [
             {
               "type": "tip",

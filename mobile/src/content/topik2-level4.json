@@ -28,7 +28,9 @@
             "grammar"
           ],
           "structurePattern": "-잖아요",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_geodeunyo"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -112,7 +114,9 @@
             "grammar"
           ],
           "structurePattern": "-거든요",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_janayo"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -196,7 +200,9 @@
             "grammar"
           ],
           "structurePattern": "-더니",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_eotdeoni"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -280,7 +286,9 @@
             "grammar"
           ],
           "structurePattern": "-았/었더니",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_deoni"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -454,7 +462,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ 리가 없다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_euljido"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -538,7 +548,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ 수밖에 없다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eul_su_issda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -622,7 +634,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ 채로",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eoduda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -712,7 +726,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ 만하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eul_su_issda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -796,7 +812,9 @@
             "grammar"
           ],
           "structurePattern": "-아/어 봤자",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_eodo_soyongeopda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -880,7 +898,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 탓에",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_barame"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -964,7 +984,9 @@
             "grammar"
           ],
           "structurePattern": "-는 김에",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_daesine"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1054,7 +1076,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ까 봐",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_euljido"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1138,7 +1162,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 셈이다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_neun_pyeon"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1222,7 +1248,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄴ/는 데다가",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_banmyeone"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1306,7 +1334,9 @@
             "grammar"
           ],
           "structurePattern": "-았/었어야 하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_eoyagetda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1396,7 +1426,9 @@
             "grammar"
           ],
           "structurePattern": "-았/었더라면",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_asseoyo"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1480,7 +1512,9 @@
             "grammar"
           ],
           "structurePattern": "-더라도",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eodo_concession"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1564,7 +1598,9 @@
             "grammar"
           ],
           "structurePattern": "-는 한",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eumyeon"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1648,7 +1684,9 @@
             "grammar"
           ],
           "structurePattern": "-느니",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_eulbaeya"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1738,7 +1776,9 @@
             "grammar"
           ],
           "structurePattern": "-자고 하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eupsida"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1822,7 +1862,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)라고 하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_euseyo"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1906,7 +1948,9 @@
             "grammar"
           ],
           "structurePattern": "-냐고 하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_neundago_hada"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1990,7 +2034,9 @@
             "grammar"
           ],
           "structurePattern": "-대요 (contracted report)",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_neundago_hada"
+          ],
           "notes": [
             {
               "type": "tip",

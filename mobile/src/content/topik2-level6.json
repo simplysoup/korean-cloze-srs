@@ -28,7 +28,9 @@
             "grammar"
           ],
           "structurePattern": "N(으)로 말미암아",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_euro_inhae"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -112,7 +114,9 @@
             "grammar"
           ],
           "structurePattern": "N을/를 막론하고",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_e_ttaraseo"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -196,7 +200,9 @@
             "grammar"
           ],
           "structurePattern": "-거니와",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_neun_dedaga"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -280,7 +286,9 @@
             "grammar"
           ],
           "structurePattern": "-기에 이르다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_go_malda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -370,7 +378,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ지언정",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_eulmangjeong"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -454,7 +464,9 @@
             "grammar"
           ],
           "structurePattern": "-기는 하되",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_jiman"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -538,7 +550,9 @@
             "grammar"
           ],
           "structurePattern": "-다손 치더라도",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_deorado"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -622,7 +636,9 @@
             "grammar"
           ],
           "structurePattern": "-기로서니",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_euljirado"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -712,7 +728,9 @@
             "grammar"
           ],
           "structurePattern": "-느니 차라리",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_neuni"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -796,7 +814,9 @@
             "grammar"
           ],
           "structurePattern": "N은/는 고사하고",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_gineunkeonyeong"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -880,7 +900,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)려야 -(으)ㄹ 수 없다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eul_su_issda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -964,7 +986,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)나 마나",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_eobwatja"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1054,7 +1078,9 @@
             "grammar"
           ],
           "structurePattern": "-기 짝이 없다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_e_bulgwahada"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1138,7 +1164,9 @@
             "grammar"
           ],
           "structurePattern": "-기 일쑤이다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_gi_sipsang"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1222,7 +1250,9 @@
             "grammar"
           ],
           "structurePattern": "-다 못해",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_gineunkeonyeong"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1306,7 +1336,9 @@
             "grammar"
           ],
           "structurePattern": "-아/어 대다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_go_itda"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1396,7 +1428,9 @@
             "grammar"
           ],
           "structurePattern": "-다시피 하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l6_dasipi"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1480,7 +1514,9 @@
             "grammar"
           ],
           "structurePattern": "-다시피 (as you can see)",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l6_dasipi_hada"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1564,7 +1600,9 @@
             "grammar"
           ],
           "structurePattern": "-기에 망정이지",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_eulppeon"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1648,7 +1686,9 @@
             "grammar"
           ],
           "structurePattern": "-는가 하면",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_banmyeone"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1738,7 +1778,9 @@
             "grammar"
           ],
           "structurePattern": "-기 나름이다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l5_neun_mankeum"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1822,7 +1864,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)ㄹ 법도 하다",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l4_eulliga"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1906,7 +1950,9 @@
             "grammar"
           ],
           "structurePattern": "-(으)리라",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_eul_geoyeyo"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -1990,7 +2036,9 @@
             "grammar"
           ],
           "structurePattern": "-노라면",
-          "relatedPointIds": [],
+          "relatedPointIds": [
+            "gp_t2l3_dabonikka"
+          ],
           "notes": [
             {
               "type": "tip",
@@ -2019,10 +2067,10 @@
             },
             {
               "id": "le_t2l6_noramyeon_02",
-              "fullSentence": "살다 보면 알게 되듯 살노라면 배워요.",
-              "sentenceWithBlank": "살다 보면 알게 되듯 ___ 배워요.",
+              "fullSentence": "오래 살노라면 많은 것을 배워요.",
+              "sentenceWithBlank": "오래 ___ 많은 것을 배워요.",
               "answer": "살노라면",
-              "englishHint": "As one lives, one learns.",
+              "englishHint": "Through living long, you learn many things.",
               "order": 1
             }
           ],
