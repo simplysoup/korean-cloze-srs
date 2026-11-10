@@ -90,7 +90,7 @@ export function VocabularyDeckDetail({
           <>
             <VocabButton label="Learn new words" onPress={() => onStart('learn')} disabled={counts.new === 0} />
             <VocabButton label={'Review due words (' + counts.due + ')'} onPress={() => onStart('review')} disabled={counts.due === 0} variant="secondary" />
-            <VocabButton label="Review missed words" onPress={() => onStart('missed')} disabled={!hasMissed} variant="secondary" />
+            <VocabButton label="Review missed due words" onPress={() => onStart('missed')} disabled={!hasMissed || counts.due === 0} variant="secondary" />
             {counts.new === 0 ? <Text style={vocabStyles.muted}>All entries have been introduced.</Text> : null}
           </>
         )}
