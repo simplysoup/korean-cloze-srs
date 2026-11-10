@@ -42,16 +42,16 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
       {
         "id": "le_ani_eyo_01",
         "fullSentence": "학생이 아니에요.",
-        "sentenceWithBlank": "학생___ 아니에요.",
-        "answer": "이",
+        "sentenceWithBlank": "학생___.",
+        "answer": "이 아니에요",
         "englishHint": "I'm not a student.",
         "order": 0
       },
       {
         "id": "le_ani_eyo_02",
         "fullSentence": "의사가 아니에요.",
-        "sentenceWithBlank": "의사___ 아니에요.",
-        "answer": "가",
+        "sentenceWithBlank": "의사___.",
+        "answer": "가 아니에요",
         "englishHint": "I'm not a doctor.",
         "order": 1
       }
@@ -60,8 +60,8 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
       {
         "id": "cc_ani_eyo_01",
         "fullSentence": "책이 아니에요.",
-        "sentenceWithBlank": "책___ 아니에요.",
-        "answer": "이",
+        "sentenceWithBlank": "책___.",
+        "answer": "이 아니에요",
         "englishHint": "It isn't a book.",
         "alternateAnswers": [],
         "vocabBaseForm": "아니다",
@@ -70,8 +70,8 @@ export const grammarGapPoints: Record<string, GrammarPointSeed> = {
       {
         "id": "cc_ani_eyo_02",
         "fullSentence": "커피가 아니에요.",
-        "sentenceWithBlank": "커피___ 아니에요.",
-        "answer": "가",
+        "sentenceWithBlank": "커피___.",
+        "answer": "가 아니에요",
         "englishHint": "It isn't coffee.",
         "alternateAnswers": [],
         "vocabBaseForm": "아니다",

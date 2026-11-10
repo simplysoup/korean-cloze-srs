@@ -1,8 +1,9 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 import { grammarGapPoints } from '../grammar-gaps';
 
 // Lesson 7 — Polite Requests, Needs and Wants
-// Grammar points (positions 34–37):
+// Grammar points (positions 33–37):
 //   33. eusi_honorific
 //   34. euseyo
 //   35. a_juseyo
@@ -10,7 +11,7 @@ import { grammarGapPoints } from '../grammar-gaps';
 //   37. go_sipda
 // Examples and cards use only grammar through their target position.
 
-export const lesson07: LessonSeed = {
+export const lesson07: LessonSeed = teachLesson({
 	lessonNumber: 7,
 	title: "Polite Requests, Needs and Wants",
 	grammarPoints: [
@@ -303,4 +304,4 @@ export const lesson07: LessonSeed = {
 			]
 		}
 	]
-};
+});

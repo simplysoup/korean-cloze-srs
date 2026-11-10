@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 import { grammarGapPoints } from '../grammar-gaps';
 
 // Lesson 1 — Introducing Yourself
@@ -11,7 +12,7 @@ import { grammarGapPoints } from '../grammar-gaps';
 //   6. jeogeos
 // Examples and cards use only grammar through their target position.
 
-export const lesson01: LessonSeed = {
+export const lesson01: LessonSeed = teachLesson({
 	lessonNumber: 1,
 	title: "Introducing Yourself",
 	grammarPoints: [
@@ -395,4 +396,4 @@ export const lesson01: LessonSeed = {
 			]
 		}
 	]
-};
+});

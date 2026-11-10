@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 3 — Everyday Actions and Negation
 // Grammar points (positions 13–17):
@@ -9,7 +10,7 @@ import type { LessonSeed } from '../types';
 //   17. mos
 // Examples and cards use only grammar through their target position.
 
-export const lesson03: LessonSeed = {
+export const lesson03: LessonSeed = teachLesson({
 	lessonNumber: 3,
 	title: "Everyday Actions and Negation",
 	grammarPoints: [
@@ -414,4 +415,4 @@ export const lesson03: LessonSeed = {
 			]
 		}
 	]
-};
+});

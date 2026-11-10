@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 11 — Reactions, Confirmation and Uncertainty
 // Grammar points (positions 48–50):
@@ -7,7 +8,7 @@ import type { LessonSeed } from '../types';
 //   50. n_geos_gatda
 // Examples and cards use only grammar through their target position.
 
-export const lesson11: LessonSeed = {
+export const lesson11: LessonSeed = teachLesson({
 	lessonNumber: 11,
 	title: "Reactions, Confirmation and Uncertainty",
 	grammarPoints: [
@@ -229,4 +230,4 @@ export const lesson11: LessonSeed = {
 			]
 		}
 	]
-};
+});

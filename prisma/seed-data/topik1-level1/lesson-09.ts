@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 9 — Conditions and Contrast
 // Grammar points (positions 42–44):
@@ -7,7 +8,7 @@ import type { LessonSeed } from '../types';
 //   44. hajiman
 // Examples and cards use only grammar through their target position.
 
-export const lesson09: LessonSeed = {
+export const lesson09: LessonSeed = teachLesson({
 	lessonNumber: 9,
 	title: "Conditions and Contrast",
 	grammarPoints: [
@@ -226,4 +227,4 @@ export const lesson09: LessonSeed = {
 			]
 		}
 	]
-};
+});

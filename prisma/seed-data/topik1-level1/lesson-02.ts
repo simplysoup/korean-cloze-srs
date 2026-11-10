@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 2 — People, Possession and Existence
 // Grammar points (positions 7–12):
@@ -10,7 +11,7 @@ import type { LessonSeed } from '../types';
 //   12. eopseoyo
 // Examples and cards use only grammar through their target position.
 
-export const lesson02: LessonSeed = {
+export const lesson02: LessonSeed = teachLesson({
 	lessonNumber: 2,
 	title: "People, Possession and Existence",
 	grammarPoints: [
@@ -459,4 +460,4 @@ export const lesson02: LessonSeed = {
 			]
 		}
 	]
-};
+});

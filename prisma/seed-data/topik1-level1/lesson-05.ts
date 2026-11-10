@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 5 — Time, Starting and Finishing
 // Grammar points (positions 24–28):
@@ -9,7 +10,7 @@ import type { LessonSeed } from '../types';
 //   28. hue
 // Examples and cards use only grammar through their target position.
 
-export const lesson05: LessonSeed = {
+export const lesson05: LessonSeed = teachLesson({
 	lessonNumber: 5,
 	title: "Time, Starting and Finishing",
 	grammarPoints: [
@@ -366,4 +367,4 @@ export const lesson05: LessonSeed = {
 			]
 		}
 	]
-};
+});

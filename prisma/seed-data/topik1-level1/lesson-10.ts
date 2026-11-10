@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 10 — Connecting Actions and Making Plans
 // Grammar points (positions 45–47):
@@ -7,7 +8,7 @@ import type { LessonSeed } from '../types';
 //   47. eul_geoyeyo
 // Examples and cards use only grammar through their target position.
 
-export const lesson10: LessonSeed = {
+export const lesson10: LessonSeed = teachLesson({
 	lessonNumber: 10,
 	title: "Connecting Actions and Making Plans",
 	grammarPoints: [
@@ -227,4 +228,4 @@ export const lesson10: LessonSeed = {
 			]
 		}
 	]
-};
+});

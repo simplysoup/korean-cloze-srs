@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 6 — Talking About the Past and Describing Things
 // Grammar points (positions 29–32):
@@ -8,7 +9,7 @@ import type { LessonSeed } from '../types';
 //   32. hago
 // Examples and cards use only grammar through their target position.
 
-export const lesson06: LessonSeed = {
+export const lesson06: LessonSeed = teachLesson({
 	lessonNumber: 6,
 	title: "Talking About the Past and Describing Things",
 	grammarPoints: [
@@ -335,4 +336,4 @@ export const lesson06: LessonSeed = {
 			]
 		}
 	]
-};
+});
