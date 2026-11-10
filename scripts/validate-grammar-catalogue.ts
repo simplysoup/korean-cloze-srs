@@ -13,9 +13,29 @@ import level4 from '../prisma/seed-data/topik2/level-4.json';
 import level5 from '../prisma/seed-data/topik2/level-5.json';
 import level6 from '../prisma/seed-data/topik2/level-6.json';
 import { teachingGuides } from '../prisma/seed-data/teaching-guides';
+import { applyGrammarExpansions } from './curriculum-overlay.mjs';
+import gap1 from '../prisma/seed-data/grammar-expansion/level-1.json';
+import gap2 from '../prisma/seed-data/grammar-expansion/level-2.json';
+import gap3 from '../prisma/seed-data/grammar-expansion/level-3.json';
+import gap4 from '../prisma/seed-data/grammar-expansion/level-4.json';
 
-const lessons = [...level1Lessons, ...level2Lessons, ...level3.lessons, ...level4.lessons, ...level5.lessons, ...level6.lessons];
-const expected = { lessons: 46, grammarPoints: 198, examples: 409, cards: 628 };
+const baseLevel1 = level1Lessons.map(lesson => ({
+  ...lesson,
+  grammarPoints: lesson.grammarPoints.map(gp => {
+    const extra = level1Additions[gp.id];
+    return { ...gp,
+      lessonExamples: [...gp.lessonExamples, ...(extra?.examples ?? [])],
+      cards: [...gp.cards, ...(extra?.cards ?? [])],
+    };
+  }),
+}));
+const fullBundles = applyGrammarExpansions([
+  { deck: { level: 1 }, lessons: baseLevel1 },
+  { deck: { level: 2 }, lessons: level2Lessons },
+  level3, level4, level5, level6,
+], [gap1, gap2, gap3, gap4]);
+const lessons = fullBundles.flatMap(bundle => bundle.lessons);
+const expected = { lessons: 46, grammarPoints: 229, examples: 471, cards: 721 };
 const ids = new Set<string>();
 const points = new Set<string>();
 const positionById = new Map<string, number>();
@@ -49,14 +69,13 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
     unique(gp.id, `lesson ${lesson.lessonNumber}`);
     points.add(gp.id);
     positionById.set(gp.id, position);
-    const addition = level1Additions[gp.id];
-    const ex = [...gp.lessonExamples, ...(addition?.examples ?? [])];
-    const review = [...gp.cards, ...(addition?.cards ?? [])];
+    const ex = gp.lessonExamples;
+    const review = gp.cards;
     if (!gp.structurePattern?.trim()) errors.push(`${gp.id}: missing grammar structure`);
     if (!gp.description?.trim()) errors.push(`${gp.id}: missing explanation`);
     // A usable lesson must teach its mechanism, not merely state a translation.
     const guide = teachingGuides[gp.id];
-    if (!guide && gp.level <= 2) {
+    if (!guide && gp.level <= 2 && !gp.id.startsWith('gp_gap_')) {
       errors.push(`${gp.id}: missing authored teaching guide`);
     } else if (guide) {
       for (const field of ['meaning', 'formation', 'worked', 'trap'] as const) {
@@ -78,7 +97,7 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
     }
     // The new advanced decks use the same teaching contract directly in
     // source JSON, rather than looking up separate guide modules.
-    if (gp.level >= 3) {
+    if (gp.level >= 3 || gp.id.startsWith('gp_gap_')) {
       if (!gp.description?.trim() || gp.description.length < 45) errors.push(`${gp.id}: too-short meaning`);
       const notes = new Map((gp.notes ?? []).map((note) => [note.title, note.content]));
       for (const title of ['Build it step by step', 'Worked example', 'Common trap']) {

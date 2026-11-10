@@ -16,6 +16,7 @@
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applyGrammarExpansions } from './curriculum-overlay.mjs';
 
 const contentDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'mobile', 'src', 'content');
 const errors = [];
@@ -38,12 +39,12 @@ function flattenAll(bundles) {
 }
 
 const levels = [
-  { file: 'topik1-level1.json', level: 1, lessons: 11, gps: 50, cards: 184, examples: 113, posMin: 1, posMax: 50 },
-  { file: 'topik1-level2.json', level: 2, lessons: 11, gps: 52, cards: 156, examples: 104, posMin: 51, posMax: 102 },
-  { file: 'topik2-level3.json', level: 3, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 103, posMax: 126 },
-  { file: 'topik2-level4.json', level: 4, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 127, posMax: 150 },
-  { file: 'topik2-level5.json', level: 5, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 151, posMax: 174 },
-  { file: 'topik2-level6.json', level: 6, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 175, posMax: 198 },
+  { file: 'topik1-level1.json', level: 1, lessons: 11, gps: 65, cards: 229, examples: 143, posMin: 1, posMax: 65 },
+  { file: 'topik1-level2.json', level: 2, lessons: 11, gps: 59, cards: 177, examples: 118, posMin: 66, posMax: 124 },
+  { file: 'topik2-level3.json', level: 3, lessons: 6, gps: 32, cards: 96, examples: 64, posMin: 125, posMax: 156 },
+  { file: 'topik2-level4.json', level: 4, lessons: 6, gps: 25, cards: 75, examples: 50, posMin: 157, posMax: 181 },
+  { file: 'topik2-level5.json', level: 5, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 182, posMax: 205 },
+  { file: 'topik2-level6.json', level: 6, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 206, posMax: 229 },
 ];
 
 const bundles = levels.map((spec) => {
@@ -62,10 +63,19 @@ const bundles = levels.map((spec) => {
 // The checked-in app content for TOPIK II must match its authored source
 // byte-for-byte after canonical JSON serialization. Avoid editing generated
 // mobile JSON by hand; run 'bun scripts/port-content.ts' instead.
+const expandedSources = applyGrammarExpansions([
+  bundles[0].data, // Level 1 and 2 were already ported and expanded
+  bundles[1].data,
+  ...[3, 4, 5, 6].map(level => JSON.parse(readFileSync(
+    join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'topik2', `level-${level}.json`), 'utf8',
+  ))),
+], [3, 4].map(level => JSON.parse(readFileSync(
+  join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'grammar-expansion', `level-${level}.json`), 'utf8',
+))));
 for (const level of [3, 4, 5, 6]) {
-  const src = JSON.parse(readFileSync(join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'topik2', `level-${level}.json`), 'utf8'));
-  const dest = bundles.find((entry) => entry.level === level)?.data;
-  check(JSON.stringify(src) === JSON.stringify(dest), `Level ${level}: generated mobile JSON differs from authored source`);
+  const expected = expandedSources[level - 1];
+  const actual = bundles[level - 1].data;
+  check(JSON.stringify(expected) === JSON.stringify(actual), `Level ${level}: generated mobile JSON differs from assembled authored source`);
 }
 
 const all = flattenAll(bundles);
@@ -143,8 +153,8 @@ for (const { gp, position, level } of all) {
 // Positions are continuous 1-198 across all six bundles in file order.
 const positions = all.map(({ position }) => position);
 check(
-  positions.length === 198 && positions.every((p, i) => p === i + 1),
-  `global positions are not continuous 1-198 (got ${positions.length} points)`,
+  positions.length === 229 && positions.every((p, i) => p === i + 1),
+  `global positions are not continuous 1-229 (got ${positions.length} points)`,
 );
 
 if (errors.length > 0) {
@@ -153,4 +163,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 const totals = bundles.map((b) => `${b.file}: ${b.lessons.length} lessons, ${b.gps.length} GPs, ${b.cards.length} cards, ${b.examples.length} examples`).join('\n  ');
-console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-198`);
+console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-229`);
