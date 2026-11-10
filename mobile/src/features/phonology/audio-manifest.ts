@@ -58,5 +58,5 @@ export function audioForTarget(target: string): AudioAsset {
 export function isApprovedAudio(asset: AudioAsset): boolean {
   return asset.status === 'approved' &&
     Boolean(asset.uri && asset.source && asset.license &&
-      asset.speakerOrSynthesis && asset.pronunciationReviewedBy);
+      asset.speakerOrSynthesis && asset.pronunciationReviewedBy && asset.attribution);
 }

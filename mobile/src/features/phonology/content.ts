@@ -104,7 +104,8 @@ export const SOUND_LESSONS: readonly SoundLesson[] = [
     explanation: 'A standard spoken transcription is in square brackets. The word remains spelled normally in reading and writing, even when several sounds shift in context. Compare 달 (moon) and 탈 (mask): the initial ㄷ/ㅌ contrast is plain versus aspirated. This contrast is shown visually until licensed, reviewed audio is available.',
     examples: [
       { spelling: '국물', meaning: 'broth', writtenSound: '[궁물]', observation: 'Keep the spelling 국물, even when you hear a nasal.' },
-      { spelling: '달 / 탈', meaning: 'moon / mask', writtenSound: '달 / 탈', observation: 'The written ㄷ and ㅌ distinguish a plain and aspirated initial; no audio contrast is claimed.' },
+      { spelling: '달', meaning: 'moon', writtenSound: '달', observation: 'Initial ㄷ represents a plain consonant.' },
+      { spelling: '탈', meaning: 'mask', writtenSound: '탈', observation: 'Initial ㅌ represents an aspirated consonant, contrasting with 달; no audio contrast is claimed.' },
     ],
     checks: [
       { id: 'ph_spelling_01', prompt: 'When 꽃이 is pronounced [꼬치], what happens to its spelling?', choices: ['Write 꼬치 instead.', 'Keep the written form 꽃이.', 'Write 꼳이 instead.', 'Remove the subject particle.'], correctIndex: 1, explanation: 'Sound changes do not authorize phonetic respelling. The conventional spelling remains 꽃이.', skills: ['pronunciation'] },

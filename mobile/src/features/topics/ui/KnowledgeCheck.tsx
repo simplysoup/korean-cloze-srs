@@ -18,7 +18,7 @@ export function KnowledgeCheck({ check, index, total, attempt, onSelect }: Knowl
     <View style={[commonStyles.card, styles.container]} accessible={false}>
       <Text accessibilityRole="header" style={styles.label}>CHECK {index + 1} OF {total}</Text>
       <Text style={styles.prompt}>{check.prompt}</Text>
-      <View style={styles.choices}>
+      <View style={styles.choices} accessibilityRole="radiogroup">
         {check.choices.map((choice, choiceIndex) => {
           const selected = choiceIndex === attempt?.selectedIndex;
           return (
@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
   container: { gap: 12, marginBottom: 12 },
   label: { fontSize: 12, fontWeight: '800', color: colors.muted, letterSpacing: 1 },
   prompt: { fontSize: 18, lineHeight: 26, fontWeight: '700', color: colors.text },
-  choices: { gap: 8, accessibilityRole: 'radiogroup' } as never,
+  choices: { gap: 8 },
   choice: {
     borderWidth: 1, borderColor: colors.border, backgroundColor: colors.bgSecondary,
     borderRadius: 8, minHeight: 48, padding: 12, justifyContent: 'center',
