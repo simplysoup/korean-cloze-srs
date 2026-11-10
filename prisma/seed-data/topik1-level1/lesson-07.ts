@@ -1,18 +1,24 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
+import { grammarGapPoints } from '../grammar-gaps';
 
 // Lesson 7 — Polite Requests, Needs and Wants
-// Grammar points (positions 32–35):
-//   32. euseyo
-//   33. a_juseyo
-//   34. aya_hada
-//   35. go_sipda
+// Grammar points (positions 33–37):
+//   33. eusi_honorific
+//   34. euseyo
+//   35. a_juseyo
+//   36. aya_hada
+//   37. go_sipda
 // Examples and cards use only grammar through their target position.
 
-export const lesson07: LessonSeed = {
+export const lesson07: LessonSeed = teachLesson({
 	lessonNumber: 7,
 	title: "Polite Requests, Needs and Wants",
 	grammarPoints: [
-		// 32. gp_euseyo
+		// 33. gp_eusi_honorific (subject honorific)
+		grammarGapPoints.gp_eusi_honorific,
+
+		// 34. gp_euseyo
 		{
 			id: 'gp_euseyo',
 			title: '-(으)세요',
@@ -31,6 +37,7 @@ export const lesson07: LessonSeed = {
 				{ type: 'tip', title: 'Dual Use', content: '-(으)세요 is both a polite imperative ("please do") and an honorific form. Context determines meaning.' },
 				{ type: 'tip', title: 'Irregular', content: 'ㄹ-ending stems drop ㄹ: 만들다 → 만드세요. 듣다 → 들으세요 (ㄷ-irregular).' }
 			],
+			relatedPointIds: ['gp_eusi_honorific', 'gp_a_juseyo', 'gp_ji_maseyo'],
 			lessonExamples: [
 				{
 					id: 'le_euseyo_01',
@@ -58,7 +65,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '앉다',
 					englishHint: 'Please sit here.',
-					introducedAtPosition: 32
+					introducedAtPosition: 34
 				},
 				{
 					id: 'cc_euseyo_02',
@@ -68,7 +75,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
 					englishHint: 'Please go slowly.',
-					introducedAtPosition: 32
+					introducedAtPosition: 34
 				},
 				{
 					id: 'cc_euseyo_03',
@@ -78,12 +85,12 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '읽다',
 					englishHint: 'Please read this book.',
-					introducedAtPosition: 32
+					introducedAtPosition: 34
 				}
 			]
 		},
 
-		// 33. gp_a_juseyo
+		// 35. gp_a_juseyo
 		{
 			id: 'gp_a_juseyo',
 			title: '-아/어 주세요',
@@ -102,7 +109,7 @@ export const lesson07: LessonSeed = {
 				{ type: 'tip', title: '-(으)세요 vs -아/어 주세요', content: '-(으)세요 is a general polite command. -아/어 주세요 specifically asks "please do this for me" — implies a favor.' },
 				{ type: 'tip', title: 'Common Phrases', content: '도와주세요 (please help), 알려 주세요 (please let me know), 기다려 주세요 (please wait).' }
 			],
-			relatedPointIds: ['gp_euseyo'],
+			relatedPointIds: ['gp_euseyo', 'gp_ji_maseyo'],
 			lessonExamples: [
 				{
 					id: 'le_a_juseyo_01',
@@ -130,7 +137,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어 주세요',
 					englishHint: 'Please take a photo (for me).',
-					introducedAtPosition: 33
+					introducedAtPosition: 35
 				},
 				{
 					id: 'cc_a_juseyo_02',
@@ -140,7 +147,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어 주세요',
 					englishHint: 'Please open the door (for me).',
-					introducedAtPosition: 33
+					introducedAtPosition: 35
 				},
 				{
 					id: 'cc_a_juseyo_03',
@@ -150,12 +157,12 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어 주세요',
 					englishHint: 'Please speak in Korean (for me).',
-					introducedAtPosition: 33
+					introducedAtPosition: 35
 				}
 			]
 		},
 
-		// 34. gp_aya_hada
+		// 36. gp_aya_hada
 		{
 			id: 'gp_aya_hada',
 			title: '-아/어야 하다',
@@ -201,7 +208,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
 					englishHint: 'I have to go to school tomorrow.',
-					introducedAtPosition: 34
+					introducedAtPosition: 36
 				},
 				{
 					id: 'cc_aya_hada_02',
@@ -211,7 +218,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '먹다',
 					englishHint: 'I have to take medicine.',
-					introducedAtPosition: 34
+					introducedAtPosition: 36
 				},
 				{
 					id: 'cc_aya_hada_03',
@@ -221,12 +228,12 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '공부하다',
 					englishHint: 'I have to study now.',
-					introducedAtPosition: 34
+					introducedAtPosition: 36
 				}
 			]
 		},
 
-		// 35. gp_go_sipda
+		// 37. gp_go_sipda
 		{
 			id: 'gp_go_sipda',
 			title: '-고 싶다',
@@ -272,7 +279,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
 					englishHint: 'I want to go to Korea.',
-					introducedAtPosition: 35
+					introducedAtPosition: 37
 				},
 				{
 					id: 'cc_go_sipda_02',
@@ -282,7 +289,7 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
 					englishHint: 'I want to eat bulgogi.',
-					introducedAtPosition: 35
+					introducedAtPosition: 37
 				},
 				{
 					id: 'cc_go_sipda_03',
@@ -292,9 +299,9 @@ export const lesson07: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고 싶다',
 					englishHint: 'I want to watch a movie.',
-					introducedAtPosition: 35
+					introducedAtPosition: 37
 				}
 			]
 		}
 	]
-};
+});

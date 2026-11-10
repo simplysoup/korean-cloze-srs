@@ -1,17 +1,18 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 9 — Conditions and Contrast
-// Grammar points (positions 40–42):
-//   40. eumyeon
-//   41. jiman
-//   42. hajiman
+// Grammar points (positions 42–44):
+//   42. eumyeon
+//   43. jiman
+//   44. hajiman
 // Examples and cards use only grammar through their target position.
 
-export const lesson09: LessonSeed = {
+export const lesson09: LessonSeed = teachLesson({
 	lessonNumber: 9,
 	title: "Conditions and Contrast",
 	grammarPoints: [
-		// 40. gp_eumyeon
+		// 42. gp_eumyeon
 		{
 			id: 'gp_eumyeon',
 			title: '-(으)면',
@@ -57,7 +58,7 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)면',
 					englishHint: "If you have time, let's go together.",
-					introducedAtPosition: 40
+					introducedAtPosition: 42
 				},
 				{
 					id: 'cc_eumyeon_02',
@@ -67,7 +68,7 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)면',
 					englishHint: 'If I go to Korea, I want to eat bulgogi.',
-					introducedAtPosition: 40
+					introducedAtPosition: 42
 				},
 				{
 					id: 'cc_eumyeon_03',
@@ -77,12 +78,12 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)면',
 					englishHint: 'If the weather is nice, I go to the park.',
-					introducedAtPosition: 40
+					introducedAtPosition: 42
 				}
 			]
 		},
 
-		// 41. gp_jiman
+		// 43. gp_jiman
 		{
 			id: 'gp_jiman',
 			title: '-지만',
@@ -129,7 +130,7 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-지만',
 					englishHint: "It's expensive but it's delicious.",
-					introducedAtPosition: 41
+					introducedAtPosition: 43
 				},
 				{
 					id: 'cc_jiman_02',
@@ -139,7 +140,7 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-지만',
 					englishHint: "I'm tired but I have to study.",
-					introducedAtPosition: 41
+					introducedAtPosition: 43
 				},
 				{
 					id: 'cc_jiman_03',
@@ -149,12 +150,12 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-지만',
 					englishHint: "It's small but a nice house.",
-					introducedAtPosition: 41
+					introducedAtPosition: 43
 				}
 			]
 		},
 
-		// 42. gp_hajiman
+		// 44. gp_hajiman
 		{
 			id: 'gp_hajiman',
 			title: '하지만',
@@ -201,7 +202,7 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '하지만',
 					englishHint: "Korean is hard. But it's fun.",
-					introducedAtPosition: 42
+					introducedAtPosition: 44
 				},
 				{
 					id: 'cc_hajiman_02',
@@ -211,7 +212,7 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '하지만',
 					englishHint: "That restaurant is expensive. But it's delicious.",
-					introducedAtPosition: 42
+					introducedAtPosition: 44
 				},
 				{
 					id: 'cc_hajiman_03',
@@ -221,9 +222,9 @@ export const lesson09: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '하지만',
 					englishHint: "I'm tired. But I have to study.",
-					introducedAtPosition: 42
+					introducedAtPosition: 44
 				}
 			]
 		}
 	]
-};
+});

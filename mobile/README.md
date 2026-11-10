@@ -258,48 +258,63 @@ The cover links to the deck detail page.
   correctly, then a summary. Completing a session creates the FSRS review
   cards (due immediately).
 
-## Content — audited Level 1 + new Level 2 (2026-11-09 overhaul)
+## Content — audited Level 1 + new Level 2 (2026-11-09 overhaul, extended)
 
-**TOPIK I Level 1 (11 lessons, 48 grammar points, 178 cloze cards,
-109 lesson examples) was audited and reorganised into a learner-first
+**TOPIK I Level 1 (11 lessons, 50 grammar points, 184 cloze cards,
+113 lesson examples) was audited and reorganised into a learner-first
 curriculum on 2026-11-09** (41 sentence corrections, 12
 translation-only fixes, invalid alternate answers removed, and the
 grammar points reordered so polite verb conjugation precedes
 object-particle production — the original order had learners producing
 을/를 before they had the verb endings to form natural sentences).
-**TOPIK I Level 2 (11 lessons, 51 grammar points, 153 cloze cards,
-102 lesson examples) was authored fresh in the same overhaul.** Full
-details, including the lesson plans and the known gaps (아니다,
-question words, numbers/counters, honorifics, and giving/receiving
-are not yet in the deck): `docs/planning/korean-curriculum-overhaul-2026-11-09.md`.
+**TOPIK I Level 2 (11 lessons, 52 grammar points, 156 cloze cards,
+104 lesson examples) was authored fresh in the same overhaul.** A
+further pass added three gap grammar points — noun negation N이/가
+아니다 (Level 1, position 2), subject honorific -(으)시- (Level 1,
+position 33), and formal noun copula N입니다/입니까? (Level 2,
+position 58) — and a **teaching guide for every one of the 102
+points** (`prisma/seed-data/teaching-guides/`): a plain-English
+meaning, step-by-step formation, a worked example, and a common trap.
+Each lesson is exported through `teachLesson()`, which replaces the
+point's description with the guide's meaning and prepends three notes
+(formation, worked example, trap) ahead of the point's own notes.
+Full details, including the lesson plans and the remaining gaps
+(question words, numbers/counters, giving/receiving are not yet in the
+deck): `docs/planning/korean-curriculum-overhaul-2026-11-09.md`.
 
 The content is a curated draft, not independently reviewed by a Korean
 educator. Lesson 22 (reported speech) is labelled an optional bridge —
 it sits near or beyond the usual TOPIK I beginner boundary. The
 seed data lives in `prisma/seed-data/topik1-level1/` and
-`topik1-level2/`; `bun scripts/port-content.ts` ports both to JSON
+`topik1-level2/` (plus `grammar-gaps.ts` and `teaching-guides/`);
+`bun scripts/port-content.ts` ports both to JSON
 (`mobile/src/content/topik1-level1.json`,
 `topik1-level2.json`), and the Level 1 additions (build 15: 24 variant
 practice cards and 11 worked examples from the Codex "Make Level 1
 lessons and reviews reliable" patch) are merged at the port boundary
 from `prisma/seed-data/topik1-level1/additions.ts`. Content is
-versioned (`CONTENT_VERSION` in `src/db/index.ts`, now `topik1-v6`):
+versioned (`CONTENT_VERSION` in `src/db/index.ts`, now `topik1-v7`):
 on a version bump the seed upserts every content row — including the
 deck titles and the `deck_grammar_points` lesson/sort rows, so a
 curriculum reorder reaches devices that already seeded an earlier
 version — without touching review progress (keyed by grammar point
 id, not by position).
 
-Validation (`npm run validate` / the seed Jest test) enforces, per
-level: Level 1 — 11 lessons, 48 grammar points, 178 cloze cards, 109
-lesson examples; Level 2 — 11 lessons, 51 grammar points, 153 cloze
-cards, 102 lesson examples; every cloze answer appears in its
-sentence; every grammar point has ≥ 2 lesson examples and ≥ 3 cloze
-cards; no duplicate ids across both levels; all related /
-extra-target ids exist; every card's `introducedAtPosition` is in its
-level's range (Level 1: 1-48, Level 2: 49-99) and matches its owning
-point's global position for single-target cards; global positions are
-continuous 1-99.
+Validation (`bun scripts/validate-grammar-catalogue.ts` for the source
+catalogue, `npm run validate` / the seed Jest test for the ported
+JSON) enforces, per level: Level 1 — 11 lessons, 50 grammar points,
+184 cloze cards, 113 lesson examples; Level 2 — 11 lessons, 52
+grammar points, 156 cloze cards, 104 lesson examples; every cloze
+answer appears in its sentence; every grammar point has ≥ 2 lesson
+examples and ≥ 3 cloze cards; no duplicate ids across both levels;
+all related / extra-target ids exist; every card's
+`introducedAtPosition` is in its level's range (Level 1: 1-50, Level
+2: 51-102) and matches its owning point's global position for
+single-target cards; global positions are continuous 1-102. The
+catalogue validator additionally requires a teaching guide for every
+point (each field ≥ 55 characters), the three teaching notes on every
+point, and the prerequisite order (이에요/예요 before 아니다 before
+은/는; honorific before -(으)세요; -습니까? before 입니다/입니까?).
 
 ## Not yet built (next steps, in roughly this order)
 

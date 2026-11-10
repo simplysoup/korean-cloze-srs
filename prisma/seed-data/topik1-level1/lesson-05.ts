@@ -1,19 +1,20 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 5 — Time, Starting and Finishing
-// Grammar points (positions 23–27):
-//   23. e_time
-//   24. buteo
-//   25. kkaji
-//   26. jeone
-//   27. hue
+// Grammar points (positions 24–28):
+//   24. e_time
+//   25. buteo
+//   26. kkaji
+//   27. jeone
+//   28. hue
 // Examples and cards use only grammar through their target position.
 
-export const lesson05: LessonSeed = {
+export const lesson05: LessonSeed = teachLesson({
 	lessonNumber: 5,
 	title: "Time, Starting and Finishing",
 	grammarPoints: [
-		// 23. gp_e_time
+		// 24. gp_e_time
 		{
 			id: 'gp_e_time',
 			title: '에 (시간)',
@@ -59,7 +60,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '에',
 					englishHint: 'I study Korean on Monday.',
-					introducedAtPosition: 23
+					introducedAtPosition: 24
 				},
 				{
 					id: 'cc_e_time_02',
@@ -69,7 +70,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '에',
 					englishHint: 'I exercise in the morning.',
-					introducedAtPosition: 23
+					introducedAtPosition: 24
 				},
 				{
 					id: 'cc_e_time_03',
@@ -79,12 +80,12 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '에',
 					englishHint: 'I eat at 7 PM.',
-					introducedAtPosition: 23
+					introducedAtPosition: 24
 				}
 			]
 		},
 
-		// 24. gp_buteo
+		// 25. gp_buteo
 		{
 			id: 'gp_buteo',
 			title: '부터',
@@ -130,7 +131,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
 					englishHint: "I start work at nine.",
-					introducedAtPosition: 24
+					introducedAtPosition: 25
 				},
 				{
 					id: 'cc_buteo_02',
@@ -140,7 +141,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
 					englishHint: "I have classes starting Monday.",
-					introducedAtPosition: 24
+					introducedAtPosition: 25
 				},
 				{
 					id: 'cc_buteo_03',
@@ -150,12 +151,12 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '부터',
 					englishHint: "I start studying in the morning.",
-					introducedAtPosition: 24
+					introducedAtPosition: 25
 				}
 			]
 		},
 
-		// 25. gp_kkaji
+		// 26. gp_kkaji
 		{
 			id: 'gp_kkaji',
 			title: '까지',
@@ -200,7 +201,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '까지',
 					englishHint: 'I work from 9 until 6.',
-					introducedAtPosition: 25
+					introducedAtPosition: 26
 				},
 				{
 					id: 'cc_kkaji_02',
@@ -210,7 +211,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '까지',
 					englishHint: "I travel from Seoul to Busan.",
-					introducedAtPosition: 25
+					introducedAtPosition: 26
 				},
 				{
 					id: 'cc_kkaji_03',
@@ -220,12 +221,12 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '까지',
 					englishHint: 'I do homework by Friday.',
-					introducedAtPosition: 25
+					introducedAtPosition: 26
 				}
 			]
 		},
 
-		// 26. gp_jeone
+		// 27. gp_jeone
 		{
 			id: 'gp_jeone',
 			title: '전에',
@@ -270,7 +271,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '전에',
 					englishHint: 'I drink coffee before class.',
-					introducedAtPosition: 26
+					introducedAtPosition: 27
 				},
 				{
 					id: 'cc_jeone_02',
@@ -280,7 +281,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '전에',
 					englishHint: "I drink water before exercising.",
-					introducedAtPosition: 26
+					introducedAtPosition: 27
 				},
 				{
 					id: 'cc_jeone_03',
@@ -290,12 +291,12 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '전에',
 					englishHint: 'I go home before 10.',
-					introducedAtPosition: 26
+					introducedAtPosition: 27
 				}
 			]
 		},
 
-		// 27. gp_hue
+		// 28. gp_hue
 		{
 			id: 'gp_hue',
 			title: '후에',
@@ -341,7 +342,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
 					englishHint: 'I exercise after class.',
-					introducedAtPosition: 27
+					introducedAtPosition: 28
 				},
 				{
 					id: 'cc_hue_02',
@@ -351,7 +352,7 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
 					englishHint: "I meet a friend after work.",
-					introducedAtPosition: 27
+					introducedAtPosition: 28
 				},
 				{
 					id: 'cc_hue_03',
@@ -361,9 +362,9 @@ export const lesson05: LessonSeed = {
 					alternateAnswers: ['다음에'],
 					vocabBaseForm: '후에',
 					englishHint: "I take a walk after dinner.",
-					introducedAtPosition: 27
+					introducedAtPosition: 28
 				}
 			]
 		}
 	]
-};
+});

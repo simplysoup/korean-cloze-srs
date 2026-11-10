@@ -3,7 +3,13 @@
  * scripts/validate-content.mjs, so CI catches a bad content port).
  * Level 1 was audited and reorganised into a learner-first curriculum
  * on 2026-11-09; Level 2 was authored fresh in the same overhaul
- * (docs/planning/korean-curriculum-overhaul-2026-11-09.md).
+ * (docs/planning/korean-curriculum-overhaul-2026-11-09.md). A further
+ * pass added three gap grammar points (noun negation, subject honorific,
+ * formal noun copula) and a teaching guide for every point
+ * (prisma/seed-data/teaching-guides/), applied at the lesson boundary
+ * by teachLesson(): each point's description is the guide's plain-English
+ * meaning, and three notes (formation, worked example, common trap) are
+ * prepended to the point's own notes.
  */
 import bundle1 from '../src/content/topik1-level1.json';
 import bundle2 from '../src/content/topik1-level2.json';
@@ -12,8 +18,8 @@ import { flattenContent, type ContentBundle } from '../src/content/types';
 const l1 = flattenContent(bundle1 as unknown as ContentBundle).grammarPoints.map((g) => ({ ...g, level: 1 }));
 const l2 = flattenContent(bundle2 as unknown as ContentBundle).grammarPoints.map((g) => ({ ...g, level: 2 }));
 
-// Global positions run across both bundles in order (Level 1: 1-48,
-// Level 2: 49-99), matching the validator.
+// Global positions run across both bundles in order (Level 1: 1-50,
+// Level 2: 51-102), matching the validator.
 const all = [...l1, ...l2].map((entry, i) => ({ ...entry, position: i + 1 }));
 const grammarPoints = all;
 const cards = grammarPoints.flatMap(({ gp }) => gp.cards);
@@ -24,22 +30,22 @@ const l2Cards = l2.flatMap(({ gp }) => gp.cards);
 const l2Examples = l2.flatMap(({ gp }) => gp.lessonExamples);
 
 describe('seed content counts', () => {
-  it('Level 1 has 11 lessons, 48 grammar points, 178 cloze cards, 109 lesson examples', () => {
+  it('Level 1 has 11 lessons, 50 grammar points, 184 cloze cards, 113 lesson examples', () => {
     expect(bundle1.lessons.length).toBe(11);
-    expect(l1.length).toBe(48);
-    expect(l1Cards.length).toBe(178);
-    expect(l1Examples.length).toBe(109);
+    expect(l1.length).toBe(50);
+    expect(l1Cards.length).toBe(184);
+    expect(l1Examples.length).toBe(113);
   });
 
-  it('Level 2 has 11 lessons, 51 grammar points, 153 cloze cards, 102 lesson examples', () => {
+  it('Level 2 has 11 lessons, 52 grammar points, 156 cloze cards, 104 lesson examples', () => {
     expect(bundle2.lessons.length).toBe(11);
-    expect(l2.length).toBe(51);
-    expect(l2Cards.length).toBe(153);
-    expect(l2Examples.length).toBe(102);
+    expect(l2.length).toBe(52);
+    expect(l2Cards.length).toBe(156);
+    expect(l2Examples.length).toBe(104);
   });
 
-  it('global positions are continuous 1-99', () => {
-    expect(all.map((g) => g.position)).toEqual(Array.from({ length: 99 }, (_, i) => i + 1));
+  it('global positions are continuous 1-102', () => {
+    expect(all.map((g) => g.position)).toEqual(Array.from({ length: 102 }, (_, i) => i + 1));
   });
 });
 
@@ -94,9 +100,21 @@ describe('seed content integrity', () => {
     }
   });
 
+  it('every grammar point carries the three teaching notes (formation, worked example, trap)', () => {
+    // teachLesson() prepends these at the lesson boundary, before the
+    // point's own notes. If the port ever bypasses it, this fails.
+    for (const { gp } of grammarPoints) {
+      const titles = (gp.notes ?? []).map((n) => n.title);
+      expect(titles).toContain('Build it step by step');
+      expect(titles).toContain('Worked example');
+      expect(titles).toContain('Common trap');
+      expect(gp.description.length).toBeGreaterThan(0);
+    }
+  });
+
   it('every card introducedAtPosition is in its level range and matches its point', () => {
     for (const { gp, level, position } of grammarPoints) {
-      const [min, max] = level === 1 ? [1, 48] : [49, 99];
+      const [min, max] = level === 1 ? [1, 50] : [51, 102];
       for (const card of gp.cards) {
         expect(card.introducedAtPosition).toBeGreaterThanOrEqual(min);
         expect(card.introducedAtPosition).toBeLessThanOrEqual(max);

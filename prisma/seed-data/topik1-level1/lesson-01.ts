@@ -1,15 +1,18 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
+import { grammarGapPoints } from '../grammar-gaps';
 
 // Lesson 1 — Introducing Yourself
-// Grammar points (positions 1–5):
+// Grammar points (positions 1–6):
 //   1. ieyo_yeyo
-//   2. eun_neun
-//   3. igeos
-//   4. geugeos
-//   5. jeogeos
+//   2. ani_eyo
+//   3. eun_neun
+//   4. igeos
+//   5. geugeos
+//   6. jeogeos
 // Examples and cards use only grammar through their target position.
 
-export const lesson01: LessonSeed = {
+export const lesson01: LessonSeed = teachLesson({
 	lessonNumber: 1,
 	title: "Introducing Yourself",
 	grammarPoints: [
@@ -31,7 +34,7 @@ export const lesson01: LessonSeed = {
 				{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 이에요 after consonant-ending nouns (학생이에요) and 예요 after vowel-ending nouns (의사예요).' },
 				{ type: 'funfact', title: 'Contracted Form', content: '이예요 is a common misspelling. Write 이에요 after a final consonant and 예요 after a vowel; 아니에요 is a separate correct form.' }
 			],
-			relatedPointIds: ['gp_ida'],
+			relatedPointIds: ['gp_ida', 'gp_ani_eyo', 'gp_imnida_imnikka'],
 			lessonExamples: [
 				{
 					id: 'le_ieyo_01',
@@ -94,7 +97,10 @@ export const lesson01: LessonSeed = {
 			]
 		},
 
-		// 2. gp_eun_neun
+		// 2. gp_ani_eyo (negative copula)
+		grammarGapPoints.gp_ani_eyo,
+
+		// 3. gp_eun_neun
 		{
 			id: 'gp_eun_neun',
 			title: '은/는',
@@ -113,6 +119,7 @@ export const lesson01: LessonSeed = {
 				{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 은 after consonant-ending nouns (이름은) and 는 after vowel-ending nouns (저는).' },
 				{ type: 'funfact', title: 'Topic vs Subject', content: 'The topic particle marks "what we\'re talking about." The subject particle 이/가 (Lesson 2) marks "who/what does the action." They overlap but aren\'t the same.' }
 			],
+			relatedPointIds: ['gp_i_ga'],
 			lessonExamples: [
 				{
 					id: 'le_eun_neun_01',
@@ -142,7 +149,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
 					englishHint: 'I am a student.',
-					introducedAtPosition: 2
+					introducedAtPosition: 3
 				},
 				{
 					id: 'cc_eun_neun_02',
@@ -152,7 +159,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
 					englishHint: 'The name is Minsu.',
-					introducedAtPosition: 2
+					introducedAtPosition: 3
 				},
 				{
 					id: 'cc_eun_neun_03',
@@ -162,7 +169,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
 					englishHint: 'Today is Monday.',
-					introducedAtPosition: 2
+					introducedAtPosition: 3
 				},
 				{
 					id: 'cc_eun_neun_04',
@@ -172,12 +179,12 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '은/는',
 					englishHint: "The name is Sujin.",
-					introducedAtPosition: 2
+					introducedAtPosition: 3
 				}
 			]
 		},
 
-		// 3. gp_igeos
+		// 4. gp_igeos
 		{
 			id: 'gp_igeos',
 			title: '이것',
@@ -224,7 +231,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이것',
 					englishHint: 'This is a book.',
-					introducedAtPosition: 3
+					introducedAtPosition: 4
 				},
 				{
 					id: 'cc_igeos_02',
@@ -234,7 +241,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이것',
 					englishHint: 'What is this?',
-					introducedAtPosition: 3
+					introducedAtPosition: 4
 				},
 				{
 					id: 'cc_igeos_03',
@@ -244,12 +251,12 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '이것',
 					englishHint: 'This is an apple.',
-					introducedAtPosition: 3
+					introducedAtPosition: 4
 				}
 			]
 		},
 
-		// 4. gp_geugeos
+		// 5. gp_geugeos
 		{
 			id: 'gp_geugeos',
 			title: '그것',
@@ -294,7 +301,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '그것',
 					englishHint: 'That is a pencil.',
-					introducedAtPosition: 4
+					introducedAtPosition: 5
 				},
 				{
 					id: 'cc_geugeos_02',
@@ -304,7 +311,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '그것',
 					englishHint: 'What is that?',
-					introducedAtPosition: 4
+					introducedAtPosition: 5
 				},
 				{
 					id: 'cc_geugeos_03',
@@ -314,12 +321,12 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '그것',
 					englishHint: 'That is a wallet.',
-					introducedAtPosition: 4
+					introducedAtPosition: 5
 				}
 			]
 		},
 
-		// 5. gp_jeogeos
+		// 6. gp_jeogeos
 		{
 			id: 'gp_jeogeos',
 			title: '저것',
@@ -364,7 +371,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '저것',
 					englishHint: 'That over there is a school.',
-					introducedAtPosition: 5
+					introducedAtPosition: 6
 				},
 				{
 					id: 'cc_jeogeos_02',
@@ -374,7 +381,7 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '저것',
 					englishHint: 'What is that over there?',
-					introducedAtPosition: 5
+					introducedAtPosition: 6
 				},
 				{
 					id: 'cc_jeogeos_03',
@@ -384,9 +391,9 @@ export const lesson01: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '저것',
 					englishHint: 'That over there is a hospital.',
-					introducedAtPosition: 5
+					introducedAtPosition: 6
 				}
 			]
 		}
 	]
-};
+});

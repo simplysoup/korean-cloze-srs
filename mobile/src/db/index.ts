@@ -19,7 +19,7 @@ import { mergeDailyLearned, mergeStreaks, serverCardWins } from '../lib/sync-mer
 import type { SyncDocument } from '../lib/sync-types';
 
 export const LOCAL_USER_ID = 'local';
-export const CONTENT_VERSION = 'topik1-v6';
+export const CONTENT_VERSION = 'topik1-v7';
 
 /** The id of the currently logged-in user; all queries below are scoped to
  * it. Defaults to 'local' until the auth layer sets the real account. */
@@ -80,7 +80,7 @@ const CONTENT_BUNDLES: ContentBundle[] = [
 
 /**
  * Every grammar point in every content bundle, in curriculum order, with
- * its global 1-based position (Level 1: 1-48, Level 2: 49-99) and its
+ * its global 1-based position (Level 1: 1-50, Level 2: 51-102) and its
  * position within its own bundle (for per-deck ordering). Review progress
  * is keyed by grammar point id, not by position, so reordering positions
  * (as the 2026-11-09 learner-first overhaul did) never loses progress —

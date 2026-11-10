@@ -1,18 +1,19 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 8 — Ability and Giving Reasons
-// Grammar points (positions 36–39):
-//   36. eul_su_issda
-//   37. eunikka
-//   38. aseo
-//   39. geuraeseo
+// Grammar points (positions 38–41):
+//   38. eul_su_issda
+//   39. eunikka
+//   40. aseo
+//   41. geuraeseo
 // Examples and cards use only grammar through their target position.
 
-export const lesson08: LessonSeed = {
+export const lesson08: LessonSeed = teachLesson({
 	lessonNumber: 8,
 	title: "Ability and Giving Reasons",
 	grammarPoints: [
-		// 36. gp_eul_su_issda
+		// 38. gp_eul_su_issda
 		{
 			id: 'gp_eul_su_issda',
 			title: '-(으)ㄹ 수 있다',
@@ -59,7 +60,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 수 있다',
 					englishHint: 'I can read Korean.',
-					introducedAtPosition: 36
+					introducedAtPosition: 38
 				},
 				{
 					id: 'cc_eul_su_02',
@@ -69,7 +70,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 수 있다',
 					englishHint: 'I can go tomorrow.',
-					introducedAtPosition: 36
+					introducedAtPosition: 38
 				},
 				{
 					id: 'cc_eul_su_03',
@@ -79,12 +80,12 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 수 있다',
 					englishHint: 'You cannot swim here.',
-					introducedAtPosition: 36
+					introducedAtPosition: 38
 				}
 			]
 		},
 
-		// 37. gp_eunikka
+		// 39. gp_eunikka
 		{
 			id: 'gp_eunikka',
 			title: '-(으)니까',
@@ -131,7 +132,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)니까',
 					englishHint: "Please go quickly because there's no time.",
-					introducedAtPosition: 37
+					introducedAtPosition: 39
 				},
 				{
 					id: 'cc_eunikka_02',
@@ -141,7 +142,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)니까',
 					englishHint: "Take an umbrella because it's raining.",
-					introducedAtPosition: 37
+					introducedAtPosition: 39
 				},
 				{
 					id: 'cc_eunikka_03',
@@ -151,12 +152,12 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)니까',
 					englishHint: "Please eat a lot because it's delicious.",
-					introducedAtPosition: 37
+					introducedAtPosition: 39
 				}
 			]
 		},
 
-		// 38. gp_aseo
+		// 40. gp_aseo
 		{
 			id: 'gp_aseo',
 			title: '-아/어서',
@@ -203,7 +204,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어서',
 					englishHint: 'I ate because I was hungry.',
-					introducedAtPosition: 38
+					introducedAtPosition: 40
 				},
 				{
 					id: 'cc_aseo_02',
@@ -213,7 +214,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어서',
 					englishHint: 'I took an umbrella because it was raining.',
-					introducedAtPosition: 38
+					introducedAtPosition: 40
 				},
 				{
 					id: 'cc_aseo_03',
@@ -223,12 +224,12 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-아/어서',
 					englishHint: 'I took a taxi because I was late.',
-					introducedAtPosition: 38
+					introducedAtPosition: 40
 				}
 			]
 		},
 
-		// 39. gp_geuraeseo
+		// 41. gp_geuraeseo
 		{
 			id: 'gp_geuraeseo',
 			title: '그래서',
@@ -274,7 +275,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '그래서',
 					englishHint: 'I was hungry. So I ate.',
-					introducedAtPosition: 39
+					introducedAtPosition: 41
 				},
 				{
 					id: 'cc_geuraeseo_02',
@@ -284,7 +285,7 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '그래서',
 					englishHint: 'I had no time. So I took a taxi.',
-					introducedAtPosition: 39
+					introducedAtPosition: 41
 				},
 				{
 					id: 'cc_geuraeseo_03',
@@ -294,9 +295,9 @@ export const lesson08: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '그래서',
 					englishHint: 'I like Korean. So I study every day.',
-					introducedAtPosition: 39
+					introducedAtPosition: 41
 				}
 			]
 		}
 	]
-};
+});

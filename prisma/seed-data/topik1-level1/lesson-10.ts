@@ -1,17 +1,18 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 10 — Connecting Actions and Making Plans
-// Grammar points (positions 43–45):
-//   43. go_seq
-//   44. eulgeyo
-//   45. eul_geoyeyo
+// Grammar points (positions 45–47):
+//   45. go_seq
+//   46. eulgeyo
+//   47. eul_geoyeyo
 // Examples and cards use only grammar through their target position.
 
-export const lesson10: LessonSeed = {
+export const lesson10: LessonSeed = teachLesson({
 	lessonNumber: 10,
 	title: "Connecting Actions and Making Plans",
 	grammarPoints: [
-		// 43. gp_go_seq
+		// 45. gp_go_seq
 		{
 			id: 'gp_go_seq',
 			title: '-고',
@@ -58,7 +59,7 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고',
 					englishHint: 'I eat breakfast and then go to school.',
-					introducedAtPosition: 43
+					introducedAtPosition: 45
 				},
 				{
 					id: 'cc_go_seq_02',
@@ -68,7 +69,7 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고',
 					englishHint: 'I showered and then got dressed.',
-					introducedAtPosition: 43
+					introducedAtPosition: 45
 				},
 				{
 					id: 'cc_go_seq_03',
@@ -78,12 +79,12 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-고',
 					englishHint: 'I drink coffee and then start work.',
-					introducedAtPosition: 43
+					introducedAtPosition: 45
 				}
 			]
 		},
 
-		// 44. gp_eulgeyo
+		// 46. gp_eulgeyo
 		{
 			id: 'gp_eulgeyo',
 			title: '-(으)ㄹ게요',
@@ -130,7 +131,7 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '하다',
 					englishHint: "I'll do it.",
-					introducedAtPosition: 44
+					introducedAtPosition: 46
 				},
 				{
 					id: 'cc_eulgeyo_02',
@@ -140,7 +141,7 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
 					englishHint: "I'll go tomorrow.",
-					introducedAtPosition: 44
+					introducedAtPosition: 46
 				},
 				{
 					id: 'cc_eulgeyo_03',
@@ -150,12 +151,12 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '하다',
 					englishHint: "I'll try harder next time.",
-					introducedAtPosition: 44
+					introducedAtPosition: 46
 				}
 			]
 		},
 
-		// 45. gp_eul_geoyeyo
+		// 47. gp_eul_geoyeyo
 		{
 			id: 'gp_eul_geoyeyo',
 			title: '-(으)ㄹ 거예요',
@@ -202,7 +203,7 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 거예요',
 					englishHint: "I'm going to study Korean tomorrow.",
-					introducedAtPosition: 45
+					introducedAtPosition: 47
 				},
 				{
 					id: 'cc_eul_geoyeyo_02',
@@ -212,7 +213,7 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 거예요',
 					englishHint: 'What are you going to eat tonight?',
-					introducedAtPosition: 45
+					introducedAtPosition: 47
 				},
 				{
 					id: 'cc_eul_geoyeyo_03',
@@ -222,9 +223,9 @@ export const lesson10: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-(으)ㄹ 거예요',
 					englishHint: "I'm going to go to Korea next year.",
-					introducedAtPosition: 45
+					introducedAtPosition: 47
 				}
 			]
 		}
 	]
-};
+});

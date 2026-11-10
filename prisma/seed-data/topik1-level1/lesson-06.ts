@@ -1,18 +1,19 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 6 — Talking About the Past and Describing Things
-// Grammar points (positions 28–31):
-//   28. asseoyo
-//   29. eun_modifier
-//   30. man
-//   31. hago
+// Grammar points (positions 29–32):
+//   29. asseoyo
+//   30. eun_modifier
+//   31. man
+//   32. hago
 // Examples and cards use only grammar through their target position.
 
-export const lesson06: LessonSeed = {
+export const lesson06: LessonSeed = teachLesson({
 	lessonNumber: 6,
 	title: "Talking About the Past and Describing Things",
 	grammarPoints: [
-		// 28. gp_asseoyo
+		// 29. gp_asseoyo
 		{
 			id: 'gp_asseoyo',
 			title: '-았어요/-었어요',
@@ -66,7 +67,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
 					englishHint: 'I went to school yesterday.',
-					introducedAtPosition: 28
+					introducedAtPosition: 29
 				},
 				{
 					id: 'cc_asseoyo_02',
@@ -76,7 +77,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '먹다',
 					englishHint: 'I ate rice.',
-					introducedAtPosition: 28
+					introducedAtPosition: 29
 				},
 				{
 					id: 'cc_asseoyo_03',
@@ -86,7 +87,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '보다',
 					englishHint: 'I watched a movie yesterday.',
-					introducedAtPosition: 28
+					introducedAtPosition: 29
 				},
 				{
 					id: 'cc_asseoyo_04',
@@ -96,7 +97,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '마시다',
 					englishHint: 'I drank coffee.',
-					introducedAtPosition: 28
+					introducedAtPosition: 29
 				},
 				{
 					id: 'cc_asseoyo_05',
@@ -106,12 +107,12 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '하다',
 					englishHint: 'I did (my) homework.',
-					introducedAtPosition: 28
+					introducedAtPosition: 29
 				}
 			]
 		},
 
-		// 29. gp_eun_modifier
+		// 30. gp_eun_modifier
 		{
 			id: 'gp_eun_modifier',
 			title: '-(으)ㄴ',
@@ -157,7 +158,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '크다',
 					englishHint: 'I bought a big bag.',
-					introducedAtPosition: 29
+					introducedAtPosition: 30
 				},
 				{
 					id: 'cc_eun_mod_02',
@@ -167,7 +168,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '작다',
 					englishHint: 'I live in a small house.',
-					introducedAtPosition: 29
+					introducedAtPosition: 30
 				},
 				{
 					id: 'cc_eun_mod_03',
@@ -177,7 +178,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '좋다',
 					englishHint: 'I ate good food.',
-					introducedAtPosition: 29
+					introducedAtPosition: 30
 				},
 				{
 					id: 'cc_eun_mod_04',
@@ -187,12 +188,12 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '비싸다',
 					englishHint: "I don't buy expensive clothes.",
-					introducedAtPosition: 29
+					introducedAtPosition: 30
 				}
 			]
 		},
 
-		// 30. gp_man
+		// 31. gp_man
 		{
 			id: 'gp_man',
 			title: '만',
@@ -237,7 +238,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '만',
 					englishHint: 'I drink only water.',
-					introducedAtPosition: 30
+					introducedAtPosition: 31
 				},
 				{
 					id: 'cc_man_02',
@@ -247,7 +248,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '만',
 					englishHint: 'Please give me just one.',
-					introducedAtPosition: 30
+					introducedAtPosition: 31
 				},
 				{
 					id: 'cc_man_03',
@@ -257,12 +258,12 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '만',
 					englishHint: 'I rest only on weekends.',
-					introducedAtPosition: 30
+					introducedAtPosition: 31
 				}
 			]
 		},
 
-		// 31. gp_hago
+		// 32. gp_hago
 		{
 			id: 'gp_hago',
 			title: '하고',
@@ -310,7 +311,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: ['과', '이랑'],
 					vocabBaseForm: '하고',
 					englishHint: "I buy bread and milk.",
-					introducedAtPosition: 31
+					introducedAtPosition: 32
 				},
 				{
 					id: 'cc_hago_02',
@@ -320,7 +321,7 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: ['와', '랑'],
 					vocabBaseForm: '하고',
 					englishHint: 'I go with a friend.',
-					introducedAtPosition: 31
+					introducedAtPosition: 32
 				},
 				{
 					id: 'cc_hago_03',
@@ -330,9 +331,9 @@ export const lesson06: LessonSeed = {
 					alternateAnswers: ['와', '랑'],
 					vocabBaseForm: '하고',
 					englishHint: "I eat bread and cake.",
-					introducedAtPosition: 31
+					introducedAtPosition: 32
 				}
 			]
 		}
 	]
-};
+});

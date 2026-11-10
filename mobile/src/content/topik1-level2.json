@@ -1,5 +1,5 @@
 {
-  "provenance": "Level 2 was authored fresh in the learner-first curriculum overhaul on 2026-11-09 (see docs/planning/korean-curriculum-overhaul-2026-11-09.md). Lesson 22 (reported speech) is labelled an optional bridge — it sits near or beyond the usual TOPIK I beginner boundary. -(으)ㄹ지라도 and written nominalization -(으)ㅁ were deliberately omitted as higher-level material. Not independently reviewed by a Korean educator; treat as a curated draft, not vetted teaching content.",
+  "provenance": "Level 2 was authored fresh in the learner-first curriculum overhaul on 2026-11-09 (see docs/planning/korean-curriculum-overhaul-2026-11-09.md). A further pass added one gap grammar point (formal noun copula N입니다/입니까?) and a teaching guide for every point (prisma/seed-data/teaching-guides/), applied by teachLesson() at the lesson boundary. Lesson 22 (reported speech) is labelled an optional bridge — it sits near or beyond the usual TOPIK I beginner boundary. -(으)ㄹ지라도 and written nominalization -(으)ㅁ were deliberately omitted as higher-level material. Not independently reviewed by a Korean educator; treat as a curated draft, not vetted teaching content.",
   "source": "prisma/seed-data/topik1-level2/lesson-12.ts … lesson-22.ts",
   "deck": {
     "id": "deck_topik1_level2",
@@ -20,14 +20,30 @@
           "tense": null,
           "register": null,
           "hint": "shall we, shall I",
-          "description": "Attach -을까요 after a consonant stem or -ㄹ까요 after a vowel stem; ㄹ-final stems take 까요 (살까요?). It proposes a shared action, offers help, or asks for the listener's opinion. Example: 같이 갈까요? (Shall we go together?)",
+          "description": "Use -(으)ㄹ까요? to ask for a suggestion or offer to decide together: 'Shall we...?' or 'Should I...?'.",
           "level": 2,
           "tags": [
             "proposal",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem](으)ㄹ까요?",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take the verb stem. Use 을까요 after most consonant-ending stems and ㄹ까요 after vowel-ending stems: 가다 → 갈까요?"
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "같이 갈까요? — Shall we go together? 같이 갈까요? asks 'Shall we go together?' It invites the listener into the decision."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is not just an ordinary future question. 갈 거예요? asks about a plan; 갈까요? asks for a suggestion or opinion."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -56,7 +72,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ까요?",
               "englishHint": "Shall we leave now?",
-              "introducedAtPosition": 49
+              "introducedAtPosition": 51
             },
             {
               "id": "cc_eulkkayo_02",
@@ -66,7 +82,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ까요?",
               "englishHint": "Shall I open the door?",
-              "introducedAtPosition": 49
+              "introducedAtPosition": 51
             },
             {
               "id": "cc_eulkkayo_03",
@@ -76,7 +92,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ까요?",
               "englishHint": "Shall we eat lunch now?",
-              "introducedAtPosition": 49
+              "introducedAtPosition": 51
             }
           ]
         },
@@ -87,14 +103,30 @@
           "tense": null,
           "register": null,
           "hint": "want to, will (choice)",
-          "description": "Attach -을래요 to consonant stems or -ㄹ래요 to vowel stems; ㄹ-final stems take 래요 (살래요). It expresses a conversational choice or preference, not a neutral future prediction. Example: 저는 차를 마실래요. (I will have tea.)",
+          "description": "Use -(으)ㄹ래요 to express what YOU would like to do or ask what the listener would like to do.",
           "level": 2,
           "tags": [
             "intention",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem](으)ㄹ래요",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take the action stem. Add 을래요 after most consonant stems or ㄹ래요 after vowel stems: 마시다 → 마실래요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저는 차를 마실래요. — I will have tea. 저는 차를 마실래요 says 'I'd like to have tea', expressing a personal choice."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "A speaker's preference differs from a fixed future plan. Don't use this form to assert another person's wishes as if you could know them."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -123,7 +155,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ래요",
               "englishHint": "I will have water.",
-              "introducedAtPosition": 50
+              "introducedAtPosition": 52
             },
             {
               "id": "cc_eullaeyo_02",
@@ -133,7 +165,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ래요",
               "englishHint": "Do you want to buy this?",
-              "introducedAtPosition": 50
+              "introducedAtPosition": 52
             },
             {
               "id": "cc_eullaeyo_03",
@@ -143,7 +175,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ래요",
               "englishHint": "I want to rest at home.",
-              "introducedAtPosition": 50
+              "introducedAtPosition": 52
             }
           ]
         },
@@ -154,14 +186,30 @@
           "tense": null,
           "register": null,
           "hint": "plan to, intend to",
-          "description": "Attach -으려고 to consonant stems or -려고 to vowel stems, then 하다; ㄹ-final stems take 려고 (살려고 해요). It describes an intention or plan, not a completed action. Example: 내일 한국어를 공부하려고 해요. (I plan to study Korean tomorrow.)",
+          "description": "Use -(으)려고 하다 to say you intend or plan to do something.",
           "level": 2,
           "tags": [
             "intention",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem](으)려고 하다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 으려고 after most consonant stems, 려고 after vowel stems, and then 해요: 공부하다 → 공부하려고 해요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "내일 한국어를 공부하려고 해요. — I plan to study Korean tomorrow. 내일 한국어를 공부하려고 해요: the speaker intends to study Korean tomorrow."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Planning to do something is different from doing it now. Don't treat -려고 하다 as the ongoing-action marker -고 있다."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -190,7 +238,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)려고 하다",
               "englishHint": "I'm planning to buy groceries today.",
-              "introducedAtPosition": 51
+              "introducedAtPosition": 53
             },
             {
               "id": "cc_euryeogo_hada_02",
@@ -200,7 +248,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)려고 하다",
               "englishHint": "I plan to read a book tonight.",
-              "introducedAtPosition": 51
+              "introducedAtPosition": 53
             },
             {
               "id": "cc_euryeogo_hada_03",
@@ -210,7 +258,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)려고 하다",
               "englishHint": "I plan to go to Korea next year.",
-              "introducedAtPosition": 51
+              "introducedAtPosition": 53
             }
           ]
         },
@@ -221,14 +269,30 @@
           "tense": null,
           "register": null,
           "hint": "go or come to do",
-          "description": "Attach -으러 to a consonant-ending action verb stem or -러 to a vowel-ending stem before 가다 or 오다; ㄹ-final stems take 러 (놀러 가요). It gives the purpose of going or coming. Example: 밥을 먹으러 가요. (I am going to eat.)",
+          "description": "Use -(으)러 가다/오다 to say you go or come somewhere for a PURPOSE: 'go to eat', 'come to study'.",
           "level": 2,
           "tags": [
             "purpose",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem](으)러 가다 / 오다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 으러 after most consonant stems or 러 after vowel stems, then 가요/와요: 먹다 → 먹으러 가요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "밥을 먹으러 가요. — I am going to eat. 밥을 먹으러 가요 means going somewhere in order to eat a meal."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This pattern goes with movement verbs such as 가다 or 오다. It does not work as a general connector for every action."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -257,7 +321,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)러 가다",
               "englishHint": "I'm going to get coffee.",
-              "introducedAtPosition": 52
+              "introducedAtPosition": 54
             },
             {
               "id": "cc_eureo_gada_02",
@@ -267,7 +331,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)러 가다",
               "englishHint": "I went to buy a book.",
-              "introducedAtPosition": 52
+              "introducedAtPosition": 54
             },
             {
               "id": "cc_eureo_gada_03",
@@ -277,7 +341,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)러 가다",
               "englishHint": "I am going swimming.",
-              "introducedAtPosition": 52
+              "introducedAtPosition": 54
             }
           ]
         },
@@ -288,14 +352,30 @@
           "tense": null,
           "register": null,
           "hint": "let us (formal)",
-          "description": "Attach -읍시다 after consonant-ending stems or -ㅂ시다 after vowel-ending stems; final ㄹ drops (살다 → 삽시다). This makes a formal suggestion to do something together. Example: 이제 갑시다. (Let us go now.)",
+          "description": "Use -(으)ㅂ시다 for 'Let's...', a suggestion to do something together in formal polite speech.",
           "level": 2,
           "tags": [
             "proposal",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem](으)ㅂ시다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "After a vowel-ending stem add ㅂ시다; after most consonant stems add 읍시다: 가다 → 갑시다, 먹다 → 먹읍시다."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "이제 갑시다. — Let us go now. 이제 갑시다 means 'Let's go now', including the speaker in the proposed action."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "It is more formal or forceful than -(으)ㄹ까요?; it may sound too direct in relaxed conversation."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -324,7 +404,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
               "englishHint": "Let's study together.",
-              "introducedAtPosition": 53
+              "introducedAtPosition": 55
             },
             {
               "id": "cc_eupsida_02",
@@ -334,7 +414,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
               "englishHint": "Let us meet again tomorrow.",
-              "introducedAtPosition": 53
+              "introducedAtPosition": 55
             },
             {
               "id": "cc_eupsida_03",
@@ -344,7 +424,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
               "englishHint": "Let us rest here for a moment.",
-              "introducedAtPosition": 53
+              "introducedAtPosition": 55
             }
           ]
         }
@@ -361,16 +441,33 @@
           "tense": null,
           "register": "formal polite",
           "hint": "formal statement",
-          "description": "Attach -ㅂ니다 after vowel-ending stems and -습니다 after consonant-ending stems; ㄹ-final stems drop ㄹ (살다 → 삽니다). This is the formal polite declarative style used in announcements and presentations; 있다 becomes 있습니다. Example: 저는 매일 한국어를 공부합니다. (I study Korean every day.)",
+          "description": "Use -ㅂ니다/-습니다 for a FORMAL statement about an action or description, such as an announcement.",
           "level": 2,
           "tags": [
             "formal ending",
             "TOPIK1"
           ],
           "structurePattern": "[Verb/Adj stem]ㅂ니다 / 습니다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Drop 다 from the verb or adjective. Add ㅂ니다 after a vowel stem or 습니다 after most consonant stems: 가다 → 갑니다, 먹다 → 먹습니다."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저는 매일 한국어를 공부합니다. — I study Korean every day. 저는 매일 한국어를 공부합니다: 공부하 + ㅂ니다 → 공부합니다, expressing a regular action formally."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Noun identity needs the copula 입니다, not an action-verb stem ending pasted onto a noun. ㄹ-final stems also lose ㄹ before ㅂ니다."
+            }
+          ],
           "relatedPointIds": [
-            "gp_ayo_eoyo"
+            "gp_ayo_eoyo",
+            "gp_imnida_imnikka"
           ],
           "lessonExamples": [
             {
@@ -399,7 +496,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
               "englishHint": "I work for a company.",
-              "introducedAtPosition": 54
+              "introducedAtPosition": 56
             },
             {
               "id": "cc_seumnida_02",
@@ -409,7 +506,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
               "englishHint": "The weather is nice today.",
-              "introducedAtPosition": 54
+              "introducedAtPosition": 56
             },
             {
               "id": "cc_seumnida_03",
@@ -419,7 +516,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
               "englishHint": "I do not have time now.",
-              "introducedAtPosition": 54
+              "introducedAtPosition": 56
             }
           ]
         },
@@ -430,16 +527,32 @@
           "tense": null,
           "register": "formal polite",
           "hint": "formal question",
-          "description": "Attach -ㅂ니까 after vowel-ending stems or -습니까 after consonant-ending stems; ㄹ-final stems drop ㄹ (살다 → 삽니까?). Noun + 입니까? is the formal copula question. Example: 지금 어디에 갑니까? (Where are you going now?)",
+          "description": "Use -ㅂ니까/-습니까? for a FORMAL question about an action or description.",
           "level": 2,
           "tags": [
             "formal ending",
             "TOPIK1"
           ],
           "structurePattern": "[Verb/Adj stem]ㅂ니까? / 습니까?",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Drop 다, then add ㅂ니까 after a vowel stem or 습니까 after most consonant stems: 가다 → 갑니까?"
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "지금 어디에 갑니까? — Where are you going now? 지금 어디에 갑니까? is a formal way to ask 'Where are you going now?'."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Noun questions use N입니까? ('Are you a student?'). Do not try to turn a noun into a verb by adding -ㅂ니까."
+            }
+          ],
           "relatedPointIds": [
-            "gp_ieyo_yeyo"
+            "gp_imnida_imnikka"
           ],
           "lessonExamples": [
             {
@@ -468,7 +581,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니까/-습니까?",
               "englishHint": "Where do you live?",
-              "introducedAtPosition": 55
+              "introducedAtPosition": 57
             },
             {
               "id": "cc_seumnikka_02",
@@ -478,7 +591,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니까/-습니까?",
               "englishHint": "Is this book good?",
-              "introducedAtPosition": 55
+              "introducedAtPosition": 57
             },
             {
               "id": "cc_seumnikka_03",
@@ -488,7 +601,105 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니까/-습니까?",
               "englishHint": "Do you have time?",
-              "introducedAtPosition": 55
+              "introducedAtPosition": 57
+            }
+          ]
+        },
+        {
+          "id": "gp_imnida_imnikka",
+          "title": "N입니다 / N입니까?",
+          "category": "formal copula",
+          "tense": "present",
+          "register": "formal polite",
+          "hint": "is / is it? (formal)",
+          "description": "Use 입니다 for 'is/am/are' with a NOUN in formal polite speech, and 입니까? for a question.",
+          "level": 2,
+          "tags": [
+            "copula",
+            "formal",
+            "TOPIK1"
+          ],
+          "structurePattern": "[Noun]입니다 / [Noun]입니까?",
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 입니다 or 입니까? directly to the noun: 학생 + 입니다 = 학생입니다; 학생 + 입니까? = 학생입니까?"
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저는 학생입니다. — I am a student. 저는 학생입니다 is 'I am a student' in formal speech, compared with 저는 학생이에요 in everyday polite speech."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse 입니다 (noun identification) with -ㅂ니다/-습니다 (an action or descriptive verb's formal ending)."
+            },
+            {
+              "type": "tip",
+              "title": "Copula, not verb stem",
+              "content": "학생 + 입니다 → 학생입니다. For a verb, use the separate formal ending, e.g. 갑니다."
+            },
+            {
+              "type": "tip",
+              "title": "Register",
+              "content": "This register is common in speeches, formal introductions, announcements and some customer-facing situations."
+            }
+          ],
+          "relatedPointIds": [
+            "gp_ieyo_yeyo",
+            "gp_seumnida",
+            "gp_seumnikka"
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_imnida_01",
+              "fullSentence": "저는 학생입니다.",
+              "sentenceWithBlank": "저는 학생___.",
+              "answer": "입니다",
+              "englishHint": "I am a student.",
+              "order": 0
+            },
+            {
+              "id": "le_imnida_02",
+              "fullSentence": "저분은 선생님입니까?",
+              "sentenceWithBlank": "저분은 선생님___?",
+              "answer": "입니까",
+              "englishHint": "Is that person a teacher?",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_imnida_01",
+              "fullSentence": "저는 의사입니다.",
+              "sentenceWithBlank": "저는 의사___.",
+              "answer": "입니다",
+              "englishHint": "I am a doctor.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "이다",
+              "introducedAtPosition": 58
+            },
+            {
+              "id": "cc_imnida_02",
+              "fullSentence": "이것은 책입니까?",
+              "sentenceWithBlank": "이것은 책___?",
+              "answer": "입니까",
+              "englishHint": "Is this a book?",
+              "alternateAnswers": [],
+              "vocabBaseForm": "이다",
+              "introducedAtPosition": 58
+            },
+            {
+              "id": "cc_imnida_03",
+              "fullSentence": "여기는 병원입니다.",
+              "sentenceWithBlank": "여기는 병원___.",
+              "answer": "입니다",
+              "englishHint": "This place is a hospital.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "이다",
+              "introducedAtPosition": 58
             }
           ]
         },
@@ -499,14 +710,30 @@
           "tense": null,
           "register": null,
           "hint": "may, be allowed to",
-          "description": "Combine the -아/어 form of an action verb with -도 되다 to ask or give permission. Conjugate 되다 at the end: 여기 앉아도 돼요 means \"You may sit here.\" Example: 여기 앉아도 돼요? (May I sit here?)",
+          "description": "Use -아/어도 되다 to ask for or give permission: 'May I...?' or 'It's okay to...'.",
           "level": 2,
           "tags": [
             "permission",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]아/어도 되다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "First make the action's 아/어 form: 앉다 → 앉아. Then add 도 돼요: 앉아도 돼요, literally saying that sitting is okay."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "여기 앉아도 돼요? — May I sit here? 여기 앉아도 돼요? asks whether sitting here is allowed. 앉아도 is the possible action; 돼요? asks whether it is acceptable."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "돼요 is the correct spelling of 되어요 here, not 되요. Compare permission with obligation -아/어야 해요."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -535,7 +762,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도 되다",
               "englishHint": "May I drink water here?",
-              "introducedAtPosition": 56
+              "introducedAtPosition": 59
             },
             {
               "id": "cc_eodo_doeda_02",
@@ -545,7 +772,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도 되다",
               "englishHint": "You may go now.",
-              "introducedAtPosition": 56
+              "introducedAtPosition": 59
             },
             {
               "id": "cc_eodo_doeda_03",
@@ -555,7 +782,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도 되다",
               "englishHint": "May I read this book?",
-              "introducedAtPosition": 56
+              "introducedAtPosition": 59
             }
           ]
         },
@@ -566,14 +793,30 @@
           "tense": null,
           "register": null,
           "hint": "must not",
-          "description": "Attach -으면 to consonant-ending stems and -면 to vowel-ending stems, then add 안 되다. It prohibits an action rather than expressing inability. Example: 여기에서 담배를 피우면 안 돼요. (You must not smoke here.)",
+          "description": "Use -(으)면 안 되다 to say an action is NOT allowed: 'must not' or 'shouldn't'.",
           "level": 2,
           "tags": [
             "prohibition",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem](으)면 안 되다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 으면 or 면 to the verb stem, then 안 돼요: 늦다 → 늦으면 안 돼요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "여기에서 담배를 피우면 안 돼요. — You must not smoke here. 여기에서 담배를 피우면 안 돼요: 피우다 → 피우면 names the condition 'if you smoke'. 안 돼요 marks that action as not allowed."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is stronger than not wanting to do it (안). Don't confuse 'must not' with 'don't have to'."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -602,7 +845,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면 안 되다",
               "englishHint": "You must not take pictures here.",
-              "introducedAtPosition": 57
+              "introducedAtPosition": 60
             },
             {
               "id": "cc_eumyeon_an_doeda_02",
@@ -612,7 +855,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면 안 되다",
               "englishHint": "You must not enter here.",
-              "introducedAtPosition": 57
+              "introducedAtPosition": 60
             },
             {
               "id": "cc_eumyeon_an_doeda_03",
@@ -622,7 +865,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면 안 되다",
               "englishHint": "You must not use your phone during class.",
-              "introducedAtPosition": 57
+              "introducedAtPosition": 60
             }
           ]
         },
@@ -633,14 +876,30 @@
           "tense": null,
           "register": null,
           "hint": "please do not",
-          "description": "Attach -지 마세요 directly to an action verb stem to make a polite negative request. Do not combine it with 안 or 못. Example: 여기에서 뛰지 마세요. (Please do not run here.)",
+          "description": "Use -지 마세요 to politely tell someone NOT to do an action: 'Please don't...'.",
           "level": 2,
           "tags": [
             "prohibition",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]지 마세요",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Start with the action stem: 뛰다 → 뛰. Attach 지 마세요 to tell the other person politely not to do it: 뛰지 마세요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "여기에서 뛰지 마세요. — Please do not run here. 여기에서 뛰지 마세요 directly asks the listener not to run here."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't use 안 + -세요 as the usual prohibition. -지 마세요 targets the listener; -(으)면 안 돼요 expresses a rule or prohibition."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -669,7 +928,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
               "englishHint": "Please don't leave now.",
-              "introducedAtPosition": 58
+              "introducedAtPosition": 61
             },
             {
               "id": "cc_ji_maseyo_02",
@@ -679,7 +938,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
               "englishHint": "Please do not eat too much.",
-              "introducedAtPosition": 58
+              "introducedAtPosition": 61
             },
             {
               "id": "cc_ji_maseyo_03",
@@ -689,7 +948,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
               "englishHint": "Please do not open the door now.",
-              "introducedAtPosition": 58
+              "introducedAtPosition": 61
             }
           ]
         }
@@ -706,14 +965,30 @@
           "tense": null,
           "register": null,
           "hint": "doing (an action as a noun)",
-          "description": "Attach -기 to an action verb stem to form a noun-like expression for an activity. A particle can follow it: 걷기가 좋아요 means \"Walking is pleasant.\" Example: 저는 책 읽기를 좋아해요. (I like reading books.)",
+          "description": "-기 turns an action into a noun-like activity: 'reading', 'studying', or 'doing'. That lets you say you like or dislike an action.",
           "level": 2,
           "tags": [
             "nominalization",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem]기 + [particle]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 기 to a verb stem. Then add the particle the surrounding sentence needs: 읽기 + 를 = 읽기를."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저는 책 읽기를 좋아해요. — I like reading books. 저는 책 읽기를 좋아해요: 책 읽기 ('reading books') becomes the thing that the speaker likes."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "The noun-like -기 is not the whole polite sentence ending. To say 'before doing', add 전에 after -기: 먹기 전에."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -742,7 +1017,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기",
               "englishHint": "I like cooking.",
-              "introducedAtPosition": 59
+              "introducedAtPosition": 62
             },
             {
               "id": "cc_gi_nominal_02",
@@ -752,7 +1027,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기",
               "englishHint": "I like walking every day.",
-              "introducedAtPosition": 59
+              "introducedAtPosition": 62
             },
             {
               "id": "cc_gi_nominal_03",
@@ -762,7 +1037,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기",
               "englishHint": "Learning Korean is fun.",
-              "introducedAtPosition": 59
+              "introducedAtPosition": 62
             }
           ]
         },
@@ -773,14 +1048,30 @@
           "tense": null,
           "register": null,
           "hint": "after doing",
-          "description": "Add -고 나서 to an action verb stem when the second action follows the completed first action. Unlike plain -고, this form explicitly marks the order. Example: 밥을 먹고 나서 커피를 마셔요. (After eating, I drink coffee.)",
+          "description": "Use -고 나서 to make it clear that one action FINISHES before another begins.",
           "level": 2,
           "tags": [
             "time",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]고 나서",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 고 나서 to the first action stem, then state the next action: 먹다 → 먹고 나서."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "밥을 먹고 나서 커피를 마셔요. — After eating, I drink coffee. 밥을 먹고 나서 커피를 마셔요: 먹다 becomes 먹고 나서, meaning the meal is finished first. Coffee comes afterward."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Plain -고 can simply join actions; -고 나서 stresses the first is completed. Don't use it as if the actions happen together."
+            }
+          ],
           "relatedPointIds": [
             "gp_go_seq"
           ],
@@ -811,7 +1102,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 나서",
               "englishHint": "After drinking coffee, I go to work.",
-              "introducedAtPosition": 60
+              "introducedAtPosition": 63
             },
             {
               "id": "cc_go_naseo_02",
@@ -821,7 +1112,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 나서",
               "englishHint": "After exercising, I shower.",
-              "introducedAtPosition": 60
+              "introducedAtPosition": 63
             },
             {
               "id": "cc_go_naseo_03",
@@ -831,7 +1122,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 나서",
               "englishHint": "After washing my hands, I eat.",
-              "introducedAtPosition": 60
+              "introducedAtPosition": 63
             }
           ]
         },
@@ -842,14 +1133,30 @@
           "tense": null,
           "register": null,
           "hint": "after doing",
-          "description": "Attach -은 후에 to a consonant-ending action verb stem or -ㄴ 후에 to a vowel-ending stem. It places the following event after that action; it is different from noun + 후에. Example: 밥을 먹은 후에 약을 먹어요. (I take medicine after eating.)",
+          "description": "Use -(으)ㄴ 후에 to say 'after doing an action'. The action before 후에 is treated as completed.",
           "level": 2,
           "tags": [
             "time",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem](으)ㄴ 후에",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Make the completed-action modifier: 먹다 → 먹은, 하다 → 한; then add 후에."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "밥을 먹은 후에 약을 먹어요. — I take medicine after eating. 밥을 먹은 후에 약을 먹어요: after eating, the person takes medicine."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "수업 후에 is 'after class' with a noun. With a verb, don't attach 후에 directly to the bare stem: 먹후에 is wrong."
+            }
+          ],
           "relatedPointIds": [
             "gp_hue"
           ],
@@ -880,7 +1187,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 후에",
               "englishHint": "I went home after class ended.",
-              "introducedAtPosition": 61
+              "introducedAtPosition": 64
             },
             {
               "id": "cc_eun_hue_02",
@@ -890,7 +1197,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 후에",
               "englishHint": "After watching a movie, I drank coffee.",
-              "introducedAtPosition": 61
+              "introducedAtPosition": 64
             },
             {
               "id": "cc_eun_hue_03",
@@ -900,7 +1207,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 후에",
               "englishHint": "After reading a book, I go to sleep.",
-              "introducedAtPosition": 61
+              "introducedAtPosition": 64
             }
           ]
         },
@@ -911,14 +1218,30 @@
           "tense": null,
           "register": null,
           "hint": "before doing",
-          "description": "Attach -기 전에 to an action verb stem to express \"before doing\" an action. For a noun, simply use noun + 전에, which was introduced earlier. Example: 자기 전에 이를 닦아요. (I brush my teeth before sleeping.)",
+          "description": "Use -기 전에 to say one action happens before another action. The first action is treated like an event you can refer to.",
           "level": 2,
           "tags": [
             "time",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]기 전에",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Remove 다 from the verb, add 기, then put 전에 after it: 자다 → 자기 전에. Continue with the earlier action."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "자기 전에 이를 닦아요. — I brush my teeth before sleeping. 자기 전에 이를 닦아요: 자다 ('sleep') becomes 자기, and 전에 means 'before'. Toothbrushing happens before sleep."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse 전에 after a noun (수업 전에) with verb + 기 전에 (먹기 전에)."
+            }
+          ],
           "relatedPointIds": [
             "gp_jeone"
           ],
@@ -949,7 +1272,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 전에",
               "englishHint": "I close the door before going out.",
-              "introducedAtPosition": 62
+              "introducedAtPosition": 65
             },
             {
               "id": "cc_gi_jeone_02",
@@ -959,7 +1282,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 전에",
               "englishHint": "I eat breakfast before going to school.",
-              "introducedAtPosition": 62
+              "introducedAtPosition": 65
             },
             {
               "id": "cc_gi_jeone_03",
@@ -969,7 +1292,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 전에",
               "englishHint": "I drink water before exercising.",
-              "introducedAtPosition": 62
+              "introducedAtPosition": 65
             }
           ]
         },
@@ -980,14 +1303,30 @@
           "tense": null,
           "register": null,
           "hint": "when, at the time of",
-          "description": "Attach -을 때 after a consonant-ending stem or -ㄹ 때 after a vowel-ending stem. It describes the time at which an event happens; ㄹ-ending stems take 때 directly. Example: 집에 갈 때 버스를 타요. (When I go home, I take the bus.)",
+          "description": "Use -(으)ㄹ 때 to say 'when' an action happens or a situation holds.",
           "level": 2,
           "tags": [
             "time",
             "TOPIK1"
           ],
           "structurePattern": "[Verb/Adj stem](으)ㄹ 때",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 을 때 after most consonant stems or ㄹ 때 after vowel stems: 가다 → 갈 때."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "집에 갈 때 버스를 타요. — When I go home, I take the bus. 집에 갈 때 버스를 타요: when going home, the speaker takes the bus."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This does not always mean a future event despite ㄹ. Context can make it habitual or present; keep 때 separate."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1016,7 +1355,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 때",
               "englishHint": "I rest when I am sick.",
-              "introducedAtPosition": 63
+              "introducedAtPosition": 66
             },
             {
               "id": "cc_eul_ttae_02",
@@ -1026,7 +1365,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 때",
               "englishHint": "I do not watch TV while eating.",
-              "introducedAtPosition": 63
+              "introducedAtPosition": 66
             },
             {
               "id": "cc_eul_ttae_03",
@@ -1036,7 +1375,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 때",
               "englishHint": "When it is cold, I drink warm tea.",
-              "introducedAtPosition": 63
+              "introducedAtPosition": 66
             }
           ]
         }
@@ -1053,14 +1392,30 @@
           "tense": null,
           "register": null,
           "hint": "be doing",
-          "description": "Attach -고 있다 to an action verb stem to describe an action in progress. Conjugate 있다 for tense and politeness. Example: 지금 책을 읽고 있어요. (I am reading a book now.)",
+          "description": "Use -고 있다 for an action that is in progress: 'am reading', 'is studying'.",
           "level": 2,
           "tags": [
             "aspect",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]고 있다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take the action stem, attach 고, and add 있어요: 읽다 → 읽고 있어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "지금 책을 읽고 있어요. — I am reading a book now. 지금 책을 읽고 있어요: 읽다 becomes 읽고, followed by 있어요. The two-part form shows that reading is happening now."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't automatically use it for every English '-ing'. Some Korean verbs describe states, and their natural ongoing forms may differ."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1089,7 +1444,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
               "englishHint": "I'm listening to music right now.",
-              "introducedAtPosition": 64
+              "introducedAtPosition": 67
             },
             {
               "id": "cc_go_itda_02",
@@ -1099,7 +1454,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
               "englishHint": "Mom is cooking.",
-              "introducedAtPosition": 64
+              "introducedAtPosition": 67
             },
             {
               "id": "cc_go_itda_03",
@@ -1109,7 +1464,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
               "englishHint": "It is raining now.",
-              "introducedAtPosition": 64
+              "introducedAtPosition": 67
             }
           ]
         },
@@ -1120,14 +1475,30 @@
           "tense": null,
           "register": null,
           "hint": "in the middle of doing",
-          "description": "Attach -는 중이다 to an action verb stem to emphasize being in the middle of an activity. ㄹ-final stems drop ㄹ before -는. Example: 지금 공부하는 중이에요. (I am in the middle of studying.)",
+          "description": "Use -는 중이다 to emphasize that someone is currently busy doing an action. It feels like 'in the middle of doing it'.",
           "level": 2,
           "tags": [
             "aspect",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]는 중이다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Make the present action modifier -는, then add 중이에요: 공부하다 → 공부하는 중이에요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "지금 공부하는 중이에요. — I am in the middle of studying. 지금 공부하는 중이에요: 공부하다 becomes 공부하는, followed by 중이에요. Together they emphasize being in the middle of studying."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "중 is a separate noun-like word. Contrast -고 있어요 (ongoing action) with -는 중이에요 (busy in the middle of it)."
+            }
+          ],
           "relatedPointIds": [
             "gp_go_seq"
           ],
@@ -1158,7 +1529,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 중이다",
               "englishHint": "I'm cleaning right now.",
-              "introducedAtPosition": 65
+              "introducedAtPosition": 68
             },
             {
               "id": "cc_neun_jung_02",
@@ -1168,7 +1539,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 중이다",
               "englishHint": "My friend is eating right now.",
-              "introducedAtPosition": 65
+              "introducedAtPosition": 68
             },
             {
               "id": "cc_neun_jung_03",
@@ -1178,7 +1549,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 중이다",
               "englishHint": "We are in a meeting now.",
-              "introducedAtPosition": 65
+              "introducedAtPosition": 68
             }
           ]
         },
@@ -1189,14 +1560,30 @@
           "tense": null,
           "register": null,
           "hint": "or (between actions)",
-          "description": "Attach -거나 directly to a verb or adjective stem to connect alternatives. Unlike noun + (이)나, it joins verbal predicates. Example: 주말에는 책을 읽거나 영화를 봐요. (On weekends I read books or watch movies.)",
+          "description": "Use -거나 to present two possible ACTIONS or states: 'do A or do B'.",
           "level": 2,
           "tags": [
             "choice",
             "TOPIK1"
           ],
           "structurePattern": "[Verb/Adj stem]거나",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 거나 to the first verb or descriptive-verb stem, then state the alternative: 읽다 → 읽거나."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "주말에는 책을 읽거나 영화를 봐요. — On weekends I read books or watch movies. 주말에는 책을 읽거나 영화를 봐요: on weekends, the speaker reads books or watches films."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "For a choice between NOUNS, use (이)나. Don't put -거나 between simple nouns."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1225,7 +1612,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-거나",
               "englishHint": "On weekends, I cook or rest.",
-              "introducedAtPosition": 66
+              "introducedAtPosition": 69
             },
             {
               "id": "cc_geona_02",
@@ -1235,7 +1622,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-거나",
               "englishHint": "For breakfast, I eat bread or rice.",
-              "introducedAtPosition": 66
+              "introducedAtPosition": 69
             },
             {
               "id": "cc_geona_03",
@@ -1245,7 +1632,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-거나",
               "englishHint": "In the evening, I exercise or listen to music.",
-              "introducedAtPosition": 66
+              "introducedAtPosition": 69
             }
           ]
         },
@@ -1256,14 +1643,30 @@
           "tense": null,
           "register": null,
           "hint": "or (between nouns)",
-          "description": "Use -이나 after consonant-ending nouns and -나 after vowel-ending nouns to present alternatives. For a simple choice, 커피나 차 means \"coffee or tea.\" Example: 커피나 차를 마실래요? (Would you like coffee or tea?)",
+          "description": "Use (이)나 to connect alternative NOUNS: 'coffee or tea'.",
           "level": 2,
           "tags": [
             "choice",
             "TOPIK1"
           ],
           "structurePattern": "[Noun](이)나 [Noun]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "After a noun ending in a consonant, use 이나; after a vowel, use 나: 책이나, 커피나."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "커피나 차를 마실래요? — Would you like coffee or tea? 커피나 차를 마실래요? asks if the listener would like coffee or tea."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Verb alternatives use -거나. (이)나 can also mean 'at least/around' in other contexts; this point teaches noun choice."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1292,7 +1695,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)나",
               "englishHint": "I read books or newspapers.",
-              "introducedAtPosition": 67
+              "introducedAtPosition": 70
             },
             {
               "id": "cc_ina_choice_02",
@@ -1302,7 +1705,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)나",
               "englishHint": "For lunch, I eat kimbap or ramen.",
-              "introducedAtPosition": 67
+              "introducedAtPosition": 70
             },
             {
               "id": "cc_ina_choice_03",
@@ -1312,7 +1715,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)나",
               "englishHint": "I take the bus or subway.",
-              "introducedAtPosition": 67
+              "introducedAtPosition": 70
             }
           ]
         }
@@ -1329,14 +1732,30 @@
           "tense": null,
           "register": null,
           "hint": "person or thing that does",
-          "description": "Attach -는 to an action verb stem before a noun to describe a present or habitual action. For stems ending in ㄹ, drop ㄹ before -는: 살다 becomes 사는. Example: 저기에서 책을 읽는 사람은 제 친구예요. (The person reading over there is my friend.)",
+          "description": "Use -는 before a noun to describe someone or something by an ACTION happening now or habitually: 'the person who reads'.",
           "level": 2,
           "tags": [
             "relative clause",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem]는 [Noun]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 는 to the action-verb stem, then put the noun right after it: 읽다 → 읽는 사람."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저기에서 책을 읽는 사람은 제 친구예요. — The person reading over there is my friend. 책을 읽는 사람: 읽는 describes 사람, the person doing the reading."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Descriptive verbs like 크다 normally use 큰, not 크는. Past action modifiers use -(으)ㄴ instead."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1365,7 +1784,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 N",
               "englishHint": "The person smiling over there is our teacher.",
-              "introducedAtPosition": 68
+              "introducedAtPosition": 71
             },
             {
               "id": "cc_neun_modifier_02",
@@ -1375,7 +1794,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 N",
               "englishHint": "People who exercise daily are healthy.",
-              "introducedAtPosition": 68
+              "introducedAtPosition": 71
             },
             {
               "id": "cc_neun_modifier_03",
@@ -1385,7 +1804,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 N",
               "englishHint": "This is the café I often go to.",
-              "introducedAtPosition": 68
+              "introducedAtPosition": 71
             }
           ]
         },
@@ -1396,14 +1815,30 @@
           "tense": null,
           "register": null,
           "hint": "thing that was done",
-          "description": "Attach -은 after a consonant-ending action verb stem or -ㄴ after a vowel-ending stem before a noun; final ㄹ drops (살다 → 산). This describes a completed action, unlike the present adjective modifier from Level 1. Example: 어제 산 옷이 예뻐요. (The clothes I bought yesterday are pretty.)",
+          "description": "Use -(으)ㄴ before a noun for an action that is already done: 'the clothes I bought'.",
           "level": 2,
           "tags": [
             "relative clause",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem](으)ㄴ [Noun]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "For action verbs, add 은 after many consonant stems or ㄴ after vowel stems: 사다 → 산, 먹다 → 먹은."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "어제 산 옷이 예뻐요. — The clothes I bought yesterday are pretty. 어제 산 옷: 산 is 'bought', describing the clothes purchased yesterday."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This looks like the adjective modifier -(으)ㄴ, but the meaning is different: for actions it points to completed action."
+            }
+          ],
           "relatedPointIds": [
             "gp_eun_modifier"
           ],
@@ -1434,7 +1869,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ N (action)",
               "englishHint": "The book I read yesterday was interesting.",
-              "introducedAtPosition": 69
+              "introducedAtPosition": 72
             },
             {
               "id": "cc_eun_past_modifier_02",
@@ -1444,7 +1879,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ N (action)",
               "englishHint": "The movie I watched yesterday was interesting.",
-              "introducedAtPosition": 69
+              "introducedAtPosition": 72
             },
             {
               "id": "cc_eun_past_modifier_03",
@@ -1454,7 +1889,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ N (action)",
               "englishHint": "I ate gimbap for breakfast.",
-              "introducedAtPosition": 69
+              "introducedAtPosition": 72
             }
           ]
         },
@@ -1465,14 +1900,30 @@
           "tense": null,
           "register": null,
           "hint": "thing to do, future noun modifier",
-          "description": "Attach -을 after a consonant-ending action verb stem or -ㄹ after a vowel-ending stem before a noun; ㄹ-final stems keep their ㄹ (살다 → 살 집). It describes an anticipated or intended action involving the noun. Example: 내일 만날 사람은 제 친구예요. (The person I will meet tomorrow is my friend.)",
+          "description": "Use -(으)ㄹ before a noun to describe something you will do or plan to do: 'a person I will meet'.",
           "level": 2,
           "tags": [
             "relative clause",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem](으)ㄹ [Noun]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 을 after many consonant stems, ㄹ after vowel stems, then the noun: 만나다 → 만날 사람."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "내일 만날 사람은 제 친구예요. — The person I will meet tomorrow is my friend. 내일 만날 사람: 만날 describes the person the speaker will meet tomorrow."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This does not by itself finish a future-tense sentence. It modifies the noun that follows."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1501,7 +1952,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ N",
               "englishHint": "I prepared the clothes I'll wear tomorrow.",
-              "introducedAtPosition": 70
+              "introducedAtPosition": 73
             },
             {
               "id": "cc_eul_future_modifier_02",
@@ -1511,7 +1962,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ N",
               "englishHint": "I chose the movie I will watch this weekend.",
-              "introducedAtPosition": 70
+              "introducedAtPosition": 73
             },
             {
               "id": "cc_eul_future_modifier_03",
@@ -1521,7 +1972,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ N",
               "englishHint": "I bought the book I will read tomorrow.",
-              "introducedAtPosition": 70
+              "introducedAtPosition": 73
             }
           ]
         },
@@ -1532,14 +1983,30 @@
           "tense": null,
           "register": null,
           "hint": "doing something (as a noun)",
-          "description": "Put -는 것 after an action verb stem to turn the action into a noun phrase. In speech, 것이 often contracts to 게 and 것을 to 걸. Example: 저는 책을 읽는 것을 좋아해요. (I like reading books.)",
+          "description": "Use -는 것 to refer to DOING an action as a thing or activity: 'reading books' or 'getting up early'.",
           "level": 2,
           "tags": [
             "nominalization",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem]는 것",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 는 to an action verb and put 것 after it; add an object/subject particle if the outer sentence needs one: 읽는 것을."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저는 책을 읽는 것을 좋아해요. — I like reading books. 저는 책을 읽는 것을 좋아해요: 'reading books' is the activity the speaker likes."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "것 is a separate word, and -는 것 differs from plain -기 in nuance and where each fits in a sentence."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1568,7 +2035,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 것",
               "englishHint": "I like listening to music.",
-              "introducedAtPosition": 71
+              "introducedAtPosition": 74
             },
             {
               "id": "cc_neun_geot_02",
@@ -1578,7 +2045,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 것",
               "englishHint": "Exercising is good for your health.",
-              "introducedAtPosition": 71
+              "introducedAtPosition": 74
             },
             {
               "id": "cc_neun_geot_03",
@@ -1588,7 +2055,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 것",
               "englishHint": "I find cooking fun.",
-              "introducedAtPosition": 71
+              "introducedAtPosition": 74
             }
           ]
         }
@@ -1605,14 +2072,30 @@
           "tense": null,
           "register": null,
           "hint": "try doing",
-          "description": "Attach -아/어 보다 to an action verb stem to mean trying or experiencing an action. The auxiliary 보다 can be conjugated: 먹어 봤어요 means \"I tried eating it.\" Example: 이 음식을 먹어 보세요. (Please try this food.)",
+          "description": "Use -아/어 보다 to mean 'try doing something' or 'have tried it'.",
           "level": 2,
           "tags": [
             "modal",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]아/어 보다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take the verb's 아/어 form and add 보다: 먹다 → 먹어 보다 → 먹어 보세요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "이 음식을 먹어 보세요. — Please try this food. 이 음식을 먹어 보세요: 먹다 becomes 먹어; 보세요 politely invites the listener to TRY the food, not simply to look at it."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This auxiliary 보다 is not the verb 'to see' used literally. The spacing 먹어 보다 is a safe teaching default."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1641,7 +2124,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 보다",
               "englishHint": "I've tried kimchi.",
-              "introducedAtPosition": 72
+              "introducedAtPosition": 75
             },
             {
               "id": "cc_eoboda_02",
@@ -1651,7 +2134,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 보다",
               "englishHint": "Please try it on.",
-              "introducedAtPosition": 72
+              "introducedAtPosition": 75
             },
             {
               "id": "cc_eoboda_03",
@@ -1661,7 +2144,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 보다",
               "englishHint": "I tried wearing those clothes.",
-              "introducedAtPosition": 72
+              "introducedAtPosition": 75
             }
           ]
         },
@@ -1672,14 +2155,30 @@
           "tense": null,
           "register": null,
           "hint": "have done before",
-          "description": "Attach -은 적이 있다 after a consonant-ending action verb stem or -ㄴ 적이 있다 after a vowel-ending stem; ㄹ-final stems drop ㄹ. Use 없다 for no experience; the construction refers to having done something before. Example: 한국에 간 적이 있어요. (I have been to Korea.)",
+          "description": "Use -(으)ㄴ 적이 있다 to say you have done something at some time in your life.",
           "level": 2,
           "tags": [
             "experience",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem](으)ㄴ 적이 있다/없다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Make the completed-action modifier and add 적이 있어요: 가다 → 간 적이 있어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "한국에 간 적이 있어요. — I have been to Korea. 한국에 간 적이 있어요 means 'I've been to Korea before' (there was a time I went)."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse past experience with a specific past event. 갔어요 states that you went; 간 적이 있어요 emphasizes having that experience."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1708,7 +2207,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
               "englishHint": "I've been to Busan before.",
-              "introducedAtPosition": 73
+              "introducedAtPosition": 76
             },
             {
               "id": "cc_eun_jeok_02",
@@ -1718,7 +2217,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
               "englishHint": "I have never eaten that food.",
-              "introducedAtPosition": 73
+              "introducedAtPosition": 76
             },
             {
               "id": "cc_eun_jeok_03",
@@ -1728,7 +2227,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
               "englishHint": "I have lived in Seoul before.",
-              "introducedAtPosition": 73
+              "introducedAtPosition": 76
             }
           ]
         },
@@ -1739,14 +2238,30 @@
           "tense": null,
           "register": null,
           "hint": "have tried before",
-          "description": "Combine -아/어 보다 with the past modifier 본 적이 있다 to describe having tried something. Use 없다 to say you have never tried it. Example: 김치를 먹어 본 적이 있어요. (I have tried kimchi before.)",
+          "description": "Use -아/어 본 적이 있다 to say you have experienced TRYING an action before.",
           "level": 2,
           "tags": [
             "experience",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]아/어 본 적이 있다/없다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Make the 아/어 보다 auxiliary into its past modifier: 먹어 보다 → 먹어 본, then 적이 있어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "김치를 먹어 본 적이 있어요. — I have tried kimchi before. 김치를 먹어 본 적이 있어요: 먹다 → 먹어 보다 → 먹어 본. The phrase 적이 있어요 says the speaker has had that experience."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "본 refers to having tried an action; don't translate it as literally seeing something with your eyes."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1775,7 +2290,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
               "englishHint": "I've tried driving on Jeju Island.",
-              "introducedAtPosition": 74
+              "introducedAtPosition": 77
             },
             {
               "id": "cc_eobon_jeok_02",
@@ -1785,7 +2300,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
               "englishHint": "I have read that book before.",
-              "introducedAtPosition": 74
+              "introducedAtPosition": 77
             },
             {
               "id": "cc_eobon_jeok_03",
@@ -1795,7 +2310,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
               "englishHint": "I have visited Jeju Island before.",
-              "introducedAtPosition": 74
+              "introducedAtPosition": 77
             }
           ]
         },
@@ -1806,14 +2321,30 @@
           "tense": null,
           "register": null,
           "hint": "decide to",
-          "description": "Attach -기로 하다 to an action verb stem to state a decision or agreement. The decision can be past even when the action is planned for the future. Example: 내일부터 운동하기로 했어요. (I decided to exercise starting tomorrow.)",
+          "description": "Use -기로 하다 when you decide or agree to do something: 'decided to'.",
           "level": 2,
           "tags": [
             "decision",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]기로 하다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 기로 to the action stem, then 하다 in the right tense: 운동하다 → 운동하기로 했어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "내일부터 운동하기로 했어요. — I decided to exercise starting tomorrow. 내일부터 운동하기로 했어요 says the speaker made a decision to start exercising tomorrow."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is a decision, not just a possible plan. Compare 공부하려고 해요 (intend to study) with 공부하기로 했어요 (decided to study)."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -1842,7 +2373,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기로 하다",
               "englishHint": "I've decided to go to bed early this week.",
-              "introducedAtPosition": 75
+              "introducedAtPosition": 78
             },
             {
               "id": "cc_giro_hada_02",
@@ -1852,7 +2383,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기로 하다",
               "englishHint": "I decided to rest at home today.",
-              "introducedAtPosition": 75
+              "introducedAtPosition": 78
             },
             {
               "id": "cc_giro_hada_03",
@@ -1862,7 +2393,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기로 하다",
               "englishHint": "We decided to meet next week.",
-              "introducedAtPosition": 75
+              "introducedAtPosition": 78
             }
           ]
         },
@@ -1873,14 +2404,30 @@
           "tense": null,
           "register": null,
           "hint": "seems likely to, probably",
-          "description": "Attach -을 것 같다 after a consonant-ending predicate stem or -ㄹ 것 같다 after a vowel-ending stem; ㄹ-final stems keep their ㄹ. It expresses a tentative prediction, unlike present-state -(으)ㄴ 것 같다. Example: 내일 비가 올 것 같아요. (I think it will rain tomorrow.)",
+          "description": "Use -(으)ㄹ 것 같다 to express a guess or prediction: 'I think it will...' or 'It seems likely...'.",
           "level": 2,
           "tags": [
             "conjecture",
             "TOPIK1"
           ],
           "structurePattern": "[Verb/Adj stem](으)ㄹ 것 같다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Make the -(으)ㄹ form of the verb first: 오다 → 올. Then add the separate words 것 같아요 to express a prediction."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "내일 비가 올 것 같아요. — I think it will rain tomorrow. 내일 비가 올 것 같아요 is a prediction that rain will come tomorrow."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse this with -(으)ㄴ 것 같아요 for a present descriptive state. The form before 것 changes with what you are judging."
+            }
+          ],
           "relatedPointIds": [
             "gp_n_geos_gatda"
           ],
@@ -1911,7 +2458,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
               "englishHint": "I think it might snow tomorrow.",
-              "introducedAtPosition": 76
+              "introducedAtPosition": 79
             },
             {
               "id": "cc_eul_geot_gatda_02",
@@ -1921,7 +2468,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
               "englishHint": "I think this food will be spicy.",
-              "introducedAtPosition": 76
+              "introducedAtPosition": 79
             },
             {
               "id": "cc_eul_geot_gatda_03",
@@ -1931,7 +2478,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
               "englishHint": "I think my friend will arrive soon.",
-              "introducedAtPosition": 76
+              "introducedAtPosition": 79
             }
           ]
         }
@@ -1948,14 +2495,30 @@
           "tense": null,
           "register": null,
           "hint": "because",
-          "description": "Attach -기 때문에 to a verb or adjective stem to give a reason. It is more explicit and often more written-sounding than -아/어서; noun + 때문에 does not need -기. Example: 비가 오기 때문에 집에 있어요. (I am staying home because it is raining.)",
+          "description": "Use -기 때문에 to state a reason: 'because of doing X' or 'because X happens'.",
           "level": 2,
           "tags": [
             "reason",
             "TOPIK1"
           ],
           "structurePattern": "[Verb/Adj stem]기 때문에",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 기 때문에 to a verb/adjective stem, then state the result: 오다 → 오기 때문에."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "비가 오기 때문에 집에 있어요. — I am staying home because it is raining. 비가 오기 때문에 집에 있어요: rain is the reason the speaker stays home."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "때문에 often sounds more explanatory or formal than everyday -아/어서. Nouns typically use N 때문에 without -기."
+            }
+          ],
           "relatedPointIds": [
             "gp_aseo",
             "gp_eunikka"
@@ -1987,7 +2550,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 때문에",
               "englishHint": "I couldn't go because my stomach hurt.",
-              "introducedAtPosition": 77
+              "introducedAtPosition": 80
             },
             {
               "id": "cc_gi_ttaemune_02",
@@ -1997,7 +2560,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 때문에",
               "englishHint": "I am not going outside because it is too cold.",
-              "introducedAtPosition": 77
+              "introducedAtPosition": 80
             },
             {
               "id": "cc_gi_ttaemune_03",
@@ -2007,7 +2570,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 때문에",
               "englishHint": "I took a taxi because I had no time.",
-              "introducedAtPosition": 77
+              "introducedAtPosition": 80
             }
           ]
         },
@@ -2018,14 +2581,30 @@
           "tense": null,
           "register": null,
           "hint": "but, and (background)",
-          "description": "Attach -는데 to an action verb stem to give background or set up a contrast. For a stem ending in ㄹ, drop ㄹ: 살다 becomes 사는데. Example: 비가 오는데 우산이 없어요. (It is raining, but I do not have an umbrella.)",
+          "description": "Use -는데 after an ACTION verb to give background, create contrast, or lead into what comes next.",
           "level": 2,
           "tags": [
             "connective",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem]는데",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "For a present action verb, remove 다 and attach 는데: 오다 → 오는데. Then follow with the new information or contrast."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "비가 오는데 우산이 없어요. — It is raining, but I do not have an umbrella. 비가 오는데 우산이 없어요: it is raining, and the speaker provides the background for having no umbrella."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "-는데 is not always English 'but'. Sometimes it introduces a situation or gently sets up a request; descriptive verbs take another form."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2054,7 +2633,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는데",
               "englishHint": "It's raining outside, but I don't have an umbrella.",
-              "introducedAtPosition": 78
+              "introducedAtPosition": 81
             },
             {
               "id": "cc_neunde_02",
@@ -2064,7 +2643,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는데",
               "englishHint": "I drink coffee, but my friend drinks tea.",
-              "introducedAtPosition": 78
+              "introducedAtPosition": 81
             },
             {
               "id": "cc_neunde_03",
@@ -2074,7 +2653,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는데",
               "englishHint": "I am studying now, so I will call a little later.",
-              "introducedAtPosition": 78
+              "introducedAtPosition": 81
             }
           ]
         },
@@ -2085,14 +2664,30 @@
           "tense": null,
           "register": null,
           "hint": "but, and (state background)",
-          "description": "Use -은데 after a consonant-ending adjective stem or -ㄴ데 after a vowel-ending stem to give background or contrast. Stem-final ㄹ drops, and ㅂ-irregular adjectives use -운데: 춥다 becomes 추운데. Example: 날씨가 추운데 밖에 갈까요? (It is cold, but shall we go outside?)",
+          "description": "Use -(으)ㄴ데 after most descriptive verbs (adjectives) to give background or set up a contrast.",
           "level": 2,
           "tags": [
             "connective",
             "TOPIK1"
           ],
           "structurePattern": "[Adjective stem](으)ㄴ데",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 은데 after many consonant-ending descriptive stems and ㄴ데 after vowels: 춥다 → 추운데 (irregular)."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "날씨가 추운데 밖에 갈까요? — It is cold, but shall we go outside? 날씨가 추운데 밖에 갈까요? gives 'it's cold' as background before suggesting going out."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Action verbs normally use -는데. Watch irregular descriptive stems such as 춥다 → 추운데 rather than a mechanical 춥은데."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2121,7 +2716,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ데",
               "englishHint": "Those clothes are expensive but pretty.",
-              "introducedAtPosition": 79
+              "introducedAtPosition": 82
             },
             {
               "id": "cc_eunde_02",
@@ -2131,7 +2726,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ데",
               "englishHint": "The room is small but very clean.",
-              "introducedAtPosition": 79
+              "introducedAtPosition": 82
             },
             {
               "id": "cc_eunde_03",
@@ -2141,7 +2736,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ데",
               "englishHint": "I am busy today, but I have time tomorrow.",
-              "introducedAtPosition": 79
+              "introducedAtPosition": 82
             }
           ]
         },
@@ -2152,14 +2747,30 @@
           "tense": null,
           "register": null,
           "hint": "but, and (noun background)",
-          "description": "Attach -인데 to a noun to introduce background information or a contrast. The same form is used after consonant- and vowel-ending nouns. Example: 오늘은 일요일인데 회사에 가요. (It is Sunday, but I am going to work.)",
+          "description": "Use -(이)ㄴ데 after a NOUN to say 'it's X, and/but...' while providing background or a contrast.",
           "level": 2,
           "tags": [
             "connective",
             "TOPIK1"
           ],
           "structurePattern": "[Noun]인데",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "After a consonant-ending noun, use 인데; after a vowel noun, use ㄴ데: 일요일 → 일요일인데."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "오늘은 일요일인데 회사에 가요. — It is Sunday, but I am going to work. 오늘은 일요일인데 회사에 가요: although today is Sunday, someone is going to work."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This attaches to nouns, not verbs. Choose -는데 for action verbs and -(으)ㄴ데 for descriptive verbs."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2188,7 +2799,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(이)ㄴ데",
               "englishHint": "I have an exam tomorrow, but I haven't studied yet.",
-              "introducedAtPosition": 80
+              "introducedAtPosition": 83
             },
             {
               "id": "cc_inde_02",
@@ -2198,7 +2809,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(이)ㄴ데",
               "englishHint": "It is lunchtime; shall we eat together?",
-              "introducedAtPosition": 80
+              "introducedAtPosition": 83
             },
             {
               "id": "cc_inde_03",
@@ -2208,7 +2819,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(이)ㄴ데",
               "englishHint": "This is a library, and it is very quiet.",
-              "introducedAtPosition": 80
+              "introducedAtPosition": 83
             }
           ]
         },
@@ -2219,14 +2830,30 @@
           "tense": null,
           "register": null,
           "hint": "while doing",
-          "description": "Attach -으면서 after consonant-ending action verb stems or -면서 after vowel-ending stems. The two actions normally have the same subject and happen at the same time; ㄹ-final stems take -면서. Example: 음악을 들으면서 공부해요. (I study while listening to music.)",
+          "description": "Use -(으)면서 for actions happening at the same time: 'while doing A, do B'.",
           "level": 2,
           "tags": [
             "connective",
             "TOPIK1"
           ],
           "structurePattern": "[Action verb stem](으)면서",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 으면서 after most consonant stems or 면서 after vowel stems: 듣다 → 들으면서 (ㄷ irregular)."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "음악을 들으면서 공부해요. — I study while listening to music. 음악을 들으면서 공부해요: the speaker studies while listening to music."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Normally the two actions share a subject. If different people do the two actions, another structure may be more natural."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2255,7 +2882,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면서",
               "englishHint": "I read while drinking coffee.",
-              "introducedAtPosition": 81
+              "introducedAtPosition": 84
             },
             {
               "id": "cc_eumyeonseo_02",
@@ -2265,7 +2892,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면서",
               "englishHint": "Please do not talk on the phone while walking.",
-              "introducedAtPosition": 81
+              "introducedAtPosition": 84
             },
             {
               "id": "cc_eumyeonseo_03",
@@ -2275,7 +2902,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면서",
               "englishHint": "I walk while talking with a friend.",
-              "introducedAtPosition": 81
+              "introducedAtPosition": 84
             }
           ]
         }
@@ -2292,14 +2919,30 @@
           "tense": null,
           "register": null,
           "hint": "become",
-          "description": "Attach -아/어지다 to an adjective stem to express a change of state. Conjugate 지다 at the end: 추워지다 becomes 추워졌어요 in the past. Example: 날씨가 많이 추워졌어요. (The weather got much colder.)",
+          "description": "Use -아/어지다 to describe a change in a quality: 'become colder', 'get easier'.",
           "level": 2,
           "tags": [
             "change",
             "TOPIK1"
           ],
           "structurePattern": "[Adjective stem]아/어지다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take a descriptive stem and add 아/어지다: 춥다 → 추워지다 → 추워졌어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "날씨가 많이 추워졌어요. — The weather got much colder. 날씨가 많이 추워졌어요: 춥다 becomes 추워지다 ('grow cold'), then 추워졌어요 in the past. The weather changed into a colder state."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse change in a state (-아/어지다) with a change of circumstances leading someone to do something (-게 되다)."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2328,7 +2971,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
               "englishHint": "The weather has gotten cooler.",
-              "introducedAtPosition": 82
+              "introducedAtPosition": 85
             },
             {
               "id": "cc_eojida_02",
@@ -2338,7 +2981,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
               "englishHint": "The weather got warmer.",
-              "introducedAtPosition": 82
+              "introducedAtPosition": 85
             },
             {
               "id": "cc_eojida_03",
@@ -2348,7 +2991,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
               "englishHint": "The room became clean.",
-              "introducedAtPosition": 82
+              "introducedAtPosition": 85
             }
           ]
         },
@@ -2359,14 +3002,30 @@
           "tense": null,
           "register": null,
           "hint": "-ly, in a ... way",
-          "description": "Attach -게 to an adjective stem to describe how an action is performed. It functions adverbially: 빠르게 걷다 means \"walk quickly.\" Example: 조용하게 말해 주세요. (Please speak quietly.)",
+          "description": "-게 changes many descriptive verbs into a way of DOING an action: 'quietly', 'clearly', 'carefully'.",
           "level": 2,
           "tags": [
             "adverb",
             "TOPIK1"
           ],
           "structurePattern": "[Adjective stem]게 + [Verb]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 게 to the descriptive-verb stem, then put it before the action: 조용하다 → 조용하게."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "조용하게 말해 주세요. — Please speak quietly. 조용하게 말해 주세요: 조용하다 ('quiet') becomes 조용하게 ('quietly'). That word explains HOW the speaking should happen."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Not every English '-ly' translates mechanically to -게, and this -게 is different from the -게 in -게 되다."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2395,7 +3054,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게",
               "englishHint": "Please close the door quietly.",
-              "introducedAtPosition": 83
+              "introducedAtPosition": 86
             },
             {
               "id": "cc_ge_adverb_02",
@@ -2405,7 +3064,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게",
               "englishHint": "Please write in big letters.",
-              "introducedAtPosition": 83
+              "introducedAtPosition": 86
             },
             {
               "id": "cc_ge_adverb_03",
@@ -2415,7 +3074,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게",
               "englishHint": "Please play the music quietly.",
-              "introducedAtPosition": 83
+              "introducedAtPosition": 86
             }
           ]
         },
@@ -2426,14 +3085,30 @@
           "tense": null,
           "register": null,
           "hint": "come to, end up",
-          "description": "Attach -게 되다 to an action verb stem to describe a change in circumstances or an outcome. It often suggests the change was not simply a direct personal decision. Example: 다음 달부터 서울에서 살게 됐어요. (I ended up moving to Seoul starting next month.)",
+          "description": "Use -게 되다 when circumstances change and an action ends up happening or becoming the new situation.",
           "level": 2,
           "tags": [
             "change",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]게 되다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 게 되다 to an action-verb stem: 살다 → 살게 되다 → 살게 됐어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "다음 달부터 서울에서 살게 됐어요. — I ended up moving to Seoul starting next month. 다음 달부터 서울에서 살게 됐어요: something happened or was decided so living in Seoul is now the outcome."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "It is not simply a neutral future-tense ending. It often emphasizes how the situation turned out, not only a free choice."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2462,7 +3137,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게 되다",
               "englishHint": "I have ended up having to work overtime starting next week.",
-              "introducedAtPosition": 84
+              "introducedAtPosition": 87
             },
             {
               "id": "cc_ge_doeda_02",
@@ -2472,7 +3147,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게 되다",
               "englishHint": "I started learning Korean after meeting a Korean friend.",
-              "introducedAtPosition": 84
+              "introducedAtPosition": 87
             },
             {
               "id": "cc_ge_doeda_03",
@@ -2482,7 +3157,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게 되다",
               "englishHint": "I have come to get up early in the morning.",
-              "introducedAtPosition": 84
+              "introducedAtPosition": 87
             }
           ]
         },
@@ -2493,14 +3168,30 @@
           "tense": null,
           "register": null,
           "hint": "do in advance, leave done",
-          "description": "Attach -아/어 두다 to an action verb stem when doing something now for later use or leaving its result in place. For example, 문을 열어 두세요 means \"Please leave the door open.\" Example: 문을 열어 두세요. (Please leave the door open.)",
+          "description": "Use -아/어 두다 when you do something now and leave the result ready for later.",
           "level": 2,
           "tags": [
             "result",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]아/어 두다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take the action's 아/어 form and add 두다: 열다 → 열어 두다 → 열어 두세요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "문을 열어 두세요. — Please leave the door open. 문을 열어 두세요: 열다 becomes 열어; 두세요 asks to keep the result in place. The door should remain open afterward."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is different from merely opening a door once. The important idea is preserving the result."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2529,7 +3220,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 두다",
               "englishHint": "I did my homework ahead of time.",
-              "introducedAtPosition": 85
+              "introducedAtPosition": 88
             },
             {
               "id": "cc_eoduda_02",
@@ -2539,7 +3230,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 두다",
               "englishHint": "I wrote down the phone number for later.",
-              "introducedAtPosition": 85
+              "introducedAtPosition": 88
             },
             {
               "id": "cc_eoduda_03",
@@ -2549,7 +3240,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 두다",
               "englishHint": "I bought water in advance.",
-              "introducedAtPosition": 85
+              "introducedAtPosition": 88
             }
           ]
         }
@@ -2566,14 +3257,30 @@
           "tense": null,
           "register": null,
           "hint": "than",
-          "description": "Attach 보다 to the thing used as the comparison standard. The other thing is often marked by 이/가 or 은/는: 버스보다 지하철이 빨라요. Example: 버스보다 지하철이 빨라요. (The subway is faster than the bus.)",
+          "description": "보다 after a noun means 'than', giving the comparison point.",
           "level": 2,
           "tags": [
             "comparison",
             "TOPIK1"
           ],
           "structurePattern": "[Noun]보다 + [comparison]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Put 보다 after the item being compared AGAINST: 버스보다 지하철이 빨라요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "버스보다 지하철이 빨라요. — The subway is faster than the bus. 버스보다 지하철이 빨라요: the subway is fastER THAN the bus; 버스 is the comparison standard."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "The particle 보다 here is not the verb 보다 ('to see'). 더 can emphasize 'more', but is not required for the comparison."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2602,7 +3309,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
               "englishHint": "It's warmer today than yesterday.",
-              "introducedAtPosition": 86
+              "introducedAtPosition": 89
             },
             {
               "id": "cc_boda_compare_02",
@@ -2612,7 +3319,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
               "englishHint": "I prefer tea to coffee.",
-              "introducedAtPosition": 86
+              "introducedAtPosition": 89
             },
             {
               "id": "cc_boda_compare_03",
@@ -2622,7 +3329,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
               "englishHint": "This bag is lighter than that one.",
-              "introducedAtPosition": 86
+              "introducedAtPosition": 89
             }
           ]
         },
@@ -2633,14 +3340,30 @@
           "tense": null,
           "register": null,
           "hint": "like, as",
-          "description": "Attach 처럼 directly to a noun to mean \"like\" or \"in the same way as.\" It compares manner or resemblance, not a numerical difference. Example: 그 사람은 가수처럼 노래해요. (That person sings like a singer.)",
+          "description": "처럼 after a noun means 'like' or 'as', comparing manner or resemblance.",
           "level": 2,
           "tags": [
             "comparison",
             "TOPIK1"
           ],
           "structurePattern": "[Noun]처럼",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Put 처럼 right after the person or thing used as a model: 가수처럼."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "그 사람은 가수처럼 노래해요. — That person sings like a singer. 그 사람은 가수처럼 노래해요: 가수 means 'singer'. Adding 처럼 says the singing resembles that of a singer, without claiming the person is a singer."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "처럼 expresses resemblance, not a literal identity. For 'is a singer', use 가수예요."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2669,7 +3392,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "처럼",
               "englishHint": "I speak slowly, like the teacher.",
-              "introducedAtPosition": 87
+              "introducedAtPosition": 90
             },
             {
               "id": "cc_cheoreom_02",
@@ -2679,7 +3402,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "처럼",
               "englishHint": "I want to speak Korean well like my friend.",
-              "introducedAtPosition": 87
+              "introducedAtPosition": 90
             },
             {
               "id": "cc_cheoreom_03",
@@ -2689,7 +3412,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "처럼",
               "englishHint": "I am busy today, just like yesterday.",
-              "introducedAtPosition": 87
+              "introducedAtPosition": 90
             }
           ]
         },
@@ -2700,14 +3423,30 @@
           "tense": null,
           "register": null,
           "hint": "by, using, toward",
-          "description": "Attach -으로 after consonants except ㄹ, and -로 after vowels or ㄹ. It marks means, instrument, or direction: 버스로 가요 means \"I go by bus.\" Example: 학교에 버스로 가요. (I go to school by bus.)",
+          "description": "(으)로 can mean 'by/using', 'through', 'in the direction of', or 'as', depending on context.",
           "level": 2,
           "tags": [
             "particle",
             "TOPIK1"
           ],
           "structurePattern": "[Noun](으)로",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use 으로 after most consonant-ending nouns, 로 after vowel-ending nouns or nouns ending in ㄹ: 버스 → 버스로."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "버스로 학교에 가요. — I go to school by bus. 버스로 학교에 가요 means the bus is the means of travel. 연필로 써요 uses a pencil as a tool."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't pick 으로 after a final ㄹ: 서울로 is correct. Different meanings of (으)로 depend on the verb and situation."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2736,7 +3475,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(으)로",
               "englishHint": "I go to Seoul by train.",
-              "introducedAtPosition": 88
+              "introducedAtPosition": 91
             },
             {
               "id": "cc_euro_means_02",
@@ -2746,7 +3485,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(으)로",
               "englishHint": "Please go to the right.",
-              "introducedAtPosition": 88
+              "introducedAtPosition": 91
             },
             {
               "id": "cc_euro_means_03",
@@ -2756,7 +3495,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(으)로",
               "englishHint": "I take the subway to work.",
-              "introducedAtPosition": 88
+              "introducedAtPosition": 91
             }
           ]
         },
@@ -2767,14 +3506,30 @@
           "tense": null,
           "register": null,
           "hint": "every, each",
-          "description": "Attach 마다 to a noun for recurring time periods or each member of a group. It does not change according to the final consonant. Example: 저는 아침마다 운동해요. (I exercise every morning.)",
+          "description": "마다 means 'every' for a recurring time or individual item.",
           "level": 2,
           "tags": [
             "frequency",
             "TOPIK1"
           ],
           "structurePattern": "[Noun]마다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Choose the recurring time or group and attach 마다 directly: 아침마다, 주말마다, 사람마다. It means each occurrence or member."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저는 아침마다 운동해요. — I exercise every morning. 저는 아침마다 운동해요: 아침 is 'morning'. Adding 마다 makes the exercise a repeated habit, not just something done one morning."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "마다 implies repetition. It is different from 한 번 ('once') or 때마다 ('whenever') in more complex constructions."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2803,7 +3558,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "마다",
               "englishHint": "Every class has homework.",
-              "introducedAtPosition": 89
+              "introducedAtPosition": 92
             },
             {
               "id": "cc_mada_02",
@@ -2813,7 +3568,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "마다",
               "englishHint": "This bus stops at every stop.",
-              "introducedAtPosition": 89
+              "introducedAtPosition": 92
             },
             {
               "id": "cc_mada_03",
@@ -2823,7 +3578,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "마다",
               "englishHint": "I study Korean every day.",
-              "introducedAtPosition": 89
+              "introducedAtPosition": 92
             }
           ]
         },
@@ -2834,14 +3589,30 @@
           "tense": null,
           "register": null,
           "hint": "only, no more than",
-          "description": "Attach 밖에 to a noun meaning \"nothing other than.\" In this limiting use it requires a negative predicate such as 없다, 안, or 못. Example: 지갑에 천 원밖에 없어요. (I only have 1,000 won in my wallet.)",
+          "description": "밖에 with a negative verb means 'only' or 'nothing but', often conveying less than expected.",
           "level": 2,
           "tags": [
             "limitation",
             "TOPIK1"
           ],
           "structurePattern": "[Noun]밖에 + [negative predicate]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 밖에 to the limited noun/amount and follow with a NEGATIVE such as 없어요: 천 원밖에 없어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "지갑에 천 원밖에 없어요. — I only have 1,000 won in my wallet. 지갑에 천 원밖에 없어요: only 1,000 won is in the wallet; the following 없어요 is crucial."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Without negative wording, 밖에 is usually wrong for this 'only' meaning. 만 is a more neutral 'only' and does not require negation."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2870,7 +3641,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "밖에",
               "englishHint": "There is only water here.",
-              "introducedAtPosition": 90
+              "introducedAtPosition": 93
             },
             {
               "id": "cc_bakke_02",
@@ -2880,7 +3651,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "밖에",
               "englishHint": "I only drank water today.",
-              "introducedAtPosition": 90
+              "introducedAtPosition": 93
             },
             {
               "id": "cc_bakke_03",
@@ -2890,7 +3661,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "밖에",
               "englishHint": "I can only speak Korean.",
-              "introducedAtPosition": 90
+              "introducedAtPosition": 93
             }
           ]
         }
@@ -2907,14 +3678,30 @@
           "tense": null,
           "register": null,
           "hint": "end up doing, finish completely",
-          "description": "Attach -아/어 버리다 to an action verb stem to express completion, often with regret or relief. The auxiliary 버리다 is then conjugated for tense and politeness. Example: 숙제를 다 해 버렸어요. (I finished all my homework.)",
+          "description": "-아/어 버리다 means an action gets completely finished, often with feelings such as relief, regret, or surprise.",
           "level": 2,
           "tags": [
             "aspect",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]아/어 버리다",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Form the verb's 아/어 shape first: 하다 → 해. Then add 버리다 and conjugate it: 해 버렸어요 (finished doing it)."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "숙제를 다 해 버렸어요. — I finished all my homework. 숙제를 다 해 버렸어요 means the homework got finished completely; it can carry relief."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "It does not always mean a bad outcome. The emotion depends on context: finishing an unpleasant task may feel good."
+            }
+          ],
           "relatedPointIds": [],
           "lessonExamples": [
             {
@@ -2943,7 +3730,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
               "englishHint": "I ended up spending all the money.",
-              "introducedAtPosition": 91
+              "introducedAtPosition": 94
             },
             {
               "id": "cc_eobeorida_02",
@@ -2953,7 +3740,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
               "englishHint": "I ate the entire cake.",
-              "introducedAtPosition": 91
+              "introducedAtPosition": 94
             },
             {
               "id": "cc_eobeorida_03",
@@ -2963,7 +3750,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
               "englishHint": "I drank all the water.",
-              "introducedAtPosition": 91
+              "introducedAtPosition": 94
             }
           ]
         },
@@ -2974,14 +3761,30 @@
           "tense": null,
           "register": null,
           "hint": "even if, although",
-          "description": "Attach -아/어도 to a predicate stem for a condition that does not change the main outcome. Distinguish this concessive use from -아/어도 되다, which expresses permission. Example: 비가 와도 가요. (I will go even if it rains.)",
+          "description": "-아/어도 means 'even if' or 'although', saying the next result still happens.",
           "level": 2,
           "tags": [
             "concession",
             "TOPIK1"
           ],
           "structurePattern": "[Verb/Adj stem]아/어도",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 아/어도 to the first clause and state the unchanged outcome: 오다 → 와도."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "비가 와도 가요. — I will go even if it rains. 비가 와도 가요: 오다 becomes 와도 ('even if it rains'). The main action 가요 still happens despite that condition."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not confuse concession -아/어도 with permission -아/어도 돼요. The following words determine the meaning."
+            }
+          ],
           "relatedPointIds": [
             "gp_eumyeon"
           ],
@@ -3012,7 +3815,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도",
               "englishHint": "I go outside even when it's cold.",
-              "introducedAtPosition": 92
+              "introducedAtPosition": 95
             },
             {
               "id": "cc_eodo_concession_02",
@@ -3022,7 +3825,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도",
               "englishHint": "I will buy it even if it is a little expensive.",
-              "introducedAtPosition": 92
+              "introducedAtPosition": 95
             },
             {
               "id": "cc_eodo_concession_03",
@@ -3032,7 +3835,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도",
               "englishHint": "It is okay even if you do not have time.",
-              "introducedAtPosition": 92
+              "introducedAtPosition": 95
             }
           ]
         },
@@ -3043,14 +3846,30 @@
           "tense": null,
           "register": null,
           "hint": "but, by the way",
-          "description": "Use 그런데 at the beginning of a new sentence to introduce a contrast or a shift in topic. It can mean \"but\" or \"by the way,\" depending on context. Example: 오늘은 추워요. 그런데 코트가 없어요. (It is cold today, but I do not have a coat.)",
+          "description": "그런데 connects sentences as 'but', 'by the way', or 'however', often shifting direction or topic.",
           "level": 2,
           "tags": [
             "discourse",
             "TOPIK1"
           ],
           "structurePattern": "[Sentence]. 그런데 [Sentence].",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Finish the first sentence, then start the next one with 그런데."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "오늘은 추워요. 그런데 코트가 없어요. — It is cold today, but I do not have a coat. 오늘은 추워요. 그런데 코트가 없어요: it's cold, but the speaker has no coat."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "그런데 can also change topics gently. It's not a verb suffix; contrast하지만, which more directly marks opposition."
+            }
+          ],
           "relatedPointIds": [
             "gp_hajiman"
           ],
@@ -3081,7 +3900,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "그런데",
               "englishHint": "I like coffee, but today I am drinking tea.",
-              "introducedAtPosition": 93
+              "introducedAtPosition": 96
             },
             {
               "id": "cc_geureonde_02",
@@ -3091,7 +3910,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "그런데",
               "englishHint": "I study Korean, but it is still hard.",
-              "introducedAtPosition": 93
+              "introducedAtPosition": 96
             },
             {
               "id": "cc_geureonde_03",
@@ -3101,7 +3920,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "그런데",
               "englishHint": "I live in Seoul, but my hometown is Busan.",
-              "introducedAtPosition": 93
+              "introducedAtPosition": 96
             }
           ]
         },
@@ -3112,14 +3931,30 @@
           "tense": null,
           "register": null,
           "hint": "after finishing",
-          "description": "Attach -고 난 후에 after an action verb stem to emphasize that one action has finished before the next begins. It is close in meaning to -고 나서. Example: 운동하고 난 후에 물을 마셔요. (I drink water after exercising.)",
+          "description": "-고 난 후에 means 'after finishing an action', emphasizing that the action is already done.",
           "level": 2,
           "tags": [
             "time",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]고 난 후에",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 고 난 후에 to the first verb stem, then the next event: 운동하다 → 운동하고 난 후에."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "운동하고 난 후에 물을 마셔요. — I drink water after exercising. 운동하고 난 후에 물을 마셔요: drink water after working out is finished."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not treat it as a second unrelated 'after' word: compare -고 나서, which often expresses the same sequence more simply."
+            }
+          ],
           "relatedPointIds": [
             "gp_go_seq"
           ],
@@ -3150,7 +3985,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 난 후에",
               "englishHint": "I went home after watching the movie.",
-              "introducedAtPosition": 94
+              "introducedAtPosition": 97
             },
             {
               "id": "cc_go_nan_hue_02",
@@ -3160,7 +3995,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 난 후에",
               "englishHint": "I wash the dishes after eating.",
-              "introducedAtPosition": 94
+              "introducedAtPosition": 97
             },
             {
               "id": "cc_go_nan_hue_03",
@@ -3170,7 +4005,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 난 후에",
               "englishHint": "I went home after finishing work.",
-              "introducedAtPosition": 94
+              "introducedAtPosition": 97
             }
           ]
         },
@@ -3181,14 +4016,30 @@
           "tense": null,
           "register": null,
           "hint": "do and then",
-          "description": "The familiar -아/어서 form can also connect actions in time order, especially when the first leads into the second. For example, 일어나서 세수해요 means \"I get up and wash my face.\" Example: 아침에 일어나서 세수해요. (I get up and then wash my face in the morning.)",
+          "description": "-아/어서 can also link a first action to a next one: 'do A and then B'. Here it is SEQUENCE, not 'because'.",
           "level": 2,
           "tags": [
             "connective",
             "TOPIK1"
           ],
           "structurePattern": "[Verb stem]아/어서 + [next action]",
-          "notes": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 아서/어서 to the first verb stem; continue with a natural next action: 일어나다 → 일어나서."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "아침에 일어나서 세수해요. — I get up and then wash my face in the morning. 아침에 일어나서 세수해요: 일어나다 becomes 일어나서. Getting up comes first; washing up follows as a natural next action."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse sequential -아/어서 with causal -아/어서; the full sentence's meaning determines whether you hear 'and then' or 'because'."
+            }
+          ],
           "relatedPointIds": [
             "gp_aseo"
           ],
@@ -3219,7 +4070,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서 (sequence)",
               "englishHint": "I go inside and wash my hands.",
-              "introducedAtPosition": 95
+              "introducedAtPosition": 98
             },
             {
               "id": "cc_aseo_sequence_02",
@@ -3229,7 +4080,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서 (sequence)",
               "englishHint": "I bought fruit at the market and came home.",
-              "introducedAtPosition": 95
+              "introducedAtPosition": 98
             },
             {
               "id": "cc_aseo_sequence_03",
@@ -3239,7 +4090,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서 (sequence)",
               "englishHint": "I took the bus and went to school.",
-              "introducedAtPosition": 95
+              "introducedAtPosition": 98
             }
           ]
         }
@@ -3256,7 +4107,7 @@
           "tense": null,
           "register": null,
           "hint": "say that someone does",
-          "description": "For present action-verb statements, attach -는다고 after consonant-ending stems and -ㄴ다고 after vowel-ending stems, then 하다. Use -ㄴ다고 after ㄹ-final stems too, dropping ㄹ; reported speech is usually more advanced than core TOPIK I. Example: 친구가 매일 운동한다고 해요. (My friend says they exercise every day.)",
+          "description": "Use -ㄴ/는다고 하다 to report what someone says about an ACTION: 'They say that...'.",
           "level": 2,
           "tags": [
             "reportative",
@@ -3265,6 +4116,21 @@
           ],
           "structurePattern": "[Action verb stem]ㄴ/는다고 하다",
           "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "For a present action verb, add ㄴ다고 after vowel stems or 는다고 after consonant stems, then 해요: 운동하다 → 운동한다고 해요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "친구가 매일 운동한다고 해요. — My friend says they exercise every day. 친구가 매일 운동한다고 해요 reports that the friend says they exercise daily."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Descriptive verbs usually use -다고, and nouns use -(이)라고; don't use the action-verb form for everything."
+            },
             {
               "type": "caution",
               "title": "Optional bridge",
@@ -3299,7 +4165,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ/는다고 하다",
               "englishHint": "My friend says they are coming tomorrow.",
-              "introducedAtPosition": 96
+              "introducedAtPosition": 99
             },
             {
               "id": "cc_neundago_hada_02",
@@ -3309,7 +4175,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ/는다고 하다",
               "englishHint": "My younger sibling said they were going to school.",
-              "introducedAtPosition": 96
+              "introducedAtPosition": 99
             },
             {
               "id": "cc_neundago_hada_03",
@@ -3319,7 +4185,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ/는다고 하다",
               "englishHint": "My friend says they are eating dinner.",
-              "introducedAtPosition": 96
+              "introducedAtPosition": 99
             }
           ]
         },
@@ -3330,7 +4196,7 @@
           "tense": null,
           "register": null,
           "hint": "say that it is",
-          "description": "Attach -다고 하다 to descriptive verb stems to report someone's statement about a state. The usual polite form is -다고 해요. Example: 친구가 오늘 바쁘다고 해요. (My friend says they are busy today.)",
+          "description": "Use -다고 하다 to report what someone says about a DESCRIPTION or state: 'They say it's busy'.",
           "level": 2,
           "tags": [
             "reportative",
@@ -3339,6 +4205,21 @@
           ],
           "structurePattern": "[Adjective stem]다고 하다",
           "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 다고 to a descriptive-verb stem and add 해요: 바쁘다 → 바쁘다고 해요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "친구가 오늘 바쁘다고 해요. — My friend says they are busy today. 친구가 오늘 바쁘다고 해요: the friend reportedly says they are busy today."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "For action verbs use -ㄴ/는다고, and for nouns use -(이)라고. This lesson is a beyond-core-beginner bridge."
+            },
             {
               "type": "caution",
               "title": "Optional bridge",
@@ -3373,7 +4254,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고 하다 (adjective)",
               "englishHint": "Minsu says he is tired today.",
-              "introducedAtPosition": 97
+              "introducedAtPosition": 100
             },
             {
               "id": "cc_dago_hada_adj_02",
@@ -3383,7 +4264,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고 하다 (adjective)",
               "englishHint": "My younger sibling said it was very cold.",
-              "introducedAtPosition": 97
+              "introducedAtPosition": 100
             },
             {
               "id": "cc_dago_hada_adj_03",
@@ -3393,7 +4274,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고 하다 (adjective)",
               "englishHint": "The teacher says the exam is easy.",
-              "introducedAtPosition": 97
+              "introducedAtPosition": 100
             }
           ]
         },
@@ -3404,7 +4285,7 @@
           "tense": null,
           "register": null,
           "hint": "say it is called, say it is a noun",
-          "description": "Use -이라고 after consonant-ending nouns and -라고 after vowel-ending nouns, followed by 하다. It reports a noun identification or someone's name. Example: 저는 민수라고 해요. (My name is Minsu.)",
+          "description": "Use -(이)라고 하다 to report a noun identity or give a name: 'I am called...' or 'They say it's...'.",
           "level": 2,
           "tags": [
             "reportative",
@@ -3413,6 +4294,21 @@
           ],
           "structurePattern": "[Noun](이)라고 하다",
           "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "After a noun ending in a consonant, use 이라고; after a vowel, 라고: 민수 → 민수라고."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "저는 민수라고 해요. — My name is Minsu. 저는 민수라고 해요 is a common way to introduce one's name, literally 'I'm called Minsu'."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't use action-verb -ㄴ/는다고 after a noun. The noun's final consonant determines 이라고 vs 라고."
+            },
             {
               "type": "caution",
               "title": "Optional bridge",
@@ -3447,7 +4343,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)라고 하다",
               "englishHint": "My name is Sujin.",
-              "introducedAtPosition": 98
+              "introducedAtPosition": 101
             },
             {
               "id": "cc_irago_hada_02",
@@ -3457,7 +4353,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)라고 하다",
               "englishHint": "This food is called kimchi.",
-              "introducedAtPosition": 98
+              "introducedAtPosition": 101
             },
             {
               "id": "cc_irago_hada_03",
@@ -3467,7 +4363,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)라고 하다",
               "englishHint": "My friend's name is Sujin.",
-              "introducedAtPosition": 98
+              "introducedAtPosition": 101
             }
           ]
         },
@@ -3478,7 +4374,7 @@
           "tense": null,
           "register": null,
           "hint": "did you say ...?",
-          "description": "Add -다고요? to a reported statement to ask for confirmation or repeat something surprising. Action verbs normally take their reported -ㄴ/는다고 form first. Example: 내일 비가 온다고요? (Did you say it will rain tomorrow?)",
+          "description": "-다고요? repeats or checks something heard, often with surprise: 'You said...?' or 'Really...?'.",
           "level": 2,
           "tags": [
             "reportative",
@@ -3487,6 +4383,21 @@
           ],
           "structurePattern": "[Reported clause]다고요?",
           "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Repeat the reported content and end with 다고요? For actions, you may see ㄴ/는다고요?; for descriptions, 다고요?."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "내일 비가 온다고요? — Did you say it will rain tomorrow? 내일 비가 온다고요? shows surprise or confirmation: 'You mean it's going to rain tomorrow?'"
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This can sound challenging or sharp depending on tone. It is not the default friendly way to ask a neutral question."
+            },
             {
               "type": "caution",
               "title": "Optional bridge",
@@ -3521,7 +4432,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고요?",
               "englishHint": "Did you say there is no class tomorrow?",
-              "introducedAtPosition": 99
+              "introducedAtPosition": 102
             },
             {
               "id": "cc_dagoyo_02",
@@ -3531,7 +4442,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고요?",
               "englishHint": "Did you say your friend is going today?",
-              "introducedAtPosition": 99
+              "introducedAtPosition": 102
             },
             {
               "id": "cc_dagoyo_03",
@@ -3541,7 +4452,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고요?",
               "englishHint": "Did you say that movie is interesting?",
-              "introducedAtPosition": 99
+              "introducedAtPosition": 102
             }
           ]
         }

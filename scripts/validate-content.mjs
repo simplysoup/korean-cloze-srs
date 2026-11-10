@@ -2,14 +2,14 @@
  * Validate the ported TOPIK I content (mobile/src/content/topik1-level1.json
  * and topik1-level2.json). Fails (exit 1) unless ALL of these hold, for
  * each level and across both:
- *  - Level 1: 11 lessons, 48 grammar points, 178 cloze cards, 109 lesson examples
- *  - Level 2: 11 lessons, 51 grammar points, 153 cloze cards, 102 lesson examples
+ *  - Level 1: 11 lessons, 50 grammar points, 184 cloze cards, 113 lesson examples
+ *  - Level 2: 11 lessons, 52 grammar points, 156 cloze cards, 104 lesson examples
  *  - every cloze card's answer appears in its fullSentence
  *  - every grammar point has >= 2 lesson examples and >= 3 cloze cards
  *  - no duplicate ids anywhere (grammar points, cards, examples, across both levels)
  *  - every relatedPointId / extraTarget grammarPointId exists (in either level)
  *  - every card's introducedAtPosition is in its level's range
- *    (Level 1: 1-48, Level 2: 49-99) and equals its owning grammar
+ *    (Level 1: 1-50, Level 2: 51-102) and equals its owning grammar
  *    point's global position for single-target cards
  * Run: node scripts/validate-content.mjs
  */
@@ -38,8 +38,8 @@ function flattenAll(bundles) {
 }
 
 const levels = [
-  { file: 'topik1-level1.json', level: 1, lessons: 11, gps: 48, cards: 178, examples: 109, posMin: 1, posMax: 48 },
-  { file: 'topik1-level2.json', level: 2, lessons: 11, gps: 51, cards: 153, examples: 102, posMin: 49, posMax: 99 },
+  { file: 'topik1-level1.json', level: 1, lessons: 11, gps: 50, cards: 184, examples: 113, posMin: 1, posMax: 50 },
+  { file: 'topik1-level2.json', level: 2, lessons: 11, gps: 52, cards: 156, examples: 104, posMin: 51, posMax: 102 },
 ];
 
 const bundles = levels.map((spec) => {
@@ -102,11 +102,11 @@ for (const { gp, position, level } of all) {
   }
 }
 
-// Positions are continuous 1-99 across both bundles in file order.
+// Positions are continuous 1-102 across both bundles in file order.
 const positions = all.map(({ position }) => position);
 check(
-  positions.length === 99 && positions.every((p, i) => p === i + 1),
-  `global positions are not continuous 1-99 (got ${positions.length} points)`,
+  positions.length === 102 && positions.every((p, i) => p === i + 1),
+  `global positions are not continuous 1-102 (got ${positions.length} points)`,
 );
 
 if (errors.length > 0) {
@@ -115,4 +115,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 const totals = bundles.map((b) => `${b.file}: ${b.lessons.length} lessons, ${b.gps.length} GPs, ${b.cards.length} cards, ${b.examples.length} examples`).join('\n  ');
-console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-99`);
+console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-102`);

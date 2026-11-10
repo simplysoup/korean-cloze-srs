@@ -1,19 +1,20 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 3 — Everyday Actions and Negation
-// Grammar points (positions 12–16):
-//   12. ayo_eoyo
-//   13. eul_reul
-//   14. an
-//   15. ji_anha
-//   16. mos
+// Grammar points (positions 13–17):
+//   13. ayo_eoyo
+//   14. eul_reul
+//   15. an
+//   16. ji_anha
+//   17. mos
 // Examples and cards use only grammar through their target position.
 
-export const lesson03: LessonSeed = {
+export const lesson03: LessonSeed = teachLesson({
 	lessonNumber: 3,
 	title: "Everyday Actions and Negation",
 	grammarPoints: [
-		// 12. gp_ayo_eoyo
+		// 13. gp_ayo_eoyo
 		{
 			id: 'gp_ayo_eoyo',
 			title: '-아요/어요',
@@ -70,7 +71,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '공부하다',
 					englishHint: "I study.",
-					introducedAtPosition: 12
+					introducedAtPosition: 13
 				},
 				{
 					id: 'cc_ayo_eoyo_02',
@@ -80,7 +81,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '먹다',
 					englishHint: "I eat.",
-					introducedAtPosition: 12
+					introducedAtPosition: 13
 				},
 				{
 					id: 'cc_ayo_eoyo_03',
@@ -90,7 +91,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: ['시어요'],
 					vocabBaseForm: '마시다',
 					englishHint: "I drink.",
-					introducedAtPosition: 12
+					introducedAtPosition: 13
 				},
 				{
 					id: 'cc_ayo_eoyo_04',
@@ -100,7 +101,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '가다',
 					englishHint: "I am going today.",
-					introducedAtPosition: 12
+					introducedAtPosition: 13
 				},
 				{
 					id: 'cc_ayo_eoyo_05',
@@ -110,12 +111,12 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '보다',
 					englishHint: "I watch TV.",
-					introducedAtPosition: 12
+					introducedAtPosition: 13
 				}
 			]
 		},
 
-		// 13. gp_eul_reul
+		// 14. gp_eul_reul
 		{
 			id: 'gp_eul_reul',
 			title: '을/를',
@@ -161,7 +162,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '을/를',
 					englishHint: 'I drink coffee.',
-					introducedAtPosition: 13
+					introducedAtPosition: 14
 				},
 				{
 					id: 'cc_eul_reul_02',
@@ -171,7 +172,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '을/를',
 					englishHint: 'I read a book.',
-					introducedAtPosition: 13
+					introducedAtPosition: 14
 				},
 				{
 					id: 'cc_eul_reul_03',
@@ -181,7 +182,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '을/를',
 					englishHint: 'I listen to music.',
-					introducedAtPosition: 13
+					introducedAtPosition: 14
 				},
 				{
 					id: 'cc_eul_reul_04',
@@ -191,12 +192,12 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '을/를',
 					englishHint: 'I watch a movie.',
-					introducedAtPosition: 13
+					introducedAtPosition: 14
 				}
 			]
 		},
 
-		// 14. gp_an
+		// 15. gp_an
 		{
 			id: 'gp_an',
 			title: '안',
@@ -215,6 +216,7 @@ export const lesson03: LessonSeed = {
 				{ type: 'tip', title: '하다 Verbs', content: 'For noun+하다 verbs, 안 goes between: 공부 안 해요 is the usual spoken placement for 공부하다.' },
 				{ type: 'caution', title: '안 vs -지 않다', content: '안 is the short form. The long form -지 않다 is taught later and used in formal/written contexts.' }
 			],
+			relatedPointIds: ['gp_ji_anha', 'gp_mos', 'gp_ani_eyo'],
 			lessonExamples: [
 				{
 					id: 'le_an_01',
@@ -244,7 +246,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '안',
 					englishHint: "I don't drink coffee.",
-					introducedAtPosition: 14
+					introducedAtPosition: 15
 				},
 				{
 					id: 'cc_an_02',
@@ -254,7 +256,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '안',
 					englishHint: "I'm not studying today.",
-					introducedAtPosition: 14
+					introducedAtPosition: 15
 				},
 				{
 					id: 'cc_an_03',
@@ -264,12 +266,12 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '안',
 					englishHint: "I don't eat meat.",
-					introducedAtPosition: 14
+					introducedAtPosition: 15
 				}
 			]
 		},
 
-		// 15. gp_ji_anha
+		// 16. gp_ji_anha
 		{
 			id: 'gp_ji_anha',
 			title: '-지 않다',
@@ -288,6 +290,7 @@ export const lesson03: LessonSeed = {
 				{ type: 'tip', title: '안 vs -지 않다', content: '안 먹어요 and 먹지 않아요 mean the same thing. -지 않다 can sound a little more formal or measured, but is not automatically stronger.' },
 				{ type: 'tip', title: '하다 Verbs', content: 'For 하다 verbs, -지 않다 is simpler: 공부하지 않아요 (compare: 공부 안 해요).' }
 			],
+			relatedPointIds: ['gp_an', 'gp_mos'],
 			lessonExamples: [
 				{
 					id: 'le_ji_anha_01',
@@ -315,7 +318,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-지 않다',
 					englishHint: 'I do not eat meat.',
-					introducedAtPosition: 15
+					introducedAtPosition: 16
 				},
 				{
 					id: 'cc_ji_anha_02',
@@ -325,7 +328,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-지 않다',
 					englishHint: 'I am not exercising today.',
-					introducedAtPosition: 15
+					introducedAtPosition: 16
 				},
 				{
 					id: 'cc_ji_anha_03',
@@ -335,12 +338,12 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '-지 않다',
 					englishHint: 'This food is not delicious.',
-					introducedAtPosition: 15
+					introducedAtPosition: 16
 				}
 			]
 		},
 
-		// 16. gp_mos
+		// 17. gp_mos
 		{
 			id: 'gp_mos',
 			title: '못',
@@ -359,7 +362,7 @@ export const lesson03: LessonSeed = {
 				{ type: 'tip', title: '못 vs 안', content: '못 = cannot (inability/impossibility). 안 = do not (choice/preference). 못 먹어요 (can\'t eat) vs 안 먹어요 (don\'t eat).' },
 				{ type: 'tip', title: '하다 Split', content: 'For Noun+하다 verbs: 공부 못 해요 (cannot study), not 못 공부해요.' }
 			],
-			relatedPointIds: ['gp_an', 'gp_eul_su_issda'],
+			relatedPointIds: ['gp_an', 'gp_ji_anha', 'gp_eul_su_issda'],
 			lessonExamples: [
 				{
 					id: 'le_mos_01',
@@ -387,7 +390,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '못',
 					englishHint: "I can't eat spicy food.",
-					introducedAtPosition: 16
+					introducedAtPosition: 17
 				},
 				{
 					id: 'cc_mos_02',
@@ -397,7 +400,7 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '못',
 					englishHint: "I can't read Korean.",
-					introducedAtPosition: 16
+					introducedAtPosition: 17
 				},
 				{
 					id: 'cc_mos_03',
@@ -407,9 +410,9 @@ export const lesson03: LessonSeed = {
 					alternateAnswers: [],
 					vocabBaseForm: '못',
 					englishHint: "I can't swim today.",
-					introducedAtPosition: 16
+					introducedAtPosition: 17
 				}
 			]
 		}
 	]
-};
+});
