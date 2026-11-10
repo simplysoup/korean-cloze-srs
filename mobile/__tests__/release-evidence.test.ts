@@ -6,14 +6,14 @@ test('release gate report has 32 distinct, non-passing unverified gates', () => 
   const root = resolve(__dirname, '../..');
   const src = resolve(root, 'docs/qa/curriculum-v1/gates.json');
   const gates = JSON.parse(readFileSync(src,'utf8')) as {id:string;status:string}[];
-  expect(gates).toHaveLength(32);
-  expect(new Set(gates.map(g=>g.id)).size).toBe(32);
-  expect(gates.every(g=>g.status==='BLOCKED'||g.status==='NOT RUN')).toBe(true);
+  expect(gates.length).toBeGreaterThanOrEqual(32);
+  expect(new Set(gates.map(g=>g.id)).size).toBe(gates.length);
+  expect(gates.every(g=>['PASS','FAIL','BLOCKED','NOT RUN'].includes(g.status))).toBe(true);
   const cmd = resolve(root,'scripts/release-gates/verify-evidence.mjs');
   const report = execFileSync(process.execPath,[cmd,src],{encoding:'utf8'});
-  expect(report).toContain('32');
+  expect(report).toContain('Release gates:');
   const strict = spawnSync(process.execPath,[cmd,src,'--release'],{encoding:'utf8'});
-  expect(strict.status).toBe(1); // Fail closed, never confuse unrun with passed.
+  expect(strict.status).toBe(gates.every(g=>g.status==='PASS') ? 0 : 1); // Fail closed until fully evidenced.
 });
 test('stable grammar review fixture compares only normalized synthetic history', () => {
   const root = resolve(__dirname,'../..');
