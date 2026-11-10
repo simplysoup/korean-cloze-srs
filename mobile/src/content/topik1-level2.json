@@ -72,7 +72,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ까요?",
               "englishHint": "Shall we leave now?",
-              "introducedAtPosition": 51
+              "introducedAtPosition": 66
             },
             {
               "id": "cc_eulkkayo_02",
@@ -82,7 +82,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ까요?",
               "englishHint": "Shall I open the door?",
-              "introducedAtPosition": 51
+              "introducedAtPosition": 66
             },
             {
               "id": "cc_eulkkayo_03",
@@ -92,7 +92,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ까요?",
               "englishHint": "Shall we eat lunch now?",
-              "introducedAtPosition": 51
+              "introducedAtPosition": 66
             }
           ]
         },
@@ -155,7 +155,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ래요",
               "englishHint": "I will have water.",
-              "introducedAtPosition": 52
+              "introducedAtPosition": 67
             },
             {
               "id": "cc_eullaeyo_02",
@@ -165,7 +165,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ래요",
               "englishHint": "Do you want to buy this?",
-              "introducedAtPosition": 52
+              "introducedAtPosition": 67
             },
             {
               "id": "cc_eullaeyo_03",
@@ -175,7 +175,182 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ래요",
               "englishHint": "I want to rest at home.",
-              "introducedAtPosition": 52
+              "introducedAtPosition": 67
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_get_intention",
+          "title": "-겠- (speaker's intention)",
+          "category": "modality",
+          "tense": null,
+          "register": "polite / formal",
+          "hint": "The ending -겠- can express the speaker's determination or intention, as in a formal announcement that they will take responsibility for an action.",
+          "description": "The ending -겠- can express the speaker's determination or intention, as in a formal announcement that they will take responsibility for an action.",
+          "level": 2,
+          "tags": [
+            "TOPIK1",
+            "core-system",
+            "grammar"
+          ],
+          "structurePattern": "[Verb / adjective / noun as indicated] + -겠- (speaker's intention)",
+          "relatedPointIds": [
+            "gp_eulgeyo",
+            "gp_eul_geoyeyo",
+            "gp_gap_get_inference"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Insert 겠 after the verb stem and before a sentence ending: 하다 → 하겠습니다, 노력하다 → 노력하겠어요. The exact degree of resolve depends on context."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "제가 먼저 하겠습니다. — I'll go first (I intend to). 제가 먼저 하겠습니다 uses 겠 to express the speaker's intention to go first rather than a factual prediction."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Compare -(으)ㄹ게요 for a listener-oriented commitment and -(으)ㄹ 거예요 for a future plan. The same 겠 also has a distinct guessing use."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_get_intention_01",
+              "fullSentence": "제가 먼저 하겠습니다.",
+              "sentenceWithBlank": "제가 먼저 하___.",
+              "answer": "겠습니다",
+              "englishHint": "I'll go first (I intend to).",
+              "order": 0
+            },
+            {
+              "id": "le_gap_get_intention_02",
+              "fullSentence": "다시 연락하겠어요.",
+              "sentenceWithBlank": "다시 연락하___.",
+              "answer": "겠어요",
+              "englishHint": "I will contact you again.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_get_intention_01",
+              "fullSentence": "제가 책임지겠습니다.",
+              "sentenceWithBlank": "제가 책임지___.",
+              "answer": "겠습니다",
+              "englishHint": "I'll take responsibility.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "책임지다",
+              "introducedAtPosition": 68
+            },
+            {
+              "id": "cc_gap_get_intention_02",
+              "fullSentence": "열심히 노력하겠어요.",
+              "sentenceWithBlank": "열심히 노력하___.",
+              "answer": "겠어요",
+              "englishHint": "I'll make a real effort.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "노력하다",
+              "introducedAtPosition": 68
+            },
+            {
+              "id": "cc_gap_get_intention_03",
+              "fullSentence": "내일 다시 오겠습니다.",
+              "sentenceWithBlank": "내일 다시 오___.",
+              "answer": "겠습니다",
+              "englishHint": "I'll come again tomorrow.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "오다",
+              "introducedAtPosition": 68
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_get_inference",
+          "title": "-겠- (guess / inference)",
+          "category": "modality",
+          "tense": null,
+          "register": "polite",
+          "hint": "The same -겠- ending can express what the speaker infers about a present or future situation.",
+          "description": "The same -겠- ending can express what the speaker infers about a present or future situation. It can soften an empathetic comment or suggest something seems likely.",
+          "level": 2,
+          "tags": [
+            "TOPIK1",
+            "core-system",
+            "grammar"
+          ],
+          "structurePattern": "[Verb / adjective / noun as indicated] + -겠- (guess / inference)",
+          "relatedPointIds": [
+            "gp_gap_get_intention",
+            "gp_eul_geot_gatda"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Insert 겠 after a verb or descriptive stem, then add the appropriate ending: 춥다 → 춥겠어요; 맛있다 → 맛있겠어요. Read the surrounding context to tell a guess from an intention."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "많이 피곤하시겠어요. — You must be very tired. 많이 피곤하시겠어요 expresses the speaker's impression that the other person must be very tired."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't treat every 겠 as 'will'. In 맛있겠어요 the speaker is evaluating how food seems, not announcing an intention to be delicious."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_get_inference_01",
+              "fullSentence": "많이 피곤하시겠어요.",
+              "sentenceWithBlank": "많이 피곤하시___.",
+              "answer": "겠어요",
+              "englishHint": "You must be very tired.",
+              "order": 0
+            },
+            {
+              "id": "le_gap_get_inference_02",
+              "fullSentence": "이 음식이 맛있겠어요.",
+              "sentenceWithBlank": "이 음식이 맛있___.",
+              "answer": "겠어요",
+              "englishHint": "This food looks delicious.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_get_inference_01",
+              "fullSentence": "날씨가 춥겠어요.",
+              "sentenceWithBlank": "날씨가 춥___.",
+              "answer": "겠어요",
+              "englishHint": "It must be cold outside.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "춥다",
+              "introducedAtPosition": 69
+            },
+            {
+              "id": "cc_gap_get_inference_02",
+              "fullSentence": "좋은 소식이겠네요.",
+              "sentenceWithBlank": "좋은 소식이___.",
+              "answer": "겠네요",
+              "englishHint": "That must be good news.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "이다",
+              "introducedAtPosition": 69
+            },
+            {
+              "id": "cc_gap_get_inference_03",
+              "fullSentence": "정말 어렵겠어요.",
+              "sentenceWithBlank": "정말 어렵___.",
+              "answer": "겠어요",
+              "englishHint": "That must be really difficult.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "어렵다",
+              "introducedAtPosition": 69
             }
           ]
         },
@@ -238,7 +413,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)려고 하다",
               "englishHint": "I'm planning to buy groceries today.",
-              "introducedAtPosition": 53
+              "introducedAtPosition": 70
             },
             {
               "id": "cc_euryeogo_hada_02",
@@ -248,7 +423,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)려고 하다",
               "englishHint": "I plan to read a book tonight.",
-              "introducedAtPosition": 53
+              "introducedAtPosition": 70
             },
             {
               "id": "cc_euryeogo_hada_03",
@@ -258,7 +433,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)려고 하다",
               "englishHint": "I plan to go to Korea next year.",
-              "introducedAtPosition": 53
+              "introducedAtPosition": 70
             }
           ]
         },
@@ -321,7 +496,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)러 가다",
               "englishHint": "I'm going to get coffee.",
-              "introducedAtPosition": 54
+              "introducedAtPosition": 71
             },
             {
               "id": "cc_eureo_gada_02",
@@ -331,7 +506,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)러 가다",
               "englishHint": "I went to buy a book.",
-              "introducedAtPosition": 54
+              "introducedAtPosition": 71
             },
             {
               "id": "cc_eureo_gada_03",
@@ -341,7 +516,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)러 가다",
               "englishHint": "I am going swimming.",
-              "introducedAtPosition": 54
+              "introducedAtPosition": 71
             }
           ]
         },
@@ -404,7 +579,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
               "englishHint": "Let's study together.",
-              "introducedAtPosition": 55
+              "introducedAtPosition": 72
             },
             {
               "id": "cc_eupsida_02",
@@ -414,7 +589,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
               "englishHint": "Let us meet again tomorrow.",
-              "introducedAtPosition": 55
+              "introducedAtPosition": 72
             },
             {
               "id": "cc_eupsida_03",
@@ -424,7 +599,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㅂ시다",
               "englishHint": "Let us rest here for a moment.",
-              "introducedAtPosition": 55
+              "introducedAtPosition": 72
             }
           ]
         }
@@ -496,7 +671,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
               "englishHint": "I work for a company.",
-              "introducedAtPosition": 56
+              "introducedAtPosition": 73
             },
             {
               "id": "cc_seumnida_02",
@@ -506,7 +681,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
               "englishHint": "The weather is nice today.",
-              "introducedAtPosition": 56
+              "introducedAtPosition": 73
             },
             {
               "id": "cc_seumnida_03",
@@ -516,7 +691,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니다/-습니다",
               "englishHint": "I do not have time now.",
-              "introducedAtPosition": 56
+              "introducedAtPosition": 73
             }
           ]
         },
@@ -581,7 +756,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니까/-습니까?",
               "englishHint": "Where do you live?",
-              "introducedAtPosition": 57
+              "introducedAtPosition": 74
             },
             {
               "id": "cc_seumnikka_02",
@@ -591,7 +766,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니까/-습니까?",
               "englishHint": "Is this book good?",
-              "introducedAtPosition": 57
+              "introducedAtPosition": 74
             },
             {
               "id": "cc_seumnikka_03",
@@ -601,7 +776,94 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㅂ니까/-습니까?",
               "englishHint": "Do you have time?",
-              "introducedAtPosition": 57
+              "introducedAtPosition": 74
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_plain_declarative",
+          "title": "-ㄴ다/-는다 (plain statements)",
+          "category": "speech level",
+          "tense": null,
+          "register": "plain / written",
+          "hint": "Plain Korean is used in diaries, essays, narrative descriptions and some close informal speech.",
+          "description": "Plain Korean is used in diaries, essays, narrative descriptions and some close informal speech. It states an action without marking politeness toward the listener.",
+          "level": 2,
+          "tags": [
+            "TOPIK1",
+            "core-system",
+            "grammar"
+          ],
+          "structurePattern": "[Verb / adjective / noun as indicated] + -ㄴ다/-는다 (plain statements)",
+          "relatedPointIds": [
+            "gp_seumnida",
+            "gp_ayo_eoyo"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "For present action verbs, attach ㄴ다 after a vowel stem and 는다 after a consonant stem: 가다 → 간다, 먹다 → 먹는다. Descriptive verbs often keep the dictionary-like form: 좋다."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "나는 지금 책을 읽는다. — I read a book now. 지금 책을 읽는다 uses 읽는다 to narrate the ongoing action in plain style, not to address someone politely."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not assume every plain statement is a direct social equivalent of 해요. Plain style is often used in writing; adjectives and nouns follow different rules."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_plain_declarative_01",
+              "fullSentence": "나는 지금 책을 읽는다.",
+              "sentenceWithBlank": "나는 지금 책을 ___.",
+              "answer": "읽는다",
+              "englishHint": "I read a book now.",
+              "order": 0
+            },
+            {
+              "id": "le_gap_plain_declarative_02",
+              "fullSentence": "그는 매일 학교에 간다.",
+              "sentenceWithBlank": "그는 매일 학교에 ___.",
+              "answer": "간다",
+              "englishHint": "He goes to school every day.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_plain_declarative_01",
+              "fullSentence": "동생이 밥을 먹는다.",
+              "sentenceWithBlank": "동생이 밥을 ___.",
+              "answer": "먹는다",
+              "englishHint": "My younger sibling eats rice.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "먹다",
+              "introducedAtPosition": 75
+            },
+            {
+              "id": "cc_gap_plain_declarative_02",
+              "fullSentence": "내일 친구가 온다.",
+              "sentenceWithBlank": "내일 친구가 ___.",
+              "answer": "온다",
+              "englishHint": "A friend is coming tomorrow.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "오다",
+              "introducedAtPosition": 75
+            },
+            {
+              "id": "cc_gap_plain_declarative_03",
+              "fullSentence": "새가 하늘을 난다.",
+              "sentenceWithBlank": "새가 하늘을 ___.",
+              "answer": "난다",
+              "englishHint": "A bird flies in the sky.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "날다",
+              "introducedAtPosition": 75
             }
           ]
         },
@@ -679,7 +941,7 @@
               "englishHint": "I am a doctor.",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "introducedAtPosition": 58
+              "introducedAtPosition": 76
             },
             {
               "id": "cc_imnida_02",
@@ -689,7 +951,7 @@
               "englishHint": "Is this a book?",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "introducedAtPosition": 58
+              "introducedAtPosition": 76
             },
             {
               "id": "cc_imnida_03",
@@ -699,7 +961,94 @@
               "englishHint": "This place is a hospital.",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "introducedAtPosition": 58
+              "introducedAtPosition": 76
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_honorific_special_verbs",
+          "title": "Special honorific verbs: 계시다 / 드시다 / 주무시다",
+          "category": "honorific system",
+          "tense": null,
+          "register": "honorific",
+          "hint": "Some frequent actions have special respectful verbs instead of just adding -(으)시- to the ordinary verb.",
+          "description": "Some frequent actions have special respectful verbs instead of just adding -(으)시- to the ordinary verb. Which form you use depends on who performs the action.",
+          "level": 2,
+          "tags": [
+            "TOPIK1",
+            "core-system",
+            "grammar"
+          ],
+          "structurePattern": "[Verb / adjective / noun as indicated] + Special honorific verbs: 계시다 / 드시다 / 주무시다",
+          "relatedPointIds": [
+            "gp_eusi_honorific",
+            "gp_gap_subject_kkeseo"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use 계시다 for the location of a respected person (있다 → 계세요), 드시다 for their eating or drinking (먹다/마시다 → 드세요), and 주무시다 for sleeping (자다 → 주무세요)."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "할머니께서 집에 계세요. — Grandmother is at home. 할머니께서 집에 계세요 uses 계세요 to describe the respected grandmother's presence at home."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not use these forms for yourself to show politeness. Honorifying the subject is not the same as speaking politely to the listener."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_honorific_special_verbs_01",
+              "fullSentence": "할머니께서 집에 계세요.",
+              "sentenceWithBlank": "할머니께서 집에 ___.",
+              "answer": "계세요",
+              "englishHint": "Grandmother is at home.",
+              "order": 0
+            },
+            {
+              "id": "le_gap_honorific_special_verbs_02",
+              "fullSentence": "아버지가 밥을 드세요?",
+              "sentenceWithBlank": "아버지가 밥을 ___?",
+              "answer": "드세요",
+              "englishHint": "Is Father eating? (respectfully)",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_honorific_special_verbs_01",
+              "fullSentence": "선생님이 차를 드세요.",
+              "sentenceWithBlank": "선생님이 차를 ___.",
+              "answer": "드세요",
+              "englishHint": "The teacher drinks tea.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "드시다",
+              "introducedAtPosition": 77
+            },
+            {
+              "id": "cc_gap_honorific_special_verbs_02",
+              "fullSentence": "할아버지가 주무세요.",
+              "sentenceWithBlank": "할아버지가 ___.",
+              "answer": "주무세요",
+              "englishHint": "Grandfather is sleeping.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "주무시다",
+              "introducedAtPosition": 77
+            },
+            {
+              "id": "cc_gap_honorific_special_verbs_03",
+              "fullSentence": "어머니가 집에 계세요.",
+              "sentenceWithBlank": "어머니가 집에 ___.",
+              "answer": "계세요",
+              "englishHint": "Mother is at home.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "계시다",
+              "introducedAtPosition": 77
             }
           ]
         },
@@ -762,7 +1111,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도 되다",
               "englishHint": "May I drink water here?",
-              "introducedAtPosition": 59
+              "introducedAtPosition": 78
             },
             {
               "id": "cc_eodo_doeda_02",
@@ -772,7 +1121,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도 되다",
               "englishHint": "You may go now.",
-              "introducedAtPosition": 59
+              "introducedAtPosition": 78
             },
             {
               "id": "cc_eodo_doeda_03",
@@ -782,7 +1131,94 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도 되다",
               "englishHint": "May I read this book?",
-              "introducedAtPosition": 59
+              "introducedAtPosition": 78
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_benefactive_a_juda",
+          "title": "-아/어 주다 (do for someone)",
+          "category": "benefactive",
+          "tense": null,
+          "register": "polite",
+          "hint": "Use -아/어 주다 when someone does an action for another person's benefit.",
+          "description": "Use -아/어 주다 when someone does an action for another person's benefit. It highlights who receives the favor rather than simply whether the action happened.",
+          "level": 2,
+          "tags": [
+            "TOPIK1",
+            "core-system",
+            "grammar"
+          ],
+          "structurePattern": "[Verb / adjective / noun as indicated] + -아/어 주다 (do for someone)",
+          "relatedPointIds": [
+            "gp_a_juseyo",
+            "gp_gap_recipient_ege_hante"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use the action verb's 아/어 form, then a separate 주다: 도와주다 ('help') lexicalized; 읽다 → 읽어 주다, 써 주다. The recipient may take 에게 or 한테."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "친구에게 편지를 써 줬어요. — I wrote a letter for a friend. 친구에게 편지를 써 줬어요 means the letter-writing was done for the friend's benefit, not just that the letter exists."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "-아/어 주세요 is the request form already in Level 1; this point covers ordinary statements about helping actions, including past tense."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_benefactive_a_juda_01",
+              "fullSentence": "친구에게 편지를 써 줬어요.",
+              "sentenceWithBlank": "친구에게 편지를 ___.",
+              "answer": "써 줬어요",
+              "englishHint": "I wrote a letter for a friend.",
+              "order": 0
+            },
+            {
+              "id": "le_gap_benefactive_a_juda_02",
+              "fullSentence": "동생에게 책을 읽어 줘요.",
+              "sentenceWithBlank": "동생에게 책을 ___.",
+              "answer": "읽어 줘요",
+              "englishHint": "I read a book to my younger sibling.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_benefactive_a_juda_01",
+              "fullSentence": "아이가 문을 열어 줬어요.",
+              "sentenceWithBlank": "아이가 문을 ___.",
+              "answer": "열어 줬어요",
+              "englishHint": "The child opened the door for me.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "열다",
+              "introducedAtPosition": 79
+            },
+            {
+              "id": "cc_gap_benefactive_a_juda_02",
+              "fullSentence": "친구가 사진을 찍어 줬어요.",
+              "sentenceWithBlank": "친구가 사진을 ___.",
+              "answer": "찍어 줬어요",
+              "englishHint": "A friend took a photo for me.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "찍다",
+              "introducedAtPosition": 79
+            },
+            {
+              "id": "cc_gap_benefactive_a_juda_03",
+              "fullSentence": "엄마가 옷을 골라 줬어요.",
+              "sentenceWithBlank": "엄마가 옷을 ___.",
+              "answer": "골라 줬어요",
+              "englishHint": "Mom chose clothes for me.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "고르다",
+              "introducedAtPosition": 79
             }
           ]
         },
@@ -845,7 +1281,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면 안 되다",
               "englishHint": "You must not take pictures here.",
-              "introducedAtPosition": 60
+              "introducedAtPosition": 80
             },
             {
               "id": "cc_eumyeon_an_doeda_02",
@@ -855,7 +1291,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면 안 되다",
               "englishHint": "You must not enter here.",
-              "introducedAtPosition": 60
+              "introducedAtPosition": 80
             },
             {
               "id": "cc_eumyeon_an_doeda_03",
@@ -865,7 +1301,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면 안 되다",
               "englishHint": "You must not use your phone during class.",
-              "introducedAtPosition": 60
+              "introducedAtPosition": 80
             }
           ]
         },
@@ -928,7 +1364,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
               "englishHint": "Please don't leave now.",
-              "introducedAtPosition": 61
+              "introducedAtPosition": 81
             },
             {
               "id": "cc_ji_maseyo_02",
@@ -938,7 +1374,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
               "englishHint": "Please do not eat too much.",
-              "introducedAtPosition": 61
+              "introducedAtPosition": 81
             },
             {
               "id": "cc_ji_maseyo_03",
@@ -948,7 +1384,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-지 마세요",
               "englishHint": "Please do not open the door now.",
-              "introducedAtPosition": 61
+              "introducedAtPosition": 81
             }
           ]
         }
@@ -1017,7 +1453,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기",
               "englishHint": "I like cooking.",
-              "introducedAtPosition": 62
+              "introducedAtPosition": 82
             },
             {
               "id": "cc_gi_nominal_02",
@@ -1027,7 +1463,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기",
               "englishHint": "I like walking every day.",
-              "introducedAtPosition": 62
+              "introducedAtPosition": 82
             },
             {
               "id": "cc_gi_nominal_03",
@@ -1037,7 +1473,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기",
               "englishHint": "Learning Korean is fun.",
-              "introducedAtPosition": 62
+              "introducedAtPosition": 82
             }
           ]
         },
@@ -1102,7 +1538,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 나서",
               "englishHint": "After drinking coffee, I go to work.",
-              "introducedAtPosition": 63
+              "introducedAtPosition": 83
             },
             {
               "id": "cc_go_naseo_02",
@@ -1112,7 +1548,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 나서",
               "englishHint": "After exercising, I shower.",
-              "introducedAtPosition": 63
+              "introducedAtPosition": 83
             },
             {
               "id": "cc_go_naseo_03",
@@ -1122,7 +1558,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 나서",
               "englishHint": "After washing my hands, I eat.",
-              "introducedAtPosition": 63
+              "introducedAtPosition": 83
             }
           ]
         },
@@ -1187,7 +1623,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 후에",
               "englishHint": "I went home after class ended.",
-              "introducedAtPosition": 64
+              "introducedAtPosition": 84
             },
             {
               "id": "cc_eun_hue_02",
@@ -1197,7 +1633,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 후에",
               "englishHint": "After watching a movie, I drank coffee.",
-              "introducedAtPosition": 64
+              "introducedAtPosition": 84
             },
             {
               "id": "cc_eun_hue_03",
@@ -1207,7 +1643,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 후에",
               "englishHint": "After reading a book, I go to sleep.",
-              "introducedAtPosition": 64
+              "introducedAtPosition": 84
             }
           ]
         },
@@ -1272,7 +1708,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 전에",
               "englishHint": "I close the door before going out.",
-              "introducedAtPosition": 65
+              "introducedAtPosition": 85
             },
             {
               "id": "cc_gi_jeone_02",
@@ -1282,7 +1718,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 전에",
               "englishHint": "I eat breakfast before going to school.",
-              "introducedAtPosition": 65
+              "introducedAtPosition": 85
             },
             {
               "id": "cc_gi_jeone_03",
@@ -1292,7 +1728,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 전에",
               "englishHint": "I drink water before exercising.",
-              "introducedAtPosition": 65
+              "introducedAtPosition": 85
             }
           ]
         },
@@ -1355,7 +1791,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 때",
               "englishHint": "I rest when I am sick.",
-              "introducedAtPosition": 66
+              "introducedAtPosition": 86
             },
             {
               "id": "cc_eul_ttae_02",
@@ -1365,7 +1801,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 때",
               "englishHint": "I do not watch TV while eating.",
-              "introducedAtPosition": 66
+              "introducedAtPosition": 86
             },
             {
               "id": "cc_eul_ttae_03",
@@ -1375,7 +1811,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 때",
               "englishHint": "When it is cold, I drink warm tea.",
-              "introducedAtPosition": 66
+              "introducedAtPosition": 86
             }
           ]
         }
@@ -1444,7 +1880,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
               "englishHint": "I'm listening to music right now.",
-              "introducedAtPosition": 67
+              "introducedAtPosition": 87
             },
             {
               "id": "cc_go_itda_02",
@@ -1454,7 +1890,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
               "englishHint": "Mom is cooking.",
-              "introducedAtPosition": 67
+              "introducedAtPosition": 87
             },
             {
               "id": "cc_go_itda_03",
@@ -1464,7 +1900,94 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 있다",
               "englishHint": "It is raining now.",
-              "introducedAtPosition": 67
+              "introducedAtPosition": 87
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_resultative_eo_itda",
+          "title": "-아/어 있다 (state after an action)",
+          "category": "resulting state",
+          "tense": null,
+          "register": "polite",
+          "hint": "Use -아/어 있다 to describe a state that continues after an action finished, such as being seated, standing or a door remaining open.",
+          "description": "Use -아/어 있다 to describe a state that continues after an action finished, such as being seated, standing or a door remaining open.",
+          "level": 2,
+          "tags": [
+            "TOPIK1",
+            "core-system",
+            "grammar"
+          ],
+          "structurePattern": "[Verb / adjective / noun as indicated] + -아/어 있다 (state after an action)",
+          "relatedPointIds": [
+            "gp_go_itda",
+            "gp_eojida"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "For appropriate intransitive/result verbs, form 아/어 and follow it with 있다: 앉다 → 앉아 있어요, 서다 → 서 있어요, 열리다 → 열려 있어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "문이 열려 있어요. — The door is open. 문이 열려 있어요 means the door is now open as a result of an earlier opening; the sentence focuses on the present state."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not confuse this with -고 있다 for an action in progress. 앉고 있어요 is sitting down right now; 앉아 있어요 is already seated."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_resultative_eo_itda_01",
+              "fullSentence": "문이 열려 있어요.",
+              "sentenceWithBlank": "문이 ___.",
+              "answer": "열려 있어요",
+              "englishHint": "The door is open.",
+              "order": 0
+            },
+            {
+              "id": "le_gap_resultative_eo_itda_02",
+              "fullSentence": "아이가 의자에 앉아 있어요.",
+              "sentenceWithBlank": "아이가 의자에 ___.",
+              "answer": "앉아 있어요",
+              "englishHint": "The child is sitting on a chair.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_resultative_eo_itda_01",
+              "fullSentence": "사람들이 서 있어요.",
+              "sentenceWithBlank": "사람들이 ___.",
+              "answer": "서 있어요",
+              "englishHint": "People are standing.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "서다",
+              "introducedAtPosition": 88
+            },
+            {
+              "id": "cc_gap_resultative_eo_itda_02",
+              "fullSentence": "고양이가 누워 있어요.",
+              "sentenceWithBlank": "고양이가 ___.",
+              "answer": "누워 있어요",
+              "englishHint": "The cat is lying down.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "눕다",
+              "introducedAtPosition": 88
+            },
+            {
+              "id": "cc_gap_resultative_eo_itda_03",
+              "fullSentence": "불이 켜져 있어요.",
+              "sentenceWithBlank": "불이 ___.",
+              "answer": "켜져 있어요",
+              "englishHint": "The light is on.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "켜지다",
+              "introducedAtPosition": 88
             }
           ]
         },
@@ -1529,7 +2052,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 중이다",
               "englishHint": "I'm cleaning right now.",
-              "introducedAtPosition": 68
+              "introducedAtPosition": 89
             },
             {
               "id": "cc_neun_jung_02",
@@ -1539,7 +2062,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 중이다",
               "englishHint": "My friend is eating right now.",
-              "introducedAtPosition": 68
+              "introducedAtPosition": 89
             },
             {
               "id": "cc_neun_jung_03",
@@ -1549,7 +2072,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 중이다",
               "englishHint": "We are in a meeting now.",
-              "introducedAtPosition": 68
+              "introducedAtPosition": 89
             }
           ]
         },
@@ -1612,7 +2135,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-거나",
               "englishHint": "On weekends, I cook or rest.",
-              "introducedAtPosition": 69
+              "introducedAtPosition": 90
             },
             {
               "id": "cc_geona_02",
@@ -1622,7 +2145,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-거나",
               "englishHint": "For breakfast, I eat bread or rice.",
-              "introducedAtPosition": 69
+              "introducedAtPosition": 90
             },
             {
               "id": "cc_geona_03",
@@ -1632,7 +2155,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-거나",
               "englishHint": "In the evening, I exercise or listen to music.",
-              "introducedAtPosition": 69
+              "introducedAtPosition": 90
             }
           ]
         },
@@ -1695,7 +2218,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)나",
               "englishHint": "I read books or newspapers.",
-              "introducedAtPosition": 70
+              "introducedAtPosition": 91
             },
             {
               "id": "cc_ina_choice_02",
@@ -1705,7 +2228,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)나",
               "englishHint": "For lunch, I eat kimbap or ramen.",
-              "introducedAtPosition": 70
+              "introducedAtPosition": 91
             },
             {
               "id": "cc_ina_choice_03",
@@ -1715,7 +2238,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)나",
               "englishHint": "I take the bus or subway.",
-              "introducedAtPosition": 70
+              "introducedAtPosition": 91
             }
           ]
         }
@@ -1784,7 +2307,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 N",
               "englishHint": "The person smiling over there is our teacher.",
-              "introducedAtPosition": 71
+              "introducedAtPosition": 92
             },
             {
               "id": "cc_neun_modifier_02",
@@ -1794,7 +2317,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 N",
               "englishHint": "People who exercise daily are healthy.",
-              "introducedAtPosition": 71
+              "introducedAtPosition": 92
             },
             {
               "id": "cc_neun_modifier_03",
@@ -1804,7 +2327,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 N",
               "englishHint": "This is the café I often go to.",
-              "introducedAtPosition": 71
+              "introducedAtPosition": 92
             }
           ]
         },
@@ -1869,7 +2392,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ N (action)",
               "englishHint": "The book I read yesterday was interesting.",
-              "introducedAtPosition": 72
+              "introducedAtPosition": 93
             },
             {
               "id": "cc_eun_past_modifier_02",
@@ -1879,7 +2402,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ N (action)",
               "englishHint": "The movie I watched yesterday was interesting.",
-              "introducedAtPosition": 72
+              "introducedAtPosition": 93
             },
             {
               "id": "cc_eun_past_modifier_03",
@@ -1889,7 +2412,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ N (action)",
               "englishHint": "I ate gimbap for breakfast.",
-              "introducedAtPosition": 72
+              "introducedAtPosition": 93
             }
           ]
         },
@@ -1952,7 +2475,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ N",
               "englishHint": "I prepared the clothes I'll wear tomorrow.",
-              "introducedAtPosition": 73
+              "introducedAtPosition": 94
             },
             {
               "id": "cc_eul_future_modifier_02",
@@ -1962,7 +2485,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ N",
               "englishHint": "I chose the movie I will watch this weekend.",
-              "introducedAtPosition": 73
+              "introducedAtPosition": 94
             },
             {
               "id": "cc_eul_future_modifier_03",
@@ -1972,7 +2495,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ N",
               "englishHint": "I bought the book I will read tomorrow.",
-              "introducedAtPosition": 73
+              "introducedAtPosition": 94
             }
           ]
         },
@@ -2035,7 +2558,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 것",
               "englishHint": "I like listening to music.",
-              "introducedAtPosition": 74
+              "introducedAtPosition": 95
             },
             {
               "id": "cc_neun_geot_02",
@@ -2045,7 +2568,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 것",
               "englishHint": "Exercising is good for your health.",
-              "introducedAtPosition": 74
+              "introducedAtPosition": 95
             },
             {
               "id": "cc_neun_geot_03",
@@ -2055,7 +2578,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는 것",
               "englishHint": "I find cooking fun.",
-              "introducedAtPosition": 74
+              "introducedAtPosition": 95
             }
           ]
         }
@@ -2124,7 +2647,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 보다",
               "englishHint": "I've tried kimchi.",
-              "introducedAtPosition": 75
+              "introducedAtPosition": 96
             },
             {
               "id": "cc_eoboda_02",
@@ -2134,7 +2657,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 보다",
               "englishHint": "Please try it on.",
-              "introducedAtPosition": 75
+              "introducedAtPosition": 96
             },
             {
               "id": "cc_eoboda_03",
@@ -2144,7 +2667,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 보다",
               "englishHint": "I tried wearing those clothes.",
-              "introducedAtPosition": 75
+              "introducedAtPosition": 96
             }
           ]
         },
@@ -2207,7 +2730,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
               "englishHint": "I've been to Busan before.",
-              "introducedAtPosition": 76
+              "introducedAtPosition": 97
             },
             {
               "id": "cc_eun_jeok_02",
@@ -2217,7 +2740,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
               "englishHint": "I have never eaten that food.",
-              "introducedAtPosition": 76
+              "introducedAtPosition": 97
             },
             {
               "id": "cc_eun_jeok_03",
@@ -2227,7 +2750,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ 적이 있다",
               "englishHint": "I have lived in Seoul before.",
-              "introducedAtPosition": 76
+              "introducedAtPosition": 97
             }
           ]
         },
@@ -2290,7 +2813,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
               "englishHint": "I've tried driving on Jeju Island.",
-              "introducedAtPosition": 77
+              "introducedAtPosition": 98
             },
             {
               "id": "cc_eobon_jeok_02",
@@ -2300,7 +2823,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
               "englishHint": "I have read that book before.",
-              "introducedAtPosition": 77
+              "introducedAtPosition": 98
             },
             {
               "id": "cc_eobon_jeok_03",
@@ -2310,7 +2833,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 본 적이 있다",
               "englishHint": "I have visited Jeju Island before.",
-              "introducedAtPosition": 77
+              "introducedAtPosition": 98
             }
           ]
         },
@@ -2373,7 +2896,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기로 하다",
               "englishHint": "I've decided to go to bed early this week.",
-              "introducedAtPosition": 78
+              "introducedAtPosition": 99
             },
             {
               "id": "cc_giro_hada_02",
@@ -2383,7 +2906,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기로 하다",
               "englishHint": "I decided to rest at home today.",
-              "introducedAtPosition": 78
+              "introducedAtPosition": 99
             },
             {
               "id": "cc_giro_hada_03",
@@ -2393,7 +2916,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기로 하다",
               "englishHint": "We decided to meet next week.",
-              "introducedAtPosition": 78
+              "introducedAtPosition": 99
             }
           ]
         },
@@ -2458,7 +2981,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
               "englishHint": "I think it might snow tomorrow.",
-              "introducedAtPosition": 79
+              "introducedAtPosition": 100
             },
             {
               "id": "cc_eul_geot_gatda_02",
@@ -2468,7 +2991,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
               "englishHint": "I think this food will be spicy.",
-              "introducedAtPosition": 79
+              "introducedAtPosition": 100
             },
             {
               "id": "cc_eul_geot_gatda_03",
@@ -2478,7 +3001,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄹ 것 같다",
               "englishHint": "I think my friend will arrive soon.",
-              "introducedAtPosition": 79
+              "introducedAtPosition": 100
             }
           ]
         }
@@ -2550,7 +3073,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 때문에",
               "englishHint": "I couldn't go because my stomach hurt.",
-              "introducedAtPosition": 80
+              "introducedAtPosition": 101
             },
             {
               "id": "cc_gi_ttaemune_02",
@@ -2560,7 +3083,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 때문에",
               "englishHint": "I am not going outside because it is too cold.",
-              "introducedAtPosition": 80
+              "introducedAtPosition": 101
             },
             {
               "id": "cc_gi_ttaemune_03",
@@ -2570,7 +3093,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-기 때문에",
               "englishHint": "I took a taxi because I had no time.",
-              "introducedAtPosition": 80
+              "introducedAtPosition": 101
             }
           ]
         },
@@ -2633,7 +3156,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는데",
               "englishHint": "It's raining outside, but I don't have an umbrella.",
-              "introducedAtPosition": 81
+              "introducedAtPosition": 102
             },
             {
               "id": "cc_neunde_02",
@@ -2643,7 +3166,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는데",
               "englishHint": "I drink coffee, but my friend drinks tea.",
-              "introducedAtPosition": 81
+              "introducedAtPosition": 102
             },
             {
               "id": "cc_neunde_03",
@@ -2653,7 +3176,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-는데",
               "englishHint": "I am studying now, so I will call a little later.",
-              "introducedAtPosition": 81
+              "introducedAtPosition": 102
             }
           ]
         },
@@ -2716,7 +3239,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ데",
               "englishHint": "Those clothes are expensive but pretty.",
-              "introducedAtPosition": 82
+              "introducedAtPosition": 103
             },
             {
               "id": "cc_eunde_02",
@@ -2726,7 +3249,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ데",
               "englishHint": "The room is small but very clean.",
-              "introducedAtPosition": 82
+              "introducedAtPosition": 103
             },
             {
               "id": "cc_eunde_03",
@@ -2736,7 +3259,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)ㄴ데",
               "englishHint": "I am busy today, but I have time tomorrow.",
-              "introducedAtPosition": 82
+              "introducedAtPosition": 103
             }
           ]
         },
@@ -2799,7 +3322,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(이)ㄴ데",
               "englishHint": "I have an exam tomorrow, but I haven't studied yet.",
-              "introducedAtPosition": 83
+              "introducedAtPosition": 104
             },
             {
               "id": "cc_inde_02",
@@ -2809,7 +3332,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(이)ㄴ데",
               "englishHint": "It is lunchtime; shall we eat together?",
-              "introducedAtPosition": 83
+              "introducedAtPosition": 104
             },
             {
               "id": "cc_inde_03",
@@ -2819,7 +3342,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(이)ㄴ데",
               "englishHint": "This is a library, and it is very quiet.",
-              "introducedAtPosition": 83
+              "introducedAtPosition": 104
             }
           ]
         },
@@ -2882,7 +3405,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면서",
               "englishHint": "I read while drinking coffee.",
-              "introducedAtPosition": 84
+              "introducedAtPosition": 105
             },
             {
               "id": "cc_eumyeonseo_02",
@@ -2892,7 +3415,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면서",
               "englishHint": "Please do not talk on the phone while walking.",
-              "introducedAtPosition": 84
+              "introducedAtPosition": 105
             },
             {
               "id": "cc_eumyeonseo_03",
@@ -2902,7 +3425,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-(으)면서",
               "englishHint": "I walk while talking with a friend.",
-              "introducedAtPosition": 84
+              "introducedAtPosition": 105
             }
           ]
         }
@@ -2971,7 +3494,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
               "englishHint": "The weather has gotten cooler.",
-              "introducedAtPosition": 85
+              "introducedAtPosition": 106
             },
             {
               "id": "cc_eojida_02",
@@ -2981,7 +3504,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
               "englishHint": "The weather got warmer.",
-              "introducedAtPosition": 85
+              "introducedAtPosition": 106
             },
             {
               "id": "cc_eojida_03",
@@ -2991,7 +3514,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어지다",
               "englishHint": "The room became clean.",
-              "introducedAtPosition": 85
+              "introducedAtPosition": 106
             }
           ]
         },
@@ -3054,7 +3577,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게",
               "englishHint": "Please close the door quietly.",
-              "introducedAtPosition": 86
+              "introducedAtPosition": 107
             },
             {
               "id": "cc_ge_adverb_02",
@@ -3064,7 +3587,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게",
               "englishHint": "Please write in big letters.",
-              "introducedAtPosition": 86
+              "introducedAtPosition": 107
             },
             {
               "id": "cc_ge_adverb_03",
@@ -3074,7 +3597,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게",
               "englishHint": "Please play the music quietly.",
-              "introducedAtPosition": 86
+              "introducedAtPosition": 107
             }
           ]
         },
@@ -3137,7 +3660,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게 되다",
               "englishHint": "I have ended up having to work overtime starting next week.",
-              "introducedAtPosition": 87
+              "introducedAtPosition": 108
             },
             {
               "id": "cc_ge_doeda_02",
@@ -3147,7 +3670,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게 되다",
               "englishHint": "I started learning Korean after meeting a Korean friend.",
-              "introducedAtPosition": 87
+              "introducedAtPosition": 108
             },
             {
               "id": "cc_ge_doeda_03",
@@ -3157,7 +3680,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-게 되다",
               "englishHint": "I have come to get up early in the morning.",
-              "introducedAtPosition": 87
+              "introducedAtPosition": 108
             }
           ]
         },
@@ -3220,7 +3743,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 두다",
               "englishHint": "I did my homework ahead of time.",
-              "introducedAtPosition": 88
+              "introducedAtPosition": 109
             },
             {
               "id": "cc_eoduda_02",
@@ -3230,7 +3753,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 두다",
               "englishHint": "I wrote down the phone number for later.",
-              "introducedAtPosition": 88
+              "introducedAtPosition": 109
             },
             {
               "id": "cc_eoduda_03",
@@ -3240,7 +3763,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 두다",
               "englishHint": "I bought water in advance.",
-              "introducedAtPosition": 88
+              "introducedAtPosition": 109
             }
           ]
         }
@@ -3309,7 +3832,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
               "englishHint": "It's warmer today than yesterday.",
-              "introducedAtPosition": 89
+              "introducedAtPosition": 110
             },
             {
               "id": "cc_boda_compare_02",
@@ -3319,7 +3842,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
               "englishHint": "I prefer tea to coffee.",
-              "introducedAtPosition": 89
+              "introducedAtPosition": 110
             },
             {
               "id": "cc_boda_compare_03",
@@ -3329,7 +3852,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
               "englishHint": "This bag is lighter than that one.",
-              "introducedAtPosition": 89
+              "introducedAtPosition": 110
             }
           ]
         },
@@ -3392,7 +3915,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "처럼",
               "englishHint": "I speak slowly, like the teacher.",
-              "introducedAtPosition": 90
+              "introducedAtPosition": 111
             },
             {
               "id": "cc_cheoreom_02",
@@ -3402,7 +3925,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "처럼",
               "englishHint": "I want to speak Korean well like my friend.",
-              "introducedAtPosition": 90
+              "introducedAtPosition": 111
             },
             {
               "id": "cc_cheoreom_03",
@@ -3412,7 +3935,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "처럼",
               "englishHint": "I am busy today, just like yesterday.",
-              "introducedAtPosition": 90
+              "introducedAtPosition": 111
             }
           ]
         },
@@ -3475,7 +3998,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(으)로",
               "englishHint": "I go to Seoul by train.",
-              "introducedAtPosition": 91
+              "introducedAtPosition": 112
             },
             {
               "id": "cc_euro_means_02",
@@ -3485,7 +4008,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(으)로",
               "englishHint": "Please go to the right.",
-              "introducedAtPosition": 91
+              "introducedAtPosition": 112
             },
             {
               "id": "cc_euro_means_03",
@@ -3495,7 +4018,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(으)로",
               "englishHint": "I take the subway to work.",
-              "introducedAtPosition": 91
+              "introducedAtPosition": 112
             }
           ]
         },
@@ -3558,7 +4081,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "마다",
               "englishHint": "Every class has homework.",
-              "introducedAtPosition": 92
+              "introducedAtPosition": 113
             },
             {
               "id": "cc_mada_02",
@@ -3568,7 +4091,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "마다",
               "englishHint": "This bus stops at every stop.",
-              "introducedAtPosition": 92
+              "introducedAtPosition": 113
             },
             {
               "id": "cc_mada_03",
@@ -3578,7 +4101,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "마다",
               "englishHint": "I study Korean every day.",
-              "introducedAtPosition": 92
+              "introducedAtPosition": 113
             }
           ]
         },
@@ -3641,7 +4164,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "밖에",
               "englishHint": "There is only water here.",
-              "introducedAtPosition": 93
+              "introducedAtPosition": 114
             },
             {
               "id": "cc_bakke_02",
@@ -3651,7 +4174,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "밖에",
               "englishHint": "I only drank water today.",
-              "introducedAtPosition": 93
+              "introducedAtPosition": 114
             },
             {
               "id": "cc_bakke_03",
@@ -3661,7 +4184,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "밖에",
               "englishHint": "I can only speak Korean.",
-              "introducedAtPosition": 93
+              "introducedAtPosition": 114
             }
           ]
         }
@@ -3730,7 +4253,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
               "englishHint": "I ended up spending all the money.",
-              "introducedAtPosition": 94
+              "introducedAtPosition": 115
             },
             {
               "id": "cc_eobeorida_02",
@@ -3740,7 +4263,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
               "englishHint": "I ate the entire cake.",
-              "introducedAtPosition": 94
+              "introducedAtPosition": 115
             },
             {
               "id": "cc_eobeorida_03",
@@ -3750,7 +4273,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어 버리다",
               "englishHint": "I drank all the water.",
-              "introducedAtPosition": 94
+              "introducedAtPosition": 115
             }
           ]
         },
@@ -3815,7 +4338,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도",
               "englishHint": "I go outside even when it's cold.",
-              "introducedAtPosition": 95
+              "introducedAtPosition": 116
             },
             {
               "id": "cc_eodo_concession_02",
@@ -3825,7 +4348,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도",
               "englishHint": "I will buy it even if it is a little expensive.",
-              "introducedAtPosition": 95
+              "introducedAtPosition": 116
             },
             {
               "id": "cc_eodo_concession_03",
@@ -3835,7 +4358,95 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어도",
               "englishHint": "It is okay even if you do not have time.",
-              "introducedAtPosition": 95
+              "introducedAtPosition": 116
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_indefinite_negation",
+          "title": "아무도 / 아무것도 + negative",
+          "category": "polarity expression",
+          "tense": null,
+          "register": "polite",
+          "hint": "Korean indefinite words such as 아무도 ('anyone/no one') and 아무것도 ('anything/nothing') usually pair with a negative predicate to mean 'nobody' or 'nothing'.",
+          "description": "Korean indefinite words such as 아무도 ('anyone/no one') and 아무것도 ('anything/nothing') usually pair with a negative predicate to mean 'nobody' or 'nothing'.",
+          "level": 2,
+          "tags": [
+            "TOPIK1",
+            "core-system",
+            "grammar"
+          ],
+          "structurePattern": "[Verb / adjective / noun as indicated] + 아무도 / 아무것도 + negative",
+          "relatedPointIds": [
+            "gp_an",
+            "gp_eopseoyo",
+            "gp_mos"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Put 아무도 or 아무것도 where the person or thing belongs, then make the predicate negative: 아무도 없어요; 아무것도 안 먹어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "아무도 안 왔어요. — Nobody came. 아무도 안 왔어요 means not a single person came because 아무도 is interpreted with the following negative form."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not leave the predicate affirmative for the intended negative meaning. Compare 누구나 and 아무나, which can mean 'anyone' in affirmative contexts."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_indefinite_negation_01",
+              "fullSentence": "아무도 안 왔어요.",
+              "sentenceWithBlank": "___ 왔어요.",
+              "answer": "아무도 안",
+              "englishHint": "Nobody came.",
+              "order": 0
+            },
+            {
+              "id": "le_gap_indefinite_negation_02",
+              "fullSentence": "아무것도 안 먹었어요.",
+              "sentenceWithBlank": "___ 먹었어요.",
+              "answer": "아무것도 안",
+              "englishHint": "I didn't eat anything.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_indefinite_negation_01",
+              "fullSentence": "오늘 아무도 안 와요.",
+              "sentenceWithBlank": "오늘 ___ 와요.",
+              "answer": "아무도 안",
+              "englishHint": "Nobody is coming today.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "아무도",
+              "introducedAtPosition": 117
+            },
+            {
+              "id": "cc_gap_indefinite_negation_02",
+              "fullSentence": "아무것도 못 봤어요.",
+              "sentenceWithBlank": "___ 봤어요.",
+              "answer": "아무것도 못",
+              "englishHint": "I couldn't see anything.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "아무것도",
+              "introducedAtPosition": 117
+            },
+            {
+              "id": "cc_gap_indefinite_negation_03",
+              "fullSentence": "이 방에는 아무도 안 살아요.",
+              "sentenceWithBlank": "이 방에는 ___ 살아요.",
+              "answer": "아무도 안",
+              "englishHint": "Nobody lives in this room.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "아무도",
+              "introducedAtPosition": 117
             }
           ]
         },
@@ -3900,7 +4511,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "그런데",
               "englishHint": "I like coffee, but today I am drinking tea.",
-              "introducedAtPosition": 96
+              "introducedAtPosition": 118
             },
             {
               "id": "cc_geureonde_02",
@@ -3910,7 +4521,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "그런데",
               "englishHint": "I study Korean, but it is still hard.",
-              "introducedAtPosition": 96
+              "introducedAtPosition": 118
             },
             {
               "id": "cc_geureonde_03",
@@ -3920,7 +4531,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "그런데",
               "englishHint": "I live in Seoul, but my hometown is Busan.",
-              "introducedAtPosition": 96
+              "introducedAtPosition": 118
             }
           ]
         },
@@ -3985,7 +4596,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 난 후에",
               "englishHint": "I went home after watching the movie.",
-              "introducedAtPosition": 97
+              "introducedAtPosition": 119
             },
             {
               "id": "cc_go_nan_hue_02",
@@ -3995,7 +4606,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 난 후에",
               "englishHint": "I wash the dishes after eating.",
-              "introducedAtPosition": 97
+              "introducedAtPosition": 119
             },
             {
               "id": "cc_go_nan_hue_03",
@@ -4005,7 +4616,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-고 난 후에",
               "englishHint": "I went home after finishing work.",
-              "introducedAtPosition": 97
+              "introducedAtPosition": 119
             }
           ]
         },
@@ -4070,7 +4681,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서 (sequence)",
               "englishHint": "I go inside and wash my hands.",
-              "introducedAtPosition": 98
+              "introducedAtPosition": 120
             },
             {
               "id": "cc_aseo_sequence_02",
@@ -4080,7 +4691,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서 (sequence)",
               "englishHint": "I bought fruit at the market and came home.",
-              "introducedAtPosition": 98
+              "introducedAtPosition": 120
             },
             {
               "id": "cc_aseo_sequence_03",
@@ -4090,7 +4701,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-아/어서 (sequence)",
               "englishHint": "I took the bus and went to school.",
-              "introducedAtPosition": 98
+              "introducedAtPosition": 120
             }
           ]
         }
@@ -4165,7 +4776,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ/는다고 하다",
               "englishHint": "My friend says they are coming tomorrow.",
-              "introducedAtPosition": 99
+              "introducedAtPosition": 121
             },
             {
               "id": "cc_neundago_hada_02",
@@ -4175,7 +4786,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ/는다고 하다",
               "englishHint": "My younger sibling said they were going to school.",
-              "introducedAtPosition": 99
+              "introducedAtPosition": 121
             },
             {
               "id": "cc_neundago_hada_03",
@@ -4185,7 +4796,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-ㄴ/는다고 하다",
               "englishHint": "My friend says they are eating dinner.",
-              "introducedAtPosition": 99
+              "introducedAtPosition": 121
             }
           ]
         },
@@ -4254,7 +4865,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고 하다 (adjective)",
               "englishHint": "Minsu says he is tired today.",
-              "introducedAtPosition": 100
+              "introducedAtPosition": 122
             },
             {
               "id": "cc_dago_hada_adj_02",
@@ -4264,7 +4875,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고 하다 (adjective)",
               "englishHint": "My younger sibling said it was very cold.",
-              "introducedAtPosition": 100
+              "introducedAtPosition": 122
             },
             {
               "id": "cc_dago_hada_adj_03",
@@ -4274,7 +4885,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고 하다 (adjective)",
               "englishHint": "The teacher says the exam is easy.",
-              "introducedAtPosition": 100
+              "introducedAtPosition": 122
             }
           ]
         },
@@ -4343,7 +4954,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)라고 하다",
               "englishHint": "My name is Sujin.",
-              "introducedAtPosition": 101
+              "introducedAtPosition": 123
             },
             {
               "id": "cc_irago_hada_02",
@@ -4353,7 +4964,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)라고 하다",
               "englishHint": "This food is called kimchi.",
-              "introducedAtPosition": 101
+              "introducedAtPosition": 123
             },
             {
               "id": "cc_irago_hada_03",
@@ -4363,7 +4974,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "(이)라고 하다",
               "englishHint": "My friend's name is Sujin.",
-              "introducedAtPosition": 101
+              "introducedAtPosition": 123
             }
           ]
         },
@@ -4432,7 +5043,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고요?",
               "englishHint": "Did you say there is no class tomorrow?",
-              "introducedAtPosition": 102
+              "introducedAtPosition": 124
             },
             {
               "id": "cc_dagoyo_02",
@@ -4442,7 +5053,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고요?",
               "englishHint": "Did you say your friend is going today?",
-              "introducedAtPosition": 102
+              "introducedAtPosition": 124
             },
             {
               "id": "cc_dagoyo_03",
@@ -4452,7 +5063,7 @@
               "alternateAnswers": [],
               "vocabBaseForm": "-다고요?",
               "englishHint": "Did you say that movie is interesting?",
-              "introducedAtPosition": 102
+              "introducedAtPosition": 124
             }
           ]
         }

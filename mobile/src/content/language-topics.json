@@ -1,0 +1,465 @@
+{
+  "version": "2026-11-10",
+  "type": "language-topics",
+  "status": "authored teaching and mixed-skill checkpoint content; needs UI/audio and educator review; does not award SRS mastery",
+  "provenance": "Original teaching text; standard pronunciation examples are independently attested in National Institute of Korean Language pronunciation rules and Q&A, with links per topic.",
+  "topics": [
+    {
+      "id": "topic_hangul_sound_changes",
+      "title": "Reading Hangul aloud: spelling versus pronunciation",
+      "stage": 0,
+      "kind": "pronunciation",
+      "learningGoal": "Recognize syllable blocks and several predictable sound changes before using audio-based lessons.",
+      "sourceReferences": [
+        "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=311009",
+        "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=&pageIndex=1&qna_seq=326779"
+      ],
+      "prerequisiteGrammarIds": [],
+      "prerequisiteVocabDeckIds": [],
+      "sections": [
+        {
+          "heading": "Syllable blocks and 받침",
+          "explanation": "Each written Korean syllable block contains a vowel and often an initial consonant plus a final consonant, called 받침. The final consonant's spoken sound is sometimes different from the letter's name.",
+          "examples": [
+            {
+              "korean": "꽃",
+              "english": "flower",
+              "pronunciation": "[꼳]",
+              "comment": "At the end of a word, the final ㅊ is pronounced as a final [ㄷ]-type sound."
+            }
+          ]
+        },
+        {
+          "heading": "Liaison (연음)",
+          "explanation": "When a following particle begins with a silent initial ㅇ and a vowel, the final consonant often moves into the next spoken syllable. Keep the spelling unchanged.",
+          "examples": [
+            {
+              "korean": "꽃이",
+              "english": "flower + subject marker",
+              "pronunciation": "[꼬치]",
+              "comment": "The ㅊ sound moves to the next syllable before 이."
+            },
+            {
+              "korean": "책을",
+              "english": "book + object marker",
+              "pronunciation": "[채글]",
+              "comment": "The ㄱ is heard at the beginning of the next spoken syllable."
+            }
+          ]
+        },
+        {
+          "heading": "Nasal assimilation (비음화)",
+          "explanation": "Some consonants become nasal sounds before ㄴ or ㅁ. This is why common words may sound different from their spellings.",
+          "examples": [
+            {
+              "korean": "국물",
+              "english": "broth",
+              "pronunciation": "[궁물]",
+              "comment": "Final ㄱ becomes [ㅇ] before ㅁ."
+            },
+            {
+              "korean": "먹는",
+              "english": "eating (modifier)",
+              "pronunciation": "[멍는]",
+              "comment": "The final ㄱ becomes [ㅇ] before ㄴ."
+            }
+          ]
+        },
+        {
+          "heading": "Aspiration with ㅎ",
+          "explanation": "In some combinations, ㅎ changes a nearby plain consonant into a stronger aspirated sound. These spelling-to-sound differences matter for listening.",
+          "examples": [
+            {
+              "korean": "좋고",
+              "english": "good and...",
+              "pronunciation": "[조코]",
+              "comment": "ㅎ and ㄱ combine into the aspirated [ㅋ]."
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "id": "sound_01",
+          "prompt": "How is 꽃이 usually pronounced in standard Korean?",
+          "choices": [
+            "[꼬치]",
+            "[꼳이]",
+            "[꼬기]",
+            "[꼬시]"
+          ],
+          "correctIndex": 0,
+          "explanation": "The final ㅊ moves before the vowel-initial particle 이: 꽃이 → [꼬치].",
+          "skills": [
+            "pronunciation"
+          ]
+        },
+        {
+          "id": "sound_02",
+          "prompt": "Which spoken form matches 국물?",
+          "choices": [
+            "[국물]",
+            "[궁물]",
+            "[군물]",
+            "[굼물]"
+          ],
+          "correctIndex": 1,
+          "explanation": "Final ㄱ becomes [ㅇ] before ㅁ: 국물 → [궁물].",
+          "skills": [
+            "pronunciation"
+          ]
+        },
+        {
+          "id": "sound_03",
+          "prompt": "Why is 책을 pronounced [채글]?",
+          "choices": [
+            "The written ㄱ disappears.",
+            "The particle 을 changes its spelling.",
+            "The final consonant links into the vowel-initial next syllable.",
+            "The word is in the past tense."
+          ],
+          "correctIndex": 2,
+          "explanation": "Liaison changes pronunciation, not how the two parts are written.",
+          "skills": [
+            "pronunciation"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_speech_register",
+      "title": "Respecting the listener versus respecting the subject",
+      "stage": 1,
+      "kind": "pragmatics",
+      "learningGoal": "Choose polite, casual and formal endings appropriately, and keep subject honorification separate from listener politeness.",
+      "sourceReferences": [
+        "https://klp.korean.go.kr/kcenter/search/dgrammar.do"
+      ],
+      "prerequisiteGrammarIds": [
+        "gp_ayo_eoyo",
+        "gp_gap_informal_haeche",
+        "gp_eusi_honorific",
+        "gp_gap_subject_kkeseo",
+        "gp_seumnida"
+      ],
+      "prerequisiteVocabDeckIds": [],
+      "sections": [
+        {
+          "heading": "To a listener you do not know",
+          "explanation": "Everyday polite -아요/-어요 is generally a safe starting point when addressing an adult stranger. It shows consideration toward the listener.",
+          "examples": [
+            {
+              "korean": "안녕하세요. 어디에 가세요?",
+              "english": "Hello. Where are you going?",
+              "comment": "Polite speech can include both listener-facing -요 and a subject-honorific -시-."
+            }
+          ]
+        },
+        {
+          "heading": "To a close friend",
+          "explanation": "Close friends may agree to use the casual 해체 ending without 요. The relationship determines whether this sounds friendly or disrespectful.",
+          "examples": [
+            {
+              "korean": "지금 뭐 해?",
+              "english": "What are you doing now?",
+              "comment": "The ending 해 is casual; using it with strangers without an appropriate relationship can sound rude."
+            }
+          ]
+        },
+        {
+          "heading": "Formal announcements",
+          "explanation": "Statements in -ㅂ니다/-습니다 are common in presentations, formal introductions, reports and public announcements. They are a register choice, not another tense.",
+          "examples": [
+            {
+              "korean": "저는 한국어를 공부합니다.",
+              "english": "I study Korean.",
+              "comment": "공부합니다 is a formal statement; 공부해요 is an everyday polite statement."
+            }
+          ]
+        },
+        {
+          "heading": "The person in the sentence",
+          "explanation": "-(으)시- and 께서 honor the subject, even when the listener is someone else. 께 marks a respected recipient instead.",
+          "examples": [
+            {
+              "korean": "선생님께서 오세요.",
+              "english": "The teacher is coming.",
+              "comment": "께서 and -시- both show respect to the teacher."
+            },
+            {
+              "korean": "선생님께 책을 드려요.",
+              "english": "I give the teacher a book.",
+              "comment": "께 marks the respected recipient, not the subject."
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "id": "register_01",
+          "prompt": "When first speaking to an adult stranger, which ending is usually safest?",
+          "choices": [
+            "-아/-어 casual",
+            "-아요/-어요 polite",
+            "-ㄴ다/는다 narrative",
+            "-노라면 literary"
+          ],
+          "correctIndex": 1,
+          "explanation": "Everyday polite -요 forms are generally the safest default; context can call for more formality.",
+          "skills": [
+            "pragmatics",
+            "grammar"
+          ]
+        },
+        {
+          "id": "register_02",
+          "prompt": "In 선생님께서 오세요, who is being honored by -시-?",
+          "choices": [
+            "The teacher who is coming",
+            "Every listener in the room",
+            "The speaker",
+            "The nearest noun regardless of role"
+          ],
+          "correctIndex": 0,
+          "explanation": "The subject-honorific -시- honors the person performing the action.",
+          "skills": [
+            "pragmatics",
+            "grammar"
+          ]
+        },
+        {
+          "id": "register_03",
+          "prompt": "Which particle marks a respected recipient rather than a subject?",
+          "choices": [
+            "께서",
+            "께",
+            "은",
+            "이"
+          ],
+          "correctIndex": 1,
+          "explanation": "께 marks the recipient. 께서 marks a respected subject.",
+          "skills": [
+            "pragmatics",
+            "grammar"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_number_application",
+      "title": "Use numbers in real sentences",
+      "stage": 1,
+      "kind": "mixed-skill",
+      "learningGoal": "Combine early vocabulary for counting/time with grammar particles, without conflating mastery of the two.",
+      "sourceReferences": [
+        "https://www.darakwon.co.kr/books/detailProduct.asp?p_id=3291&pc_id_2=11&pc_id_3=76"
+      ],
+      "prerequisiteGrammarIds": [
+        "gp_e_time",
+        "gp_i_ga",
+        "gp_eul_reul"
+      ],
+      "prerequisiteVocabDeckIds": [
+        "vocab_foundations_native_numbers",
+        "vocab_foundations_sino_numbers",
+        "vocab_foundations_counters",
+        "vocab_foundations_clock",
+        "vocab_foundations_calendar"
+      ],
+      "sections": [
+        {
+          "heading": "Native hours, Sino minutes",
+          "explanation": "Korean typically says the hour using a native counting word but the minute using a Sino-Korean number. Keep the correct counter attached to each.",
+          "examples": [
+            {
+              "korean": "세 시 십오 분에 시작해요.",
+              "english": "It begins at 3:15.",
+              "comment": "세 is native, 십오 is Sino-Korean; 에 marks when the event occurs."
+            }
+          ]
+        },
+        {
+          "heading": "Counter choice follows the noun",
+          "explanation": "The lexical counter changes with the type of thing counted, while the sentence's grammar still determines the subject and object markers.",
+          "examples": [
+            {
+              "korean": "학생이 세 명 있어요.",
+              "english": "There are three students.",
+              "comment": "명 counts people; 이 marks the subject of 있어요."
+            },
+            {
+              "korean": "책 네 권을 샀어요.",
+              "english": "I bought four books.",
+              "comment": "권 counts books; 을 marks the counted phrase as the object."
+            }
+          ]
+        },
+        {
+          "heading": "Some dates have irregular readings",
+          "explanation": "Month numbers use Sino readings, but the usual spoken readings of 6월 and 10월 are 유월 and 시월. The calendar words are vocabulary; they do not create extra grammar-point mastery.",
+          "examples": [
+            {
+              "korean": "10월에 여행해요.",
+              "english": "I travel in October.",
+              "comment": "Read 10월 as 시월, then 에 marks the time of the trip."
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "id": "number_01",
+          "prompt": "Which phrase correctly says 3:15?",
+          "choices": [
+            "삼 시 열다섯 분",
+            "세 시 십오 분",
+            "삼 시 십오 분",
+            "세 시 열다섯 분"
+          ],
+          "correctIndex": 1,
+          "explanation": "Hours use native numbers (세 시); minutes use Sino numbers (십오 분).",
+          "skills": [
+            "vocabulary"
+          ]
+        },
+        {
+          "id": "number_02",
+          "prompt": "Which phrase means 'four books'?",
+          "choices": [
+            "책 네 개",
+            "책 네 권",
+            "책 사 명",
+            "책 사 마리"
+          ],
+          "correctIndex": 1,
+          "explanation": "권 is a counter for books and 네 is the native four form before counters.",
+          "skills": [
+            "vocabulary"
+          ]
+        },
+        {
+          "id": "number_03",
+          "prompt": "In 10월에 여행해요, what does 에 do?",
+          "choices": [
+            "Mark the object",
+            "Mark a respected person",
+            "Mark the time of an action",
+            "Make the future tense"
+          ],
+          "correctIndex": 2,
+          "explanation": "The month 10월 is vocabulary; 에 is the grammar particle locating when something happens.",
+          "skills": [
+            "grammar",
+            "vocabulary"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "topic_voice_evidence",
+      "title": "Who did it? Passive, causative and evidence",
+      "stage": 3,
+      "kind": "grammar-application",
+      "learningGoal": "Distinguish active/passive roles, causing an action and inferring rather than recalling firsthand evidence.",
+      "sourceReferences": [
+        "https://klp.korean.go.kr/kcenter/search/dgrammar.do"
+      ],
+      "prerequisiteGrammarIds": [
+        "gp_gap_passive_suffix",
+        "gp_gap_causative_suffix",
+        "gp_gap_ge_hada_action",
+        "gp_gap_deoragoyo",
+        "gp_gap_na_boda"
+      ],
+      "prerequisiteVocabDeckIds": [],
+      "sections": [
+        {
+          "heading": "What happened versus who caused it",
+          "explanation": "Compare an active statement with the corresponding passive/result perspective. The choice determines who receives the main attention in the sentence.",
+          "examples": [
+            {
+              "korean": "민수가 문을 열었어요. 문이 열렸어요.",
+              "english": "Minsu opened the door. The door opened.",
+              "comment": "The first sentence names the actor; the second describes the door's change."
+            }
+          ]
+        },
+        {
+          "heading": "Causing someone to act",
+          "explanation": "A causative describes one person making or letting another person do an action. Some verbs have their own causative partner; -게 하다 also works productively.",
+          "examples": [
+            {
+              "korean": "선생님이 학생들에게 책을 읽게 했어요.",
+              "english": "The teacher had the students read books.",
+              "comment": "The teacher caused the students' reading action."
+            }
+          ]
+        },
+        {
+          "heading": "Remembering versus guessing",
+          "explanation": "-더라고요 recalls the speaker's firsthand observation. -나 보다 / -(으)ㄴ가 보다 expresses inference from a clue.",
+          "examples": [
+            {
+              "korean": "그 식당 음식이 맛있더라고요.",
+              "english": "I found the food at that restaurant tasty.",
+              "comment": "The speaker reports direct experience."
+            },
+            {
+              "korean": "밖에 비가 오나 봐요.",
+              "english": "It seems to be raining outside.",
+              "comment": "The speaker infers rain from available clues."
+            }
+          ]
+        }
+      ],
+      "checks": [
+        {
+          "id": "voice_01",
+          "prompt": "Which sentence focuses on the door as the thing affected?",
+          "choices": [
+            "민수가 문을 열었어요.",
+            "문이 열렸어요.",
+            "민수가 창문을 열 거예요.",
+            "문을 열어 주세요."
+          ],
+          "correctIndex": 1,
+          "explanation": "문이 열렸어요 puts the door in subject position and describes its state change.",
+          "skills": [
+            "grammar"
+          ]
+        },
+        {
+          "id": "voice_02",
+          "prompt": "What does 읽게 했어요 emphasize?",
+          "choices": [
+            "The speaker was reading",
+            "Someone caused another person to read",
+            "The book was lost",
+            "Reading will stop soon"
+          ],
+          "correctIndex": 1,
+          "explanation": "-게 하다 expresses causation or permission to perform an action.",
+          "skills": [
+            "grammar"
+          ]
+        },
+        {
+          "id": "voice_03",
+          "prompt": "Which ending best recalls a firsthand discovery?",
+          "choices": [
+            "-더라고요",
+            "-나 봐요",
+            "-ㄹ까요?",
+            "-겠어요 as a prediction"
+          ],
+          "correctIndex": 0,
+          "explanation": "-더라고요 usually looks back on what the speaker personally observed.",
+          "skills": [
+            "grammar",
+            "pragmatics"
+          ]
+        }
+      ]
+    }
+  ]
+}

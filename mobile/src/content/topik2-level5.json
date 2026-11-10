@@ -75,7 +75,7 @@
               "englishHint": "Life changed due to technological progress.",
               "alternateAnswers": [],
               "vocabBaseForm": "발전",
-              "introducedAtPosition": 151
+              "introducedAtPosition": 182
             },
             {
               "id": "cc_t2l5_euro_inhae_02",
@@ -85,7 +85,7 @@
               "englishHint": "The road was closed because of construction.",
               "alternateAnswers": [],
               "vocabBaseForm": "공사",
-              "introducedAtPosition": 151
+              "introducedAtPosition": 182
             },
             {
               "id": "cc_t2l5_euro_inhae_03",
@@ -95,7 +95,7 @@
               "englishHint": "The event was delayed due to an infection outbreak.",
               "alternateAnswers": [],
               "vocabBaseForm": "감염",
-              "introducedAtPosition": 151
+              "introducedAtPosition": 182
             }
           ]
         },
@@ -161,7 +161,7 @@
               "englishHint": "I gained experience by participating.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 152
+              "introducedAtPosition": 183
             },
             {
               "id": "cc_t2l5_eumeurosseo_02",
@@ -171,7 +171,7 @@
               "englishHint": "You can see the differences through comparison.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 152
+              "introducedAtPosition": 183
             },
             {
               "id": "cc_t2l5_eumeurosseo_03",
@@ -181,7 +181,7 @@
               "englishHint": "We solved the problem through research.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 152
+              "introducedAtPosition": 183
             }
           ]
         },
@@ -247,7 +247,7 @@
               "englishHint": "Opinions differ from person to person.",
               "alternateAnswers": [],
               "vocabBaseForm": "사람",
-              "introducedAtPosition": 153
+              "introducedAtPosition": 184
             },
             {
               "id": "cc_t2l5_e_ttaraseo_02",
@@ -257,7 +257,7 @@
               "englishHint": "Please handle it according to the rules.",
               "alternateAnswers": [],
               "vocabBaseForm": "규정",
-              "introducedAtPosition": 153
+              "introducedAtPosition": 184
             },
             {
               "id": "cc_t2l5_e_ttaraseo_03",
@@ -267,7 +267,7 @@
               "englishHint": "The schedule may change depending on weather.",
               "alternateAnswers": [],
               "vocabBaseForm": "날씨",
-              "introducedAtPosition": 153
+              "introducedAtPosition": 184
             }
           ]
         },
@@ -333,7 +333,7 @@
               "englishHint": "According to reports, there was a change.",
               "alternateAnswers": [],
               "vocabBaseForm": "보고되다",
-              "introducedAtPosition": 154
+              "introducedAtPosition": 185
             },
             {
               "id": "cc_t2l5_neun_ba_02",
@@ -343,7 +343,7 @@
               "englishHint": "I organized what I investigated.",
               "alternateAnswers": [],
               "vocabBaseForm": "조사하다",
-              "introducedAtPosition": 154
+              "introducedAtPosition": 185
             },
             {
               "id": "cc_t2l5_neun_ba_03",
@@ -353,7 +353,7 @@
               "englishHint": "Contrary to what was known, the result differed.",
               "alternateAnswers": [],
               "vocabBaseForm": "알려지다",
-              "introducedAtPosition": 154
+              "introducedAtPosition": 185
             }
           ]
         }
@@ -425,7 +425,7 @@
               "englishHint": "It was as good as I had expected.",
               "alternateAnswers": [],
               "vocabBaseForm": "기대하다",
-              "introducedAtPosition": 155
+              "introducedAtPosition": 186
             },
             {
               "id": "cc_t2l5_neun_mankeum_02",
@@ -435,7 +435,7 @@
               "englishHint": "I learned in proportion to the time spent.",
               "alternateAnswers": [],
               "vocabBaseForm": "쓰다",
-              "introducedAtPosition": 155
+              "introducedAtPosition": 186
             },
             {
               "id": "cc_t2l5_neun_mankeum_03",
@@ -445,7 +445,7 @@
               "englishHint": "Because it's so important, we must be careful.",
               "alternateAnswers": [],
               "vocabBaseForm": "중요하다",
-              "introducedAtPosition": 155
+              "introducedAtPosition": 186
             }
           ]
         },
@@ -511,7 +511,7 @@
               "englishHint": "It's natural for things to be hard at first.",
               "alternateAnswers": [],
               "vocabBaseForm": "어렵다",
-              "introducedAtPosition": 156
+              "introducedAtPosition": 187
             },
             {
               "id": "cc_t2l5_neun_beob_02",
@@ -521,7 +521,7 @@
               "englishHint": "Improvement is natural, but so are mistakes.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 156
+              "introducedAtPosition": 187
             },
             {
               "id": "cc_t2l5_neun_beob_03",
@@ -531,7 +531,7 @@
               "englishHint": "People naturally change.",
               "alternateAnswers": [],
               "vocabBaseForm": "변하다",
-              "introducedAtPosition": 156
+              "introducedAtPosition": 187
             }
           ]
         },
@@ -597,7 +597,7 @@
               "englishHint": "With effort, skill naturally improves.",
               "alternateAnswers": [],
               "vocabBaseForm": "늘다",
-              "introducedAtPosition": 157
+              "introducedAtPosition": 188
             },
             {
               "id": "cc_t2l5_ge_maryeon_02",
@@ -607,7 +607,7 @@
               "englishHint": "Everyone inevitably grows old.",
               "alternateAnswers": [],
               "vocabBaseForm": "늙다",
-              "introducedAtPosition": 157
+              "introducedAtPosition": 188
             },
             {
               "id": "cc_t2l5_ge_maryeon_03",
@@ -617,7 +617,7 @@
               "englishHint": "New things are naturally difficult.",
               "alternateAnswers": [],
               "vocabBaseForm": "어렵다",
-              "introducedAtPosition": 157
+              "introducedAtPosition": 188
             }
           ]
         },
@@ -683,7 +683,7 @@
               "englishHint": "I can only do my best.",
               "alternateAnswers": [],
               "vocabBaseForm": "다하다",
-              "introducedAtPosition": 158
+              "introducedAtPosition": 189
             },
             {
               "id": "cc_t2l5_eul_ttareum_02",
@@ -693,7 +693,7 @@
               "englishHint": "I'm simply amazed.",
               "alternateAnswers": [],
               "vocabBaseForm": "놀랍다",
-              "introducedAtPosition": 158
+              "introducedAtPosition": 189
             },
             {
               "id": "cc_t2l5_eul_ttareum_03",
@@ -703,7 +703,7 @@
               "englishHint": "I'm simply delighted by the news.",
               "alternateAnswers": [],
               "vocabBaseForm": "기쁘다",
-              "introducedAtPosition": 158
+              "introducedAtPosition": 189
             }
           ]
         }
@@ -775,7 +775,7 @@
               "englishHint": "Even if it rains, we will depart.",
               "alternateAnswers": [],
               "vocabBaseForm": "오다",
-              "introducedAtPosition": 159
+              "introducedAtPosition": 190
             },
             {
               "id": "cc_t2l5_euljirado_02",
@@ -785,7 +785,7 @@
               "englishHint": "Even if it takes time, I will wait.",
               "alternateAnswers": [],
               "vocabBaseForm": "걸리다",
-              "introducedAtPosition": 159
+              "introducedAtPosition": 190
             },
             {
               "id": "cc_t2l5_euljirado_03",
@@ -795,7 +795,7 @@
               "englishHint": "Even if small, it has meaning.",
               "alternateAnswers": [],
               "vocabBaseForm": "작다",
-              "introducedAtPosition": 159
+              "introducedAtPosition": 190
             }
           ]
         },
@@ -861,7 +861,7 @@
               "englishHint": "Even at a loss, I'll keep my promise.",
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
-              "introducedAtPosition": 160
+              "introducedAtPosition": 191
             },
             {
               "id": "cc_t2l5_eulmangjeong_02",
@@ -871,7 +871,7 @@
               "englishHint": "Even if scolded, I'll tell the truth.",
               "alternateAnswers": [],
               "vocabBaseForm": "혼나다",
-              "introducedAtPosition": 160
+              "introducedAtPosition": 191
             },
             {
               "id": "cc_t2l5_eulmangjeong_03",
@@ -881,7 +881,7 @@
               "englishHint": "Even if I'm late, I won't rush.",
               "alternateAnswers": [],
               "vocabBaseForm": "늦다",
-              "introducedAtPosition": 160
+              "introducedAtPosition": 191
             }
           ]
         },
@@ -947,7 +947,7 @@
               "englishHint": "Even if you try alone, it isn't enough.",
               "alternateAnswers": [],
               "vocabBaseForm": "노력하다",
-              "introducedAtPosition": 161
+              "introducedAtPosition": 192
             },
             {
               "id": "cc_t2l5_eundeul_02",
@@ -957,7 +957,7 @@
               "englishHint": "Even if you talk a lot, it's useless.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 161
+              "introducedAtPosition": 192
             },
             {
               "id": "cc_t2l5_eundeul_03",
@@ -967,7 +967,7 @@
               "englishHint": "However busy you are, you need sleep.",
               "alternateAnswers": [],
               "vocabBaseForm": "바쁘다",
-              "introducedAtPosition": 161
+              "introducedAtPosition": 192
             }
           ]
         },
@@ -1033,7 +1033,7 @@
               "englishHint": "I'd rather stay silent than lie.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 162
+              "introducedAtPosition": 193
             },
             {
               "id": "cc_t2l5_eulbaeya_02",
@@ -1043,7 +1043,7 @@
               "englishHint": "I'd rather try than regret it.",
               "alternateAnswers": [],
               "vocabBaseForm": "후회하다",
-              "introducedAtPosition": 162
+              "introducedAtPosition": 193
             },
             {
               "id": "cc_t2l5_eulbaeya_03",
@@ -1053,7 +1053,7 @@
               "englishHint": "I'd rather go tomorrow than arrive late.",
               "alternateAnswers": [],
               "vocabBaseForm": "늦다",
-              "introducedAtPosition": 162
+              "introducedAtPosition": 193
             }
           ]
         }
@@ -1125,7 +1125,7 @@
               "englishHint": "Far from winning, we didn't score.",
               "alternateAnswers": [],
               "vocabBaseForm": "이기다",
-              "introducedAtPosition": 163
+              "introducedAtPosition": 194
             },
             {
               "id": "cc_t2l5_gineunkeonyeong_02",
@@ -1135,7 +1135,7 @@
               "englishHint": "I couldn't even drink water, let alone eat.",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "introducedAtPosition": 163
+              "introducedAtPosition": 194
             },
             {
               "id": "cc_t2l5_gineunkeonyeong_03",
@@ -1145,7 +1145,7 @@
               "englishHint": "Instead of helping, they got in the way.",
               "alternateAnswers": [],
               "vocabBaseForm": "도와주다",
-              "introducedAtPosition": 163
+              "introducedAtPosition": 194
             }
           ]
         },
@@ -1211,7 +1211,7 @@
               "englishHint": "I didn't even have time to think.",
               "alternateAnswers": [],
               "vocabBaseForm": "생각하다",
-              "introducedAtPosition": 164
+              "introducedAtPosition": 195
             },
             {
               "id": "cc_t2l5_eulgyeoreul_02",
@@ -1221,7 +1221,7 @@
               "englishHint": "I had no time to say hello.",
               "alternateAnswers": [],
               "vocabBaseForm": "인사하다",
-              "introducedAtPosition": 164
+              "introducedAtPosition": 195
             },
             {
               "id": "cc_t2l5_eulgyeoreul_03",
@@ -1231,7 +1231,7 @@
               "englishHint": "I have no chance to look around.",
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
-              "introducedAtPosition": 164
+              "introducedAtPosition": 195
             }
           ]
         },
@@ -1297,7 +1297,7 @@
               "englishHint": "I fell asleep the instant I got home.",
               "alternateAnswers": [],
               "vocabBaseForm": "오다",
-              "introducedAtPosition": 165
+              "introducedAtPosition": 196
             },
             {
               "id": "cc_t2l5_giga_museopge_02",
@@ -1307,7 +1307,7 @@
               "englishHint": "I contacted them as soon as I heard.",
               "alternateAnswers": [],
               "vocabBaseForm": "듣다",
-              "introducedAtPosition": 165
+              "introducedAtPosition": 196
             },
             {
               "id": "cc_t2l5_giga_museopge_03",
@@ -1317,7 +1317,7 @@
               "englishHint": "I picked up the instant it rang.",
               "alternateAnswers": [],
               "vocabBaseForm": "울리다",
-              "introducedAtPosition": 165
+              "introducedAtPosition": 196
             }
           ]
         },
@@ -1383,7 +1383,7 @@
               "englishHint": "I didn't even know the basic rules.",
               "alternateAnswers": [],
               "vocabBaseForm": "규칙",
-              "introducedAtPosition": 166
+              "introducedAtPosition": 197
             },
             {
               "id": "cc_t2l5_jocha_02",
@@ -1393,7 +1393,7 @@
               "englishHint": "I couldn't even drink a glass of water.",
               "alternateAnswers": [],
               "vocabBaseForm": "잔",
-              "introducedAtPosition": 166
+              "introducedAtPosition": 197
             },
             {
               "id": "cc_t2l5_jocha_03",
@@ -1403,7 +1403,7 @@
               "englishHint": "I couldn't hear even the slightest sound.",
               "alternateAnswers": [],
               "vocabBaseForm": "소리",
-              "introducedAtPosition": 166
+              "introducedAtPosition": 197
             }
           ]
         }
@@ -1475,7 +1475,7 @@
               "englishHint": "It was easier than I expected.",
               "alternateAnswers": [],
               "vocabBaseForm": "생각하다",
-              "introducedAtPosition": 167
+              "introducedAtPosition": 198
             },
             {
               "id": "cc_t2l5_de_bihae_02",
@@ -1485,7 +1485,7 @@
               "englishHint": "The outcome is good given the time spent.",
               "alternateAnswers": [],
               "vocabBaseForm": "걸리다",
-              "introducedAtPosition": 167
+              "introducedAtPosition": 198
             },
             {
               "id": "cc_t2l5_de_bihae_03",
@@ -1495,7 +1495,7 @@
               "englishHint": "The older brother is quiet, while the younger is lively.",
               "alternateAnswers": [],
               "vocabBaseForm": "조용하다",
-              "introducedAtPosition": 167
+              "introducedAtPosition": 198
             }
           ]
         },
@@ -1561,7 +1561,7 @@
               "englishHint": "Let me know as soon as the result comes out.",
               "alternateAnswers": [],
               "vocabBaseForm": "나오다",
-              "introducedAtPosition": 168
+              "introducedAtPosition": 199
             },
             {
               "id": "cc_t2l5_neun_daero_02",
@@ -1571,7 +1571,7 @@
               "englishHint": "We'll start as soon as things are ready.",
               "alternateAnswers": [],
               "vocabBaseForm": "준비되다",
-              "introducedAtPosition": 168
+              "introducedAtPosition": 199
             },
             {
               "id": "cc_t2l5_neun_daero_03",
@@ -1581,7 +1581,7 @@
               "englishHint": "I'll contact you whenever I find time.",
               "alternateAnswers": [],
               "vocabBaseForm": "나다",
-              "introducedAtPosition": 168
+              "introducedAtPosition": 199
             }
           ]
         },
@@ -1647,7 +1647,7 @@
               "englishHint": "As confirmed by the study, there is a difference.",
               "alternateAnswers": [],
               "vocabBaseForm": "확인되다",
-              "introducedAtPosition": 169
+              "introducedAtPosition": 200
             },
             {
               "id": "cc_t2l5_bawa_gachi_02",
@@ -1657,7 +1657,7 @@
               "englishHint": "The result was as expected.",
               "alternateAnswers": [],
               "vocabBaseForm": "예상하다",
-              "introducedAtPosition": 169
+              "introducedAtPosition": 200
             },
             {
               "id": "cc_t2l5_bawa_gachi_03",
@@ -1667,7 +1667,7 @@
               "englishHint": "As mentioned earlier, caution is needed.",
               "alternateAnswers": [],
               "vocabBaseForm": "언급하다",
-              "introducedAtPosition": 169
+              "introducedAtPosition": 200
             }
           ]
         },
@@ -1733,7 +1733,7 @@
               "englishHint": "He's only a student.",
               "alternateAnswers": [],
               "vocabBaseForm": "학생",
-              "introducedAtPosition": 170
+              "introducedAtPosition": 201
             },
             {
               "id": "cc_t2l5_e_bulgwahada_02",
@@ -1743,7 +1743,7 @@
               "englishHint": "This result is only the beginning.",
               "alternateAnswers": [],
               "vocabBaseForm": "시작",
-              "introducedAtPosition": 170
+              "introducedAtPosition": 201
             },
             {
               "id": "cc_t2l5_e_bulgwahada_03",
@@ -1753,7 +1753,7 @@
               "englishHint": "That was just a minor mistake.",
               "alternateAnswers": [],
               "vocabBaseForm": "실수",
-              "introducedAtPosition": 170
+              "introducedAtPosition": 201
             }
           ]
         }
@@ -1825,7 +1825,7 @@
               "englishHint": "We would like to hear opinions.",
               "alternateAnswers": [],
               "vocabBaseForm": "듣다",
-              "introducedAtPosition": 171
+              "introducedAtPosition": 202
             },
             {
               "id": "cc_t2l5_goja_hada_02",
@@ -1835,7 +1835,7 @@
               "englishHint": "We tried to solve the problem.",
               "alternateAnswers": [],
               "vocabBaseForm": "해결하다",
-              "introducedAtPosition": 171
+              "introducedAtPosition": 202
             },
             {
               "id": "cc_t2l5_goja_hada_03",
@@ -1845,7 +1845,7 @@
               "englishHint": "I wrote to announce the change.",
               "alternateAnswers": [],
               "vocabBaseForm": "알리다",
-              "introducedAtPosition": 171
+              "introducedAtPosition": 202
             }
           ]
         },
@@ -1911,7 +1911,7 @@
               "englishHint": "I couldn't help laughing in the end.",
               "alternateAnswers": [],
               "vocabBaseForm": "웃다",
-              "introducedAtPosition": 172
+              "introducedAtPosition": 203
             },
             {
               "id": "cc_t2l5_go_malda_02",
@@ -1921,7 +1921,7 @@
               "englishHint": "I ended up deleting the file by mistake.",
               "alternateAnswers": [],
               "vocabBaseForm": "지우다",
-              "introducedAtPosition": 172
+              "introducedAtPosition": 203
             },
             {
               "id": "cc_t2l5_go_malda_03",
@@ -1931,7 +1931,7 @@
               "englishHint": "I ended up breaking my promise.",
               "alternateAnswers": [],
               "vocabBaseForm": "어기다",
-              "introducedAtPosition": 172
+              "introducedAtPosition": 203
             }
           ]
         },
@@ -1997,7 +1997,7 @@
               "englishHint": "Regretting it is pointless.",
               "alternateAnswers": [],
               "vocabBaseForm": "후회하다",
-              "introducedAtPosition": 173
+              "introducedAtPosition": 204
             },
             {
               "id": "cc_t2l5_eodo_soyongeopda_02",
@@ -2007,7 +2007,7 @@
               "englishHint": "Worrying alone won't help.",
               "alternateAnswers": [],
               "vocabBaseForm": "걱정하다",
-              "introducedAtPosition": 173
+              "introducedAtPosition": 204
             },
             {
               "id": "cc_t2l5_eodo_soyongeopda_03",
@@ -2017,7 +2017,7 @@
               "englishHint": "Waiting longer won't help.",
               "alternateAnswers": [],
               "vocabBaseForm": "기다리다",
-              "introducedAtPosition": 173
+              "introducedAtPosition": 204
             }
           ]
         },
@@ -2083,7 +2083,7 @@
               "englishHint": "If you go unprepared, you're likely to get lost.",
               "alternateAnswers": [],
               "vocabBaseForm": "헤매다",
-              "introducedAtPosition": 174
+              "introducedAtPosition": 205
             },
             {
               "id": "cc_t2l5_gi_sipsang_02",
@@ -2093,7 +2093,7 @@
               "englishHint": "Sleeping very late is apt to leave you tired.",
               "alternateAnswers": [],
               "vocabBaseForm": "피곤하다",
-              "introducedAtPosition": 174
+              "introducedAtPosition": 205
             },
             {
               "id": "cc_t2l5_gi_sipsang_03",
@@ -2103,7 +2103,7 @@
               "englishHint": "A rushed decision is likely to bring regret.",
               "alternateAnswers": [],
               "vocabBaseForm": "후회하다",
-              "introducedAtPosition": 174
+              "introducedAtPosition": 205
             }
           ]
         }
