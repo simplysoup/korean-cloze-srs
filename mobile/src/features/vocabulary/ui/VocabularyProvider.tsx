@@ -49,6 +49,7 @@ export function VocabularyProvider({
   const [error, setError] = useState<string | null>(null);
   const sessionRef = useRef<VocabularySessionState | null>(null);
   const requestRef = useRef(0);
+  const previousController = useRef(controller);
   const busyRef = useRef(false);
 
   const put = useCallback((next: VocabularySessionState | null) => {
@@ -57,11 +58,16 @@ export function VocabularyProvider({
   }, []);
 
   useEffect(() => {
-    // Changing accounts/controllers must never expose another user's queue.
+    // On first mount there is no previous queue to invalidate. On account
+    // change, Agent 00 must also key/remount the provider by account ID.
+    if (previousController.current === controller) return;
+    previousController.current = controller;
     requestRef.current += 1;
     sessionRef.current = null;
-    setSession(null);
-    setError(null);
+    Promise.resolve().then(() => {
+      setSession(null);
+      setError(null);
+    });
   }, [controller]);
 
   const openSession = useCallback(async (mode: VocabularyMode, deckId: string | null) => {
@@ -85,9 +91,16 @@ export function VocabularyProvider({
       // VocabController v1 offers a global queue only. Request all currently
       // available starter prompts before filtering to a selected deck.
       // Agent 00 should add a deck-scoped query for future large catalogs.
+      const missedProgress = async () => {
+        if (mode !== 'missed') return [];
+        if (deckId) return controller.getProgress(deckId);
+        const decks = await controller.listDecks();
+        const perDeck = await Promise.all(decks.map((deck) => controller.getProgress(deck.id)));
+        return perDeck.flat();
+      };
       const [prompts, progress] = await Promise.all([
         controller.getSession(underlyingMode, 500),
-        mode === 'missed' && deckId ? controller.getProgress(deckId) : Promise.resolve([]),
+        missedProgress(),
       ]);
       if (request !== requestRef.current) return;
       const missedIds = mode === 'missed'
