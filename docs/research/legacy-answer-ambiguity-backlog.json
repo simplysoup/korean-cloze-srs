@@ -1,7 +1,7 @@
 {
   "version": "2026-11-10",
-  "purpose": "Mechanical risk queue for PREEXISTING grammar cards, not linguistic adjudication",
-  "status": "All 193 heuristic flags have editor-level dispositions and corrected card content; none has been signed off by a Korean educator.",
+  "purpose": "Historical 193-card heuristic risk queue, now with exact individual editorial dispositions. Original flags retained for audit provenance; they are not an outstanding content-fix count.",
+  "status": "Editorial remediation complete for 193/193 flagged cards; 193/193 await independent Korean educator signoff.",
   "scope": "628 inherited review cards from 198 original grammar points; new 93 are audited separately",
   "warning": "193 cards have explicit editorial outcomes (187 revised prompts, 6 structural false positives, 6 improved cloze boundaries and 13 newly curated spelling/auxiliary variants). This is NOT a native speaker's certificate of validity. A flagged item is not automatically an error, and unseen natural answers must not be marked bad Korean.",
   "summary": {
@@ -17,7 +17,9 @@
     "targetedPromptClarifications": 187,
     "reworkedClozeBoundaries": 6,
     "structuralFalsePositives": 6,
-    "newAcceptedVariantStrings": 13
+    "newAcceptedVariantStrings": 13,
+    "outstandingEditorialFixes": 0,
+    "educatorReviewPending": 193
   },
   "flags": {
     "accepted_alternatives_need_sentence_review": "Review already accepted alternate whole-sentence naturalness and whether it demonstrates the target grammar.",
@@ -44,7 +46,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Treat the noun as the topic, rather than the newly identified subject.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -65,7 +68,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Treat the noun as the topic, rather than the newly identified subject.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -86,7 +90,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Treat the noun as the topic, rather than the newly identified subject.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -107,7 +112,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Treat the noun as the topic, rather than the newly identified subject.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -128,7 +134,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Treat the noun as the topic, rather than the newly identified subject.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -149,7 +156,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a plain, non-honorific noun statement, not polite conversation.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -170,7 +178,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a plain, non-honorific noun statement, not polite conversation.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -191,7 +200,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a plain, non-honorific noun statement, not polite conversation.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -212,7 +222,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Identify the focused subject rather than introduce a topic.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -233,7 +244,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Identify the focused subject rather than introduce a topic.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -254,7 +266,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Identify the focused subject rather than introduce a topic.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -275,7 +288,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Identify the focused subject rather than introduce a topic.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -296,7 +310,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Identify the focused subject rather than introduce a topic.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -317,7 +332,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a polite present statement of existence or possession.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -338,7 +354,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a polite present statement of existence or possession.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -359,7 +376,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a polite present statement of existence or possession.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -380,7 +398,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a polite present statement of existence or possession.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -401,7 +420,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a polite present statement of absence or non-possession.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -422,7 +442,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a polite present statement of absence or non-possession.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -443,7 +464,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a polite present statement of absence or non-possession.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -464,7 +486,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use an everyday polite present-tense statement.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -500,7 +523,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -521,7 +545,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use an everyday polite present-tense statement.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -542,7 +567,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use an everyday polite present-tense statement.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -563,7 +589,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the direct object receiving the action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -584,7 +611,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the direct object receiving the action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -605,7 +633,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the direct object receiving the action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -626,7 +655,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the direct object receiving the action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -647,7 +677,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a long-form negative, in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -668,7 +699,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a long-form negative, in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -689,7 +721,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a long-form negative, in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -726,7 +759,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -747,7 +781,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Specify a destination or static location, not merely a direction of travel.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -784,7 +819,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -821,7 +857,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -842,7 +879,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Specify a destination or static location, not merely a direction of travel.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -879,7 +917,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -900,7 +939,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the location where an action takes place.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -921,7 +961,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the location where an action takes place.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -942,7 +983,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the location where an action takes place.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -963,7 +1005,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the location where an action takes place.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -984,7 +1027,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the location where an action takes place.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1005,7 +1049,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the location where an action takes place.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1041,7 +1086,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1062,7 +1108,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the specific time point rather than every occurrence.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1083,7 +1130,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the specific time point rather than every occurrence.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1104,7 +1152,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Mark the specific time point rather than every occurrence.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1140,7 +1189,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1176,7 +1226,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1212,7 +1263,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1233,7 +1285,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use the polite past for a completed action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1254,7 +1307,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use the polite past for a completed action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1284,7 +1338,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -1311,7 +1366,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use the polite past for a completed action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1332,7 +1388,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use the polite past for a completed action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1353,7 +1410,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use the polite past for a completed action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1399,7 +1457,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1445,7 +1504,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1491,7 +1551,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1537,7 +1598,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1558,7 +1620,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Respect the subject of the sentence, in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1579,7 +1642,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Respect the subject of the sentence, in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1600,7 +1664,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Respect the subject of the sentence, in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1621,7 +1686,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Address the listener with a polite request.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1642,7 +1708,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Address the listener with a polite request.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1663,7 +1730,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Address the listener with a polite request.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1684,7 +1752,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Ask politely for someone to do this for another person's benefit.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1705,7 +1774,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Ask politely for someone to do this for another person's benefit.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1726,7 +1796,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Ask politely for someone to do this for another person's benefit.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1747,7 +1818,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express the speaker's own wish in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1768,7 +1840,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express the speaker's own wish in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1789,7 +1862,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express the speaker's own wish in polite present speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1810,7 +1884,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express inability, rather than unwillingness, in polite speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1847,7 +1922,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1884,7 +1960,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1921,7 +1998,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1942,7 +2020,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Offer a tentative judgement rather than a certain fact.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1963,7 +2042,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Offer a tentative judgement rather than a certain fact.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -1984,7 +2064,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Offer a tentative judgement rather than a certain fact.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2005,7 +2086,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Give the purpose of a completed journey.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2026,7 +2108,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Make an inclusive, formal suggestion rather than an ordinary statement.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2047,7 +2130,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Make an inclusive, formal suggestion rather than an ordinary statement.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2068,7 +2152,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Make an inclusive, formal suggestion rather than an ordinary statement.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2089,7 +2174,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a formal-polite declarative register.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2110,7 +2196,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a formal-polite declarative register.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2131,7 +2218,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use a formal-polite declarative register.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2152,7 +2240,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use the formal-polite noun copula.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2173,7 +2262,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use the formal-polite noun copula.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2194,7 +2284,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Ask the listener politely not to do the action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2215,7 +2306,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Ask the listener politely not to do the action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2236,7 +2328,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Ask the listener politely not to do the action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2257,7 +2350,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an action in progress at that time.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2278,7 +2372,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an action in progress at that time.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2299,7 +2394,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an action in progress at that time.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2329,7 +2425,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2356,7 +2453,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe trying something or a polite invitation to try.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2386,7 +2484,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2413,7 +2512,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Say whether an event has ever happened in someone's experience.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2434,7 +2534,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Say whether an event has ever happened in someone's experience.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2455,7 +2556,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Say whether an event has ever happened in someone's experience.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2476,7 +2578,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe the experience of trying or having done an action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2497,7 +2600,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe the experience of trying or having done an action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2518,7 +2622,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe the experience of trying or having done an action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2539,7 +2644,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Offer a tentative future expectation rather than a certain fact.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2560,7 +2666,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Offer a tentative future expectation rather than a certain fact.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2581,7 +2688,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Offer a tentative future expectation rather than a certain fact.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2602,7 +2710,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Emphasize a resulting change of state.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2623,7 +2732,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Emphasize a resulting change of state.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2644,7 +2754,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Emphasize a resulting change of state.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2674,7 +2785,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2710,7 +2822,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2746,7 +2859,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2782,7 +2896,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2818,7 +2933,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2854,7 +2970,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -2881,7 +2998,8 @@
         "promptClarified": false,
         "editorialReason": "This heuristic falsely treated a fixed comparison/frequency particle as a tense or register issue; leave this well-formed card unchanged.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2902,7 +3020,8 @@
         "promptClarified": false,
         "editorialReason": "This heuristic falsely treated a fixed comparison/frequency particle as a tense or register issue; leave this well-formed card unchanged.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2923,7 +3042,8 @@
         "promptClarified": false,
         "editorialReason": "This heuristic falsely treated a fixed comparison/frequency particle as a tense or register issue; leave this well-formed card unchanged.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2944,7 +3064,8 @@
         "promptClarified": false,
         "editorialReason": "This heuristic falsely treated a fixed comparison/frequency particle as a tense or register issue; leave this well-formed card unchanged.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2965,7 +3086,8 @@
         "promptClarified": false,
         "editorialReason": "This heuristic falsely treated a fixed comparison/frequency particle as a tense or register issue; leave this well-formed card unchanged.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -2986,7 +3108,8 @@
         "promptClarified": false,
         "editorialReason": "This heuristic falsely treated a fixed comparison/frequency particle as a tense or register issue; leave this well-formed card unchanged.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3007,7 +3130,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Emphasize completion and its resulting emotional significance.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3028,7 +3152,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Emphasize completion and its resulting emotional significance.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3049,7 +3174,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Emphasize completion and its resulting emotional significance.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3070,7 +3196,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report another person's statement, not a direct quotation.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3091,7 +3218,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report someone else's descriptive judgement.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3121,7 +3249,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -3157,7 +3286,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -3193,7 +3323,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -3220,7 +3351,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe change extending from the past up to the present.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3241,7 +3373,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an event that almost happened but did not.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3262,7 +3395,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an event that almost happened but did not.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3283,7 +3417,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an event that almost happened but did not.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3304,7 +3439,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express a newly realized intention or necessity.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3325,7 +3461,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express a newly realized intention or necessity.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3346,7 +3483,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express a newly realized intention or necessity.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3367,7 +3505,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express learned know-how, not mere physical possibility.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3388,7 +3527,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express learned know-how, not mere physical possibility.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3409,7 +3549,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Embed a question inside knowing or not knowing.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3430,7 +3571,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Embed a question inside knowing or not knowing.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3451,7 +3593,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Appeal to what the listener should already know.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3472,7 +3615,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Appeal to what the listener should already know.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3493,7 +3637,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Appeal to what the listener should already know.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3514,7 +3659,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe pretense, not a genuine state or action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3535,7 +3681,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe pretense, not a genuine state or action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3556,7 +3703,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe pretense, not a genuine state or action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3577,7 +3725,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express disbelief that the event could have happened.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3598,7 +3747,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express disbelief that the event could have happened.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3619,7 +3769,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express disbelief that the event could have happened.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3640,7 +3791,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Show the absence of a practical alternative.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3661,7 +3813,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Show the absence of a practical alternative.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3682,7 +3835,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Show the absence of a practical alternative.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3703,7 +3857,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express regret about something that should have happened.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3724,7 +3879,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express regret about something that should have happened.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3745,7 +3901,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express regret about something that should have happened.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3766,7 +3923,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report a proposal to do something together.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3787,7 +3945,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report a proposal to do something together.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3808,7 +3967,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report a proposal to do something together.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3829,7 +3989,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report another person's instruction or command.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3850,7 +4011,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report another person's instruction or command.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3871,7 +4033,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report another person's instruction or command.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3892,7 +4055,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report another person's question.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3922,7 +4086,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       },
       "existingVariantReview": {
         "category": "curated_same_target_variant",
@@ -3949,7 +4114,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Report another person's question.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3970,7 +4136,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express lacking even the time or chance to attempt this.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -3991,7 +4158,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express lacking even the time or chance to attempt this.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4012,7 +4180,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express lacking even the time or chance to attempt this.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4033,7 +4202,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Downplay the thing as only the stated amount or status.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4054,7 +4224,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Express formal intention in written or public speech.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4075,7 +4246,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an eventual and often unwelcome outcome.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4096,7 +4268,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an eventual and often unwelcome outcome.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4117,7 +4290,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe an eventual and often unwelcome outcome.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4138,7 +4312,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Concede the action but show it would be futile.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4159,7 +4334,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Concede the action but show it would be futile.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4180,7 +4356,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Concede the action but show it would be futile.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4201,7 +4378,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use an elevated expression for the eventual end-point.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4222,7 +4400,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use an elevated expression for the eventual end-point.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4243,7 +4422,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Use an elevated expression for the eventual end-point.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4264,7 +4444,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe inability even despite trying or wanting to.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4285,7 +4466,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe inability even despite trying or wanting to.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4306,7 +4488,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe inability even despite trying or wanting to.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4327,7 +4510,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Make an emphatic negative evaluation.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4348,7 +4532,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Make an emphatic negative evaluation.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4369,7 +4554,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Make an emphatic negative evaluation.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4390,7 +4576,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe excessive or persistent repeated action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4411,7 +4598,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe excessive or persistent repeated action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4432,7 +4620,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Describe excessive or persistent repeated action.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4453,7 +4642,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Say an action occurred almost to the point of being literally true.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4474,7 +4664,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Say an action occurred almost to the point of being literally true.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4495,7 +4686,8 @@
         "promptClarified": true,
         "editorialReason": "The existing translation is retained, and the prompt now specifies its intended role: Say an action occurred almost to the point of being literally true.",
         "acceptedVariantAssessments": [],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4531,7 +4723,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4567,7 +4760,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     },
     {
@@ -4603,7 +4797,8 @@
             "educatorReview": "pending"
           }
         ],
-        "finalCardReadiness": "content_editor_checked; educator_approval_pending"
+        "finalCardReadiness": "content_editor_checked; educator_approval_pending",
+        "state": "editorially_remediated_educator_pending"
       }
     }
   ]
