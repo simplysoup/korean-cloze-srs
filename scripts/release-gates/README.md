@@ -10,3 +10,11 @@ node scripts/release-gates/verify-evidence.mjs --release
 The first validates the matrix schema and status/evidence integrity. The second also exits nonzero if **any** gate is FAIL, BLOCKED, or NOT RUN. A PASS requires exact 40-character commit SHA, environment, command/procedure, expected, actual and redacted artifact/log. FAIL requires repro or issue; BLOCKED requires reason.
 
 Test users must be disposable/synthetic. Never commit passwords, tokens, addresses, session cookies or real learner progress. Security Jest assertions are intentionally red on the unsafe pre-fix branch: do not skip/weaken them to pass CI.
+
+Deterministic synthetic progress regression (requires both tagged snapshots and identical `fixtureId`):
+
+```sh
+node scripts/release-gates/compare-snapshots.mjs scripts/release-gates/fixtures/synthetic-grammar-progress.json scripts/release-gates/fixtures/synthetic-grammar-progress.json
+```
+
+An unequal card/log/deck/schedule yields exit 1, malformed/untagged/non-synthetic inputs yield exit 2. Build-36 vs candidate must use fixtures from *separate builds* for evidence, not the same file twice.

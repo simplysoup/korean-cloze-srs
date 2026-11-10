@@ -33,6 +33,8 @@ npm test -- --ci
 npx expo export --platform web
 ```
 
+Deterministic build-36 progress comparison can be run with `node scripts/release-gates/compare-snapshots.mjs baseline.json candidate.json`; it rejects untagged/non-synthetic fixtures and compares stable card schedules/log IDs. See the example under `scripts/release-gates/fixtures/`. The first CI checkpoint with confirmed #10 failures is in `ci-checkpoint.md`.
+
 Lint is an independent gate even if the existing CI workflow omits it. Test `mobile/__tests__/release-*.test.ts` on the frozen candidate. Account-isolation acceptance tests may be intentionally red until Agent 10's patch lands; do not suppress them. Tests executed on earlier SHAs do not clear the current gate.
 
 ## Dispositions
