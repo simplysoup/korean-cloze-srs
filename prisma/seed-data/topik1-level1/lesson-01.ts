@@ -33,7 +33,7 @@ export const lesson01: LessonSeed = {
 				{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 이에요 after consonant-ending nouns (학생이에요) and 예요 after vowel-ending nouns (의사예요).' },
 				{ type: 'funfact', title: 'Contracted Form', content: '이예요 is a common misspelling. Write 이에요 after a final consonant and 예요 after a vowel; 아니에요 is a separate correct form.' }
 			],
-			relatedPointIds: ['gp_ida'],
+			relatedPointIds: ['gp_ida', 'gp_ani_eyo', 'gp_imnida_imnikka'],
 			lessonExamples: [
 				{
 					id: 'le_ieyo_01',
@@ -118,6 +118,7 @@ export const lesson01: LessonSeed = {
 				{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 은 after consonant-ending nouns (이름은) and 는 after vowel-ending nouns (저는).' },
 				{ type: 'funfact', title: 'Topic vs Subject', content: 'The topic particle marks "what we\'re talking about." The subject particle 이/가 (Lesson 2) marks "who/what does the action." They overlap but aren\'t the same.' }
 			],
+			relatedPointIds: ['gp_i_ga'],
 			lessonExamples: [
 				{
 					id: 'le_eun_neun_01',

@@ -215,6 +215,7 @@ export const lesson03: LessonSeed = {
 				{ type: 'tip', title: '하다 Verbs', content: 'For noun+하다 verbs, 안 goes between: 공부 안 해요 is the usual spoken placement for 공부하다.' },
 				{ type: 'caution', title: '안 vs -지 않다', content: '안 is the short form. The long form -지 않다 is taught later and used in formal/written contexts.' }
 			],
+			relatedPointIds: ['gp_ji_anha', 'gp_mos', 'gp_ani_eyo'],
 			lessonExamples: [
 				{
 					id: 'le_an_01',
@@ -288,6 +289,7 @@ export const lesson03: LessonSeed = {
 				{ type: 'tip', title: '안 vs -지 않다', content: '안 먹어요 and 먹지 않아요 mean the same thing. -지 않다 can sound a little more formal or measured, but is not automatically stronger.' },
 				{ type: 'tip', title: '하다 Verbs', content: 'For 하다 verbs, -지 않다 is simpler: 공부하지 않아요 (compare: 공부 안 해요).' }
 			],
+			relatedPointIds: ['gp_an', 'gp_mos'],
 			lessonExamples: [
 				{
 					id: 'le_ji_anha_01',
@@ -359,7 +361,7 @@ export const lesson03: LessonSeed = {
 				{ type: 'tip', title: '못 vs 안', content: '못 = cannot (inability/impossibility). 안 = do not (choice/preference). 못 먹어요 (can\'t eat) vs 안 먹어요 (don\'t eat).' },
 				{ type: 'tip', title: '하다 Split', content: 'For Noun+하다 verbs: 공부 못 해요 (cannot study), not 못 공부해요.' }
 			],
-			relatedPointIds: ['gp_an', 'gp_eul_su_issda'],
+			relatedPointIds: ['gp_an', 'gp_ji_anha', 'gp_eul_su_issda'],
 			lessonExamples: [
 				{
 					id: 'le_mos_01',

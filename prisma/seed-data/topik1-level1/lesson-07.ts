@@ -36,6 +36,7 @@ export const lesson07: LessonSeed = {
 				{ type: 'tip', title: 'Dual Use', content: '-(으)세요 is both a polite imperative ("please do") and an honorific form. Context determines meaning.' },
 				{ type: 'tip', title: 'Irregular', content: 'ㄹ-ending stems drop ㄹ: 만들다 → 만드세요. 듣다 → 들으세요 (ㄷ-irregular).' }
 			],
+			relatedPointIds: ['gp_eusi_honorific', 'gp_a_juseyo', 'gp_ji_maseyo'],
 			lessonExamples: [
 				{
 					id: 'le_euseyo_01',
@@ -107,7 +108,7 @@ export const lesson07: LessonSeed = {
 				{ type: 'tip', title: '-(으)세요 vs -아/어 주세요', content: '-(으)세요 is a general polite command. -아/어 주세요 specifically asks "please do this for me" — implies a favor.' },
 				{ type: 'tip', title: 'Common Phrases', content: '도와주세요 (please help), 알려 주세요 (please let me know), 기다려 주세요 (please wait).' }
 			],
-			relatedPointIds: ['gp_euseyo'],
+			relatedPointIds: ['gp_euseyo', 'gp_ji_maseyo'],
 			lessonExamples: [
 				{
 					id: 'le_a_juseyo_01',

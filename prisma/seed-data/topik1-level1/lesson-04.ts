@@ -243,6 +243,7 @@ export const lesson04: LessonSeed = {
 				{ type: 'caution', title: '에 vs 에서', content: '에 marks destination or static location (with 있다). 에서 marks where an action happens (with action verbs like 공부하다).' },
 				{ type: 'tip', title: 'Two Uses', content: 'Destination: 학교에 가요 (go to school). Static location: 집에 있어요 (am at home).' }
 			],
+			relatedPointIds: ['gp_eseo'],
 			lessonExamples: [
 				{
 					id: 'le_e_loc_01',
@@ -313,6 +314,7 @@ export const lesson04: LessonSeed = {
 			notes: [
 				{ type: 'caution', title: '에서 vs 에', content: 'Use 에서 for the location of an action (에서 공부해요 = study at). Use 에 for destination or static existence (에 가요 = go to, 에 있어요 = am at).' }
 			],
+			relatedPointIds: ['gp_e_loc'],
 			lessonExamples: [
 				{
 					id: 'le_eseo_01',

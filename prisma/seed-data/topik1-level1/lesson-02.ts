@@ -179,7 +179,7 @@ export const lesson02: LessonSeed = {
 				{ type: 'tip', title: 'Base Form', content: '이다 is the base form you\'ll find in dictionaries. In conversation, use its conjugated forms (이에요/예요 or 입니다).' },
 				{ type: 'caution', title: 'No Space', content: '이다 attaches directly to the noun with no space: 학생이다, not 학생 이다.' }
 			],
-			relatedPointIds: ['gp_ieyo_yeyo'],
+			relatedPointIds: ['gp_ieyo_yeyo', 'gp_ani_eyo'],
 			lessonExamples: [
 				{
 					id: 'le_ida_01',
@@ -251,6 +251,7 @@ export const lesson02: LessonSeed = {
 				{ type: 'tip', title: 'Consonant vs Vowel', content: 'Use 이 after consonant-ending nouns (물이) and 가 after vowel-ending nouns (날씨가).' },
 				{ type: 'caution', title: 'Subject vs Topic', content: '이/가 marks new or emphasized information ("Who came?" → 민수가 왔어요). 은/는 marks the general topic ("As for Minsu, he came").' }
 			],
+			relatedPointIds: ['gp_eun_neun'],
 			lessonExamples: [
 				{
 					id: 'le_i_ga_01',

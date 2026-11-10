@@ -26,7 +26,7 @@ export const lesson13: LessonSeed = {
       tags: ["formal ending", "TOPIK1"],
       structurePattern: "[Verb/Adj stem]ㅂ니다 / 습니다",
       notes: [],
-      relatedPointIds: ["gp_ayo_eoyo"],
+      relatedPointIds: ["gp_ayo_eoyo", "gp_imnida_imnikka"],
       lessonExamples: [
         { id: "le_seumnida_01", fullSentence: "저는 매일 한국어를 공부합니다.", sentenceWithBlank: "저는 매일 한국어를 공부___.", answer: "합니다", englishHint: "I study Korean every day.", order: 0 },
         { id: "le_seumnida_02", fullSentence: "버스가 곧 옵니다.", sentenceWithBlank: "버스가 곧 ___.", answer: "옵니다", englishHint: "The bus will arrive soon.", order: 1 },
@@ -49,7 +49,7 @@ export const lesson13: LessonSeed = {
       tags: ["formal ending", "TOPIK1"],
       structurePattern: "[Verb/Adj stem]ㅂ니까? / 습니까?",
       notes: [],
-      relatedPointIds: ["gp_ieyo_yeyo"],
+      relatedPointIds: ["gp_imnida_imnikka"],
       lessonExamples: [
         { id: "le_seumnikka_01", fullSentence: "지금 어디에 갑니까?", sentenceWithBlank: "지금 어디에 ___?", answer: "갑니까", englishHint: "Where are you going now?", order: 0 },
         { id: "le_seumnikka_02", fullSentence: "한국어를 공부합니까?", sentenceWithBlank: "한국어를 ___?", answer: "공부합니까", englishHint: "Do you study Korean?", order: 1 },
