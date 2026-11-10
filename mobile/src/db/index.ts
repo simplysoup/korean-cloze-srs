@@ -506,7 +506,15 @@ export function getNextReviewAt(): string | null {
 export function getDashboardStats(): DashboardStats {
   const database = getDb();
   const nowIso = new Date().toISOString();
-  const allCards = database.select().from(schema.reviewCards).where(eq(schema.reviewCards.userId, uid())).all();
+  // Historical advanced cards remain untouched but cannot inflate the
+  // published curriculum counts or SRS distribution while the flag is off.
+  const publishedPointIds = new Set(
+    allContentGrammarPoints().filter(({ bundle }) => isNativeDeckPublished(bundle.deck.id))
+      .map(({ gp }) => gp.id),
+  );
+  const allCards = database.select().from(schema.reviewCards)
+    .where(eq(schema.reviewCards.userId, uid())).all()
+    .filter((c) => publishedPointIds.has(c.grammarPointId));
   const logs = database.select().from(schema.reviewLogs).where(eq(schema.reviewLogs.userId, uid())).all();
   const settings = getUserSettings();
   const today = nowIso.slice(0, 10);
