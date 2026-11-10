@@ -1,3 +1,5 @@
+import { execFileSync } from 'node:child_process';
+import { join } from 'node:path';
 import { allPassages, passageById } from '../catalog';
 
 describe('reading pilot catalogue', () => {
@@ -8,6 +10,12 @@ describe('reading pilot catalogue', () => {
     for (const level of [1, 2, 3]) expect(passages.filter((p) => p.level === level)).toHaveLength(2);
     for (const passage of passages) expect(passageById(passage.id)).toBe(passage);
     expect(passageById('not-an-id')).toBeUndefined();
+  });
+
+  test('source, generated output, grammar prerequisites and interpretation notes validate', () => {
+    const script = join(__dirname, '../../../../../scripts/validate-comprehension.mjs');
+    const result = execFileSync(process.execPath, [script], { encoding: 'utf8' });
+    expect(result).toContain('OK: six editorial-draft passages, 24 validated questions');
   });
 
   test('every ID stays unique and all answers are valid', () => {
