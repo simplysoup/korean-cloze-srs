@@ -442,9 +442,15 @@ export async function activateVerifiedAccount(id: string): Promise<boolean> {
     endAccountSession();
     return false;
   }
-  if (s.activeAccountId === id) return true;
-  endAccountSession();
-  s.activeAccountId = id;
+  if (s.activeAccountId === id && s.accountCacheLoaded) return true;
+  if (s.activeAccountId !== id) {
+    endAccountSession();
+    s.activeAccountId = id;
+  } else {
+    // A previous restore was invalidated while waiting on IDB; retry
+    // under a new generation rather than treating "loading" as ready.
+    bumpEpoch();
+  }
   s.accountCacheLoaded = false;
   notifyAccountSessionChange();
   const lease = getAccountSessionLease();
