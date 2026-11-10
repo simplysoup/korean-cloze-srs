@@ -79,6 +79,14 @@ describe('release: cross-account isolation', () => {
     await clearUserRecord();
     await saveUserRecord(B);
     setSessionToken('qa-token-B');
+    // Independently isolate the in-flight callback from the known stale-doc
+    // logout bug. Even with a clean B document, A's late response must not
+    // mutate or push through the new session.
+    const cleanB = snapshot();
+    cleanB.user = { username: B.username, email: B.email };
+    cleanB.reviewLogs = [];
+    cleanB.libraryDecks = [];
+    getState().doc = cleanB;
     finish({ ok: true, version: 2, updatedAt: '2026-11-10T12:00:00.000Z', payload: snapshot() });
     await oldRun;
     expect(getSessionToken()).toBe('qa-token-B');
