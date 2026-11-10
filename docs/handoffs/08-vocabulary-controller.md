@@ -3,7 +3,7 @@
 Repository: `simplysoup/korean-cloze-srs`  
 Base / Phase 2 contract SHA: `ba94b9ee7ae9374cb6e92d8bab17db38f095f9b6`  
 Feature branch: `feat/vocabulary-controller-v1`  
-PR target: `integration/curriculum-v1`  
+PR target: `integration/curriculum-v1` • [draft #23](https://github.com/simplysoup/korean-cloze-srs/pull/23)  
 Release: **NOT AUTHORIZED**. Do not merge to `main` or enable vocabulary.
 
 ## Implementation
@@ -41,8 +41,8 @@ const controller = createVocabularyController({
 
 - `runtime/__tests__/controller.test.ts`: 7 decks, 145 entries and all queue modes; lexical IDs and two directions; curated alternatives, unknown, near, reveal and cram; persist-before-result, offline recreation, failure retry, concurrent duplicate and CAS retry; account switch/logout/re-login and late write; malformed content/data; foreign snapshots and ID collisions.
 - `runtime/__tests__/events.test.ts`: deterministic replay, ID/prompt collision, grammar entry and fabricated event rejection, malformed snapshots.
-- Exact required commands (run on a complete checkout): `cd mobile && npm run lint && npm run typecheck && npm test -- --ci`. This isolated agent workspace cannot run the repository's Expo/Jest suite without `node_modules` and remote git access; **do not mark these green without actual CI evidence**.
-- Browser persistence, account isolation, multi-device server reconciliation, grammar-history preservation, and UI wiring are **not tested or authorized** by this feature PR. Agent 10 → Agent 08 → lead's adapter/UI integration remains the required sequence. No flag changes, deployment, native migration, or server sync in this branch.
+- [Mobile (Expo) CI run #225](https://github.com/simplysoup/korean-cloze-srs/actions/runs/42927053386) on `ecd4821619dda923c007c4a6d353015a04f995d0`: reproducible content and all configured validators **PASS**; `cd mobile && npm run typecheck` **PASS**; `cd mobile && npm test -- --ci` **PASS (28 suites / 235 tests)**; `cd mobile && npx expo export --platform web` **PASS**. `npm run lint` is not part of that workflow and **was not run**; Agent 00 must run it before merge. First failed run #214 identified false corruption alarms from object-key order; fixed in `ecd4821`, with the second run green.
+- Browser persistence, account isolation, multi-device server reconciliation, grammar-history preservation, and UI wiring are **not tested or authorized** by this feature PR. The current `missed` UI queries lapsed (Again-rated) items; this controller deliberately does not auto-Again unknown/near responses, so Agent 00 must separately define the intended missed-item practice semantics before release. Agent 10 → Agent 08 → lead's adapter/UI integration remains the required sequence. No flag changes, deployment, native migration, or server sync in this branch.
 
 ## Rollback
 
