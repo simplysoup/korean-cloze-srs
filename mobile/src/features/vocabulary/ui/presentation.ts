@@ -61,7 +61,7 @@ export function promptContext(
   if (prompt.contextKorean) parts.push(prompt.contextKorean);
   if (prompt.contextEnglish) parts.push(prompt.contextEnglish);
   if (!prompt.contextKorean && !prompt.contextEnglish && entry?.usageExample) {
-    parts.push(entry.usageExample.korean + ' · ' + entry.usageExample.english);
+    // Avoid disclosing the target answer in the supporting example.\n    parts.push(prompt.direction === 'korean_to_english'\n      ? entry.usageExample.korean\n      : entry.usageExample.english);
   }
   if (entry?.variant && prompt.canonicalAnswer === entry.variant) {
     parts.push('Shortened form in its example context');
