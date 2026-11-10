@@ -154,8 +154,11 @@ describe('vocabulary controller and account-scoped persistence', () => {
     const p = find(await staleController.getSession('learn', 500), 'vocab_native_numbers_001', 'korean_to_english');
     let resume!: () => void;
     const barrier = new Promise<void>(resolve => { resume = resolve; });
-    context.setBeforeWrite(() => barrier);
+    let entered!: () => void;
+    const insideCommit = new Promise<void>(resolve => { entered = resolve; });
+    context.setBeforeWrite(async () => { entered(); await barrier; });
     const submitting = staleController.submitAnswer(p.id, 'one');
+    await insideCommit;
     context.setAccount(null);
     resume();
     await expect(submitting).rejects.toThrow(/no longer associated/);

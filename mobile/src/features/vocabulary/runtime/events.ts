@@ -33,6 +33,11 @@ export class VocabularyDataError extends Error {
 const object = (x: unknown): x is Record<string, unknown> =>
   !!x && typeof x === 'object' && !Array.isArray(x);
 const validId = (x: unknown): x is string => typeof x === 'string' && x.trim() === x && x.length > 0;
+/** Compare serialized records by value, not by object insertion order. */
+function stableJson(value: unknown): string {
+  return JSON.stringify(value, (_key, v: unknown) => object(v)
+    ? Object.fromEntries(Object.keys(v).sort().map(k => [k, v[k]])) : v);
+}
 
 export function validateVocabularyLibrary(library: VocabularyLibrary): void {
   if (!validId(library.version) || !Array.isArray(library.decks) || !object(library.entries))
@@ -104,12 +109,12 @@ export function readVocabularySnapshot(raw: unknown, library: VocabularyLibrary,
   const progress = initializeVocabProgress(raw.progress, library);
   // initializeVocabProgress is intentionally forgiving for legacy import, but a
   // versioned durable snapshot MUST fail closed instead of silently dropping data.
-  if (JSON.stringify(raw.baseline.entries) !== JSON.stringify(baseline.entries) ||
-      JSON.stringify(raw.progress.entries) !== JSON.stringify(progress.entries))
+  if (stableJson(raw.baseline.entries) !== stableJson(baseline.entries) ||
+      stableJson(raw.progress.entries) !== stableJson(progress.entries))
     throw new VocabularyDataError('Malformed stored FSRS card; refusing destructive sanitation.');
   const events = raw.reviewEvents as VocabularyReviewEventV1[];
   const replayed = replayVocabularyEvents(library, baseline, events);
-  if (JSON.stringify(replayed.entries) !== JSON.stringify(progress.entries))
+  if (stableJson(replayed.entries) !== stableJson(progress.entries))
     throw new VocabularyDataError('Snapshot projection differs from event replay; refusing to overwrite it.');
   return { schemaVersion: 1, revision: raw.revision, contentVersion: raw.contentVersion as string,
     accountId,
