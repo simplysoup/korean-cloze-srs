@@ -3,7 +3,7 @@
   "purpose": "Mechanical risk queue for PREEXISTING grammar cards, not linguistic adjudication",
   "status": "unreviewed; no newly accepted alternatives added to legacy cards",
   "scope": "628 inherited review cards from 198 original grammar points; new 93 are audited separately",
-  "warning": "A flag indicates possible ambiguity, not a claim that a variant is valid or a grader bug. Unflagged cards are not educator-verified.",
+  "warning": "Every existing accepted answer is now specifically flagged for contextual review, with no automatic changes to the learner-facing accepted strings. A flag is not linguistic adjudication; 438 unflagged cards are not educator-certified.",
   "summary": {
     "legacyCards": 628,
     "flagged": 190,
@@ -11,7 +11,8 @@
     "withExistingAlternatives": 16,
     "particleFunction": 29,
     "tenseRegister": 152,
-    "connector": 4
+    "connector": 4,
+    "existingVariantContextNotes": 16
   },
   "flags": {
     "accepted_alternatives_need_sentence_review": "Review already accepted alternate whole-sentence naturalness and whether it demonstrates the target grammar.",
@@ -306,7 +307,13 @@
       "flags": [
         "accepted_alternatives_need_sentence_review"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "contracted_spelling",
+        "educatorQuestion": "마셔요 and the longer 마시어요 can express the same action; check if both are standard and usable in this review's register.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_present_variant_sit",
@@ -439,7 +446,13 @@
         "accepted_alternatives_need_sentence_review",
         "particle_function_may_depend_on_context"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "direction_vs_destination",
+        "educatorQuestion": "학교로 가요 is natural, but 로 stresses direction while 에 gives a destination. Assess target-grammar mastery separately.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_e_loc_02",
@@ -468,7 +481,13 @@
         "accepted_alternatives_need_sentence_review",
         "particle_function_may_depend_on_context"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "direction_vs_destination",
+        "educatorQuestion": "회사로 가요 conveys direction toward the company, not always identical to company as destination.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_e_variant_park",
@@ -484,7 +503,13 @@
         "accepted_alternatives_need_sentence_review",
         "particle_function_may_depend_on_context"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "direction_vs_destination",
+        "educatorQuestion": "공원으로 가요 is a directional reading, acceptable in many contexts; verify prompt and whether target 에 was demonstrated.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_e_variant_school",
@@ -513,7 +538,13 @@
         "accepted_alternatives_need_sentence_review",
         "particle_function_may_depend_on_context"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "direction_vs_destination",
+        "educatorQuestion": "가게로 가요 is natural with directional emphasis. Different grammar may be acceptable without proving the target particle.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_eseo_01",
@@ -606,7 +637,13 @@
       "flags": [
         "accepted_alternatives_need_sentence_review"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "spatial_noun_near_synonyms",
+        "educatorQuestion": "아래 and 밑 can both describe a cat under a chair; their ordinary usage is not identical in every spatial setting.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_e_time_01",
@@ -660,7 +697,13 @@
       "flags": [
         "accepted_alternatives_need_sentence_review"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "temporal_expression_synonym",
+        "educatorQuestion": "수업 다음에 is plausible, but idiomaticity can vary; compare 수업 후에 and 수업이 끝난 다음에.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_hue_02",
@@ -675,7 +718,13 @@
       "flags": [
         "accepted_alternatives_need_sentence_review"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "temporal_expression_synonym",
+        "educatorQuestion": "퇴근 다음에 may sound less idiomatic than 퇴근 후에 or 퇴근한 다음에. Request native usage judgment before retaining an accepted answer.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_hue_03",
@@ -690,7 +739,13 @@
       "flags": [
         "accepted_alternatives_need_sentence_review"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "temporal_expression_synonym",
+        "educatorQuestion": "저녁 식사 다음에 is possible but can be less idiomatic than 저녁 식사 후에; review as a whole sentence.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_asseoyo_01",
@@ -785,7 +840,15 @@
         "accepted_alternatives_need_sentence_review",
         "possible_noun_connector_or_recipient_variation"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "noun_connector_synonym",
+        "educatorQuestion": "과 and 이랑 can both join the nouns 빵 and 우유; differing written/spoken style should be explained after review.",
+        "referenceUrls": [
+          "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng"
+        ],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_hago_02",
@@ -802,7 +865,15 @@
         "accepted_alternatives_need_sentence_review",
         "possible_noun_connector_or_recipient_variation"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "noun_connector_synonym",
+        "educatorQuestion": "와 and 랑 can both mark the companion 친구 in this sentence; prefer a nuance label, not a false error.",
+        "referenceUrls": [
+          "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=80333&nation=eng"
+        ],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_hago_03",
@@ -819,7 +890,15 @@
         "accepted_alternatives_need_sentence_review",
         "possible_noun_connector_or_recipient_variation"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "noun_connector_synonym",
+        "educatorQuestion": "과 and 이랑 agree with consonant-ending 빵; both express joining nouns here.",
+        "referenceUrls": [
+          "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=78624&nation=eng"
+        ],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_and_variant",
@@ -836,7 +915,15 @@
         "accepted_alternatives_need_sentence_review",
         "possible_noun_connector_or_recipient_variation"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "noun_connector_synonym",
+        "educatorQuestion": "와 and 랑 agree with vowel-ending 우유; the difference is mainly style/context in this sentence.",
+        "referenceUrls": [
+          "https://krdict.korean.go.kr/eng/dicSearch/SearchView?ParaWordNo=80333&nation=eng"
+        ],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_eusi_hon_01",
@@ -1021,7 +1108,13 @@
         "accepted_alternatives_need_sentence_review",
         "possible_tense_register_aspect_near_miss"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "contracted_ending",
+        "educatorQuestion": "죠 is the usual spoken contraction of 지요. Both can ask for confirmation in this context.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_jiyo_02",
@@ -1037,7 +1130,13 @@
         "accepted_alternatives_need_sentence_review",
         "possible_tense_register_aspect_near_miss"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "contracted_ending",
+        "educatorQuestion": "지요 is the expanded spelling of 죠; both are possible with different conversational feel.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_jiyo_03",
@@ -1053,7 +1152,13 @@
         "accepted_alternatives_need_sentence_review",
         "possible_tense_register_aspect_near_miss"
       ],
-      "humanReview": "pending"
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "contracted_ending",
+        "educatorQuestion": "지요 and contracted 죠 express the same confirmation-ending family.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     },
     {
       "cardId": "cc_geos_gatda_01",
