@@ -17,6 +17,7 @@ import {
   markDeviceLogout,
   setCurrentUserId,
   setLastUserId,
+  setSessionTokenMirror,
   setSessionUserId,
   trustDevice,
   LOCAL_USER_ID,
@@ -106,6 +107,18 @@ export default function RootLayout() {
           warmDb.current = warm;
         }
         initDb();
+        // Mirror the session token to web localStorage on every normal
+        // launch (build 29). The mirror is otherwise only written at
+        // login, so an already-logged-in user would never get it — and a
+        // locked-out second tab needs it to authenticate for read-only
+        // mode without another email code. Best-effort: a missing token
+        // or a blocked storage must not break init.
+        try {
+          const existingToken = getSessionToken();
+          if (existingToken) setSessionTokenMirror(existingToken);
+        } catch {
+          // Ignore — the DB works; only the mirror is skipped.
+        }
         break;
       } catch (e) {
         // A bricked worker (Invalid VFS state) never recovers in-page —
@@ -217,6 +230,13 @@ export default function RootLayout() {
 
   if (dbError) {
     const vfsError = dbError.includes('Invalid VFS state');
+    // Read-only is a web-only offer: it authenticates from the web
+    // localStorage token mirror (or an email code) and never touches
+    // the DB. It is offered for any web DB-open failure, not just the
+    // VFS lock — on a plain-HTTP origin the DB fails earlier (no secure
+    // context, so no SharedArrayBuffer/OPFS), and that tab can still
+    // view its progress read-only from the server.
+    const offerReadOnly = Platform.OS === 'web';
     return (
       <View style={commonStyles.centered}>
         <Text style={commonStyles.title}>Couldn&apos;t open the database</Text>
@@ -229,34 +249,34 @@ export default function RootLayout() {
             in this tab.
           </Text>
         ) : (
-          <Text style={commonStyles.muted}>Try restarting the app. Your progress is stored on this device.</Text>
+          <Text style={commonStyles.muted}>
+            Try restarting the app. Your progress is stored on this device.
+            {offerReadOnly
+              ? ' Or view your progress read-only from the server — no reviews or learning in this tab.'
+              : ''}
+          </Text>
         )}
-        {vfsError ? (
-          <>
-            <Pressable
-              onPress={() => setReadOnly(true)}
-              style={{ marginTop: 16, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.primary, borderRadius: 8 }}
-            >
-              <Text style={{ color: '#fff', fontWeight: '600' }}>View read-only</Text>
-            </Pressable>
-            <Pressable
-              onPress={() => reloadApp()}
-              style={{ marginTop: 12, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.border, borderRadius: 8 }}
-            >
-              <Text style={{ color: colors.text, fontWeight: '600' }}>Reload app</Text>
-            </Pressable>
-          </>
-        ) : (
+        {offerReadOnly ? (
           <Pressable
-            onPress={() => {
-              setDbError(null);
-              setAttempt((a) => a + 1);
-            }}
+            onPress={() => setReadOnly(true)}
             style={{ marginTop: 16, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.primary, borderRadius: 8 }}
           >
-            <Text style={{ color: '#fff', fontWeight: '600' }}>Retry</Text>
+            <Text style={{ color: '#fff', fontWeight: '600' }}>View read-only</Text>
           </Pressable>
-        )}
+        ) : null}
+        <Pressable
+          onPress={() => {
+            if (vfsError) {
+              reloadApp();
+              return;
+            }
+            setDbError(null);
+            setAttempt((a) => a + 1);
+          }}
+          style={{ marginTop: 12, paddingVertical: 10, paddingHorizontal: 20, backgroundColor: colors.white, borderWidth: 1, borderColor: colors.border, borderRadius: 8 }}
+        >
+          <Text style={{ color: colors.text, fontWeight: '600' }}>{vfsError ? 'Reload app' : 'Retry'}</Text>
+        </Pressable>
       </View>
     );
   }
