@@ -132,3 +132,31 @@ All in `mobile/src/features/flags.ts` (`CURRICULUM_FLAGS`, frozen). All `false` 
 - The four un-PR'd feature branches have not had their own CI runs against `integration/curriculum-v1` as a base.
 
 **Do not deploy. Do not merge PR #8 to `main`.** The next actions are: build the vocabulary engine (Agent 00), create the answer-evaluation branch, open PRs for the four un-PR'd feature branches targeting `integration/curriculum-v1`, then review and merge in the order in §1.
+
+---
+
+## Addendum — validation and merge (2026-11-10, ~23:15 EST)
+
+All seven specialist workstreams finished and were validated independently, then merged into `integration/curriculum-v1` in the prescribed order. Head is now `bd0d4bc`.
+
+**PRs merged (all MERGED, all targeted `integration/curriculum-v1`):**
+
+| PR | Workstream | Result |
+|---|---|---|
+| #18 | Vocabulary engine (pure FSRS + contract adapters) | Merged `7c172ce`. 9 files, `mobile/src/features/vocabulary/core/`. Note: engine lives in `core/`, not the `engine/` directory named in the parallel-workstreams doc — a naming deviation, not an ownership violation. The `VocabController` facade (`controller.ts`) is still Agent 00-owned and still to be wired. |
+| #17 | Vocabulary UI | Merged `ac29c16`. 13 files. |
+| #16 | Contextual answer evaluation | Merged `7a66169`. 10 files, 721-card feedback annotations, `validate-answer-feedback.mjs`. |
+| #13 | Language topics + Hangul foundations | Merged `00aa85b`. 18 files. |
+| #15 | Grammar contrast + transfer (52 exercises) | Merged `dd56d32`. 12 files. |
+| #14 | Reading comprehension (6 passages, 24 questions) | Merged `3a3c03f`. 18 files. |
+| #12 | Linguistic QA + educator readiness | Merged `efdf3be`. 4 files. |
+
+**Independent validation per PR (before merging):** every branch passed `tsc --noEmit` and `npm test -- --ci`, and its own validators where applicable (answer-feedback 721 cards, comprehension 6 passages/24 questions, practice 52 exercises, linguistic-qa 1592 items/0 blockers). CI `mobile` check passed on PRs 13–18; PR #12 had no checks reported. No branch touched an owned file or a package/lockfile. GitHub reported all MERGEABLE/CLEAN. Bases: vocabulary-engine and answer-evaluation branched from `26433f3` (post-contract); vocabulary-ui from `859ea12` (contract commit); reading-comprehension merged integration in (base `a1f586c`); grammar-transfer, language-foundations, and qa remained based on `c17cfab` (pre-contract) but merged cleanly.
+
+**Combined merge validation:** a scratch branch merging all seven in order had no conflicts. On the combined result, all 11 validators passed, `tsc` passed, Jest passed (26 suites, 222 tests), and `expo export` passed — but `eslint` failed with 5 errors, all in the feature branches (CI does not run eslint). The integration branch baseline was lint-clean, so the errors came from the branches.
+
+**Integration fix (commit `50eb328`, Agent 00):** resolved the 5 lint errors mechanically — `useMemo` inline callback + 3 apostrophe escapes (`&apos;`) + deferring a `setAnswer` to a microtask (the established codebase pattern). No behavior change. After the fix: lint 0, typecheck 0, Jest 26 suites/222 tests, export OK, all validators pass. CI on the integration branch is green (runs 42921735913, 42921712244, 42921706278, all `completed success`).
+
+**Cleanup (commit `bd0d4bc`):** the lint-fix commit accidentally included generated `.qa-reports/linguistic/` output; removed it and added `.qa-reports/` to `.gitignore`.
+
+**Remaining blockers (unchanged):** issues #9 (server sync schema/multi-device), #10 (IndexedDB account isolation), #11 (native versioning/parity) are still OPEN; educator approval still pending on all content; the `VocabController` facade still needs wiring to the engine; all 8 flags remain `false`; native is still excluded from release. PR #8 (integration → main) remains a draft and must not be merged without explicit owner authorization.
