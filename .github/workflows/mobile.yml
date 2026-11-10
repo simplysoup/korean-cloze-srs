@@ -5,11 +5,15 @@ on:
     paths:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
+      - 'scripts/validate-grammar-catalogue.ts'
+      - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
   pull_request:
     paths:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
+      - 'scripts/validate-grammar-catalogue.ts'
+      - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
 
 jobs:
@@ -20,12 +24,14 @@ jobs:
         working-directory: mobile
     steps:
       - uses: actions/checkout@v4
+      - uses: oven-sh/setup-bun@v2
       - uses: actions/setup-node@v4
         with:
           node-version: 24
           cache: npm
           cache-dependency-path: mobile/package-lock.json
       - run: npm ci
+      - run: bun ../scripts/validate-grammar-catalogue.ts
       - run: node ../scripts/validate-content.mjs
       - run: npm run typecheck
       - run: npm test -- --ci
