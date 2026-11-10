@@ -6,6 +6,9 @@ on:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
       - 'scripts/validate-grammar-catalogue.ts'
+      - 'scripts/curriculum-overlay.mjs'
+      - 'scripts/port-vocabulary.mjs'
+      - 'scripts/validate-vocabulary.mjs'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
   pull_request:
@@ -13,6 +16,9 @@ on:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
       - 'scripts/validate-grammar-catalogue.ts'
+      - 'scripts/curriculum-overlay.mjs'
+      - 'scripts/port-vocabulary.mjs'
+      - 'scripts/validate-vocabulary.mjs'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
 
@@ -33,6 +39,7 @@ jobs:
       - run: npm ci
       - run: bun ../scripts/validate-grammar-catalogue.ts
       - run: node ../scripts/validate-content.mjs
+      - run: node ../scripts/validate-vocabulary.mjs
       - run: npm run typecheck
       - run: npm test -- --ci
       - run: npx expo export --platform web
