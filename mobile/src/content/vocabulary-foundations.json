@@ -1392,12 +1392,12 @@
         {
           "id": "vocab_calendar_013",
           "front": "1월",
-          "meaning": "month 1",
+          "meaning": "January",
           "spokenForm": "일월",
           "variant": null,
           "usageExample": {
             "korean": "1월에 여행해요.",
-            "english": "I travel in month 1."
+            "english": "I travel in January."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1409,12 +1409,12 @@
         {
           "id": "vocab_calendar_014",
           "front": "2월",
-          "meaning": "month 2",
+          "meaning": "February",
           "spokenForm": "이월",
           "variant": null,
           "usageExample": {
             "korean": "2월에 여행해요.",
-            "english": "I travel in month 2."
+            "english": "I travel in February."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1426,12 +1426,12 @@
         {
           "id": "vocab_calendar_015",
           "front": "3월",
-          "meaning": "month 3",
+          "meaning": "March",
           "spokenForm": "삼월",
           "variant": null,
           "usageExample": {
             "korean": "3월에 여행해요.",
-            "english": "I travel in month 3."
+            "english": "I travel in March."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1443,12 +1443,12 @@
         {
           "id": "vocab_calendar_016",
           "front": "4월",
-          "meaning": "month 4",
+          "meaning": "April",
           "spokenForm": "사월",
           "variant": null,
           "usageExample": {
             "korean": "4월에 여행해요.",
-            "english": "I travel in month 4."
+            "english": "I travel in April."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1460,12 +1460,12 @@
         {
           "id": "vocab_calendar_017",
           "front": "5월",
-          "meaning": "month 5",
+          "meaning": "May",
           "spokenForm": "오월",
           "variant": null,
           "usageExample": {
             "korean": "5월에 여행해요.",
-            "english": "I travel in month 5."
+            "english": "I travel in May."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1477,12 +1477,12 @@
         {
           "id": "vocab_calendar_018",
           "front": "6월",
-          "meaning": "month 6",
+          "meaning": "June",
           "spokenForm": "유월",
           "variant": null,
           "usageExample": {
             "korean": "6월에 여행해요.",
-            "english": "I travel in month 6."
+            "english": "I travel in June."
           },
           "usageNote": "6월 is pronounced 유월, not 육월.",
           "reviewType": "lexical",
@@ -1494,12 +1494,12 @@
         {
           "id": "vocab_calendar_019",
           "front": "7월",
-          "meaning": "month 7",
+          "meaning": "July",
           "spokenForm": "칠월",
           "variant": null,
           "usageExample": {
             "korean": "7월에 여행해요.",
-            "english": "I travel in month 7."
+            "english": "I travel in July."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1511,12 +1511,12 @@
         {
           "id": "vocab_calendar_020",
           "front": "8월",
-          "meaning": "month 8",
+          "meaning": "August",
           "spokenForm": "팔월",
           "variant": null,
           "usageExample": {
             "korean": "8월에 여행해요.",
-            "english": "I travel in month 8."
+            "english": "I travel in August."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1528,12 +1528,12 @@
         {
           "id": "vocab_calendar_021",
           "front": "9월",
-          "meaning": "month 9",
+          "meaning": "September",
           "spokenForm": "구월",
           "variant": null,
           "usageExample": {
             "korean": "9월에 여행해요.",
-            "english": "I travel in month 9."
+            "english": "I travel in September."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1545,12 +1545,12 @@
         {
           "id": "vocab_calendar_022",
           "front": "10월",
-          "meaning": "month 10",
+          "meaning": "October",
           "spokenForm": "시월",
           "variant": null,
           "usageExample": {
             "korean": "10월에 여행해요.",
-            "english": "I travel in month 10."
+            "english": "I travel in October."
           },
           "usageNote": "10월 is pronounced 시월, not 십월.",
           "reviewType": "lexical",
@@ -1562,12 +1562,12 @@
         {
           "id": "vocab_calendar_023",
           "front": "11월",
-          "meaning": "month 11",
+          "meaning": "November",
           "spokenForm": "십일월",
           "variant": null,
           "usageExample": {
             "korean": "11월에 여행해요.",
-            "english": "I travel in month 11."
+            "english": "I travel in November."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
@@ -1579,12 +1579,12 @@
         {
           "id": "vocab_calendar_024",
           "front": "12월",
-          "meaning": "month 12",
+          "meaning": "December",
           "spokenForm": "십이월",
           "variant": null,
           "usageExample": {
             "korean": "12월에 여행해요.",
-            "english": "I travel in month 12."
+            "english": "I travel in December."
           },
           "usageNote": "Month numbers use Sino-Korean readings.",
           "reviewType": "lexical",
