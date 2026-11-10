@@ -66,6 +66,8 @@ export interface WebState {
   sessionUserId: string | null;
   /** Null means guest/logged-out; never mapped to another account's cache. */
   activeAccountId: string | null;
+  /** Persistence is forbidden until this account's IDB read has settled. */
+  accountCacheLoaded: boolean;
 }
 
 function emptyDoc(): SyncDocument {
@@ -213,6 +215,7 @@ function newState(): WebState {
     lastUserId: null,
     sessionUserId: null,
     activeAccountId: null,
+    accountCacheLoaded: false,
   };
 }
 
@@ -362,6 +365,9 @@ function captureSnapshot(): { key: string; data: AccountPersistedSnapshot } | nu
   const lease = getAccountSessionLease();
   if (!lease) return null;
   const s = getState();
+  // Switching away before an IDB read completes must NOT overwrite the
+  // existing saved snapshot with this account's not-yet-loaded empty doc.
+  if (!s.accountCacheLoaded) return null;
   return {
     key: accountDocumentKey(lease.accountId),
     data: copyAccountSnapshot({
@@ -419,6 +425,7 @@ export function endAccountSession(): void {
   bumpEpoch();
   if (!state) return;
   state.activeAccountId = null;
+  state.accountCacheLoaded = false;
   state.doc = emptyDoc();
   state.lastSyncedVersion = 0;
   state.lastSyncedAt = null;
@@ -438,6 +445,7 @@ export async function activateVerifiedAccount(id: string): Promise<boolean> {
   if (s.activeAccountId === id) return true;
   endAccountSession();
   s.activeAccountId = id;
+  s.accountCacheLoaded = false;
   notifyAccountSessionChange();
   const lease = getAccountSessionLease();
   if (!lease) return false;
@@ -453,7 +461,9 @@ export async function activateVerifiedAccount(id: string): Promise<boolean> {
   } catch {
     // Offline-capable: if IDB is unavailable the in-memory doc starts empty.
   }
-  return isAccountSessionLeaseCurrent(lease);
+  if (!isAccountSessionLeaseCurrent(lease)) return false;
+  s.accountCacheLoaded = true;
+  return true;
 }
 
 /** Legacy state-v1 is NEVER assigned by lastUserId, email, or first login.
@@ -504,7 +514,7 @@ function installCrossTabAccountGuard(): void {
 /** No guest progress may be written to another account. */
 export function markDirty(): void {
   const s = getState();
-  if (!getAccountSessionLease()) return;
+  if (!getAccountSessionLease() || !s.accountCacheLoaded) return;
   s.syncDirty = true;
   s.doc.updatedAt = new Date().toISOString();
   schedulePersist();
