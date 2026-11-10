@@ -98,7 +98,7 @@ export function VocabularyDeckDetail({
 
       {foundation?.entries.length ? (
         <VocabularyPanel>
-          <Text style={vocabStyles.sectionTitle}>What you'll practice</Text>
+          <Text style={vocabStyles.sectionTitle}>What you&apos;ll practice</Text>
           <Text style={vocabStyles.body}>{foundation.deck.goal}</Text>
           <Text style={vocabStyles.muted}>
             Examples distinguish the Korean number systems, counter forms and usage contexts.

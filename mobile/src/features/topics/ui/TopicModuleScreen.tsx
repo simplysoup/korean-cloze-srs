@@ -167,7 +167,7 @@ export function TopicModuleScreen({ id }: { id: string }) {
         accessibilityRole="button"
         style={[commonStyles.btn, commonStyles.btnSecondary, styles.action]}
       >
-        <Text style={commonStyles.btnTextDark}>Restart this module's checks</Text>
+        <Text style={commonStyles.btnTextDark}>Restart this module&apos;s checks</Text>
       </Pressable>
       <View style={[commonStyles.card, styles.section]}>
         <Text accessibilityRole="header" style={styles.smallHeading}>References and review status</Text>

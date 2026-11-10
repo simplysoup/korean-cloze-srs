@@ -13,7 +13,7 @@ export function SoundChangesScreen() {
   const [input, setInput] = useState('강');
   const [session, setSession] = useState(startTopicSession);
   const decoded = useMemo(() => decodeWrittenWord(input), [input]);
-  const checks = useMemo(allSoundChecks, []);
+  const checks = useMemo(() => allSoundChecks(), []);
   const stats = topicSessionStats(session, checks);
   const authoritative = getTopicModule('topic_hangul_sound_changes');
   let questionIndex = 0;
@@ -149,7 +149,7 @@ export function SoundChangesScreen() {
         <Text style={commonStyles.muted}>
           These example rules correspond to the written Hangul topic.
           Source references in that module include the National Institute
-          of Korean Language's pronunciation guidance. Audio manifest:
+          of Korean Language&apos;s pronunciation guidance. Audio manifest:
           all assets unavailable; no unlicensed audio is bundled.
         </Text>
         <Pressable

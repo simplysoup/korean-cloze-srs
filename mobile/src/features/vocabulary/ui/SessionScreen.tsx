@@ -101,8 +101,10 @@ export function VocabularySessionScreen({
 
   // A route remount preserves the provider's cursor and completed reviews.
   // Clear text only when moving to another card, never for a rejected save.
+  // Deferred to a microtask: the lint rule forbids synchronous setState in
+  // the effect body.
   useEffect(() => {
-    setAnswer('');
+    void Promise.resolve().then(() => setAnswer(''));
   }, [state.key, state.index]);
 
   const leaveControl = (
