@@ -78,6 +78,25 @@ const dup = (id, kind) => {
 };
 
 for (const { gp, position, level } of all) {
+  if (level >= 3) {
+    check(gp.category !== 'grammar pattern' && gp.category.trim().length > 2,
+      `${gp.id}: category must describe grammatical function`);
+    check(gp.description.trim().length >= 85 && gp.description !== gp.hint,
+      `${gp.id}: explanation must go beyond the one-line hint`);
+    check(gp.structurePattern.trim().length > gp.title.trim().length,
+      `${gp.id}: structure must show how the pattern attaches`);
+    const noteByTitle = new Map((gp.notes ?? []).map((note) => [note.title, note.content]));
+    for (const title of ['Build it step by step', 'Worked example', 'Common trap']) {
+      check((noteByTitle.get(title) ?? '').length >= 40,
+        `${gp.id}: missing or unhelpfully brief ${title}`);
+    }
+    check((noteByTitle.get('Worked example') ?? '').includes(gp.lessonExamples[0]?.fullSentence ?? ''),
+      `${gp.id}: teaching walkthrough must use a real worked sentence`);
+    check(new Set([...gp.lessonExamples, ...gp.cards].map((c) => c.fullSentence)).size ===
+      gp.lessonExamples.length + gp.cards.length,
+      `${gp.id}: review card must be an unseen Korean sentence, not a reused example`);
+  }
+
   dup(gp.id, 'grammarPoint');
   check(gp.lessonExamples.length >= 2, `${gp.id}: only ${gp.lessonExamples.length} lesson examples (need >= 2)`);
   check(gp.cards.length >= 3, `${gp.id}: only ${gp.cards.length} cloze cards (need >= 3)`);
@@ -88,11 +107,17 @@ for (const { gp, position, level } of all) {
   for (const ex of gp.lessonExamples) {
     dup(ex.id, 'lessonExample');
     check(ex.fullSentence.includes(ex.answer), `${ex.id}: answer ${JSON.stringify(ex.answer)} not in sentence ${JSON.stringify(ex.fullSentence)}`);
+    check(ex.sentenceWithBlank.split('___').length === 2 &&
+      ex.sentenceWithBlank.replace('___', ex.answer) === ex.fullSentence,
+      `${ex.id}: worked cloze must reconstruct the exact Korean sentence`);
     check(typeof ex.englishHint === 'string' && ex.englishHint.length > 0, `${ex.id}: englishHint is not a non-empty string`);
   }
   for (const card of gp.cards) {
     dup(card.id, 'clozeCard');
     check(card.fullSentence.includes(card.answer), `${card.id}: answer ${JSON.stringify(card.answer)} not in sentence ${JSON.stringify(card.fullSentence)}`);
+    check(card.sentenceWithBlank.split('___').length === 2 &&
+      card.sentenceWithBlank.replace('___', card.answer) === card.fullSentence,
+      `${card.id}: review cloze must reconstruct the exact Korean sentence`);
     check(card.sentenceWithBlank.includes('___'), `${card.id}: sentenceWithBlank has no ___ blank`);
     check(typeof card.englishHint === 'string' && card.englishHint.length > 0, `${card.id}: englishHint is not a non-empty string`);
     const spec = levels[level - 1];
