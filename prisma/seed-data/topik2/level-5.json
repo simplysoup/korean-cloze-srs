@@ -27,7 +27,7 @@
             "level5",
             "grammar"
           ],
-          "structurePattern": "N(으)로 인해(서)",
+          "structurePattern": "[Noun] + (으)로 인해(서)",
           "relatedPointIds": [
             "gp_gi_ttaemune"
           ],
@@ -199,7 +199,7 @@
             "level5",
             "grammar"
           ],
-          "structurePattern": "N에 따라(서)",
+          "structurePattern": "[Noun] + 에 따라(서)",
           "relatedPointIds": [
             "gp_t2l3_eulsurok"
           ],
@@ -1335,7 +1335,7 @@
             "level5",
             "grammar"
           ],
-          "structurePattern": "N조차",
+          "structurePattern": "[Noun] + 조차",
           "relatedPointIds": [
             "gp_do"
           ],
@@ -1685,7 +1685,7 @@
             "level5",
             "grammar"
           ],
-          "structurePattern": "N에 불과하다",
+          "structurePattern": "[Noun] + 에 불과하다",
           "relatedPointIds": [
             "gp_man"
           ],

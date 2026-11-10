@@ -27,7 +27,7 @@
             "level6",
             "grammar"
           ],
-          "structurePattern": "N(으)로 말미암아",
+          "structurePattern": "[Noun] + (으)로 말미암아",
           "relatedPointIds": [
             "gp_t2l5_euro_inhae"
           ],
@@ -113,7 +113,7 @@
             "level6",
             "grammar"
           ],
-          "structurePattern": "N을/를 막론하고",
+          "structurePattern": "[Noun] + 을/를 막론하고",
           "relatedPointIds": [
             "gp_t2l5_e_ttaraseo"
           ],
@@ -813,7 +813,7 @@
             "level6",
             "grammar"
           ],
-          "structurePattern": "N은/는 고사하고",
+          "structurePattern": "[Noun] + 은/는 고사하고",
           "relatedPointIds": [
             "gp_t2l5_gineunkeonyeong"
           ],
