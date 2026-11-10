@@ -23,7 +23,7 @@ export function submitAnswerAttempt(state: AnswerAttempt, outcome: AnswerOutcome
 
 /** Reveal always fails the target test, even if a previously typed answer matched. */
 export function revealAnswerAttempt(state: AnswerAttempt): AnswerAttempt {
-  if (state.commitPending || state.committed) return state;
+  if (state.revealed || state.commitPending || state.committed) return state;
   return { ...state, revealed: true, submitted: true, outcome: null };
 }
 
