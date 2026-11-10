@@ -24,3 +24,4 @@ src/generated/
 # Vite
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
+.qa-reports/
