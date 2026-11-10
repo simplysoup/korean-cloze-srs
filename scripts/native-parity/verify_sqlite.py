@@ -9,6 +9,7 @@ Export app-private SQLite files through an authorized emulator/device workflow.
 Do not use this script to edit, clear, or migrate a user's database.
 """
 import argparse
+import hashlib
 import json
 import sqlite3
 import sys
@@ -37,7 +38,7 @@ def tables(conn):
 
 
 def capture_user_snapshot(conn):
-    """Exact normalized row content, not only counts; exclude migration markers."""
+    """Digest every exact row without storing PII or authentication secrets."""
     existing = tables(conn)
     snapshot = {}
     for table in USER_TABLES + ["meta"]:
@@ -51,21 +52,28 @@ def capture_user_snapshot(conn):
             # SQLite BLOB fields are rare, but account fields must round-trip.
             rows.append({k: ({"blob_hex": v.hex()} if isinstance(v, bytes) else v)
                          for k, v in d.items()})
-        snapshot[table] = sorted(rows, key=j)
+        canonical = j(sorted(rows, key=j)).encode("utf-8")
+        # Persist only a count and digest, never an email, hash, token or
+        # review-history record. This still detects a single-field change.
+        snapshot[table] = {
+            "row_count": len(rows),
+            "sha256": hashlib.sha256(canonical).hexdigest(),
+        }
     return snapshot
 
 
 def validate_survival(conn, before):
     after = capture_user_snapshot(conn)
     errors = []
-    for table, rows in before.items():
+    for table, summary in before.items():
         if table not in after:
             errors.append(f"User table disappeared: {table}")
-        elif rows != after[table]:
+        elif summary != after[table]:
             errors.append(f"History/settings changed in {table}: "
-                          f"{len(rows)} rows before, {len(after[table])} after")
-    for table, rows in after.items():
-        if table not in before and rows:
+                          f"{summary['row_count']} rows before, "
+                          f"{after[table]['row_count']} after")
+    for table, summary in after.items():
+        if table not in before and summary["row_count"]:
             errors.append(f"Unexpected user rows appeared in {table}")
     return errors
 
