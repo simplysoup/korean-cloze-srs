@@ -180,10 +180,10 @@ export function initDb(): Db {
       const deckDescriptions: Record<string, string> = {
         deck_topik1_level1: 'TOPIK I Level 1 grammar — audited and reorganised into a learner-first curriculum 2026-11-09.',
         deck_topik1_level2: 'TOPIK I Level 2 grammar. Lesson 22 (reported speech) is an optional bridge.',
-        deck_topik2_level3: 'Curated TOPIK II Level 3 grammar practice — editorial selection, not a complete official exam syllabus.',
-        deck_topik2_level4: 'Curated TOPIK II Level 4 grammar practice — editorial selection, not a complete official exam syllabus.',
-        deck_topik2_level5: 'Curated TOPIK II Level 5 grammar practice — editorial selection, not a complete official exam syllabus.',
-        deck_topik2_level6: 'Curated TOPIK II Level 6 grammar practice — editorial selection, not a complete official exam syllabus.',
+        deck_topik2_level3: 'Curated TOPIK II Level 3 grammar — draft, educator approval pending.',
+        deck_topik2_level4: 'Curated TOPIK II Level 4 grammar — draft, educator approval pending.',
+        deck_topik2_level5: 'Curated TOPIK II Level 5 grammar — draft, educator approval pending.',
+        deck_topik2_level6: 'Curated TOPIK II Level 6 grammar — draft, educator approval pending.',
       };
       CONTENT_BUNDLES.forEach((bundle, index) => {
         tx.insert(schema.decks).values({
@@ -767,7 +767,8 @@ export function getDecks(): DeckInfo[] {
       id: deck.id,
       title: deck.title,
       slug: deck.slug,
-      description: deck.description,
+      description: published || !deck.id.startsWith('deck_topik2_level')
+        ? deck.description : `${deck.title} grammar.`,
       level: deck.level,
       topikLevel: deck.topikLevel,
       sortOrder: deck.sortOrder,
