@@ -11,6 +11,7 @@
 // server is unreachable (the offline fallback AuthScreen already had).
 
 import { generateSalt, hashPassword, isLogoutGraceActive, usernameFromEmail } from '../lib/auth';
+import { isValidServerAccountId } from './account-isolation/storage';
 import {
   getState,
   saveUserRecord,
@@ -77,6 +78,9 @@ export function recordServerUser(serverUser: {
   username: string;
   hasPassword?: boolean;
 }): DbUser {
+  if (!isValidServerAccountId(serverUser.id)) {
+    throw new Error('server did not return a valid verified account id');
+  }
   const existing = getState().user;
   const record: ServerUserRecord = {
     id: serverUser.id,
