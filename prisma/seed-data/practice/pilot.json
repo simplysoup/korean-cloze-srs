@@ -52,12 +52,14 @@
         {
           "id": "o1",
           "text": "수진이가 칠판을 닦아요.",
-          "explanation": "이/가가 '누가?'에 대한 새로운 주어 정보를 표시합니다."
+          "explanation": "이/가가 '누가?'에 대한 새로운 주어 정보를 표시합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "수진이는 칠판을 닦아요.",
-          "explanation": "은/는은 수진이를 화제로 세우거나 대조할 때 자연스럽습니다. 여기서는 새 담당자를 식별하는 데 초점이 있습니다."
+          "explanation": "은/는은 수진이를 화제로 세우거나 대조할 때 자연스럽습니다. 여기서는 새 담당자를 식별하는 데 초점이 있습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -68,12 +70,13 @@
       ],
       "objective": "Identify a previously unknown actor answering 누가 rather than introducing a contrastive topic.",
       "explanation": "이/가가 '누가?'에 대한 새로운 주어 정보를 표시합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Pragmatic distinction: educator should verify the naturalness of topic alternatives."
+      "ambiguityReview": "Pragmatic distinction: educator should verify the naturalness of topic alternatives.",
+      "availableAfterLesson": 3
     },
     {
       "id": "ct-002",
@@ -93,12 +96,14 @@
         {
           "id": "o1",
           "text": "영희가 고양이에게 밥을 줬어요.",
-          "explanation": "새 주어가 누군지 직접 알려 주는 응답입니다."
+          "explanation": "새 주어가 누군지 직접 알려 주는 응답입니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "영희는 고양이에게 밥을 줬어요.",
-          "explanation": "영희를 화제로 삼는 응답이며, 질문의 주어 식별 초점을 약하게 만듭니다."
+          "explanation": "영희를 화제로 삼는 응답이며, 질문의 주어 식별 초점을 약하게 만듭니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -109,12 +114,13 @@
       ],
       "objective": "Distinguish subject-focus information from topicalization in a wh-question.",
       "explanation": "새 주어가 누군지 직접 알려 주는 응답입니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Pragmatic distinction: educator should verify against appropriate discourse contexts."
+      "ambiguityReview": "Pragmatic distinction: educator should verify against appropriate discourse contexts.",
+      "availableAfterLesson": 3
     },
     {
       "id": "ct-003",
@@ -134,12 +140,14 @@
         {
           "id": "o1",
           "text": "사람들이 도서관에서 책을 읽어요.",
-          "explanation": "에서가 읽는 활동의 장소를 나타냅니다."
+          "explanation": "에서가 읽는 활동의 장소를 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "사람들이 도서관에 책을 읽어요.",
-          "explanation": "에만으로는 읽다의 활동 장소를 표시하지 못합니다."
+          "explanation": "에만으로는 읽다의 활동 장소를 표시하지 못합니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -150,12 +158,13 @@
       ],
       "objective": "Select an action-location particle rather than a destination marker.",
       "explanation": "에서가 읽는 활동의 장소를 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 5
     },
     {
       "id": "ct-004",
@@ -175,12 +184,14 @@
         {
           "id": "o1",
           "text": "민수는 회사에 가요.",
-          "explanation": "가다와 에가 도착 목적지를 표시합니다."
+          "explanation": "가다와 에가 도착 목적지를 표시합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "민수는 회사에서 가요.",
-          "explanation": "에서는 출발 지점의 해석이 생겨, 향하는 목적지가 되지 않습니다."
+          "explanation": "에서는 출발 지점의 해석이 생겨, 향하는 목적지가 되지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -191,12 +202,13 @@
       ],
       "objective": "Use the destination marker with a motion verb.",
       "explanation": "가다와 에가 도착 목적지를 표시합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 5
     },
     {
       "id": "ct-005",
@@ -216,12 +228,14 @@
         {
           "id": "o1",
           "text": "해나는 오늘 매운 음식을 안 먹어요.",
-          "explanation": "안은 가능한 행동을 의도적으로 하지 않는 뜻을 전달합니다."
+          "explanation": "안은 가능한 행동을 의도적으로 하지 않는 뜻을 전달합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "해나는 오늘 매운 음식을 못 먹어요.",
-          "explanation": "못은 먹을 능력이나 외부 조건이 막는다는 뜻이라 주어진 상황과 다릅니다."
+          "explanation": "못은 먹을 능력이나 외부 조건이 막는다는 뜻이라 주어진 상황과 다릅니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -232,12 +246,13 @@
       ],
       "objective": "Encode a voluntary negative rather than inability.",
       "explanation": "안은 가능한 행동을 의도적으로 하지 않는 뜻을 전달합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 4
     },
     {
       "id": "ct-006",
@@ -257,12 +272,14 @@
         {
           "id": "o1",
           "text": "유나는 지금 못 달려요.",
-          "explanation": "못이 원하는 행동을 할 수 없는 제약을 나타냅니다."
+          "explanation": "못이 원하는 행동을 할 수 없는 제약을 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "유나는 지금 안 달려요.",
-          "explanation": "안 달려요는 실제로 달리지 않는 사실만 말해, 불가능하다는 정보가 빠집니다."
+          "explanation": "안 달려요는 실제로 달리지 않는 사실만 말해, 불가능하다는 정보가 빠집니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -273,12 +290,13 @@
       ],
       "objective": "Express inability instead of mere non-performance.",
       "explanation": "못이 원하는 행동을 할 수 없는 제약을 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 4
     },
     {
       "id": "ct-007",
@@ -298,12 +316,14 @@
         {
           "id": "o1",
           "text": "바닥이 미끄러우니까 조심하세요.",
-          "explanation": "-(으)니까로 이유를 제시한 뒤 명령형을 자연스럽게 연결합니다."
+          "explanation": "-(으)니까로 이유를 제시한 뒤 명령형을 자연스럽게 연결합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "바닥이 미끄러워서 조심하세요.",
-          "explanation": "교재 문어 기준에서 -아/어서의 원인절과 명령형 결합은 제한됩니다. 구어 예외는 교육자 검토가 필요합니다."
+          "explanation": "교재 문어 기준에서 -아/어서의 원인절과 명령형 결합은 제한됩니다. 구어 예외는 교육자 검토가 필요합니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -314,12 +334,13 @@
       ],
       "objective": "Choose a cause connector compatible with a directive.",
       "explanation": "-(으)니까로 이유를 제시한 뒤 명령형을 자연스럽게 연결합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Colloquial -아/어서 imperative variation requires educator review."
+      "ambiguityReview": "Colloquial -아/어서 imperative variation requires educator review.",
+      "availableAfterLesson": 9
     },
     {
       "id": "ct-008",
@@ -339,12 +360,14 @@
         {
           "id": "o1",
           "text": "시간이 늦었으니까 지금 출발해요.",
-          "explanation": "-(으)니까가 이유를 제시하며 청유적 제안을 이끌 수 있습니다."
+          "explanation": "-(으)니까가 이유를 제시하며 청유적 제안을 이끌 수 있습니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "시간이 늦어서 지금 출발해요.",
-          "explanation": "이 문장은 지금 출발한다는 결과를 서술할 뿐 제안임을 표시하지 않습니다."
+          "explanation": "이 문장은 지금 출발한다는 결과를 서술할 뿐 제안임을 표시하지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -355,12 +378,13 @@
       ],
       "objective": "Separate a justified proposal from a descriptive cause-result statement.",
       "explanation": "-(으)니까가 이유를 제시하며 청유적 제안을 이끌 수 있습니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Speech-act ambiguity requires educator review."
+      "ambiguityReview": "Speech-act ambiguity requires educator review.",
+      "availableAfterLesson": 9
     },
     {
       "id": "ct-009",
@@ -381,17 +405,20 @@
         {
           "id": "o1",
           "text": "지금 행사를 시작합니다.",
-          "explanation": "-ㅂ니다는 공식 발표에 적합한 격식체입니다."
+          "explanation": "-ㅂ니다는 공식 발표에 적합한 격식체입니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "지금 행사를 시작해요.",
-          "explanation": "해요체는 공손하지만 공식 선언에 요구되는 격식체는 아닙니다."
+          "explanation": "해요체는 공손하지만 공식 선언에 요구되는 격식체는 아닙니다.",
+          "validInContext": false
         },
         {
           "id": "o3",
           "text": "지금 행사를 시작해.",
-          "explanation": "반말은 공식 청중에게 적합하지 않습니다."
+          "explanation": "반말은 공식 청중에게 적합하지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -402,12 +429,13 @@
       ],
       "objective": "Switch to formal declarative speech in a public announcement.",
       "explanation": "-ㅂ니다는 공식 발표에 적합한 격식체입니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "formal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 14
     },
     {
       "id": "ct-010",
@@ -428,17 +456,20 @@
         {
           "id": "o1",
           "text": "내일 같이 가.",
-          "explanation": "반말 해체가 지정된 친밀한 관계에 적합합니다."
+          "explanation": "반말 해체가 지정된 친밀한 관계에 적합합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "내일 같이 가요.",
-          "explanation": "해요체는 공손하지만 요청된 반말이 아닙니다."
+          "explanation": "해요체는 공손하지만 요청된 반말이 아닙니다.",
+          "validInContext": false
         },
         {
           "id": "o3",
           "text": "내일 같이 갑니다.",
-          "explanation": "합니다체는 친근한 반말 상황과 어울리지 않습니다."
+          "explanation": "합니다체는 친근한 반말 상황과 어울리지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -449,12 +480,13 @@
       ],
       "objective": "Use plain casual speech without accidental polite endings.",
       "explanation": "반말 해체가 지정된 친밀한 관계에 적합합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "casual",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 14
     },
     {
       "id": "ct-011",
@@ -474,12 +506,14 @@
         {
           "id": "o1",
           "text": "제가 다음 순서를 진행하겠습니다.",
-          "explanation": "1인칭 격식체 -겠-이 발표자의 즉각적인 의지와 약속을 나타냅니다."
+          "explanation": "1인칭 격식체 -겠-이 발표자의 즉각적인 의지와 약속을 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "진행자가 다음 순서를 하겠어요.",
-          "explanation": "3인칭에 대한 추측처럼 들리고 직접 나서겠다는 1인칭 약속이 아닙니다."
+          "explanation": "3인칭에 대한 추측처럼 들리고 직접 나서겠다는 1인칭 약속이 아닙니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -490,12 +524,13 @@
       ],
       "objective": "Recognize speaker-volitional -겠- in formal self-commitment.",
       "explanation": "1인칭 격식체 -겠-이 발표자의 즉각적인 의지와 약속을 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "formal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 13
     },
     {
       "id": "ct-012",
@@ -515,12 +550,14 @@
         {
           "id": "o1",
           "text": "밖은 아주 춥겠어요.",
-          "explanation": "-겠-이 관찰을 근거로 한 추측을 나타냅니다."
+          "explanation": "-겠-이 관찰을 근거로 한 추측을 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "제가 밖에 나가겠습니다.",
-          "explanation": "1인칭 의지를 나타내며 추위를 추측하는 답이 아닙니다."
+          "explanation": "1인칭 의지를 나타내며 추위를 추측하는 답이 아닙니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -531,12 +568,13 @@
       ],
       "objective": "Recognize inferential -겠- instead of a speaker's plan.",
       "explanation": "-겠-이 관찰을 근거로 한 추측을 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 13
     },
     {
       "id": "ct-013",
@@ -556,12 +594,14 @@
         {
           "id": "o1",
           "text": "기술자가 창문을 열고 있어요.",
-          "explanation": "-고 있다가 창문을 여는 동작이 진행 중임을 보여 줍니다."
+          "explanation": "-고 있다가 창문을 여는 동작이 진행 중임을 보여 줍니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "창문이 열려 있어요.",
-          "explanation": "-아/어 있다가 이미 열린 뒤 유지되는 결과 상태입니다."
+          "explanation": "-아/어 있다가 이미 열린 뒤 유지되는 결과 상태입니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -572,12 +612,13 @@
       ],
       "objective": "Distinguish a continuing action from its resulting state.",
       "explanation": "-고 있다가 창문을 여는 동작이 진행 중임을 보여 줍니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 16
     },
     {
       "id": "ct-014",
@@ -597,12 +638,14 @@
         {
           "id": "o1",
           "text": "문이 닫혀 있어요.",
-          "explanation": "닫힌 결과 상태가 계속된다는 뜻입니다."
+          "explanation": "닫힌 결과 상태가 계속된다는 뜻입니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "누군가 문을 닫고 있어요.",
-          "explanation": "현재 문을 닫는 행동이 진행 중이라는 뜻이라 상황과 충돌합니다."
+          "explanation": "현재 문을 닫는 행동이 진행 중이라는 뜻이라 상황과 충돌합니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -613,12 +656,13 @@
       ],
       "objective": "Describe a maintained result without implying a current actor.",
       "explanation": "닫힌 결과 상태가 계속된다는 뜻입니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 16
     },
     {
       "id": "ct-015",
@@ -638,12 +682,14 @@
         {
           "id": "o1",
           "text": "이 과일을 먹어 보세요.",
-          "explanation": "-아/어 보다와 명령형이 지금 새로운 시도를 권합니다."
+          "explanation": "-아/어 보다와 명령형이 지금 새로운 시도를 권합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "이 과일을 먹은 적이 있어요.",
-          "explanation": "-ㄴ 적이 있다가 과거 경험을 주장하여 상황과 맞지 않습니다."
+          "explanation": "-ㄴ 적이 있다가 과거 경험을 주장하여 상황과 맞지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -654,12 +700,13 @@
       ],
       "objective": "Choose an invitation to try, not a report of past experience.",
       "explanation": "-아/어 보다와 명령형이 지금 새로운 시도를 권합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 18
     },
     {
       "id": "ct-016",
@@ -679,12 +726,14 @@
         {
           "id": "o1",
           "text": "저는 제주도에서 산 적이 있어요.",
-          "explanation": "-(으)ㄴ 적이 있다가 과거 생활 경험의 존재를 말합니다."
+          "explanation": "-(으)ㄴ 적이 있다가 과거 생활 경험의 존재를 말합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "저는 제주도에서 살아 보세요.",
-          "explanation": "권유형 문장이라 과거 경험을 대답하지 않습니다."
+          "explanation": "권유형 문장이라 과거 경험을 대답하지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -695,12 +744,13 @@
       ],
       "objective": "State completed past experience rather than suggest trying an activity.",
       "explanation": "-(으)ㄴ 적이 있다가 과거 생활 경험의 존재를 말합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 18
     },
     {
       "id": "ct-017",
@@ -720,12 +770,14 @@
         {
           "id": "o1",
           "text": "출발하기 전에 여권을 확인해요.",
-          "explanation": "-기 전에가 출발보다 확인이 먼저임을 뜻합니다."
+          "explanation": "-기 전에가 출발보다 확인이 먼저임을 뜻합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "출발하고 나서 여권을 확인해요.",
-          "explanation": "-고 나서가 출발한 다음에 확인한다는 정반대 순서를 만듭니다."
+          "explanation": "-고 나서가 출발한 다음에 확인한다는 정반대 순서를 만듭니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -736,12 +788,13 @@
       ],
       "objective": "Encode an action that must happen before departure.",
       "explanation": "-기 전에가 출발보다 확인이 먼저임을 뜻합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 15
     },
     {
       "id": "ct-018",
@@ -761,12 +814,14 @@
         {
           "id": "o1",
           "text": "밥을 먹고 나서 이를 닦았어요.",
-          "explanation": "-고 나서가 선행 행동의 완료 후 다음 행동을 표시합니다."
+          "explanation": "-고 나서가 선행 행동의 완료 후 다음 행동을 표시합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "밥을 먹기 전에 이를 닦았어요.",
-          "explanation": "-기 전에가 식사 전 양치질이라는 반대 순서를 말합니다."
+          "explanation": "-기 전에가 식사 전 양치질이라는 반대 순서를 말합니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -777,12 +832,13 @@
       ],
       "objective": "Order completed actions using after rather than before.",
       "explanation": "-고 나서가 선행 행동의 완료 후 다음 행동을 표시합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 15
     },
     {
       "id": "ct-019",
@@ -803,17 +859,20 @@
         {
           "id": "o1",
           "text": "민지는 볼펜으로 글을 써요.",
-          "explanation": "-(으)로가 수단이나 도구를 나타냅니다."
+          "explanation": "-(으)로가 수단이나 도구를 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "민지는 볼펜에 글을 써요.",
-          "explanation": "에를 쓰면 볼펜 자체가 글의 표면이나 위치처럼 해석됩니다."
+          "explanation": "에를 쓰면 볼펜 자체가 글의 표면이나 위치처럼 해석됩니다.",
+          "validInContext": false
         },
         {
           "id": "o3",
           "text": "민지는 볼펜에서 글을 써요.",
-          "explanation": "에서가 활동 장소를 나타내므로 볼펜을 도구로 표현하지 못합니다."
+          "explanation": "에서가 활동 장소를 나타내므로 볼펜을 도구로 표현하지 못합니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -824,12 +883,13 @@
       ],
       "objective": "Use -(으)로 for an instrument, not a location particle.",
       "explanation": "-(으)로가 수단이나 도구를 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 21
     },
     {
       "id": "ct-020",
@@ -850,17 +910,20 @@
         {
           "id": "o1",
           "text": "요리사는 칼로 채소를 잘랐어요.",
-          "explanation": "칼로는 도구를 표시하는 -(으)로의 형태입니다."
+          "explanation": "칼로는 도구를 표시하는 -(으)로의 형태입니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "요리사는 칼에 채소를 잘랐어요.",
-          "explanation": "칼에라고 하면 도구 뜻이 되지 않습니다."
+          "explanation": "칼에라고 하면 도구 뜻이 되지 않습니다.",
+          "validInContext": false
         },
         {
           "id": "o3",
           "text": "요리사는 칼에서 채소를 잘랐어요.",
-          "explanation": "칼에서라고 하면 장소 표현처럼 되어 상황에 맞지 않습니다."
+          "explanation": "칼에서라고 하면 장소 표현처럼 되어 상황에 맞지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -871,12 +934,13 @@
       ],
       "objective": "Apply the instrumental particle to a consonant-final tool noun.",
       "explanation": "칼로는 도구를 표시하는 -(으)로의 형태입니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 21
     },
     {
       "id": "ct-021",
@@ -896,12 +960,14 @@
         {
           "id": "o1",
           "text": "교실 문이 열렸어요.",
-          "explanation": "열리다의 피동 표현은 문에 일어난 변화를 말하며 행위자를 요구하지 않습니다."
+          "explanation": "열리다의 피동 표현은 문에 일어난 변화를 말하며 행위자를 요구하지 않습니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "학생이 교실 문을 열었어요.",
-          "explanation": "학생이라는 행위자를 임의로 추가하고 능동 행동을 말합니다."
+          "explanation": "학생이라는 행위자를 임의로 추가하고 능동 행동을 말합니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -912,12 +978,13 @@
       ],
       "objective": "Report a patient-centered event without inventing an agent.",
       "explanation": "열리다의 피동 표현은 문에 일어난 변화를 말하며 행위자를 요구하지 않습니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 24
     },
     {
       "id": "ct-022",
@@ -937,12 +1004,14 @@
         {
           "id": "o1",
           "text": "아버지가 아기에게 밥을 먹였어요.",
-          "explanation": "먹이다는 아버지가 아기에게 먹는 행위를 시켰다는 사동 뜻입니다."
+          "explanation": "먹이다는 아버지가 아기에게 먹는 행위를 시켰다는 사동 뜻입니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "아기가 밥을 먹었어요.",
-          "explanation": "아기가 먹었다는 사실만 말해 원인 제공자의 역할이 빠집니다."
+          "explanation": "아기가 먹었다는 사실만 말해 원인 제공자의 역할이 빠집니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -953,12 +1022,13 @@
       ],
       "objective": "Choose a causative verb when an agent causes another participant's action.",
       "explanation": "먹이다는 아버지가 아기에게 먹는 행위를 시켰다는 사동 뜻입니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 24
     },
     {
       "id": "ct-023",
@@ -978,12 +1048,14 @@
         {
           "id": "o1",
           "text": "강의가 끝나자마자 학생들이 박수를 쳤어요.",
-          "explanation": "-자마자는 앞선 일이 끝나는 즉시 뒤 행동이 이어짐을 나타냅니다."
+          "explanation": "-자마자는 앞선 일이 끝나는 즉시 뒤 행동이 이어짐을 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "강의가 끝나는 동안 학생들이 박수를 쳤어요.",
-          "explanation": "-는 동안은 강의가 진행되는 시간에 박수를 쳤다는 뜻입니다."
+          "explanation": "-는 동안은 강의가 진행되는 시간에 박수를 쳤다는 뜻입니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -994,12 +1066,13 @@
       ],
       "objective": "Mark immediate succession rather than a simultaneous interval.",
       "explanation": "-자마자는 앞선 일이 끝나는 즉시 뒤 행동이 이어짐을 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 27
     },
     {
       "id": "ct-024",
@@ -1019,12 +1092,14 @@
         {
           "id": "o1",
           "text": "엄마가 요리하는 동안 아이가 그림을 그렸어요.",
-          "explanation": "-는 동안은 두 행동이 지속적으로 겹치는 시간 구간을 표시합니다."
+          "explanation": "-는 동안은 두 행동이 지속적으로 겹치는 시간 구간을 표시합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "엄마가 요리하자마자 아이가 그림을 그렸어요.",
-          "explanation": "-자마자는 요리 시작 또는 끝의 즉시성으로 읽혀 '내내'와 맞지 않습니다."
+          "explanation": "-자마자는 요리 시작 또는 끝의 즉시성으로 읽혀 '내내'와 맞지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1035,12 +1110,13 @@
       ],
       "objective": "Use a temporal interval when actions overlap.",
       "explanation": "-는 동안은 두 행동이 지속적으로 겹치는 시간 구간을 표시합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 27
     },
     {
       "id": "ct-025",
@@ -1060,12 +1136,14 @@
         {
           "id": "o1",
           "text": "민호는 보고서를 쓰느라고 잠을 못 잤어요.",
-          "explanation": "-느라고는 앞 활동에 매여 부정적인 결과가 생긴 것을 나타냅니다."
+          "explanation": "-느라고는 앞 활동에 매여 부정적인 결과가 생긴 것을 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "민호는 보고서를 쓴 덕분에 잠을 못 잤어요.",
-          "explanation": "덕분에는 일반적으로 좋은 결과에 대한 감사·혜택을 표시해 맥락과 어긋납니다."
+          "explanation": "덕분에는 일반적으로 좋은 결과에 대한 감사·혜택을 표시해 맥락과 어긋납니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1076,12 +1154,13 @@
       ],
       "objective": "Distinguish time-consuming adverse cause from beneficial cause.",
       "explanation": "-느라고는 앞 활동에 매여 부정적인 결과가 생긴 것을 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 28
     },
     {
       "id": "ct-026",
@@ -1101,12 +1180,14 @@
         {
           "id": "o1",
           "text": "지수가 알려 준 덕분에 제시간에 도착했어요.",
-          "explanation": "덕분에가 도움에 따른 긍정적인 결과를 나타냅니다."
+          "explanation": "덕분에가 도움에 따른 긍정적인 결과를 나타냅니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "지수가 알려 주느라고 제시간에 도착했어요.",
-          "explanation": "-느라고는 앞 활동에 매인 주체의 부정적 결과를 기대하므로 감사의 뜻과 다릅니다."
+          "explanation": "-느라고는 앞 활동에 매인 주체의 부정적 결과를 기대하므로 감사의 뜻과 다릅니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1117,12 +1198,13 @@
       ],
       "objective": "Use a benefactive cause connector for a successful outcome.",
       "explanation": "덕분에가 도움에 따른 긍정적인 결과를 나타냅니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 28
     },
     {
       "id": "ct-027",
@@ -1142,12 +1224,14 @@
         {
           "id": "o1",
           "text": "새 운동화를 신었더니 발이 덜 아팠어요.",
-          "explanation": "-았/었더니가 자신이 한 일을 계기로 확인한 결과를 연결합니다."
+          "explanation": "-았/었더니가 자신이 한 일을 계기로 확인한 결과를 연결합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "새 운동화를 신더니 발이 덜 아팠어요.",
-          "explanation": "-더니는 보통 관찰한 다른 대상의 변화에 쓰며 여기서는 1인칭 체험에 맞지 않습니다."
+          "explanation": "-더니는 보통 관찰한 다른 대상의 변화에 쓰며 여기서는 1인칭 체험에 맞지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1158,12 +1242,13 @@
       ],
       "objective": "Relate a speaker's completed experiment to a discovered result.",
       "explanation": "-았/었더니가 자신이 한 일을 계기로 확인한 결과를 연결합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "First-person -더니 restrictions need educator verification."
+      "ambiguityReview": "First-person -더니 restrictions need educator verification.",
+      "availableAfterLesson": 30
     },
     {
       "id": "ct-028",
@@ -1183,12 +1268,14 @@
         {
           "id": "o1",
           "text": "동생이 계속 연습하더니 오늘은 어려운 곡도 잘 쳐요.",
-          "explanation": "-더니는 관찰하던 동생의 행동과 뒤의 변화를 이어 줍니다."
+          "explanation": "-더니는 관찰하던 동생의 행동과 뒤의 변화를 이어 줍니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "내가 계속 연습했더니 오늘은 동생이 잘 쳐요.",
-          "explanation": "-았/었더니는 내가 연습한 결과를 보고하는 문장이므로 관찰 대상과 행위자가 바뀝니다."
+          "explanation": "-았/었더니는 내가 연습한 결과를 보고하는 문장이므로 관찰 대상과 행위자가 바뀝니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1199,12 +1286,13 @@
       ],
       "objective": "Describe an observed third-party progression without replacing the actor.",
       "explanation": "-더니는 관찰하던 동생의 행동과 뒤의 변화를 이어 줍니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Changing subject in distractor avoids near-equivalent semantic readings."
+      "ambiguityReview": "Changing subject in distractor avoids near-equivalent semantic readings.",
+      "availableAfterLesson": 30
     },
     {
       "id": "ct-029",
@@ -1225,17 +1313,20 @@
         {
           "id": "o1",
           "text": "친구가 어디에서 일하냐고 물었어요.",
-          "explanation": "-냐고 하다가 원래의 질문이라는 발화 행위를 유지합니다."
+          "explanation": "-냐고 하다가 원래의 질문이라는 발화 행위를 유지합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "친구가 어디에서 일한다고 했어요.",
-          "explanation": "-ㄴ/는다고가 평서문 보고로 바뀌어 질문 의미가 사라집니다."
+          "explanation": "-ㄴ/는다고가 평서문 보고로 바뀌어 질문 의미가 사라집니다.",
+          "validInContext": false
         },
         {
           "id": "o3",
           "text": "친구가 어디에서 일하라고 했어요.",
-          "explanation": "-(으)라고가 명령을 전달해 원래 발화와 다릅니다."
+          "explanation": "-(으)라고가 명령을 전달해 원래 발화와 다릅니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1246,12 +1337,13 @@
       ],
       "objective": "Preserve an interrogative speech act in indirect quotation.",
       "explanation": "-냐고 하다가 원래의 질문이라는 발화 행위를 유지합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 35
     },
     {
       "id": "ct-030",
@@ -1272,17 +1364,20 @@
         {
           "id": "o1",
           "text": "선생님이 조용히 앉으라고 하셨어요.",
-          "explanation": "-(으)라고 하다가 상대에게 하는 명령을 간접적으로 전달합니다."
+          "explanation": "-(으)라고 하다가 상대에게 하는 명령을 간접적으로 전달합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "선생님이 조용히 앉자고 하셨어요.",
-          "explanation": "-자고 하다는 함께하자는 제안으로 바뀝니다."
+          "explanation": "-자고 하다는 함께하자는 제안으로 바뀝니다.",
+          "validInContext": false
         },
         {
           "id": "o3",
           "text": "선생님이 조용히 앉냐고 하셨어요.",
-          "explanation": "-냐고 하다는 질문이 되어 원래 지시와 다릅니다."
+          "explanation": "-냐고 하다는 질문이 되어 원래 지시와 다릅니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1293,12 +1388,13 @@
       ],
       "objective": "Distinguish a reported command from a proposal or question.",
       "explanation": "-(으)라고 하다가 상대에게 하는 명령을 간접적으로 전달합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 35
     },
     {
       "id": "ct-031",
@@ -1318,12 +1414,14 @@
         {
           "id": "o1",
           "text": "우리 어제 여기서 만나기로 했잖아요.",
-          "explanation": "-잖아요는 청자와 공유하는 사실을 상기시키는 말입니다."
+          "explanation": "-잖아요는 청자와 공유하는 사실을 상기시키는 말입니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "우리 어제 여기서 만나기로 했거든요.",
-          "explanation": "-거든요는 청자가 모를 수 있는 배경을 새로 제공하는 느낌이라 목적과 어긋납니다."
+          "explanation": "-거든요는 청자가 모를 수 있는 배경을 새로 제공하는 느낌이라 목적과 어긋납니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1334,12 +1432,13 @@
       ],
       "objective": "Choose the ending that invokes common ground.",
       "explanation": "-잖아요는 청자와 공유하는 사실을 상기시키는 말입니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Context-sensitive ending choice should be reviewed by a teacher."
+      "ambiguityReview": "Context-sensitive ending choice should be reviewed by a teacher.",
+      "availableAfterLesson": 30
     },
     {
       "id": "ct-032",
@@ -1359,12 +1458,14 @@
         {
           "id": "o1",
           "text": "제가 감기에 걸렸거든요.",
-          "explanation": "-거든요는 상대가 몰랐던 배경 이유를 부드럽게 제공합니다."
+          "explanation": "-거든요는 상대가 몰랐던 배경 이유를 부드럽게 제공합니다.",
+          "validInContext": true
         },
         {
           "id": "o2",
           "text": "제가 감기에 걸렸잖아요.",
-          "explanation": "-잖아요는 상대도 이미 아는 사실이라고 전제해 맥락에 맞지 않습니다."
+          "explanation": "-잖아요는 상대도 이미 아는 사실이라고 전제해 맥락에 맞지 않습니다.",
+          "validInContext": false
         }
       ],
       "accepted": [
@@ -1375,12 +1476,13 @@
       ],
       "objective": "Provide new explanatory background without presupposing shared knowledge.",
       "explanation": "-거든요는 상대가 몰랐던 배경 이유를 부드럽게 제공합니다.",
-      "registerConstraint": "As specified by the situation",
-      "tenseConstraint": "As specified by the situation",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Constrained by situation; educator confirmation pending"
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 30
     },
     {
       "id": "tr-001",
@@ -1420,7 +1522,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 8
     },
     {
       "id": "tr-002",
@@ -1460,7 +1563,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 7
     },
     {
       "id": "tr-003",
@@ -1500,7 +1604,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 4
     },
     {
       "id": "tr-004",
@@ -1539,7 +1644,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 5
     },
     {
       "id": "tr-005",
@@ -1579,7 +1685,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 11
     },
     {
       "id": "tr-006",
@@ -1619,7 +1726,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 14
     },
     {
       "id": "tr-007",
@@ -1659,7 +1767,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 16
     },
     {
       "id": "tr-008",
@@ -1698,7 +1807,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 18
     },
     {
       "id": "tr-009",
@@ -1738,7 +1848,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 14
     },
     {
       "id": "tr-010",
@@ -1778,7 +1889,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 15
     },
     {
       "id": "tr-011",
@@ -1818,7 +1930,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 24
     },
     {
       "id": "tr-012",
@@ -1853,7 +1966,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 24
     },
     {
       "id": "tr-013",
@@ -1893,7 +2007,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 24
     },
     {
       "id": "tr-014",
@@ -1928,7 +2043,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 25
     },
     {
       "id": "tr-015",
@@ -1963,7 +2079,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 28
     },
     {
       "id": "tr-016",
@@ -2003,7 +2120,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 35
     },
     {
       "id": "tr-017",
@@ -2043,7 +2161,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 35
     },
     {
       "id": "tr-018",
@@ -2078,7 +2197,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 30
     },
     {
       "id": "tr-019",
@@ -2113,7 +2233,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 34
     },
     {
       "id": "tr-020",
@@ -2153,7 +2274,8 @@
       "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
       "reviewStatus": "editorial-draft",
       "educatorApproval": "pending",
-      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending"
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 30
     }
   ]
 }
