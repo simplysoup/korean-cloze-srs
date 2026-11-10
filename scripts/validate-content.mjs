@@ -124,6 +124,8 @@ for (const { gp, position, level } of all) {
   }
   for (const card of gp.cards) {
     dup(card.id, 'clozeCard');
+    check(!gp.id.startsWith('gp_gap_') || typeof card.vocabBaseForm === 'string' && card.vocabBaseForm.trim().length > 0,
+      `${card.id}: grammar-gap cards must expose the dictionary/noun base`);
     check(card.fullSentence.includes(card.answer), `${card.id}: answer ${JSON.stringify(card.answer)} not in sentence ${JSON.stringify(card.fullSentence)}`);
     check(card.sentenceWithBlank.split('___').length === 2 &&
       card.sentenceWithBlank.replace('___', card.answer) === card.fullSentence,

@@ -122,6 +122,9 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
     for (const item of review) {
       cards += 1;
       checkCard(gp.id, item, 'review');
+      if (gp.id.startsWith('gp_gap_') && !item.vocabBaseForm?.trim()) {
+        errors.push(`${item.id}: gap review card must show the actual noun or dictionary base`);
+      }
       if (item.introducedAtPosition !== position) {
         errors.push(`${item.id}: card position ${item.introducedAtPosition}, expected ${position}`);
       }
