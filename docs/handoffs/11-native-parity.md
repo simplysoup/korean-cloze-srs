@@ -32,7 +32,19 @@ At the Phase 2 contract, the native initializer imports and seeds all six author
 - Structured repository JSON was inspected directly at the contract checkpoint: 229 grammar IDs, 721 cloze IDs, 471 worked examples, six decks, and no authored extra card targets.
 - The `prisma/seed-data/review-qa/flagged-card-fixes.json` ledger contains 193 editorial dispositions. Each of the 193 `after` snapshots matches its authored mobile card for `fullSentence`, `sentenceWithBlank`, `answer`, `alternateAnswers`, and `englishHint` (0 missing IDs, 0 field mismatches). All remain **pending educator review**.
 - Added Jest source-fixture tests: six-bundle expected identity counts, exact 193 editorial post-fix snapshots, flag-off/flag-on publication, collision/unknown-target preflight, and additive DDL generation. The tests establish source parity only, **not on-device transaction integrity**.
-- Pending: run `cd mobile && npm run lint && npm run typecheck && npm test -- --ci` and `npm run validate`; run repository content validators; test a native SQLite installation on emulator/device.
+- CI completed typecheck, Jest, content validators and web export successfully. Pending: explicit `cd mobile && npm run lint`, native SQLite exported-database verification and Android/iOS smoke.
+
+## Repeatable read-only SQLite verifier
+
+`python3 scripts/native-parity/verify_sqlite.py --db BEFORE.db --skip-content --capture before.json`
+
+After migrating that same test profile in an Expo native build:
+
+`python3 scripts/native-parity/verify_sqlite.py --db AFTER.db --compare before.json`
+
+The verifier compares all authored grammar, clozes, alternatives, target fields, examples, ordering, and deck associations directly to the six JSON bundles; flags extra/missing records, duplicate or orphaned relations; and checks exact user-table records, settings, and sync meta (excluding only `contentVersion` and `libraryMigrated` markers). It opens the exported SQLite file in read-only mode. On a legacy pre-library migration, expected new `library_decks` associations will require explicit review rather than silent exemption.
+
+**CI (first two commits):** successful Mobile (Expo) GitHub Actions runs: content validators, `npm run typecheck`, `npm test -- --ci`, and web export. The workflow does not run `npm run lint`, nor does it provide an Android/iOS emulator. The read-only SQLite verifier still requires an exported test database to execute.
 
 ## Native regression matrix required before release
 
