@@ -2,7 +2,7 @@ import {
   activateVerifiedAccount, clearSessionToken, clearSessionUserId,
   endAccountSession, getAccountSessionLease, getState, initStore,
   isAccountSessionLeaseCurrent, markDirty, persistNow,
-  setSessionToken, setSessionUserId,
+  setSessionToken, setSessionUserId, trustDevice,
 } from '../../state';
 import { recordServerUser } from '../../auth';
 
@@ -118,6 +118,12 @@ describe('account-scoped real web state (synthetic IDB, no production users)', (
     markDirty();
     await persistNow();
     expect(getState().doc.reviewLogs).toHaveLength(1);
+
+    // An offline reload restores the SAME verified user's counts.
+    trustDevice('A', getState().deviceId);
+    const boot = await initStore();
+    expect(boot.sessionUser?.id).toBe('A');
+    expect(getState().doc.reviewLogs.map((l) => l.id)).toEqual(['A-log']);
 
     // A's stale persist can finish AFTER B's login; the key and value
     // were captured before the switch and must never reference B.
