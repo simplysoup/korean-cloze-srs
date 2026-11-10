@@ -1,5 +1,5 @@
 /**
- * Validate the source grammar catalogue before it is ported into the mobile app.
+ * Validate the grammar catalogue for all six levels before porting to Expo.
  *
  * Run: bun scripts/validate-grammar-catalogue.ts
  * This is deliberately independent of the older generated Expo JSON snapshot.
@@ -8,10 +8,14 @@ import assert from 'node:assert/strict';
 import { allLessons as level1Lessons } from '../prisma/seed-data/topik1-level1';
 import { level1Additions } from '../prisma/seed-data/topik1-level1/additions';
 import { allLessons as level2Lessons } from '../prisma/seed-data/topik1-level2';
+import level3 from '../prisma/seed-data/topik2/level-3.json';
+import level4 from '../prisma/seed-data/topik2/level-4.json';
+import level5 from '../prisma/seed-data/topik2/level-5.json';
+import level6 from '../prisma/seed-data/topik2/level-6.json';
 import { teachingGuides } from '../prisma/seed-data/teaching-guides';
 
-const lessons = [...level1Lessons, ...level2Lessons];
-const expected = { lessons: 22, grammarPoints: 102, examples: 217, cards: 340 };
+const lessons = [...level1Lessons, ...level2Lessons, ...level3.lessons, ...level4.lessons, ...level5.lessons, ...level6.lessons];
+const expected = { lessons: 46, grammarPoints: 198, examples: 409, cards: 628 };
 const ids = new Set<string>();
 const points = new Set<string>();
 const positionById = new Map<string, number>();
@@ -52,9 +56,9 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
     if (!gp.description?.trim()) errors.push(`${gp.id}: missing explanation`);
     // A usable lesson must teach its mechanism, not merely state a translation.
     const guide = teachingGuides[gp.id];
-    if (!guide) {
+    if (!guide && gp.level <= 2) {
       errors.push(`${gp.id}: missing authored teaching guide`);
-    } else {
+    } else if (guide) {
       for (const field of ['meaning', 'formation', 'worked', 'trap'] as const) {
         if (guide[field].trim().length < 55) {
           errors.push(`${gp.id}: ${field} is too short to explain the idea to a beginner`);
@@ -70,6 +74,20 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
       const worked = gp.notes?.find((note) => note.title === 'Worked example');
       if (worked && !worked.content.includes(gp.lessonExamples[0]?.fullSentence ?? '')) {
         errors.push(`${gp.id}: worked breakdown does not reference its actual lesson example`);
+      }
+    }
+    // The new advanced decks use the same teaching contract directly in
+    // source JSON, rather than looking up separate guide modules.
+    if (gp.level >= 3) {
+      if (!gp.description?.trim() || gp.description.length < 45) errors.push(`${gp.id}: too-short meaning`);
+      const notes = new Map((gp.notes ?? []).map((note) => [note.title, note.content]));
+      for (const title of ['Build it step by step', 'Worked example', 'Common trap']) {
+        const note = notes.get(title);
+        if (!note || note.trim().length < 40) errors.push(`${gp.id}: missing/short ${title}`);
+      }
+      const worked = notes.get('Worked example') ?? '';
+      if (!worked.includes(gp.lessonExamples[0]?.fullSentence ?? '')) {
+        errors.push(`${gp.id}: worked note must explain the first worked sentence`);
       }
     }
     if (gp.id === 'gp_ani_eyo' && gp.cards.some((card) => !card.answer.includes('아니에요'))) {

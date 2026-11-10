@@ -10,6 +10,10 @@ import { and, asc, eq, lte, sql } from 'drizzle-orm';
 import * as schema from './schema';
 import contentBundleLevel1 from '../content/topik1-level1.json';
 import contentBundleLevel2 from '../content/topik1-level2.json';
+import contentBundleLevel3 from '../content/topik2-level3.json';
+import contentBundleLevel4 from '../content/topik2-level4.json';
+import contentBundleLevel5 from '../content/topik2-level5.json';
+import contentBundleLevel6 from '../content/topik2-level6.json';
 import { flattenContent, type ContentBundle, type GrammarPointSeed } from '../content/types';
 import { checkAnswers, computeFsrsReview, correctAnswersForCard, newFsrsState, stageForCard, type Grade } from '../lib/srs';
 import { orderLibraryPoints } from '../lib/library';
@@ -19,7 +23,7 @@ import { mergeDailyLearned, mergeStreaks, serverCardWins } from '../lib/sync-mer
 import type { SyncDocument } from '../lib/sync-types';
 
 export const LOCAL_USER_ID = 'local';
-export const CONTENT_VERSION = 'topik1-v7';
+export const CONTENT_VERSION = 'topik2-v1-20261110';
 
 /** The id of the currently logged-in user; all queries below are scoped to
  * it. Defaults to 'local' until the auth layer sets the real account. */
@@ -72,15 +76,19 @@ CREATE TABLE IF NOT EXISTS users (id TEXT PRIMARY KEY, username TEXT NOT NULL, e
 CREATE TABLE IF NOT EXISTS device_trust (user_id TEXT NOT NULL, device_id TEXT NOT NULL, last_verified_at TEXT NOT NULL, last_logout_at TEXT, UNIQUE(user_id, device_id));
 `;
 
-/** Every content bundle in curriculum order (Level 1, then Level 2). */
+/** Every content bundle in curriculum order (TOPIK Levels 1–6). */
 const CONTENT_BUNDLES: ContentBundle[] = [
   contentBundleLevel1 as unknown as ContentBundle,
   contentBundleLevel2 as unknown as ContentBundle,
+  contentBundleLevel3 as unknown as ContentBundle,
+  contentBundleLevel4 as unknown as ContentBundle,
+  contentBundleLevel5 as unknown as ContentBundle,
+  contentBundleLevel6 as unknown as ContentBundle,
 ];
 
 /**
  * Every grammar point in every content bundle, in curriculum order, with
- * its global 1-based position (Level 1: 1-50, Level 2: 51-102) and its
+ * its global 1-based position (Level 1: 1–50, Level 2: 51–102, Levels 3–6: 103–198) and its
  * position within its own bundle (for per-deck ordering). Review progress
  * is keyed by grammar point id, not by position, so reordering positions
  * (as the 2026-11-09 learner-first overhaul did) never loses progress —
@@ -133,10 +141,14 @@ export function initDb(): Db {
   // Each content deck row is upserted (not insert-if-absent) so a
   // corrected title/description reaches devices that already seeded an
   // earlier version. sortOrder is the bundle's index in CONTENT_BUNDLES
-  // (Level 1: 0, Level 2: 1), matching the catalogue order.
+  // (Levels 1–6: 0–5), matching the catalogue order.
   const deckDescriptions: Record<string, string> = {
     deck_topik1_level1: 'TOPIK I Level 1 grammar — audited and reorganised into a learner-first curriculum 2026-11-09.',
     deck_topik1_level2: 'TOPIK I Level 2 grammar. Lesson 22 (reported speech) is an optional bridge.',
+    deck_topik2_level3: 'Curated TOPIK II Level 3 grammar practice — editorial selection, not a complete official exam syllabus.',
+    deck_topik2_level4: 'Curated TOPIK II Level 4 grammar practice — editorial selection, not a complete official exam syllabus.',
+    deck_topik2_level5: 'Curated TOPIK II Level 5 grammar practice — editorial selection, not a complete official exam syllabus.',
+    deck_topik2_level6: 'Curated TOPIK II Level 6 grammar practice — editorial selection, not a complete official exam syllabus.',
   };
   CONTENT_BUNDLES.forEach((bundle, index) => {
     database.insert(schema.decks).values({

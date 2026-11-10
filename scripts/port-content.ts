@@ -19,11 +19,12 @@
  * Run:  bun scripts/port-content.ts
  * Output: mobile/src/content/topik1-level1.json
  *         mobile/src/content/topik1-level2.json
+ *         mobile/src/content/topik2-level3.json … topik2-level6.json
  */
 import { allLessons as level1Lessons } from '../prisma/seed-data/topik1-level1';
 import { level1Additions } from '../prisma/seed-data/topik1-level1/additions';
 import { allLessons as level2Lessons } from '../prisma/seed-data/topik1-level2';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { LessonSeed } from '../prisma/seed-data/types';
@@ -80,3 +81,19 @@ portLevel(
 	'prisma/seed-data/topik1-level2/lesson-12.ts … lesson-22.ts',
 	'topik1-level2.json',
 );
+
+/**
+ * Levels 3–6 are authored directly as declarative source bundles.
+ * The generated mobile JSON is byte-equivalent to this output.
+ * No vocabulary-only points are mixed into the grammar catalogues.
+ */
+for (const level of [3, 4, 5, 6]) {
+  const source = join(dirname(fileURLToPath(import.meta.url)), '..', 'prisma', 'seed-data', 'topik2', `level-${level}.json`);
+  const bundle = JSON.parse(readFileSync(source, 'utf8')) as {
+    lessons: LessonSeed[];
+    deck: { id: string; title: string; slug: string; topikLevel: string; level: number };
+    provenance: string;
+    source: string;
+  };
+  portLevel(bundle.lessons, bundle.deck, bundle.provenance, bundle.source, `topik2-level${level}.json`);
+}

@@ -1,0 +1,2111 @@
+{
+  "provenance": "Editorial TOPIK II Level 4 grammar selection, not an official TOPIK level checklist; educator review required.",
+  "source": "prisma/seed-data/topik2/level-4.json",
+  "deck": {
+    "id": "deck_topik2_level4",
+    "title": "TOPIK II Level 4",
+    "slug": "topik-level-4",
+    "topikLevel": "topik2-4",
+    "level": 4
+  },
+  "lessons": [
+    {
+      "lessonNumber": 29,
+      "title": "Explaining yourself in conversation",
+      "grammarPoints": [
+        {
+          "id": "gp_t2l4_janayo",
+          "title": "-잖아요",
+          "category": "shared knowledge",
+          "tense": null,
+          "register": null,
+          "hint": "Remind someone of something you expect they already know, often to justify a point.",
+          "description": "Remind someone of something you expect they already know, often to justify a point. It assumes the listener knows the fact already, sometimes with a reproachful tone.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -잖아요",
+          "relatedPointIds": [
+            "gp_t2l4_geodeunyo"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 잖아요 to a verb or descriptive stem: 알다 → 알잖아요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "오늘 바쁘잖아요. — You know we're busy today. 바쁘잖아요 appeals to shared knowledge that the listener is busy."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Tone matters: it can sound reproachful if you insist the listener should know."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_janayo_01",
+              "fullSentence": "오늘 바쁘잖아요.",
+              "sentenceWithBlank": "오늘 ___.",
+              "answer": "바쁘잖아요",
+              "englishHint": "You know we're busy today.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_janayo_02",
+              "fullSentence": "그 영화 재미있잖아요.",
+              "sentenceWithBlank": "그 영화 ___.",
+              "answer": "재미있잖아요",
+              "englishHint": "You know that movie is good.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_janayo_01",
+              "fullSentence": "시간이 없잖아요.",
+              "sentenceWithBlank": "시간이 ___.",
+              "answer": "없잖아요",
+              "englishHint": "You know there's no time.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "없다",
+              "introducedAtPosition": 127
+            },
+            {
+              "id": "cc_t2l4_janayo_02",
+              "fullSentence": "제가 어제 말했잖아요.",
+              "sentenceWithBlank": "제가 어제 ___.",
+              "answer": "말했잖아요",
+              "englishHint": "I told you yesterday, remember?",
+              "alternateAnswers": [],
+              "vocabBaseForm": "말하다",
+              "introducedAtPosition": 127
+            },
+            {
+              "id": "cc_t2l4_janayo_03",
+              "fullSentence": "이 길이 더 빠르잖아요.",
+              "sentenceWithBlank": "이 길이 더 ___.",
+              "answer": "빠르잖아요",
+              "englishHint": "You know this road is faster.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "빠르다",
+              "introducedAtPosition": 127
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_geodeunyo",
+          "title": "-거든요",
+          "category": "explanation",
+          "tense": null,
+          "register": null,
+          "hint": "Supply background information or a reason that the listener may not know.",
+          "description": "Supply background information or a reason that the listener may not know. It supplies background or a reason the listener may not have known.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -거든요",
+          "relatedPointIds": [
+            "gp_t2l4_janayo"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 거든요 to the predicate stem: 바쁘다 → 바쁘거든요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "먼저 갈게요. 약속이 있거든요. — I'll leave first. I have an appointment. 약속이 있거든요 provides the reason for leaving early."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "The reason-giving ending is usually sentence-final; -거든 as a condition is a separate use."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_geodeunyo_01",
+              "fullSentence": "먼저 갈게요. 약속이 있거든요.",
+              "sentenceWithBlank": "먼저 갈게요. 약속이 ___.",
+              "answer": "있거든요",
+              "englishHint": "I'll leave first. I have an appointment.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_geodeunyo_02",
+              "fullSentence": "오늘은 쉴래요. 피곤하거든요.",
+              "sentenceWithBlank": "오늘은 쉴래요. ___.",
+              "answer": "피곤하거든요",
+              "englishHint": "I'll rest today because I'm tired.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_geodeunyo_01",
+              "fullSentence": "여기 자주 와요. 집이 가깝거든요.",
+              "sentenceWithBlank": "여기 자주 와요. 집이 ___.",
+              "answer": "가깝거든요",
+              "englishHint": "I come often because I live nearby.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "가깝다",
+              "introducedAtPosition": 128
+            },
+            {
+              "id": "cc_t2l4_geodeunyo_02",
+              "fullSentence": "지금은 안 돼요. 일이 많거든요.",
+              "sentenceWithBlank": "지금은 안 돼요. 일이 ___.",
+              "answer": "많거든요",
+              "englishHint": "I can't right now; I have lots of work.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "많다",
+              "introducedAtPosition": 128
+            },
+            {
+              "id": "cc_t2l4_geodeunyo_03",
+              "fullSentence": "그 음식은 못 먹어요. 알레르기가 있거든요.",
+              "sentenceWithBlank": "그 음식은 못 먹어요. 알레르기가 ___.",
+              "answer": "있거든요",
+              "englishHint": "I can't eat that; I have an allergy.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "있다",
+              "introducedAtPosition": 128
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_deoni",
+          "title": "-더니",
+          "category": "retrospective",
+          "tense": null,
+          "register": null,
+          "hint": "Connect a past observation with a later change or result.",
+          "description": "Connect a past observation with a later change or result. The speaker contrasts a directly observed past situation with what followed.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -더니",
+          "relatedPointIds": [
+            "gp_t2l4_eotdeoni"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 더니 to the stem of what was observed, then state what happened next."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "비가 오더니 곧 그쳤어요. — It rained, then stopped soon afterward. 비가 오더니 shows the observed rain before the weather cleared."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not simply use -더니 to report your own past deliberate action; it has an observation perspective."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_deoni_01",
+              "fullSentence": "비가 오더니 곧 그쳤어요.",
+              "sentenceWithBlank": "비가 ___ 곧 그쳤어요.",
+              "answer": "오더니",
+              "englishHint": "It rained, then stopped soon afterward.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_deoni_02",
+              "fullSentence": "아이가 울더니 잠들었어요.",
+              "sentenceWithBlank": "아이가 ___ 잠들었어요.",
+              "answer": "울더니",
+              "englishHint": "The child cried and then fell asleep.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_deoni_01",
+              "fullSentence": "날씨가 춥더니 따뜻해졌어요.",
+              "sentenceWithBlank": "날씨가 ___ 따뜻해졌어요.",
+              "answer": "춥더니",
+              "englishHint": "It was cold, then became warm.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "춥다",
+              "introducedAtPosition": 129
+            },
+            {
+              "id": "cc_t2l4_deoni_02",
+              "fullSentence": "친구가 웃더니 갑자기 울었어요.",
+              "sentenceWithBlank": "친구가 ___ 갑자기 울었어요.",
+              "answer": "웃더니",
+              "englishHint": "My friend laughed and suddenly cried.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "웃다",
+              "introducedAtPosition": 129
+            },
+            {
+              "id": "cc_t2l4_deoni_03",
+              "fullSentence": "하늘이 흐리더니 비가 왔어요.",
+              "sentenceWithBlank": "하늘이 ___ 비가 왔어요.",
+              "answer": "흐리더니",
+              "englishHint": "The sky clouded over and then it rained.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "흐리다",
+              "introducedAtPosition": 129
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_eotdeoni",
+          "title": "-았/었더니",
+          "category": "discovery",
+          "tense": null,
+          "register": null,
+          "hint": "After the speaker performed an action, a result or discovery followed.",
+          "description": "After the speaker performed an action, a result or discovery followed. The speaker reports what they discovered when they did something.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -았/었더니",
+          "relatedPointIds": [
+            "gp_t2l4_deoni"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take the verb's past -았/었 form and attach 더니: 먹다 → 먹었더니. The second clause reports a result that followed your experience."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "약을 먹었더니 나아졌어요. — I took medicine and felt better. 약을 먹었더니 demonstrates an action followed by an improvement."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Unlike observational -더니, -았/었더니 often follows something the speaker personally did."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eotdeoni_01",
+              "fullSentence": "약을 먹었더니 나아졌어요.",
+              "sentenceWithBlank": "약을 ___ 나아졌어요.",
+              "answer": "먹었더니",
+              "englishHint": "I took medicine and felt better.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eotdeoni_02",
+              "fullSentence": "문을 열었더니 고양이가 있었어요.",
+              "sentenceWithBlank": "문을 ___ 고양이가 있었어요.",
+              "answer": "열었더니",
+              "englishHint": "I opened the door and found a cat.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eotdeoni_01",
+              "fullSentence": "일찍 잤더니 피곤하지 않아요.",
+              "sentenceWithBlank": "일찍 ___ 피곤하지 않아요.",
+              "answer": "잤더니",
+              "englishHint": "I slept early and am not tired.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "자다",
+              "introducedAtPosition": 130
+            },
+            {
+              "id": "cc_t2l4_eotdeoni_02",
+              "fullSentence": "직접 가 봤더니 사람이 많았어요.",
+              "sentenceWithBlank": "직접 가 ___ 사람이 많았어요.",
+              "answer": "봤더니",
+              "englishHint": "I went and found many people.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "보다",
+              "introducedAtPosition": 130
+            },
+            {
+              "id": "cc_t2l4_eotdeoni_03",
+              "fullSentence": "오래 걸었더니 다리가 아파요.",
+              "sentenceWithBlank": "오래 ___ 다리가 아파요.",
+              "answer": "걸었더니",
+              "englishHint": "I walked a lot and now my legs hurt.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "걷다",
+              "introducedAtPosition": 130
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 30,
+      "title": "Appearance, inevitability and resulting states",
+      "grammarPoints": [
+        {
+          "id": "gp_t2l4_neun_cheok",
+          "title": "-(으)ㄴ/는 척하다",
+          "category": "pretense",
+          "tense": null,
+          "register": null,
+          "hint": "Pretend that something is true or that you are doing an action.",
+          "description": "Pretend that something is true or that you are doing an action. It describes behaving as if a situation were real when it is not.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 척하다",
+          "relatedPointIds": [],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use -는 척하다 for actions, or -(으)ㄴ 척하다 for a present state."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "아이는 자는 척했어요. — The child pretended to be asleep. 자는 척했어요 describes pretending to sleep, not actually sleeping."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This can imply deception or playful pretense; it is not a normal statement of appearance."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_neun_cheok_01",
+              "fullSentence": "아이는 자는 척했어요.",
+              "sentenceWithBlank": "아이는 ___.",
+              "answer": "자는 척했어요",
+              "englishHint": "The child pretended to be asleep.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_neun_cheok_02",
+              "fullSentence": "그는 모르는 척했어요.",
+              "sentenceWithBlank": "그는 ___.",
+              "answer": "모르는 척했어요",
+              "englishHint": "He pretended not to know.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_neun_cheok_01",
+              "fullSentence": "저는 괜찮은 척했어요.",
+              "sentenceWithBlank": "저는 ___.",
+              "answer": "괜찮은 척했어요",
+              "englishHint": "I pretended to be okay.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "괜찮다",
+              "introducedAtPosition": 131
+            },
+            {
+              "id": "cc_t2l4_neun_cheok_02",
+              "fullSentence": "친구가 못 들은 척했어요.",
+              "sentenceWithBlank": "친구가 못 ___.",
+              "answer": "들은 척했어요",
+              "englishHint": "My friend pretended not to hear.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "듣다",
+              "introducedAtPosition": 131
+            },
+            {
+              "id": "cc_t2l4_neun_cheok_03",
+              "fullSentence": "그는 바쁜 척했어요.",
+              "sentenceWithBlank": "그는 ___.",
+              "answer": "바쁜 척했어요",
+              "englishHint": "He pretended to be busy.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "바쁘다",
+              "introducedAtPosition": 131
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_eulliga",
+          "title": "-(으)ㄹ 리가 없다",
+          "category": "impossibility",
+          "tense": null,
+          "register": null,
+          "hint": "Assert that something cannot possibly be true, based on reasoning.",
+          "description": "Assert that something cannot possibly be true, based on reasoning. It strongly denies the possibility that the stated situation is true.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 리가 없다",
+          "relatedPointIds": [
+            "gp_t2l3_euljido"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use -(으)ㄹ before the separate noun 리, followed by 가 없어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "그분이 거짓말할 리가 없어요. — There is no way that person would lie. 그분이 거짓말할 리가 없어요 expresses strong disbelief that they would lie."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is a strong judgment, not merely the uncertain possibility in -(으)ㄹ지도 모르다."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eulliga_01",
+              "fullSentence": "그분이 거짓말할 리가 없어요.",
+              "sentenceWithBlank": "그분이 거짓말___.",
+              "answer": "할 리가 없어요",
+              "englishHint": "There is no way that person would lie.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eulliga_02",
+              "fullSentence": "이렇게 쉬울 리가 없어요.",
+              "sentenceWithBlank": "이렇게 ___.",
+              "answer": "쉬울 리가 없어요",
+              "englishHint": "It can't possibly be this easy.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eulliga_01",
+              "fullSentence": "그가 약속을 잊었을 리가 없어요.",
+              "sentenceWithBlank": "그가 약속을 ___.",
+              "answer": "잊었을 리가 없어요",
+              "englishHint": "He can't have forgotten the appointment.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "잊다",
+              "introducedAtPosition": 132
+            },
+            {
+              "id": "cc_t2l4_eulliga_02",
+              "fullSentence": "모두가 틀렸을 리가 없어요.",
+              "sentenceWithBlank": "모두가 ___.",
+              "answer": "틀렸을 리가 없어요",
+              "englishHint": "They can't all have been wrong.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "틀리다",
+              "introducedAtPosition": 132
+            },
+            {
+              "id": "cc_t2l4_eulliga_03",
+              "fullSentence": "그 이야기가 사실일 리가 없어요.",
+              "sentenceWithBlank": "그 이야기가 ___.",
+              "answer": "사실일 리가 없어요",
+              "englishHint": "That story can't possibly be true.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "이다",
+              "introducedAtPosition": 132
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_eulsupakke",
+          "title": "-(으)ㄹ 수밖에 없다",
+          "category": "necessity",
+          "tense": null,
+          "register": null,
+          "hint": "Express that there is no other choice or possible outcome.",
+          "description": "Express that there is no other choice or possible outcome. It emphasizes that the person has no real alternative.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 수밖에 없다",
+          "relatedPointIds": [
+            "gp_eul_su_issda"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add -(으)ㄹ to the stem, then 수밖에 없어요 as separate words."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "지금은 기다릴 수밖에 없어요. — For now we have no choice but to wait. 기다릴 수밖에 없어요 means waiting is the only option left."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not confuse with -(으)ㄹ 수 없다, which says the action is impossible."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eulsupakke_01",
+              "fullSentence": "지금은 기다릴 수밖에 없어요.",
+              "sentenceWithBlank": "지금은 ___.",
+              "answer": "기다릴 수밖에 없어요",
+              "englishHint": "For now we have no choice but to wait.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eulsupakke_02",
+              "fullSentence": "돈이 없어서 걸어갈 수밖에 없어요.",
+              "sentenceWithBlank": "돈이 없어서 걸어___.",
+              "answer": "갈 수밖에 없어요",
+              "englishHint": "Without money, I have no choice but to walk.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eulsupakke_01",
+              "fullSentence": "비가 와서 취소할 수밖에 없어요.",
+              "sentenceWithBlank": "비가 와서 ___.",
+              "answer": "취소할 수밖에 없어요",
+              "englishHint": "Because of the rain, we have to cancel.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "취소하다",
+              "introducedAtPosition": 133
+            },
+            {
+              "id": "cc_t2l4_eulsupakke_02",
+              "fullSentence": "시간이 없어 택시를 탈 수밖에 없어요.",
+              "sentenceWithBlank": "시간이 없어 택시를 ___.",
+              "answer": "탈 수밖에 없어요",
+              "englishHint": "We're forced to take a taxi because of time.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "타다",
+              "introducedAtPosition": 133
+            },
+            {
+              "id": "cc_t2l4_eulsupakke_03",
+              "fullSentence": "자료가 부족해서 다시 조사할 수밖에 없어요.",
+              "sentenceWithBlank": "자료가 부족해서 다시 ___.",
+              "answer": "조사할 수밖에 없어요",
+              "englishHint": "We must investigate again for lack of data.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "조사하다",
+              "introducedAtPosition": 133
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_eun_chaero",
+          "title": "-(으)ㄴ 채로",
+          "category": "state",
+          "tense": null,
+          "register": null,
+          "hint": "Leave one state unchanged while another action takes place.",
+          "description": "Leave one state unchanged while another action takes place. It describes a person or thing remaining in the same state as another event happens.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ 채로",
+          "relatedPointIds": [
+            "gp_eoduda"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use -(으)ㄴ after the state or resulting action, then 채로."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "신발을 신은 채로 들어왔어요. — Someone came in with their shoes on. 신발을 신은 채로 means that the shoes remain on during the next action."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Unlike -고, 채로 emphasizes maintaining a state instead of a simple sequence."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eun_chaero_01",
+              "fullSentence": "신발을 신은 채로 들어왔어요.",
+              "sentenceWithBlank": "신발을 ___ 들어왔어요.",
+              "answer": "신은 채로",
+              "englishHint": "Someone came in with their shoes on.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eun_chaero_02",
+              "fullSentence": "문을 연 채로 나갔어요.",
+              "sentenceWithBlank": "문을 ___ 나갔어요.",
+              "answer": "연 채로",
+              "englishHint": "I went out leaving the door open.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eun_chaero_01",
+              "fullSentence": "불을 켠 채로 잠들었어요.",
+              "sentenceWithBlank": "불을 ___ 잠들었어요.",
+              "answer": "켠 채로",
+              "englishHint": "I fell asleep with the lights on.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "켜다",
+              "introducedAtPosition": 134
+            },
+            {
+              "id": "cc_t2l4_eun_chaero_02",
+              "fullSentence": "안경을 쓴 채로 수영했어요.",
+              "sentenceWithBlank": "안경을 ___ 수영했어요.",
+              "answer": "쓴 채로",
+              "englishHint": "I swam with my glasses on.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "쓰다",
+              "introducedAtPosition": 134
+            },
+            {
+              "id": "cc_t2l4_eun_chaero_03",
+              "fullSentence": "눈을 감은 채로 생각했어요.",
+              "sentenceWithBlank": "눈을 ___ 생각했어요.",
+              "answer": "감은 채로",
+              "englishHint": "I thought with my eyes closed.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "감다",
+              "introducedAtPosition": 134
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 31,
+      "title": "Worth trying, wasted effort and blame",
+      "grammarPoints": [
+        {
+          "id": "gp_t2l4_eulmanhada",
+          "title": "-(으)ㄹ 만하다",
+          "category": "evaluation",
+          "tense": null,
+          "register": null,
+          "hint": "Judge an action as worthwhile or a result as reasonably good.",
+          "description": "Judge an action as worthwhile or a result as reasonably good. It suggests an action is reasonable or worthwhile to do.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 만하다",
+          "relatedPointIds": [
+            "gp_eul_su_issda"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach -(으)ㄹ 만하다 to an action verb, conjugating 만하다 as 만해요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "이 책은 읽을 만해요. — This book is worth reading. 읽을 만해요 means the book is worth reading, not necessarily outstanding."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Do not confuse with -(으)ㄹ 수 있다, which measures ability rather than worth."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eulmanhada_01",
+              "fullSentence": "이 책은 읽을 만해요.",
+              "sentenceWithBlank": "이 책은 ___.",
+              "answer": "읽을 만해요",
+              "englishHint": "This book is worth reading.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eulmanhada_02",
+              "fullSentence": "그 영화는 볼 만해요.",
+              "sentenceWithBlank": "그 영화는 ___.",
+              "answer": "볼 만해요",
+              "englishHint": "That movie is worth watching.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eulmanhada_01",
+              "fullSentence": "이 식당은 가 볼 만해요.",
+              "sentenceWithBlank": "이 식당은 가 ___.",
+              "answer": "볼 만해요",
+              "englishHint": "This restaurant is worth visiting.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "보다",
+              "introducedAtPosition": 135
+            },
+            {
+              "id": "cc_t2l4_eulmanhada_02",
+              "fullSentence": "이 문제는 풀 만해요.",
+              "sentenceWithBlank": "이 문제는 ___.",
+              "answer": "풀 만해요",
+              "englishHint": "This problem is manageable.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "풀다",
+              "introducedAtPosition": 135
+            },
+            {
+              "id": "cc_t2l4_eulmanhada_03",
+              "fullSentence": "그 장소는 추천할 만해요.",
+              "sentenceWithBlank": "그 장소는 ___.",
+              "answer": "추천할 만해요",
+              "englishHint": "That place is worth recommending.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "추천하다",
+              "introducedAtPosition": 135
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_eobwatja",
+          "title": "-아/어 봤자",
+          "category": "concession",
+          "tense": null,
+          "register": null,
+          "hint": "An attempted action is pointless because it cannot change the outcome.",
+          "description": "An attempted action is pointless because it cannot change the outcome. It says the proposed effort will not change the result.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -아/어 봤자",
+          "relatedPointIds": [
+            "gp_t2l5_eodo_soyongeopda"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Make the verb's 아/어 form, followed by 봤자; the result is often negative."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "지금 가 봤자 늦어요. — Even if you go now, it's too late. 지금 가 봤자 늦어요 means going now won't help: it's already too late."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is not ordinary -아/어 보다 ('try doing'); -아/어 봤자 dismisses the usefulness."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eobwatja_01",
+              "fullSentence": "지금 가 봤자 늦어요.",
+              "sentenceWithBlank": "지금 ___ 늦어요.",
+              "answer": "가 봤자",
+              "englishHint": "Even if you go now, it's too late.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eobwatja_02",
+              "fullSentence": "다시 설명해 봤자 이해하지 못할 거예요.",
+              "sentenceWithBlank": "다시 ___ 이해하지 못할 거예요.",
+              "answer": "설명해 봤자",
+              "englishHint": "Even explaining it again won't make them understand.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eobwatja_01",
+              "fullSentence": "후회해 봤자 소용없어요.",
+              "sentenceWithBlank": "___ 소용없어요.",
+              "answer": "후회해 봤자",
+              "englishHint": "Regretting it won't help.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "후회하다",
+              "introducedAtPosition": 136
+            },
+            {
+              "id": "cc_t2l4_eobwatja_02",
+              "fullSentence": "서둘러 봤자 이미 늦었어요.",
+              "sentenceWithBlank": "___ 이미 늦었어요.",
+              "answer": "서둘러 봤자",
+              "englishHint": "Hurrying won't help; we're late already.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "서두르다",
+              "introducedAtPosition": 136
+            },
+            {
+              "id": "cc_t2l4_eobwatja_03",
+              "fullSentence": "혼자 고민해 봤자 해결이 안 돼요.",
+              "sentenceWithBlank": "혼자 ___ 해결이 안 돼요.",
+              "answer": "고민해 봤자",
+              "englishHint": "Worrying alone won't solve it.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "고민하다",
+              "introducedAtPosition": 136
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_neun_tase",
+          "title": "-(으)ㄴ/는 탓에",
+          "category": "blame",
+          "tense": null,
+          "register": null,
+          "hint": "Blame an action or condition for an unwelcome result.",
+          "description": "Blame an action or condition for an unwelcome result. It assigns blame for an unfavorable outcome.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 탓에",
+          "relatedPointIds": [
+            "gp_t2l3_barame"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use -는 after an ongoing action or -(으)ㄴ after a completed action before 탓에."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "잠을 못 잔 탓에 피곤해요. — I'm tired because I didn't sleep enough. 잠을 못 잔 탓에 says lack of sleep caused a negative condition."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "덕분에 credits helpful causes; 탓에 usually assigns blame or an unfortunate cause."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_neun_tase_01",
+              "fullSentence": "잠을 못 잔 탓에 피곤해요.",
+              "sentenceWithBlank": "잠을 ___ 피곤해요.",
+              "answer": "못 잔 탓에",
+              "englishHint": "I'm tired because I didn't sleep enough.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_neun_tase_02",
+              "fullSentence": "비가 많이 온 탓에 길이 막혔어요.",
+              "sentenceWithBlank": "비가 많이 ___ 길이 막혔어요.",
+              "answer": "온 탓에",
+              "englishHint": "The roads jammed because of heavy rain.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_neun_tase_01",
+              "fullSentence": "준비가 부족한 탓에 실패했어요.",
+              "sentenceWithBlank": "준비가 ___ 실패했어요.",
+              "answer": "부족한 탓에",
+              "englishHint": "We failed due to insufficient preparation.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "부족하다",
+              "introducedAtPosition": 137
+            },
+            {
+              "id": "cc_t2l4_neun_tase_02",
+              "fullSentence": "늦게 출발한 탓에 지각했어요.",
+              "sentenceWithBlank": "늦게 ___ 지각했어요.",
+              "answer": "출발한 탓에",
+              "englishHint": "We were late because we left late.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "출발하다",
+              "introducedAtPosition": 137
+            },
+            {
+              "id": "cc_t2l4_neun_tase_03",
+              "fullSentence": "서두른 탓에 실수했어요.",
+              "sentenceWithBlank": "___ 실수했어요.",
+              "answer": "서두른 탓에",
+              "englishHint": "I made a mistake because I rushed.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "서두르다",
+              "introducedAtPosition": 137
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_neun_gime",
+          "title": "-는 김에",
+          "category": "opportunity",
+          "tense": null,
+          "register": null,
+          "hint": "Do something extra while already taking an opportunity to do something else.",
+          "description": "Do something extra while already taking an opportunity to do something else. It uses an existing occasion to do something else conveniently.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -는 김에",
+          "relatedPointIds": [
+            "gp_t2l3_daesine"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use -는 김에 after an action being undertaken, then add a second useful action."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "장 보는 김에 우유도 사 주세요. — Since you're shopping, buy milk too. 장 보는 김에 asks the listener to buy milk while already shopping."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is opportunistic convenience, not simply two consecutive actions with -고."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_neun_gime_01",
+              "fullSentence": "장 보는 김에 우유도 사 주세요.",
+              "sentenceWithBlank": "장 ___ 우유도 사 주세요.",
+              "answer": "보는 김에",
+              "englishHint": "Since you're shopping, buy milk too.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_neun_gime_02",
+              "fullSentence": "은행에 가는 김에 돈을 찾아 주세요.",
+              "sentenceWithBlank": "은행에 ___ 돈을 찾아 주세요.",
+              "answer": "가는 김에",
+              "englishHint": "Since you're going to the bank, withdraw cash.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_neun_gime_01",
+              "fullSentence": "밖에 나가는 김에 쓰레기를 버렸어요.",
+              "sentenceWithBlank": "밖에 ___ 쓰레기를 버렸어요.",
+              "answer": "나가는 김에",
+              "englishHint": "I took out trash while going outside.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "나가다",
+              "introducedAtPosition": 138
+            },
+            {
+              "id": "cc_t2l4_neun_gime_02",
+              "fullSentence": "서울에 온 김에 친구를 만났어요.",
+              "sentenceWithBlank": "서울에 ___ 친구를 만났어요.",
+              "answer": "온 김에",
+              "englishHint": "Since I came to Seoul, I met a friend.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "오다",
+              "introducedAtPosition": 138
+            },
+            {
+              "id": "cc_t2l4_neun_gime_03",
+              "fullSentence": "청소하는 김에 창문도 닦았어요.",
+              "sentenceWithBlank": "청소___ 창문도 닦았어요.",
+              "answer": "하는 김에",
+              "englishHint": "While cleaning, I wiped the windows too.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "하다",
+              "introducedAtPosition": 138
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 32,
+      "title": "Worry, equivalence and regret",
+      "grammarPoints": [
+        {
+          "id": "gp_t2l4_eulkkabwa",
+          "title": "-(으)ㄹ까 봐",
+          "category": "concern",
+          "tense": null,
+          "register": null,
+          "hint": "A feared possibility becomes the reason for caution or precaution.",
+          "description": "A feared possibility becomes the reason for caution or precaution. It describes acting because a possible bad outcome is feared.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ까 봐",
+          "relatedPointIds": [
+            "gp_t2l3_euljido"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add -(으)ㄹ까 봐 to the feared event, then describe the precaution."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "늦을까 봐 일찍 나왔어요. — I left early for fear of being late. 늦을까 봐 says fear of being late motivated an early departure."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is not an ordinary question -ㄹ까요?; it expresses anxiety about an outcome."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eulkkabwa_01",
+              "fullSentence": "늦을까 봐 일찍 나왔어요.",
+              "sentenceWithBlank": "___ 일찍 나왔어요.",
+              "answer": "늦을까 봐",
+              "englishHint": "I left early for fear of being late.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eulkkabwa_02",
+              "fullSentence": "비가 올까 봐 우산을 챙겼어요.",
+              "sentenceWithBlank": "비가 ___ 우산을 챙겼어요.",
+              "answer": "올까 봐",
+              "englishHint": "I packed an umbrella in case it rains.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eulkkabwa_01",
+              "fullSentence": "실수할까 봐 다시 확인했어요.",
+              "sentenceWithBlank": "___ 다시 확인했어요.",
+              "answer": "실수할까 봐",
+              "englishHint": "I checked again in case I'd made a mistake.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "실수하다",
+              "introducedAtPosition": 139
+            },
+            {
+              "id": "cc_t2l4_eulkkabwa_02",
+              "fullSentence": "길을 잃을까 봐 지도를 봤어요.",
+              "sentenceWithBlank": "길을 ___ 지도를 봤어요.",
+              "answer": "잃을까 봐",
+              "englishHint": "I checked a map for fear of getting lost.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "잃다",
+              "introducedAtPosition": 139
+            },
+            {
+              "id": "cc_t2l4_eulkkabwa_03",
+              "fullSentence": "시험에 떨어질까 봐 걱정돼요.",
+              "sentenceWithBlank": "시험에 ___ 걱정돼요.",
+              "answer": "떨어질까 봐",
+              "englishHint": "I'm worried I might fail the exam.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "떨어지다",
+              "introducedAtPosition": 139
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_neun_semi",
+          "title": "-(으)ㄴ/는 셈이다",
+          "category": "inference",
+          "tense": null,
+          "register": null,
+          "hint": "Sum up a situation as effectively amounting to something: 'basically / in effect'.",
+          "description": "Sum up a situation as effectively amounting to something: 'basically / in effect'. It judges the situation as effectively equivalent to something else.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 셈이다",
+          "relatedPointIds": [
+            "gp_t2l3_neun_pyeon"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use -는 셈이다 for actions and -(으)ㄴ 셈이다 for completed actions or states."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "이 정도면 성공한 셈이에요. — At this point it's effectively a success. 이 정도면 성공한 셈이에요 judges the outcome as effectively a success."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is an interpretation of the facts, not a literal identity statement with 이에요."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_neun_semi_01",
+              "fullSentence": "이 정도면 성공한 셈이에요.",
+              "sentenceWithBlank": "이 정도면 ___.",
+              "answer": "성공한 셈이에요",
+              "englishHint": "At this point it's effectively a success.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_neun_semi_02",
+              "fullSentence": "하루에 두 번이면 자주 가는 셈이에요.",
+              "sentenceWithBlank": "하루에 두 번이면 자주 ___.",
+              "answer": "가는 셈이에요",
+              "englishHint": "Twice a day counts as going often.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_neun_semi_01",
+              "fullSentence": "돈을 다 썼으니 남은 게 없는 셈이에요.",
+              "sentenceWithBlank": "돈을 다 썼으니 남은 게 ___.",
+              "answer": "없는 셈이에요",
+              "englishHint": "Having spent it all, there's effectively none left.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "없다",
+              "introducedAtPosition": 140
+            },
+            {
+              "id": "cc_t2l4_neun_semi_02",
+              "fullSentence": "매일 연습하니 꾸준히 하는 셈이에요.",
+              "sentenceWithBlank": "매일 연습하니 꾸준히 ___.",
+              "answer": "하는 셈이에요",
+              "englishHint": "Practicing daily effectively makes it consistent.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "하다",
+              "introducedAtPosition": 140
+            },
+            {
+              "id": "cc_t2l4_neun_semi_03",
+              "fullSentence": "결국 처음부터 다시 시작한 셈이에요.",
+              "sentenceWithBlank": "결국 처음부터 다시 ___.",
+              "answer": "시작한 셈이에요",
+              "englishHint": "In effect, we started over.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "시작하다",
+              "introducedAtPosition": 140
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_neun_dedaga",
+          "title": "-(으)ㄴ/는 데다가",
+          "category": "addition",
+          "tense": null,
+          "register": null,
+          "hint": "Add another factor on top of the first one, often intensifying the result.",
+          "description": "Add another factor on top of the first one, often intensifying the result. It adds a further fact that strengthens what was already said.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 데다가",
+          "relatedPointIds": [
+            "gp_t2l3_banmyeone"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Use -는 데다가 for action verbs, -(으)ㄴ 데다가 for descriptive verbs."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "비가 오는 데다가 바람도 불어요. — It's raining, and it's windy on top of that. 비가 오는 데다가 adds wind as another factor making the weather unpleasant."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse with location noun 데. Both factors generally point in the same direction."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_neun_dedaga_01",
+              "fullSentence": "비가 오는 데다가 바람도 불어요.",
+              "sentenceWithBlank": "비가 ___ 바람도 불어요.",
+              "answer": "오는 데다가",
+              "englishHint": "It's raining, and it's windy on top of that.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_neun_dedaga_02",
+              "fullSentence": "가격이 비싼 데다가 품질도 나빠요.",
+              "sentenceWithBlank": "가격이 ___ 품질도 나빠요.",
+              "answer": "비싼 데다가",
+              "englishHint": "It's expensive and the quality is bad too.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_neun_dedaga_01",
+              "fullSentence": "그는 친절한 데다가 일도 잘해요.",
+              "sentenceWithBlank": "그는 ___ 일도 잘해요.",
+              "answer": "친절한 데다가",
+              "englishHint": "He's kind and also good at his job.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "친절하다",
+              "introducedAtPosition": 141
+            },
+            {
+              "id": "cc_t2l4_neun_dedaga_02",
+              "fullSentence": "여기는 조용한 데다가 교통도 편해요.",
+              "sentenceWithBlank": "여기는 ___ 교통도 편해요.",
+              "answer": "조용한 데다가",
+              "englishHint": "It's quiet here and transport is convenient.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "조용하다",
+              "introducedAtPosition": 141
+            },
+            {
+              "id": "cc_t2l4_neun_dedaga_03",
+              "fullSentence": "길이 먼 데다가 차도 막혀요.",
+              "sentenceWithBlank": "길이 ___ 차도 막혀요.",
+              "answer": "먼 데다가",
+              "englishHint": "The trip is long and traffic is bad too.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "멀다",
+              "introducedAtPosition": 141
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_eosseoya",
+          "title": "-았/었어야 하다",
+          "category": "regret",
+          "tense": null,
+          "register": null,
+          "hint": "Express regret or criticism that an action should have happened in the past.",
+          "description": "Express regret or criticism that an action should have happened in the past. It looks back at an obligation that should have been fulfilled but was not.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -았/었어야 하다",
+          "relatedPointIds": [
+            "gp_t2l3_eoyagetda"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take the past -았/었 form and add 어야 했어요: 가다 → 갔어야 했어요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "더 일찍 출발했어야 했어요. — We should have left earlier. 일찍 출발했어야 했어요 admits the needed departure happened too late."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This differs from present -아/어야 해요, which talks about what must be done now or next."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eosseoya_01",
+              "fullSentence": "더 일찍 출발했어야 했어요.",
+              "sentenceWithBlank": "더 일찍 ___.",
+              "answer": "출발했어야 했어요",
+              "englishHint": "We should have left earlier.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eosseoya_02",
+              "fullSentence": "그때 바로 말했어야 했어요.",
+              "sentenceWithBlank": "그때 바로 ___.",
+              "answer": "말했어야 했어요",
+              "englishHint": "I should have said something then.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eosseoya_01",
+              "fullSentence": "조금 더 공부했어야 했어요.",
+              "sentenceWithBlank": "조금 더 ___.",
+              "answer": "공부했어야 했어요",
+              "englishHint": "I should have studied a bit more.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "공부하다",
+              "introducedAtPosition": 142
+            },
+            {
+              "id": "cc_t2l4_eosseoya_02",
+              "fullSentence": "우산을 가져왔어야 했어요.",
+              "sentenceWithBlank": "우산을 ___.",
+              "answer": "가져왔어야 했어요",
+              "englishHint": "I should have brought an umbrella.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "가져오다",
+              "introducedAtPosition": 142
+            },
+            {
+              "id": "cc_t2l4_eosseoya_03",
+              "fullSentence": "먼저 예약했어야 했어요.",
+              "sentenceWithBlank": "먼저 ___.",
+              "answer": "예약했어야 했어요",
+              "englishHint": "We should have booked first.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "예약하다",
+              "introducedAtPosition": 142
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 33,
+      "title": "Imagining alternatives and relaying words",
+      "grammarPoints": [
+        {
+          "id": "gp_t2l4_eotdeoramyeon",
+          "title": "-았/었더라면",
+          "category": "counterfactual",
+          "tense": null,
+          "register": null,
+          "hint": "Imagine an unreal past condition and a result that did not actually happen.",
+          "description": "Imagine an unreal past condition and a result that did not actually happen. It imagines a past situation that did not happen and its unreal result.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -았/었더라면",
+          "relatedPointIds": [
+            "gp_asseoyo"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Build the past verb form and add 더라면, then say what would have followed."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "조금 일찍 왔더라면 만났을 거예요. — If I'd come earlier, I would have met them. 조금 일찍 왔더라면 says arriving earlier did not happen, so the result is hypothetical."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "It signals a counterfactual past, not a realistic future condition like -(으)면."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eotdeoramyeon_01",
+              "fullSentence": "조금 일찍 왔더라면 만났을 거예요.",
+              "sentenceWithBlank": "조금 일찍 ___ 만났을 거예요.",
+              "answer": "왔더라면",
+              "englishHint": "If I'd come earlier, I would have met them.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eotdeoramyeon_02",
+              "fullSentence": "미리 알았더라면 준비했을 거예요.",
+              "sentenceWithBlank": "미리 ___ 준비했을 거예요.",
+              "answer": "알았더라면",
+              "englishHint": "If I'd known earlier, I'd have prepared.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eotdeoramyeon_01",
+              "fullSentence": "돈이 있었더라면 샀을 거예요.",
+              "sentenceWithBlank": "돈이 ___ 샀을 거예요.",
+              "answer": "있었더라면",
+              "englishHint": "If I'd had money, I'd have bought it.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "있다",
+              "introducedAtPosition": 143
+            },
+            {
+              "id": "cc_t2l4_eotdeoramyeon_02",
+              "fullSentence": "그때 공부했더라면 합격했을 거예요.",
+              "sentenceWithBlank": "그때 ___ 합격했을 거예요.",
+              "answer": "공부했더라면",
+              "englishHint": "Had I studied then, I'd have passed.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "공부하다",
+              "introducedAtPosition": 143
+            },
+            {
+              "id": "cc_t2l4_eotdeoramyeon_03",
+              "fullSentence": "비가 안 왔더라면 갔을 거예요.",
+              "sentenceWithBlank": "비가 안 ___ 갔을 거예요.",
+              "answer": "왔더라면",
+              "englishHint": "If it hadn't rained, I would have gone.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "오다",
+              "introducedAtPosition": 143
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_deorado",
+          "title": "-더라도",
+          "category": "concession",
+          "tense": null,
+          "register": null,
+          "hint": "Concede an unfavorable or extreme condition without changing the decision.",
+          "description": "Concede an unfavorable or extreme condition without changing the decision. It concedes a situation while insisting the result still holds.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -더라도",
+          "relatedPointIds": [
+            "gp_eodo_concession"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 더라도 to the stem and state what remains true even in that case."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "힘들더라도 끝내세요. — Even if it's hard, finish it. 힘들더라도 끝내세요 means to finish even if doing so is difficult."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Unlike a simple -아/어도, -더라도 can present a firmer hypothetical concession."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_deorado_01",
+              "fullSentence": "힘들더라도 끝내세요.",
+              "sentenceWithBlank": "___ 끝내세요.",
+              "answer": "힘들더라도",
+              "englishHint": "Even if it's hard, finish it.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_deorado_02",
+              "fullSentence": "비가 오더라도 출발해요.",
+              "sentenceWithBlank": "비가 ___ 출발해요.",
+              "answer": "오더라도",
+              "englishHint": "We'll depart even if it rains.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_deorado_01",
+              "fullSentence": "시간이 없더라도 식사는 하세요.",
+              "sentenceWithBlank": "시간이 ___ 식사는 하세요.",
+              "answer": "없더라도",
+              "englishHint": "Even if you're busy, eat a meal.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "없다",
+              "introducedAtPosition": 144
+            },
+            {
+              "id": "cc_t2l4_deorado_02",
+              "fullSentence": "실패하더라도 다시 도전할 거예요.",
+              "sentenceWithBlank": "___ 다시 도전할 거예요.",
+              "answer": "실패하더라도",
+              "englishHint": "Even if I fail, I'll try again.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "실패하다",
+              "introducedAtPosition": 144
+            },
+            {
+              "id": "cc_t2l4_deorado_03",
+              "fullSentence": "비싸더라도 필요한 물건이에요.",
+              "sentenceWithBlank": "___ 필요한 물건이에요.",
+              "answer": "비싸더라도",
+              "englishHint": "Even if it's expensive, it's needed.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "비싸다",
+              "introducedAtPosition": 144
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_neun_han",
+          "title": "-는 한",
+          "category": "condition",
+          "tense": null,
+          "register": null,
+          "hint": "Specify the condition under which something continues to hold: 'as long as'.",
+          "description": "Specify the condition under which something continues to hold: 'as long as'. It sets a limiting condition for what is true.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -는 한",
+          "relatedPointIds": [
+            "gp_eumyeon"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 는 한 to an action stem; the following clause is valid while that condition holds."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "노력하는 한 기회는 있어요. — As long as you try, there's a chance. 노력하는 한 means success is possible for as long as effort continues."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't use this for a single cause in the past; it sets an ongoing condition."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_neun_han_01",
+              "fullSentence": "노력하는 한 기회는 있어요.",
+              "sentenceWithBlank": "___ 기회는 있어요.",
+              "answer": "노력하는 한",
+              "englishHint": "As long as you try, there's a chance.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_neun_han_02",
+              "fullSentence": "비가 오는 한 밖에 못 나가요.",
+              "sentenceWithBlank": "비가 ___ 밖에 못 나가요.",
+              "answer": "오는 한",
+              "englishHint": "As long as it rains, we can't go out.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_neun_han_01",
+              "fullSentence": "제가 아는 한 사실이에요.",
+              "sentenceWithBlank": "제가 ___ 사실이에요.",
+              "answer": "아는 한",
+              "englishHint": "As far as I know, it's true.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "알다",
+              "introducedAtPosition": 145
+            },
+            {
+              "id": "cc_t2l4_neun_han_02",
+              "fullSentence": "여기서 사는 한 규칙을 지켜야 해요.",
+              "sentenceWithBlank": "여기서 ___ 규칙을 지켜야 해요.",
+              "answer": "사는 한",
+              "englishHint": "As long as you live here, follow the rules.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "살다",
+              "introducedAtPosition": 145
+            },
+            {
+              "id": "cc_t2l4_neun_han_03",
+              "fullSentence": "계속 연습하는 한 좋아질 거예요.",
+              "sentenceWithBlank": "계속 ___ 좋아질 거예요.",
+              "answer": "연습하는 한",
+              "englishHint": "As long as you practice, you'll improve.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "연습하다",
+              "introducedAtPosition": 145
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_neuni",
+          "title": "-느니",
+          "category": "preference",
+          "tense": null,
+          "register": null,
+          "hint": "Prefer one option over another, often with 'rather than doing X'.",
+          "description": "Prefer one option over another, often with 'rather than doing X'. It prefers one course of action over an undesirable alternative.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -느니",
+          "relatedPointIds": [
+            "gp_t2l5_eulbaeya"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Add 느니 to an action stem, followed by the option that seems better."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "기다리느니 걸어갈래요. — I'd rather walk than wait. 기다리느니 걸어갈래요 prefers walking to waiting."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This evaluates alternatives; -거나 merely lists alternatives without stating a preference."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_neuni_01",
+              "fullSentence": "기다리느니 걸어갈래요.",
+              "sentenceWithBlank": "___ 걸어갈래요.",
+              "answer": "기다리느니",
+              "englishHint": "I'd rather walk than wait.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_neuni_02",
+              "fullSentence": "포기하느니 다시 해 볼게요.",
+              "sentenceWithBlank": "___ 다시 해 볼게요.",
+              "answer": "포기하느니",
+              "englishHint": "I'd rather try again than give up.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_neuni_01",
+              "fullSentence": "거짓말하느니 솔직히 말하세요.",
+              "sentenceWithBlank": "___ 솔직히 말하세요.",
+              "answer": "거짓말하느니",
+              "englishHint": "Tell the truth rather than lie.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "거짓말하다",
+              "introducedAtPosition": 146
+            },
+            {
+              "id": "cc_t2l4_neuni_02",
+              "fullSentence": "혼자 하느니 도움을 청하세요.",
+              "sentenceWithBlank": "혼자 ___ 도움을 청하세요.",
+              "answer": "하느니",
+              "englishHint": "Ask for help rather than do it alone.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "하다",
+              "introducedAtPosition": 146
+            },
+            {
+              "id": "cc_t2l4_neuni_03",
+              "fullSentence": "늦게 가느니 내일 갈게요.",
+              "sentenceWithBlank": "늦게 ___ 내일 갈게요.",
+              "answer": "가느니",
+              "englishHint": "I'd rather go tomorrow than go late.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "가다",
+              "introducedAtPosition": 146
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "lessonNumber": 34,
+      "title": "Reported instructions and shortened quotations",
+      "grammarPoints": [
+        {
+          "id": "gp_t2l4_jago_hada",
+          "title": "-자고 하다",
+          "category": "reported speech",
+          "tense": null,
+          "register": null,
+          "hint": "Report another person's suggestion to do something together: 'said let's'.",
+          "description": "Report another person's suggestion to do something together: 'said let's'. It reports that someone suggested doing an action together.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -자고 하다",
+          "relatedPointIds": [
+            "gp_eupsida"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Take a verb stem and add 자고 하다, conjugating 하다 in the reporting tense."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "친구가 같이 가자고 했어요. — My friend suggested we go together. 같이 가자고 했어요 reports a proposal without repeating it as direct speech."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "-자고 is for proposals; -라고 is used for commands and -냐고 for questions."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_jago_hada_01",
+              "fullSentence": "친구가 같이 가자고 했어요.",
+              "sentenceWithBlank": "친구가 같이 ___.",
+              "answer": "가자고 했어요",
+              "englishHint": "My friend suggested we go together.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_jago_hada_02",
+              "fullSentence": "동생이 영화를 보자고 했어요.",
+              "sentenceWithBlank": "동생이 영화를 ___.",
+              "answer": "보자고 했어요",
+              "englishHint": "My sibling suggested watching a movie.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_jago_hada_01",
+              "fullSentence": "선배가 일찍 만나자고 했어요.",
+              "sentenceWithBlank": "선배가 일찍 ___.",
+              "answer": "만나자고 했어요",
+              "englishHint": "A senior suggested meeting early.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "만나다",
+              "introducedAtPosition": 147
+            },
+            {
+              "id": "cc_t2l4_jago_hada_02",
+              "fullSentence": "친구가 점심을 먹자고 했어요.",
+              "sentenceWithBlank": "친구가 점심을 ___.",
+              "answer": "먹자고 했어요",
+              "englishHint": "A friend proposed having lunch.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "먹다",
+              "introducedAtPosition": 147
+            },
+            {
+              "id": "cc_t2l4_jago_hada_03",
+              "fullSentence": "팀원이 다시 이야기하자고 했어요.",
+              "sentenceWithBlank": "팀원이 다시 ___.",
+              "answer": "이야기하자고 했어요",
+              "englishHint": "A teammate suggested discussing it again.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "이야기하다",
+              "introducedAtPosition": 147
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_eurago_hada",
+          "title": "-(으)라고 하다",
+          "category": "reported speech",
+          "tense": null,
+          "register": null,
+          "hint": "Report an instruction or command that another person gave.",
+          "description": "Report an instruction or command that another person gave. It reports what someone told or ordered another person to do.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -(으)라고 하다",
+          "relatedPointIds": [
+            "gp_euseyo"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 으라고 after most consonant verb stems and 라고 after vowel stems, then 하다."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "선생님이 일찍 오라고 했어요. — The teacher told us to come early. 오라고 했어요 quotes a request to come early without using direct quotation marks."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "A quoted command differs from the quoted suggestion -자고 하다."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_eurago_hada_01",
+              "fullSentence": "선생님이 일찍 오라고 했어요.",
+              "sentenceWithBlank": "선생님이 일찍 ___.",
+              "answer": "오라고 했어요",
+              "englishHint": "The teacher told us to come early.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_eurago_hada_02",
+              "fullSentence": "엄마가 밥을 먹으라고 했어요.",
+              "sentenceWithBlank": "엄마가 밥을 ___.",
+              "answer": "먹으라고 했어요",
+              "englishHint": "Mom told me to eat.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_eurago_hada_01",
+              "fullSentence": "의사가 쉬라고 했어요.",
+              "sentenceWithBlank": "의사가 ___.",
+              "answer": "쉬라고 했어요",
+              "englishHint": "The doctor told me to rest.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "쉬다",
+              "introducedAtPosition": 148
+            },
+            {
+              "id": "cc_t2l4_eurago_hada_02",
+              "fullSentence": "친구가 문을 닫으라고 했어요.",
+              "sentenceWithBlank": "친구가 문을 ___.",
+              "answer": "닫으라고 했어요",
+              "englishHint": "My friend told me to close the door.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "닫다",
+              "introducedAtPosition": 148
+            },
+            {
+              "id": "cc_t2l4_eurago_hada_03",
+              "fullSentence": "상사가 다시 확인하라고 했어요.",
+              "sentenceWithBlank": "상사가 다시 ___.",
+              "answer": "확인하라고 했어요",
+              "englishHint": "My boss told me to check again.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "확인하다",
+              "introducedAtPosition": 148
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_nyago_hada",
+          "title": "-냐고 하다",
+          "category": "reported speech",
+          "tense": null,
+          "register": null,
+          "hint": "Report what someone ASKED, keeping the reported sentence as a question.",
+          "description": "Report what someone ASKED, keeping the reported sentence as a question. It embeds a question that someone asked.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -냐고 하다",
+          "relatedPointIds": [
+            "gp_neundago_hada"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "Attach 냐고 to the reported question predicate; use 묻다 or 하다 for the report."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "친구가 언제 오냐고 물었어요. — My friend asked when I was coming. 언제 오냐고 물었어요 reports the question 'When are you coming?'."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't use declarative -다고 to report a question, or imperative -라고 for a question."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_nyago_hada_01",
+              "fullSentence": "친구가 언제 오냐고 물었어요.",
+              "sentenceWithBlank": "친구가 언제 ___.",
+              "answer": "오냐고 물었어요",
+              "englishHint": "My friend asked when I was coming.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_nyago_hada_02",
+              "fullSentence": "그분이 어디에 사냐고 했어요.",
+              "sentenceWithBlank": "그분이 어디에 ___.",
+              "answer": "사냐고 했어요",
+              "englishHint": "That person asked where I live.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_nyago_hada_01",
+              "fullSentence": "아이가 왜 웃냐고 물었어요.",
+              "sentenceWithBlank": "아이가 왜 ___.",
+              "answer": "웃냐고 물었어요",
+              "englishHint": "The child asked why I was laughing.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "웃다",
+              "introducedAtPosition": 149
+            },
+            {
+              "id": "cc_t2l4_nyago_hada_02",
+              "fullSentence": "선생님이 준비됐냐고 물었어요.",
+              "sentenceWithBlank": "선생님이 준비___.",
+              "answer": "됐냐고 물었어요",
+              "englishHint": "The teacher asked if I was ready.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "되다",
+              "introducedAtPosition": 149
+            },
+            {
+              "id": "cc_t2l4_nyago_hada_03",
+              "fullSentence": "친구가 뭐 먹냐고 물었어요.",
+              "sentenceWithBlank": "친구가 뭐 ___.",
+              "answer": "먹냐고 물었어요",
+              "englishHint": "My friend asked what I was eating.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "먹다",
+              "introducedAtPosition": 149
+            }
+          ]
+        },
+        {
+          "id": "gp_t2l4_daeyo",
+          "title": "-대요 (contracted report)",
+          "category": "reported speech",
+          "tense": null,
+          "register": null,
+          "hint": "Give hearsay using the shortened form of -다고 해요: 'they say that...'.",
+          "description": "Give hearsay using the shortened form of -다고 해요: 'they say that...'. It conveys something reportedly said in an abbreviated conversational form.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "level4",
+            "grammar"
+          ],
+          "structurePattern": "[Verb/adjective stem] + -대요 (contracted report)",
+          "relatedPointIds": [
+            "gp_neundago_hada"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "With present actions, -ㄴ/는대요 can replace -ㄴ/는다고 해요; descriptions use -대요."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "내일 비가 온대요. — They say it'll rain tomorrow. 내일 비가 온대요 means someone reported that rain is expected tomorrow."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "Don't confuse -대요 (reported information) with -데요 (speaker's reaction/experience)."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_t2l4_daeyo_01",
+              "fullSentence": "내일 비가 온대요.",
+              "sentenceWithBlank": "내일 비가 ___.",
+              "answer": "온대요",
+              "englishHint": "They say it'll rain tomorrow.",
+              "order": 0
+            },
+            {
+              "id": "le_t2l4_daeyo_02",
+              "fullSentence": "그 식당이 맛있대요.",
+              "sentenceWithBlank": "그 식당이 ___.",
+              "answer": "맛있대요",
+              "englishHint": "They say the restaurant is good.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_t2l4_daeyo_01",
+              "fullSentence": "친구가 지금 공부한대요.",
+              "sentenceWithBlank": "친구가 지금 ___.",
+              "answer": "공부한대요",
+              "englishHint": "They say my friend is studying now.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "공부하다",
+              "introducedAtPosition": 150
+            },
+            {
+              "id": "cc_t2l4_daeyo_02",
+              "fullSentence": "오늘은 일찍 끝난대요.",
+              "sentenceWithBlank": "오늘은 일찍 ___.",
+              "answer": "끝난대요",
+              "englishHint": "Apparently it finishes early today.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "끝나다",
+              "introducedAtPosition": 150
+            },
+            {
+              "id": "cc_t2l4_daeyo_03",
+              "fullSentence": "그 영화가 재미있대요.",
+              "sentenceWithBlank": "그 영화가 ___.",
+              "answer": "재미있대요",
+              "englishHint": "They say that movie is entertaining.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "재미있다",
+              "introducedAtPosition": 150
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
