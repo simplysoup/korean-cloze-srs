@@ -225,10 +225,10 @@ export function getState(): WebState {
   return state;
 }
 
-/** The current user id (server user id, or 'local' before login). Used
- * to build stable review-card ids (`rc_<uid>_<gpId>`), as the DB did. */
+/** The active verified account (never the last remembered account).
+ * Logged-out/guest screens receive 'local', not the cached A identity. */
 export function currentUid(): string {
-  return state?.user?.id ?? 'local';
+  return state?.activeAccountId ?? 'local';
 }
 
 /** True once initStore() has completed. */
