@@ -843,10 +843,10 @@
             },
             {
               "id": "le_t2l4_eobwatja_02",
-              "fullSentence": "물어봐 봤자 답을 못 들어요.",
-              "sentenceWithBlank": "물어___ 답을 못 들어요.",
-              "answer": "봐 봤자",
-              "englishHint": "Asking won't get you an answer.",
+              "fullSentence": "다시 설명해 봤자 이해하지 못할 거예요.",
+              "sentenceWithBlank": "다시 ___ 이해하지 못할 거예요.",
+              "answer": "설명해 봤자",
+              "englishHint": "Even explaining it again won't make them understand.",
               "order": 1
             }
           ],
