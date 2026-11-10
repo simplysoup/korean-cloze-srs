@@ -11,14 +11,19 @@
 // `munpro.sessionToken` mirror the DB build used, so a locked-out tab's
 // read-only flow keeps working.
 //
-// Boot order (initStore): IndexedDB snapshot first (instant, offline),
-// then a server pull when there is a token (authoritative, merged with
-// the same never-lose-a-review rules as the old applySyncSnapshot).
+// Boot order: restore only an already-verified, trusted account's own key;
+// never show the old global snapshot or pull before binding the account.
 
 import { syncPull } from '../lib/api';
 import { isLogoutGraceActive } from '../lib/auth';
 import { mergeDailyLearned, mergeStreaks, serverCardWins } from '../lib/sync-merge';
 import type { SyncDocument, SyncReviewCard } from '../lib/sync-types';
+import type { AccountSessionLease } from '../features/contracts/phase2';
+import {
+  accountDocumentKey, copyAccountSnapshot, isAccountSnapshot,
+  isValidServerAccountId, legacyHasPositiveOwnerEvidence, LEGACY_DOCUMENT_KEY,
+  type AccountPersistedSnapshot, type LegacyPersistedSnapshot,
+} from './account-isolation/storage';
 
 export interface ServerUserRecord {
   id: string;
@@ -29,6 +34,8 @@ export interface ServerUserRecord {
   /** Local password hash + salt (offline login only). Empty = never set locally. */
   passwordHash: string;
   salt: string;
+  /** Set only after an actual server auth response included this account ID. */
+  verifiedServerId?: boolean;
 }
 
 export interface DeviceTrust {
@@ -57,6 +64,8 @@ export interface WebState {
   lastUserId: string | null;
   /** Id of the remembered session user (localStorage). */
   sessionUserId: string | null;
+  /** Null means guest/logged-out; never mapped to another account's cache. */
+  activeAccountId: string | null;
 }
 
 function emptyDoc(): SyncDocument {
@@ -79,6 +88,7 @@ const LS_SESSION_USER_ID = 'munpro.sessionUserId:v2';
 const LS_SESSION_TOKEN = 'munpro.sessionToken';
 const LS_USER_RECORD = 'munpro.userRecord';
 const LS_DEVICE_TRUST = 'munpro.deviceTrust';
+const LS_TOKEN_OWNER = 'munpro.sessionTokenOwner:v1';
 
 function lsGet(key: string): string | null {
   try {
@@ -105,18 +115,9 @@ function lsRemove(key: string): void {
   }
 }
 
-// ── IndexedDB (one key, one JSON value) ──────────────────────────────────────
-
+// ── IndexedDB (same database, separate verified-account keys) ─────────────
 const IDB_NAME = 'munpro';
 const IDB_STORE = 'kv';
-const IDB_DOC_KEY = 'state-v1';
-
-interface PersistedState {
-  doc: SyncDocument;
-  lastSyncedVersion: number;
-  lastSyncedAt: string | null;
-  syncDirty: boolean;
-}
 
 function openIdb(): Promise<IDBDatabase> {
   return new Promise((resolve, reject) => {
@@ -126,35 +127,38 @@ function openIdb(): Promise<IDBDatabase> {
     }
     const req = indexedDB.open(IDB_NAME, 1);
     req.onupgradeneeded = () => {
-      req.result.createObjectStore(IDB_STORE);
+      if (!req.result.objectStoreNames.contains(IDB_STORE)) req.result.createObjectStore(IDB_STORE);
     };
     req.onsuccess = () => resolve(req.result);
     req.onerror = () => reject(req.error ?? new Error('indexedDB open failed'));
   });
 }
 
-async function idbGet(): Promise<PersistedState | null> {
+async function idbGet(key: string): Promise<unknown> {
   const db = await openIdb();
   try {
-    return await new Promise<PersistedState | null>((resolve, reject) => {
+    return await new Promise<unknown>((resolve, reject) => {
       const tx = db.transaction(IDB_STORE, 'readonly');
-      const req = tx.objectStore(IDB_STORE).get(IDB_DOC_KEY);
-      req.onsuccess = () => resolve((req.result as PersistedState | undefined) ?? null);
+      const req = tx.objectStore(IDB_STORE).get(key);
+      req.onsuccess = () => resolve(req.result ?? null);
       req.onerror = () => reject(req.error ?? new Error('indexedDB read failed'));
+      tx.onabort = () => reject(tx.error ?? new Error('indexedDB read aborted'));
     });
   } finally {
     db.close();
   }
 }
 
-async function idbPut(value: PersistedState): Promise<void> {
+/** Resolve only after transaction commit; request success is not durability. */
+async function idbPut(key: string, value: AccountPersistedSnapshot): Promise<void> {
   const db = await openIdb();
   try {
     await new Promise<void>((resolve, reject) => {
       const tx = db.transaction(IDB_STORE, 'readwrite');
-      const req = tx.objectStore(IDB_STORE).put(value, IDB_DOC_KEY);
-      req.onsuccess = () => resolve();
-      req.onerror = () => reject(req.error ?? new Error('indexedDB write failed'));
+      tx.objectStore(IDB_STORE).put(value, key);
+      tx.oncomplete = () => resolve();
+      tx.onerror = () => reject(tx.error ?? new Error('indexedDB write failed'));
+      tx.onabort = () => reject(tx.error ?? new Error('indexedDB write aborted'));
     });
   } finally {
     db.close();
@@ -164,6 +168,26 @@ async function idbPut(value: PersistedState): Promise<void> {
 // ── The state (module singleton) ─────────────────────────────────────────────
 
 let state: WebState | null = null;
+let sessionEpoch = 0;
+let removeStorageListener: (() => void) | null = null;
+
+function bumpEpoch(): number {
+  sessionEpoch += 1;
+  return sessionEpoch;
+}
+
+/** Captured leases are invalid after any login/logout/token replacement. */
+export function getAccountSessionLease(): AccountSessionLease | null {
+  const id = state?.activeAccountId;
+  if (!id || !state?.user?.verifiedServerId || state.user.id !== id) return null;
+  return { accountId: id, epoch: sessionEpoch };
+}
+
+export function isAccountSessionLeaseCurrent(lease: AccountSessionLease): boolean {
+  return !!state?.activeAccountId &&
+    state.activeAccountId === lease.accountId && sessionEpoch === lease.epoch &&
+    state.user?.verifiedServerId === true && state.user.id === lease.accountId;
+}
 
 function newState(): WebState {
   return {
@@ -176,6 +200,7 @@ function newState(): WebState {
     deviceTrust: {},
     lastUserId: null,
     sessionUserId: null,
+    activeAccountId: null,
   };
 }
 
@@ -196,18 +221,39 @@ export function isStoreReady(): boolean {
   return state !== null;
 }
 
-// ── Session token (localStorage mirror, same key as the DB build) ───────────
-
+// ── Token binding (identity is never inferred from the bearer string) ────
 export function getSessionToken(): string | null {
-  return lsGet(LS_SESSION_TOKEN);
+  const token = lsGet(LS_SESSION_TOKEN);
+  const owner = lsGet(LS_TOKEN_OWNER);
+  if (!token || !owner || !state?.user?.verifiedServerId) return null;
+  // Also allow first-login password setup, before the shell activates IDB.
+  if (state.user.id !== owner) return null;
+  if (state.activeAccountId && state.activeAccountId !== owner) return null;
+  return token;
 }
 
 export function setSessionToken(token: string): void {
+  bumpEpoch(); // invalidate pulls/pushes associated with the old token
   lsSet(LS_SESSION_TOKEN, token);
+  lsRemove(LS_TOKEN_OWNER); // new token must be bound by actual server auth
 }
 
+/** Call only after successful server auth returned the verified server ID. */
+export function bindSessionTokenToVerifiedAccount(id: string): void {
+  if (!isValidServerAccountId(id) || !state?.user?.verifiedServerId || state.user.id !== id) {
+    throw new Error('cannot bind bearer token to unverified account');
+  }
+  if (lsGet(LS_SESSION_TOKEN)) {
+    lsSet(LS_TOKEN_OWNER, id);
+    bumpEpoch();
+  }
+}
+
+/** Expiry is NOT logout: preserve the selected account's offline cache. */
 export function clearSessionToken(): void {
+  bumpEpoch();
   lsRemove(LS_SESSION_TOKEN);
+  lsRemove(LS_TOKEN_OWNER);
 }
 
 // ── Device id / trust / last user (localStorage) ─────────────────────────────
@@ -265,6 +311,8 @@ export function setSessionUserId(userId: string): void {
 }
 
 export function clearSessionUserId(): void {
+  // Explicit logout is a synchronous privacy barrier before any UI render.
+  endAccountSession();
   lsRemove(LS_SESSION_USER_ID);
   if (state) state.sessionUserId = null;
 }
@@ -273,64 +321,181 @@ function loadUserRecord(): ServerUserRecord | null {
   const raw = lsGet(LS_USER_RECORD);
   if (!raw) return null;
   try {
-    return JSON.parse(raw) as ServerUserRecord;
+    const record = JSON.parse(raw) as ServerUserRecord;
+    if (!isValidServerAccountId(record?.id) || typeof record.email !== 'string') return null;
+    // Historic records lacked this marker; never infer verified ownership.
+    return { ...record, verifiedServerId: record.verifiedServerId === true };
   } catch {
     return null;
   }
 }
 
 export function saveUserRecord(user: ServerUserRecord): void {
+  if (state?.activeAccountId && state.activeAccountId !== user.id) endAccountSession();
   lsSet(LS_USER_RECORD, JSON.stringify(user));
   if (state) state.user = user;
 }
 
 export function clearUserRecord(): void {
+  endAccountSession();
   lsRemove(LS_USER_RECORD);
   if (state) state.user = null;
 }
 
-// ── Persistence (IndexedDB, debounced) ───────────────────────────────────────
-
+// ── Account activation, write serialization and generation barriers ────
 let persistTimer: ReturnType<typeof setTimeout> | null = null;
+const pendingWrites = new Map<string, Promise<void>>();
 
-/** Write the doc + sync metadata to IndexedDB. Best-effort: a failure
- * (unavailable storage, incognito quirks) never throws — the in-memory
- * state and the server push still work. */
-export async function persistNow(): Promise<void> {
+function captureSnapshot(): { key: string; data: AccountPersistedSnapshot } | null {
+  const lease = getAccountSessionLease();
+  if (!lease) return null;
   const s = getState();
-  try {
-    await idbPut({
+  return {
+    key: accountDocumentKey(lease.accountId),
+    data: copyAccountSnapshot({
+      ownerId: lease.accountId,
       doc: s.doc,
       lastSyncedVersion: s.lastSyncedVersion,
       lastSyncedAt: s.lastSyncedAt,
       syncDirty: s.syncDirty,
-    });
+    }),
+  };
+}
+
+/** Queue immutable owner-tagged data. An old A write can finish after
+ * switching to B but cannot derive B's key or data. In-tab writes for
+ * one key complete in order; no assumption about cross-device CAS. */
+async function writeCaptured(key: string, data: AccountPersistedSnapshot): Promise<void> {
+  const previous = pendingWrites.get(key) ?? Promise.resolve();
+  const task = previous.catch(() => undefined).then(() => idbPut(key, data));
+  pendingWrites.set(key, task);
+  try {
+    await task;
+  } finally {
+    if (pendingWrites.get(key) === task) pendingWrites.delete(key);
+  }
+}
+
+export async function persistNow(): Promise<void> {
+  const captured = captureSnapshot();
+  if (!captured) return;
+  try {
+    await writeCaptured(captured.key, captured.data);
   } catch {
-    // Ignore — IndexedDB is a cache; the server is the backup.
+    // Cache is best-effort; caller and server sync still have in-memory data.
   }
 }
 
 export function schedulePersist(): void {
-  if (persistTimer) return;
+  const lease = getAccountSessionLease();
+  if (!lease || persistTimer) return;
   persistTimer = setTimeout(() => {
     persistTimer = null;
-    void persistNow();
+    if (isAccountSessionLeaseCurrent(lease)) void persistNow();
   }, 300);
 }
 
-/**
- * Mark local state dirty: schedule an IndexedDB persist. The server push
- * is the sync layer's job (syncNow, called on login and after
- * review/learn sessions, and debounced by the caller).
- */
+/** Detach synchronously BEFORE React renders logout/account switch. Capture
+ * outstanding A data before resetting it. A-scope writes are harmless after
+ * a switch; late reads are rejected by the epoch check. */
+export function endAccountSession(): void {
+  if (persistTimer) {
+    clearTimeout(persistTimer);
+    persistTimer = null;
+  }
+  if (state?.activeAccountId) void persistNow();
+  bumpEpoch();
+  if (!state) return;
+  state.activeAccountId = null;
+  state.doc = emptyDoc();
+  state.lastSyncedVersion = 0;
+  state.lastSyncedAt = null;
+  state.syncDirty = false;
+}
+
+/** Must be awaited by the auth shell before mounting learner screens or
+ * starting sync. No local email, unverified user ID or shared cache can
+ * activate this namespace. */
+export async function activateVerifiedAccount(id: string): Promise<boolean> {
+  const s = getState();
+  if (!s.user?.verifiedServerId || !isValidServerAccountId(id) || s.user.id !== id) {
+    endAccountSession();
+    return false;
+  }
+  if (s.activeAccountId === id) return true;
+  endAccountSession();
+  s.activeAccountId = id;
+  const lease = getAccountSessionLease();
+  if (!lease) return false;
+  try {
+    const cached = await idbGet(accountDocumentKey(id));
+    if (!isAccountSessionLeaseCurrent(lease)) return false;
+    if (isAccountSnapshot(cached, id)) {
+      s.doc = cached.doc;
+      s.lastSyncedVersion = cached.lastSyncedVersion;
+      s.lastSyncedAt = cached.lastSyncedAt;
+      s.syncDirty = cached.syncDirty;
+    }
+  } catch {
+    // Offline-capable: if IDB is unavailable the in-memory doc starts empty.
+  }
+  return isAccountSessionLeaseCurrent(lease);
+}
+
+/** Legacy state-v1 is NEVER assigned by lastUserId, email, or first login.
+ * It is read-only/quarantined unless a verified account's server document
+ * contains a matching unique log and matching account email. The source
+ * key remains untouched even after a safe union, for rollback. */
+export async function recoverVerifiedLegacyState(
+  serverDoc: SyncDocument,
+  lease: AccountSessionLease,
+): Promise<boolean> {
+  if (!isAccountSessionLeaseCurrent(lease)) return false;
+  const account = getState().user;
+  if (!account) return false;
+  let legacy: LegacyPersistedSnapshot | null = null;
+  try {
+    legacy = await idbGet(LEGACY_DOCUMENT_KEY) as LegacyPersistedSnapshot | null;
+  } catch {
+    return false;
+  }
+  if (!isAccountSessionLeaseCurrent(lease)) return false;
+  if (!legacyHasPositiveOwnerEvidence(legacy, serverDoc, account.email)) return false;
+  mergeServerDoc(legacy!.doc);
+  markDirty(); // server echo is required; original state-v1 remains intact
+  return true;
+}
+
+function installCrossTabAccountGuard(): void {
+  removeStorageListener?.();
+  if (typeof window === 'undefined' || !window.addEventListener) return;
+  const onStorage = (e: StorageEvent) => {
+    if (!state?.activeAccountId) return;
+    if (e.key !== LS_USER_RECORD && e.key !== LS_SESSION_USER_ID &&
+        e.key !== LS_SESSION_TOKEN && e.key !== LS_TOKEN_OWNER && e.key !== null) return;
+    const account = loadUserRecord();
+    const active = state.activeAccountId;
+    if (!account?.verifiedServerId || account.id !== active ||
+        getSessionUserId() !== active) {
+      endAccountSession();
+    } else if (e.key === LS_SESSION_TOKEN || e.key === LS_TOKEN_OWNER) {
+      // A new token cannot authorize old requests, even for the same ID.
+      bumpEpoch();
+    }
+  };
+  window.addEventListener('storage', onStorage);
+  removeStorageListener = () => window.removeEventListener('storage', onStorage);
+}
+
+/** No guest progress may be written to another account. */
 export function markDirty(): void {
   const s = getState();
+  if (!getAccountSessionLease()) return;
   s.syncDirty = true;
   s.doc.updatedAt = new Date().toISOString();
   schedulePersist();
 }
 
-/** Alias for markDirty (the DB build's name). */
 export const markSyncDirty = markDirty;
 
 export function isSyncDirty(): boolean {
@@ -342,7 +507,6 @@ export function clearSyncDirty(): void {
   schedulePersist();
 }
 
-/** The server sync version this device last synced to (0 = never). */
 export function getLastSyncedVersion(): number {
   return getState().lastSyncedVersion;
 }
@@ -465,74 +629,62 @@ export interface StoreInit {
  * the app always boots.
  */
 export async function initStore(): Promise<StoreInit> {
+  endAccountSession();
   const s = newState();
   state = s;
+  installCrossTabAccountGuard();
 
-  // Auth bits from localStorage (synchronous, reliable).
   s.deviceId = getOrCreateDeviceId();
   s.user = loadUserRecord();
   s.lastUserId = getLastUserId();
   s.sessionUserId = getSessionUserId();
   try {
-    const rawTrust = lsGet(LS_DEVICE_TRUST);
-    s.deviceTrust = rawTrust ? (JSON.parse(rawTrust) as Record<string, DeviceTrust>) : {};
+    const raw = lsGet(LS_DEVICE_TRUST);
+    s.deviceTrust = raw ? (JSON.parse(raw) as Record<string, DeviceTrust>) : {};
   } catch {
     s.deviceTrust = {};
   }
 
-  // Progress from the IndexedDB cache (best-effort).
-  try {
-    const cached = await idbGet();
-    if (cached) {
-      s.doc = cached.doc;
-      s.lastSyncedVersion = cached.lastSyncedVersion;
-      s.lastSyncedAt = cached.lastSyncedAt;
-      s.syncDirty = cached.syncDirty;
+  let sessionUser: StoreInit['sessionUser'] = null;
+  const id = s.sessionUserId;
+  // An explicit logout always requires re-authentication, even inside the
+  // old 30-minute grace; trust is not a replacement for a verified session.
+  if (id && s.user?.verifiedServerId && s.user.id === id) {
+    const trust = s.deviceTrust[id];
+    if (trust && trust.lastLogoutAt === null && isLogoutGraceActive(trust.lastLogoutAt)) {
+      if (await activateVerifiedAccount(id)) {
+        sessionUser = { id: s.user.id, username: s.user.username, email: s.user.email };
+      }
     }
-  } catch {
-    // No cache — start empty and pull from the server below.
   }
 
-  // Server pull when there is a token (authoritative, merged in).
+  // Only pull using a token previously bound to this exact verified account.
+  // A slow pull from this boot may never apply after a switch/logout.
+  const lease = getAccountSessionLease();
   const token = getSessionToken();
-  if (token) {
+  if (sessionUser && lease && token) {
     try {
       const pulled = await syncPull(token);
-      if (pulled.ok && pulled.payload && pulled.version > s.lastSyncedVersion) {
-        mergeServerDoc(pulled.payload);
-        s.lastSyncedVersion = pulled.version;
-        // The merged state goes back up on the next push (syncNow).
-        s.syncDirty = true;
-        schedulePersist();
-      } else if (pulled.ok && pulled.payload && s.lastSyncedVersion === 0) {
-        // Never synced before: take the server doc wholesale.
-        s.doc = pulled.payload;
-        s.lastSyncedVersion = pulled.version;
-        schedulePersist();
+      if (isAccountSessionLeaseCurrent(lease) && getSessionToken() === token &&
+          pulled.ok && pulled.payload) {
+        await recoverVerifiedLegacyState(pulled.payload, lease);
+        if (isAccountSessionLeaseCurrent(lease) && getSessionToken() === token) {
+          if (pulled.version > s.lastSyncedVersion) {
+            mergeServerDoc(pulled.payload);
+            s.lastSyncedVersion = pulled.version;
+            s.syncDirty = true;
+            schedulePersist();
+          } else if (s.lastSyncedVersion === 0) {
+            mergeServerDoc(pulled.payload);
+            s.lastSyncedVersion = pulled.version;
+            schedulePersist();
+          }
+        }
       }
     } catch {
-      // Offline / server down — the cache (or empty state) stands.
+      // Offline/expired token: keep THIS verified account's local copy.
     }
   }
 
-  // Session restore: the remembered user on a trusted device goes
-  // straight in (same rules as the DB build's initDatabase).
-  let sessionUser: StoreInit['sessionUser'] = null;
-  const sessionId = s.sessionUserId;
-  if (sessionId && s.user && s.user.id === sessionId) {
-    const trust = s.deviceTrust[sessionId];
-    if (trust && isLogoutGraceActive(trust.lastLogoutAt)) {
-      sessionUser = { id: s.user.id, username: s.user.username, email: s.user.email };
-    }
-  }
-  if (!sessionUser && s.lastUserId && s.user && s.user.id === s.lastUserId) {
-    const trust = s.deviceTrust[s.lastUserId];
-    if (trust && isLogoutGraceActive(trust.lastLogoutAt)) {
-      sessionUser = { id: s.user.id, username: s.user.username, email: s.user.email };
-      s.sessionUserId = s.lastUserId;
-      lsSet(LS_SESSION_USER_ID, s.lastUserId);
-    }
-  }
-  const lastEmail = s.user?.email ?? null;
-  return { sessionUser, deviceId: s.deviceId, lastEmail };
+  return { sessionUser, deviceId: s.deviceId, lastEmail: s.user?.email ?? null };
 }
