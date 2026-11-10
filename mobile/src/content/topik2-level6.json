@@ -165,12 +165,12 @@
             },
             {
               "id": "cc_t2l6_makronhago_02",
-              "fullSentence": "시간을 막론하고 연락하세요.",
-              "sentenceWithBlank": "시간___ 연락하세요.",
-              "answer": "을 막론하고",
-              "englishHint": "Contact me regardless of the hour.",
+              "fullSentence": "나이를 막론하고 신청할 수 있어요.",
+              "sentenceWithBlank": "나이___ 신청할 수 있어요.",
+              "answer": "를 막론하고",
+              "englishHint": "Anyone can apply regardless of age.",
               "alternateAnswers": [],
-              "vocabBaseForm": "시간",
+              "vocabBaseForm": "나이",
               "introducedAtPosition": 207
             },
             {
@@ -541,15 +541,15 @@
           "category": "hypothetical concession",
           "tense": null,
           "register": "advanced/literary",
-          "hint": "Grant a hypothetical claim for argument's sake, then reject the conclusion drawn from it.",
-          "description": "Grant a hypothetical claim for argument's sake, then reject the conclusion drawn from it. It considers an unreal assumption and says the conclusion still would not change.",
+          "hint": "Concede a hypothetical claim while resisting its conclusion; change -다손 to -ㄴ다손/-는다손 after action verbs.",
+          "description": "This formal argumentative concession temporarily grants a premise without accepting the resulting conclusion. Descriptive predicates use -다손 치더라도, whereas action verbs require -ㄴ다손 or -는다손 according to their final sound.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "[Verb/adjective stem] + -다손 치더라도",
+          "structurePattern": "[Descriptive stem] + -다손 치더라도; [Action verb vowel/ㄹ stem] + -ㄴ다손 치더라도; [Action verb other consonant stem] + -는다손 치더라도",
           "relatedPointIds": [
             "gp_t2l4_deorado"
           ],
@@ -557,26 +557,26 @@
             {
               "type": "tip",
               "title": "Build it step by step",
-              "content": "Attach 다손 치더라도 to a descriptive/action predicate; the following clause still challenges the claim."
+              "content": "Descriptive: 싸다 → 싸다손 치더라도. Action verb with vowel stem: 가다 → 간다손 치더라도, 출발하다 → 출발한다손 치더라도. Action verb with consonant stem: 먹다 → 먹는다손 치더라도. Keep a space before 치더라도."
             },
             {
               "type": "tip",
               "title": "Worked example",
-              "content": "비싸다손 치더라도 살 이유가 없어요. — Even granting it's expensive, there's no reason to buy. 비싸다손 치더라도 살 이유가 없어요 accepts the 'expensive' premise without accepting purchase."
+              "content": "싸다손 치더라도 지금 살 필요는 없어요. — Even if it is cheap, there's no need to buy it now. The cheap price is granted but does not justify a purchase."
             },
             {
               "type": "caution",
               "title": "Common trap",
-              "content": "This is a written argumentative concession, not a literal past-tense reporting ending."
+              "content": "Do not add bare -다손 to an action verb: 먹다손 is not the intended form (먹는다손). The clause after 치더라도 must show why granting the premise does not settle the point."
             }
           ],
           "lessonExamples": [
             {
               "id": "le_t2l6_dason_chideorado_01",
-              "fullSentence": "비싸다손 치더라도 살 이유가 없어요.",
-              "sentenceWithBlank": "___ 살 이유가 없어요.",
-              "answer": "비싸다손 치더라도",
-              "englishHint": "Even granting it's expensive, there's no reason to buy.",
+              "fullSentence": "싸다손 치더라도 지금 살 필요는 없어요.",
+              "sentenceWithBlank": "___ 지금 살 필요는 없어요.",
+              "answer": "싸다손 치더라도",
+              "englishHint": "Even if it is cheap, there's no need to buy it now.",
               "order": 0
             },
             {
@@ -601,22 +601,22 @@
             },
             {
               "id": "cc_t2l6_dason_chideorado_02",
-              "fullSentence": "어렵다손 치더라도 포기할 수 없어요.",
-              "sentenceWithBlank": "___ 포기할 수 없어요.",
-              "answer": "어렵다손 치더라도",
-              "englishHint": "Even assuming it's hard, we can't quit.",
+              "fullSentence": "일찍 출발한다손 치더라도 제시간에 도착하기는 어려워요.",
+              "sentenceWithBlank": "일찍 ___ 제시간에 도착하기는 어려워요.",
+              "answer": "출발한다손 치더라도",
+              "englishHint": "Even if we set off early, arriving on time will still be difficult.",
               "alternateAnswers": [],
-              "vocabBaseForm": "어렵다",
+              "vocabBaseForm": "출발하다",
               "introducedAtPosition": 212
             },
             {
               "id": "cc_t2l6_dason_chideorado_03",
-              "fullSentence": "상황이 나쁘다손 치더라도 대안은 있어요.",
-              "sentenceWithBlank": "상황이 ___ 대안은 있어요.",
-              "answer": "나쁘다손 치더라도",
-              "englishHint": "Even granting the situation is bad, alternatives exist.",
+              "fullSentence": "많이 먹는다손 치더라도 음식이 남을 거예요.",
+              "sentenceWithBlank": "많이 ___ 음식이 남을 거예요.",
+              "answer": "먹는다손 치더라도",
+              "englishHint": "Even if we eat a lot, some food will remain.",
               "alternateAnswers": [],
-              "vocabBaseForm": "나쁘다",
+              "vocabBaseForm": "먹다",
               "introducedAtPosition": 212
             }
           ]
@@ -1506,14 +1506,14 @@
           "tense": null,
           "register": "advanced/literary",
           "hint": "Refer to evidence already visible or known to the listener: 'as you know / as you saw'.",
-          "description": "Refer to evidence already visible or known to the listener: 'as you know / as you saw'. It appeals to something the listener can already observe or knows.",
+          "description": "Use -다시피 after a perception or knowledge verb to point to something the listener can see, hear, or already knows. This evidence-appeal construction differs in meaning from the 'practically / almost' pattern -다시피 하다.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "[Verb/adjective stem] + -다시피 (as you can see)",
+          "structurePattern": "[Perception/knowledge verb stem (알다, 보다, 듣다)] + -다시피; often with honorific -시-",
           "relatedPointIds": [
             "gp_t2l6_dasipi_hada"
           ],
