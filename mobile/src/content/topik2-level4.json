@@ -75,7 +75,7 @@
               "englishHint": "You know there's no time.",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "introducedAtPosition": 127
+              "introducedAtPosition": 157
             },
             {
               "id": "cc_t2l4_janayo_02",
@@ -85,7 +85,7 @@
               "englishHint": "I told you yesterday, remember?",
               "alternateAnswers": [],
               "vocabBaseForm": "말하다",
-              "introducedAtPosition": 127
+              "introducedAtPosition": 157
             },
             {
               "id": "cc_t2l4_janayo_03",
@@ -95,7 +95,7 @@
               "englishHint": "You know this road is faster.",
               "alternateAnswers": [],
               "vocabBaseForm": "빠르다",
-              "introducedAtPosition": 127
+              "introducedAtPosition": 157
             }
           ]
         },
@@ -161,7 +161,7 @@
               "englishHint": "I come often because I live nearby.",
               "alternateAnswers": [],
               "vocabBaseForm": "가깝다",
-              "introducedAtPosition": 128
+              "introducedAtPosition": 158
             },
             {
               "id": "cc_t2l4_geodeunyo_02",
@@ -171,7 +171,7 @@
               "englishHint": "I can't right now; I have lots of work.",
               "alternateAnswers": [],
               "vocabBaseForm": "많다",
-              "introducedAtPosition": 128
+              "introducedAtPosition": 158
             },
             {
               "id": "cc_t2l4_geodeunyo_03",
@@ -181,7 +181,7 @@
               "englishHint": "I can't eat that; I have an allergy.",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "introducedAtPosition": 128
+              "introducedAtPosition": 158
             }
           ]
         },
@@ -247,7 +247,7 @@
               "englishHint": "It was cold, then became warm.",
               "alternateAnswers": [],
               "vocabBaseForm": "춥다",
-              "introducedAtPosition": 129
+              "introducedAtPosition": 159
             },
             {
               "id": "cc_t2l4_deoni_02",
@@ -257,7 +257,7 @@
               "englishHint": "My friend laughed and suddenly cried.",
               "alternateAnswers": [],
               "vocabBaseForm": "웃다",
-              "introducedAtPosition": 129
+              "introducedAtPosition": 159
             },
             {
               "id": "cc_t2l4_deoni_03",
@@ -267,7 +267,95 @@
               "englishHint": "The sky clouded over and then it rained.",
               "alternateAnswers": [],
               "vocabBaseForm": "흐리다",
-              "introducedAtPosition": 129
+              "introducedAtPosition": 159
+            }
+          ]
+        },
+        {
+          "id": "gp_gap_eum_written_nominal",
+          "title": "-(으)ㅁ (written nominalization)",
+          "category": "written nominalization",
+          "tense": null,
+          "register": "formal / written",
+          "hint": "Turn a clause into a formal noun-like statement.",
+          "description": "In formal writing, -(으)ㅁ turns an action or state into a noun-like clause that can serve as the object of reporting, confirmation or explanation. It often appears in notices, reports and official writing.",
+          "level": 4,
+          "tags": [
+            "TOPIK2",
+            "nominalization",
+            "written",
+            "grammar"
+          ],
+          "structurePattern": "[Action/descriptive stem + (으)ㅁ] + noun particle (을/를 etc.)",
+          "relatedPointIds": [
+            "gp_gi_nominal",
+            "gp_neun_geot"
+          ],
+          "notes": [
+            {
+              "type": "tip",
+              "title": "Build it step by step",
+              "content": "For a stem ending in a consonant, attach 음; after a vowel add ㅁ: 읽다 → 읽음, 가다 → 감. Past endings can be included: 끝나다 → 끝났음; then add a particle as needed (끝났음을)."
+            },
+            {
+              "type": "tip",
+              "title": "Worked example",
+              "content": "회의가 끝났음을 확인했습니다. — We confirmed that the meeting had ended. 끝나다 becomes 끝났음 as a formal nominal clause, then takes 을 to mark what was confirmed."
+            },
+            {
+              "type": "caution",
+              "title": "Common trap",
+              "content": "This is common in official writing rather than casual conversation. Compare -기 nominalization for activities and -는 것 for noun-like clauses in everyday language."
+            }
+          ],
+          "lessonExamples": [
+            {
+              "id": "le_gap_eum_written_nominal_01",
+              "fullSentence": "회의가 끝났음을 확인했습니다.",
+              "sentenceWithBlank": "회의가 끝났___ 확인했습니다.",
+              "answer": "음을",
+              "englishHint": "We confirmed that the meeting had ended.",
+              "order": 0
+            },
+            {
+              "id": "le_gap_eum_written_nominal_02",
+              "fullSentence": "안전이 중요함을 강조했습니다.",
+              "sentenceWithBlank": "안전이 중요___ 강조했습니다.",
+              "answer": "함을",
+              "englishHint": "We emphasized that safety is important.",
+              "order": 1
+            }
+          ],
+          "cards": [
+            {
+              "id": "cc_gap_eum_written_nominal_01",
+              "fullSentence": "서류가 필요함을 알려 드립니다.",
+              "sentenceWithBlank": "서류가 필요___ 알려 드립니다.",
+              "answer": "함을",
+              "englishHint": "We inform you that the documents are required.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "필요하다",
+              "introducedAtPosition": 160
+            },
+            {
+              "id": "cc_gap_eum_written_nominal_02",
+              "fullSentence": "문제가 해결됐음을 확인했습니다.",
+              "sentenceWithBlank": "문제가 해결됐___ 확인했습니다.",
+              "answer": "음을",
+              "englishHint": "We confirmed that the problem was resolved.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "해결되다",
+              "introducedAtPosition": 160
+            },
+            {
+              "id": "cc_gap_eum_written_nominal_03",
+              "fullSentence": "모두가 동의했음을 기록했습니다.",
+              "sentenceWithBlank": "모두가 동의했___ 기록했습니다.",
+              "answer": "음을",
+              "englishHint": "We recorded that everyone had agreed.",
+              "alternateAnswers": [],
+              "vocabBaseForm": "동의하다",
+              "introducedAtPosition": 160
             }
           ]
         },
@@ -333,7 +421,7 @@
               "englishHint": "I slept early and am not tired.",
               "alternateAnswers": [],
               "vocabBaseForm": "자다",
-              "introducedAtPosition": 130
+              "introducedAtPosition": 161
             },
             {
               "id": "cc_t2l4_eotdeoni_02",
@@ -343,7 +431,7 @@
               "englishHint": "I went and found many people.",
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
-              "introducedAtPosition": 130
+              "introducedAtPosition": 161
             },
             {
               "id": "cc_t2l4_eotdeoni_03",
@@ -353,7 +441,7 @@
               "englishHint": "I walked a lot and now my legs hurt.",
               "alternateAnswers": [],
               "vocabBaseForm": "걷다",
-              "introducedAtPosition": 130
+              "introducedAtPosition": 161
             }
           ]
         }
@@ -423,7 +511,7 @@
               "englishHint": "I pretended to be okay.",
               "alternateAnswers": [],
               "vocabBaseForm": "괜찮다",
-              "introducedAtPosition": 131
+              "introducedAtPosition": 162
             },
             {
               "id": "cc_t2l4_neun_cheok_02",
@@ -433,7 +521,7 @@
               "englishHint": "My friend pretended not to hear.",
               "alternateAnswers": [],
               "vocabBaseForm": "듣다",
-              "introducedAtPosition": 131
+              "introducedAtPosition": 162
             },
             {
               "id": "cc_t2l4_neun_cheok_03",
@@ -443,7 +531,7 @@
               "englishHint": "He pretended to be busy.",
               "alternateAnswers": [],
               "vocabBaseForm": "바쁘다",
-              "introducedAtPosition": 131
+              "introducedAtPosition": 162
             }
           ]
         },
@@ -509,7 +597,7 @@
               "englishHint": "He can't have forgotten the appointment.",
               "alternateAnswers": [],
               "vocabBaseForm": "잊다",
-              "introducedAtPosition": 132
+              "introducedAtPosition": 163
             },
             {
               "id": "cc_t2l4_eulliga_02",
@@ -519,7 +607,7 @@
               "englishHint": "They can't all have been wrong.",
               "alternateAnswers": [],
               "vocabBaseForm": "틀리다",
-              "introducedAtPosition": 132
+              "introducedAtPosition": 163
             },
             {
               "id": "cc_t2l4_eulliga_03",
@@ -529,7 +617,7 @@
               "englishHint": "That story can't possibly be true.",
               "alternateAnswers": [],
               "vocabBaseForm": "이다",
-              "introducedAtPosition": 132
+              "introducedAtPosition": 163
             }
           ]
         },
@@ -595,7 +683,7 @@
               "englishHint": "Because of the rain, we have to cancel.",
               "alternateAnswers": [],
               "vocabBaseForm": "취소하다",
-              "introducedAtPosition": 133
+              "introducedAtPosition": 164
             },
             {
               "id": "cc_t2l4_eulsupakke_02",
@@ -605,7 +693,7 @@
               "englishHint": "We're forced to take a taxi because of time.",
               "alternateAnswers": [],
               "vocabBaseForm": "타다",
-              "introducedAtPosition": 133
+              "introducedAtPosition": 164
             },
             {
               "id": "cc_t2l4_eulsupakke_03",
@@ -615,7 +703,7 @@
               "englishHint": "We must investigate again for lack of data.",
               "alternateAnswers": [],
               "vocabBaseForm": "조사하다",
-              "introducedAtPosition": 133
+              "introducedAtPosition": 164
             }
           ]
         },
@@ -681,7 +769,7 @@
               "englishHint": "I fell asleep with the lights on.",
               "alternateAnswers": [],
               "vocabBaseForm": "켜다",
-              "introducedAtPosition": 134
+              "introducedAtPosition": 165
             },
             {
               "id": "cc_t2l4_eun_chaero_02",
@@ -691,7 +779,7 @@
               "englishHint": "I swam with my glasses on.",
               "alternateAnswers": [],
               "vocabBaseForm": "쓰다",
-              "introducedAtPosition": 134
+              "introducedAtPosition": 165
             },
             {
               "id": "cc_t2l4_eun_chaero_03",
@@ -701,7 +789,7 @@
               "englishHint": "I thought with my eyes closed.",
               "alternateAnswers": [],
               "vocabBaseForm": "감다",
-              "introducedAtPosition": 134
+              "introducedAtPosition": 165
             }
           ]
         }
@@ -773,7 +861,7 @@
               "englishHint": "This restaurant is worth visiting.",
               "alternateAnswers": [],
               "vocabBaseForm": "보다",
-              "introducedAtPosition": 135
+              "introducedAtPosition": 166
             },
             {
               "id": "cc_t2l4_eulmanhada_02",
@@ -783,7 +871,7 @@
               "englishHint": "This problem is manageable.",
               "alternateAnswers": [],
               "vocabBaseForm": "풀다",
-              "introducedAtPosition": 135
+              "introducedAtPosition": 166
             },
             {
               "id": "cc_t2l4_eulmanhada_03",
@@ -793,7 +881,7 @@
               "englishHint": "That place is worth recommending.",
               "alternateAnswers": [],
               "vocabBaseForm": "추천하다",
-              "introducedAtPosition": 135
+              "introducedAtPosition": 166
             }
           ]
         },
@@ -859,7 +947,7 @@
               "englishHint": "Regretting it won't help.",
               "alternateAnswers": [],
               "vocabBaseForm": "후회하다",
-              "introducedAtPosition": 136
+              "introducedAtPosition": 167
             },
             {
               "id": "cc_t2l4_eobwatja_02",
@@ -869,7 +957,7 @@
               "englishHint": "Hurrying won't help; we're late already.",
               "alternateAnswers": [],
               "vocabBaseForm": "서두르다",
-              "introducedAtPosition": 136
+              "introducedAtPosition": 167
             },
             {
               "id": "cc_t2l4_eobwatja_03",
@@ -879,7 +967,7 @@
               "englishHint": "Worrying alone won't solve it.",
               "alternateAnswers": [],
               "vocabBaseForm": "고민하다",
-              "introducedAtPosition": 136
+              "introducedAtPosition": 167
             }
           ]
         },
@@ -945,7 +1033,7 @@
               "englishHint": "We failed due to insufficient preparation.",
               "alternateAnswers": [],
               "vocabBaseForm": "부족하다",
-              "introducedAtPosition": 137
+              "introducedAtPosition": 168
             },
             {
               "id": "cc_t2l4_neun_tase_02",
@@ -955,7 +1043,7 @@
               "englishHint": "We were late because we left late.",
               "alternateAnswers": [],
               "vocabBaseForm": "출발하다",
-              "introducedAtPosition": 137
+              "introducedAtPosition": 168
             },
             {
               "id": "cc_t2l4_neun_tase_03",
@@ -965,7 +1053,7 @@
               "englishHint": "I made a mistake because I rushed.",
               "alternateAnswers": [],
               "vocabBaseForm": "서두르다",
-              "introducedAtPosition": 137
+              "introducedAtPosition": 168
             }
           ]
         },
@@ -1031,7 +1119,7 @@
               "englishHint": "I took out trash while going outside.",
               "alternateAnswers": [],
               "vocabBaseForm": "나가다",
-              "introducedAtPosition": 138
+              "introducedAtPosition": 169
             },
             {
               "id": "cc_t2l4_neun_gime_02",
@@ -1041,7 +1129,7 @@
               "englishHint": "Since I came to Seoul, I met a friend.",
               "alternateAnswers": [],
               "vocabBaseForm": "오다",
-              "introducedAtPosition": 138
+              "introducedAtPosition": 169
             },
             {
               "id": "cc_t2l4_neun_gime_03",
@@ -1051,7 +1139,7 @@
               "englishHint": "While cleaning, I wiped the windows too.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 138
+              "introducedAtPosition": 169
             }
           ]
         }
@@ -1123,7 +1211,7 @@
               "englishHint": "I checked again in case I'd made a mistake.",
               "alternateAnswers": [],
               "vocabBaseForm": "실수하다",
-              "introducedAtPosition": 139
+              "introducedAtPosition": 170
             },
             {
               "id": "cc_t2l4_eulkkabwa_02",
@@ -1133,7 +1221,7 @@
               "englishHint": "I checked a map for fear of getting lost.",
               "alternateAnswers": [],
               "vocabBaseForm": "잃다",
-              "introducedAtPosition": 139
+              "introducedAtPosition": 170
             },
             {
               "id": "cc_t2l4_eulkkabwa_03",
@@ -1143,7 +1231,7 @@
               "englishHint": "I'm worried I might fail the exam.",
               "alternateAnswers": [],
               "vocabBaseForm": "떨어지다",
-              "introducedAtPosition": 139
+              "introducedAtPosition": 170
             }
           ]
         },
@@ -1209,7 +1297,7 @@
               "englishHint": "Having spent it all, there's effectively none left.",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "introducedAtPosition": 140
+              "introducedAtPosition": 171
             },
             {
               "id": "cc_t2l4_neun_semi_02",
@@ -1219,7 +1307,7 @@
               "englishHint": "Practicing daily effectively makes it consistent.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 140
+              "introducedAtPosition": 171
             },
             {
               "id": "cc_t2l4_neun_semi_03",
@@ -1229,7 +1317,7 @@
               "englishHint": "In effect, we started over.",
               "alternateAnswers": [],
               "vocabBaseForm": "시작하다",
-              "introducedAtPosition": 140
+              "introducedAtPosition": 171
             }
           ]
         },
@@ -1295,7 +1383,7 @@
               "englishHint": "He's kind and also good at his job.",
               "alternateAnswers": [],
               "vocabBaseForm": "친절하다",
-              "introducedAtPosition": 141
+              "introducedAtPosition": 172
             },
             {
               "id": "cc_t2l4_neun_dedaga_02",
@@ -1305,7 +1393,7 @@
               "englishHint": "It's quiet here and transport is convenient.",
               "alternateAnswers": [],
               "vocabBaseForm": "조용하다",
-              "introducedAtPosition": 141
+              "introducedAtPosition": 172
             },
             {
               "id": "cc_t2l4_neun_dedaga_03",
@@ -1315,7 +1403,7 @@
               "englishHint": "The trip is long and traffic is bad too.",
               "alternateAnswers": [],
               "vocabBaseForm": "멀다",
-              "introducedAtPosition": 141
+              "introducedAtPosition": 172
             }
           ]
         },
@@ -1381,7 +1469,7 @@
               "englishHint": "I should have studied a bit more.",
               "alternateAnswers": [],
               "vocabBaseForm": "공부하다",
-              "introducedAtPosition": 142
+              "introducedAtPosition": 173
             },
             {
               "id": "cc_t2l4_eosseoya_02",
@@ -1391,7 +1479,7 @@
               "englishHint": "I should have brought an umbrella.",
               "alternateAnswers": [],
               "vocabBaseForm": "가져오다",
-              "introducedAtPosition": 142
+              "introducedAtPosition": 173
             },
             {
               "id": "cc_t2l4_eosseoya_03",
@@ -1401,7 +1489,7 @@
               "englishHint": "We should have booked first.",
               "alternateAnswers": [],
               "vocabBaseForm": "예약하다",
-              "introducedAtPosition": 142
+              "introducedAtPosition": 173
             }
           ]
         }
@@ -1473,7 +1561,7 @@
               "englishHint": "If I'd had money, I'd have bought it.",
               "alternateAnswers": [],
               "vocabBaseForm": "있다",
-              "introducedAtPosition": 143
+              "introducedAtPosition": 174
             },
             {
               "id": "cc_t2l4_eotdeoramyeon_02",
@@ -1483,7 +1571,7 @@
               "englishHint": "Had I studied then, I'd have passed.",
               "alternateAnswers": [],
               "vocabBaseForm": "공부하다",
-              "introducedAtPosition": 143
+              "introducedAtPosition": 174
             },
             {
               "id": "cc_t2l4_eotdeoramyeon_03",
@@ -1493,7 +1581,7 @@
               "englishHint": "If it hadn't rained, I would have gone.",
               "alternateAnswers": [],
               "vocabBaseForm": "오다",
-              "introducedAtPosition": 143
+              "introducedAtPosition": 174
             }
           ]
         },
@@ -1559,7 +1647,7 @@
               "englishHint": "Even if you're busy, eat a meal.",
               "alternateAnswers": [],
               "vocabBaseForm": "없다",
-              "introducedAtPosition": 144
+              "introducedAtPosition": 175
             },
             {
               "id": "cc_t2l4_deorado_02",
@@ -1569,7 +1657,7 @@
               "englishHint": "Even if I fail, I'll try again.",
               "alternateAnswers": [],
               "vocabBaseForm": "실패하다",
-              "introducedAtPosition": 144
+              "introducedAtPosition": 175
             },
             {
               "id": "cc_t2l4_deorado_03",
@@ -1579,7 +1667,7 @@
               "englishHint": "Even if it's expensive, it's needed.",
               "alternateAnswers": [],
               "vocabBaseForm": "비싸다",
-              "introducedAtPosition": 144
+              "introducedAtPosition": 175
             }
           ]
         },
@@ -1645,7 +1733,7 @@
               "englishHint": "As far as I know, it's true.",
               "alternateAnswers": [],
               "vocabBaseForm": "알다",
-              "introducedAtPosition": 145
+              "introducedAtPosition": 176
             },
             {
               "id": "cc_t2l4_neun_han_02",
@@ -1655,7 +1743,7 @@
               "englishHint": "As long as you live here, follow the rules.",
               "alternateAnswers": [],
               "vocabBaseForm": "살다",
-              "introducedAtPosition": 145
+              "introducedAtPosition": 176
             },
             {
               "id": "cc_t2l4_neun_han_03",
@@ -1665,7 +1753,7 @@
               "englishHint": "As long as you practice, you'll improve.",
               "alternateAnswers": [],
               "vocabBaseForm": "연습하다",
-              "introducedAtPosition": 145
+              "introducedAtPosition": 176
             }
           ]
         },
@@ -1731,7 +1819,7 @@
               "englishHint": "Tell the truth rather than lie.",
               "alternateAnswers": [],
               "vocabBaseForm": "거짓말하다",
-              "introducedAtPosition": 146
+              "introducedAtPosition": 177
             },
             {
               "id": "cc_t2l4_neuni_02",
@@ -1741,7 +1829,7 @@
               "englishHint": "Ask for help rather than do it alone.",
               "alternateAnswers": [],
               "vocabBaseForm": "하다",
-              "introducedAtPosition": 146
+              "introducedAtPosition": 177
             },
             {
               "id": "cc_t2l4_neuni_03",
@@ -1751,7 +1839,7 @@
               "englishHint": "I'd rather go tomorrow than go late.",
               "alternateAnswers": [],
               "vocabBaseForm": "가다",
-              "introducedAtPosition": 146
+              "introducedAtPosition": 177
             }
           ]
         }
@@ -1823,7 +1911,7 @@
               "englishHint": "A senior suggested meeting early.",
               "alternateAnswers": [],
               "vocabBaseForm": "만나다",
-              "introducedAtPosition": 147
+              "introducedAtPosition": 178
             },
             {
               "id": "cc_t2l4_jago_hada_02",
@@ -1833,7 +1921,7 @@
               "englishHint": "A friend proposed having lunch.",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "introducedAtPosition": 147
+              "introducedAtPosition": 178
             },
             {
               "id": "cc_t2l4_jago_hada_03",
@@ -1843,7 +1931,7 @@
               "englishHint": "A teammate suggested discussing it again.",
               "alternateAnswers": [],
               "vocabBaseForm": "이야기하다",
-              "introducedAtPosition": 147
+              "introducedAtPosition": 178
             }
           ]
         },
@@ -1909,7 +1997,7 @@
               "englishHint": "The doctor told me to rest.",
               "alternateAnswers": [],
               "vocabBaseForm": "쉬다",
-              "introducedAtPosition": 148
+              "introducedAtPosition": 179
             },
             {
               "id": "cc_t2l4_eurago_hada_02",
@@ -1919,7 +2007,7 @@
               "englishHint": "My friend told me to close the door.",
               "alternateAnswers": [],
               "vocabBaseForm": "닫다",
-              "introducedAtPosition": 148
+              "introducedAtPosition": 179
             },
             {
               "id": "cc_t2l4_eurago_hada_03",
@@ -1929,7 +2017,7 @@
               "englishHint": "My boss told me to check again.",
               "alternateAnswers": [],
               "vocabBaseForm": "확인하다",
-              "introducedAtPosition": 148
+              "introducedAtPosition": 179
             }
           ]
         },
@@ -1995,7 +2083,7 @@
               "englishHint": "The child asked why I was laughing.",
               "alternateAnswers": [],
               "vocabBaseForm": "웃다",
-              "introducedAtPosition": 149
+              "introducedAtPosition": 180
             },
             {
               "id": "cc_t2l4_nyago_hada_02",
@@ -2005,7 +2093,7 @@
               "englishHint": "The teacher asked if I was ready.",
               "alternateAnswers": [],
               "vocabBaseForm": "되다",
-              "introducedAtPosition": 149
+              "introducedAtPosition": 180
             },
             {
               "id": "cc_t2l4_nyago_hada_03",
@@ -2015,7 +2103,7 @@
               "englishHint": "My friend asked what I was eating.",
               "alternateAnswers": [],
               "vocabBaseForm": "먹다",
-              "introducedAtPosition": 149
+              "introducedAtPosition": 180
             }
           ]
         },
@@ -2081,7 +2169,7 @@
               "englishHint": "They say my friend is studying now.",
               "alternateAnswers": [],
               "vocabBaseForm": "공부하다",
-              "introducedAtPosition": 150
+              "introducedAtPosition": 181
             },
             {
               "id": "cc_t2l4_daeyo_02",
@@ -2091,7 +2179,7 @@
               "englishHint": "Apparently it finishes early today.",
               "alternateAnswers": [],
               "vocabBaseForm": "끝나다",
-              "introducedAtPosition": 150
+              "introducedAtPosition": 181
             },
             {
               "id": "cc_t2l4_daeyo_03",
@@ -2101,7 +2189,7 @@
               "englishHint": "They say that movie is entertaining.",
               "alternateAnswers": [],
               "vocabBaseForm": "재미있다",
-              "introducedAtPosition": 150
+              "introducedAtPosition": 181
             }
           ]
         }
