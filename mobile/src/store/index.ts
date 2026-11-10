@@ -61,6 +61,8 @@ export {
   getCramLessonRows,
   getCramPointIdsForLesson,
   getCramQueue,
+  getCycledQueueItem,
+  dayBoundary4am,
   getUserSettings,
   checkQueueItem,
   checkAnswers,

@@ -51,10 +51,60 @@ function byDueAsc(a: { due: string }, b: { due: string }): number {
 }
 
 /**
+ * The day boundary for the review queue: 4am local time. A card answered
+ * correctly since this boundary is done for the day and does not resurface
+ * until tomorrow 4am, even when its FSRS due is sooner — the recorded due
+ * (the "true" interval) is kept untouched; the 4am rule is only a queue
+ * visibility rule. 4am (not midnight) so a late-night session doesn't roll
+ * the day over mid-study — the same boundary Anki uses.
+ */
+export function dayBoundary4am(now: Date = new Date()): Date {
+  const b = new Date(now);
+  b.setHours(4, 0, 0, 0);
+  if (now.getTime() < b.getTime()) b.setDate(b.getDate() - 1);
+  return b;
+}
+
+/** The latest review log per grammar point (by reviewedAt). */
+function latestLogByGp(): Map<string, { reviewedAt: string; rating: number }> {
+  const map = new Map<string, { reviewedAt: string; rating: number }>();
+  for (const l of getState().doc.reviewLogs) {
+    const prev = map.get(l.grammarPointId);
+    if (!prev || l.reviewedAt > prev.reviewedAt) {
+      map.set(l.grammarPointId, { reviewedAt: l.reviewedAt, rating: l.rating });
+    }
+  }
+  return map;
+}
+
+/**
+ * True when a review card is done for today and must not appear in the
+ * review queue until tomorrow 4am:
+ * - answered correctly since today's 4am boundary (the latest log is a
+ *   correct review at/after the boundary), or
+ * - learned today and never reviewed (a New card whose due — its creation
+ *   time — is at/after the boundary; the Learn + immediate quiz was
+ *   today's review for it).
+ * A card answered wrong today (latest log wrong) or learned on an earlier
+ * day-cycle is NOT gated — it still needs to be gotten right.
+ */
+function isGatedToday(
+  rc: { grammarPointId: string; state: number; due: string; lastReview: string | null },
+  latestLog: { reviewedAt: string; rating: number } | undefined,
+  boundaryIso: string,
+): boolean {
+  if (latestLog && latestLog.rating >= 3 && latestLog.reviewedAt >= boundaryIso) return true;
+  if (rc.state === 0 && rc.lastReview === null && rc.due >= boundaryIso) return true;
+  return false;
+}
+
+/**
  * One review-queue item for a grammar point: the most-advanced cloze card
  * (highest introducedAtPosition), with its grammar target and answers.
  * Returns null when the point has no content (the DB versions skip it).
  * Shared by getDueQueue (real SRS fields) and getCramQueue (zeroed fields).
+ * Pass clozeCardId to build the item for a specific card instead of the
+ * most-advanced one (wrong-card cycling uses a different sentence).
  */
 function buildQueueItem(
   grammarPointId: string,
@@ -63,6 +113,7 @@ function buildQueueItem(
   masteredAt: string | null,
   fsrsState: number,
   stability: number,
+  clozeCardId?: string,
 ): ReviewQueueItem | null {
   const point = getContentPoint(grammarPointId);
   if (!point) return null;
@@ -70,7 +121,9 @@ function buildQueueItem(
     (a, b) => b.introducedAtPosition - a.introducedAtPosition,
   );
   if (cards.length === 0) return null;
-  const card = cards[0];
+  const card = clozeCardId
+    ? (cards.find((c) => c.id === clozeCardId) ?? cards[0])
+    : cards[0];
   const target = getContentTarget(card.id, grammarPointId);
   const gp = point.gp;
   return {
@@ -94,6 +147,36 @@ function buildQueueItem(
   };
 }
 
+/**
+ * A queue item for the same grammar point but a different cloze card
+ * (sentence) than the one just failed — for wrong-card cycling in a
+ * review session. Picks a random other card of the point; when the point
+ * has only one card, it reuses it. Returns null when the point has no
+ * review card or no content. The FSRS fields come from the live review
+ * card (so a cycled item reflects the post-miss state).
+ */
+export function getCycledQueueItem(
+  grammarPointId: string,
+  excludeClozeCardId: string,
+): ReviewQueueItem | null {
+  const rc = getState().doc.reviewCards.find((c) => c.grammarPointId === grammarPointId);
+  if (!rc) return null;
+  const cards = getContentCards(grammarPointId);
+  const others = cards.filter((c) => c.id !== excludeClozeCardId);
+  const pool = others.length > 0 ? others : cards;
+  if (pool.length === 0) return null;
+  const pick = pool[Math.floor(Math.random() * pool.length)];
+  return buildQueueItem(
+    grammarPointId,
+    `rc_${currentUid()}_${grammarPointId}`,
+    rc.streakCorrect,
+    rc.masteredAt,
+    rc.state,
+    rc.stability,
+    pick.id,
+  );
+}
+
 export function getDueQueue(limit = 10): ReviewQueueItem[] {
   const settings = getUserSettings();
   // Vacation mode pauses reviews entirely.
@@ -114,9 +197,19 @@ export function getDueQueue(limit = 10): ReviewQueueItem[] {
   // applies after the library filter, so a removed deck can't starve
   // the queue.
   const libraryGpIds = new Set(getLibraryGrammarPointIds());
+  // Day gate (4am): a card answered correctly today, or learned today,
+  // is done until tomorrow 4am — even when its FSRS due is sooner. The
+  // recorded due is kept untouched (the "true" interval); this only
+  // controls what the queue shows.
+  const boundaryIso = dayBoundary4am().toISOString();
+  const latestLogs = latestLogByGp();
   const due = getState()
     .doc.reviewCards.filter(
-      (rc) => rc.due <= nowIso && !rc.masteredAt && libraryGpIds.has(rc.grammarPointId),
+      (rc) =>
+        rc.due <= nowIso &&
+        !rc.masteredAt &&
+        libraryGpIds.has(rc.grammarPointId) &&
+        !isGatedToday(rc, latestLogs.get(rc.grammarPointId), boundaryIso),
     )
     .sort(byDueAsc)
     .slice(0, effectiveLimit);
@@ -138,8 +231,20 @@ export function getDueQueue(limit = 10): ReviewQueueItem[] {
 
 export function getNextReviewAt(): string | null {
   const libraryGpIds = new Set(getLibraryGrammarPointIds());
-  const cards = [...getState().doc.reviewCards].sort(byDueAsc);
-  return cards.find((c) => libraryGpIds.has(c.grammarPointId))?.due ?? null;
+  const boundary = dayBoundary4am();
+  const boundaryIso = boundary.toISOString();
+  const tomorrow4amIso = new Date(boundary.getTime() + 24 * 3600 * 1000).toISOString();
+  const latestLogs = latestLogByGp();
+  let earliest: string | null = null;
+  for (const c of getState().doc.reviewCards) {
+    if (c.masteredAt || !libraryGpIds.has(c.grammarPointId)) continue;
+    // A gated card's next appearance is tomorrow 4am at the earliest
+    // (its recorded due is sooner); otherwise its due stands.
+    const gated = isGatedToday(c, latestLogs.get(c.grammarPointId), boundaryIso);
+    const eff = gated ? (c.due > tomorrow4amIso ? c.due : tomorrow4amIso) : c.due;
+    if (earliest === null || eff < earliest) earliest = eff;
+  }
+  return earliest;
 }
 
 export function getDashboardStats(): DashboardStats {
@@ -152,10 +257,18 @@ export function getDashboardStats(): DashboardStats {
   const reviewedToday = logs.filter((l) => l.reviewedAt.slice(0, 10) === today).length;
   // The due count is what the user can actually review: only points in
   // library decks count (a deck removed from the library pauses its
-  // reviews), 0 on vacation, capped by the daily max otherwise.
+  // reviews), 0 on vacation, capped by the daily max otherwise. It uses
+  // the same 4am day gate as the queue, so the dashboard and the queue
+  // agree (a card answered correctly today is not "due" until tomorrow).
   const libraryGpIds = new Set(getLibraryGrammarPointIds());
+  const boundaryIso = dayBoundary4am().toISOString();
+  const latestLogs = latestLogByGp();
   const rawDueCount = allCards.filter(
-    (c) => c.due <= nowIso && !c.masteredAt && libraryGpIds.has(c.grammarPointId),
+    (c) =>
+      c.due <= nowIso &&
+      !c.masteredAt &&
+      libraryGpIds.has(c.grammarPointId) &&
+      !isGatedToday(c, latestLogs.get(c.grammarPointId), boundaryIso),
   ).length;
   const dueCount = settings.vacationMode
     ? 0

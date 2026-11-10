@@ -3,6 +3,7 @@ import { Pressable, ScrollView, StyleSheet, Text, TextInput, View } from 'react-
 import { Link, router, useFocusEffect } from 'expo-router';
 import {
   checkQueueItem,
+  getCycledQueueItem,
   getDueQueue,
   getNextReviewAt,
   getUserSettings,
@@ -20,8 +21,11 @@ import { colors, commonStyles } from '../../components/theme';
 /**
  * Bunpro-style Reviews: minimal screen, sentence centered in large type,
  * nuance hint above the blank, English hint below, one pill-shaped input
- * at the bottom. Misses go to a Wrap-Up round and re-queue until answered
- * correctly; the session ends with a Summary screen.
+ * at the bottom. Misses cycle to the end of the queue with a DIFFERENT
+ * sentence for the same grammar point (not the same cloze card) and
+ * re-queue until answered correctly; the session ends with a Summary
+ * screen. A card answered correctly is done until tomorrow 4am (the
+ * day gate in the store) — the queue never re-shows it the same day.
  */
 
 export default function ReviewScreen() {
@@ -166,7 +170,17 @@ export default function ReviewScreen() {
     }
     setSaving(false);
     const wasMiss = autoFailed || !correct;
-    const nextMissed = wasMiss ? [...missed, currentCard] : missed;
+    // A miss cycles to the end of the queue with a DIFFERENT sentence for
+    // the same grammar point (not the same cloze card), so the re-test is
+    // the grammar, not the memorised sentence. Falls back to the same
+    // card when the point has only one. The user must get it right to
+    // finish the session; once correct it is done until tomorrow 4am.
+    const nextMissed = wasMiss
+      ? [
+          ...missed,
+          getCycledQueueItem(currentCard.grammarPointId, currentCard.clozeCardId) ?? currentCard,
+        ]
+      : missed;
     if (queueIndex + 1 < queue.length) {
       setMissed(nextMissed);
       setQueueIndex((i) => i + 1);

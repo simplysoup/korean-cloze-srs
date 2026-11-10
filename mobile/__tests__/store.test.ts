@@ -21,9 +21,16 @@ const store = new Map<string, string>();
   clear: () => store.clear(),
 };
 
-import { CONTENT_POINTS } from '../src/store/content';
+import { CONTENT_POINTS, getContentCards } from '../src/store/content';
 import { getState, initStore, mergeServerDoc } from '../src/store/state';
-import { getDashboardStats, getDueQueue, getUserSettings } from '../src/store/queries';
+import {
+  dayBoundary4am,
+  getCycledQueueItem,
+  getDashboardStats,
+  getDueQueue,
+  getNextReviewAt,
+  getUserSettings,
+} from '../src/store/queries';
 import { completeLearnSession, submitReview } from '../src/store/mutations';
 import type { SyncDocument } from '../src/lib/sync-types';
 
@@ -163,5 +170,106 @@ describe('getDashboardStats', () => {
     expect(stats.learnedCount).toBe(1);
     expect(stats.dueCount).toBe(1);
     expect(stats.learnedToday).toBe(0);
+  });
+});
+
+describe('4am day gate', () => {
+  const boundary = () => dayBoundary4am();
+  const iso = (d: Date) => d.toISOString();
+  const hour = 3600_000;
+
+  it('a card answered correctly since 4am is done until tomorrow', () => {
+    const b = boundary();
+    getState().doc.reviewCards = [card()];
+    getState().doc.reviewLogs = [
+      { id: 'rl_1', grammarPointId: gpId, rating: 3, reviewedAt: iso(new Date(b.getTime() + hour)), stability: 2, difficulty: 5, elapsedDays: 1, scheduledDays: 2 },
+    ];
+    expect(getDueQueue()).toHaveLength(0);
+    expect(getDashboardStats().dueCount).toBe(0);
+  });
+
+  it('a card answered correctly before 4am is due again today', () => {
+    const b = boundary();
+    getState().doc.reviewCards = [card()];
+    getState().doc.reviewLogs = [
+      { id: 'rl_1', grammarPointId: gpId, rating: 3, reviewedAt: iso(new Date(b.getTime() - hour)), stability: 2, difficulty: 5, elapsedDays: 1, scheduledDays: 2 },
+    ];
+    expect(getDueQueue()).toHaveLength(1);
+  });
+
+  it('a card answered wrong today is still due (it must be gotten right)', () => {
+    const b = boundary();
+    getState().doc.reviewCards = [card()];
+    getState().doc.reviewLogs = [
+      { id: 'rl_1', grammarPointId: gpId, rating: 1, reviewedAt: iso(new Date(b.getTime() + hour)), stability: 0.5, difficulty: 6, elapsedDays: 0, scheduledDays: 0 },
+    ];
+    expect(getDueQueue()).toHaveLength(1);
+  });
+
+  it('a point learned today is gated (the Learn + quiz was today’s review)', () => {
+    // New card, never reviewed, due = its creation time (today).
+    getState().doc.reviewCards = [card({ state: 0, reps: 0, lastReview: null, due: new Date().toISOString() })];
+    expect(getDueQueue()).toHaveLength(0);
+  });
+
+  it('a point learned before today 4am is due (its first review)', () => {
+    const b = boundary();
+    getState().doc.reviewCards = [
+      card({ state: 0, reps: 0, lastReview: null, due: iso(new Date(b.getTime() - hour)) }),
+    ];
+    expect(getDueQueue()).toHaveLength(1);
+  });
+
+  it('getNextReviewAt for a gated card is tomorrow 4am, not its 10-minute due', () => {
+    const b = boundary();
+    const tomorrow4am = new Date(b.getTime() + 24 * hour);
+    getState().doc.reviewCards = [
+      card({ due: iso(new Date(Date.now() + 10 * 60_000)) }),
+    ];
+    getState().doc.reviewLogs = [
+      { id: 'rl_1', grammarPointId: gpId, rating: 3, reviewedAt: iso(new Date(b.getTime() + hour)), stability: 2, difficulty: 5, elapsedDays: 1, scheduledDays: 2 },
+    ];
+    const next = getNextReviewAt();
+    expect(next).toBe(tomorrow4am.toISOString());
+  });
+
+  it('dayBoundary4am is 4am today, or yesterday 4am before 4am', () => {
+    const at = (h: number) => {
+      const d = new Date();
+      d.setHours(h, 0, 0, 0);
+      return d;
+    };
+    expect(dayBoundary4am(at(13)).getHours()).toBe(4);
+    expect(dayBoundary4am(at(13)).getDate()).toBe(at(13).getDate());
+    const before = dayBoundary4am(at(2));
+    expect(before.getHours()).toBe(4);
+    expect(before.getDate()).toBe(at(2).getDate() - 1 === 0 ? new Date(at(2).getFullYear(), at(2).getMonth(), 0).getDate() : at(2).getDate() - 1);
+  });
+});
+
+describe('getCycledQueueItem', () => {
+  it('returns a different sentence for the same grammar point', () => {
+    // Find a point with at least two cloze cards.
+    const point = CONTENT_POINTS.find((p) => getContentCards(p.gp.id).length >= 2);
+    expect(point).toBeDefined();
+    const gp = point!.gp.id;
+    const cards = getContentCards(gp);
+    getState().doc.reviewCards = [card({ grammarPointId: gp })];
+    const cycled = getCycledQueueItem(gp, cards[0].id);
+    expect(cycled).not.toBeNull();
+    expect(cycled!.grammarPointId).toBe(gp);
+    expect(cycled!.clozeCardId).not.toBe(cards[0].id);
+    expect(cards.map((c) => c.id)).toContain(cycled!.clozeCardId);
+  });
+
+  it('reuses the only card when the point has just one', () => {
+    const point = CONTENT_POINTS.find((p) => getContentCards(p.gp.id).length === 1);
+    if (!point) return; // every point has 2+ cards; skip if none has exactly one
+    const gp = point.gp.id;
+    const only = getContentCards(gp)[0];
+    getState().doc.reviewCards = [card({ grammarPointId: gp })];
+    const cycled = getCycledQueueItem(gp, only.id);
+    expect(cycled).not.toBeNull();
+    expect(cycled!.clozeCardId).toBe(only.id);
   });
 });
