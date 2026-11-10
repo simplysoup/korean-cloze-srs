@@ -79,6 +79,7 @@ export function filterDeckPrompts(
 ): VocabPrompt[] {
   return prompts.filter((prompt) =>
     (!deckId || prompt.deckId === deckId) &&
+    prompt.contentReadiness !== 'blocked' &&
     (!missedIds || missedIds.has(prompt.entryId)),
   );
 }
