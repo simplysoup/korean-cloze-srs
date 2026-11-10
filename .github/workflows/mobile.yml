@@ -13,6 +13,8 @@ on:
       - 'scripts/validate-vocabulary.mjs'
       - 'docs/research/grammar-answer-ambiguity-audit.json'
       - 'scripts/validate-answer-audit.mjs'
+      - 'scripts/validate-topik2-contrast.mjs'
+      - 'docs/research/legacy-answer-ambiguity-backlog.json'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
   pull_request:
@@ -27,6 +29,8 @@ on:
       - 'scripts/validate-vocabulary.mjs'
       - 'docs/research/grammar-answer-ambiguity-audit.json'
       - 'scripts/validate-answer-audit.mjs'
+      - 'scripts/validate-topik2-contrast.mjs'
+      - 'docs/research/legacy-answer-ambiguity-backlog.json'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
 
@@ -55,6 +59,7 @@ jobs:
       - run: node ../scripts/validate-content.mjs
       - run: node ../scripts/validate-vocabulary.mjs
       - run: node ../scripts/validate-answer-audit.mjs
+      - run: node ../scripts/validate-topik2-contrast.mjs
       - run: node ../scripts/validate-language-topics.mjs
       - run: npm run typecheck
       - run: npm test -- --ci

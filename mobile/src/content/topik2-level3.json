@@ -1821,22 +1821,22 @@
             },
             {
               "id": "cc_t2l3_dorok_02",
-              "fullSentence": "모두가 알도록 알려 주세요.",
-              "sentenceWithBlank": "모두가 ___ 알려 주세요.",
-              "answer": "알도록",
-              "englishHint": "Let everyone know about it.",
+              "fullSentence": "모두가 이해하도록 천천히 설명해 주세요.",
+              "sentenceWithBlank": "모두가 ___ 천천히 설명해 주세요.",
+              "answer": "이해하도록",
+              "englishHint": "Please explain slowly so everyone understands.",
               "alternateAnswers": [],
-              "vocabBaseForm": "알다",
+              "vocabBaseForm": "이해하다",
               "introducedAtPosition": 145
             },
             {
               "id": "cc_t2l3_dorok_03",
-              "fullSentence": "실수하지 않도록 확인하세요.",
-              "sentenceWithBlank": "실수하지 ___ 확인하세요.",
-              "answer": "않도록",
-              "englishHint": "Check so you don't make a mistake.",
+              "fullSentence": "소리가 잘 들리도록 마이크를 조정하세요.",
+              "sentenceWithBlank": "소리가 잘 ___ 마이크를 조정하세요.",
+              "answer": "들리도록",
+              "englishHint": "Adjust the microphone so the sound can be heard clearly.",
               "alternateAnswers": [],
-              "vocabBaseForm": "않다",
+              "vocabBaseForm": "들리다",
               "introducedAtPosition": 145
             }
           ]

@@ -2906,9 +2906,16 @@
       "lesson": 35,
       "globalPosition": 183,
       "scope": "grammar",
-      "evidenceStatus": "pending_item_level_source_check",
-      "evidence": [],
-      "whyAtThisStage": null,
+      "evidenceStatus": "official_component_contrast_verified; full-form placement and original sentences pending",
+      "evidence": [
+        {
+          "source": "National Institute of Korean Language, 온라인가나다, 2024-11-21",
+          "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306389",
+          "locator": "answer distinguishing -로써 (means/tool) vs -로서 (role/capacity)",
+          "evidenceScope": "official means/role component distinction; does NOT independently verify Munpro's -(으)ㅁ nominalization staging or example naturalness"
+        }
+      ],
+      "whyAtThisStage": "Builds on earlier -(으)ㅁ nominalization and practices written explanation of means; placement is a pedagogical hypothesis, not an official TOPIK-level mapping.",
       "prerequisitesToVerify": [],
       "nearNeighborContrastsToVerify": [
         "gp_euro_means"
@@ -3370,10 +3377,20 @@
       "lesson": 42,
       "globalPosition": 212,
       "scope": "grammar",
-      "evidenceStatus": "pending_item_level_source_check",
-      "evidence": [],
-      "whyAtThisStage": null,
-      "prerequisitesToVerify": [],
+      "evidenceStatus": "official_form_morphology_verified; original Munpro sentences await educator review",
+      "evidence": [
+        {
+          "source": "National Institute of Korean Language, 새국어생활 16(2), pp. 181–182 (2006)",
+          "url": "https://www.korean.go.kr/nkview/nklife/2006_2/2006_0214.pdf",
+          "locator": "pp. 181–182, -다손/-ㄴ다손/-는다손 exposition",
+          "evidenceScope": "official form-specific attachment distinction for descriptive and action predicates, NOT Munpro card naturalness or lesson placement"
+        }
+      ],
+      "whyAtThisStage": "A high-register argumentative concession revisiting familiar descriptive/action present-tense inflection; level assignment remains editorial.",
+      "prerequisitesToVerify": [
+        "distinguish descriptive vs action predicate",
+        "familiarity with -ㄴ다/-는다 declaratives"
+      ],
       "nearNeighborContrastsToVerify": [
         "gp_t2l4_deorado"
       ],

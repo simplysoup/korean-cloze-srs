@@ -106,14 +106,14 @@
           "tense": null,
           "register": "advanced/formal",
           "hint": "Show the means or method by which a result is achieved, often in formal writing.",
-          "description": "Show the means or method by which a result is achieved, often in formal writing. It emphasizes the means or method by which a result is achieved.",
+          "description": "Use -(으)ㅁ으로써 to explain the action or method by which a result is achieved in formal writing. The verb takes nominalizing -(으)ㅁ before 으로써; its shape changes with the stem ending.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "[Verb/adjective stem] + -(으)ㅁ으로써",
+          "structurePattern": "[Action verb stem] + -(으)ㅁ으로써 (vowel/ㄹ stem: -ㅁ; other consonants: -음)",
           "relatedPointIds": [
             "gp_euro_means"
           ],
@@ -121,12 +121,12 @@
             {
               "type": "tip",
               "title": "Build it step by step",
-              "content": "Turn the verb into an -(으)ㅁ noun form and attach 으로써: 읽다 → 읽음으로써."
+              "content": "Form a noun from an action verb: 하다 → 함으로써, 보다 → 봄으로써, 읽다 → 읽음으로써. This is a method, not the role marker -(으)로서."
             },
             {
               "type": "tip",
               "title": "Worked example",
-              "content": "반복함으로써 실력이 늘었어요. — My skill improved through repetition. 반복함으로써 frames repetition as the means that leads to improvement."
+              "content": "반복함으로써 실력이 늘었어요. — My skill improved through repetition. Compare 읽음으로써 (consonant stem) with 봄으로써 (vowel stem)."
             },
             {
               "type": "caution",
@@ -145,10 +145,10 @@
             },
             {
               "id": "le_t2l5_eumeurosseo_02",
-              "fullSentence": "대화함으로써 오해를 풀었어요.",
-              "sentenceWithBlank": "대화___ 오해를 풀었어요.",
-              "answer": "함으로써",
-              "englishHint": "We resolved the misunderstanding by talking.",
+              "fullSentence": "책을 읽음으로써 생각이 넓어졌어요.",
+              "sentenceWithBlank": "책을 ___ 생각이 넓어졌어요.",
+              "answer": "읽음으로써",
+              "englishHint": "Reading books broadened my perspective.",
               "order": 1
             }
           ],
@@ -165,22 +165,22 @@
             },
             {
               "id": "cc_t2l5_eumeurosseo_02",
-              "fullSentence": "비교함으로써 차이를 알 수 있어요.",
-              "sentenceWithBlank": "비교___ 차이를 알 수 있어요.",
-              "answer": "함으로써",
-              "englishHint": "You can see the differences through comparison.",
+              "fullSentence": "책을 읽음으로써 새로운 생각을 얻었어요.",
+              "sentenceWithBlank": "책을 ___ 새로운 생각을 얻었어요.",
+              "answer": "읽음으로써",
+              "englishHint": "I gained new ideas by reading books.",
               "alternateAnswers": [],
-              "vocabBaseForm": "하다",
+              "vocabBaseForm": "읽다",
               "introducedAtPosition": 152
             },
             {
               "id": "cc_t2l5_eumeurosseo_03",
-              "fullSentence": "연구함으로써 문제를 해결했어요.",
-              "sentenceWithBlank": "연구___ 문제를 해결했어요.",
-              "answer": "함으로써",
-              "englishHint": "We solved the problem through research.",
+              "fullSentence": "직접 봄으로써 차이를 이해했어요.",
+              "sentenceWithBlank": "직접 ___ 차이를 이해했어요.",
+              "answer": "봄으로써",
+              "englishHint": "I understood the difference by seeing it firsthand.",
               "alternateAnswers": [],
-              "vocabBaseForm": "하다",
+              "vocabBaseForm": "보다",
               "introducedAtPosition": 152
             }
           ]
@@ -191,8 +191,8 @@
           "category": "condition",
           "tense": null,
           "register": "advanced/formal",
-          "hint": "Indicate that an outcome changes depending on a condition or standard.",
-          "description": "Indicate that an outcome changes depending on a condition or standard. It states that an outcome varies according to a condition or standard.",
+          "hint": "Express variation by a factor, or following a rule or standard.",
+          "description": "N에 따라(서) has two related but distinct uses: outcomes vary depending on a factor (사람에 따라 다르다), or actions are carried out according to a rule or standard (규정에 따라 처리하다). Both 에 따라 and 에 따라서 fit the lesson's examples.",
           "level": 5,
           "tags": [
             "TOPIK2",
@@ -207,17 +207,17 @@
             {
               "type": "tip",
               "title": "Build it step by step",
-              "content": "Put 에 따라(서) after a noun: 상황에 따라서, 계절에 따라."
+              "content": "Attach 에 따라 or 에 따라서 to a noun: 날씨에 따라 일정이 바뀌어요 (depending on weather); 규정에 따라서 처리하세요 (according to regulations)."
             },
             {
               "type": "tip",
               "title": "Worked example",
-              "content": "상황에 따라 계획이 달라져요. — Plans change depending on the situation. 상황에 따라 means the decision changes with the circumstances."
+              "content": "상황에 따라 계획이 달라져요. — Plans change depending on the situation. 규정에 따라서 신청서를 제출하세요 means following an established rule, not varying with the rule."
             },
             {
               "type": "caution",
               "title": "Common trap",
-              "content": "Unlike 때문에, it does not necessarily give a single direct cause; it marks variation by condition."
+              "content": "Don't treat every 에 따라 as a direct cause like 때문에. A variation context asks what differs; a standard-following context asks which rule governs the action."
             }
           ],
           "lessonExamples": [
@@ -231,10 +231,10 @@
             },
             {
               "id": "le_t2l5_e_ttaraseo_02",
-              "fullSentence": "계절에 따라서 옷이 달라요.",
-              "sentenceWithBlank": "계절___ 옷이 달라요.",
+              "fullSentence": "규정에 따라서 신청서를 제출하세요.",
+              "sentenceWithBlank": "규정___ 신청서를 제출하세요.",
               "answer": "에 따라서",
-              "englishHint": "Clothing differs by season.",
+              "englishHint": "Submit the application according to the rules.",
               "order": 1
             }
           ],
@@ -245,17 +245,21 @@
               "sentenceWithBlank": "사람___ 생각이 달라요.",
               "answer": "에 따라",
               "englishHint": "Opinions differ from person to person.",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "에 따라서"
+              ],
               "vocabBaseForm": "사람",
               "introducedAtPosition": 153
             },
             {
               "id": "cc_t2l5_e_ttaraseo_02",
-              "fullSentence": "규정에 따라 처리해 주세요.",
+              "fullSentence": "규정에 따라서 처리해 주세요.",
               "sentenceWithBlank": "규정___ 처리해 주세요.",
-              "answer": "에 따라",
+              "answer": "에 따라서",
               "englishHint": "Please handle it according to the rules.",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "에 따라"
+              ],
               "vocabBaseForm": "규정",
               "introducedAtPosition": 153
             },
@@ -265,7 +269,9 @@
               "sentenceWithBlank": "날씨___ 일정이 바뀔 수 있어요.",
               "answer": "에 따라",
               "englishHint": "The schedule may change depending on weather.",
-              "alternateAnswers": [],
+              "alternateAnswers": [
+                "에 따라서"
+              ],
               "vocabBaseForm": "날씨",
               "introducedAtPosition": 153
             }
