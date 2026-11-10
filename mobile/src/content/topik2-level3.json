@@ -158,8 +158,10 @@
               "fullSentence": "문을 닫아 놓았어요.",
               "sentenceWithBlank": "문을 ___.",
               "answer": "닫아 놓았어요",
-              "englishHint": "I closed the door and left it closed.",
-              "alternateAnswers": [],
+              "englishHint": "I closed the door and left it closed. (The action was completed and its result deliberately left in place.)",
+              "alternateAnswers": [
+                "닫아 놨어요"
+              ],
               "vocabBaseForm": "닫다",
               "introducedAtPosition": 126
             },
@@ -168,8 +170,10 @@
               "fullSentence": "자료를 찾아 놓았어요.",
               "sentenceWithBlank": "자료를 ___.",
               "answer": "찾아 놓았어요",
-              "englishHint": "I found the materials and kept them ready.",
-              "alternateAnswers": [],
+              "englishHint": "I found the materials and kept them ready. (The action was completed and its result deliberately left in place.)",
+              "alternateAnswers": [
+                "찾아 놨어요"
+              ],
               "vocabBaseForm": "찾다",
               "introducedAtPosition": 126
             },
@@ -178,8 +182,10 @@
               "fullSentence": "음식을 만들어 놨어요.",
               "sentenceWithBlank": "음식을 ___.",
               "answer": "만들어 놨어요",
-              "englishHint": "I prepared the food ahead of time.",
-              "alternateAnswers": [],
+              "englishHint": "I prepared the food ahead of time. (The action was completed and its result deliberately left in place.)",
+              "alternateAnswers": [
+                "만들어 놓았어요"
+              ],
               "vocabBaseForm": "만들다",
               "introducedAtPosition": 126
             }
@@ -688,7 +694,7 @@
               "fullSentence": "지난 몇 년 동안 변해 왔어요.",
               "sentenceWithBlank": "지난 몇 년 동안 ___.",
               "answer": "변해 왔어요",
-              "englishHint": "It has changed over the past several years.",
+              "englishHint": "It has changed over the past several years. (Describe change extending from the past up to the present.)",
               "alternateAnswers": [],
               "vocabBaseForm": "변하다",
               "introducedAtPosition": 132
@@ -1464,7 +1470,7 @@
               "fullSentence": "약속을 잊을 뻔했어요.",
               "sentenceWithBlank": "약속을 ___.",
               "answer": "잊을 뻔했어요",
-              "englishHint": "I nearly forgot the appointment.",
+              "englishHint": "I nearly forgot the appointment. (Describe an event that almost happened but did not.)",
               "alternateAnswers": [],
               "vocabBaseForm": "잊다",
               "introducedAtPosition": 141
@@ -1474,7 +1480,7 @@
               "fullSentence": "길을 잘못 들 뻔했어요.",
               "sentenceWithBlank": "길을 잘못 ___.",
               "answer": "들 뻔했어요",
-              "englishHint": "I nearly took the wrong road.",
+              "englishHint": "I nearly took the wrong road. (Describe an event that almost happened but did not.)",
               "alternateAnswers": [],
               "vocabBaseForm": "들다",
               "introducedAtPosition": 141
@@ -1484,7 +1490,7 @@
               "fullSentence": "휴대폰을 잃어버릴 뻔했어요.",
               "sentenceWithBlank": "휴대폰을 ___.",
               "answer": "잃어버릴 뻔했어요",
-              "englishHint": "I nearly lost my phone.",
+              "englishHint": "I nearly lost my phone. (Describe an event that almost happened but did not.)",
               "alternateAnswers": [],
               "vocabBaseForm": "잃어버리다",
               "introducedAtPosition": 141
@@ -1550,7 +1556,7 @@
               "fullSentence": "오늘은 쉬어야겠어요.",
               "sentenceWithBlank": "오늘은 ___.",
               "answer": "쉬어야겠어요",
-              "englishHint": "I should rest today.",
+              "englishHint": "I should rest today. (Express a newly realized intention or necessity.)",
               "alternateAnswers": [],
               "vocabBaseForm": "쉬다",
               "introducedAtPosition": 142
@@ -1560,7 +1566,7 @@
               "fullSentence": "부모님께 전화해야겠어요.",
               "sentenceWithBlank": "부모님께 ___.",
               "answer": "전화해야겠어요",
-              "englishHint": "I should call my parents.",
+              "englishHint": "I should call my parents. (Express a newly realized intention or necessity.)",
               "alternateAnswers": [],
               "vocabBaseForm": "전화하다",
               "introducedAtPosition": 142
@@ -1570,7 +1576,7 @@
               "fullSentence": "이 책을 다시 읽어야겠어요.",
               "sentenceWithBlank": "이 책을 다시 ___.",
               "answer": "읽어야겠어요",
-              "englishHint": "I should reread this book.",
+              "englishHint": "I should reread this book. (Express a newly realized intention or necessity.)",
               "alternateAnswers": [],
               "vocabBaseForm": "읽다",
               "introducedAtPosition": 142
@@ -1636,7 +1642,7 @@
               "fullSentence": "아버지는 요리할 줄 알아요.",
               "sentenceWithBlank": "아버지는 ___.",
               "answer": "요리할 줄 알아요",
-              "englishHint": "My father knows how to cook.",
+              "englishHint": "My father knows how to cook. (Express learned know-how, not mere physical possibility.)",
               "alternateAnswers": [],
               "vocabBaseForm": "요리하다",
               "introducedAtPosition": 143
@@ -1656,7 +1662,7 @@
               "fullSentence": "친구는 피아노를 칠 줄 알아요.",
               "sentenceWithBlank": "친구는 피아노를 ___.",
               "answer": "칠 줄 알아요",
-              "englishHint": "My friend knows how to play the piano.",
+              "englishHint": "My friend knows how to play the piano. (Express learned know-how, not mere physical possibility.)",
               "alternateAnswers": [],
               "vocabBaseForm": "치다",
               "introducedAtPosition": 143
@@ -2525,7 +2531,7 @@
               "fullSentence": "왜 그런지 모르겠어요.",
               "sentenceWithBlank": "왜 ___.",
               "answer": "그런지 모르겠어요",
-              "englishHint": "I don't know why that is.",
+              "englishHint": "I don't know why that is. (Embed a question inside knowing or not knowing.)",
               "alternateAnswers": [],
               "vocabBaseForm": "그렇다",
               "introducedAtPosition": 153
@@ -2535,7 +2541,7 @@
               "fullSentence": "어떤 길이 빠른지 알아요?",
               "sentenceWithBlank": "어떤 길이 ___?",
               "answer": "빠른지 알아요",
-              "englishHint": "Do you know which road is faster?",
+              "englishHint": "Do you know which road is faster? (Embed a question inside knowing or not knowing.)",
               "alternateAnswers": [],
               "vocabBaseForm": "빠르다",
               "introducedAtPosition": 153
