@@ -3,16 +3,16 @@
   "purpose": "Mechanical risk queue for PREEXISTING grammar cards, not linguistic adjudication",
   "status": "unreviewed; no newly accepted alternatives added to legacy cards",
   "scope": "628 inherited review cards from 198 original grammar points; new 93 are audited separately",
-  "warning": "Every existing accepted answer is now specifically flagged for contextual review, with no automatic changes to the learner-facing accepted strings. A flag is not linguistic adjudication; 438 unflagged cards are not educator-certified.",
+  "warning": "Each of the 19 inherited cards with authored alternative answers is now individually flagged for contextual review, including three optional 에 따라/에 따라서 cards. A flag is not linguistic adjudication; 435 unflagged cards are not educator-certified.",
   "summary": {
     "legacyCards": 628,
-    "flagged": 190,
-    "unflagged": 438,
-    "withExistingAlternatives": 16,
+    "flagged": 193,
+    "unflagged": 435,
+    "withExistingAlternatives": 19,
     "particleFunction": 29,
     "tenseRegister": 152,
     "connector": 4,
-    "existingVariantContextNotes": 16
+    "existingVariantContextNotes": 19
   },
   "flags": {
     "accepted_alternatives_need_sentence_review": "Review already accepted alternate whole-sentence naturalness and whether it demonstrates the target grammar.",
@@ -2641,6 +2641,69 @@
         "possible_tense_register_aspect_near_miss"
       ],
       "humanReview": "pending"
+    },
+    {
+      "cardId": "cc_t2l5_e_ttaraseo_01",
+      "grammarPointId": "gp_t2l5_e_ttaraseo",
+      "level": 5,
+      "fullSentence": "사람에 따라 생각이 달라요.",
+      "englishHint": "Opinions differ from person to person.",
+      "canonicalAnswer": "에 따라",
+      "existingAlternatives": [
+        "에 따라서"
+      ],
+      "flags": [
+        "accepted_alternatives_need_sentence_review"
+      ],
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "optional_connective_particle",
+        "educatorQuestion": "Confirm 에 따라 and 에 따라서 are both natural in the complete sentence, and distinguish variation by condition from following a stated standard. No general substitution policy beyond this card.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
+    },
+    {
+      "cardId": "cc_t2l5_e_ttaraseo_02",
+      "grammarPointId": "gp_t2l5_e_ttaraseo",
+      "level": 5,
+      "fullSentence": "규정에 따라서 처리해 주세요.",
+      "englishHint": "Please handle it according to the rules.",
+      "canonicalAnswer": "에 따라서",
+      "existingAlternatives": [
+        "에 따라"
+      ],
+      "flags": [
+        "accepted_alternatives_need_sentence_review"
+      ],
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "optional_connective_particle",
+        "educatorQuestion": "Confirm 에 따라 and 에 따라서 are both natural in the complete sentence, and distinguish variation by condition from following a stated standard. No general substitution policy beyond this card.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
+    },
+    {
+      "cardId": "cc_t2l5_e_ttaraseo_03",
+      "grammarPointId": "gp_t2l5_e_ttaraseo",
+      "level": 5,
+      "fullSentence": "날씨에 따라 일정이 바뀔 수 있어요.",
+      "englishHint": "The schedule may change depending on weather.",
+      "canonicalAnswer": "에 따라",
+      "existingAlternatives": [
+        "에 따라서"
+      ],
+      "flags": [
+        "accepted_alternatives_need_sentence_review"
+      ],
+      "humanReview": "pending",
+      "existingVariantReview": {
+        "category": "optional_connective_particle",
+        "educatorQuestion": "Confirm 에 따라 and 에 따라서 are both natural in the complete sentence, and distinguish variation by condition from following a stated standard. No general substitution policy beyond this card.",
+        "referenceUrls": [],
+        "decision": "pending"
+      }
     }
   ]
 }
