@@ -6,6 +6,8 @@ on:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
       - 'scripts/validate-grammar-catalogue.ts'
+      - 'scripts/port-language-topics.mjs'
+      - 'scripts/validate-language-topics.mjs'
       - 'scripts/curriculum-overlay.mjs'
       - 'scripts/port-vocabulary.mjs'
       - 'scripts/validate-vocabulary.mjs'
@@ -16,6 +18,8 @@ on:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
       - 'scripts/validate-grammar-catalogue.ts'
+      - 'scripts/port-language-topics.mjs'
+      - 'scripts/validate-language-topics.mjs'
       - 'scripts/curriculum-overlay.mjs'
       - 'scripts/port-vocabulary.mjs'
       - 'scripts/validate-vocabulary.mjs'
@@ -40,6 +44,7 @@ jobs:
       - run: bun ../scripts/validate-grammar-catalogue.ts
       - run: node ../scripts/validate-content.mjs
       - run: node ../scripts/validate-vocabulary.mjs
+      - run: node ../scripts/validate-language-topics.mjs
       - run: npm run typecheck
       - run: npm test -- --ci
       - run: npx expo export --platform web
