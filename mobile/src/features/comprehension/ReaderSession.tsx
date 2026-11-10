@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 import { Link } from 'expo-router';
 import { Pressable, ScrollView, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
 import { colors, commonStyles } from '../../components/theme';
@@ -38,21 +38,15 @@ function ReadingActivity({ passage }: { passage: ReadingPassage }) {
   const [answers, setAnswers] = useState<ReadingResponse>({});
   const [showPassage, setShowPassage] = useState(true);
   const [showGlosses, setShowGlosses] = useState(false);
-  const scroll = useRef<ScrollView>(null);
   const { width } = useWindowDimensions();
   const metrics = readingMetrics(width);
   const question = passage.questions[index];
   const results = scoreReading(passage, answers);
 
-  function jumpTop() {
-    scroll.current?.scrollTo({ y: 0, animated: false });
-  }
-
   function startQuestions() {
     setIndex(0);
     setPhase('questions');
     setShowPassage(false);
-    jumpTop();
   }
 
   function submitAnswer() {
@@ -71,7 +65,6 @@ function ReadingActivity({ passage }: { passage: ReadingPassage }) {
       setSubmitted(false);
       setShowPassage(false);
     }
-    jumpTop();
   }
 
   function retry() {
@@ -82,7 +75,6 @@ function ReadingActivity({ passage }: { passage: ReadingPassage }) {
     setAnswers({});
     setShowGlosses(false);
     setShowPassage(true);
-    jumpTop();
   }
 
   const passageText = (
@@ -126,7 +118,7 @@ function ReadingActivity({ passage }: { passage: ReadingPassage }) {
 
   return (
     <ScrollView
-      ref={scroll}
+      key={phase + ':' + index}
       style={commonStyles.screen}
       contentContainerStyle={[styles.content, { maxWidth: metrics.contentWidth || 760 }]}
       keyboardShouldPersistTaps="handled"
@@ -251,7 +243,7 @@ function ReadingActivity({ passage }: { passage: ReadingPassage }) {
           </Text>
           <Pressable
             accessibilityRole="button"
-            onPress={() => { setPhase('review'); jumpTop(); }}
+            onPress={() => setPhase('review')}
             style={[commonStyles.btn, commonStyles.btnPrimary, styles.action]}
           >
             <Text style={commonStyles.btnText}>Review explanations</Text>
