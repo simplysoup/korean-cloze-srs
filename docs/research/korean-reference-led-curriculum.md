@@ -24,6 +24,23 @@
 
 The machine-readable starting ledger is `docs/research/korean-grammar-source-ledger.json`. Entries without a verified item-level source are **open research**, not silently assigned to a textbook.
 
+## Content ownership: grammar versus vocabulary (explicit product decision)
+
+**Numbers, dates, clock times, ages, prices, counting words and individual counters belong in the early vocabulary decks, not the grammar-point catalogue.** Bunpro or a grammar textbook may present these as preparatory material, but a publisher's organization is a source of *instructional coverage*—not a mandate to classify the material as SRS grammar.
+
+| Teach in vocabulary decks | Keep in grammar decks | Cross-deck application |
+|---|---|---|
+| Native/Sino-Korean number forms, numeric values, calendar words, days/months, time phrases | `에` for time and location; `부터/까지`; `전에/후에` | A sentence mixes a known time expression with the grammatical marking of when an action happens |
+| Counters (`개`, `명`, `권`, `마리`, etc.), their selection by noun type, shortened number forms | Particle placement and productive sentence structure, **not individual counter lessons** | "사과 두 개", "학생 세 명", "책 네 권"; checking counter/numeral usage is scored as vocabulary practice |
+| Prices, addresses, dates, age and other numeric expressions | Honorific particles and productive verbal/register morphology where appropriate | Graded listening/reading exercises can reuse both without marking both as the same mastery event |
+| Question words (`누구`, `뭐`, `언제`, `어디`, `왜`, etc.) and their lexical contrasts | Embedded questions, quotation/reporting, negation interactions and other *productive structures* | Question-word vocabulary is a prerequisite for dialogue, but is not automatically a standalone grammar entry |
+
+**Counter morphology is introduced and assessed within the vocab-deck number/counter pathway.** Grammar can include contextual sentences featuring counters, but no extra grammar-point ID or separate grammar mastery credit should be created for `개`, `명`, or the number systems.
+
+**Independent progress:** grammar SRS tracks mastered constructions; vocabulary SRS tracks lexical/numeric/counter items. Integrative topic checks can use both but should report mixed-skill performance separately, not silently count it as grammar mastery.
+
+**Implementation boundary:** there are no vocabulary decks implemented by this research-document change. The inventory below specifies **planned content placement**, and the app's existing grammar IDs/review history are left untouched.
+
 ## What the comparisons actually tell us
 
 ### 1. Teach constructions *as systems*, not as 198 isolated facts
@@ -36,14 +53,14 @@ For example, add the missing `-겠-` system as a pair, contrasting `-(으)ㄹ �
 
 _Darakwon Beginning_ places irregular conjugations in a dedicated final unit while also teaching tenses, requests and conditionals earlier. **Editorial inference:** teach a short conjugation primer before the first productive ending and introduce irregular families again when they become useful; retain a later reference chapter for consolidation. Never assume page order equals a prerequisite graph.
 
-The publisher also explicitly includes **numbers/dates/time** as pre-unit foundations; `에게/한테`, `와/과/(이)랑` and `-지 못하다` with early particles/negation; and `V-아/어 있다` versus `V-고 있다` as separate state/progressive expressions. These are significant gaps or incomplete contrasts in the 198-point draft, **not** mere nouns/verbs to leave entirely to a lexical deck.
+The publisher explicitly includes **numbers/dates/time** as pre-unit foundations, supporting *early instruction* but not requiring grammar-card treatment. **Munpro will teach numbers, dates, time, prices and counters in the early vocabulary decks**, including their systems of usage. Separately, the book lists `에게/한테`, `와/과/(이)랑` and `-지 못하다` with early particles/negation, plus `V-아/어 있다` alongside `V-고 있다` as distinct grammar contrasts.
 
 ### 3. Anchor the course to real communicative capabilities
 
 Sejong's published pathway begins with Hangul and extends through staged beginner/intermediate/advanced programs; KLEAR describes a progression combining skill acquisition with skill use. NIKL's Standard Curriculum specifies outcomes across language skills and topics. A credible course therefore needs:
-1. **Form readiness:** Hangul/받침, core conjugation, question and number systems;
+1. **Form readiness:** Hangul/받침 and core conjugation in the grammar/pronunciation track; question expressions and number systems learned through foundational vocabulary with contextual practice;
 2. **Grammar SRS:** productive forms, worked examples, genuine near-neighbor traps and spaced review;
-3. **System topics:** counting, phonology, registers, discourse and morphological families;
+3. **System topics:** integrated explanations of counting (owned by vocab), phonology, registers, discourse and morphological families, without generating duplicate grammar-SRS cards;
 4. **Applied checkpoints:** short original dialogues, listening and reading, later writing/argumentation;
 5. **Evidence of progress:** measured recognition/production at a target level; never automatically convert point mastery into a TOPIK qualification.
 
@@ -61,7 +78,7 @@ NIIED tests Levels 3–6 in **one TOPIK II exam**. Sejong's 1–6 is a teaching-
 
 **Pass C — Verification.** Validate unique IDs/positions, cloze reconstruction, base forms, answer ambiguity, example naturalness and register with Korean-native educators. Add a graded passage or dialogue checkpoint for the system; compare actual learner error rates to proposed ordering.
 
-A hypothesis about a better path should be **testable**: measure learner errors when confusing `안` and `못`, when using `-게 하다` vs a lexical causative, and when producing native vs Sino numbers. Favor the order reducing persistent misconceptions without adding unnecessary repetition. Initial placement decisions are **editorial hypotheses**, not scientifically established optima.
+A hypothesis about a better path should be **testable**: measure grammar-review errors when confusing `안` and `못`, or `-게 하다` with a lexical causative; measure **vocabulary-deck** errors on native versus Sino numbers, dates, times and counters. Favor the order reducing persistent misconceptions without adding unnecessary repetition. Initial placement decisions are **editorial hypotheses**, not scientifically established optima.
 
 ## Rights and attribution
 
@@ -73,11 +90,11 @@ Use bibliographic links, short properly attributed names of forms, and **origina
 |---|---|---|---|
 | 0 | Hangul, batchim, liaison, sound changes; basic clause and word order | Sejong introductory track, Darakwon Korean sentence-structure intro, NIKL framework | Prep track / short topic, not all separate GP cards |
 | 1 | Base conjugation and seven major irregular families | Darakwon Beginning unit 24 + intro | Early linked GP system with contextual review |
-| 2 | Both number systems, counters, dates, time, age and price | Darakwon Getting Ready numbers/dates/time; Sejong beginner communicative curriculum | System topic with counter patterns and contextual practice |
+| 2 | Both number systems, counters, dates, time, age and prices | Darakwon Getting Ready numbers/dates/time; Sejong beginner communicative curriculum | **Early vocabulary decks**, with listening and contextual counter/clock/date exercises; **not grammar points** |
 | 3 | Noun connections and recipient particles; giving/receiving and status | Darakwon Beginning unit 3 (recipient/connective particles); KLEAR usage/culture framework | Grammar points + register topic |
 | 4 | Negation variants, `-겠-` uses, plain/intimate speech, quotes and questions | Darakwon Beginning units 2, 23; NIKL teacher search for `-겠-` | Grammar points + spoken/written contrasts |
 | 5 | Passive, causative, state vs progression, descriptive-verb desire | NIKL teacher search `-게 하다` and `-고 싶어 하다`; Darakwon unit 19 | Intermediate GP systems |
 | 6 | Re-audit the advanced 3–6 deck placements and use recognition-first where needed | NIKL teacher index + later primary textbook chapter review | Advanced grammar editorial pass |
 | 7 | Staged dialogues, readings, listening, writing checkpoints | NIKL Standard Curriculum, KLEAR integrated methodology, NIIED tested skills | Companion to decks, not vocab cards |
 
-See `docs/research/korean-reference-gap-backlog.json` for concrete, research-tagged candidate additions. **Do not silently renumber or delete existing SRS IDs** as coverage expands; migrate ordering deliberately, version the content and preserve study history.
+See `docs/research/korean-reference-gap-backlog.json` for concrete, research-tagged candidate additions, **including the separate vocabulary-deck backlog**. **Do not silently renumber or delete existing SRS IDs** as coverage expands; migrate ordering deliberately, version the content and preserve study history.
