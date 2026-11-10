@@ -16,18 +16,18 @@
         {
           "id": "gp_t2l4_janayo",
           "title": "-잖아요",
-          "category": "grammar pattern",
+          "category": "shared knowledge",
           "tense": null,
           "register": null,
           "hint": "Remind someone of something you expect they already know, often to justify a point.",
-          "description": "Remind someone of something you expect they already know, often to justify a point.",
+          "description": "Remind someone of something you expect they already know, often to justify a point. It assumes the listener knows the fact already, sometimes with a reproachful tone.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-잖아요",
+          "structurePattern": "[Verb/adjective stem] + -잖아요",
           "relatedPointIds": [
             "gp_t2l4_geodeunyo"
           ],
@@ -102,18 +102,18 @@
         {
           "id": "gp_t2l4_geodeunyo",
           "title": "-거든요",
-          "category": "grammar pattern",
+          "category": "explanation",
           "tense": null,
           "register": null,
           "hint": "Supply background information or a reason that the listener may not know.",
-          "description": "Supply background information or a reason that the listener may not know.",
+          "description": "Supply background information or a reason that the listener may not know. It supplies background or a reason the listener may not have known.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-거든요",
+          "structurePattern": "[Verb/adjective stem] + -거든요",
           "relatedPointIds": [
             "gp_t2l4_janayo"
           ],
@@ -188,18 +188,18 @@
         {
           "id": "gp_t2l4_deoni",
           "title": "-더니",
-          "category": "grammar pattern",
+          "category": "retrospective",
           "tense": null,
           "register": null,
           "hint": "Connect a past observation with a later change or result.",
-          "description": "Connect a past observation with a later change or result.",
+          "description": "Connect a past observation with a later change or result. The speaker contrasts a directly observed past situation with what followed.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-더니",
+          "structurePattern": "[Verb/adjective stem] + -더니",
           "relatedPointIds": [
             "gp_t2l4_eotdeoni"
           ],
@@ -274,18 +274,18 @@
         {
           "id": "gp_t2l4_eotdeoni",
           "title": "-았/었더니",
-          "category": "grammar pattern",
+          "category": "discovery",
           "tense": null,
           "register": null,
           "hint": "After the speaker performed an action, a result or discovery followed.",
-          "description": "After the speaker performed an action, a result or discovery followed.",
+          "description": "After the speaker performed an action, a result or discovery followed. The speaker reports what they discovered when they did something.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-았/었더니",
+          "structurePattern": "[Verb/adjective stem] + -았/었더니",
           "relatedPointIds": [
             "gp_t2l4_deoni"
           ],
@@ -366,18 +366,18 @@
         {
           "id": "gp_t2l4_neun_cheok",
           "title": "-(으)ㄴ/는 척하다",
-          "category": "grammar pattern",
+          "category": "pretense",
           "tense": null,
           "register": null,
           "hint": "Pretend that something is true or that you are doing an action.",
-          "description": "Pretend that something is true or that you are doing an action.",
+          "description": "Pretend that something is true or that you are doing an action. It describes behaving as if a situation were real when it is not.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 척하다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 척하다",
           "relatedPointIds": [],
           "notes": [
             {
@@ -450,18 +450,18 @@
         {
           "id": "gp_t2l4_eulliga",
           "title": "-(으)ㄹ 리가 없다",
-          "category": "grammar pattern",
+          "category": "impossibility",
           "tense": null,
           "register": null,
           "hint": "Assert that something cannot possibly be true, based on reasoning.",
-          "description": "Assert that something cannot possibly be true, based on reasoning.",
+          "description": "Assert that something cannot possibly be true, based on reasoning. It strongly denies the possibility that the stated situation is true.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 리가 없다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 리가 없다",
           "relatedPointIds": [
             "gp_t2l3_euljido"
           ],
@@ -536,18 +536,18 @@
         {
           "id": "gp_t2l4_eulsupakke",
           "title": "-(으)ㄹ 수밖에 없다",
-          "category": "grammar pattern",
+          "category": "necessity",
           "tense": null,
           "register": null,
           "hint": "Express that there is no other choice or possible outcome.",
-          "description": "Express that there is no other choice or possible outcome.",
+          "description": "Express that there is no other choice or possible outcome. It emphasizes that the person has no real alternative.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 수밖에 없다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 수밖에 없다",
           "relatedPointIds": [
             "gp_eul_su_issda"
           ],
@@ -622,18 +622,18 @@
         {
           "id": "gp_t2l4_eun_chaero",
           "title": "-(으)ㄴ 채로",
-          "category": "grammar pattern",
+          "category": "state",
           "tense": null,
           "register": null,
           "hint": "Leave one state unchanged while another action takes place.",
-          "description": "Leave one state unchanged while another action takes place.",
+          "description": "Leave one state unchanged while another action takes place. It describes a person or thing remaining in the same state as another event happens.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ 채로",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ 채로",
           "relatedPointIds": [
             "gp_eoduda"
           ],
@@ -714,18 +714,18 @@
         {
           "id": "gp_t2l4_eulmanhada",
           "title": "-(으)ㄹ 만하다",
-          "category": "grammar pattern",
+          "category": "evaluation",
           "tense": null,
           "register": null,
           "hint": "Judge an action as worthwhile or a result as reasonably good.",
-          "description": "Judge an action as worthwhile or a result as reasonably good.",
+          "description": "Judge an action as worthwhile or a result as reasonably good. It suggests an action is reasonable or worthwhile to do.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 만하다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 만하다",
           "relatedPointIds": [
             "gp_eul_su_issda"
           ],
@@ -800,18 +800,18 @@
         {
           "id": "gp_t2l4_eobwatja",
           "title": "-아/어 봤자",
-          "category": "grammar pattern",
+          "category": "concession",
           "tense": null,
           "register": null,
           "hint": "An attempted action is pointless because it cannot change the outcome.",
-          "description": "An attempted action is pointless because it cannot change the outcome.",
+          "description": "An attempted action is pointless because it cannot change the outcome. It says the proposed effort will not change the result.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-아/어 봤자",
+          "structurePattern": "[Verb/adjective stem] + -아/어 봤자",
           "relatedPointIds": [
             "gp_t2l5_eodo_soyongeopda"
           ],
@@ -886,18 +886,18 @@
         {
           "id": "gp_t2l4_neun_tase",
           "title": "-(으)ㄴ/는 탓에",
-          "category": "grammar pattern",
+          "category": "blame",
           "tense": null,
           "register": null,
           "hint": "Blame an action or condition for an unwelcome result.",
-          "description": "Blame an action or condition for an unwelcome result.",
+          "description": "Blame an action or condition for an unwelcome result. It assigns blame for an unfavorable outcome.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 탓에",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 탓에",
           "relatedPointIds": [
             "gp_t2l3_barame"
           ],
@@ -972,18 +972,18 @@
         {
           "id": "gp_t2l4_neun_gime",
           "title": "-는 김에",
-          "category": "grammar pattern",
+          "category": "opportunity",
           "tense": null,
           "register": null,
           "hint": "Do something extra while already taking an opportunity to do something else.",
-          "description": "Do something extra while already taking an opportunity to do something else.",
+          "description": "Do something extra while already taking an opportunity to do something else. It uses an existing occasion to do something else conveniently.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-는 김에",
+          "structurePattern": "[Verb/adjective stem] + -는 김에",
           "relatedPointIds": [
             "gp_t2l3_daesine"
           ],
@@ -1064,18 +1064,18 @@
         {
           "id": "gp_t2l4_eulkkabwa",
           "title": "-(으)ㄹ까 봐",
-          "category": "grammar pattern",
+          "category": "concern",
           "tense": null,
           "register": null,
           "hint": "A feared possibility becomes the reason for caution or precaution.",
-          "description": "A feared possibility becomes the reason for caution or precaution.",
+          "description": "A feared possibility becomes the reason for caution or precaution. It describes acting because a possible bad outcome is feared.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ까 봐",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ까 봐",
           "relatedPointIds": [
             "gp_t2l3_euljido"
           ],
@@ -1150,18 +1150,18 @@
         {
           "id": "gp_t2l4_neun_semi",
           "title": "-(으)ㄴ/는 셈이다",
-          "category": "grammar pattern",
+          "category": "inference",
           "tense": null,
           "register": null,
           "hint": "Sum up a situation as effectively amounting to something: 'basically / in effect'.",
-          "description": "Sum up a situation as effectively amounting to something: 'basically / in effect'.",
+          "description": "Sum up a situation as effectively amounting to something: 'basically / in effect'. It judges the situation as effectively equivalent to something else.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 셈이다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 셈이다",
           "relatedPointIds": [
             "gp_t2l3_neun_pyeon"
           ],
@@ -1236,18 +1236,18 @@
         {
           "id": "gp_t2l4_neun_dedaga",
           "title": "-(으)ㄴ/는 데다가",
-          "category": "grammar pattern",
+          "category": "addition",
           "tense": null,
           "register": null,
           "hint": "Add another factor on top of the first one, often intensifying the result.",
-          "description": "Add another factor on top of the first one, often intensifying the result.",
+          "description": "Add another factor on top of the first one, often intensifying the result. It adds a further fact that strengthens what was already said.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 데다가",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 데다가",
           "relatedPointIds": [
             "gp_t2l3_banmyeone"
           ],
@@ -1322,18 +1322,18 @@
         {
           "id": "gp_t2l4_eosseoya",
           "title": "-았/었어야 하다",
-          "category": "grammar pattern",
+          "category": "regret",
           "tense": null,
           "register": null,
           "hint": "Express regret or criticism that an action should have happened in the past.",
-          "description": "Express regret or criticism that an action should have happened in the past.",
+          "description": "Express regret or criticism that an action should have happened in the past. It looks back at an obligation that should have been fulfilled but was not.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-았/었어야 하다",
+          "structurePattern": "[Verb/adjective stem] + -았/었어야 하다",
           "relatedPointIds": [
             "gp_t2l3_eoyagetda"
           ],
@@ -1414,18 +1414,18 @@
         {
           "id": "gp_t2l4_eotdeoramyeon",
           "title": "-았/었더라면",
-          "category": "grammar pattern",
+          "category": "counterfactual",
           "tense": null,
           "register": null,
           "hint": "Imagine an unreal past condition and a result that did not actually happen.",
-          "description": "Imagine an unreal past condition and a result that did not actually happen.",
+          "description": "Imagine an unreal past condition and a result that did not actually happen. It imagines a past situation that did not happen and its unreal result.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-았/었더라면",
+          "structurePattern": "[Verb/adjective stem] + -았/었더라면",
           "relatedPointIds": [
             "gp_asseoyo"
           ],
@@ -1500,18 +1500,18 @@
         {
           "id": "gp_t2l4_deorado",
           "title": "-더라도",
-          "category": "grammar pattern",
+          "category": "concession",
           "tense": null,
           "register": null,
           "hint": "Concede an unfavorable or extreme condition without changing the decision.",
-          "description": "Concede an unfavorable or extreme condition without changing the decision.",
+          "description": "Concede an unfavorable or extreme condition without changing the decision. It concedes a situation while insisting the result still holds.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-더라도",
+          "structurePattern": "[Verb/adjective stem] + -더라도",
           "relatedPointIds": [
             "gp_eodo_concession"
           ],
@@ -1586,18 +1586,18 @@
         {
           "id": "gp_t2l4_neun_han",
           "title": "-는 한",
-          "category": "grammar pattern",
+          "category": "condition",
           "tense": null,
           "register": null,
           "hint": "Specify the condition under which something continues to hold: 'as long as'.",
-          "description": "Specify the condition under which something continues to hold: 'as long as'.",
+          "description": "Specify the condition under which something continues to hold: 'as long as'. It sets a limiting condition for what is true.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-는 한",
+          "structurePattern": "[Verb/adjective stem] + -는 한",
           "relatedPointIds": [
             "gp_eumyeon"
           ],
@@ -1672,18 +1672,18 @@
         {
           "id": "gp_t2l4_neuni",
           "title": "-느니",
-          "category": "grammar pattern",
+          "category": "preference",
           "tense": null,
           "register": null,
           "hint": "Prefer one option over another, often with 'rather than doing X'.",
-          "description": "Prefer one option over another, often with 'rather than doing X'.",
+          "description": "Prefer one option over another, often with 'rather than doing X'. It prefers one course of action over an undesirable alternative.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-느니",
+          "structurePattern": "[Verb/adjective stem] + -느니",
           "relatedPointIds": [
             "gp_t2l5_eulbaeya"
           ],
@@ -1764,18 +1764,18 @@
         {
           "id": "gp_t2l4_jago_hada",
           "title": "-자고 하다",
-          "category": "grammar pattern",
+          "category": "reported speech",
           "tense": null,
           "register": null,
           "hint": "Report another person's suggestion to do something together: 'said let's'.",
-          "description": "Report another person's suggestion to do something together: 'said let's'.",
+          "description": "Report another person's suggestion to do something together: 'said let's'. It reports that someone suggested doing an action together.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-자고 하다",
+          "structurePattern": "[Verb/adjective stem] + -자고 하다",
           "relatedPointIds": [
             "gp_eupsida"
           ],
@@ -1850,18 +1850,18 @@
         {
           "id": "gp_t2l4_eurago_hada",
           "title": "-(으)라고 하다",
-          "category": "grammar pattern",
+          "category": "reported speech",
           "tense": null,
           "register": null,
           "hint": "Report an instruction or command that another person gave.",
-          "description": "Report an instruction or command that another person gave.",
+          "description": "Report an instruction or command that another person gave. It reports what someone told or ordered another person to do.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-(으)라고 하다",
+          "structurePattern": "[Verb/adjective stem] + -(으)라고 하다",
           "relatedPointIds": [
             "gp_euseyo"
           ],
@@ -1936,18 +1936,18 @@
         {
           "id": "gp_t2l4_nyago_hada",
           "title": "-냐고 하다",
-          "category": "grammar pattern",
+          "category": "reported speech",
           "tense": null,
           "register": null,
           "hint": "Report what someone ASKED, keeping the reported sentence as a question.",
-          "description": "Report what someone ASKED, keeping the reported sentence as a question.",
+          "description": "Report what someone ASKED, keeping the reported sentence as a question. It embeds a question that someone asked.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-냐고 하다",
+          "structurePattern": "[Verb/adjective stem] + -냐고 하다",
           "relatedPointIds": [
             "gp_neundago_hada"
           ],
@@ -2022,18 +2022,18 @@
         {
           "id": "gp_t2l4_daeyo",
           "title": "-대요 (contracted report)",
-          "category": "grammar pattern",
+          "category": "reported speech",
           "tense": null,
           "register": null,
           "hint": "Give hearsay using the shortened form of -다고 해요: 'they say that...'.",
-          "description": "Give hearsay using the shortened form of -다고 해요: 'they say that...'.",
+          "description": "Give hearsay using the shortened form of -다고 해요: 'they say that...'. It conveys something reportedly said in an abbreviated conversational form.",
           "level": 4,
           "tags": [
             "TOPIK2",
             "level4",
             "grammar"
           ],
-          "structurePattern": "-대요 (contracted report)",
+          "structurePattern": "[Verb/adjective stem] + -대요 (contracted report)",
           "relatedPointIds": [
             "gp_neundago_hada"
           ],

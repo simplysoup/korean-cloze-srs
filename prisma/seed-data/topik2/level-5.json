@@ -16,11 +16,11 @@
         {
           "id": "gp_t2l5_euro_inhae",
           "title": "N(으)로 인해(서)",
-          "category": "grammar pattern",
+          "category": "formal cause",
           "tense": null,
-          "register": "advanced/formal",
+          "register": "formal / written",
           "hint": "State a cause or source of change in formal news, reports or explanatory writing.",
-          "description": "State a cause or source of change in formal news, reports or explanatory writing.",
+          "description": "State a cause or source of change in formal news, reports or explanatory writing. It is a formal way of identifying the cause of an event or change.",
           "level": 5,
           "tags": [
             "TOPIK2",
@@ -102,18 +102,18 @@
         {
           "id": "gp_t2l5_eumeurosseo",
           "title": "-(으)ㅁ으로써",
-          "category": "grammar pattern",
+          "category": "means",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Show the means or method by which a result is achieved, often in formal writing.",
-          "description": "Show the means or method by which a result is achieved, often in formal writing.",
+          "description": "Show the means or method by which a result is achieved, often in formal writing. It emphasizes the means or method by which a result is achieved.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㅁ으로써",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㅁ으로써",
           "relatedPointIds": [
             "gp_euro_means"
           ],
@@ -188,11 +188,11 @@
         {
           "id": "gp_t2l5_e_ttaraseo",
           "title": "N에 따라(서)",
-          "category": "grammar pattern",
+          "category": "condition",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Indicate that an outcome changes depending on a condition or standard.",
-          "description": "Indicate that an outcome changes depending on a condition or standard.",
+          "description": "Indicate that an outcome changes depending on a condition or standard. It states that an outcome varies according to a condition or standard.",
           "level": 5,
           "tags": [
             "TOPIK2",
@@ -274,18 +274,18 @@
         {
           "id": "gp_t2l5_neun_ba",
           "title": "-(으)ㄴ/는 바",
-          "category": "grammar pattern",
+          "category": "formal reference",
           "tense": null,
-          "register": "advanced/formal",
+          "register": "formal / written",
           "hint": "Refer formally to what is known, stated or observed, often in official writing.",
-          "description": "Refer formally to what is known, stated or observed, often in official writing.",
+          "description": "Refer formally to what is known, stated or observed, often in official writing. It refers to something stated, known or observed in formal writing.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 바",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 바",
           "relatedPointIds": [
             "gp_t2l5_bawa_gachi"
           ],
@@ -366,18 +366,18 @@
         {
           "id": "gp_t2l5_neun_mankeum",
           "title": "-(으)ㄴ/는 만큼",
-          "category": "grammar pattern",
+          "category": "degree",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Express a matching degree: 'as much as', 'in proportion to', or 'given that'.",
-          "description": "Express a matching degree: 'as much as', 'in proportion to', or 'given that'.",
+          "description": "Express a matching degree: 'as much as', 'in proportion to', or 'given that'. It compares the degree of one thing with another or gives the corresponding extent.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 만큼",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 만큼",
           "relatedPointIds": [
             "gp_t2l3_eulsurok"
           ],
@@ -452,18 +452,18 @@
         {
           "id": "gp_t2l5_neun_beob",
           "title": "-(으)ㄴ/는 법이다",
-          "category": "grammar pattern",
+          "category": "generalization",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Express a general rule about how things usually happen: 'it's the nature of things'.",
-          "description": "Express a general rule about how things usually happen: 'it's the nature of things'.",
+          "description": "Express a general rule about how things usually happen: 'it's the nature of things'. It states that a behavior or outcome is natural or generally expected.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 법이다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 법이다",
           "relatedPointIds": [
             "gp_t2l5_ge_maryeon"
           ],
@@ -538,18 +538,18 @@
         {
           "id": "gp_t2l5_ge_maryeon",
           "title": "-게 마련이다",
-          "category": "grammar pattern",
+          "category": "inevitability",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Say a result is natural, expected or nearly inevitable.",
-          "description": "Say a result is natural, expected or nearly inevitable.",
+          "description": "Say a result is natural, expected or nearly inevitable. It expresses that a result is only to be expected.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-게 마련이다",
+          "structurePattern": "[Verb/adjective stem] + -게 마련이다",
           "relatedPointIds": [
             "gp_t2l5_neun_beob"
           ],
@@ -624,18 +624,18 @@
         {
           "id": "gp_t2l5_eul_ttareum",
           "title": "-(으)ㄹ 따름이다",
-          "category": "grammar pattern",
+          "category": "limitation",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Emphasize that a feeling, motive or action is simply all there is: 'only / merely'.",
-          "description": "Emphasize that a feeling, motive or action is simply all there is: 'only / merely'.",
+          "description": "Emphasize that a feeling, motive or action is simply all there is: 'only / merely'. It restricts the speaker's statement to a single feeling or conclusion.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 따름이다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 따름이다",
           "relatedPointIds": [
             "gp_man"
           ],
@@ -716,18 +716,18 @@
         {
           "id": "gp_t2l5_euljirado",
           "title": "-(으)ㄹ지라도",
-          "category": "grammar pattern",
+          "category": "concession",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Concede even a strong hypothetical condition: 'even if / even though'.",
-          "description": "Concede even a strong hypothetical condition: 'even if / even though'.",
+          "description": "Concede even a strong hypothetical condition: 'even if / even though'. It allows a contrary condition while asserting the final outcome.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ지라도",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ지라도",
           "relatedPointIds": [
             "gp_t2l4_deorado"
           ],
@@ -802,18 +802,18 @@
         {
           "id": "gp_t2l5_eulmangjeong",
           "title": "-(으)ㄹ망정",
-          "category": "grammar pattern",
+          "category": "concession",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Accept one unfavorable possibility while rejecting a worse choice: 'even if..., at least...'.",
-          "description": "Accept one unfavorable possibility while rejecting a worse choice: 'even if..., at least...'.",
+          "description": "Accept one unfavorable possibility while rejecting a worse choice: 'even if..., at least...'. It asserts that a speaker accepts a cost but still maintains their choice.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ망정",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ망정",
           "relatedPointIds": [
             "gp_t2l6_euljieonjeong"
           ],
@@ -888,18 +888,18 @@
         {
           "id": "gp_t2l5_eundeul",
           "title": "-(으)ㄴ들",
-          "category": "grammar pattern",
+          "category": "concession",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Rhetorically concede an imagined condition: 'even if that were the case, what difference?'.",
-          "description": "Rhetorically concede an imagined condition: 'even if that were the case, what difference?'.",
+          "description": "Rhetorically concede an imagined condition: 'even if that were the case, what difference?'. It asks rhetorically whether a hypothetical difference would matter.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ들",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ들",
           "relatedPointIds": [
             "gp_t2l5_euljirado"
           ],
@@ -974,18 +974,18 @@
         {
           "id": "gp_t2l5_eulbaeya",
           "title": "-(으)ㄹ 바에야",
-          "category": "grammar pattern",
+          "category": "preference",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Prefer an alternative rather than accept an undesirable situation: 'if I must..., I'd rather...'.",
-          "description": "Prefer an alternative rather than accept an undesirable situation: 'if I must..., I'd rather...'.",
+          "description": "Prefer an alternative rather than accept an undesirable situation: 'if I must..., I'd rather...'. It evaluates the proposed action as worse than choosing another alternative.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 바에야",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 바에야",
           "relatedPointIds": [
             "gp_t2l6_neuni_charari"
           ],
@@ -1066,18 +1066,18 @@
         {
           "id": "gp_t2l5_gineunkeonyeong",
           "title": "-기는커녕",
-          "category": "grammar pattern",
+          "category": "emphasis",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Emphatically deny even an expected minimum: 'far from doing X, Y'.",
-          "description": "Emphatically deny even an expected minimum: 'far from doing X, Y'.",
+          "description": "Emphatically deny even an expected minimum: 'far from doing X, Y'. It strongly rejects the very possibility mentioned, often 'let alone'.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-기는커녕",
+          "structurePattern": "[Verb/adjective stem] + -기는커녕",
           "relatedPointIds": [
             "gp_t2l6_gosahago"
           ],
@@ -1152,18 +1152,18 @@
         {
           "id": "gp_t2l5_eulgyeoreul",
           "title": "-(으)ㄹ 겨를이 없다",
-          "category": "grammar pattern",
+          "category": "limitation",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Have no spare time or mental room to do something.",
-          "description": "Have no spare time or mental room to do something.",
+          "description": "Have no spare time or mental room to do something. It states that someone has no time or opportunity even to start an action.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 겨를이 없다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 겨를이 없다",
           "relatedPointIds": [
             "gp_eopseoyo"
           ],
@@ -1238,18 +1238,18 @@
         {
           "id": "gp_t2l5_giga_museopge",
           "title": "-기가 무섭게",
-          "category": "grammar pattern",
+          "category": "sequence",
           "tense": null,
           "register": "advanced/formal",
           "hint": "One event happens immediately upon another, with a vivid sense of speed.",
-          "description": "One event happens immediately upon another, with a vivid sense of speed.",
+          "description": "One event happens immediately upon another, with a vivid sense of speed. It stresses how immediately a second event follows the first.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-기가 무섭게",
+          "structurePattern": "[Verb/adjective stem] + -기가 무섭게",
           "relatedPointIds": [
             "gp_t2l3_jamaja"
           ],
@@ -1324,11 +1324,11 @@
         {
           "id": "gp_t2l5_jocha",
           "title": "N조차",
-          "category": "grammar pattern",
+          "category": "emphasis",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Even the least expected person or thing is included or excluded: 'even'.",
-          "description": "Even the least expected person or thing is included or excluded: 'even'.",
+          "description": "Even the least expected person or thing is included or excluded: 'even'. It emphasizes that even the named item falls within an unexpected range.",
           "level": 5,
           "tags": [
             "TOPIK2",
@@ -1416,18 +1416,18 @@
         {
           "id": "gp_t2l5_de_bihae",
           "title": "-(으)ㄴ/는 데 비해",
-          "category": "grammar pattern",
+          "category": "comparison",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Contrast one situation against another using a measured comparison.",
-          "description": "Contrast one situation against another using a measured comparison.",
+          "description": "Contrast one situation against another using a measured comparison. It contrasts two situations using a clear comparison standard.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 데 비해",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 데 비해",
           "relatedPointIds": [
             "gp_t2l3_banmyeone"
           ],
@@ -1502,18 +1502,18 @@
         {
           "id": "gp_t2l5_neun_daero",
           "title": "-는 대로 (immediately)",
-          "category": "grammar pattern",
+          "category": "sequence",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Act as soon as a first event happens, with little or no intervening delay.",
-          "description": "Act as soon as a first event happens, with little or no intervening delay.",
+          "description": "Act as soon as a first event happens, with little or no intervening delay. It presents the next event as following immediately when the first is done.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-는 대로 (immediately)",
+          "structurePattern": "[Verb/adjective stem] + -는 대로 (immediately)",
           "relatedPointIds": [
             "gp_t2l3_jamaja"
           ],
@@ -1588,18 +1588,18 @@
         {
           "id": "gp_t2l5_bawa_gachi",
           "title": "-(으)ㄴ/는 바와 같이",
-          "category": "grammar pattern",
+          "category": "citation",
           "tense": null,
-          "register": "advanced/formal",
+          "register": "formal / written",
           "hint": "Refer back formally to something stated or observed: 'as explained / as shown'.",
-          "description": "Refer back formally to something stated or observed: 'as explained / as shown'.",
+          "description": "Refer back formally to something stated or observed: 'as explained / as shown'. It formally refers to what was just said or demonstrated.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 바와 같이",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 바와 같이",
           "relatedPointIds": [
             "gp_t2l5_neun_ba"
           ],
@@ -1674,11 +1674,11 @@
         {
           "id": "gp_t2l5_e_bulgwahada",
           "title": "N에 불과하다",
-          "category": "grammar pattern",
+          "category": "limitation",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Describe something as only a small or limited amount/status: 'no more than'.",
-          "description": "Describe something as only a small or limited amount/status: 'no more than'.",
+          "description": "Describe something as only a small or limited amount/status: 'no more than'. It states that the amount or situation is no more than a limited figure.",
           "level": 5,
           "tags": [
             "TOPIK2",
@@ -1766,18 +1766,18 @@
         {
           "id": "gp_t2l5_goja_hada",
           "title": "-고자 하다",
-          "category": "grammar pattern",
+          "category": "formal intention",
           "tense": null,
-          "register": "advanced/formal",
+          "register": "formal / written",
           "hint": "Express an intention or purpose in formal writing, presentations or announcements.",
-          "description": "Express an intention or purpose in formal writing, presentations or announcements.",
+          "description": "Express an intention or purpose in formal writing, presentations or announcements. It expresses formal, deliberate intention, common in proposals and writing.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-고자 하다",
+          "structurePattern": "[Verb/adjective stem] + -고자 하다",
           "relatedPointIds": [
             "gp_euryeogo_hada"
           ],
@@ -1852,18 +1852,18 @@
         {
           "id": "gp_t2l5_go_malda",
           "title": "-고 말다",
-          "category": "grammar pattern",
+          "category": "result",
           "tense": null,
           "register": "advanced/formal",
           "hint": "An action ends up happening decisively, often despite attempts to prevent it.",
-          "description": "An action ends up happening decisively, often despite attempts to prevent it.",
+          "description": "An action ends up happening decisively, often despite attempts to prevent it. It stresses that an action finally happened, often against the speaker's preference.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-고 말다",
+          "structurePattern": "[Verb/adjective stem] + -고 말다",
           "relatedPointIds": [
             "gp_eobeorida"
           ],
@@ -1938,18 +1938,18 @@
         {
           "id": "gp_t2l5_eodo_soyongeopda",
           "title": "-아/어도 소용없다",
-          "category": "grammar pattern",
+          "category": "futility",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Even if someone tries something, it will not help or change the outcome.",
-          "description": "Even if someone tries something, it will not help or change the outcome.",
+          "description": "Even if someone tries something, it will not help or change the outcome. It says that even trying will not make a meaningful difference.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-아/어도 소용없다",
+          "structurePattern": "[Verb/adjective stem] + -아/어도 소용없다",
           "relatedPointIds": [
             "gp_t2l4_eobwatja"
           ],
@@ -2024,18 +2024,18 @@
         {
           "id": "gp_t2l5_gi_sipsang",
           "title": "-기 십상이다",
-          "category": "grammar pattern",
+          "category": "likelihood",
           "tense": null,
           "register": "advanced/formal",
           "hint": "Say an undesirable result is very likely given the circumstances.",
-          "description": "Say an undesirable result is very likely given the circumstances.",
+          "description": "Say an undesirable result is very likely given the circumstances. It warns that an unfavorable outcome is quite likely.",
           "level": 5,
           "tags": [
             "TOPIK2",
             "level5",
             "grammar"
           ],
-          "structurePattern": "-기 십상이다",
+          "structurePattern": "[Verb/adjective stem] + -기 십상이다",
           "relatedPointIds": [
             "gp_t2l5_ge_maryeon"
           ],

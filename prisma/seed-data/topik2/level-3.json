@@ -16,18 +16,18 @@
         {
           "id": "gp_t2l3_daga",
           "title": "-다가",
-          "category": "grammar pattern",
+          "category": "sequence",
           "tense": null,
           "register": null,
           "hint": "An action is interrupted by another or takes an unexpected turn.",
-          "description": "An action is interrupted by another or takes an unexpected turn.",
+          "description": "An action is interrupted by another or takes an unexpected turn. It marks an activity that was already underway before another event interrupted or changed it.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-다가",
+          "structurePattern": "[Verb/adjective stem] + -다가",
           "relatedPointIds": [
             "gp_go_seq"
           ],
@@ -102,18 +102,18 @@
         {
           "id": "gp_t2l3_eonota",
           "title": "-아/어 놓다",
-          "category": "grammar pattern",
+          "category": "aspect",
           "tense": null,
           "register": null,
           "hint": "An action is completed and its result is deliberately left ready.",
-          "description": "An action is completed and its result is deliberately left ready.",
+          "description": "An action is completed and its result is deliberately left ready. It emphasizes that someone deliberately leaves the completed action's result in place.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-아/어 놓다",
+          "structurePattern": "[Verb/adjective stem] + -아/어 놓다",
           "relatedPointIds": [
             "gp_eoduda"
           ],
@@ -188,18 +188,18 @@
         {
           "id": "gp_t2l3_eogada",
           "title": "-아/어 가다 / 오다",
-          "category": "grammar pattern",
+          "category": "aspect",
           "tense": null,
           "register": null,
           "hint": "An action or change continues onward, or has progressed toward the present.",
-          "description": "An action or change continues onward, or has progressed toward the present.",
+          "description": "An action or change continues onward, or has progressed toward the present. Use 가다 for change continuing away from the present and 오다 for change continuing toward the present.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-아/어 가다 / 오다",
+          "structurePattern": "[Verb/adjective stem] + -아/어 가다 / 오다",
           "relatedPointIds": [
             "gp_ge_doeda"
           ],
@@ -274,18 +274,18 @@
         {
           "id": "gp_t2l3_neun_dongan",
           "title": "-는 동안",
-          "category": "grammar pattern",
+          "category": "time",
           "tense": null,
           "register": null,
           "hint": "Another action happens during the span of time that an activity is underway.",
-          "description": "Another action happens during the span of time that an activity is underway.",
+          "description": "Another action happens during the span of time that an activity is underway. It describes the time span during which another event or action occurs.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-는 동안",
+          "structurePattern": "[Verb/adjective stem] + -는 동안",
           "relatedPointIds": [
             "gp_eumyeonseo"
           ],
@@ -366,18 +366,18 @@
         {
           "id": "gp_t2l3_neun_pyeon",
           "title": "-(으)ㄴ/는 편이다",
-          "category": "grammar pattern",
+          "category": "evaluation",
           "tense": null,
           "register": null,
           "hint": "Something tends to be true or falls on one side of a range, without being absolute.",
-          "description": "Something tends to be true or falls on one side of a range, without being absolute.",
+          "description": "Something tends to be true or falls on one side of a range, without being absolute. It expresses a general tendency rather than a firm, absolute claim.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 편이다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 편이다",
           "relatedPointIds": [],
           "notes": [
             {
@@ -450,18 +450,18 @@
         {
           "id": "gp_t2l3_eoboida",
           "title": "-아/어 보이다",
-          "category": "grammar pattern",
+          "category": "appearance",
           "tense": null,
           "register": null,
           "hint": "Something appears a certain way to the speaker, who is describing an impression.",
-          "description": "Something appears a certain way to the speaker, who is describing an impression.",
+          "description": "Something appears a certain way to the speaker, who is describing an impression. It reports how something appears to the observer, rather than what it definitively is.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-아/어 보이다",
+          "structurePattern": "[Verb/adjective stem] + -아/어 보이다",
           "relatedPointIds": [
             "gp_eoboda"
           ],
@@ -536,18 +536,18 @@
         {
           "id": "gp_t2l3_euljido",
           "title": "-(으)ㄹ지도 모르다",
-          "category": "grammar pattern",
+          "category": "uncertainty",
           "tense": null,
           "register": null,
           "hint": "A future or uncertain possibility: 'it might happen' or 'it may be true'.",
-          "description": "A future or uncertain possibility: 'it might happen' or 'it may be true'.",
+          "description": "A future or uncertain possibility: 'it might happen' or 'it may be true'. It leaves open the possibility of an uncertain outcome.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ지도 모르다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ지도 모르다",
           "relatedPointIds": [
             "gp_eul_geot_gatda"
           ],
@@ -622,18 +622,18 @@
         {
           "id": "gp_t2l3_eultende",
           "title": "-(으)ㄹ 텐데",
-          "category": "grammar pattern",
+          "category": "expectation",
           "tense": null,
           "register": null,
           "hint": "An expectation offered as background for concern, contrast, or advice.",
-          "description": "An expectation offered as background for concern, contrast, or advice.",
+          "description": "An expectation offered as background for concern, contrast, or advice. It supplies an expectation that can lead into a worry, suggestion or contrasting reality.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 텐데",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 텐데",
           "relatedPointIds": [
             "gp_t2l3_eultenikka"
           ],
@@ -714,18 +714,18 @@
         {
           "id": "gp_t2l3_eultenikka",
           "title": "-(으)ㄹ 테니까",
-          "category": "grammar pattern",
+          "category": "reason",
           "tense": null,
           "register": null,
           "hint": "A speaker's promise or strong prediction that supports advice or a request.",
-          "description": "A speaker's promise or strong prediction that supports advice or a request.",
+          "description": "A speaker's promise or strong prediction that supports advice or a request. The speaker gives their expectation as the reason for the next advice or request.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 테니까",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 테니까",
           "relatedPointIds": [
             "gp_t2l3_eultende"
           ],
@@ -800,18 +800,18 @@
         {
           "id": "gp_t2l3_eulppeon",
           "title": "-(으)ㄹ 뻔하다",
-          "category": "grammar pattern",
+          "category": "near miss",
           "tense": null,
           "register": null,
           "hint": "An event almost happened, but the result was avoided: a close call.",
-          "description": "An event almost happened, but the result was avoided: a close call.",
+          "description": "An event almost happened, but the result was avoided: a close call. It refers to something that nearly happened but ultimately did not.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 뻔하다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 뻔하다",
           "relatedPointIds": [
             "gp_t2l4_eosseoya"
           ],
@@ -886,18 +886,18 @@
         {
           "id": "gp_t2l3_eoyagetda",
           "title": "-아/어야겠다",
-          "category": "grammar pattern",
+          "category": "intention",
           "tense": null,
           "register": null,
           "hint": "Realizing or deciding 'I really should' do something now or soon.",
-          "description": "Realizing or deciding 'I really should' do something now or soon.",
+          "description": "Realizing or deciding 'I really should' do something now or soon. It describes reaching a decision or realizing what one should do.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-아/어야겠다",
+          "structurePattern": "[Verb/adjective stem] + -아/어야겠다",
           "relatedPointIds": [
             "gp_aya_hada"
           ],
@@ -972,18 +972,18 @@
         {
           "id": "gp_t2l3_euljul",
           "title": "-(으)ㄹ 줄 알다/모르다",
-          "category": "grammar pattern",
+          "category": "ability",
           "tense": null,
           "register": null,
           "hint": "Knowing or not knowing how to perform an action or learned skill.",
-          "description": "Knowing or not knowing how to perform an action or learned skill.",
+          "description": "Knowing or not knowing how to perform an action or learned skill. It can express knowing or not knowing how to do an action; context determines the nuance.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 줄 알다/모르다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 줄 알다/모르다",
           "relatedPointIds": [
             "gp_eul_su_issda"
           ],
@@ -1064,18 +1064,18 @@
         {
           "id": "gp_t2l3_jamaja",
           "title": "-자마자",
-          "category": "grammar pattern",
+          "category": "sequence",
           "tense": null,
           "register": null,
           "hint": "Something happens immediately after another event, almost without a gap.",
-          "description": "Something happens immediately after another event, almost without a gap.",
+          "description": "Something happens immediately after another event, almost without a gap. The second event follows immediately after the first, with essentially no gap.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-자마자",
+          "structurePattern": "[Verb/adjective stem] + -자마자",
           "relatedPointIds": [
             "gp_go_naseo"
           ],
@@ -1150,18 +1150,18 @@
         {
           "id": "gp_t2l3_dorok",
           "title": "-도록 (purpose)",
-          "category": "grammar pattern",
+          "category": "purpose",
           "tense": null,
           "register": null,
           "hint": "A goal is expressed so that someone can act to make that result happen.",
-          "description": "A goal is expressed so that someone can act to make that result happen.",
+          "description": "A goal is expressed so that someone can act to make that result happen. It gives the goal the first action aims to achieve.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-도록 (purpose)",
+          "structurePattern": "[Verb/adjective stem] + -도록 (purpose)",
           "relatedPointIds": [
             "gp_euryeogo_hada"
           ],
@@ -1236,18 +1236,18 @@
         {
           "id": "gp_t2l3_eulsurok",
           "title": "-(으)ㄹ수록",
-          "category": "grammar pattern",
+          "category": "degree",
           "tense": null,
           "register": null,
           "hint": "Two quantities or tendencies change together: 'the more..., the more...'.",
-          "description": "Two quantities or tendencies change together: 'the more..., the more...'.",
+          "description": "Two quantities or tendencies change together: 'the more..., the more...'. One quantity or quality changes in proportion to another.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ수록",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ수록",
           "relatedPointIds": [
             "gp_eumyeon"
           ],
@@ -1322,18 +1322,18 @@
         {
           "id": "gp_t2l3_dabonikka",
           "title": "-다 보니까",
-          "category": "grammar pattern",
+          "category": "discovery",
           "tense": null,
           "register": null,
           "hint": "Continuing or repeating an activity produces an eventual discovery or result.",
-          "description": "Continuing or repeating an activity produces an eventual discovery or result.",
+          "description": "Continuing or repeating an activity produces an eventual discovery or result. A repeated or continued activity leads the speaker to discover a result.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-다 보니까",
+          "structurePattern": "[Verb/adjective stem] + -다 보니까",
           "relatedPointIds": [
             "gp_ge_doeda"
           ],
@@ -1414,18 +1414,18 @@
         {
           "id": "gp_t2l3_neurago",
           "title": "-느라고",
-          "category": "grammar pattern",
+          "category": "reason",
           "tense": null,
           "register": null,
           "hint": "Being busy doing one action results in inconvenience or missing another action.",
-          "description": "Being busy doing one action results in inconvenience or missing another action.",
+          "description": "Being busy doing one action results in inconvenience or missing another action. It gives a reason while highlighting that the first action prevented another action.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-느라고",
+          "structurePattern": "[Verb/adjective stem] + -느라고",
           "relatedPointIds": [
             "gp_aseo"
           ],
@@ -1500,18 +1500,18 @@
         {
           "id": "gp_t2l3_barame",
           "title": "-는 바람에",
-          "category": "grammar pattern",
+          "category": "cause",
           "tense": null,
           "register": null,
           "hint": "An unforeseen or unwelcome event causes another negative outcome.",
-          "description": "An unforeseen or unwelcome event causes another negative outcome.",
+          "description": "An unforeseen or unwelcome event causes another negative outcome. It presents an unexpected or inconvenient event as the cause of a result.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-는 바람에",
+          "structurePattern": "[Verb/adjective stem] + -는 바람에",
           "relatedPointIds": [
             "gp_t2l4_neun_tase",
             "gp_t2l3_deokbune"
@@ -1587,18 +1587,18 @@
         {
           "id": "gp_t2l3_deokbune",
           "title": "-(으)ㄴ/는 덕분에",
-          "category": "grammar pattern",
+          "category": "cause",
           "tense": null,
           "register": null,
           "hint": "Credit a person or situation for a positive result: 'thanks to'.",
-          "description": "Credit a person or situation for a positive result: 'thanks to'.",
+          "description": "Credit a person or situation for a positive result: 'thanks to'. It credits a person or situation with producing a beneficial outcome.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 덕분에",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 덕분에",
           "relatedPointIds": [
             "gp_t2l3_barame"
           ],
@@ -1673,18 +1673,18 @@
         {
           "id": "gp_t2l3_daesine",
           "title": "-는 대신에",
-          "category": "grammar pattern",
+          "category": "alternative",
           "tense": null,
           "register": null,
           "hint": "One action is done instead of another; it can also signal a trade-off.",
-          "description": "One action is done instead of another; it can also signal a trade-off.",
+          "description": "One action is done instead of another; it can also signal a trade-off. It proposes one action in place of another, or an alternative arrangement.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-는 대신에",
+          "structurePattern": "[Verb/adjective stem] + -는 대신에",
           "relatedPointIds": [
             "gp_geona"
           ],
@@ -1765,18 +1765,18 @@
         {
           "id": "gp_t2l3_banmyeone",
           "title": "-(으)ㄴ/는 반면에",
-          "category": "grammar pattern",
+          "category": "contrast",
           "tense": null,
           "register": null,
           "hint": "Present contrasting sides of a situation: 'whereas' or 'on the other hand'.",
-          "description": "Present contrasting sides of a situation: 'whereas' or 'on the other hand'.",
+          "description": "Present contrasting sides of a situation: 'whereas' or 'on the other hand'. It places two aspects side by side to highlight a difference.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는 반면에",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는 반면에",
           "relatedPointIds": [
             "gp_jiman"
           ],
@@ -1851,18 +1851,18 @@
         {
           "id": "gp_t2l3_neunji",
           "title": "-(으)ㄴ/는지 알다/모르다",
-          "category": "grammar pattern",
+          "category": "embedded question",
           "tense": null,
           "register": null,
           "hint": "Embed a question inside 'know' or 'don't know', without ending the clause as a direct question.",
-          "description": "Embed a question inside 'know' or 'don't know', without ending the clause as a direct question.",
+          "description": "Embed a question inside 'know' or 'don't know', without ending the clause as a direct question. The speaker embeds an unknown fact or question inside another sentence.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄴ/는지 알다/모르다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄴ/는지 알다/모르다",
           "relatedPointIds": [
             "gp_neun_geot"
           ],
@@ -1937,18 +1937,18 @@
         {
           "id": "gp_t2l3_deon",
           "title": "-던",
-          "category": "grammar pattern",
+          "category": "retrospective",
           "tense": null,
           "register": null,
           "hint": "A remembered past action that was ongoing or happened repeatedly, used before a noun.",
-          "description": "A remembered past action that was ongoing or happened repeatedly, used before a noun.",
+          "description": "A remembered past action that was ongoing or happened repeatedly, used before a noun. It recalls something witnessed, repeated or unfinished in the past.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-던",
+          "structurePattern": "[Verb/adjective stem] + -던",
           "relatedPointIds": [
             "gp_t2l3_eotdeon"
           ],
@@ -2023,18 +2023,18 @@
         {
           "id": "gp_t2l3_eotdeon",
           "title": "-았/었던",
-          "category": "grammar pattern",
+          "category": "retrospective",
           "tense": null,
           "register": null,
           "hint": "A past action or state remembered as completed, often unlike the present situation.",
-          "description": "A past action or state remembered as completed, often unlike the present situation.",
+          "description": "A past action or state remembered as completed, often unlike the present situation. It typically recalls a past action as completed and looks back on it now.",
           "level": 3,
           "tags": [
             "TOPIK2",
             "intermediate",
             "grammar"
           ],
-          "structurePattern": "-았/었던",
+          "structurePattern": "[Verb/adjective stem] + -았/었던",
           "relatedPointIds": [
             "gp_t2l3_deon"
           ],

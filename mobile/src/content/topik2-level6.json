@@ -16,11 +16,11 @@
         {
           "id": "gp_t2l6_euro_malmiama",
           "title": "N(으)로 말미암아",
-          "category": "grammar pattern",
+          "category": "formal cause",
           "tense": null,
-          "register": "advanced/literary",
+          "register": "formal / literary",
           "hint": "Give a cause in formal, literary or official writing: 'due to / arising from'.",
-          "description": "Give a cause in formal, literary or official writing: 'due to / arising from'.",
+          "description": "Give a cause in formal, literary or official writing: 'due to / arising from'. It states a cause in elevated written or literary Korean.",
           "level": 6,
           "tags": [
             "TOPIK2",
@@ -102,11 +102,11 @@
         {
           "id": "gp_t2l6_makronhago",
           "title": "N을/를 막론하고",
-          "category": "grammar pattern",
+          "category": "universal scope",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Say that a conclusion is true regardless of which member of a group is involved.",
-          "description": "Say that a conclusion is true regardless of which member of a group is involved.",
+          "description": "Say that a conclusion is true regardless of which member of a group is involved. It says the distinction named is irrelevant to the outcome.",
           "level": 6,
           "tags": [
             "TOPIK2",
@@ -188,18 +188,18 @@
         {
           "id": "gp_t2l6_geoniwa",
           "title": "-거니와",
-          "category": "grammar pattern",
+          "category": "addition",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Add a second supporting fact: 'not only A but also B', often in formal writing.",
-          "description": "Add a second supporting fact: 'not only A but also B', often in formal writing.",
+          "description": "Add a second supporting fact: 'not only A but also B', often in formal writing. It adds another argument or feature in a literary or formal style.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-거니와",
+          "structurePattern": "[Verb/adjective stem] + -거니와",
           "relatedPointIds": [
             "gp_t2l4_neun_dedaga"
           ],
@@ -274,18 +274,18 @@
         {
           "id": "gp_t2l6_gie_ireuda",
           "title": "-기에 이르다",
-          "category": "grammar pattern",
+          "category": "result",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Describe how events eventually reached a particular outcome or stage.",
-          "description": "Describe how events eventually reached a particular outcome or stage.",
+          "description": "Describe how events eventually reached a particular outcome or stage. It presents a development as reaching a particular stage or endpoint.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-기에 이르다",
+          "structurePattern": "[Verb/adjective stem] + -기에 이르다",
           "relatedPointIds": [
             "gp_t2l5_go_malda"
           ],
@@ -366,18 +366,18 @@
         {
           "id": "gp_t2l6_euljieonjeong",
           "title": "-(으)ㄹ지언정",
-          "category": "grammar pattern",
+          "category": "concession",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Declare a principle that will stand even if an unfavorable event occurs.",
-          "description": "Declare a principle that will stand even if an unfavorable event occurs.",
+          "description": "Declare a principle that will stand even if an unfavorable event occurs. It expresses a strong 'even if' concession while preserving a firm stance.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ지언정",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ지언정",
           "relatedPointIds": [
             "gp_t2l5_eulmangjeong"
           ],
@@ -452,18 +452,18 @@
         {
           "id": "gp_t2l6_gineun_hade",
           "title": "-기는 하되",
-          "category": "grammar pattern",
+          "category": "qualified concession",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Admit one fact but place a clear qualification or limit on it.",
-          "description": "Admit one fact but place a clear qualification or limit on it.",
+          "description": "Admit one fact but place a clear qualification or limit on it. It accepts one point but places a restriction on the next.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-기는 하되",
+          "structurePattern": "[Verb/adjective stem] + -기는 하되",
           "relatedPointIds": [
             "gp_jiman"
           ],
@@ -538,18 +538,18 @@
         {
           "id": "gp_t2l6_dason_chideorado",
           "title": "-다손 치더라도",
-          "category": "grammar pattern",
+          "category": "hypothetical concession",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Grant a hypothetical claim for argument's sake, then reject the conclusion drawn from it.",
-          "description": "Grant a hypothetical claim for argument's sake, then reject the conclusion drawn from it.",
+          "description": "Grant a hypothetical claim for argument's sake, then reject the conclusion drawn from it. It considers an unreal assumption and says the conclusion still would not change.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-다손 치더라도",
+          "structurePattern": "[Verb/adjective stem] + -다손 치더라도",
           "relatedPointIds": [
             "gp_t2l4_deorado"
           ],
@@ -624,18 +624,18 @@
         {
           "id": "gp_t2l6_giroseoni",
           "title": "-기로서니",
-          "category": "grammar pattern",
+          "category": "reproach",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Criticize behavior as unacceptable even after granting a reason: 'however X, how could Y?'.",
-          "description": "Criticize behavior as unacceptable even after granting a reason: 'however X, how could Y?'.",
+          "description": "Criticize behavior as unacceptable even after granting a reason: 'however X, how could Y?'. It reproaches someone: even granting the situation, their action remains unacceptable.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-기로서니",
+          "structurePattern": "[Verb/adjective stem] + -기로서니",
           "relatedPointIds": [
             "gp_t2l5_euljirado"
           ],
@@ -716,18 +716,18 @@
         {
           "id": "gp_t2l6_neuni_charari",
           "title": "-느니 차라리",
-          "category": "grammar pattern",
+          "category": "preference",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Express a strong preference: 'rather than doing X, I'd sooner do Y'.",
-          "description": "Express a strong preference: 'rather than doing X, I'd sooner do Y'.",
+          "description": "Express a strong preference: 'rather than doing X, I'd sooner do Y'. It prefers one action rather than pursuing a worse alternative.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-느니 차라리",
+          "structurePattern": "[Verb/adjective stem] + -느니 차라리",
           "relatedPointIds": [
             "gp_t2l4_neuni"
           ],
@@ -802,11 +802,11 @@
         {
           "id": "gp_t2l6_gosahago",
           "title": "N은/는 고사하고",
-          "category": "grammar pattern",
+          "category": "exclusion",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Reject even a basic expectation: 'let alone / far from'.",
-          "description": "Reject even a basic expectation: 'let alone / far from'.",
+          "description": "Reject even a basic expectation: 'let alone / far from'. It excludes the first item as well as the following, more basic item.",
           "level": 6,
           "tags": [
             "TOPIK2",
@@ -888,18 +888,18 @@
         {
           "id": "gp_t2l6_euryeoya",
           "title": "-(으)려야 -(으)ㄹ 수 없다",
-          "category": "grammar pattern",
+          "category": "impossibility",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Say that doing something is impossible despite any effort or desire to do it.",
-          "description": "Say that doing something is impossible despite any effort or desire to do it.",
+          "description": "Say that doing something is impossible despite any effort or desire to do it. It emphasizes that the action cannot be achieved however hard one tries.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-(으)려야 -(으)ㄹ 수 없다",
+          "structurePattern": "[Verb/adjective stem] + -(으)려야 -(으)ㄹ 수 없다",
           "relatedPointIds": [
             "gp_eul_su_issda"
           ],
@@ -974,18 +974,18 @@
         {
           "id": "gp_t2l6_euna_mana",
           "title": "-(으)나 마나",
-          "category": "grammar pattern",
+          "category": "futility",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Say that doing or not doing an action would make no difference.",
-          "description": "Say that doing or not doing an action would make no difference.",
+          "description": "Say that doing or not doing an action would make no difference. It states that doing the action is pointless because the result is unchanged.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-(으)나 마나",
+          "structurePattern": "[Verb/adjective stem] + -(으)나 마나",
           "relatedPointIds": [
             "gp_t2l4_eobwatja"
           ],
@@ -1066,18 +1066,18 @@
         {
           "id": "gp_t2l6_gi_jjagi",
           "title": "-기 짝이 없다",
-          "category": "grammar pattern",
+          "category": "extreme evaluation",
           "tense": null,
           "register": "advanced/literary",
           "hint": "State that a quality is extremely strong, often an unpleasant one.",
-          "description": "State that a quality is extremely strong, often an unpleasant one.",
+          "description": "State that a quality is extremely strong, often an unpleasant one. It expresses a strongly negative or extreme evaluation.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-기 짝이 없다",
+          "structurePattern": "[Verb/adjective stem] + -기 짝이 없다",
           "relatedPointIds": [
             "gp_t2l5_e_bulgwahada"
           ],
@@ -1152,18 +1152,18 @@
         {
           "id": "gp_t2l6_gi_ilsu",
           "title": "-기 일쑤이다",
-          "category": "grammar pattern",
+          "category": "repetition",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Describe a frequently repeated, usually unwanted habit or outcome.",
-          "description": "Describe a frequently repeated, usually unwanted habit or outcome.",
+          "description": "Describe a frequently repeated, usually unwanted habit or outcome. It says an undesirable action occurs repeatedly or habitually.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-기 일쑤이다",
+          "structurePattern": "[Verb/adjective stem] + -기 일쑤이다",
           "relatedPointIds": [
             "gp_t2l5_gi_sipsang"
           ],
@@ -1238,18 +1238,18 @@
         {
           "id": "gp_t2l6_da_motae",
           "title": "-다 못해",
-          "category": "grammar pattern",
+          "category": "intensification",
           "tense": null,
           "register": "advanced/literary",
           "hint": "An action or feeling reaches a limit and leads to another action.",
-          "description": "An action or feeling reaches a limit and leads to another action.",
+          "description": "An action or feeling reaches a limit and leads to another action. It describes emotion or behavior becoming so intense that it exceeds normal limits.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-다 못해",
+          "structurePattern": "[Verb/adjective stem] + -다 못해",
           "relatedPointIds": [
             "gp_t2l5_gineunkeonyeong"
           ],
@@ -1324,18 +1324,18 @@
         {
           "id": "gp_t2l6_eodaeda",
           "title": "-아/어 대다",
-          "category": "grammar pattern",
+          "category": "repetition",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Describe someone doing an action repeatedly and excessively, often annoyingly.",
-          "description": "Describe someone doing an action repeatedly and excessively, often annoyingly.",
+          "description": "Describe someone doing an action repeatedly and excessively, often annoyingly. It describes actions being carried out repeatedly, often excessively or noisily.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-아/어 대다",
+          "structurePattern": "[Verb/adjective stem] + -아/어 대다",
           "relatedPointIds": [
             "gp_go_itda"
           ],
@@ -1416,18 +1416,18 @@
         {
           "id": "gp_t2l6_dasipi_hada",
           "title": "-다시피 하다",
-          "category": "grammar pattern",
+          "category": "approximation",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Express that an action happens almost completely or practically to an extreme.",
-          "description": "Express that an action happens almost completely or practically to an extreme.",
+          "description": "Express that an action happens almost completely or practically to an extreme. It expresses that someone almost does an action or does it to a great degree.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-다시피 하다",
+          "structurePattern": "[Verb/adjective stem] + -다시피 하다",
           "relatedPointIds": [
             "gp_t2l6_dasipi"
           ],
@@ -1502,18 +1502,18 @@
         {
           "id": "gp_t2l6_dasipi",
           "title": "-다시피 (as you can see)",
-          "category": "grammar pattern",
+          "category": "evidence",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Refer to evidence already visible or known to the listener: 'as you know / as you saw'.",
-          "description": "Refer to evidence already visible or known to the listener: 'as you know / as you saw'.",
+          "description": "Refer to evidence already visible or known to the listener: 'as you know / as you saw'. It appeals to something the listener can already observe or knows.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-다시피 (as you can see)",
+          "structurePattern": "[Verb/adjective stem] + -다시피 (as you can see)",
           "relatedPointIds": [
             "gp_t2l6_dasipi_hada"
           ],
@@ -1588,18 +1588,18 @@
         {
           "id": "gp_t2l6_gie_mangjeong",
           "title": "-기에 망정이지",
-          "category": "grammar pattern",
+          "category": "fortunate cause",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Say that a fortunate cause prevented a worse result: 'it's a good thing X happened'.",
-          "description": "Say that a fortunate cause prevented a worse result: 'it's a good thing X happened'.",
+          "description": "Say that a fortunate cause prevented a worse result: 'it's a good thing X happened'. It says that something fortunately happened, preventing an unfavorable alternative.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-기에 망정이지",
+          "structurePattern": "[Verb/adjective stem] + -기에 망정이지",
           "relatedPointIds": [
             "gp_t2l3_eulppeon"
           ],
@@ -1674,18 +1674,18 @@
         {
           "id": "gp_t2l6_neunga_hamyeon",
           "title": "-는가 하면",
-          "category": "grammar pattern",
+          "category": "contrast",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Contrast different situations within one topic: 'on one hand..., on the other...'.",
-          "description": "Contrast different situations within one topic: 'on one hand..., on the other...'.",
+          "description": "Contrast different situations within one topic: 'on one hand..., on the other...'. It juxtaposes different situations or behaviors, sometimes within one subject.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-는가 하면",
+          "structurePattern": "[Verb/adjective stem] + -는가 하면",
           "relatedPointIds": [
             "gp_t2l3_banmyeone"
           ],
@@ -1766,18 +1766,18 @@
         {
           "id": "gp_t2l6_gi_nareum",
           "title": "-기 나름이다",
-          "category": "grammar pattern",
+          "category": "dependence",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Say an outcome depends on how someone approaches or handles an action.",
-          "description": "Say an outcome depends on how someone approaches or handles an action.",
+          "description": "Say an outcome depends on how someone approaches or handles an action. It makes the result depend on how a person approaches the task.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-기 나름이다",
+          "structurePattern": "[Verb/adjective stem] + -기 나름이다",
           "relatedPointIds": [
             "gp_t2l5_neun_mankeum"
           ],
@@ -1852,18 +1852,18 @@
         {
           "id": "gp_t2l6_eul_beopdo",
           "title": "-(으)ㄹ 법도 하다",
-          "category": "grammar pattern",
+          "category": "plausibility",
           "tense": null,
           "register": "advanced/literary",
           "hint": "Say that a feeling, action or outcome would be understandable or plausible.",
-          "description": "Say that a feeling, action or outcome would be understandable or plausible.",
+          "description": "Say that a feeling, action or outcome would be understandable or plausible. It states that a certain outcome or behavior would be reasonable or unsurprising.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-(으)ㄹ 법도 하다",
+          "structurePattern": "[Verb/adjective stem] + -(으)ㄹ 법도 하다",
           "relatedPointIds": [
             "gp_t2l4_eulliga"
           ],
@@ -1938,18 +1938,18 @@
         {
           "id": "gp_t2l6_eurira",
           "title": "-(으)리라",
-          "category": "grammar pattern",
+          "category": "literary prediction",
           "tense": null,
-          "register": "advanced/literary",
+          "register": "formal / literary",
           "hint": "Express a solemn prediction, resolution or conviction in literary/formal style.",
-          "description": "Express a solemn prediction, resolution or conviction in literary/formal style.",
+          "description": "Express a solemn prediction, resolution or conviction in literary/formal style. It conveys a literary prediction or solemn resolve about the future.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-(으)리라",
+          "structurePattern": "[Verb/adjective stem] + -(으)리라",
           "relatedPointIds": [
             "gp_eul_geoyeyo"
           ],
@@ -2024,18 +2024,18 @@
         {
           "id": "gp_t2l6_noramyeon",
           "title": "-노라면",
-          "category": "grammar pattern",
+          "category": "literary condition",
           "tense": null,
-          "register": "advanced/literary",
+          "register": "formal / literary",
           "hint": "Present what one comes to realize or encounter while continuing an action over time.",
-          "description": "Present what one comes to realize or encounter while continuing an action over time.",
+          "description": "Present what one comes to realize or encounter while continuing an action over time. It describes an eventual result from continuing an action over time.",
           "level": 6,
           "tags": [
             "TOPIK2",
             "level6",
             "grammar"
           ],
-          "structurePattern": "-노라면",
+          "structurePattern": "[Verb/adjective stem] + -노라면",
           "relatedPointIds": [
             "gp_t2l3_dabonikka"
           ],
