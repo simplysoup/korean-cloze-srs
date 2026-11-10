@@ -1,7 +1,7 @@
 import {
   activateVerifiedAccount, clearSessionToken, clearSessionUserId,
   endAccountSession, getAccountSessionLease, getState, initStore,
-  isAccountSessionLeaseCurrent, markDirty, persistNow,
+  isAccountSessionLeaseCurrent, markDirty, persistNow, recoverVerifiedLegacyState,
   setSessionToken, setSessionUserId, trustDevice,
 } from '../../state';
 import { recordServerUser } from '../../auth';
@@ -178,6 +178,42 @@ describe('account-scoped real web state (synthetic IDB, no production users)', (
     while (delayedReads.length) delayedReads.shift()!();
     expect(await loadA).toBe(false);
     expect(getState().doc.reviewLogs[0].id).toBe('B-log');
+  });
+
+  test('proven legacy recovery retains exact logs and leaves original untouched', async () => {
+    endAccountSession();
+    login('A');
+    expect(await activateVerifiedAccount('A')).toBe(true);
+    const authoritative = {
+      ...getState().doc,
+      user: { username: 'A', email: 'a@example.com' },
+      reviewLogs: getState().doc.reviewLogs.map((entry) => ({ ...entry })),
+    };
+    const extra = { ...authoritative.reviewLogs[0], id: 'offline-unsynced-A' };
+    const legacy = {
+      doc: {
+        ...authoritative,
+        reviewLogs: [...authoritative.reviewLogs, extra],
+      },
+      lastSyncedVersion: 1,
+      lastSyncedAt: null,
+      syncDirty: true,
+    };
+    rows.set('state-v1', legacy);
+    const lease = getAccountSessionLease()!;
+    expect(await recoverVerifiedLegacyState(authoritative, lease)).toBe(true);
+    expect(getState().doc.reviewLogs.map((entry) => entry.id).sort()).toEqual(['A-log', 'offline-unsynced-A']);
+    expect(rows.get('state-v1')).toBe(legacy);
+
+    endAccountSession();
+    login('B');
+    expect(await activateVerifiedAccount('B')).toBe(true);
+    const remoteB = {
+      ...getState().doc, user: { username: 'B', email: 'b@example.com' },
+      reviewLogs: authoritative.reviewLogs,
+    };
+    expect(await recoverVerifiedLegacyState(remoteB, getAccountSessionLease()!)).toBe(false);
+    expect(getState().doc.reviewLogs.map((entry) => entry.id)).toEqual(['B-log']);
   });
 
   test('storage event from another tab revokes in-memory read access', async () => {
