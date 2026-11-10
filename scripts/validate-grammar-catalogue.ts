@@ -8,6 +8,7 @@ import assert from 'node:assert/strict';
 import { allLessons as level1Lessons } from '../prisma/seed-data/topik1-level1';
 import { level1Additions } from '../prisma/seed-data/topik1-level1/additions';
 import { allLessons as level2Lessons } from '../prisma/seed-data/topik1-level2';
+import { teachingGuides } from '../prisma/seed-data/teaching-guides';
 
 const lessons = [...level1Lessons, ...level2Lessons];
 const expected = { lessons: 22, grammarPoints: 102, examples: 217, cards: 340 };
@@ -49,6 +50,32 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
     const review = [...gp.cards, ...(addition?.cards ?? [])];
     if (!gp.structurePattern?.trim()) errors.push(`${gp.id}: missing grammar structure`);
     if (!gp.description?.trim()) errors.push(`${gp.id}: missing explanation`);
+    // A usable lesson must teach its mechanism, not merely state a translation.
+    const guide = teachingGuides[gp.id];
+    if (!guide) {
+      errors.push(`${gp.id}: missing authored teaching guide`);
+    } else {
+      for (const field of ['meaning', 'formation', 'worked', 'trap'] as const) {
+        if (guide[field].trim().length < 55) {
+          errors.push(`${gp.id}: ${field} is too short to explain the idea to a beginner`);
+        }
+      }
+      if (gp.description !== guide.meaning) {
+        errors.push(`${gp.id}: plain-English description did not reach the lesson`);
+      }
+      const titles = new Set((gp.notes ?? []).map((note) => note.title));
+      for (const title of ['Build it step by step', 'Worked example', 'Common trap']) {
+        if (!titles.has(title)) errors.push(`${gp.id}: missing ${title} teaching note`);
+      }
+      const worked = gp.notes?.find((note) => note.title === 'Worked example');
+      if (worked && !worked.content.includes(gp.lessonExamples[0]?.fullSentence ?? '')) {
+        errors.push(`${gp.id}: worked breakdown does not reference its actual lesson example`);
+      }
+    }
+    if (gp.id === 'gp_ani_eyo' && gp.cards.some((card) => !card.answer.includes('아니에요'))) {
+      errors.push('Noun negation cards must test 아니에요, not just 이/가 particles');
+    }
+
     if (ex.length < 2) errors.push(`${gp.id}: fewer than 2 worked examples`);
     if (review.length < 3) errors.push(`${gp.id}: fewer than 3 review cards`);
     for (const item of ex) {
@@ -77,6 +104,9 @@ for (const gp of lessons.flatMap((lesson) => lesson.grammarPoints)) {
       if (!points.has(target.grammarPointId)) errors.push(`${card.id}: unknown extra grammar target ${target.grammarPointId}`);
     }
   }
+}
+for (const guideId of Object.keys(teachingGuides)) {
+  if (!points.has(guideId)) errors.push(`Orphan teaching guide for ${guideId}`);
 }
 for (const gpId of Object.keys(level1Additions)) {
   if (!points.has(gpId)) errors.push(`Unattached additions for ${gpId}`);
