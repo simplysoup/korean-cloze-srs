@@ -25,6 +25,7 @@ export type ReadingPassage = {
   titleEn: string;
   situation: string;
   prerequisiteGrammarIds: string[];
+  prerequisiteGrammarLabels: string[];
   paragraphs: string[];
   wordCount: number;
   vocabularyNotes: { term: string; gloss: string; moveToGeneralVocabulary: boolean }[];

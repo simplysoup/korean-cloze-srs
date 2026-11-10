@@ -13,8 +13,8 @@ const problems = [];
 const assert = (test, message) => { if (!test) problems.push(message); };
 const isText = (value, min = 1) => typeof value === 'string' && value.trim().length >= min;
 const grammarFiles = ['topik1-level1', 'topik1-level2', 'topik2-level3', 'topik2-level4', 'topik2-level5', 'topik2-level6'];
-const grammar = new Set(grammarFiles.flatMap((name) => read('mobile/src/content/' + name + '.json')
-  .lessons.flatMap((lesson) => lesson.grammarPoints.map((point) => point.id))));
+const grammar = new Map(grammarFiles.flatMap((name) => read('mobile/src/content/' + name + '.json')
+  .lessons.flatMap((lesson) => lesson.grammarPoints.map((point) => [point.id, point.title]))));
 assert(JSON.stringify(data) === JSON.stringify(port), 'Generated mobile content is stale; run port-comprehension.mjs.');
 assert(data.type === 'comprehension-pilot' && data.schemaVersion === 1, 'Unexpected schema.');
 assert(isText(data.provenance, 60), 'Original authorship provenance missing.');
@@ -40,6 +40,9 @@ for (const passage of data.passages ?? []) {
   assert(Array.isArray(passage.prerequisiteGrammarIds) && passage.prerequisiteGrammarIds.length > 0, passage.id + ': missing grammar prerequisites.');
   assert(new Set(passage.prerequisiteGrammarIds).size === passage.prerequisiteGrammarIds.length, passage.id + ': duplicate prerequisites.');
   for (const id of passage.prerequisiteGrammarIds ?? []) assert(grammar.has(id), passage.id + ': unresolved grammar ID ' + id);
+  assert(passage.prerequisiteGrammarLabels?.length === passage.prerequisiteGrammarIds?.length, passage.id + ': missing prerequisite titles.');
+  for (let i = 0; i < (passage.prerequisiteGrammarIds?.length ?? 0); i++)
+    assert(grammar.get(passage.prerequisiteGrammarIds[i]) === passage.prerequisiteGrammarLabels?.[i], passage.id + ': stale grammar title at index ' + i);
   assert(Array.isArray(passage.vocabularyNotes) && passage.vocabularyNotes.length >= 4, passage.id + ': not enough glosses.');
   for (const gloss of passage.vocabularyNotes ?? []) {
     assert(isText(gloss.term) && isText(gloss.gloss) && gloss.moveToGeneralVocabulary === true, passage.id + ': invalid glossary entry.');

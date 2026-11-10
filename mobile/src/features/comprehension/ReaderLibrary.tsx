@@ -53,6 +53,7 @@ export default function ReaderLibrary() {
           <Text style={[commonStyles.muted, styles.prerequisites]}>
             {passage.prerequisiteGrammarIds.length} grammar prerequisites · {passage.vocabularyNotes.length} optional word glosses
           </Text>
+          <Text style={styles.prerequisiteText}>Prerequisites: {passage.prerequisiteGrammarLabels.join(' · ')}</Text>
           <Text style={styles.draftLabel}>Educator review pending</Text>
           <Link href={{ pathname: '/comprehension/[id]', params: { id: passage.id } }} asChild>
             <Pressable
@@ -86,6 +87,7 @@ const styles = StyleSheet.create({
   koreanTitle: { fontSize: 23, fontWeight: '700', color: colors.text },
   englishTitle: { fontSize: 15, color: colors.text, fontWeight: '600' },
   prerequisites: { marginTop: 4 },
+  prerequisiteText: { color: colors.muted, fontSize: 13, lineHeight: 20 },
   draftLabel: { fontSize: 12, color: colors.orange, fontWeight: '700' },
   startButton: { marginTop: 8 },
 });

@@ -148,6 +148,7 @@ function ReadingActivity({ passage }: { passage: ReadingPassage }) {
           <Text style={[commonStyles.body, styles.instruction]}>
             Read the full passage. Vocabulary glosses are optional. An English translation is deliberately not provided during assessment.
           </Text>
+          <Text style={[commonStyles.muted, styles.hint]}>Prerequisites: {passage.prerequisiteGrammarLabels.join(' · ')}</Text>
           {passageText}
           <Text style={[commonStyles.muted, styles.hint]}>
             This is a reading-only pilot. Your answers will not modify grammar SRS progress.

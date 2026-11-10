@@ -15,6 +15,7 @@ describe('reading pilot catalogue', () => {
     for (const p of passages) {
       expect(ids.has(p.id)).toBe(false); ids.add(p.id);
       expect(p.prerequisiteGrammarIds.length).toBeGreaterThan(0);
+      expect(p.prerequisiteGrammarLabels).toHaveLength(p.prerequisiteGrammarIds.length);
       expect(p.editorialStatus).toBe('editorial-draft');
       expect(p.educatorReviewed).toBe(false);
       for (const q of p.questions) {
