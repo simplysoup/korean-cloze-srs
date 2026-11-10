@@ -148,10 +148,10 @@
           },
           {
             "id": "le_gap_honorific_special_verbs_02",
-            "fullSentence": "아버지가 식사하세요?",
-            "sentenceWithBlank": "아버지가 ___?",
-            "answer": "식사하세요",
-            "englishHint": "Is Father having a meal?",
+            "fullSentence": "아버지가 밥을 드세요?",
+            "sentenceWithBlank": "아버지가 밥을 ___?",
+            "answer": "드세요",
+            "englishHint": "Is Father eating? (respectfully)",
             "order": 1
           }
         ],
@@ -618,16 +618,16 @@
           {
             "id": "le_gap_indefinite_negation_01",
             "fullSentence": "아무도 안 왔어요.",
-            "sentenceWithBlank": "___ 안 왔어요.",
-            "answer": "아무도",
+            "sentenceWithBlank": "___ 왔어요.",
+            "answer": "아무도 안",
             "englishHint": "Nobody came.",
             "order": 0
           },
           {
             "id": "le_gap_indefinite_negation_02",
             "fullSentence": "아무것도 안 먹었어요.",
-            "sentenceWithBlank": "___ 안 먹었어요.",
-            "answer": "아무것도",
+            "sentenceWithBlank": "___ 먹었어요.",
+            "answer": "아무것도 안",
             "englishHint": "I didn't eat anything.",
             "order": 1
           }
@@ -635,10 +635,10 @@
         "cards": [
           {
             "id": "cc_gap_indefinite_negation_01",
-            "fullSentence": "아무도 없어요.",
-            "sentenceWithBlank": "___ 없어요.",
-            "answer": "아무도",
-            "englishHint": "Nobody is here.",
+            "fullSentence": "오늘 아무도 안 와요.",
+            "sentenceWithBlank": "오늘 ___ 와요.",
+            "answer": "아무도 안",
+            "englishHint": "Nobody is coming today.",
             "alternateAnswers": [],
             "vocabBaseForm": "아무도",
             "introducedAtPosition": 0
@@ -646,8 +646,8 @@
           {
             "id": "cc_gap_indefinite_negation_02",
             "fullSentence": "아무것도 못 봤어요.",
-            "sentenceWithBlank": "___ 못 봤어요.",
-            "answer": "아무것도",
+            "sentenceWithBlank": "___ 봤어요.",
+            "answer": "아무것도 못",
             "englishHint": "I couldn't see anything.",
             "alternateAnswers": [],
             "vocabBaseForm": "아무것도",
@@ -655,10 +655,10 @@
           },
           {
             "id": "cc_gap_indefinite_negation_03",
-            "fullSentence": "아무도 몰라요.",
-            "sentenceWithBlank": "___ 몰라요.",
-            "answer": "아무도",
-            "englishHint": "Nobody knows.",
+            "fullSentence": "이 방에는 아무도 안 살아요.",
+            "sentenceWithBlank": "이 방에는 ___ 살아요.",
+            "answer": "아무도 안",
+            "englishHint": "Nobody lives in this room.",
             "alternateAnswers": [],
             "vocabBaseForm": "아무도",
             "introducedAtPosition": 0

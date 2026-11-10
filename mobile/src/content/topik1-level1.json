@@ -1673,20 +1673,20 @@
           "cards": [
             {
               "id": "cc_gap_reu_irregular_01",
-              "fullSentence": "시간이 빨라요.",
-              "sentenceWithBlank": "시간이 ___.",
+              "fullSentence": "기차가 빨라요.",
+              "sentenceWithBlank": "기차가 ___.",
               "answer": "빨라요",
-              "englishHint": "Time passes quickly.",
+              "englishHint": "The train is fast.",
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 16
             },
             {
               "id": "cc_gap_reu_irregular_02",
-              "fullSentence": "길이 달라요.",
-              "sentenceWithBlank": "길이 ___.",
+              "fullSentence": "생각이 달라요.",
+              "sentenceWithBlank": "생각이 ___.",
               "answer": "달라요",
-              "englishHint": "The road is different.",
+              "englishHint": "Our thoughts are different.",
               "alternateAnswers": [],
               "vocabBaseForm": "",
               "introducedAtPosition": 16
@@ -3911,10 +3911,10 @@
             },
             {
               "id": "le_gap_s_irregular_02",
-              "fullSentence": "감기가 나아요.",
-              "sentenceWithBlank": "감기가 ___.",
+              "fullSentence": "상처가 나아요.",
+              "sentenceWithBlank": "상처가 ___.",
               "answer": "나아요",
-              "englishHint": "The cold gets better.",
+              "englishHint": "The wound is healing.",
               "order": 1
             }
           ],
@@ -3998,10 +3998,10 @@
             },
             {
               "id": "le_gap_h_irregular_02",
-              "fullSentence": "그 말이 그래요?",
-              "sentenceWithBlank": "그 말이 ___?",
+              "fullSentence": "왜 그래요?",
+              "sentenceWithBlank": "왜 ___?",
               "answer": "그래요",
-              "englishHint": "Is that really so?",
+              "englishHint": "What's wrong?",
               "order": 1
             }
           ],

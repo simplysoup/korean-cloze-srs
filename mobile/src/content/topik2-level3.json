@@ -319,10 +319,10 @@
             },
             {
               "id": "le_gap_passive_eojida_02",
-              "fullSentence": "이 문장은 잘 써져요.",
-              "sentenceWithBlank": "이 문장은 잘 ___.",
+              "fullSentence": "이 펜은 잘 써져요.",
+              "sentenceWithBlank": "이 펜은 잘 ___.",
               "answer": "써져요",
-              "englishHint": "This sentence is easy to write.",
+              "englishHint": "This pen writes smoothly.",
               "order": 1
             }
           ],
