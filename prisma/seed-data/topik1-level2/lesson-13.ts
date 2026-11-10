@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 import { grammarGapPoints } from '../grammar-gaps';
 
 // Lesson 13 — Formal Speech and Everyday Rules
@@ -9,8 +10,8 @@ import { grammarGapPoints } from '../grammar-gaps';
 //   59. -아/어도 되다
 //   60. -(으)면 안 되다
 //   61. -지 마세요
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson13: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson13: LessonSeed = teachLesson({
   lessonNumber: 13,
   title: "Formal Speech and Everyday Rules",
   grammarPoints: [
@@ -131,4 +132,4 @@ export const lesson13: LessonSeed = {
       ]
     },
   ]
-};
+});

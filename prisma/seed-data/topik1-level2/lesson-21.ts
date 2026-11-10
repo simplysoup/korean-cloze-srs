@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 21 — Unexpected Results and Concessions
 // Grammar points (positions 94–98):
@@ -7,8 +8,8 @@ import type { LessonSeed } from '../types';
 //   96. 그런데
 //   97. -고 난 후에
 //   98. -아/어서 (sequence)
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson21: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson21: LessonSeed = teachLesson({
   lessonNumber: 21,
   title: "Unexpected Results and Concessions",
   grammarPoints: [
@@ -128,4 +129,4 @@ export const lesson21: LessonSeed = {
       ]
     },
   ]
-};
+});

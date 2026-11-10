@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 19 — Changes and Prepared Results
 // Grammar points (positions 85–88):
@@ -6,8 +7,8 @@ import type { LessonSeed } from '../types';
 //   86. -게
 //   87. -게 되다
 //   88. -아/어 두다
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson19: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson19: LessonSeed = teachLesson({
   lessonNumber: 19,
   title: "Changes and Prepared Results",
   grammarPoints: [
@@ -104,4 +105,4 @@ export const lesson19: LessonSeed = {
       ]
     },
   ]
-};
+});

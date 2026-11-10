@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 14 — Before, After and When
 // Grammar points (positions 62–66):
@@ -7,8 +8,8 @@ import type { LessonSeed } from '../types';
 //   64. -(으)ㄴ 후에
 //   65. -기 전에
 //   66. -(으)ㄹ 때
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson14: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson14: LessonSeed = teachLesson({
   lessonNumber: 14,
   title: "Before, After and When",
   grammarPoints: [
@@ -128,4 +129,4 @@ export const lesson14: LessonSeed = {
       ]
     },
   ]
-};
+});

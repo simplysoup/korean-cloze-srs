@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 15 — Ongoing Actions and Choices
 // Grammar points (positions 67–70):
@@ -6,8 +7,8 @@ import type { LessonSeed } from '../types';
 //   68. -는 중이다
 //   69. -거나
 //   70. (이)나
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson15: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson15: LessonSeed = teachLesson({
   lessonNumber: 15,
   title: "Ongoing Actions and Choices",
   grammarPoints: [
@@ -104,4 +105,4 @@ export const lesson15: LessonSeed = {
       ]
     },
   ]
-};
+});

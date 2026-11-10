@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 12 — Plans, Invitations and Purposes
 // Grammar points (positions 51–55):
@@ -7,8 +8,8 @@ import type { LessonSeed } from '../types';
 //   53. -(으)려고 하다
 //   54. -(으)러 가다
 //   55. -(으)ㅂ시다
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson12: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson12: LessonSeed = teachLesson({
   lessonNumber: 12,
   title: "Plans, Invitations and Purposes",
   grammarPoints: [
@@ -128,4 +129,4 @@ export const lesson12: LessonSeed = {
       ]
     },
   ]
-};
+});

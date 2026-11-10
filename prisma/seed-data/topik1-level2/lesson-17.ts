@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 17 — Trying Things and Talking About Experience
 // Grammar points (positions 75–79):
@@ -7,8 +8,8 @@ import type { LessonSeed } from '../types';
 //   77. -아/어 본 적이 있다
 //   78. -기로 하다
 //   79. -(으)ㄹ 것 같다
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson17: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson17: LessonSeed = teachLesson({
   lessonNumber: 17,
   title: "Trying Things and Talking About Experience",
   grammarPoints: [
@@ -128,4 +129,4 @@ export const lesson17: LessonSeed = {
       ]
     },
   ]
-};
+});

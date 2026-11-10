@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 20 — Comparisons and Everyday Quantities
 // Grammar points (positions 89–93):
@@ -7,8 +8,8 @@ import type { LessonSeed } from '../types';
 //   91. (으)로
 //   92. 마다
 //   93. 밖에
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson20: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson20: LessonSeed = teachLesson({
   lessonNumber: 20,
   title: "Comparisons and Everyday Quantities",
   grammarPoints: [
@@ -128,4 +129,4 @@ export const lesson20: LessonSeed = {
       ]
     },
   ]
-};
+});

@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 22 — Optional Bridge: Reporting What People Say
 // Grammar points (positions 99–102):
@@ -6,8 +7,8 @@ import type { LessonSeed } from '../types';
 //   100. -다고 하다 (adjective)
 //   101. (이)라고 하다
 //   102. -다고요?
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson22: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson22: LessonSeed = teachLesson({
   lessonNumber: 22,
   title: "Optional Bridge: Reporting What People Say",
   grammarPoints: [
@@ -104,4 +105,4 @@ export const lesson22: LessonSeed = {
       ]
     },
   ]
-};
+});

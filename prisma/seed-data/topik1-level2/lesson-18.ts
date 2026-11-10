@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 18 — Giving Reasons and Background
 // Grammar points (positions 80–84):
@@ -7,8 +8,8 @@ import type { LessonSeed } from '../types';
 //   82. -(으)ㄴ데
 //   83. -(이)ㄴ데
 //   84. -(으)면서
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson18: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson18: LessonSeed = teachLesson({
   lessonNumber: 18,
   title: "Giving Reasons and Background",
   grammarPoints: [
@@ -128,4 +129,4 @@ export const lesson18: LessonSeed = {
       ]
     },
   ]
-};
+});

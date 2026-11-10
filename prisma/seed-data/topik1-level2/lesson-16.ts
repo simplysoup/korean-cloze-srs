@@ -1,4 +1,5 @@
 import type { LessonSeed } from '../types';
+import { teachLesson } from '../teaching-guides';
 
 // Lesson 16 — Describing People and Things
 // Grammar points (positions 71–74):
@@ -6,8 +7,8 @@ import type { LessonSeed } from '../types';
 //   72. -(으)ㄴ N (action)
 //   73. -(으)ㄹ N
 //   74. -는 것
-// Available: all corrected Level 1 grammar (positions 3–50); Level 2 is cumulative.
-export const lesson16: LessonSeed = {
+// Available: all Level 1 grammar (positions 1–50); Level 2 is cumulative.
+export const lesson16: LessonSeed = teachLesson({
   lessonNumber: 16,
   title: "Describing People and Things",
   grammarPoints: [
@@ -104,4 +105,4 @@ export const lesson16: LessonSeed = {
       ]
     },
   ]
-};
+});
