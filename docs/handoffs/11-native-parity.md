@@ -42,7 +42,7 @@ After migrating that same test profile in an Expo native build:
 
 `python3 scripts/native-parity/verify_sqlite.py --db AFTER.db --compare before.json`
 
-The verifier compares all authored grammar, clozes, alternatives, target fields, examples, ordering, and deck associations directly to the six JSON bundles; flags extra/missing records, duplicate or orphaned relations; and checks exact user-table records, settings, and sync meta (excluding only `contentVersion` and `libraryMigrated` markers). It opens the exported SQLite file in read-only mode. On a legacy pre-library migration, expected new `library_decks` associations will require explicit review rather than silent exemption.
+The verifier compares all authored grammar, clozes, alternatives, target fields, examples, ordering, and deck associations directly to the six JSON bundles; flags extra/missing records, duplicate or orphaned relations; and checks exact user-table records, settings, and sync meta (excluding only `contentVersion` and `libraryMigrated` markers). **The snapshot contains only table row counts and SHA-256 digests, not emails, credentials, tokens or review records.** It opens the exported SQLite file in read-only mode. On a legacy pre-library migration, expected new `library_decks` associations will require explicit review rather than silent exemption.
 
 **CI (first two commits):** successful Mobile (Expo) GitHub Actions runs: content validators, `npm run typecheck`, `npm test -- --ci`, and web export. The workflow does not run `npm run lint`, nor does it provide an Android/iOS emulator. The read-only SQLite verifier still requires an exported test database to execute.
 
