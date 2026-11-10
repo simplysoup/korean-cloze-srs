@@ -32,7 +32,8 @@ const summary = { byType:{}, byTier:{}, byStatus:{}, findings:{blocker:0, needs_
 const normalize = x => String(x ?? "").normalize("NFC").trim();
 const fingerprint = item => createHash("sha256").update(JSON.stringify([
   item.type,item.id,item.korean,item.english,item.targetConstruction,
-  item.canonicalAnswer,item.acceptedAlternatives,item.explanation
+  item.canonicalAnswer,item.acceptedAlternatives,item.alternativeAssessments,
+  item.nearMisses,item.contextualFlags,item.explanation
 ])).digest("hex");
 const hasText = x => typeof x === "string" && Boolean(x.trim());
 const load = (relative, optional=false) => {
@@ -53,7 +54,8 @@ const add = obj => {
     id:obj.id,type:obj.type,source:obj.source,grammarPointId:obj.grammarPointId || null,
     level:obj.level ?? null, korean:obj.korean || "", english:obj.english || "",
     targetConstruction:obj.targetConstruction || "",canonicalAnswer:obj.canonicalAnswer || "",
-    acceptedAlternatives:obj.acceptedAlternatives || [],nearMisses:obj.nearMisses || [],
+    acceptedAlternatives:obj.acceptedAlternatives || [],alternativeAssessments:obj.alternativeAssessments || [],
+    nearMisses:obj.nearMisses || [],
     explanation:obj.explanation || "",referenceEvidence:obj.referenceEvidence || [],
     evidenceClassification:obj.evidenceClassification || "not_recorded",
     reviewQuestions:obj.reviewQuestions || [],
@@ -175,6 +177,7 @@ for (let level = 1; level <= 6; level++) {
         korean:card.fullSentence,english:card.englishHint,targetConstruction:gp.title,
         canonicalAnswer:card.answer,sentenceWithBlank:card.sentenceWithBlank,isCloze:true,
         acceptedAlternatives:card.alternateAnswers || [],
+        alternativeAssessments:[...(assessments || []),...(annotated?.acceptedAlternatives || [])],
         nearMisses:annotated?.nearMissExamples || [],
         contextualFlags:unique([...(fix?.originalFlags || []),...(legacy.queue || []).find(q=>q.cardId===card.id)?.flags || []]),
         explanation:explanationFor(gp),referenceEvidence:evidence,evidenceClassification:ledgerRow?.evidenceStatus,
@@ -182,7 +185,8 @@ for (let level = 1; level <= 6; level++) {
           "Is the complete Korean sentence natural and accurately translated?",
           "Is the cloze cue unambiguous in discourse and appropriate for this register?",
           (card.alternateAnswers || []).length ? "For each accepted alternative, is the full sentence natural AND does it demonstrate target-grammar mastery?" : null,
-          annotated?.nearMissExamples?.length ? "Are the proposed near-miss classifications and targeted hints correct?" : null
+          annotated?.nearMissExamples?.length ? "Are the proposed near-miss classifications and targeted hints correct?" : null,
+          (legacy.queue || []).find(q=>q.cardId===card.id)?.existingVariantReview?.educatorQuestion || null
         ])});
     }
   }
@@ -299,6 +303,15 @@ for (const review of registry.reviews || []) {
   item.reviewStatus = STATUS.has(review.status) ? review.status : "not_reviewed";
   item.reviewer = review.reviewer || null;item.reviewDate = review.reviewDate || null;
   const history = review.history || [];
+  if (Array.isArray(history)) {
+    for (const [i,event] of history.entries()) {
+      if (!STATUS.has(event.status) || !/^\d{4}-\d{2}-\d{2}$/.test(event.date || "") ||
+          !hasText(event.actor) || !hasText(event.sourceFingerprint))
+        issue("blocker","invalid_decision_history",id,"History event needs allowed status, date, actor and fingerprint",REVIEW_FILE);
+      if (i && event.date < history[i-1].date)
+        issue("blocker","out_of_order_decision_history",id,"History dates must be chronological",REVIEW_FILE);
+    }
+  }
   if (!Array.isArray(history) || (review.status !== "not_reviewed" && !history.length))
     issue("blocker","missing_decision_trail",id,"Nondefault review states require append-only history",REVIEW_FILE);
   else if (history.length && history[history.length-1].status !== review.status)
@@ -360,7 +373,7 @@ const packetEntry = x => ({
   sourceItemId:x.id,source:x.source,itemType:x.type,priorityTier:x.tier,priorityReasons:x.tierReasons,
   koreanText:x.korean,englishMeaning:x.english,targetConstruction:x.targetConstruction,
   proposedCanonicalAnswer:x.canonicalAnswer,acceptedAlternatives:x.acceptedAlternatives,
-  suspectedNearMisses:x.nearMisses,explanation:x.explanation,
+  alternativeAssessments:x.alternativeAssessments,suspectedNearMisses:x.nearMisses,explanation:x.explanation,
   formationAccuracy:"not_reviewed",semanticAccuracy:"not_reviewed",registerAppropriateness:"not_reviewed",
   pragmaticNaturalness:"not_reviewed",morphologicalCorrectness:"not_reviewed",
   lexicalRestrictions:"not_reviewed",promptClarity:"not_reviewed",
@@ -388,7 +401,8 @@ const packetMd = rows => {
       "- Target: " + x.targetConstruction,
       "- Canonical answer: " + (x.proposedCanonicalAnswer || "(not a cloze)"),
       "- Accepted alternatives: " + (x.acceptedAlternatives.map(a=>typeof a==="string"?a:a.input).join("; ") || "(none listed)"),
-      "- Suspected near misses: " + (x.suspectedNearMisses.map(a=>(a.input || "")+" ["+(a.classification||"unclassified")+"]").join("; ") || "(none listed)"),
+      "- Proposed variant classifications: " + (x.alternativeAssessments.map(a=>(a.input || "")+" ["+(a.classification||"unclassified")+"] "+(a.nuance||a.explanation||"")).join("; ") || "(none recorded)"),
+      "- Suspected near misses: " + (x.suspectedNearMisses.map(a=>(a.input || "")+" ["+(a.classification||"unclassified")+"] "+(a.feedback||"")).join("; ") || "(none listed)"),
       "- Evidence classification: " + x.evidenceClassification,
       "- Source fingerprint: " + x.sourceFingerprint,
       "",
