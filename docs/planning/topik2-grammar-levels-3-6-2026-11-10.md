@@ -85,6 +85,26 @@ The file format matches `ContentBundle` and `GrammarPointSeed`, preserving the e
 
 `mobile/src/db/index.ts` now loads all six content bundles, bumps `CONTENT_VERSION`, and upserts the four newly populated deck rows. The migration intentionally **does not delete or reset any review history** or replace existing TOPIK I point IDs. Existing progress for Levels 1–2 is preserved by ID.
 
+
+## Editorial quality hardening (2026-11-10)
+
+The 96 entries are no longer all filed under the unhelpful `grammar pattern` category. They now use functional labels such as **sequence**, **cause**, **contrast**, **reported speech**, **concession**, **counterfactual**, **limitation**, and **literary condition**. Every entry's plain-English `description` explains both what the pattern means and when it is useful; the separate worked and trap notes remain available in Learn.
+
+The structure field now states whether the pattern follows a verb/adjective stem or a noun. The authored source and mobile-generated copies were edited together, preserving each existing grammar-point/example/card ID and all position numbers.
+
+`scripts/validate-content.mjs` now blocks merging when Level 3–6 entries have generic categories, a one-line-only description, malformed cloze reconstruction, duplicated review-vs-worked sentences, missing teaching notes, or a worked note that does not refer to an actual example.
+
+### Important coverage gaps for a second edition
+
+This PR is a **curated initial grammar deck**, not comprehensive for TOPIK II. Priority patterns to add in subsequent content expansions include:
+- The **plain style -ㄴ/는다** and **informal speech -아/어 / -자** rather than only formal/polite endings;
+- **passive verbs** and **causative verbs**, which are productive grammatical systems, not vocabulary lists;
+- **retrospective -더라고요** and indirect evidence forms such as **-(으)ㄴ가 보다 / -나 보다**;
+- Written nominalization **-(으)ㅁ**, when distinguishing academic prose from conversational -기;
+- Other useful connectors and discourse patterns based on learner confusion data.
+
+These deserve full worked examples and explicit near-neighbor traps, not hurried single-card additions. The distinction matters because the official TOPIK II exam evaluates Levels 3–6 together; these app deck placements are curricular sequencing choices rather than an official NIIED-approved breakdown.
+
 ## Editorial cautions and release gates
 
 1. **Independent Korean educator/native review required** before publication. Structure validation does not ensure naturalness, especially for high-register patterns. Prefer reviewing awkward or context-dependent Level 5–6 examples first.
