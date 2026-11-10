@@ -43,7 +43,7 @@
       "priority": "initial",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
       "newGrammarPointIds": []
     },
     {
@@ -59,7 +59,7 @@
       "priority": "initial",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
       "newGrammarPointIds": []
     },
     {
@@ -75,7 +75,7 @@
       "priority": "initial",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
       "newGrammarPointIds": []
     },
     {
@@ -91,7 +91,7 @@
       "priority": "initial",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
       "newGrammarPointIds": []
     },
     {
@@ -107,7 +107,7 @@
       "priority": "initial",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
       "newGrammarPointIds": []
     },
     {
@@ -123,7 +123,7 @@
       "priority": "initial",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
       "newGrammarPointIds": []
     },
     {
@@ -139,7 +139,7 @@
       "priority": "initial",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
       "newGrammarPointIds": []
     },
     {
@@ -155,8 +155,16 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_b_irregular",
+        "gp_gap_d_irregular",
+        "gp_gap_s_irregular",
+        "gp_gap_reu_irregular",
+        "gp_gap_eu_drop",
+        "gp_gap_h_irregular",
+        "gp_gap_l_deletion"
+      ]
     },
     {
       "id": "grammar_negation_inability",
@@ -171,8 +179,10 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_neg_ji_mot"
+      ]
     },
     {
       "id": "grammar_noun_connectors",
@@ -187,8 +197,11 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_wa_gwa",
+        "gp_gap_irang"
+      ]
     },
     {
       "id": "grammar_recipients",
@@ -203,8 +216,12 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_recipient_ege_hante",
+        "gp_gap_source_hanteseo",
+        "gp_gap_benefactive_a_juda"
+      ]
     },
     {
       "id": "grammar_informal_plain_speech",
@@ -219,8 +236,11 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_informal_haeche",
+        "gp_gap_plain_declarative"
+      ]
     },
     {
       "id": "grammar_honorific_particles",
@@ -235,8 +255,12 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_subject_kkeseo",
+        "gp_gap_recipient_kke",
+        "gp_gap_honorific_special_verbs"
+      ]
     },
     {
       "id": "grammar_indefinite_negation",
@@ -250,8 +274,10 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_indefinite_negation"
+      ]
     },
     {
       "id": "grammar_get_intention_inference",
@@ -265,8 +291,11 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_get_intention",
+        "gp_gap_get_inference"
+      ]
     },
     {
       "id": "grammar_progressive_resultant",
@@ -281,8 +310,10 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_resultative_eo_itda"
+      ]
     },
     {
       "id": "grammar_passive",
@@ -296,8 +327,11 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_passive_suffix",
+        "gp_gap_passive_eojida"
+      ]
     },
     {
       "id": "grammar_causative",
@@ -311,8 +345,12 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_causative_suffix",
+        "gp_gap_ge_hada_action",
+        "gp_gap_ge_hada_state"
+      ]
     },
     {
       "id": "grammar_korean_desire_reporting",
@@ -326,8 +364,10 @@
       "priority": "medium",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_go_sipeohada"
+      ]
     },
     {
       "id": "grammar_retrospective_evidence",
@@ -341,8 +381,11 @@
       "priority": "medium",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_deoragoyo",
+        "gp_gap_na_boda"
+      ]
     },
     {
       "id": "grammar_written_nominalization",
@@ -356,8 +399,10 @@
       "priority": "medium",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
-      "newGrammarPointIds": []
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_eum_written_nominal"
+      ]
     },
     {
       "id": "topic_hangul_phonology",
@@ -372,7 +417,7 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "authored standalone pronunciation topic and 3 checks; no topic UI/audio",
       "newGrammarPointIds": []
     },
     {
@@ -388,7 +433,7 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "authored standalone speech-register topic and 3 checks; no topic UI",
       "newGrammarPointIds": []
     },
     {
@@ -404,7 +449,7 @@
       "priority": "high",
       "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
       "teacherReview": "pending",
-      "implementationStatus": "planned",
+      "implementationStatus": "authored counting and voice comparison topics, 6 mixed checks; no UI",
       "newGrammarPointIds": []
     }
   ]
