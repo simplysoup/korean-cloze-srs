@@ -1,0 +1,40 @@
+name: Agent 00 synthetic browser acceptance
+on:
+  push:
+    branches:
+      - qa/agent00-combined-dry-run-v1
+    paths:
+      - 'scripts/agent00-acceptance/**'
+      - '.github/workflows/agent00-acceptance.yml'
+      - 'mobile/**'
+jobs:
+  synthetic-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+          cache-dependency-path: mobile/package-lock.json
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install app dependencies
+        working-directory: mobile
+        run: npm ci
+      - name: Run separate lint gate
+        working-directory: mobile
+        run: npm run lint
+      - name: Run Agent 09 harness fixture and negative controls (NOT real server)
+        run: node --test scripts/sync-server-contract/run.test.mjs
+      - name: Export web build
+        working-directory: mobile
+        run: npx expo export --platform web
+      - name: Install headless browser
+        run: |
+          python -m pip install "playwright==1.56.0"
+          python -m playwright install --with-deps chromium
+      - name: Synthetic two-account browser smoke
+        run: python scripts/agent00-acceptance/browser_smoke.py
