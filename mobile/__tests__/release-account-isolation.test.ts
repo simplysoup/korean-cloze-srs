@@ -6,9 +6,10 @@
 import { ServerUnreachable, syncPull, syncPush } from '../src/lib/api';
 import type { SyncDocument } from '../src/lib/sync-types';
 import {
-  clearSessionToken, clearUserRecord, getSessionToken, getState,
-  initStore, saveUserRecord, setSessionToken,
+  clearSessionToken, clearSessionUserId, getSessionToken, getState,
+  initStore, setSessionToken,
 } from '../src/store/state';
+import { LOCAL_USER_ID, recordServerUser, setCurrentUserId } from '../src/store/auth';
 import { syncNow } from '../src/store/sync';
 
 jest.mock('../src/lib/api', () => {
@@ -20,6 +21,17 @@ const pull = syncPull as jest.MockedFunction<typeof syncPull>;
 const push = syncPush as jest.MockedFunction<typeof syncPush>;
 const A = { id: 'qa-account-a', email: 'a@qa.invalid', username: 'qa-a', serverHasPassword: true, passwordHash: '', salt: '' };
 const B = { id: 'qa-account-b', email: 'b@qa.invalid', username: 'qa-b', serverHasPassword: true, passwordHash: '', salt: '' };
+// These helpers reproduce the production RootLayout/AuthScreen store sequence,
+// not the unused clearUserRecord shortcut. React's own setUser(null) is UI-only.
+function signIn(account: typeof A): void {
+  recordServerUser(account);
+  setCurrentUserId(account.id);
+}
+function endSession(): void {
+  clearSessionUserId();
+  clearSessionToken();
+  setCurrentUserId(LOCAL_USER_ID);
+}
 const LOG = {
   id: 'qa-event-a', grammarPointId: 'gp_e_loc', rating: 3,
   reviewedAt: '2026-11-10T12:00:00.000Z', stability: 3,
@@ -47,37 +59,36 @@ beforeEach(async () => {
   pull.mockResolvedValue({ ok: true, version: 0, updatedAt: null, payload: null });
   push.mockResolvedValue({ ok: true, version: 1 });
   await initStore();
+  setCurrentUserId(LOCAL_USER_ID);
 });
 
 describe('release: cross-account isolation', () => {
-  it('detaches progress immediately when the signed-in account is cleared', async () => {
-    saveUserRecord(A);
+  it('detaches progress immediately on the production logout sequence', async () => {
+    signIn(A);
     getState().doc = snapshot();
-    await clearUserRecord();
+    endSession();
     expect(getState().doc.reviewLogs).toHaveLength(0);
     expect(getState().doc.libraryDecks).toHaveLength(0);
   });
   it('keeps B from accessing A history after switching in the same browser', async () => {
-    saveUserRecord(A);
+    signIn(A);
     getState().doc = snapshot();
-    clearSessionToken();
-    await clearUserRecord();
-    await saveUserRecord(B);
+    endSession();
+    signIn(B);
     expect(getState().user?.id).toBe(B.id);
     expect(getState().doc.reviewLogs.some(log => log.id === LOG.id)).toBe(false);
     expect(getState().doc.libraryDecks.some(d => d.deckId === 'deck_topik1_level1')).toBe(false);
   });
   it('ignores delayed A sync across logout + B login, without stale push or token reuse', async () => {
-    saveUserRecord(A);
+    signIn(A);
     setSessionToken('qa-token-A');
     let finish!: (v: Awaited<ReturnType<typeof syncPull>>) => void;
     const pending = new Promise<Awaited<ReturnType<typeof syncPull>>>(res => { finish = res; });
     pull.mockImplementationOnce(() => pending);
     const oldRun = syncNow();
     expect(pull).toHaveBeenCalledWith('qa-token-A');
-    clearSessionToken();
-    await clearUserRecord();
-    await saveUserRecord(B);
+    endSession();
+    signIn(B);
     setSessionToken('qa-token-B');
     // Independently isolate the in-flight callback from the known stale-doc
     // logout bug. Even with a clean B document, A's late response must not
@@ -98,7 +109,7 @@ describe('release: cross-account isolation', () => {
     }));
   });
   it('retains local history after an offline timeout; no push attempted', async () => {
-    saveUserRecord(A);
+    signIn(A);
     setSessionToken('qa-token-A');
     getState().doc.reviewLogs = [{ ...LOG }];
     pull.mockRejectedValueOnce(new ServerUnreachable());
@@ -108,7 +119,7 @@ describe('release: cross-account isolation', () => {
     expect(push).not.toHaveBeenCalled();
   });
   it('invalidates an expired token without uploading progress', async () => {
-    saveUserRecord(A);
+    signIn(A);
     setSessionToken('qa-token-expired');
     pull.mockResolvedValueOnce({ ok: false, version: 0, updatedAt: null, payload: null, error: 'unauthorized' });
     const result = await syncNow();
