@@ -11,9 +11,12 @@
 // server is unreachable (the offline fallback AuthScreen already had).
 
 import { generateSalt, hashPassword, isLogoutGraceActive, usernameFromEmail } from '../lib/auth';
+import { isValidServerAccountId } from './account-isolation/storage';
 import {
   getState,
   saveUserRecord,
+  endAccountSession,
+  bindSessionTokenToVerifiedAccount,
   type DeviceTrust,
   type ServerUserRecord,
 } from './state';
@@ -25,6 +28,10 @@ export const LOCAL_USER_ID = 'local';
 let currentUserId = LOCAL_USER_ID;
 
 export function setCurrentUserId(id: string): void {
+  // Legacy synchronous call sites must not leave the previous account's
+  // document readable during logout or an account transition.
+  const active = getState().activeAccountId;
+  if (id === LOCAL_USER_ID || (active && active !== id)) endAccountSession();
   currentUserId = id;
 }
 
@@ -71,18 +78,26 @@ export function recordServerUser(serverUser: {
   username: string;
   hasPassword?: boolean;
 }): DbUser {
+  if (!isValidServerAccountId(serverUser.id)) {
+    throw new Error('server did not return a valid verified account id');
+  }
   const existing = getState().user;
   const record: ServerUserRecord = {
     id: serverUser.id,
     email: serverUser.email.trim().toLowerCase(),
     username: serverUser.username,
-    serverHasPassword: serverUser.hasPassword ?? existing?.serverHasPassword ?? false,
+    serverHasPassword: serverUser.hasPassword ??
+      (existing?.id === serverUser.id ? existing.serverHasPassword : false),
     // Keep a locally-set password hash/salt (offline login) when the
     // same account already had one on this device.
-    passwordHash: existing && existing.email === serverUser.email.trim().toLowerCase() ? existing.passwordHash : '',
-    salt: existing && existing.email === serverUser.email.trim().toLowerCase() ? existing.salt : '',
+    passwordHash: existing && existing.id === serverUser.id &&
+      existing.email === serverUser.email.trim().toLowerCase() ? existing.passwordHash : '',
+    salt: existing && existing.id === serverUser.id &&
+      existing.email === serverUser.email.trim().toLowerCase() ? existing.salt : '',
+    verifiedServerId: true,
   };
   saveUserRecord(record);
+  bindSessionTokenToVerifiedAccount(record.id);
   return toDbUser(record);
 }
 
@@ -126,6 +141,7 @@ export function createUserByEmail(email: string): DbUser {
     serverHasPassword: false,
     passwordHash: '',
     salt: '',
+    verifiedServerId: false, // a local fallback ID cannot select server-account storage
   };
   saveUserRecord(record);
   return toDbUser(record);
@@ -176,6 +192,8 @@ export { getDeviceTrust, trustDevice, markDeviceLogout } from './state';
 /** True when this trusted device may auto-log the user in without a
  * fresh code (never logged out, or logged out within the grace window). */
 export function deviceMayAutoLogin(trust: DeviceTrust | null, nowMs: number = Date.now()): boolean {
-  if (!trust) return false;
+  // An explicit logout revokes automatic access even within the previous
+  // 30-minute grace; otherwise simply typing A's email exposes A's cache.
+  if (!trust || trust.lastLogoutAt !== null) return false;
   return isLogoutGraceActive(trust.lastLogoutAt, nowMs);
 }

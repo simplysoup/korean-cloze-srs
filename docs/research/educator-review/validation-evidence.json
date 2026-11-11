@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "kind": "read_only_repository_inspection_not_cli_validator_execution",
+  "sourceCommit": "ba94b9ee7ae9374cb6e92d8bab17db38f095f9b6",
+  "inspectionDate": "2026-11-10",
+  "mechanism": "GitHub connector fetch_file, parsed JSON structural cross-check and exact UTF-8 source/mobile equality; not a Node script invocation",
+  "rawSourcePairs": [
+    {
+      "source": "prisma/seed-data/vocabulary/foundations.json",
+      "mobile": "mobile/src/content/vocabulary-foundations.json",
+      "byteIdentical": true
+    },
+    {
+      "source": "prisma/seed-data/practice/pilot.json",
+      "mobile": "mobile/src/content/practice-pilot.json",
+      "byteIdentical": true
+    },
+    {
+      "source": "prisma/seed-data/comprehension/pilot.json",
+      "mobile": "mobile/src/content/comprehension-pilot.json",
+      "byteIdentical": true
+    },
+    {
+      "source": "prisma/seed-data/language-topics/foundations.json",
+      "mobile": "mobile/src/content/language-topics.json",
+      "byteIdentical": true
+    }
+  ],
+  "verifiedCounts": {
+    "grammarPoints": 229,
+    "grammarClozes": 721,
+    "workedExamples": 471,
+    "flaggedEditorialDispositions": 193,
+    "alternativeBearingClozes": 44,
+    "alternativeStrings": 54,
+    "nearMissBearingClozes": 16,
+    "nearMissStrings": 16,
+    "vocabularyEntries": 145,
+    "vocabularyDecks": 7,
+    "languageTopics": 4,
+    "languageSections": 14,
+    "languageChecks": 12,
+    "practiceContrasts": 32,
+    "practiceTransfers": 20,
+    "readingPassages": 6,
+    "readingQuestions": 24,
+    "reviewableItemIds": 1674,
+    "duplicateReviewableItemIds": 0,
+    "humanApprovedItems": 0,
+    "grammarPointsMissingItemLevelEvidence": 227
+  },
+  "checks": [
+    {
+      "check": "practice ids and review label",
+      "result": "52 unique exercise IDs; all editorial-draft and educatorApproval pending"
+    },
+    {
+      "check": "reading question IDs and evidence",
+      "result": "24 unique question IDs, 24 explicit source evidence fields; all passages editorial-draft"
+    },
+    {
+      "check": "grammar cloze IDs",
+      "result": "721 unique IDs; 193/193 flagged remediation IDs resolve"
+    },
+    {
+      "check": "vocabulary special forms",
+      "result": "6월/유월, 10월/시월, 스물/스무 present"
+    }
+  ],
+  "notRunCommands": [
+    "bun scripts/port-content.ts",
+    "node scripts/validate-content.mjs",
+    "node scripts/validate-flagged-card-fixes.mjs",
+    "node scripts/validate-topik2-contrast.mjs",
+    "node scripts/validate-answer-audit.mjs",
+    "node scripts/validate-answer-feedback.mjs",
+    "node scripts/validate-vocabulary.mjs",
+    "node scripts/validate-language-topics.mjs",
+    "node scripts/validate-practice.mjs",
+    "node scripts/validate-comprehension.mjs",
+    "node scripts/validate-linguistic-qa.mjs --check-only",
+    "node scripts/validate-linguistic-qa.mjs --tier=1 --out=/tmp/munpro-educator-tier1",
+    "cd mobile && npm run lint && npm run typecheck && npm test -- --ci && npx expo export --platform web"
+  ],
+  "importantCaveats": [
+    "Mechanical comparisons do not establish Korean naturalness, pedagogical validity, educator approval or pass status for original CLI validators.",
+    "Current generic linguistic QA question scanner recognizes prompt/question/questionText fields but not practice task; misses 52 practice tasks and 6 passage-level units in its item inventory.",
+    "Ported grammar bundles were not regenerated here; Agent 00 handoff at 06985c8 documents earlier successful port parity.",
+    "No educator identity, human-review decision or sign-off was supplied; active registry remains empty."
+  ],
+  "cliExecution": {
+    "performed": false,
+    "reason": "No local repository checkout/Node dependency runtime with GitHub network access in this agent session",
+    "requiredBeforeRelease": true
+  }
+}
