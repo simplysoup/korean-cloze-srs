@@ -26,3 +26,13 @@ These are automated synthetic unit/integration probes, **not** proof a physical 
 - `release-evidence.test.ts`: 32-gate matrix integrity and deterministic synthetic history comparator.
 
 **Disposition:** no release approval. Verify again on a frozen Agent 00 integration SHA with #10 remediation. Never suppress or weaken a failing security assertion to make CI green. Real staging CAS and native migration remain #9/#11.
+
+## Second run — actual app logout/auth sequence (preferred reproducer)
+
+**GitHub Actions:** https://github.com/simplysoup/korean-cloze-srs/actions/runs/42927958745  
+**Full SHA:** `4a00579cb1d2ecc22d615ce6c71e1f1e5280b696`  
+**Environment:** GitHub Actions hosted mobile job; synthetic mocked API transport, real store/auth/sync functions from this SHA.
+
+The QA tests were changed to use the production `RootLayout` sequence (`clearSessionUserId()`, `clearSessionToken()`, `setCurrentUserId(LOCAL_USER_ID)`) and the `AuthScreen`-backed `recordServerUser()` plus `setCurrentUserId()` login path, **rather than calling `clearUserRecord()`**, which the actual UI logout does not call. The late-sync test still resets to a clean B document *before* resolving A's deferred pull, isolating that failure mode.
+
+**Expected/actual:** `npm run typecheck` and earlier CI validators passed. Jest: **238 passed / 3 failed / 241 total, 30 passed / 1 failed / 31 suites**. Three synthetic privacy assertions fail at lines **70, 79, 105** in `release-account-isolation.test.ts`: logout detachment, A→B account switch, and independent delayed A sync. This repeats the P0 account-isolation concern, now against the actual production lifecycle calls, without claiming physical browser coverage. `expo export --platform web` skipped on nonzero Jest; CI does not independently run `npm run lint`. The report was posted to [issue #10](https://github.com/simplysoup/korean-cloze-srs/issues/10). Runtime security is **not passed**.
