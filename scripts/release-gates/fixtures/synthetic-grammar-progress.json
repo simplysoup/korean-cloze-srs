@@ -1,0 +1,69 @@
+{
+  "qaSyntheticOnly": true,
+  "fixtureId": "qa-grammar-progress-v1",
+  "doc": {
+    "version": 6,
+    "updatedAt": "2026-11-10T12:00:00.000Z",
+    "user": {
+      "username": "synthetic-a",
+      "email": "qa-a@qa.invalid"
+    },
+    "reviewCards": [
+      {
+        "grammarPointId": "gp_e_loc",
+        "stability": 4.5,
+        "difficulty": 5,
+        "reps": 3,
+        "lapses": 1,
+        "state": 2,
+        "due": "2026-11-14T12:00:00.000Z",
+        "lastReview": "2026-11-10T12:00:00.000Z",
+        "streakCorrect": 2,
+        "masteredAt": null,
+        "peakStability": 4.5,
+        "lastClozeCardId": "cc_e_loc_01"
+      }
+    ],
+    "reviewLogs": [
+      {
+        "id": "qa-review-0001",
+        "grammarPointId": "gp_e_loc",
+        "rating": 3,
+        "reviewedAt": "2026-11-09T12:00:00.000Z",
+        "stability": 3.5,
+        "difficulty": 5,
+        "elapsedDays": 1,
+        "scheduledDays": 2
+      },
+      {
+        "id": "qa-review-0002",
+        "grammarPointId": "gp_e_loc",
+        "rating": 4,
+        "reviewedAt": "2026-11-10T12:00:00.000Z",
+        "stability": 4.5,
+        "difficulty": 5,
+        "elapsedDays": 1,
+        "scheduledDays": 4
+      }
+    ],
+    "libraryDecks": [
+      {
+        "deckId": "deck_topik1_level1",
+        "addedAt": "2026-11-08T12:00:00.000Z"
+      }
+    ],
+    "streak": {
+      "currentStreak": 2,
+      "longestStreak": 3,
+      "lastStudiedDate": "2026-11-10"
+    },
+    "settings": {
+      "dailyNewLimit": 5,
+      "batchSize": 3
+    },
+    "dailyLearned": {
+      "2026-11-09": 2,
+      "2026-11-10": 1
+    }
+  }
+}
