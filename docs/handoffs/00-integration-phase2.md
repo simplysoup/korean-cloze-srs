@@ -138,3 +138,40 @@ Agent 00 **executed the actual unmodified uploaded backend** with Node `v22.16.0
 - Critical protocol rollout warning: the **current live build-36 web client** sends `{updatedAt, payload}` without `expectedVersion`. The candidate CAS server would intentionally reject those old pushes. **Do not deploy the backend patch independently**; require an application-side server revision protocol, explicit 409/412 re-pull/deterministic union and bounded retry, client-compatible staged migration, and retention of local dirty state on conflict/error.
 
 **Issue #9 remains OPEN / NO-GO.** Real VPS staging proof still requires an operator-run test of the actual staging process, source checksum, clean synthetic sessions and sanitized evidence, then controlled restart/recovery, two-device browser testing and backend/client compatibility. Production data, SMTP credentials, live flags and `main` remain untouched. The exported patch/test/report and instructions reside in this ChatGPT conversation, not public git history.
+
+---
+
+## Addendum — VPS staging verification: all six sync defects reproduce live (2026-11-12)
+
+**Operator:** Muse (SSH-enabled environment, via `~/workspace/vps-ssh.sh`).
+**Handoff executed:** `MUNPRO_VPS_STAGING_HANDOFF.md` (Steps A and D as written;
+Steps B and C could not run verbatim — the companion ZIP with
+`munpro_backend_audit.py` / `munpro_staging_probe.py` was not uploaded.
+An operator-written probe, `munpro_staging_probe_local.py`, tested the
+same six defects with the handoff's safety properties: staging only
+`127.0.0.1:28769`, no `/api/auth/request-code`, no email, synthetic
+`@qa.invalid` users/sessions created directly in SQLite, only its own
+rows deleted in a `finally` block, sanitized report at
+`~/korean-auth-staging/staging-audit-sanitized.json` mode 0600.)
+
+**Source identity:** staging `server.js` SHA-256
+`7bba0c2567fbf2b386a113a06232f84754f08fef403cb8cef3c1dce09aeb444d` —
+exactly the uploaded original. Staging process PID 1971915 runs it from
+`~/korean-auth-staging` (`/home/soup/node22/bin/node server.js`), not
+restarted. Health `{"ok":true,"emailConfigured":true,"sync":true}`.
+Staging DB was empty before (0/0/0) and returned to empty after.
+
+**Live probe: 3/9 checks passed.** All six defects reproduce on the
+actual staging process:
+1. Push without `expectedVersion` accepted (200) — no precondition enforced.
+2. Older client omitting `vocabularyProgress` erases that namespace.
+3. Same-user concurrent pushes both return 200 (versions 5 and 6) — no CAS.
+4. One device's review lost in the race (only the second log survived).
+5. Stale replay accepted (200) and overwrites newer data.
+6. Payload > 2 MiB drops the connection (`ConnectionResetError`), not HTTP 413.
+
+**Decision unchanged: NO-GO for remote sync release, feature enablement,
+`main` merge, or production deployment.** Candidate CAS patch not deployed
+(live build-36 client sends no `expectedVersion`, so the patch would
+reject its pushes with 428). All 8 flags remain OFF. Issue #9 still OPEN.
+PR #20 still OPEN; PR #8 still a draft. Production untouched and healthy.
