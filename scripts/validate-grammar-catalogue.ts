@@ -1,5 +1,5 @@
 /**
- * Validate the source grammar catalogue before it is ported into the mobile app.
+ * Validate the grammar catalogue for all six levels before porting to Expo.
  *
  * Run: bun scripts/validate-grammar-catalogue.ts
  * This is deliberately independent of the older generated Expo JSON snapshot.
@@ -8,10 +8,37 @@ import assert from 'node:assert/strict';
 import { allLessons as level1Lessons } from '../prisma/seed-data/topik1-level1';
 import { level1Additions } from '../prisma/seed-data/topik1-level1/additions';
 import { allLessons as level2Lessons } from '../prisma/seed-data/topik1-level2';
+import level3 from '../prisma/seed-data/topik2/level-3.json';
+import level4 from '../prisma/seed-data/topik2/level-4.json';
+import level5 from '../prisma/seed-data/topik2/level-5.json';
+import level6 from '../prisma/seed-data/topik2/level-6.json';
 import { teachingGuides } from '../prisma/seed-data/teaching-guides';
+import { applyGrammarExpansions } from './curriculum-overlay.mjs';
+import { applyFlaggedCardFixes } from './flagged-card-overrides.mjs';
+import gap1 from '../prisma/seed-data/grammar-expansion/level-1.json';
+import gap2 from '../prisma/seed-data/grammar-expansion/level-2.json';
+import gap3 from '../prisma/seed-data/grammar-expansion/level-3.json';
+import gap4 from '../prisma/seed-data/grammar-expansion/level-4.json';
+import reviewManifest from '../prisma/seed-data/review-qa/flagged-card-fixes.json';
 
-const lessons = [...level1Lessons, ...level2Lessons];
-const expected = { lessons: 22, grammarPoints: 102, examples: 217, cards: 340 };
+const baseLevel1 = level1Lessons.map(lesson => ({
+  ...lesson,
+  grammarPoints: lesson.grammarPoints.map(gp => {
+    const extra = level1Additions[gp.id];
+    return { ...gp,
+      lessonExamples: [...gp.lessonExamples, ...(extra?.examples ?? [])],
+      cards: [...gp.cards, ...(extra?.cards ?? [])],
+    };
+  }),
+}));
+const fullBundles = applyGrammarExpansions([
+  { deck: { level: 1 }, lessons: baseLevel1 },
+  { deck: { level: 2 }, lessons: level2Lessons },
+  level3, level4, level5, level6,
+], [gap1, gap2, gap3, gap4]);
+const reviewedBundles = applyFlaggedCardFixes(fullBundles, reviewManifest);
+const lessons = reviewedBundles.flatMap(bundle => bundle.lessons);
+const expected = { lessons: 46, grammarPoints: 229, examples: 471, cards: 721 };
 const ids = new Set<string>();
 const points = new Set<string>();
 const positionById = new Map<string, number>();
@@ -45,16 +72,15 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
     unique(gp.id, `lesson ${lesson.lessonNumber}`);
     points.add(gp.id);
     positionById.set(gp.id, position);
-    const addition = level1Additions[gp.id];
-    const ex = [...gp.lessonExamples, ...(addition?.examples ?? [])];
-    const review = [...gp.cards, ...(addition?.cards ?? [])];
+    const ex = gp.lessonExamples;
+    const review = gp.cards;
     if (!gp.structurePattern?.trim()) errors.push(`${gp.id}: missing grammar structure`);
     if (!gp.description?.trim()) errors.push(`${gp.id}: missing explanation`);
     // A usable lesson must teach its mechanism, not merely state a translation.
     const guide = teachingGuides[gp.id];
-    if (!guide) {
+    if (!guide && gp.level <= 2 && !gp.id.startsWith('gp_gap_')) {
       errors.push(`${gp.id}: missing authored teaching guide`);
-    } else {
+    } else if (guide) {
       for (const field of ['meaning', 'formation', 'worked', 'trap'] as const) {
         if (guide[field].trim().length < 55) {
           errors.push(`${gp.id}: ${field} is too short to explain the idea to a beginner`);
@@ -72,6 +98,20 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
         errors.push(`${gp.id}: worked breakdown does not reference its actual lesson example`);
       }
     }
+    // The new advanced decks use the same teaching contract directly in
+    // source JSON, rather than looking up separate guide modules.
+    if (gp.level >= 3 || gp.id.startsWith('gp_gap_')) {
+      if (!gp.description?.trim() || gp.description.length < 45) errors.push(`${gp.id}: too-short meaning`);
+      const notes = new Map((gp.notes ?? []).map((note) => [note.title, note.content]));
+      for (const title of ['Build it step by step', 'Worked example', 'Common trap']) {
+        const note = notes.get(title);
+        if (!note || note.trim().length < 40) errors.push(`${gp.id}: missing/short ${title}`);
+      }
+      const worked = notes.get('Worked example') ?? '';
+      if (!worked.includes(gp.lessonExamples[0]?.fullSentence ?? '')) {
+        errors.push(`${gp.id}: worked note must explain the first worked sentence`);
+      }
+    }
     if (gp.id === 'gp_ani_eyo' && gp.cards.some((card) => !card.answer.includes('아니에요'))) {
       errors.push('Noun negation cards must test 아니에요, not just 이/가 particles');
     }
@@ -85,6 +125,9 @@ for (const [lessonIndex, lesson] of lessons.entries()) {
     for (const item of review) {
       cards += 1;
       checkCard(gp.id, item, 'review');
+      if (gp.id.startsWith('gp_gap_') && !item.vocabBaseForm?.trim()) {
+        errors.push(`${item.id}: gap review card must show the actual noun or dictionary base`);
+      }
       if (item.introducedAtPosition !== position) {
         errors.push(`${item.id}: card position ${item.introducedAtPosition}, expected ${position}`);
       }

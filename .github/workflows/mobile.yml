@@ -6,6 +6,18 @@ on:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
       - 'scripts/validate-grammar-catalogue.ts'
+      - 'scripts/port-language-topics.mjs'
+      - 'scripts/validate-language-topics.mjs'
+      - 'scripts/curriculum-overlay.mjs'
+      - 'scripts/port-vocabulary.mjs'
+      - 'scripts/validate-vocabulary.mjs'
+      - 'docs/research/grammar-answer-ambiguity-audit.json'
+      - 'scripts/validate-answer-audit.mjs'
+      - 'scripts/validate-topik2-contrast.mjs'
+      - 'scripts/flagged-card-overrides.mjs'
+      - 'scripts/validate-flagged-card-fixes.mjs'
+      - 'scripts/port-content.ts'
+      - 'docs/research/legacy-answer-ambiguity-backlog.json'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
   pull_request:
@@ -13,6 +25,18 @@ on:
       - 'mobile/**'
       - 'scripts/validate-content.mjs'
       - 'scripts/validate-grammar-catalogue.ts'
+      - 'scripts/port-language-topics.mjs'
+      - 'scripts/validate-language-topics.mjs'
+      - 'scripts/curriculum-overlay.mjs'
+      - 'scripts/port-vocabulary.mjs'
+      - 'scripts/validate-vocabulary.mjs'
+      - 'docs/research/grammar-answer-ambiguity-audit.json'
+      - 'scripts/validate-answer-audit.mjs'
+      - 'scripts/validate-topik2-contrast.mjs'
+      - 'scripts/flagged-card-overrides.mjs'
+      - 'scripts/validate-flagged-card-fixes.mjs'
+      - 'scripts/port-content.ts'
+      - 'docs/research/legacy-answer-ambiguity-backlog.json'
       - 'prisma/seed-data/**'
       - '.github/workflows/mobile.yml'
 
@@ -31,8 +55,19 @@ jobs:
           cache: npm
           cache-dependency-path: mobile/package-lock.json
       - run: npm ci
+      - name: Verify all app content is reproducible from the authoring sources
+        run: |
+          bun ../scripts/port-content.ts
+          node ../scripts/port-vocabulary.mjs
+          node ../scripts/port-language-topics.mjs
+          git diff --exit-code -- src/content/
       - run: bun ../scripts/validate-grammar-catalogue.ts
       - run: node ../scripts/validate-content.mjs
+      - run: node ../scripts/validate-vocabulary.mjs
+      - run: node ../scripts/validate-answer-audit.mjs
+      - run: node ../scripts/validate-topik2-contrast.mjs
+      - run: node ../scripts/validate-flagged-card-fixes.mjs
+      - run: node ../scripts/validate-language-topics.mjs
       - run: npm run typecheck
       - run: npm test -- --ci
       - run: npx expo export --platform web

@@ -1,0 +1,821 @@
+{
+  "type": "comprehension-pilot",
+  "schemaVersion": 1,
+  "provenance": "Original Korean passages and comprehension questions authored for Munpro; no textbook or third-party passage reproduced.",
+  "review": {
+    "status": "editorial-draft",
+    "educatorReviewed": false,
+    "reviewNeeded": [
+      "native-speaker fluency and naturalness",
+      "TOPIK difficulty calibration",
+      "question answer uniqueness",
+      "grammar and lexical level control"
+    ]
+  },
+  "passages": [
+    {
+      "id": "rc_l1_library",
+      "level": 1,
+      "titleKo": "도서관에서 고른 책",
+      "titleEn": "A book from the library",
+      "situation": "Choosing a manageable Korean book at a public library",
+      "prerequisiteGrammarIds": [
+        "gp_ieyo_yeyo",
+        "gp_isseoyo",
+        "gp_e_loc",
+        "gp_eseo",
+        "gp_eun_neun",
+        "gp_eul_reul",
+        "gp_ji_anha",
+        "gp_do"
+      ],
+      "paragraphs": [
+        "오늘은 토요일이에요. 지수는 아침에 도서관에 가요. 도서관은 집 옆에 있어요. 지수는 한국어 책을 찾아요. 도서관에는 책이 많아요. 큰 책도 있고 작은 책도 있어요.",
+        "지수는 쉬운 책을 원해요. 직원이 말해요. “이 책은 쉬워요. 그림도 많아요.” 지수는 그 책을 읽어요. 어렵지 않아요. 지수는 그 책을 빌려요. 오후에 집에 가요. 저녁에는 집에서 책을 읽어요."
+      ],
+      "wordCount": 51,
+      "vocabularyNotes": [
+        {
+          "term": "도서관",
+          "gloss": "library",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "직원",
+          "gloss": "staff member",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "그림",
+          "gloss": "picture or illustration",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "빌리다",
+          "gloss": "to borrow",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "쉽다",
+          "gloss": "to be easy",
+          "moveToGeneralVocabulary": true
+        }
+      ],
+      "editorialStatus": "editorial-draft",
+      "educatorReviewed": false,
+      "audio": null,
+      "questions": [
+        {
+          "id": "rc_l1_library_q1",
+          "type": "main-idea",
+          "prompt": "What is Jisu mainly doing?",
+          "answerLanguage": "en",
+          "choices": [
+            "Buying a school uniform",
+            "Meeting a friend at a cafe",
+            "Looking for an easy Korean book",
+            "Returning a lost phone"
+          ],
+          "correctIndex": 2,
+          "evidence": "지수는 쉬운 책을 원해요.",
+          "explanation": "Jisu wants an easy book, tries the staff member's suggestion, and borrows it."
+        },
+        {
+          "id": "rc_l1_library_q2",
+          "type": "specific-detail",
+          "prompt": "Where is the library?",
+          "answerLanguage": "en",
+          "choices": [
+            "Next to Jisu's home",
+            "Inside a school",
+            "Across from a hospital",
+            "At the train station"
+          ],
+          "correctIndex": 0,
+          "evidence": "도서관은 집 옆에 있어요.",
+          "explanation": "The passage explicitly places the library next to the home."
+        },
+        {
+          "id": "rc_l1_library_q3",
+          "type": "referential",
+          "prompt": "In '그 책을 빌려요', which book does '그 책' mean?",
+          "answerLanguage": "en",
+          "choices": [
+            "A book at Jisu's home",
+            "A large book Jisu did not open",
+            "The employee's personal notebook",
+            "The easy book the employee recommends"
+          ],
+          "correctIndex": 3,
+          "evidence": "“이 책은 쉬워요. 그림도 많아요.”",
+          "explanation": "The demonstrative refers back to the easy illustrated book Jisu just read."
+        },
+        {
+          "id": "rc_l1_library_q4",
+          "type": "inference",
+          "prompt": "Why does Jisu choose that book?",
+          "answerLanguage": "en",
+          "choices": [
+            "It is the most expensive book",
+            "It is manageable for her to read",
+            "She needs it for a library job",
+            "She cannot borrow any other book"
+          ],
+          "correctIndex": 1,
+          "evidence": "어렵지 않아요.",
+          "explanation": "Jisu reads it and finds it is not difficult; the other motivations do not appear in the passage.",
+          "interpretationNote": "The text does not explicitly say why Jisu borrows the book, but her stated goal is an easy book and she confirms this one is not difficult. Price and employment are never mentioned."
+        }
+      ],
+      "prerequisiteGrammarLabels": [
+        "이에요/예요",
+        "있다/있어요",
+        "에 (장소)",
+        "에서",
+        "은/는",
+        "을/를",
+        "-지 않다",
+        "도"
+      ]
+    },
+    {
+      "id": "rc_l1_station",
+      "level": 1,
+      "titleKo": "지하철역을 찾는 민수",
+      "titleEn": "Finding the subway station",
+      "situation": "Asking for directions to meet a friend",
+      "prerequisiteGrammarIds": [
+        "gp_e_time",
+        "gp_e_loc",
+        "gp_eseo",
+        "gp_eopseoyo",
+        "gp_position",
+        "gp_euseyo",
+        "gp_eul_reul"
+      ],
+      "paragraphs": [
+        "민수는 오늘 친구를 만나요. 오후 세 시에 지하철역 앞에서 만나요. 하지만 민수는 지하철역을 몰라요. 휴대전화도 없어요. 민수는 길 옆에 작은 가게를 봐요. 가게에 들어가요.",
+        "민수가 직원에게 물어요. “지하철역이 어디에 있어요?” 직원이 말해요. “이 길로 쭉 가세요. 은행 옆에 있어요.” 민수는 민수는 말해요. “감사합니다!” 민수는 밖으로 나가요. 길을 걸어요. 은행이 보여요. 은행 옆에 지하철역이 있어요. 민수는 역 앞에서 친구를 만나요."
+      ],
+      "wordCount": 59,
+      "vocabularyNotes": [
+        {
+          "term": "지하철역",
+          "gloss": "subway station",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "휴대전화",
+          "gloss": "mobile phone",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "가게",
+          "gloss": "shop",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "쭉",
+          "gloss": "straight ahead",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "은행",
+          "gloss": "bank",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "역",
+          "gloss": "station",
+          "moveToGeneralVocabulary": true
+        }
+      ],
+      "editorialStatus": "editorial-draft",
+      "educatorReviewed": false,
+      "audio": null,
+      "questions": [
+        {
+          "id": "rc_l1_station_q1",
+          "type": "main-idea",
+          "prompt": "What problem does Minsu solve?",
+          "answerLanguage": "en",
+          "choices": [
+            "How to buy a mobile phone",
+            "Where to eat dinner",
+            "How to find the subway station",
+            "How to change a train ticket"
+          ],
+          "correctIndex": 2,
+          "evidence": "민수는 지하철역을 몰라요.",
+          "explanation": "Minsu does not know the station's location and asks for directions."
+        },
+        {
+          "id": "rc_l1_station_q2",
+          "type": "specific-detail",
+          "prompt": "When is Minsu planning to meet a friend?",
+          "answerLanguage": "en",
+          "choices": [
+            "At 3 p.m.",
+            "At 8 a.m.",
+            "At noon",
+            "At 6 p.m."
+          ],
+          "correctIndex": 0,
+          "evidence": "오후 세 시에 지하철역 앞에서 만나요.",
+          "explanation": "오후 세 시 means three in the afternoon. The timetable details in the passage support this answer."
+        },
+        {
+          "id": "rc_l1_station_q3",
+          "type": "speaker-intention",
+          "prompt": "Why does the shop employee say '쭉 가세요'?",
+          "answerLanguage": "en",
+          "choices": [
+            "To invite Minsu to work in the shop",
+            "To tell Minsu to go home",
+            "To ask Minsu for money",
+            "To tell Minsu which way to walk"
+          ],
+          "correctIndex": 3,
+          "evidence": "“이 길로 쭉 가세요. 은행 옆에 있어요.”",
+          "explanation": "The employee is giving walking directions toward the bank and station.",
+          "interpretationNote": "The imperative could generally be used for requests, but here the employee responds to a location question and names a landmark, so these are directions rather than a shop invitation."
+        },
+        {
+          "id": "rc_l1_station_q4",
+          "type": "referential",
+          "prompt": "What is beside the bank?",
+          "answerLanguage": "en",
+          "choices": [
+            "Minsu's home",
+            "The subway station",
+            "Minsu's school",
+            "The friend's office"
+          ],
+          "correctIndex": 1,
+          "evidence": "은행 옆에 지하철역이 있어요.",
+          "explanation": "The station is located next to the bank, as stated near the end."
+        }
+      ],
+      "prerequisiteGrammarLabels": [
+        "에 (시간)",
+        "에 (장소)",
+        "에서",
+        "없다/없어요",
+        "위/아래/앞/뒤/옆",
+        "-(으)세요",
+        "을/를"
+      ]
+    },
+    {
+      "id": "rc_l2_picnic",
+      "level": 2,
+      "titleKo": "비 오는 날의 점심",
+      "titleEn": "Lunch on a rainy day",
+      "situation": "Rescheduling an outdoor picnic when weather changes",
+      "prerequisiteGrammarIds": [
+        "gp_euryeogo_hada",
+        "gp_asseoyo",
+        "gp_eoduda",
+        "gp_gi_ttaemune",
+        "gp_giro_hada",
+        "gp_eul_geot_gatda",
+        "gp_eumyeon",
+        "gp_aseo_sequence",
+        "gp_go_sipda"
+      ],
+      "paragraphs": [
+        "소라는 토요일에 친구 두 명과 공원에서 점심을 먹으려고 했어요. 금요일 저녁에 김밥과 과일을 사서 냉장고에 넣어 두었어요. 친구들은 돗자리를 가져오기로 했어요.",
+        "그런데 토요일 아침부터 비가 많이 왔어요. 소라는 공원에 가면 음식을 먹기 불편할 것 같았어요. 그래서 친구들에게 전화를 했어요. 친구들도 비 때문에 밖에서 먹고 싶지 않았어요.",
+        "세 사람은 공원 대신 소라의 집에서 만나기로 했어요. 소라는 거실에 작은 상을 놓았어요. 친구들은 따뜻한 차를 가지고 왔어요. 창밖에서는 비가 계속 왔지만 세 사람은 함께 점심을 맛있게 먹었어요."
+      ],
+      "wordCount": 74,
+      "vocabularyNotes": [
+        {
+          "term": "돗자리",
+          "gloss": "picnic mat",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "냉장고",
+          "gloss": "refrigerator",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "불편하다",
+          "gloss": "to be inconvenient",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "거실",
+          "gloss": "living room",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "창밖",
+          "gloss": "outside the window",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "대신",
+          "gloss": "instead of",
+          "moveToGeneralVocabulary": true
+        }
+      ],
+      "editorialStatus": "editorial-draft",
+      "educatorReviewed": false,
+      "audio": null,
+      "questions": [
+        {
+          "id": "rc_l2_picnic_q1",
+          "type": "main-idea",
+          "prompt": "What is the passage mainly about?",
+          "answerLanguage": "en",
+          "choices": [
+            "Someone learning to cook rice",
+            "A person moving to a new apartment",
+            "Friends changing their lunch plans because of rain",
+            "Friends cancelling their friendship"
+          ],
+          "correctIndex": 2,
+          "evidence": "세 사람은 공원 대신 소라의 집에서 만나기로 했어요.",
+          "explanation": "Rain makes the outdoor picnic inconvenient, so the friends have lunch at Sora's house."
+        },
+        {
+          "id": "rc_l2_picnic_q2",
+          "type": "specific-detail",
+          "prompt": "What had Sora prepared on Friday evening?",
+          "answerLanguage": "en",
+          "choices": [
+            "Kimbap and fruit",
+            "A cake and coffee",
+            "Noodles and soup",
+            "Only hot tea"
+          ],
+          "correctIndex": 0,
+          "evidence": "금요일 저녁에 김밥과 과일을 사서 냉장고에 넣어 두었어요.",
+          "explanation": "She bought kimbap and fruit and stored them in the refrigerator."
+        },
+        {
+          "id": "rc_l2_picnic_q3",
+          "type": "grammar-in-context",
+          "prompt": "What does '만나기로 했어요' tell us in this story?",
+          "answerLanguage": "en",
+          "choices": [
+            "The friends were forbidden to meet",
+            "The friends had already left for the park",
+            "The friends only imagined meeting",
+            "The friends decided to meet at Sora's home"
+          ],
+          "correctIndex": 3,
+          "evidence": "세 사람은 공원 대신 소라의 집에서 만나기로 했어요.",
+          "explanation": "-기로 하다 expresses a decision or agreement, not a completed meeting or prohibition."
+        },
+        {
+          "id": "rc_l2_picnic_q4",
+          "type": "inference",
+          "prompt": "What can we conclude about the lunch?",
+          "answerLanguage": "en",
+          "choices": [
+            "They ate outside despite the rain",
+            "They still enjoyed eating together indoors",
+            "They did not meet at all",
+            "Sora forgot to prepare any food"
+          ],
+          "correctIndex": 1,
+          "evidence": "세 사람은 함께 점심을 맛있게 먹었어요.",
+          "explanation": "The ending says they ate lunch together and enjoyed it, despite the changed location.",
+          "interpretationNote": "A move indoors might be interpreted as a disappointing picnic, but the text explicitly says they ate together deliciously; nothing states that they failed to meet."
+        }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-(으)려고 하다",
+        "-았어요/-었어요",
+        "-아/어 두다",
+        "-기 때문에",
+        "-기로 하다",
+        "-(으)ㄹ 것 같다",
+        "-(으)면",
+        "-아/어서 (sequence)",
+        "-고 싶다"
+      ]
+    },
+    {
+      "id": "rc_l2_class",
+      "level": 2,
+      "titleKo": "바뀐 도자기 수업",
+      "titleEn": "The pottery class that moved",
+      "situation": "Responding to a schedule change and a class notice",
+      "prerequisiteGrammarIds": [
+        "gp_go_naseo",
+        "gp_asseoyo",
+        "gp_gi_jeone",
+        "gp_eul_ttae",
+        "gp_giro_hada",
+        "gp_aya_hada",
+        "gp_go_seq",
+        "gp_ani_eyo",
+        "gp_a_juseyo",
+        "gp_gap_benefactive_a_juda"
+      ],
+      "paragraphs": [
+        "유나는 동네 문화센터에서 도자기 수업을 들어요. 원래 수업은 금요일 저녁 여섯 시에 시작해요. 유나는 퇴근하고 나서 바로 문화센터에 가요.",
+        "이번 주 목요일에 문화센터에서 문자 메시지가 왔어요. 선생님이 아팠어요. 그래서 이번 주 수업은 금요일이 아니라 토요일 오전 열 시에 있어요. 유나는 메시지를 읽고 나서 달력을 확인했어요. 토요일 아침에는 다른 약속이 없었어요.",
+        "유나는 수업에 가기로 하고, 금요일 저녁에는 집에서 쉬었어요. 토요일에는 수업이 시작하기 전에 조금 일찍 도착했어요. 친구도 토요일 수업에 왔어요. 유나는 친구에게 새 시간표를 보여 줬어요. 둘은 함께 새 컵을 만들었어요."
+      ],
+      "wordCount": 80,
+      "vocabularyNotes": [
+        {
+          "term": "문화센터",
+          "gloss": "community cultural centre",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "도자기",
+          "gloss": "pottery or ceramic",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "퇴근하다",
+          "gloss": "to finish work",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "문자 메시지",
+          "gloss": "text message",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "옮기다",
+          "gloss": "to move or reschedule",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "시간표",
+          "gloss": "timetable",
+          "moveToGeneralVocabulary": true
+        }
+      ],
+      "editorialStatus": "editorial-draft",
+      "educatorReviewed": false,
+      "audio": null,
+      "questions": [
+        {
+          "id": "rc_l2_class_q1",
+          "type": "main-idea",
+          "prompt": "Which event drives the story?",
+          "answerLanguage": "en",
+          "choices": [
+            "Yuna decides to stop pottery forever",
+            "The cultural centre closes permanently",
+            "A pottery class is rescheduled",
+            "Yuna loses a finished cup"
+          ],
+          "correctIndex": 2,
+          "evidence": "이번 주 수업은 금요일이 아니라 토요일 오전 열 시에 있어요.",
+          "explanation": "A message announces a move from Friday evening to Saturday morning."
+        },
+        {
+          "id": "rc_l2_class_q2",
+          "type": "specific-detail",
+          "prompt": "What time is the rescheduled class?",
+          "answerLanguage": "en",
+          "choices": [
+            "Saturday at 10 a.m.",
+            "Friday at 6 p.m.",
+            "Saturday at 6 p.m.",
+            "Sunday at 10 a.m."
+          ],
+          "correctIndex": 0,
+          "evidence": "토요일 오전 열 시에 있어요.",
+          "explanation": "The updated time is Saturday morning at ten. The timetable details in the passage support this answer."
+        },
+        {
+          "id": "rc_l2_class_q3",
+          "type": "grammar-in-context",
+          "prompt": "In '메시지를 읽고 나서 달력을 확인했어요', which happened first?",
+          "answerLanguage": "en",
+          "choices": [
+            "Yuna checked the calendar",
+            "Yuna went to the Saturday class",
+            "Yuna made a cup",
+            "Yuna read the message"
+          ],
+          "correctIndex": 3,
+          "evidence": "메시지를 읽고 나서 달력을 확인했어요.",
+          "explanation": "-고 나서 marks the first finished action before the following one."
+        },
+        {
+          "id": "rc_l2_class_q4",
+          "type": "inference",
+          "prompt": "Why was Yuna able to attend the new session?",
+          "answerLanguage": "en",
+          "choices": [
+            "She persuaded the teacher to move it again",
+            "She had no other plan on Saturday morning",
+            "She took time off from her Saturday job",
+            "She did not receive the notice"
+          ],
+          "correctIndex": 1,
+          "evidence": "토요일 아침에는 다른 약속이 없었어요.",
+          "explanation": "Her calendar has no conflicting appointment on Saturday morning.",
+          "interpretationNote": "Free Saturday time supports the ability to attend; the story does not claim leave from work or a second schedule change. This is an inference, not a stated motive."
+        }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-고 나서",
+        "-았어요/-었어요",
+        "-기 전에",
+        "-(으)ㄹ 때",
+        "-기로 하다",
+        "-아/어야 하다",
+        "-고",
+        "N이/가 아니다 (아니에요)",
+        "-아/어 주세요",
+        "-아/어 주다 (do for someone)"
+      ]
+    },
+    {
+      "id": "rc_l3_wallet",
+      "level": 3,
+      "titleKo": "버스에서 발견한 지갑",
+      "titleEn": "The wallet on the bus",
+      "situation": "Returning lost property through a transit information desk",
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_daga",
+        "gp_t2l3_jamaja",
+        "gp_t2l3_neurago",
+        "gp_t2l3_deokbune",
+        "gp_eoduda",
+        "gp_go_naseo",
+        "gp_t2l3_daesine"
+      ],
+      "paragraphs": [
+        "퇴근길 버스에서 내리다가 선우는 빈 좌석에 작은 지갑이 놓여 있는 것을 발견했어요. 주위를 둘러봤지만 주인처럼 보이는 사람은 없었어요. 버스가 곧 출발할 예정이라 선우는 급히 지갑을 들고 내렸어요.",
+        "선우는 지갑 안에 있는 현금을 세지 않고, 가까운 버스 안내 데스크로 갔어요. 주인을 직접 찾느라고 시간을 보내는 대신 직원에게 바로 맡기는 편이 안전하다고 생각했기 때문이에요. 직원은 발견한 시간과 버스 번호를 물었고, 선우는 기억나는 내용을 알려 줬어요.",
+        "다음 날 안내 데스크에서 연락이 왔어요. 지갑 주인이 분실 신고를 하자마자 직원이 보관 중인 지갑과 정보를 대조했다고 해요. 다행히 주인이 지갑을 돌려받았어요. 직원은 선우가 버스 번호를 알려 준 덕분에 물건을 빨리 확인할 수 있었다고 말했어요. 선우는 작은 정보 하나도 도움이 된다는 것을 느꼈어요."
+      ],
+      "wordCount": 106,
+      "vocabularyNotes": [
+        {
+          "term": "빈 좌석",
+          "gloss": "empty seat",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "지갑",
+          "gloss": "wallet",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "현금",
+          "gloss": "cash",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "안내 데스크",
+          "gloss": "information desk",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "맡기다",
+          "gloss": "to hand over for safekeeping",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "분실 신고",
+          "gloss": "lost-property report",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "대조하다",
+          "gloss": "to compare against records",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "돌려받다",
+          "gloss": "to get back",
+          "moveToGeneralVocabulary": true
+        }
+      ],
+      "editorialStatus": "editorial-draft",
+      "educatorReviewed": false,
+      "audio": null,
+      "questions": [
+        {
+          "id": "rc_l3_wallet_q1",
+          "type": "main-idea",
+          "prompt": "What is the central outcome of the incident?",
+          "answerLanguage": "en",
+          "choices": [
+            "Seon-u keeps cash found on the bus",
+            "The bus driver changes the route",
+            "A lost wallet reaches its owner through the information desk",
+            "The owner buys a new wallet"
+          ],
+          "correctIndex": 2,
+          "evidence": "다행히 주인이 지갑을 돌려받았어요.",
+          "explanation": "The lost wallet was recorded and returned to its owner."
+        },
+        {
+          "id": "rc_l3_wallet_q2",
+          "type": "specific-detail",
+          "prompt": "What information did Seon-u provide to staff?",
+          "answerLanguage": "en",
+          "choices": [
+            "The time and bus number",
+            "The owner's bank password",
+            "A photograph of the owner",
+            "The amount of cash in the wallet"
+          ],
+          "correctIndex": 0,
+          "evidence": "직원은 발견한 시간과 버스 번호를 물었고, 선우는 기억나는 내용을 알려 줬어요.",
+          "explanation": "Staff asked for the time and bus number, and Seon-u shared what he remembered."
+        },
+        {
+          "id": "rc_l3_wallet_q3",
+          "type": "grammar-in-context",
+          "prompt": "What relationship does '분실 신고를 하자마자' express?",
+          "answerLanguage": "en",
+          "choices": [
+            "Staff compared records before the owner lost anything",
+            "The owner could not report the loss",
+            "Staff waited many weeks before checking",
+            "Staff compared records immediately after the owner reported the loss"
+          ],
+          "correctIndex": 3,
+          "evidence": "지갑 주인이 분실 신고를 하자마자 직원이 보관 중인 지갑과 정보를 대조했다고 해요.",
+          "explanation": "-자마자 marks one action following immediately upon the other."
+        },
+        {
+          "id": "rc_l3_wallet_q4",
+          "type": "inference",
+          "prompt": "Why does Seon-u prefer handing the wallet to staff?",
+          "answerLanguage": "en",
+          "choices": [
+            "He wants staff to count the cash for him",
+            "He thinks an official handover is safer than searching alone",
+            "He knows the owner personally",
+            "He plans to claim the wallet next week"
+          ],
+          "correctIndex": 1,
+          "evidence": "직원에게 바로 맡기는 편이 안전하다고 생각했기 때문이에요.",
+          "explanation": "His stated reason is safety, rather than a reward or a personal connection.",
+          "interpretationNote": "Handing over to the desk is contrasted with searching alone, and safety is given as the explicit reason. Cash-counting and personal familiarity are unsupported motives."
+        }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-다가",
+        "-자마자",
+        "-느라고",
+        "-(으)ㄴ/는 덕분에",
+        "-아/어 두다",
+        "-고 나서",
+        "-는 대신에"
+      ]
+    },
+    {
+      "id": "rc_l3_bookexchange",
+      "level": 3,
+      "titleKo": "동네 책 교환 행사",
+      "titleEn": "Neighbourhood book exchange",
+      "situation": "Adapting a community event when weather disrupts plans",
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_barame",
+        "gp_t2l3_daesine",
+        "gp_t2l3_eulsurok",
+        "gp_t2l3_dabonikka",
+        "gp_t2l3_banmyeone",
+        "gp_eumyeon",
+        "gp_euryeogo_hada",
+        "gp_eul_su_issda",
+        "gp_gap_ge_hada_action"
+      ],
+      "paragraphs": [
+        "동네 주민들은 쓰지 않는 책을 서로 바꾸는 행사를 준비했어요. 처음에는 공원에서 작은 책장을 놓고 누구나 책을 가져올 수 있게 하려고 했어요. 자원봉사자 수현은 안내문을 만들고, 다른 주민들은 가져올 책의 종류를 미리 정리했어요.",
+        "행사 당일 아침에 갑자기 비가 많이 오는 바람에 야외 책장이 젖을 위험이 생겼어요. 수현은 행사를 취소하는 대신 주민센터의 빈 회의실을 빌릴 수 있는지 물었어요. 다행히 회의실을 사용할 수 있었고, 봉사자들은 책을 실내로 옮겼어요.",
+        "처음에는 장소가 바뀐 것을 모르는 사람이 있었어요. 그러나 입구에 새 안내문을 붙이고 문자로 알리다 보니까 더 많은 사람이 회의실을 찾아왔어요. 어린이 책은 빨리 줄어든 반면에 요리책은 오후까지 많이 남아 있었어요. 방문자가 늘어날수록 서로 책을 추천하는 대화도 활발해졌어요.",
+        "수현은 다음 행사에서는 비가 올 때 사용할 실내 장소를 처음부터 정해 두자고 제안했어요. 계획은 바뀌었지만 주민들은 책뿐 아니라 다음 행사를 위한 좋은 생각도 나눴어요."
+      ],
+      "wordCount": 126,
+      "vocabularyNotes": [
+        {
+          "term": "주민",
+          "gloss": "local resident",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "자원봉사자",
+          "gloss": "volunteer",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "안내문",
+          "gloss": "notice or sign",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "회의실",
+          "gloss": "meeting room",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "취소하다",
+          "gloss": "to cancel",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "젖다",
+          "gloss": "to get wet",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "요리책",
+          "gloss": "cookbook",
+          "moveToGeneralVocabulary": true
+        },
+        {
+          "term": "활발하다",
+          "gloss": "to be lively or active",
+          "moveToGeneralVocabulary": true
+        }
+      ],
+      "editorialStatus": "editorial-draft",
+      "educatorReviewed": false,
+      "audio": null,
+      "questions": [
+        {
+          "id": "rc_l3_bookexchange_q1",
+          "type": "main-idea",
+          "prompt": "What best captures the event's result?",
+          "answerLanguage": "en",
+          "choices": [
+            "A planned event is cancelled with no exchange",
+            "Residents decide never to share books again",
+            "A rain-disrupted book swap succeeds indoors and informs future planning",
+            "All books are damaged before the event begins"
+          ],
+          "correctIndex": 2,
+          "evidence": "계획은 바뀌었지만 주민들은 책뿐 아니라 다음 행사를 위한 좋은 생각도 나눴어요.",
+          "explanation": "The indoor relocation succeeds, and residents learn how to plan future events."
+        },
+        {
+          "id": "rc_l3_bookexchange_q2",
+          "type": "specific-detail",
+          "prompt": "Which books remained plentiful into the afternoon?",
+          "answerLanguage": "en",
+          "choices": [
+            "Cookbooks",
+            "Children's books",
+            "Travel guidebooks",
+            "Foreign-language dictionaries"
+          ],
+          "correctIndex": 0,
+          "evidence": "어린이 책은 빨리 줄어든 반면에 요리책은 오후까지 많이 남아 있었어요.",
+          "explanation": "Cookbooks remain while children's books decrease quickly."
+        },
+        {
+          "id": "rc_l3_bookexchange_q3",
+          "type": "grammar-in-context",
+          "prompt": "What does '오는 바람에' indicate about the rain?",
+          "answerLanguage": "en",
+          "choices": [
+            "It was the original purpose of the event",
+            "It made moving books unnecessary",
+            "It was a welcome reason to keep the books outside",
+            "It unexpectedly caused a problem for the outdoor setup"
+          ],
+          "correctIndex": 3,
+          "evidence": "갑자기 비가 많이 오는 바람에 야외 책장이 젖을 위험이 생겼어요.",
+          "explanation": "-는 바람에 presents an unexpected, troublesome cause: the outdoor shelves risk getting wet."
+        },
+        {
+          "id": "rc_l3_bookexchange_q4",
+          "type": "inference",
+          "prompt": "Which change is most likely at the next event?",
+          "answerLanguage": "en",
+          "choices": [
+            "Organizers will refuse to post signs",
+            "Organizers will identify a backup indoor venue early",
+            "Organizers will only accept cookbooks",
+            "Organizers will forbid volunteers"
+          ],
+          "correctIndex": 1,
+          "evidence": "비가 올 때 사용할 실내 장소를 처음부터 정해 두자고 제안했어요.",
+          "explanation": "Suhyeon explicitly proposes reserving or choosing an indoor backup at the planning stage.",
+          "interpretationNote": "The proposal describes a future intention, not an established policy. 'Most likely' is deliberately qualified; do not reword as 'What definitely happens next?'"
+        }
+      ],
+      "prerequisiteGrammarLabels": [
+        "-는 바람에",
+        "-는 대신에",
+        "-(으)ㄹ수록",
+        "-다 보니까",
+        "-(으)ㄴ/는 반면에",
+        "-(으)면",
+        "-(으)려고 하다",
+        "-(으)ㄹ 수 있다",
+        "-게 하다 (make / let someone do)"
+      ]
+    }
+  ]
+}

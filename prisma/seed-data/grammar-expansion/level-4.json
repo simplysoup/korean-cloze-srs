@@ -1,0 +1,103 @@
+{
+  "version": "2026-11-10",
+  "level": 4,
+  "scope": "Written grammar, not vocabulary",
+  "editorialStatus": "native/educator review required",
+  "insertions": [
+    {
+      "afterPointId": "gp_t2l4_deoni",
+      "grammarPoint": {
+        "id": "gp_gap_eum_written_nominal",
+        "title": "-(으)ㅁ (written nominalization)",
+        "category": "written nominalization",
+        "tense": null,
+        "register": "formal / written",
+        "hint": "Turn a clause into a formal noun-like statement.",
+        "description": "In formal writing, -(으)ㅁ turns an action or state into a noun-like clause that can serve as the object of reporting, confirmation or explanation. It often appears in notices, reports and official writing.",
+        "level": 4,
+        "tags": [
+          "TOPIK2",
+          "nominalization",
+          "written",
+          "grammar"
+        ],
+        "structurePattern": "[Action/descriptive stem + (으)ㅁ] + noun particle (을/를 etc.)",
+        "relatedPointIds": [
+          "gp_gi_nominal",
+          "gp_neun_geot"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "For a stem ending in a consonant, attach 음; after a vowel add ㅁ: 읽다 → 읽음, 가다 → 감. Past endings can be included: 끝나다 → 끝났음; then add a particle as needed (끝났음을)."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "회의가 끝났음을 확인했습니다. — We confirmed that the meeting had ended. 끝나다 becomes 끝났음 as a formal nominal clause, then takes 을 to mark what was confirmed."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "This is common in official writing rather than casual conversation. Compare -기 nominalization for activities and -는 것 for noun-like clauses in everyday language."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_eum_written_nominal_01",
+            "fullSentence": "회의가 끝났음을 확인했습니다.",
+            "sentenceWithBlank": "회의가 끝났___ 확인했습니다.",
+            "answer": "음을",
+            "englishHint": "We confirmed that the meeting had ended.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_eum_written_nominal_02",
+            "fullSentence": "안전이 중요함을 강조했습니다.",
+            "sentenceWithBlank": "안전이 중요___ 강조했습니다.",
+            "answer": "함을",
+            "englishHint": "We emphasized that safety is important.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_eum_written_nominal_01",
+            "fullSentence": "서류가 필요함을 알려 드립니다.",
+            "sentenceWithBlank": "서류가 필요___ 알려 드립니다.",
+            "answer": "함을",
+            "englishHint": "We inform you that the documents are required.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "필요하다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_eum_written_nominal_02",
+            "fullSentence": "문제가 해결됐음을 확인했습니다.",
+            "sentenceWithBlank": "문제가 해결됐___ 확인했습니다.",
+            "answer": "음을",
+            "englishHint": "We confirmed that the problem was resolved.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "해결되다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_eum_written_nominal_03",
+            "fullSentence": "모두가 동의했음을 기록했습니다.",
+            "sentenceWithBlank": "모두가 동의했___ 기록했습니다.",
+            "answer": "음을",
+            "englishHint": "We recorded that everyone had agreed.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "동의하다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "Darakwon, Korean Grammar in Use – Beginning (nominalizing constructions); NIKL teacher portal (item-level verification pending)"
+      ],
+      "reviewStatus": "editorial draft"
+    }
+  ]
+}

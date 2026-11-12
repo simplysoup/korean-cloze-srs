@@ -1,0 +1,759 @@
+{
+  "version": "2026-11-10",
+  "level": 3,
+  "scope": "Grammar voice, causation and evidentiality",
+  "editorialStatus": "native/educator review required",
+  "insertions": [
+    {
+      "afterPointId": "gp_t2l3_eonota",
+      "grammarPoint": {
+        "id": "gp_gap_passive_suffix",
+        "title": "Passive verb forms: 열리다 / 닫히다",
+        "category": "passive voice",
+        "tense": null,
+        "register": null,
+        "hint": "Korean passive verbs describe a change or action from the perspective of what is affected, often without saying who did it.",
+        "description": "Korean passive verbs describe a change or action from the perspective of what is affected, often without saying who did it. Some common verbs have paired active and passive forms.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Stem / noun as specified] + Passive verb forms: 열리다 / 닫히다",
+        "relatedPointIds": [
+          "gp_eojida",
+          "gp_gap_passive_eojida"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Learn common active/passive pairs instead of mechanically attaching a suffix to every verb: 열다 → 열리다, 닫다 → 닫히다, 잡다 → 잡히다, 보다 → 보이다. Conjugate the resulting passive verb normally."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "문이 열렸어요. — The door opened. 문이 열렸어요 describes the door as the thing that opened or was opened, while 누가 문을 열었어요 focuses on the person opening it."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Passive morphology is not freely predictable for every verb. Not every -이/-히/-리/-기 spelling marks a passive, and some pairs are lexicalized."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_passive_suffix_01",
+            "fullSentence": "문이 열렸어요.",
+            "sentenceWithBlank": "문이 ___.",
+            "answer": "열렸어요",
+            "englishHint": "The door opened.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_passive_suffix_02",
+            "fullSentence": "창문이 닫혔어요.",
+            "sentenceWithBlank": "창문이 ___.",
+            "answer": "닫혔어요",
+            "englishHint": "The window was closed.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_passive_suffix_01",
+            "fullSentence": "공이 잡혔어요.",
+            "sentenceWithBlank": "공이 ___.",
+            "answer": "잡혔어요",
+            "englishHint": "The ball was caught.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "잡히다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_passive_suffix_02",
+            "fullSentence": "그림이 잘 보여요.",
+            "sentenceWithBlank": "그림이 잘 ___.",
+            "answer": "보여요",
+            "englishHint": "The picture is easy to see.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "보이다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_passive_suffix_03",
+            "fullSentence": "소리가 들려요.",
+            "sentenceWithBlank": "소리가 ___.",
+            "answer": "들려요",
+            "englishHint": "The sound can be heard.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "들리다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    },
+    {
+      "afterPointId": "gp_t2l3_eonota",
+      "grammarPoint": {
+        "id": "gp_gap_passive_eojida",
+        "title": "-아/어지다 (passive / spontaneous result)",
+        "category": "passive voice",
+        "tense": null,
+        "register": null,
+        "hint": "Some verbs combine with -아/어지다 to show an action happening to something or a result occurring without naming an agent.",
+        "description": "Some verbs combine with -아/어지다 to show an action happening to something or a result occurring without naming an agent. Other uses indicate a gradual change in state.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Stem / noun as specified] + -아/어지다 (passive / spontaneous result)",
+        "relatedPointIds": [
+          "gp_eojida",
+          "gp_gap_passive_suffix"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Choose a verb that permits this construction, form its 아/어 stem, then attach 지다: 지우다 → 지워지다, 쓰다 → 써지다. In the past: 지워졌어요."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "글씨가 지워졌어요. — The writing was erased. 글씨가 지워졌어요 says the writing was erased, focusing on its result rather than the person doing the erasing."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "-아/어지다 is not a universal passive marker. Compare 추워졌어요 ('became cold') with 지워졌어요 ('was erased'); not every verb forms a natural passive this way."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_passive_eojida_01",
+            "fullSentence": "글씨가 지워졌어요.",
+            "sentenceWithBlank": "글씨가 ___.",
+            "answer": "지워졌어요",
+            "englishHint": "The writing was erased.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_passive_eojida_02",
+            "fullSentence": "이 펜은 잘 써져요.",
+            "sentenceWithBlank": "이 펜은 잘 ___.",
+            "answer": "써져요",
+            "englishHint": "This pen writes smoothly.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_passive_eojida_01",
+            "fullSentence": "이름이 잘 안 외워져요.",
+            "sentenceWithBlank": "이름이 잘 안 ___.",
+            "answer": "외워져요",
+            "englishHint": "The name doesn't stick in my memory.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "외우다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_passive_eojida_02",
+            "fullSentence": "글씨가 쉽게 지워져요.",
+            "sentenceWithBlank": "글씨가 쉽게 ___.",
+            "answer": "지워져요",
+            "englishHint": "The writing erases easily.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "지우다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_passive_eojida_03",
+            "fullSentence": "문장이 잘 써졌어요.",
+            "sentenceWithBlank": "문장이 잘 ___.",
+            "answer": "써졌어요",
+            "englishHint": "The sentence came out well.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "쓰다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    },
+    {
+      "afterPointId": "gp_t2l3_eonota",
+      "grammarPoint": {
+        "id": "gp_gap_causative_suffix",
+        "title": "Causative verb pairs: 먹이다 / 재우다",
+        "category": "causative voice",
+        "tense": null,
+        "register": null,
+        "hint": "Causative verbs make another person or thing perform an action or enter a state: feeding someone, putting a child to sleep, or dressing someone.",
+        "description": "Causative verbs make another person or thing perform an action or enter a state: feeding someone, putting a child to sleep, or dressing someone. Because many forms are lexicalized, learners need to practice individual verb pairs and the roles their sentences assign.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Stem / noun as specified] + Causative verb pairs: 먹이다 / 재우다",
+        "relatedPointIds": [
+          "gp_gap_ge_hada_action"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Learn common lexicalized causative pairs and their particle patterns: 먹다 → 먹이다, 자다 → 재우다, 입다 → 입히다. The person affected may take 을/를 or 에게 depending on the verb."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "엄마가 아기에게 밥을 먹여요. — Mom feeds the baby rice. 엄마가 아기에게 밥을 먹여요 has the mother cause the baby to eat; 먹여요 is the causative of 먹다."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Do not add -이/-히/-리/-기 blindly to any verb. The permitted form and whether the causee takes 을/를 or 에게 depend on the verb."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_causative_suffix_01",
+            "fullSentence": "엄마가 아기에게 밥을 먹여요.",
+            "sentenceWithBlank": "엄마가 아기에게 밥을 ___.",
+            "answer": "먹여요",
+            "englishHint": "Mom feeds the baby rice.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_causative_suffix_02",
+            "fullSentence": "아빠가 아이를 재워요.",
+            "sentenceWithBlank": "아빠가 아이를 ___.",
+            "answer": "재워요",
+            "englishHint": "Dad puts the child to sleep.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_causative_suffix_01",
+            "fullSentence": "엄마가 아이에게 옷을 입혀요.",
+            "sentenceWithBlank": "엄마가 아이에게 옷을 ___.",
+            "answer": "입혀요",
+            "englishHint": "Mom dresses the child.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "입히다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_causative_suffix_02",
+            "fullSentence": "아빠가 아기를 깨워요.",
+            "sentenceWithBlank": "아빠가 아기를 ___.",
+            "answer": "깨워요",
+            "englishHint": "Dad wakes the baby.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "깨우다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_causative_suffix_03",
+            "fullSentence": "선생님이 학생을 앉혀요.",
+            "sentenceWithBlank": "선생님이 학생을 ___.",
+            "answer": "앉혀요",
+            "englishHint": "The teacher seats the student.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "앉히다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    },
+    {
+      "afterPointId": "gp_t2l3_eonota",
+      "grammarPoint": {
+        "id": "gp_gap_ge_hada_action",
+        "title": "-게 하다 (make / let someone do)",
+        "category": "causative",
+        "tense": null,
+        "register": null,
+        "hint": "Use -게 하다 to say that someone causes, instructs or allows another person to do an action.",
+        "description": "Use -게 하다 to say that someone causes, instructs or allows another person to do an action. It is productive even where there is no convenient lexical causative verb.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Action-verb stem] + 게 하다 (cause / allow someone to act)",
+        "relatedPointIds": [
+          "gp_gap_causative_suffix",
+          "gp_gap_ge_hada_state"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Attach 게 하다 to the action stem, then conjugate 하다: 읽다 → 읽게 하다 → 읽게 했어요. The person directed to act often takes 에게/한테."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "선생님이 학생들에게 책을 읽게 했어요. — The teacher made the students read books. 선생님이 학생들에게 책을 읽게 했어요 means the teacher made or had the students read, rather than reading to them."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "The same surface form can express permission or influence depending on context. Contrast a lexical causative such as 재우다 with 재우게 하다."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_ge_hada_action_01",
+            "fullSentence": "선생님이 학생들에게 책을 읽게 했어요.",
+            "sentenceWithBlank": "선생님이 학생들에게 책을 읽___.",
+            "answer": "게 했어요",
+            "englishHint": "The teacher made the students read books.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_ge_hada_action_02",
+            "fullSentence": "엄마가 아이에게 숙제를 하게 했어요.",
+            "sentenceWithBlank": "엄마가 아이에게 숙제를 하___.",
+            "answer": "게 했어요",
+            "englishHint": "Mom made the child do homework.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_ge_hada_action_01",
+            "fullSentence": "의사가 환자를 걷게 했어요.",
+            "sentenceWithBlank": "의사가 환자를 걷___.",
+            "answer": "게 했어요",
+            "englishHint": "The doctor had the patient walk.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "걷다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_ge_hada_action_02",
+            "fullSentence": "선생님이 저를 발표하게 했어요.",
+            "sentenceWithBlank": "선생님이 저를 발표하___.",
+            "answer": "게 했어요",
+            "englishHint": "The teacher had me present.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "발표하다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_ge_hada_action_03",
+            "fullSentence": "부모님이 아이를 쉬게 했어요.",
+            "sentenceWithBlank": "부모님이 아이를 쉬___.",
+            "answer": "게 했어요",
+            "englishHint": "The parents let the child rest.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "쉬다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    },
+    {
+      "afterPointId": "gp_t2l3_eonota",
+      "grammarPoint": {
+        "id": "gp_gap_ge_hada_state",
+        "title": "-게 하다 (cause a state)",
+        "category": "causative",
+        "tense": null,
+        "register": null,
+        "hint": "The same -게 하다 structure can make someone or something become a particular way, such as happy, sad, anxious or comfortable.",
+        "description": "Use -게 하다 when an event or someone's actions cause another person or thing to feel or become a certain way. This works with descriptive verbs and certain intransitive predicates that describe emotions or resulting states.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Emotion / state predicate stem] + 게 하다 (cause a state)",
+        "relatedPointIds": [
+          "gp_gap_ge_hada_action",
+          "gp_ge_adverb"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Add 게 하다 to a predicate that describes a quality, emotion or resulting state: 기쁘다 → 기쁘게 하다; 놀라다 → 놀라게 하다; 화나다 → 화나게 하다. Conjugate 하다 for tense: 기쁘게 했어요 / 행복하게 해요."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "그 말이 저를 기쁘게 했어요. — Those words made me happy. 그 말이 저를 기쁘게 했어요 says those words caused me to feel happy, rather than that I chose to become happy."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "An action causing another person to DO something and an event causing a person to FEEL something use similar forms but different complements."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_ge_hada_state_01",
+            "fullSentence": "그 말이 저를 기쁘게 했어요.",
+            "sentenceWithBlank": "그 말이 저를 기쁘___.",
+            "answer": "게 했어요",
+            "englishHint": "Those words made me happy.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_ge_hada_state_02",
+            "fullSentence": "그 영화는 저를 슬프게 했어요.",
+            "sentenceWithBlank": "그 영화는 저를 슬프___.",
+            "answer": "게 했어요",
+            "englishHint": "That film made me sad.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_ge_hada_state_01",
+            "fullSentence": "그 노래가 저를 행복하게 해요.",
+            "sentenceWithBlank": "그 노래가 저를 행복하___.",
+            "answer": "게 해요",
+            "englishHint": "That song makes me happy.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "행복하다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_ge_hada_state_02",
+            "fullSentence": "그 소식이 모두를 놀라게 했어요.",
+            "sentenceWithBlank": "그 소식이 모두를 놀라___.",
+            "answer": "게 했어요",
+            "englishHint": "That news surprised everyone.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "놀라다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_ge_hada_state_03",
+            "fullSentence": "그 말이 친구를 화나게 했어요.",
+            "sentenceWithBlank": "그 말이 친구를 화나___.",
+            "answer": "게 했어요",
+            "englishHint": "Those words made my friend angry.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "화나다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    },
+    {
+      "afterPointId": "gp_t2l3_neun_pyeon",
+      "grammarPoint": {
+        "id": "gp_gap_go_sipeohada",
+        "title": "-고 싶어 하다 (someone else's wishes)",
+        "category": "reported desire",
+        "tense": null,
+        "register": null,
+        "hint": "To describe another person's visible or reported wish, Korean commonly uses -고 싶어 하다 rather than speaking as though you directly know their inner feelings.",
+        "description": "To describe another person's visible or reported wish, Korean commonly uses -고 싶어 하다 rather than speaking as though you directly know their inner feelings. It is especially useful when reporting what friends, family members or other people want to do.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Action-verb stem] + 고 싶어 하다 → -고 싶어 해요 (report another person's desire)",
+        "relatedPointIds": [
+          "gp_go_sipda",
+          "gp_gap_ge_hada_action"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Attach 고 싶어 하다 to the action verb stem, then conjugate 하다: 가다 → 가고 싶어 해요, 먹다 → 먹고 싶어 해요."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "동생은 놀고 싶어 해요. — My younger sibling wants to play. 동생은 놀고 싶어 해요 reports the younger sibling's wish to play, using 싶어 해요 for a third person's desire."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "For your own desire, -고 싶어요 is natural. Don't force -고 싶어 하다 for the speaker's own straightforward wishes."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_go_sipeohada_01",
+            "fullSentence": "동생은 놀고 싶어 해요.",
+            "sentenceWithBlank": "동생은 놀___.",
+            "answer": "고 싶어 해요",
+            "englishHint": "My younger sibling wants to play.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_go_sipeohada_02",
+            "fullSentence": "친구는 한국에 가고 싶어 해요.",
+            "sentenceWithBlank": "친구는 한국에 가___.",
+            "answer": "고 싶어 해요",
+            "englishHint": "My friend wants to go to Korea.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_go_sipeohada_01",
+            "fullSentence": "아이가 더 자고 싶어 해요.",
+            "sentenceWithBlank": "아이가 더 자___.",
+            "answer": "고 싶어 해요",
+            "englishHint": "The child wants to sleep more.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "자다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_go_sipeohada_02",
+            "fullSentence": "민수는 영화를 보고 싶어 해요.",
+            "sentenceWithBlank": "민수는 영화를 보___.",
+            "answer": "고 싶어 해요",
+            "englishHint": "Minsu wants to watch a movie.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "보다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_go_sipeohada_03",
+            "fullSentence": "동생은 게임을 하고 싶어 해요.",
+            "sentenceWithBlank": "동생은 게임을 하___.",
+            "answer": "고 싶어 해요",
+            "englishHint": "My sibling wants to play a game.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "하다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    },
+    {
+      "afterPointId": "gp_t2l3_eotdeon",
+      "grammarPoint": {
+        "id": "gp_gap_deoragoyo",
+        "title": "-더라고요 (what I found firsthand)",
+        "category": "retrospective evidence",
+        "tense": null,
+        "register": null,
+        "hint": "Use -더라고요 to tell someone about something you noticed or experienced firsthand and are now recalling.",
+        "description": "Use -더라고요 to tell someone about something you noticed or experienced firsthand and are now recalling. It often conveys a discovery rather than a general claim.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Stem / noun as specified] + -더라고요 (what I found firsthand)",
+        "relatedPointIds": [
+          "gp_t2l4_deoni",
+          "gp_t2l4_eotdeoni"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Attach 더라고요 to the relevant verb or descriptive stem when reporting past observation: 맛있다 → 맛있더라고요, 춥다 → 춥더라고요."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "그 식당 음식이 맛있더라고요. — I found that restaurant's food tasty. 그 식당 음식이 맛있더라고요 tells the listener that the speaker personally found the restaurant's food tasty."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "It is not just the ordinary past tense. The form generally points to the speaker's own observation, and its person/tense restrictions require care."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_deoragoyo_01",
+            "fullSentence": "그 식당 음식이 맛있더라고요.",
+            "sentenceWithBlank": "그 식당 음식이 맛있___.",
+            "answer": "더라고요",
+            "englishHint": "I found that restaurant's food tasty.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_deoragoyo_02",
+            "fullSentence": "어제 밖이 춥더라고요.",
+            "sentenceWithBlank": "어제 밖이 춥___.",
+            "answer": "더라고요",
+            "englishHint": "It turned out to be cold outside yesterday.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_deoragoyo_01",
+            "fullSentence": "영화가 정말 재미있더라고요.",
+            "sentenceWithBlank": "영화가 정말 재미있___.",
+            "answer": "더라고요",
+            "englishHint": "I found the movie really interesting.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "재미있다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_deoragoyo_02",
+            "fullSentence": "그 카페가 조용하더라고요.",
+            "sentenceWithBlank": "그 카페가 조용하___.",
+            "answer": "더라고요",
+            "englishHint": "The café was quiet when I went.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "조용하다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_deoragoyo_03",
+            "fullSentence": "그 사람은 한국어를 잘하더라고요.",
+            "sentenceWithBlank": "그 사람은 한국어를 잘하___.",
+            "answer": "더라고요",
+            "englishHint": "I noticed that person speaks Korean well.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "잘하다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    },
+    {
+      "afterPointId": "gp_t2l3_neun_pyeon",
+      "grammarPoint": {
+        "id": "gp_gap_na_boda",
+        "title": "-나 보다 / -(으)ㄴ가 보다 (seems likely)",
+        "category": "inference",
+        "tense": null,
+        "register": null,
+        "hint": "Use these endings to infer a situation from what you can see or hear, without claiming certainty.",
+        "description": "Use these endings to infer a situation from what you can see or hear, without claiming certainty. Choice of form is affected by action versus descriptive verb.",
+        "level": 3,
+        "tags": [
+          "TOPIK2",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Stem / noun as specified] + -나 보다 / -(으)ㄴ가 보다 (seems likely)",
+        "relatedPointIds": [
+          "gp_eul_geot_gatda",
+          "gp_gap_deoragoyo"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Action verb stems commonly use -나 보다 (오다 → 오나 봐요); descriptive verbs take -(으)ㄴ가 보다 (바쁘다 → 바쁜가 봐요). Some common variation exists."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "밖에 비가 오나 봐요. — It seems to be raining outside. 밖에 비가 오나 봐요 expresses a guess based on visible or audible clues that it is raining."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Do not confuse this with direct eyewitness recollection -더라고요 or a simple future prediction -(으)ㄹ 것 같아요."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_na_boda_01",
+            "fullSentence": "밖에 비가 오나 봐요.",
+            "sentenceWithBlank": "밖에 비가 ___.",
+            "answer": "오나 봐요",
+            "englishHint": "It seems to be raining outside.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_na_boda_02",
+            "fullSentence": "친구가 바쁜가 봐요.",
+            "sentenceWithBlank": "친구가 ___.",
+            "answer": "바쁜가 봐요",
+            "englishHint": "My friend seems busy.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_na_boda_01",
+            "fullSentence": "누가 집에 있나 봐요.",
+            "sentenceWithBlank": "누가 집에 ___.",
+            "answer": "있나 봐요",
+            "englishHint": "It looks like someone is home.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "있다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_na_boda_02",
+            "fullSentence": "그 사람은 피곤한가 봐요.",
+            "sentenceWithBlank": "그 사람은 ___.",
+            "answer": "피곤한가 봐요",
+            "englishHint": "That person seems tired.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "피곤하다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_na_boda_03",
+            "fullSentence": "버스가 곧 오나 봐요.",
+            "sentenceWithBlank": "버스가 곧 ___.",
+            "answer": "오나 봐요",
+            "englishHint": "It looks like the bus is coming soon.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "오다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index; form-specific verification required"
+      ],
+      "reviewStatus": "Editorial draft; educator verification required"
+    }
+  ]
+}

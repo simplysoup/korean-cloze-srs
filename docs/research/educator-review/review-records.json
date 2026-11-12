@@ -1,0 +1,6 @@
+{
+  "schemaVersion": 1,
+  "defaultStatus": "not_reviewed",
+  "policy": "No review record means not_reviewed. Only a named human Korean-language educator can approve; source fingerprints and append-only history are required. These records contain no current educator decisions.",
+  "reviews": []
+}

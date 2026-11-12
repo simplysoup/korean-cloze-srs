@@ -1,0 +1,2281 @@
+{
+  "schemaVersion": 1,
+  "kind": "grammar-transfer-pilot",
+  "provenance": "Editorial pilot authored against the existing Munpro grammar IDs; no independent Korean educator verification. Practice scores are ephemeral and never grammar SRS mastery.",
+  "educatorApproval": "pending",
+  "units": [
+    {
+      "id": "level-1",
+      "title": "TOPIK Level 1: Contrast & Transfer",
+      "level": 1,
+      "description": "Situation-first grammar selection and new-sentence production, no lesson titles shown.",
+      "sessionSize": 6
+    },
+    {
+      "id": "level-2",
+      "title": "TOPIK Level 2: Contrast & Transfer",
+      "level": 2,
+      "description": "Situation-first grammar selection and new-sentence production, no lesson titles shown.",
+      "sessionSize": 6
+    },
+    {
+      "id": "level-3",
+      "title": "TOPIK Level 3: Contrast & Transfer",
+      "level": 3,
+      "description": "Situation-first grammar selection and new-sentence production, no lesson titles shown.",
+      "sessionSize": 6
+    },
+    {
+      "id": "level-4",
+      "title": "TOPIK Level 4: Contrast & Transfer",
+      "level": 4,
+      "description": "Situation-first grammar selection and new-sentence production, no lesson titles shown.",
+      "sessionSize": 6
+    }
+  ],
+  "exercises": [
+    {
+      "id": "ct-001",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "topic-vs-subject",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_eun_neun",
+        "gp_i_ga"
+      ],
+      "contextKorean": "선생님이 '누가 칠판을 닦아요?'라고 물었습니다. 다른 사람과 대조하는 뜻 없이 새 담당자를 알려 줍니다.",
+      "contextEnglish": "",
+      "task": "질문에 가장 적절하게 대답하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "수진이가 칠판을 닦아요.",
+          "explanation": "이/가가 '누가?'에 대한 새로운 주어 정보를 표시합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "수진이는 칠판을 닦아요.",
+          "explanation": "은/는은 수진이를 화제로 세우거나 대조할 때 자연스럽습니다. 여기서는 새 담당자를 식별하는 데 초점이 있습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Identify a previously unknown actor answering 누가 rather than introducing a contrastive topic.",
+      "explanation": "이/가가 '누가?'에 대한 새로운 주어 정보를 표시합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Pragmatic distinction: educator should verify the naturalness of topic alternatives.",
+      "availableAfterLesson": 3
+    },
+    {
+      "id": "ct-002",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "topic-vs-subject",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_eun_neun",
+        "gp_i_ga"
+      ],
+      "contextKorean": "친구가 '누가 고양이에게 밥을 줬어요?'라고 묻습니다. 정답은 영희이고, 비교나 대조는 하지 않습니다.",
+      "contextEnglish": "",
+      "task": "새롭게 밝혀진 사람을 중심으로 답하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "영희가 고양이에게 밥을 줬어요.",
+          "explanation": "새 주어가 누군지 직접 알려 주는 응답입니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "영희는 고양이에게 밥을 줬어요.",
+          "explanation": "영희를 화제로 삼는 응답이며, 질문의 주어 식별 초점을 약하게 만듭니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Distinguish subject-focus information from topicalization in a wh-question.",
+      "explanation": "새 주어가 누군지 직접 알려 주는 응답입니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Pragmatic distinction: educator should verify against appropriate discourse contexts.",
+      "availableAfterLesson": 3
+    },
+    {
+      "id": "ct-003",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "place-destination-vs-action",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_e_loc",
+        "gp_eseo"
+      ],
+      "contextKorean": "지금 사람들이 독서 모임을 하고 있습니다. 모임이 진행되는 장소는 도서관입니다.",
+      "contextEnglish": "",
+      "task": "모임 활동이 실제로 일어나는 곳을 한 문장으로 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "사람들이 도서관에서 책을 읽어요.",
+          "explanation": "에서가 읽는 활동의 장소를 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "사람들이 도서관에 책을 읽어요.",
+          "explanation": "에만으로는 읽다의 활동 장소를 표시하지 못합니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Select an action-location particle rather than a destination marker.",
+      "explanation": "에서가 읽는 활동의 장소를 나타냅니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 5
+    },
+    {
+      "id": "ct-004",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "place-destination-vs-action",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_e_loc",
+        "gp_eseo"
+      ],
+      "contextKorean": "민수는 집에 없습니다. 지금 버스를 타고 회사에 도착하려고 이동하고 있습니다.",
+      "contextEnglish": "",
+      "task": "민수가 향하는 목적지를 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "민수는 회사에 가요.",
+          "explanation": "가다와 에가 도착 목적지를 표시합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "민수는 회사에서 가요.",
+          "explanation": "에서는 출발 지점의 해석이 생겨, 향하는 목적지가 되지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Use the destination marker with a motion verb.",
+      "explanation": "가다와 에가 도착 목적지를 표시합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 5
+    },
+    {
+      "id": "ct-005",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "volition-vs-inability",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_an",
+        "gp_mos"
+      ],
+      "contextKorean": "해나는 매운 음식을 먹을 수 있습니다. 하지만 오늘은 자기 선택으로 먹지 않기로 했습니다.",
+      "contextEnglish": "",
+      "task": "이유가 능력 부족이 아니라 의도적인 선택임을 나타내세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "해나는 오늘 매운 음식을 안 먹어요.",
+          "explanation": "안은 가능한 행동을 의도적으로 하지 않는 뜻을 전달합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "해나는 오늘 매운 음식을 못 먹어요.",
+          "explanation": "못은 먹을 능력이나 외부 조건이 막는다는 뜻이라 주어진 상황과 다릅니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Encode a voluntary negative rather than inability.",
+      "explanation": "안은 가능한 행동을 의도적으로 하지 않는 뜻을 전달합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 4
+    },
+    {
+      "id": "ct-006",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "volition-vs-inability",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_an",
+        "gp_mos"
+      ],
+      "contextKorean": "유나는 발목을 다쳤습니다. 달리고 싶지만 의사의 지시 때문에 지금 달리는 것이 불가능합니다.",
+      "contextEnglish": "",
+      "task": "달리지 못하는 제약을 반드시 드러내세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "유나는 지금 못 달려요.",
+          "explanation": "못이 원하는 행동을 할 수 없는 제약을 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "유나는 지금 안 달려요.",
+          "explanation": "안 달려요는 실제로 달리지 않는 사실만 말해, 불가능하다는 정보가 빠집니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Express inability instead of mere non-performance.",
+      "explanation": "못이 원하는 행동을 할 수 없는 제약을 나타냅니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 4
+    },
+    {
+      "id": "ct-007",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "reason-before-directive",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_eunikka",
+        "gp_aseo"
+      ],
+      "contextKorean": "바닥에 물이 흘러 미끄럽습니다. 직원은 손님에게 조심하라고 정중히 지시합니다.",
+      "contextEnglish": "",
+      "task": "이유를 먼저 말한 뒤 실제 지시를 하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "바닥이 미끄러우니까 조심하세요.",
+          "explanation": "-(으)니까로 이유를 제시한 뒤 명령형을 자연스럽게 연결합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "바닥이 미끄러워서 조심하세요.",
+          "explanation": "교재 문어 기준에서 -아/어서의 원인절과 명령형 결합은 제한됩니다. 구어 예외는 교육자 검토가 필요합니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Choose a cause connector compatible with a directive.",
+      "explanation": "-(으)니까로 이유를 제시한 뒤 명령형을 자연스럽게 연결합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Colloquial -아/어서 imperative variation requires educator review.",
+      "availableAfterLesson": 9
+    },
+    {
+      "id": "ct-008",
+      "type": "contrast",
+      "unit": "level-1",
+      "contrastGroup": "reason-before-directive",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_eunikka",
+        "gp_aseo"
+      ],
+      "contextKorean": "시간이 늦었습니다. 친구에게 서둘러 출발하자고 제안하려 합니다.",
+      "contextEnglish": "",
+      "task": "제안의 이유가 앞에 오도록 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "시간이 늦었으니까 지금 출발해요.",
+          "explanation": "-(으)니까가 이유를 제시하며 청유적 제안을 이끌 수 있습니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "시간이 늦어서 지금 출발해요.",
+          "explanation": "이 문장은 지금 출발한다는 결과를 서술할 뿐 제안임을 표시하지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Separate a justified proposal from a descriptive cause-result statement.",
+      "explanation": "-(으)니까가 이유를 제시하며 청유적 제안을 이끌 수 있습니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Speech-act ambiguity requires educator review.",
+      "availableAfterLesson": 9
+    },
+    {
+      "id": "ct-009",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "speech-register",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_seumnida",
+        "gp_ayo_eoyo",
+        "gp_gap_informal_haeche"
+      ],
+      "contextKorean": "시청에서 시장이 공식 행사를 시작합니다. 청중에게 매우 격식 있게 선언해야 합니다.",
+      "contextEnglish": "",
+      "task": "행사 시작을 공식적으로 알리세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "지금 행사를 시작합니다.",
+          "explanation": "-ㅂ니다는 공식 발표에 적합한 격식체입니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "지금 행사를 시작해요.",
+          "explanation": "해요체는 공손하지만 공식 선언에 요구되는 격식체는 아닙니다.",
+          "validInContext": false
+        },
+        {
+          "id": "o3",
+          "text": "지금 행사를 시작해.",
+          "explanation": "반말은 공식 청중에게 적합하지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Switch to formal declarative speech in a public announcement.",
+      "explanation": "-ㅂ니다는 공식 발표에 적합한 격식체입니다.",
+      "registerConstraint": "formal declarative (합니다체)",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 14
+    },
+    {
+      "id": "ct-010",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "speech-register",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_seumnida",
+        "gp_ayo_eoyo",
+        "gp_gap_informal_haeche"
+      ],
+      "contextKorean": "아주 친한 동생과 둘이 이야기합니다. 동생에게 반말로 내일 같이 가자고 말합니다.",
+      "contextEnglish": "",
+      "task": "정중체나 격식체 없이 친근하게 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "내일 같이 가.",
+          "explanation": "반말 해체가 지정된 친밀한 관계에 적합합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "내일 같이 가요.",
+          "explanation": "해요체는 공손하지만 요청된 반말이 아닙니다.",
+          "validInContext": false
+        },
+        {
+          "id": "o3",
+          "text": "내일 같이 갑니다.",
+          "explanation": "합니다체는 친근한 반말 상황과 어울리지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Use plain casual speech without accidental polite endings.",
+      "explanation": "반말 해체가 지정된 친밀한 관계에 적합합니다.",
+      "registerConstraint": "casual informal (해체)",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 14
+    },
+    {
+      "id": "ct-011",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "speaker-intention-vs-inference",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_gap_get_intention",
+        "gp_gap_get_inference"
+      ],
+      "contextKorean": "행사 사회자가 이제 직접 다음 순서를 진행하기로 결심했습니다. 자신의 의지를 공식적으로 알립니다.",
+      "contextEnglish": "",
+      "task": "사회자의 결심을 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "제가 다음 순서를 진행하겠습니다.",
+          "explanation": "1인칭 격식체 -겠-이 발표자의 즉각적인 의지와 약속을 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "진행자가 다음 순서를 하겠어요.",
+          "explanation": "3인칭에 대한 추측처럼 들리고 직접 나서겠다는 1인칭 약속이 아닙니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Recognize speaker-volitional -겠- in formal self-commitment.",
+      "explanation": "1인칭 격식체 -겠-이 발표자의 즉각적인 의지와 약속을 나타냅니다.",
+      "registerConstraint": "formal declarative (합니다체)",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 13
+    },
+    {
+      "id": "ct-012",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "speaker-intention-vs-inference",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_gap_get_intention",
+        "gp_gap_get_inference"
+      ],
+      "contextKorean": "밖에서 눈이 내리고 바람이 셉니다. 창밖을 본 사람이 직접 확인하지 못한 밖의 추위를 추측합니다.",
+      "contextEnglish": "",
+      "task": "날씨를 보고 추측한 문장을 고르세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "밖은 아주 춥겠어요.",
+          "explanation": "-겠-이 관찰을 근거로 한 추측을 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "제가 밖에 나가겠습니다.",
+          "explanation": "1인칭 의지를 나타내며 추위를 추측하는 답이 아닙니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Recognize inferential -겠- instead of a speaker's plan.",
+      "explanation": "-겠-이 관찰을 근거로 한 추측을 나타냅니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 13
+    },
+    {
+      "id": "ct-013",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "ongoing-vs-resultative",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_go_itda",
+        "gp_gap_resultative_eo_itda"
+      ],
+      "contextKorean": "기술자가 방금 작업을 시작했습니다. 지금도 창문을 여는 동작을 하고 있습니다.",
+      "contextEnglish": "",
+      "task": "진행 중인 행동을 묘사하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "기술자가 창문을 열고 있어요.",
+          "explanation": "-고 있다가 창문을 여는 동작이 진행 중임을 보여 줍니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "창문이 열려 있어요.",
+          "explanation": "-아/어 있다가 이미 열린 뒤 유지되는 결과 상태입니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Distinguish a continuing action from its resulting state.",
+      "explanation": "-고 있다가 창문을 여는 동작이 진행 중임을 보여 줍니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 16
+    },
+    {
+      "id": "ct-014",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "ongoing-vs-resultative",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_go_itda",
+        "gp_gap_resultative_eo_itda"
+      ],
+      "contextKorean": "문을 닫은 사람은 이미 떠났습니다. 지금은 문이 닫힌 상태이며 움직이는 사람은 없습니다.",
+      "contextEnglish": "",
+      "task": "현재 남아 있는 상태만 설명하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "문이 닫혀 있어요.",
+          "explanation": "닫힌 결과 상태가 계속된다는 뜻입니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "누군가 문을 닫고 있어요.",
+          "explanation": "현재 문을 닫는 행동이 진행 중이라는 뜻이라 상황과 충돌합니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Describe a maintained result without implying a current actor.",
+      "explanation": "닫힌 결과 상태가 계속된다는 뜻입니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 16
+    },
+    {
+      "id": "ct-015",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "try-vs-experience",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_eoboda",
+        "gp_eun_jeok"
+      ],
+      "contextKorean": "친구는 이 과일을 한 번도 먹어 본 적이 없습니다. 지금 조금 맛보라고 정중하게 권합니다.",
+      "contextEnglish": "",
+      "task": "지금 시도해 보라고 권하는 말을 고르세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "이 과일을 먹어 보세요.",
+          "explanation": "-아/어 보다와 명령형이 지금 새로운 시도를 권합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "이 과일을 먹은 적이 있어요.",
+          "explanation": "-ㄴ 적이 있다가 과거 경험을 주장하여 상황과 맞지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Choose an invitation to try, not a report of past experience.",
+      "explanation": "-아/어 보다와 명령형이 지금 새로운 시도를 권합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 18
+    },
+    {
+      "id": "ct-016",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "try-vs-experience",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_eoboda",
+        "gp_eun_jeok"
+      ],
+      "contextKorean": "면접관이 과거에 제주도에서 살아 본 경험이 있는지 묻습니다. 지원자는 그 경험이 있다고 대답합니다.",
+      "contextEnglish": "",
+      "task": "과거에 실제로 있었던 경험을 진술하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "저는 제주도에서 산 적이 있어요.",
+          "explanation": "-(으)ㄴ 적이 있다가 과거 생활 경험의 존재를 말합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "저는 제주도에서 살아 보세요.",
+          "explanation": "권유형 문장이라 과거 경험을 대답하지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "State completed past experience rather than suggest trying an activity.",
+      "explanation": "-(으)ㄴ 적이 있다가 과거 생활 경험의 존재를 말합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 18
+    },
+    {
+      "id": "ct-017",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "before-vs-after",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_gi_jeone",
+        "gp_go_naseo"
+      ],
+      "contextKorean": "비행기는 오전 열 시에 떠납니다. 지훈은 출발 직전에 여권을 확인하려 합니다.",
+      "contextEnglish": "",
+      "task": "확인과 출발의 순서를 정확히 나타내세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "출발하기 전에 여권을 확인해요.",
+          "explanation": "-기 전에가 출발보다 확인이 먼저임을 뜻합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "출발하고 나서 여권을 확인해요.",
+          "explanation": "-고 나서가 출발한 다음에 확인한다는 정반대 순서를 만듭니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Encode an action that must happen before departure.",
+      "explanation": "-기 전에가 출발보다 확인이 먼저임을 뜻합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 15
+    },
+    {
+      "id": "ct-018",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "before-vs-after",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_gi_jeone",
+        "gp_go_naseo"
+      ],
+      "contextKorean": "지수가 아침 식사를 다 마친 다음에 바로 양치질을 했습니다.",
+      "contextEnglish": "",
+      "task": "식사를 끝낸 뒤 이루어진 행동을 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "밥을 먹고 나서 이를 닦았어요.",
+          "explanation": "-고 나서가 선행 행동의 완료 후 다음 행동을 표시합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "밥을 먹기 전에 이를 닦았어요.",
+          "explanation": "-기 전에가 식사 전 양치질이라는 반대 순서를 말합니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Order completed actions using after rather than before.",
+      "explanation": "-고 나서가 선행 행동의 완료 후 다음 행동을 표시합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 15
+    },
+    {
+      "id": "ct-019",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "means-vs-location",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_euro_means",
+        "gp_e_loc",
+        "gp_eseo"
+      ],
+      "contextKorean": "민지는 종이에 글을 씁니다. 볼펜을 도구로 이용합니다.",
+      "contextEnglish": "",
+      "task": "도구를 명시한 자연스러운 문장을 고르세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "민지는 볼펜으로 글을 써요.",
+          "explanation": "-(으)로가 수단이나 도구를 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "민지는 볼펜에 글을 써요.",
+          "explanation": "에를 쓰면 볼펜 자체가 글의 표면이나 위치처럼 해석됩니다.",
+          "validInContext": false
+        },
+        {
+          "id": "o3",
+          "text": "민지는 볼펜에서 글을 써요.",
+          "explanation": "에서가 활동 장소를 나타내므로 볼펜을 도구로 표현하지 못합니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Use -(으)로 for an instrument, not a location particle.",
+      "explanation": "-(으)로가 수단이나 도구를 나타냅니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 21
+    },
+    {
+      "id": "ct-020",
+      "type": "contrast",
+      "unit": "level-2",
+      "contrastGroup": "means-vs-location",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_euro_means",
+        "gp_e_loc",
+        "gp_eseo"
+      ],
+      "contextKorean": "요리사가 칼을 사용해서 채소를 잘랐습니다. 장소가 아니라 사용한 도구를 말해야 합니다.",
+      "contextEnglish": "",
+      "task": "칼을 수단으로 표시하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "요리사는 칼로 채소를 잘랐어요.",
+          "explanation": "칼로는 도구를 표시하는 -(으)로의 형태입니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "요리사는 칼에 채소를 잘랐어요.",
+          "explanation": "칼에라고 하면 도구 뜻이 되지 않습니다.",
+          "validInContext": false
+        },
+        {
+          "id": "o3",
+          "text": "요리사는 칼에서 채소를 잘랐어요.",
+          "explanation": "칼에서라고 하면 장소 표현처럼 되어 상황에 맞지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Apply the instrumental particle to a consonant-final tool noun.",
+      "explanation": "칼로는 도구를 표시하는 -(으)로의 형태입니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 21
+    },
+    {
+      "id": "ct-021",
+      "type": "contrast",
+      "unit": "level-3",
+      "contrastGroup": "passive-vs-causative",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_gap_passive_suffix",
+        "gp_gap_causative_suffix"
+      ],
+      "contextKorean": "아침에 교실에 갔더니 문이 열려 있었습니다. 누가 열었는지는 모릅니다. 일어난 일을 문 중심으로 보고합니다.",
+      "contextEnglish": "",
+      "task": "행위자를 추가하지 않는 문장을 고르세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "교실 문이 열렸어요.",
+          "explanation": "열리다의 피동 표현은 문에 일어난 변화를 말하며 행위자를 요구하지 않습니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "학생이 교실 문을 열었어요.",
+          "explanation": "학생이라는 행위자를 임의로 추가하고 능동 행동을 말합니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Report a patient-centered event without inventing an agent.",
+      "explanation": "열리다의 피동 표현은 문에 일어난 변화를 말하며 행위자를 요구하지 않습니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 24
+    },
+    {
+      "id": "ct-022",
+      "type": "contrast",
+      "unit": "level-3",
+      "contrastGroup": "passive-vs-causative",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_gap_passive_suffix",
+        "gp_gap_causative_suffix"
+      ],
+      "contextKorean": "아기는 혼자 밥을 먹지 않았습니다. 아버지가 숟가락으로 아기에게 밥을 먹게 했습니다.",
+      "contextEnglish": "",
+      "task": "행동을 시킨 사람을 주어로 표현하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "아버지가 아기에게 밥을 먹였어요.",
+          "explanation": "먹이다는 아버지가 아기에게 먹는 행위를 시켰다는 사동 뜻입니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "아기가 밥을 먹었어요.",
+          "explanation": "아기가 먹었다는 사실만 말해 원인 제공자의 역할이 빠집니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Choose a causative verb when an agent causes another participant's action.",
+      "explanation": "먹이다는 아버지가 아기에게 먹는 행위를 시켰다는 사동 뜻입니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 24
+    },
+    {
+      "id": "ct-023",
+      "type": "contrast",
+      "unit": "level-3",
+      "contrastGroup": "during-vs-immediately",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_neun_dongan",
+        "gp_t2l3_jamaja"
+      ],
+      "contextKorean": "강의가 끝난 바로 그 순간에 학생들이 박수를 쳤습니다. 기다리는 시간은 없었습니다.",
+      "contextEnglish": "",
+      "task": "일이 바로 이어졌음을 나타내세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "강의가 끝나자마자 학생들이 박수를 쳤어요.",
+          "explanation": "-자마자는 앞선 일이 끝나는 즉시 뒤 행동이 이어짐을 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "강의가 끝나는 동안 학생들이 박수를 쳤어요.",
+          "explanation": "-는 동안은 강의가 진행되는 시간에 박수를 쳤다는 뜻입니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Mark immediate succession rather than a simultaneous interval.",
+      "explanation": "-자마자는 앞선 일이 끝나는 즉시 뒤 행동이 이어짐을 나타냅니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 27
+    },
+    {
+      "id": "ct-024",
+      "type": "contrast",
+      "unit": "level-3",
+      "contrastGroup": "during-vs-immediately",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_neun_dongan",
+        "gp_t2l3_jamaja"
+      ],
+      "contextKorean": "엄마는 한 시간 동안 요리를 했습니다. 그 시간 내내 아이는 옆에서 그림을 그렸습니다.",
+      "contextEnglish": "",
+      "task": "두 활동이 겹친 시간 구간을 나타내세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "엄마가 요리하는 동안 아이가 그림을 그렸어요.",
+          "explanation": "-는 동안은 두 행동이 지속적으로 겹치는 시간 구간을 표시합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "엄마가 요리하자마자 아이가 그림을 그렸어요.",
+          "explanation": "-자마자는 요리 시작 또는 끝의 즉시성으로 읽혀 '내내'와 맞지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Use a temporal interval when actions overlap.",
+      "explanation": "-는 동안은 두 행동이 지속적으로 겹치는 시간 구간을 표시합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 27
+    },
+    {
+      "id": "ct-025",
+      "type": "contrast",
+      "unit": "level-3",
+      "contrastGroup": "negative-cause-vs-benefit",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_neurago",
+        "gp_t2l3_deokbune"
+      ],
+      "contextKorean": "민호는 밤새 보고서를 쓰느라 잠을 못 잤습니다. 이유는 시간을 빼앗긴 일이고 결과는 좋지 않습니다.",
+      "contextEnglish": "",
+      "task": "불리한 결과를 초래한 활동을 연결하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "민호는 보고서를 쓰느라고 잠을 못 잤어요.",
+          "explanation": "-느라고는 앞 활동에 매여 부정적인 결과가 생긴 것을 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "민호는 보고서를 쓴 덕분에 잠을 못 잤어요.",
+          "explanation": "덕분에는 일반적으로 좋은 결과에 대한 감사·혜택을 표시해 맥락과 어긋납니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Distinguish time-consuming adverse cause from beneficial cause.",
+      "explanation": "-느라고는 앞 활동에 매여 부정적인 결과가 생긴 것을 나타냅니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 28
+    },
+    {
+      "id": "ct-026",
+      "type": "contrast",
+      "unit": "level-3",
+      "contrastGroup": "negative-cause-vs-benefit",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_neurago",
+        "gp_t2l3_deokbune"
+      ],
+      "contextKorean": "길을 몰랐지만 지수가 친절히 알려 줘서 제시간에 도착했습니다. 도움에 감사하는 느낌을 드러냅니다.",
+      "contextEnglish": "",
+      "task": "좋은 결과를 가져온 도움을 강조하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "지수가 알려 준 덕분에 제시간에 도착했어요.",
+          "explanation": "덕분에가 도움에 따른 긍정적인 결과를 나타냅니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "지수가 알려 주느라고 제시간에 도착했어요.",
+          "explanation": "-느라고는 앞 활동에 매인 주체의 부정적 결과를 기대하므로 감사의 뜻과 다릅니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Use a benefactive cause connector for a successful outcome.",
+      "explanation": "덕분에가 도움에 따른 긍정적인 결과를 나타냅니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 28
+    },
+    {
+      "id": "ct-027",
+      "type": "contrast",
+      "unit": "level-4",
+      "contrastGroup": "direct-experiment-vs-observation",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_deoni",
+        "gp_t2l4_eotdeoni"
+      ],
+      "contextKorean": "나는 어제 새 운동화를 직접 신어 봤습니다. 그러자 발이 덜 아팠습니다.",
+      "contextEnglish": "",
+      "task": "내가 한 행동 뒤에 직접 경험한 변화를 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "새 운동화를 신었더니 발이 덜 아팠어요.",
+          "explanation": "-았/었더니가 자신이 한 일을 계기로 확인한 결과를 연결합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "새 운동화를 신더니 발이 덜 아팠어요.",
+          "explanation": "-더니는 보통 관찰한 다른 대상의 변화에 쓰며 여기서는 1인칭 체험에 맞지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Relate a speaker's completed experiment to a discovered result.",
+      "explanation": "-았/었더니가 자신이 한 일을 계기로 확인한 결과를 연결합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "First-person -더니 restrictions need educator verification.",
+      "availableAfterLesson": 30
+    },
+    {
+      "id": "ct-028",
+      "type": "contrast",
+      "unit": "level-4",
+      "contrastGroup": "direct-experiment-vs-observation",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_deoni",
+        "gp_t2l4_eotdeoni"
+      ],
+      "contextKorean": "나는 며칠 동안 동생이 꾸준히 피아노를 연습하는 모습을 보았습니다. 그러더니 오늘은 어려운 곡을 잘 칩니다.",
+      "contextEnglish": "",
+      "task": "다른 사람의 변화를 관찰한 흐름을 말하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "동생이 계속 연습하더니 오늘은 어려운 곡도 잘 쳐요.",
+          "explanation": "-더니는 관찰하던 동생의 행동과 뒤의 변화를 이어 줍니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "내가 계속 연습했더니 오늘은 동생이 잘 쳐요.",
+          "explanation": "-았/었더니는 내가 연습한 결과를 보고하는 문장이므로 관찰 대상과 행위자가 바뀝니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Describe an observed third-party progression without replacing the actor.",
+      "explanation": "-더니는 관찰하던 동생의 행동과 뒤의 변화를 이어 줍니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Changing subject in distractor avoids near-equivalent semantic readings.",
+      "availableAfterLesson": 30
+    },
+    {
+      "id": "ct-029",
+      "type": "contrast",
+      "unit": "level-4",
+      "contrastGroup": "reported-speech-act",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_nyago_hada",
+        "gp_t2l4_eurago_hada",
+        "gp_neundago_hada"
+      ],
+      "contextKorean": "어제 친구가 나에게 '어디에서 일해?'라고 질문했습니다. 나는 지금 그 질문 내용을 부모님께 전합니다.",
+      "contextEnglish": "",
+      "task": "질문이었다는 사실을 유지해서 전달하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "친구가 어디에서 일하냐고 물었어요.",
+          "explanation": "-냐고 하다가 원래의 질문이라는 발화 행위를 유지합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "친구가 어디에서 일한다고 했어요.",
+          "explanation": "-ㄴ/는다고가 평서문 보고로 바뀌어 질문 의미가 사라집니다.",
+          "validInContext": false
+        },
+        {
+          "id": "o3",
+          "text": "친구가 어디에서 일하라고 했어요.",
+          "explanation": "-(으)라고가 명령을 전달해 원래 발화와 다릅니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Preserve an interrogative speech act in indirect quotation.",
+      "explanation": "-냐고 하다가 원래의 질문이라는 발화 행위를 유지합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 35
+    },
+    {
+      "id": "ct-030",
+      "type": "contrast",
+      "unit": "level-4",
+      "contrastGroup": "reported-speech-act",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_nyago_hada",
+        "gp_t2l4_eurago_hada",
+        "gp_t2l4_jago_hada"
+      ],
+      "contextKorean": "선생님이 학생에게 '조용히 앉으세요.'라고 지시했습니다. 나는 그 지시를 제삼자에게 전합니다.",
+      "contextEnglish": "",
+      "task": "명령이었다는 뜻을 유지해서 전달하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "선생님이 조용히 앉으라고 하셨어요.",
+          "explanation": "-(으)라고 하다가 상대에게 하는 명령을 간접적으로 전달합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "선생님이 조용히 앉자고 하셨어요.",
+          "explanation": "-자고 하다는 함께하자는 제안으로 바뀝니다.",
+          "validInContext": false
+        },
+        {
+          "id": "o3",
+          "text": "선생님이 조용히 앉냐고 하셨어요.",
+          "explanation": "-냐고 하다는 질문이 되어 원래 지시와 다릅니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Distinguish a reported command from a proposal or question.",
+      "explanation": "-(으)라고 하다가 상대에게 하는 명령을 간접적으로 전달합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual past or result",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 35
+    },
+    {
+      "id": "ct-031",
+      "type": "contrast",
+      "unit": "level-4",
+      "contrastGroup": "shared-knowledge-vs-new-background",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_janayo",
+        "gp_t2l4_geodeunyo"
+      ],
+      "contextKorean": "나는 친구와 어제 약속 장소를 함께 정했습니다. 친구가 오늘 잊어버린 듯해서 그가 이미 아는 사실을 상기시킵니다.",
+      "contextEnglish": "",
+      "task": "이미 알고 있는 내용을 상기시키는 말로 답하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "우리 어제 여기서 만나기로 했잖아요.",
+          "explanation": "-잖아요는 청자와 공유하는 사실을 상기시키는 말입니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "우리 어제 여기서 만나기로 했거든요.",
+          "explanation": "-거든요는 청자가 모를 수 있는 배경을 새로 제공하는 느낌이라 목적과 어긋납니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Choose the ending that invokes common ground.",
+      "explanation": "-잖아요는 청자와 공유하는 사실을 상기시키는 말입니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Context-sensitive ending choice should be reviewed by a teacher.",
+      "availableAfterLesson": 30
+    },
+    {
+      "id": "ct-032",
+      "type": "contrast",
+      "unit": "level-4",
+      "contrastGroup": "shared-knowledge-vs-new-background",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_janayo",
+        "gp_t2l4_geodeunyo"
+      ],
+      "contextKorean": "친구는 내가 감기에 걸렸다는 사실을 아직 전혀 모릅니다. 내가 오늘 약속에 못 가는 이유를 처음 알려 줍니다.",
+      "contextEnglish": "",
+      "task": "상대에게 새로운 이유를 설명하세요.",
+      "format": "choice",
+      "choices": [
+        {
+          "id": "o1",
+          "text": "제가 감기에 걸렸거든요.",
+          "explanation": "-거든요는 상대가 몰랐던 배경 이유를 부드럽게 제공합니다.",
+          "validInContext": true
+        },
+        {
+          "id": "o2",
+          "text": "제가 감기에 걸렸잖아요.",
+          "explanation": "-잖아요는 상대도 이미 아는 사실이라고 전제해 맥락에 맞지 않습니다.",
+          "validInContext": false
+        }
+      ],
+      "accepted": [
+        {
+          "value": "o1",
+          "scope": "Only the option matching the stated communicative intent and context."
+        }
+      ],
+      "objective": "Provide new explanatory background without presupposing shared knowledge.",
+      "explanation": "-거든요는 상대가 몰랐던 배경 이유를 부드럽게 제공합니다.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "contextual present (where applicable)",
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Constrained by situation; educator confirmation pending",
+      "availableAfterLesson": 30
+    },
+    {
+      "id": "tr-001",
+      "type": "transfer",
+      "unit": "level-1",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_a_juseyo",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "카페에서 점원에게 사진 한 장을 보여 달라고 정중하게 부탁합니다. 상대는 처음 보는 사람입니다.",
+      "contextEnglish": "",
+      "task": "'사진을 보여 주다'를 사용해서 점원에게 한 문장으로 요청하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "사진을 보여 주세요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Produce a polite benefactive request with a new verb.",
+      "explanation": "Produce a polite benefactive request with a new verb. 모범 답안: 사진을 보여 주세요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "present or ongoing action",
+      "nearMisses": [
+        {
+          "value": "사진을 보여 줘.",
+          "diagnosis": "wrong-register",
+          "explanation": "반말 대신 처음 보는 점원에게 공손한 해요체를 써야 합니다."
+        },
+        {
+          "value": "사진을 보여 줬어요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "지난 행동을 보고하는 과거형이 아니라 지금 부탁하는 말이어야 합니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 8
+    },
+    {
+      "id": "tr-002",
+      "type": "transfer",
+      "unit": "level-1",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_asseoyo",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "저는 지난주에 집 창고를 청소했습니다. 지금 친구에게 일상적인 존댓말로 그 일을 알려 줍니다.",
+      "contextEnglish": "",
+      "task": "'창고를 청소하다'로 과거 사실을 한 문장으로 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "지난주에 창고를 청소했어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Conjugate a new regular 하다 verb into polite past tense.",
+      "explanation": "Conjugate a new regular 하다 verb into polite past tense. 모범 답안: 지난주에 창고를 청소했어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "지난주에 창고를 청소해요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "지난주에 끝난 일을 현재형으로 말했습니다."
+        },
+        {
+          "value": "지난주에 창고를 청소했다.",
+          "diagnosis": "wrong-register",
+          "explanation": "친구에게 요청한 해요체가 아니라 서술형 반말입니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 7
+    },
+    {
+      "id": "tr-003",
+      "type": "transfer",
+      "unit": "level-1",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_an",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "은지는 커피를 마실 수 있지만, 오늘은 스스로 마시지 않기로 선택했습니다. 친구에게 공손하게 그 결정을 설명합니다.",
+      "contextEnglish": "",
+      "task": "'은지'를 주어로 하여 능력 부족이 아닌 의도적인 부정을 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "은지는 오늘 커피를 안 마셔요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer short-form deliberate negation to a new subject and verb.",
+      "explanation": "Transfer short-form deliberate negation to a new subject and verb. 모범 답안: 은지는 오늘 커피를 안 마셔요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "present or ongoing action",
+      "nearMisses": [
+        {
+          "value": "은지는 오늘 커피를 못 마셔요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "못은 능력이나 상황의 제약을 뜻하지만 은지는 선택한 것입니다."
+        },
+        {
+          "value": "은지는 오늘 커피를 안 마셨어요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "오늘의 현재 결정이 아닌 완료된 과거 행동입니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 4
+    },
+    {
+      "id": "tr-004",
+      "type": "transfer",
+      "unit": "level-1",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_eseo",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "학생들은 지금 체육관 안에서 춤을 연습하고 있습니다. 장소를 꼭 말해야 합니다.",
+      "contextEnglish": "",
+      "task": "학생들이 어디에서 연습하는지 한 문장으로 쓰세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "학생들은 체육관에서 춤을 연습해요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        },
+        {
+          "value": "학생들이 체육관에서 춤을 연습해요.",
+          "scope": "Equivalent spelling/word order without altering the meaning or required register."
+        }
+      ],
+      "objective": "Apply the activity-place particle to a new location and plural subject.",
+      "explanation": "Apply the activity-place particle to a new location and plural subject. 모범 답안: 학생들은 체육관에서 춤을 연습해요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "present or ongoing action",
+      "nearMisses": [
+        {
+          "value": "학생들은 체육관에 춤을 연습해요.",
+          "diagnosis": "wrong-particle",
+          "explanation": "활동이 이루어지는 장소에는 에서가 필요합니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 5
+    },
+    {
+      "id": "tr-005",
+      "type": "transfer",
+      "unit": "level-1",
+      "level": 1,
+      "prerequisiteGrammarIds": [
+        "gp_eul_geoyeyo",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "나는 다음 주말에 할머니 댁을 방문할 계획입니다. 친구에게 해요체로 말합니다.",
+      "contextEnglish": "",
+      "task": "'할머니 댁을 방문하다'로 자신의 계획을 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "저는 다음 주말에 할머니 댁을 방문할 거예요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Use a future-plan construction with a new action and polite register.",
+      "explanation": "Use a future-plan construction with a new action and polite register. 모범 답안: 저는 다음 주말에 할머니 댁을 방문할 거예요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "future plan or intention",
+      "nearMisses": [
+        {
+          "value": "저는 다음 주말에 할머니 댁을 방문했어요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "미래 계획을 과거 완료로 바꾸었습니다."
+        },
+        {
+          "value": "나는 다음 주말에 할머니 댁을 방문할 거야.",
+          "diagnosis": "wrong-register",
+          "explanation": "요청한 해요체가 아닙니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 11
+    },
+    {
+      "id": "tr-006",
+      "type": "transfer",
+      "unit": "level-2",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_gap_benefactive_a_juda",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 민지는 무거운 가방 때문에 힘들어하는 오빠를 도와줬습니다. 오빠 대신 가방을 들어 준 일을 전합니다.",
+      "contextEnglish": "",
+      "task": "'민지'를 주어로, '들어 주다'를 사용해 과거의 도움을 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "민지가 오빠의 가방을 들어 줬어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Produce a past benefactive action with a changed actor and object.",
+      "explanation": "Produce a past benefactive action with a changed actor and object. 모범 답안: 민지가 오빠의 가방을 들어 줬어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "민지가 오빠의 가방을 들어 줘요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "어제 끝난 일인데 현재형입니다."
+        },
+        {
+          "value": "민지가 오빠의 가방을 들어 줬다.",
+          "diagnosis": "wrong-register",
+          "explanation": "요구한 공손한 문장 끝맺음이 아닙니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 14
+    },
+    {
+      "id": "tr-007",
+      "type": "transfer",
+      "unit": "level-2",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_go_itda",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "지금 동생이 아직 그림을 그리고 있습니다. 완성되지 않았고 손을 움직이는 중입니다.",
+      "contextEnglish": "",
+      "task": "'동생'을 주어로 현재 진행 중인 행동을 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "동생은 지금 그림을 그리고 있어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer progressive aspect to a new activity.",
+      "explanation": "Transfer progressive aspect to a new activity. 모범 답안: 동생은 지금 그림을 그리고 있어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "present or ongoing action",
+      "nearMisses": [
+        {
+          "value": "동생은 지금 그림을 그렸어요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "그리기가 끝났다는 과거 결과로 바뀝니다."
+        },
+        {
+          "value": "동생은 지금 그림을 그리고 있어.",
+          "diagnosis": "wrong-register",
+          "explanation": "공손한 해요체 대신 반말입니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 16
+    },
+    {
+      "id": "tr-008",
+      "type": "transfer",
+      "unit": "level-2",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_eobon_jeok",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "나는 몇 년 전에 부산에 여행으로 다녀온 경험이 있습니다. 지금 친구에게 그 경험이 있다는 사실을 말합니다.",
+      "contextEnglish": "",
+      "task": "'부산에 가 보다'를 사용하여 과거 경험을 해요체로 표현하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "저는 부산에 가 본 적이 있어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        },
+        {
+          "value": "부산에 가 본 적이 있어요.",
+          "scope": "Equivalent spelling/word order without altering the meaning or required register."
+        }
+      ],
+      "objective": "Apply experiential past to a different destination.",
+      "explanation": "Apply experiential past to a different destination. 모범 답안: 저는 부산에 가 본 적이 있어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "present or ongoing action",
+      "nearMisses": [
+        {
+          "value": "저는 부산에 가 보고 있어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "과거 경험의 존재가 아니라 현재 시도 중인 행동으로 바뀝니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 18
+    },
+    {
+      "id": "tr-009",
+      "type": "transfer",
+      "unit": "level-2",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_seumnida",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "회사의 정식 회의에서 진행자가 이번 달 결과를 발표합니다. 지금 실적이 좋다고 공식적으로 보고합니다.",
+      "contextEnglish": "",
+      "task": "'이번 달 실적이 좋다'를 격식체 평서문으로 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "이번 달 실적이 좋습니다.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Switch adjective conjugation to a formal declarative register.",
+      "explanation": "Switch adjective conjugation to a formal declarative register. 모범 답안: 이번 달 실적이 좋습니다.",
+      "registerConstraint": "formal declarative (합니다체)",
+      "tenseConstraint": "present or ongoing action",
+      "nearMisses": [
+        {
+          "value": "이번 달 실적이 좋아요.",
+          "diagnosis": "wrong-register",
+          "explanation": "해요체는 공손하지만 요청한 공식 격식체는 아닙니다."
+        },
+        {
+          "value": "이번 달 실적이 좋았습니다.",
+          "diagnosis": "wrong-tense",
+          "explanation": "현재 실적 보고를 과거 상태로 바꿨습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 14
+    },
+    {
+      "id": "tr-010",
+      "type": "transfer",
+      "unit": "level-2",
+      "level": 2,
+      "prerequisiteGrammarIds": [
+        "gp_gi_jeone",
+        "gp_euseyo"
+      ],
+      "contextKorean": "내일 아침 출발하기 전에 창문을 꼭 닫아야 합니다. 가족에게 공손하게 순서를 지시합니다.",
+      "contextEnglish": "",
+      "task": "출발보다 먼저 할 행동을 한 문장으로 부탁하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "출발하기 전에 창문을 닫으세요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer before-action sequencing into an imperative.",
+      "explanation": "Transfer before-action sequencing into an imperative. 모범 답안: 출발하기 전에 창문을 닫으세요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "present or ongoing action",
+      "nearMisses": [
+        {
+          "value": "출발하고 나서 창문을 닫으세요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "출발 뒤에 닫는다는 반대 순서입니다."
+        },
+        {
+          "value": "출발하기 전에 창문을 닫아.",
+          "diagnosis": "wrong-register",
+          "explanation": "지정된 공손한 부탁이 아닙니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 15
+    },
+    {
+      "id": "tr-011",
+      "type": "transfer",
+      "unit": "level-3",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_neun_dongan",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 아버지가 저녁 요리를 하는 한 시간 동안 나는 식탁을 닦았습니다. 두 일이 겹쳤습니다.",
+      "contextEnglish": "",
+      "task": "아버지의 활동이 계속되는 동안 나의 일을 해요체 과거로 표현하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "아버지가 요리하는 동안 저는 식탁을 닦았어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer overlapping-time construction to new actors and past action.",
+      "explanation": "Transfer overlapping-time construction to new actors and past action. 모범 답안: 아버지가 요리하는 동안 저는 식탁을 닦았어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "아버지가 요리하자마자 저는 식탁을 닦았어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "지속되는 동안이 아닌 즉시 후속 행동으로 바뀝니다."
+        },
+        {
+          "value": "아버지가 요리하는 동안 저는 식탁을 닦아요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "어제의 일을 현재형으로 표현했습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 24
+    },
+    {
+      "id": "tr-012",
+      "type": "transfer",
+      "unit": "level-3",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_daga",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 나는 공원을 산책하고 있었습니다. 그 도중에 갑자기 비를 맞았습니다.",
+      "contextEnglish": "",
+      "task": "산책이 진행 중일 때 다른 일이 끼어든 상황을 한 문장으로 표현하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "공원을 산책하다가 갑자기 비를 맞았어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Apply interruption -다가 to an unfamiliar action and event.",
+      "explanation": "Apply interruption -다가 to an unfamiliar action and event. 모범 답안: 공원을 산책하다가 갑자기 비를 맞았어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "공원을 산책하고 나서 갑자기 비를 맞았어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "산책이 끝난 다음이 아니라 도중에 비를 맞았습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 24
+    },
+    {
+      "id": "tr-013",
+      "type": "transfer",
+      "unit": "level-3",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_gap_ge_hada_action",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 선생님이 학생들에게 노래를 부르게 시켰습니다. 학생들은 선생님의 지시로 노래했습니다.",
+      "contextEnglish": "",
+      "task": "선생님을 주어로 하고 학생이 하게 된 행동을 표현하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "선생님이 학생들에게 노래를 부르게 했어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Use analytic causative with an explicit causer and causees.",
+      "explanation": "Use analytic causative with an explicit causer and causees. 모범 답안: 선생님이 학생들에게 노래를 부르게 했어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "학생들이 선생님에게 노래를 부르게 했어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "행동을 시키는 사람과 시킴을 받는 사람이 뒤집혔습니다."
+        },
+        {
+          "value": "선생님이 학생들에게 노래를 부르게 해요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "어제 끝난 일을 현재형으로 말했습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 24
+    },
+    {
+      "id": "tr-014",
+      "type": "transfer",
+      "unit": "level-3",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_gap_na_boda",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "밤늦게 집에 왔는데 모든 불이 꺼져 있습니다. 가족이 이미 잠든 듯합니다. 직접 보지는 못했습니다.",
+      "contextEnglish": "",
+      "task": "보이는 단서로 가족의 상태를 추측하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "불이 다 꺼진 걸 보니 가족들이 잠들었나 봐요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Infer an unseen completed action from visible evidence.",
+      "explanation": "Infer an unseen completed action from visible evidence. 모범 답안: 불이 다 꺼진 걸 보니 가족들이 잠들었나 봐요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "inference about a completed past event",
+      "nearMisses": [
+        {
+          "value": "불이 다 꺼진 걸 보니 가족들이 잠들겠어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "관찰로 추정한 이미 완료된 사건을 의도·미래 추측처럼 바꾸었습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 25
+    },
+    {
+      "id": "tr-015",
+      "type": "transfer",
+      "unit": "level-3",
+      "level": 3,
+      "prerequisiteGrammarIds": [
+        "gp_t2l3_deokbune",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 친구가 지도를 보내 줬습니다. 그 도움으로 나는 길을 쉽게 찾았고 고마워합니다.",
+      "contextEnglish": "",
+      "task": "친구의 도움에 대한 감사를 드러내며 과거 결과를 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "친구가 지도를 보내 준 덕분에 길을 쉽게 찾았어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer positive causal acknowledgement to new actions.",
+      "explanation": "Transfer positive causal acknowledgement to new actions. 모범 답안: 친구가 지도를 보내 준 덕분에 길을 쉽게 찾았어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "친구가 지도를 보내 주느라고 길을 쉽게 찾았어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "-느라고는 보통 앞 행동에 매여 생긴 불리한 결과를 나타냅니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 28
+    },
+    {
+      "id": "tr-016",
+      "type": "transfer",
+      "unit": "level-4",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_nyago_hada",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 민지가 나에게 '언제 출발해?'라고 물었습니다. 오늘 다른 친구에게 그 질문을 전합니다.",
+      "contextEnglish": "",
+      "task": "원래의 발화가 질문이었음을 유지하여 한 문장으로 보고하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "민지가 언제 출발하냐고 물었어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Report a previously asked wh-question in indirect speech.",
+      "explanation": "Report a previously asked wh-question in indirect speech. 모범 답안: 민지가 언제 출발하냐고 물었어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "민지가 언제 출발한다고 말했어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "질문이 아닌 평서문을 보고하는 형식입니다."
+        },
+        {
+          "value": "민지가 언제 출발하냐고 물어요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "어제의 질문을 현재형으로 표현했습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 35
+    },
+    {
+      "id": "tr-017",
+      "type": "transfer",
+      "unit": "level-4",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_eurago_hada",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 팀장이 나에게 '내일까지 파일을 보내세요.'라고 명령했습니다. 동료에게 그 지시를 전합니다.",
+      "contextEnglish": "",
+      "task": "팀장의 명령을 존댓말 과거형으로 전달하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "팀장이 다음 날까지 파일을 보내라고 했어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Report a command as an indirect directive rather than a statement.",
+      "explanation": "Report a command as an indirect directive rather than a statement. 모범 답안: 팀장이 다음 날까지 파일을 보내라고 했어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "팀장이 다음 날까지 파일을 보내자고 했어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "함께 보내자는 제안으로 의미가 바뀝니다."
+        },
+        {
+          "value": "팀장이 다음 날까지 파일을 보내라고 해요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "지난 지시를 현재형으로 전했습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 35
+    },
+    {
+      "id": "tr-018",
+      "type": "transfer",
+      "unit": "level-4",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_deoni",
+        "gp_ayo_eoyo"
+      ],
+      "contextKorean": "나는 한참 동안 아이가 울고 있는 것을 지켜봤습니다. 그런데 갑자기 그 아이가 웃기 시작했습니다.",
+      "contextEnglish": "",
+      "task": "관찰한 아이의 행동 변화에 초점을 맞춰 말하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "아이가 한참 울더니 갑자기 웃기 시작했어요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer observed-person -더니 to a new sequence.",
+      "explanation": "Transfer observed-person -더니 to a new sequence. 모범 답안: 아이가 한참 울더니 갑자기 웃기 시작했어요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "제가 한참 울었더니 아이가 웃기 시작했어요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "관찰 대상인 아이의 이전 행동을 화자의 행동으로 바꿨습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 30
+    },
+    {
+      "id": "tr-019",
+      "type": "transfer",
+      "unit": "level-4",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_eotdeoramyeon",
+        "gp_eul_geoyeyo"
+      ],
+      "contextKorean": "어젯밤 나는 늦게 잤습니다. 그래서 오늘 아주 피곤합니다. 일찍 잤다면 덜 피곤했을 것이라고 생각합니다.",
+      "contextEnglish": "",
+      "task": "실제로 일어나지 않은 과거 조건과 오늘의 가상 결과를 표현하세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "어제 일찍 잤더라면 오늘 덜 피곤했을 거예요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer past counterfactual condition to a new outcome.",
+      "explanation": "Transfer past counterfactual condition to a new outcome. 모범 답안: 어제 일찍 잤더라면 오늘 덜 피곤했을 거예요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past counterfactual",
+      "nearMisses": [
+        {
+          "value": "어제 일찍 자면 오늘 덜 피곤할 거예요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "실제로 실현되지 않은 과거 조건이 아닌 일반적인 미래 조건이 됩니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 34
+    },
+    {
+      "id": "tr-020",
+      "type": "transfer",
+      "unit": "level-4",
+      "level": 4,
+      "prerequisiteGrammarIds": [
+        "gp_t2l4_janayo",
+        "gp_asseoyo"
+      ],
+      "contextKorean": "어제 나와 친구가 함께 결론을 내렸습니다. 오늘 그 친구는 결정을 잊어버린 것 같습니다. 이미 알던 결정을 상기시킵니다.",
+      "contextEnglish": "",
+      "task": "함께 결정한 일을 기억나게 하는 해요체 문장을 쓰세요.",
+      "format": "text",
+      "accepted": [
+        {
+          "value": "우리 어제 이미 결정했잖아요.",
+          "scope": "Exact meaning, subject, tense, and register of the situation."
+        }
+      ],
+      "objective": "Transfer a shared-knowledge reminder to a past event.",
+      "explanation": "Transfer a shared-knowledge reminder to a past event. 모범 답안: 우리 어제 이미 결정했잖아요.",
+      "registerConstraint": "polite informal",
+      "tenseConstraint": "past completed action",
+      "nearMisses": [
+        {
+          "value": "우리 어제 이미 결정했거든요.",
+          "diagnosis": "wrong-meaning",
+          "explanation": "상대가 모르는 배경을 새로 설명하는 느낌입니다."
+        },
+        {
+          "value": "우리 어제 이미 결정하잖아요.",
+          "diagnosis": "wrong-tense",
+          "explanation": "어제 끝난 결정에 대한 과거 시제가 빠졌습니다."
+        }
+      ],
+      "sourceRef": "mobile/src/content/topik*.json (linked grammar IDs)",
+      "reviewStatus": "editorial-draft",
+      "educatorApproval": "pending",
+      "ambiguityReview": "Curated full-sentence answer; educator confirmation pending",
+      "availableAfterLesson": 30
+    }
+  ]
+}

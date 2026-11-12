@@ -1,0 +1,675 @@
+{
+  "version": "2026-11-10",
+  "level": 2,
+  "scope": "Grammar systems and constructions; not number/count vocab",
+  "editorialStatus": "Korean educator review required",
+  "insertions": [
+    {
+      "afterPointId": "gp_seumnikka",
+      "grammarPoint": {
+        "id": "gp_gap_plain_declarative",
+        "title": "-ㄴ다/-는다 (plain statements)",
+        "category": "speech level",
+        "tense": null,
+        "register": "plain / written",
+        "hint": "Plain Korean is used in diaries, essays, narrative descriptions and some close informal speech.",
+        "description": "Plain Korean is used in diaries, essays, narrative descriptions and some close informal speech. It states an action without marking politeness toward the listener.",
+        "level": 2,
+        "tags": [
+          "TOPIK1",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Verb / adjective / noun as indicated] + -ㄴ다/-는다 (plain statements)",
+        "relatedPointIds": [
+          "gp_seumnida",
+          "gp_ayo_eoyo"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "For present action verbs, attach ㄴ다 after a vowel stem and 는다 after a consonant stem: 가다 → 간다, 먹다 → 먹는다. Descriptive verbs often keep the dictionary-like form: 좋다."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "나는 지금 책을 읽는다. — I read a book now. 지금 책을 읽는다 uses 읽는다 to narrate the ongoing action in plain style, not to address someone politely."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Do not assume every plain statement is a direct social equivalent of 해요. Plain style is often used in writing; adjectives and nouns follow different rules."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_plain_declarative_01",
+            "fullSentence": "나는 지금 책을 읽는다.",
+            "sentenceWithBlank": "나는 지금 책을 ___.",
+            "answer": "읽는다",
+            "englishHint": "I read a book now.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_plain_declarative_02",
+            "fullSentence": "그는 매일 학교에 간다.",
+            "sentenceWithBlank": "그는 매일 학교에 ___.",
+            "answer": "간다",
+            "englishHint": "He goes to school every day.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_plain_declarative_01",
+            "fullSentence": "동생이 밥을 먹는다.",
+            "sentenceWithBlank": "동생이 밥을 ___.",
+            "answer": "먹는다",
+            "englishHint": "My younger sibling eats rice.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "먹다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_plain_declarative_02",
+            "fullSentence": "내일 친구가 온다.",
+            "sentenceWithBlank": "내일 친구가 ___.",
+            "answer": "온다",
+            "englishHint": "A friend is coming tomorrow.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "오다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_plain_declarative_03",
+            "fullSentence": "새가 하늘을 난다.",
+            "sentenceWithBlank": "새가 하늘을 ___.",
+            "answer": "난다",
+            "englishHint": "A bird flies in the sky.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "날다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index",
+        "Darakwon Korean Grammar in Use – Beginning"
+      ],
+      "reviewStatus": "editorial; Korean educator review required"
+    },
+    {
+      "afterPointId": "gp_imnida_imnikka",
+      "grammarPoint": {
+        "id": "gp_gap_honorific_special_verbs",
+        "title": "Special honorific verbs: 계시다 / 드시다 / 주무시다",
+        "category": "honorific system",
+        "tense": null,
+        "register": "honorific",
+        "hint": "Some frequent actions have special respectful verbs instead of just adding -(으)시- to the ordinary verb.",
+        "description": "Some frequent actions have special respectful verbs instead of just adding -(으)시- to the ordinary verb. Which form you use depends on who performs the action.",
+        "level": 2,
+        "tags": [
+          "TOPIK1",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Verb / adjective / noun as indicated] + Special honorific verbs: 계시다 / 드시다 / 주무시다",
+        "relatedPointIds": [
+          "gp_eusi_honorific",
+          "gp_gap_subject_kkeseo"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Use 계시다 for the location of a respected person (있다 → 계세요), 드시다 for their eating or drinking (먹다/마시다 → 드세요), and 주무시다 for sleeping (자다 → 주무세요)."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "할머니께서 집에 계세요. — Grandmother is at home. 할머니께서 집에 계세요 uses 계세요 to describe the respected grandmother's presence at home."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Do not use these forms for yourself to show politeness. Honorifying the subject is not the same as speaking politely to the listener."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_honorific_special_verbs_01",
+            "fullSentence": "할머니께서 집에 계세요.",
+            "sentenceWithBlank": "할머니께서 집에 ___.",
+            "answer": "계세요",
+            "englishHint": "Grandmother is at home.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_honorific_special_verbs_02",
+            "fullSentence": "아버지가 밥을 드세요?",
+            "sentenceWithBlank": "아버지가 밥을 ___?",
+            "answer": "드세요",
+            "englishHint": "Is Father eating? (respectfully)",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_honorific_special_verbs_01",
+            "fullSentence": "선생님이 차를 드세요.",
+            "sentenceWithBlank": "선생님이 차를 ___.",
+            "answer": "드세요",
+            "englishHint": "The teacher drinks tea.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "드시다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_honorific_special_verbs_02",
+            "fullSentence": "할아버지가 주무세요.",
+            "sentenceWithBlank": "할아버지가 ___.",
+            "answer": "주무세요",
+            "englishHint": "Grandfather is sleeping.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "주무시다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_honorific_special_verbs_03",
+            "fullSentence": "어머니가 집에 계세요.",
+            "sentenceWithBlank": "어머니가 집에 ___.",
+            "answer": "계세요",
+            "englishHint": "Mother is at home.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "계시다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index",
+        "Darakwon Korean Grammar in Use – Beginning"
+      ],
+      "reviewStatus": "editorial; Korean educator review required"
+    },
+    {
+      "afterPointId": "gp_eullaeyo",
+      "grammarPoint": {
+        "id": "gp_gap_get_intention",
+        "title": "-겠- (speaker's intention)",
+        "category": "modality",
+        "tense": null,
+        "register": "polite / formal",
+        "hint": "The ending -겠- can express the speaker's determination or intention, as in a formal announcement that they will take responsibility for an action.",
+        "description": "The ending -겠- can express the speaker's determination or intention, as in a formal announcement that they will take responsibility for an action.",
+        "level": 2,
+        "tags": [
+          "TOPIK1",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Verb / adjective / noun as indicated] + -겠- (speaker's intention)",
+        "relatedPointIds": [
+          "gp_eulgeyo",
+          "gp_eul_geoyeyo",
+          "gp_gap_get_inference"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Insert 겠 after the verb stem and before a sentence ending: 하다 → 하겠습니다, 노력하다 → 노력하겠어요. The exact degree of resolve depends on context."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "제가 먼저 하겠습니다. — I'll do it first. 제가 먼저 하겠습니다 uses 겠 to express the speaker's intention to go first rather than a factual prediction."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Compare -(으)ㄹ게요 for a listener-oriented commitment and -(으)ㄹ 거예요 for a future plan. The same 겠 also has a distinct guessing use."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_get_intention_01",
+            "fullSentence": "제가 먼저 하겠습니다.",
+            "sentenceWithBlank": "제가 먼저 하___.",
+            "answer": "겠습니다",
+            "englishHint": "I'll do it first.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_get_intention_02",
+            "fullSentence": "다시 연락하겠어요.",
+            "sentenceWithBlank": "다시 연락하___.",
+            "answer": "겠어요",
+            "englishHint": "I will contact you again.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_get_intention_01",
+            "fullSentence": "제가 책임지겠습니다.",
+            "sentenceWithBlank": "제가 책임지___.",
+            "answer": "겠습니다",
+            "englishHint": "I'll take responsibility.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "책임지다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_get_intention_02",
+            "fullSentence": "열심히 노력하겠어요.",
+            "sentenceWithBlank": "열심히 노력하___.",
+            "answer": "겠어요",
+            "englishHint": "I'll make a real effort.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "노력하다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_get_intention_03",
+            "fullSentence": "내일 다시 오겠습니다.",
+            "sentenceWithBlank": "내일 다시 오___.",
+            "answer": "겠습니다",
+            "englishHint": "I'll come again tomorrow.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "오다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index",
+        "Darakwon Korean Grammar in Use – Beginning"
+      ],
+      "reviewStatus": "editorial; Korean educator review required"
+    },
+    {
+      "afterPointId": "gp_eullaeyo",
+      "grammarPoint": {
+        "id": "gp_gap_get_inference",
+        "title": "-겠- (guess / inference)",
+        "category": "modality",
+        "tense": null,
+        "register": "polite",
+        "hint": "The same -겠- ending can express what the speaker infers about a present or future situation.",
+        "description": "The same -겠- ending can express what the speaker infers about a present or future situation. It can soften an empathetic comment or suggest something seems likely.",
+        "level": 2,
+        "tags": [
+          "TOPIK1",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Verb / adjective / noun as indicated] + -겠- (guess / inference)",
+        "relatedPointIds": [
+          "gp_gap_get_intention",
+          "gp_eul_geot_gatda"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Insert 겠 after a verb or descriptive stem, then add the appropriate ending: 춥다 → 춥겠어요; 맛있다 → 맛있겠어요. Read the surrounding context to tell a guess from an intention."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "많이 피곤하시겠어요. — You must be very tired. 많이 피곤하시겠어요 expresses the speaker's impression that the other person must be very tired."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Don't treat every 겠 as 'will'. In 맛있겠어요 the speaker is evaluating how food seems, not announcing an intention to be delicious."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_get_inference_01",
+            "fullSentence": "많이 피곤하시겠어요.",
+            "sentenceWithBlank": "많이 피곤하시___.",
+            "answer": "겠어요",
+            "englishHint": "You must be very tired.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_get_inference_02",
+            "fullSentence": "이 음식이 맛있겠어요.",
+            "sentenceWithBlank": "이 음식이 맛있___.",
+            "answer": "겠어요",
+            "englishHint": "This food looks delicious.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_get_inference_01",
+            "fullSentence": "날씨가 춥겠어요.",
+            "sentenceWithBlank": "날씨가 춥___.",
+            "answer": "겠어요",
+            "englishHint": "It must be cold outside.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "춥다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_get_inference_02",
+            "fullSentence": "좋은 소식이겠네요.",
+            "sentenceWithBlank": "좋은 소식이___.",
+            "answer": "겠네요",
+            "englishHint": "That must be good news.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "이다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_get_inference_03",
+            "fullSentence": "정말 어렵겠어요.",
+            "sentenceWithBlank": "정말 어렵___.",
+            "answer": "겠어요",
+            "englishHint": "That must be really difficult.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "어렵다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index",
+        "Darakwon Korean Grammar in Use – Beginning"
+      ],
+      "reviewStatus": "editorial; Korean educator review required"
+    },
+    {
+      "afterPointId": "gp_eodo_doeda",
+      "grammarPoint": {
+        "id": "gp_gap_benefactive_a_juda",
+        "title": "-아/어 주다 (do for someone)",
+        "category": "benefactive",
+        "tense": null,
+        "register": "polite",
+        "hint": "Use -아/어 주다 when someone does an action for another person's benefit.",
+        "description": "Use -아/어 주다 when someone does an action for another person's benefit. It highlights who receives the favor rather than simply whether the action happened.",
+        "level": 2,
+        "tags": [
+          "TOPIK1",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Verb / adjective / noun as indicated] + -아/어 주다 (do for someone)",
+        "relatedPointIds": [
+          "gp_a_juseyo",
+          "gp_gap_recipient_ege_hante"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Use the action verb's 아/어 form, then a separate 주다: 도와주다 ('help') lexicalized; 읽다 → 읽어 주다, 써 주다. The recipient may take 에게 or 한테."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "친구에게 편지를 써 줬어요. — I wrote a letter for a friend. 친구에게 편지를 써 줬어요 means the letter-writing was done for the friend's benefit, not just that the letter exists."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "-아/어 주세요 is the request form already in Level 1; this point covers ordinary statements about helping actions, including past tense."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_benefactive_a_juda_01",
+            "fullSentence": "친구에게 편지를 써 줬어요.",
+            "sentenceWithBlank": "친구에게 편지를 ___.",
+            "answer": "써 줬어요",
+            "englishHint": "I wrote a letter for a friend.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_benefactive_a_juda_02",
+            "fullSentence": "동생에게 책을 읽어 줘요.",
+            "sentenceWithBlank": "동생에게 책을 ___.",
+            "answer": "읽어 줘요",
+            "englishHint": "I read a book to my younger sibling.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_benefactive_a_juda_01",
+            "fullSentence": "아이가 문을 열어 줬어요.",
+            "sentenceWithBlank": "아이가 문을 ___.",
+            "answer": "열어 줬어요",
+            "englishHint": "The child opened the door for me.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "열다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_benefactive_a_juda_02",
+            "fullSentence": "친구가 사진을 찍어 줬어요.",
+            "sentenceWithBlank": "친구가 사진을 ___.",
+            "answer": "찍어 줬어요",
+            "englishHint": "A friend took a photo for me.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "찍다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_benefactive_a_juda_03",
+            "fullSentence": "엄마가 옷을 골라 줬어요.",
+            "sentenceWithBlank": "엄마가 옷을 ___.",
+            "answer": "골라 줬어요",
+            "englishHint": "Mom chose clothes for me.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "고르다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index",
+        "Darakwon Korean Grammar in Use – Beginning"
+      ],
+      "reviewStatus": "editorial; Korean educator review required"
+    },
+    {
+      "afterPointId": "gp_go_itda",
+      "grammarPoint": {
+        "id": "gp_gap_resultative_eo_itda",
+        "title": "-아/어 있다 (state after an action)",
+        "category": "resulting state",
+        "tense": null,
+        "register": "polite",
+        "hint": "Use -아/어 있다 to describe a state that continues after an action finished, such as being seated, standing or a door remaining open.",
+        "description": "Use -아/어 있다 to describe a state that continues after an action finished, such as being seated, standing or a door remaining open.",
+        "level": 2,
+        "tags": [
+          "TOPIK1",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Verb / adjective / noun as indicated] + -아/어 있다 (state after an action)",
+        "relatedPointIds": [
+          "gp_go_itda",
+          "gp_eojida"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "For appropriate intransitive/result verbs, form 아/어 and follow it with 있다: 앉다 → 앉아 있어요, 서다 → 서 있어요, 열리다 → 열려 있어요."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "문이 열려 있어요. — The door is open. 문이 열려 있어요 means the door is now open as a result of an earlier opening; the sentence focuses on the present state."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Do not confuse this with -고 있다 for an action in progress. 앉고 있어요 is sitting down right now; 앉아 있어요 is already seated."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_resultative_eo_itda_01",
+            "fullSentence": "문이 열려 있어요.",
+            "sentenceWithBlank": "문이 ___.",
+            "answer": "열려 있어요",
+            "englishHint": "The door is open.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_resultative_eo_itda_02",
+            "fullSentence": "아이가 의자에 앉아 있어요.",
+            "sentenceWithBlank": "아이가 의자에 ___.",
+            "answer": "앉아 있어요",
+            "englishHint": "The child is sitting on a chair.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_resultative_eo_itda_01",
+            "fullSentence": "사람들이 서 있어요.",
+            "sentenceWithBlank": "사람들이 ___.",
+            "answer": "서 있어요",
+            "englishHint": "People are standing.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "서다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_resultative_eo_itda_02",
+            "fullSentence": "고양이가 누워 있어요.",
+            "sentenceWithBlank": "고양이가 ___.",
+            "answer": "누워 있어요",
+            "englishHint": "The cat is lying down.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "눕다",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_resultative_eo_itda_03",
+            "fullSentence": "불이 켜져 있어요.",
+            "sentenceWithBlank": "불이 ___.",
+            "answer": "켜져 있어요",
+            "englishHint": "The light is on.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "켜지다",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index",
+        "Darakwon Korean Grammar in Use – Beginning"
+      ],
+      "reviewStatus": "editorial; Korean educator review required"
+    },
+    {
+      "afterPointId": "gp_eodo_concession",
+      "grammarPoint": {
+        "id": "gp_gap_indefinite_negation",
+        "title": "아무도 / 아무것도 + negative",
+        "category": "polarity expression",
+        "tense": null,
+        "register": "polite",
+        "hint": "Korean indefinite words such as 아무도 ('anyone/no one') and 아무것도 ('anything/nothing') usually pair with a negative predicate to mean 'nobody' or 'nothing'.",
+        "description": "Korean indefinite words such as 아무도 ('anyone/no one') and 아무것도 ('anything/nothing') usually pair with a negative predicate to mean 'nobody' or 'nothing'.",
+        "level": 2,
+        "tags": [
+          "TOPIK1",
+          "core-system",
+          "grammar"
+        ],
+        "structurePattern": "[Verb / adjective / noun as indicated] + 아무도 / 아무것도 + negative",
+        "relatedPointIds": [
+          "gp_an",
+          "gp_eopseoyo",
+          "gp_mos"
+        ],
+        "notes": [
+          {
+            "type": "tip",
+            "title": "Build it step by step",
+            "content": "Put 아무도 or 아무것도 where the person or thing belongs, then make the predicate negative: 아무도 없어요; 아무것도 안 먹어요."
+          },
+          {
+            "type": "tip",
+            "title": "Worked example",
+            "content": "아무도 안 왔어요. — Nobody came. 아무도 안 왔어요 means not a single person came because 아무도 is interpreted with the following negative form."
+          },
+          {
+            "type": "caution",
+            "title": "Common trap",
+            "content": "Do not leave the predicate affirmative for the intended negative meaning. Compare 누구나 and 아무나, which can mean 'anyone' in affirmative contexts."
+          }
+        ],
+        "lessonExamples": [
+          {
+            "id": "le_gap_indefinite_negation_01",
+            "fullSentence": "아무도 안 왔어요.",
+            "sentenceWithBlank": "___ 왔어요.",
+            "answer": "아무도 안",
+            "englishHint": "Nobody came.",
+            "order": 0
+          },
+          {
+            "id": "le_gap_indefinite_negation_02",
+            "fullSentence": "아무것도 안 먹었어요.",
+            "sentenceWithBlank": "___ 먹었어요.",
+            "answer": "아무것도 안",
+            "englishHint": "I didn't eat anything.",
+            "order": 1
+          }
+        ],
+        "cards": [
+          {
+            "id": "cc_gap_indefinite_negation_01",
+            "fullSentence": "오늘 아무도 안 와요.",
+            "sentenceWithBlank": "오늘 ___ 와요.",
+            "answer": "아무도 안",
+            "englishHint": "Nobody is coming today.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "아무도",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_indefinite_negation_02",
+            "fullSentence": "아무것도 못 봤어요.",
+            "sentenceWithBlank": "___ 봤어요.",
+            "answer": "아무것도 못",
+            "englishHint": "I couldn't see anything.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "아무것도",
+            "introducedAtPosition": 0
+          },
+          {
+            "id": "cc_gap_indefinite_negation_03",
+            "fullSentence": "이 방에는 아무도 안 살아요.",
+            "sentenceWithBlank": "이 방에는 ___ 살아요.",
+            "answer": "아무도 안",
+            "englishHint": "Nobody lives in this room.",
+            "alternateAnswers": [],
+            "vocabBaseForm": "아무도",
+            "introducedAtPosition": 0
+          }
+        ]
+      },
+      "sourceReferences": [
+        "NIKL Korean Teaching-Learning Center grammar/expression index",
+        "Darakwon Korean Grammar in Use – Beginning"
+      ],
+      "reviewStatus": "editorial; Korean educator review required"
+    }
+  ]
+}

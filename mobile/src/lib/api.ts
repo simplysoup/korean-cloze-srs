@@ -5,8 +5,23 @@
 // A failed fetch (server unreachable, offline) throws ServerUnreachable,
 // so callers can tell "no server" apart from "server said no". Sync
 // treats it as silent (offline-first); auth surfaces it as an error.
+//
+// The API base defaults to '' (same-origin, relative paths). Tests that
+// run against a real backend set it with setApiBase() — the app never
+// does, so the browser always uses the same-origin proxy.
 
 import type { SyncDocument } from './sync-types';
+
+let apiBase = '';
+
+/** Override the API base (tests only). The app always uses ''. */
+export function setApiBase(base: string): void {
+  apiBase = base;
+}
+
+export function getApiBase(): string {
+  return apiBase;
+}
 
 export class ServerUnreachable extends Error {
   constructor() {
@@ -26,7 +41,7 @@ export interface ServerUser {
 async function postJson<T>(path: string, body: unknown, token?: string | null): Promise<{ status: number; json: T }> {
   let res: Response;
   try {
-    res = await fetch(path, {
+    res = await fetch(`${apiBase}${path}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -49,7 +64,7 @@ async function postJson<T>(path: string, body: unknown, token?: string | null): 
 async function getJson<T>(path: string, token?: string | null): Promise<{ status: number; json: T }> {
   let res: Response;
   try {
-    res = await fetch(path, {
+    res = await fetch(`${apiBase}${path}`, {
       method: 'GET',
       headers: token ? { Authorization: `Bearer ${token}` } : {},
     });
@@ -118,22 +133,30 @@ export async function logoutServer(token: string): Promise<void> {
 
 export async function syncPull(
   token: string,
-): Promise<{ ok: boolean; version: number; updatedAt: string | null; payload: SyncDocument | null; error?: string }> {
-  const { json } = await getJson<{ ok: boolean; version: number; updatedAt: string | null; payload: SyncDocument | null; error?: string }>(
+): Promise<{ ok: boolean; version: number; updatedAt: string | null; payload: SyncDocument | null; error?: string; status: number }> {
+  const { status, json } = await getJson<{ ok: boolean; version: number; updatedAt: string | null; payload: SyncDocument | null; error?: string }>(
     '/api/sync/pull',
     token,
   );
-  return json;
+  return { ...json, status };
 }
 
+/**
+ * Push a sync snapshot with the compare-and-swap precondition. The
+ * caller passes the server version it last pulled (0 when nothing is
+ * stored yet); the server rejects the push with 409 when that version
+ * no longer matches, and with 428 when expectedVersion is absent.
+ * The returned `status` lets the caller tell 409/428/413/429 apart.
+ */
 export async function syncPush(
   token: string,
   doc: SyncDocument,
-): Promise<{ ok: boolean; version: number; error?: string }> {
-  const { json } = await postJson<{ ok: boolean; version: number; error?: string }>(
+  expectedVersion: number,
+): Promise<{ ok: boolean; version: number; error?: string; status: number }> {
+  const { status, json } = await postJson<{ ok: boolean; version: number; error?: string }>(
     '/api/sync/push',
-    { updatedAt: doc.updatedAt, payload: doc },
+    { expectedVersion, updatedAt: doc.updatedAt, payload: doc },
     token,
   );
-  return json;
+  return { ...json, status };
 }

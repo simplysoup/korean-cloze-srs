@@ -1,0 +1,456 @@
+{
+  "version": "2026-11-10",
+  "status": "editorial research backlog; NO new grammar or vocabulary decks created by this file",
+  "ownershipPolicy": "Numbers/dates/times/counters and question words are vocabulary-deck material. Only productive grammar constructions receive grammar point IDs. Cross-deck practice does not double-count mastery.",
+  "sources": {
+    "NIKL_STANDARD": {
+      "name": "National Institute of Korean Language Standard Curriculum for Korean Language",
+      "url": "https://www.korean.go.kr/front/etcData/etcDataView.do?etc_seq=660&mn_id=208&pageIndex=1",
+      "evidenceScope": "outcomes and curriculum bands"
+    },
+    "NIKL_TEACHER": {
+      "name": "NIKL Korean Teaching-Learning Center grammar and expression search",
+      "url": "https://klp.korean.go.kr/kcenter/search/dgrammar.do",
+      "evidenceScope": "form-specific usage, constraints and adjacent grammar when entries are individually inspected"
+    },
+    "KING_SEJONG": {
+      "name": "King Sejong Institute online curriculum",
+      "url": "https://www.iksi.or.kr/lms/main/curriculum.do",
+      "evidenceScope": "staged skill and language-system coverage"
+    },
+    "DARAKWON_BEGINNING": {
+      "name": "Darakwon Korean Grammar in Use - Beginning, publisher table of contents",
+      "url": "https://www.darakwon.co.kr/books/detailproduct.asp?p_id=3291&pc_id_2=11&pc_id_3=76",
+      "evidenceScope": "topics and grammatical coverage from publisher contents; not proof of optimal teaching order"
+    },
+    "NIKL_DICTIONARY": {
+      "name": "NIKL Korean-English Learners' Dictionary",
+      "url": "https://krdict.korean.go.kr/eng/mainAction",
+      "evidenceScope": "word sense, part of speech, typical patterns"
+    }
+  },
+  "entries": [
+    {
+      "id": "voc_native_numbers",
+      "destination": "vocabulary",
+      "firstUsefulLevel": 0,
+      "topic": "Native numbers and short counting forms",
+      "coverageTarget": "Learn lexical forms 하나/한, 둘/두, 셋/세, 넷/네, and 5–99 in context",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "KING_SEJONG"
+      ],
+      "priority": "initial",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "voc_sino_numbers",
+      "destination": "vocabulary",
+      "firstUsefulLevel": 0,
+      "topic": "Sino-Korean numbers",
+      "coverageTarget": "Lexical number forms, values and combinations; written digits ↔ spoken forms",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "KING_SEJONG"
+      ],
+      "priority": "initial",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "voc_counters",
+      "destination": "vocabulary",
+      "firstUsefulLevel": 0,
+      "topic": "Counters and classifier selection",
+      "coverageTarget": "개, 명, 분, 권, 마리 and additional counters with shortened-number practice; scored as vocabulary",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "KING_SEJONG"
+      ],
+      "priority": "initial",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "voc_calendar",
+      "destination": "vocabulary",
+      "firstUsefulLevel": 0,
+      "topic": "Dates and calendar words",
+      "coverageTarget": "Months, weekdays, dates, years, birthday expressions and pronunciation",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "KING_SEJONG"
+      ],
+      "priority": "initial",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "voc_clock",
+      "destination": "vocabulary",
+      "firstUsefulLevel": 0,
+      "topic": "Clock times, durations and appointments",
+      "coverageTarget": "Hour/minute systems, half past, 오전/오후, scheduling times; contextual listening",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "KING_SEJONG"
+      ],
+      "priority": "initial",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "voc_money",
+      "destination": "vocabulary",
+      "firstUsefulLevel": 0,
+      "topic": "Prices, age and quantities",
+      "coverageTarget": "Money, numeric quantities, reading prices, appropriate numeric phrases",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "KING_SEJONG"
+      ],
+      "priority": "initial",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "voc_questions",
+      "destination": "vocabulary",
+      "firstUsefulLevel": 0,
+      "topic": "Question-word vocabulary",
+      "coverageTarget": "누구/누가, 무엇/뭐, 무슨/어떤/어느, 언제, 어디, 왜, 어떻게, 얼마, 몇",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "NIKL_DICTIONARY"
+      ],
+      "priority": "initial",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "145 authored entries in separate vocabulary source; no in-app vocabulary SRS or mastery yet",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "grammar_irregular_conjugation",
+      "destination": "grammar",
+      "firstUsefulLevel": 1,
+      "topic": "Irregular conjugation families",
+      "coverageTarget": "ㅂ, ㄷ, ㅅ, 르, 으, ㅎ and ㄹ changes (distinct rules and lexical exceptions)",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_b_irregular",
+        "gp_gap_d_irregular",
+        "gp_gap_s_irregular",
+        "gp_gap_reu_irregular",
+        "gp_gap_eu_drop",
+        "gp_gap_h_irregular",
+        "gp_gap_l_deletion"
+      ]
+    },
+    {
+      "id": "grammar_negation_inability",
+      "destination": "grammar",
+      "firstUsefulLevel": 1,
+      "topic": "Long-form inability",
+      "coverageTarget": "-지 못하다 as counterpart to 못; contrast with 안/-지 않다",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_neg_ji_mot"
+      ]
+    },
+    {
+      "id": "grammar_noun_connectors",
+      "destination": "grammar",
+      "firstUsefulLevel": 1,
+      "topic": "Noun-to-noun connectors",
+      "coverageTarget": "와/과 and (이)랑 versus existing 하고, with register and final-consonant rules",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_wa_gwa",
+        "gp_gap_irang"
+      ]
+    },
+    {
+      "id": "grammar_recipients",
+      "destination": "grammar",
+      "firstUsefulLevel": 1,
+      "topic": "Recipients and sources",
+      "coverageTarget": "에게/한테, 에게서/한테서 with giver/recipient constraints",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_recipient_ege_hante",
+        "gp_gap_source_hanteseo",
+        "gp_gap_benefactive_a_juda"
+      ]
+    },
+    {
+      "id": "grammar_informal_plain_speech",
+      "destination": "grammar",
+      "firstUsefulLevel": 1,
+      "topic": "Intimate speech and plain declarative forms",
+      "coverageTarget": "해체 -아/어 and written/plain -ㄴ다/는다, including where not to use them",
+      "sourceIds": [
+        "KING_SEJONG",
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_informal_haeche",
+        "gp_gap_plain_declarative"
+      ]
+    },
+    {
+      "id": "grammar_honorific_particles",
+      "destination": "grammar",
+      "firstUsefulLevel": 1,
+      "topic": "Honorific subject and recipient particles",
+      "coverageTarget": "께서/께, contrasted with 이/가 and 에게/한테; tie to (으)시-",
+      "sourceIds": [
+        "KING_SEJONG",
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_subject_kkeseo",
+        "gp_gap_recipient_kke",
+        "gp_gap_honorific_special_verbs"
+      ]
+    },
+    {
+      "id": "grammar_indefinite_negation",
+      "destination": "grammar",
+      "firstUsefulLevel": 2,
+      "topic": "Indefinite expressions with polarity",
+      "coverageTarget": "아무도 + negative, 아무것도 + negative, 아무나/누구나 with different polarity",
+      "sourceIds": [
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_indefinite_negation"
+      ]
+    },
+    {
+      "id": "grammar_get_intention_inference",
+      "destination": "grammar",
+      "firstUsefulLevel": 2,
+      "topic": "-겠- intention and inference",
+      "coverageTarget": "Separate meanings with context, not one generic future label; contrast with -(으)ㄹ 거예요",
+      "sourceIds": [
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_get_intention",
+        "gp_gap_get_inference"
+      ]
+    },
+    {
+      "id": "grammar_progressive_resultant",
+      "destination": "grammar",
+      "firstUsefulLevel": 2,
+      "topic": "Resultant state versus ongoing action",
+      "coverageTarget": "-아/어 있다 versus -고 있다; action class matters",
+      "sourceIds": [
+        "DARAKWON_BEGINNING",
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_resultative_eo_itda"
+      ]
+    },
+    {
+      "id": "grammar_passive",
+      "destination": "grammar",
+      "firstUsefulLevel": 3,
+      "topic": "Passive formation",
+      "coverageTarget": "-이/-히/-리/-기- where applicable; -아/어지다 and lexical passive constraints",
+      "sourceIds": [
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_passive_suffix",
+        "gp_gap_passive_eojida"
+      ]
+    },
+    {
+      "id": "grammar_causative",
+      "destination": "grammar",
+      "firstUsefulLevel": 3,
+      "topic": "Causative formation",
+      "coverageTarget": "Lexical causatives and -게 하다, with causation/permission meanings",
+      "sourceIds": [
+        "NIKL_TEACHER"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_causative_suffix",
+        "gp_gap_ge_hada_action",
+        "gp_gap_ge_hada_state"
+      ]
+    },
+    {
+      "id": "grammar_korean_desire_reporting",
+      "destination": "grammar",
+      "firstUsefulLevel": 3,
+      "topic": "Another person's desires",
+      "coverageTarget": "-고 싶어 하다 versus -고 싶다",
+      "sourceIds": [
+        "NIKL_TEACHER"
+      ],
+      "priority": "medium",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_go_sipeohada"
+      ]
+    },
+    {
+      "id": "grammar_retrospective_evidence",
+      "destination": "grammar",
+      "firstUsefulLevel": 3,
+      "topic": "Firsthand retrospective evidence",
+      "coverageTarget": "-더라고요 and related perception/result contrasts",
+      "sourceIds": [
+        "NIKL_TEACHER"
+      ],
+      "priority": "medium",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_deoragoyo",
+        "gp_gap_na_boda"
+      ]
+    },
+    {
+      "id": "grammar_written_nominalization",
+      "destination": "grammar",
+      "firstUsefulLevel": 4,
+      "topic": "Written nominalization",
+      "coverageTarget": "-(으)ㅁ versus -기, including formality and register",
+      "sourceIds": [
+        "NIKL_TEACHER"
+      ],
+      "priority": "medium",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored in new grammar expansion and regenerated mobile grammar decks; draft not merged",
+      "newGrammarPointIds": [
+        "gp_gap_eum_written_nominal"
+      ]
+    },
+    {
+      "id": "topic_hangul_phonology",
+      "destination": "foundation",
+      "firstUsefulLevel": 0,
+      "topic": "Hangul and sound-change foundation",
+      "coverageTarget": "Batchim, liaison, assimilation, tensification, pronunciation versus spelling",
+      "sourceIds": [
+        "KING_SEJONG",
+        "NIKL_STANDARD"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored standalone pronunciation topic and 3 checks; no topic UI/audio",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "topic_speech_context",
+      "destination": "topic",
+      "firstUsefulLevel": 1,
+      "topic": "Choosing appropriate speech level",
+      "coverageTarget": "Register, subject honorification versus listener politeness, discourse roles",
+      "sourceIds": [
+        "KING_SEJONG",
+        "NIKL_STANDARD"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored standalone speech-register topic and 3 checks; no topic UI",
+      "newGrammarPointIds": []
+    },
+    {
+      "id": "topic_mixed_application",
+      "destination": "application",
+      "firstUsefulLevel": 1,
+      "topic": "Mixed grammar + vocabulary practice",
+      "coverageTarget": "Original dialogues and listening with separate vocabulary/grammar scoring",
+      "sourceIds": [
+        "NIKL_STANDARD",
+        "KING_SEJONG"
+      ],
+      "priority": "high",
+      "evidenceStatus": "category-level or publisher-index support; item-level reference verification pending",
+      "teacherReview": "pending",
+      "implementationStatus": "authored counting and voice comparison topics, 6 mixed checks; no UI",
+      "newGrammarPointIds": []
+    }
+  ]
+}

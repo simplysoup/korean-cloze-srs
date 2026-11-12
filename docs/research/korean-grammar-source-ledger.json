@@ -1,0 +1,3672 @@
+{
+  "created": "2026-11-10",
+  "scope": "229 grammar points (198 original + 31 editorial gap additions), all six TOPIK practice decks",
+  "purpose": "Per-point source verification and sequencing provenance for future Korean educator review",
+  "WARNING": "Evidence is a tracker, not completed item-level primary source verification. New grammar point sources are category-level coverage references; every example/nuance needs Korean educator review.",
+  "policy": "Independent vocabulary decks own numbers, times, counters, dates, prices and lexical question words; 31 new patterns are productive grammar, not these isolated words.",
+  "trackingFields": {
+    "evidence": "Add exact authoritative source URL, form-specific entry or printed chapter/section locator; mark TOC vs full-entry inspection",
+    "whyAtThisStage": "Provide prerequisite/frequency/skill reason; source label alone does not prove optimal sequence",
+    "nativeEducatorReview": "Mark approved/needs-revision with reviewer feedback after educator review"
+  },
+  "points": [
+    {
+      "pointId": "gp_ieyo_yeyo",
+      "koreanPattern": "이에요/예요",
+      "deckLevel": 1,
+      "lesson": 1,
+      "globalPosition": 1,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ida",
+        "gp_ani_eyo",
+        "gp_imnida_imnikka"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ani_eyo",
+      "koreanPattern": "N이/가 아니다 (아니에요)",
+      "deckLevel": 1,
+      "lesson": 1,
+      "globalPosition": 2,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ieyo_yeyo",
+        "gp_an",
+        "gp_ji_anha"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eun_neun",
+      "koreanPattern": "은/는",
+      "deckLevel": 1,
+      "lesson": 1,
+      "globalPosition": 3,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_i_ga"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_igeos",
+      "koreanPattern": "이것",
+      "deckLevel": 1,
+      "lesson": 1,
+      "globalPosition": 4,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_geugeos",
+      "koreanPattern": "그것",
+      "deckLevel": 1,
+      "lesson": 1,
+      "globalPosition": 5,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_jeogeos",
+      "koreanPattern": "저것",
+      "deckLevel": 1,
+      "lesson": 1,
+      "globalPosition": 6,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ui",
+      "koreanPattern": "의",
+      "deckLevel": 1,
+      "lesson": 2,
+      "globalPosition": 7,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_do",
+      "koreanPattern": "도",
+      "deckLevel": 1,
+      "lesson": 2,
+      "globalPosition": 8,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ida",
+      "koreanPattern": "이다",
+      "deckLevel": 1,
+      "lesson": 2,
+      "globalPosition": 9,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ieyo_yeyo",
+        "gp_ani_eyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_i_ga",
+      "koreanPattern": "이/가",
+      "deckLevel": 1,
+      "lesson": 2,
+      "globalPosition": 10,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eun_neun"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_isseoyo",
+      "koreanPattern": "있다/있어요",
+      "deckLevel": 1,
+      "lesson": 2,
+      "globalPosition": 11,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eopseoyo",
+      "koreanPattern": "없다/없어요",
+      "deckLevel": 1,
+      "lesson": 2,
+      "globalPosition": 12,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ayo_eoyo",
+      "koreanPattern": "-아요/어요",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 13,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_b_irregular",
+      "koreanPattern": "ㅂ irregular: 춥다 → 추워요",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 14,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_ayo_eoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_ayo_eoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo",
+        "gp_eun_modifier"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_d_irregular",
+      "koreanPattern": "ㄷ irregular: 듣다 → 들어요",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 15,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_ayo_eoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_ayo_eoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo",
+        "gp_asseoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_reu_irregular",
+      "koreanPattern": "르 irregular: 모르다 → 몰라요",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 16,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_ayo_eoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_ayo_eoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_eu_drop",
+      "koreanPattern": "으 deletion: 쓰다 → 써요",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 17,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_ayo_eoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_ayo_eoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo",
+        "gp_gap_reu_irregular"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_informal_haeche",
+      "koreanPattern": "해체: -아/-어 (casual speech)",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 18,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_ayo_eoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_ayo_eoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo",
+        "gp_seumnida"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eul_reul",
+      "koreanPattern": "을/를",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 19,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_recipient_ege_hante",
+      "koreanPattern": "에게 / 한테 (to someone)",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 20,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_eul_reul; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_eul_reul"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_reul",
+        "gp_gap_recipient_kke"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_source_hanteseo",
+      "koreanPattern": "에게서 / 한테서 (from someone)",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 21,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_eul_reul; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_eul_reul"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gap_recipient_ege_hante"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_an",
+      "koreanPattern": "안",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 22,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ji_anha",
+        "gp_mos",
+        "gp_ani_eyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ji_anha",
+      "koreanPattern": "-지 않다",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 23,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_an",
+        "gp_mos"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_mos",
+      "koreanPattern": "못",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 24,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_an",
+        "gp_ji_anha",
+        "gp_eul_su_issda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_neg_ji_mot",
+      "koreanPattern": "-지 못하다 (long-form inability)",
+      "deckLevel": 1,
+      "lesson": 3,
+      "globalPosition": 25,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_mos; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_mos"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_mos",
+        "gp_ji_anha",
+        "gp_eul_su_issda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_yeogi",
+      "koreanPattern": "여기",
+      "deckLevel": 1,
+      "lesson": 4,
+      "globalPosition": 26,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_geogi",
+      "koreanPattern": "거기",
+      "deckLevel": 1,
+      "lesson": 4,
+      "globalPosition": 27,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_jeogi",
+      "koreanPattern": "저기",
+      "deckLevel": 1,
+      "lesson": 4,
+      "globalPosition": 28,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_e_loc",
+      "koreanPattern": "에 (장소)",
+      "deckLevel": 1,
+      "lesson": 4,
+      "globalPosition": 29,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eseo",
+      "koreanPattern": "에서",
+      "deckLevel": 1,
+      "lesson": 4,
+      "globalPosition": 30,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_e_loc"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_position",
+      "koreanPattern": "위/아래/앞/뒤/옆",
+      "deckLevel": 1,
+      "lesson": 4,
+      "globalPosition": 31,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_e_time",
+      "koreanPattern": "에 (시간)",
+      "deckLevel": 1,
+      "lesson": 5,
+      "globalPosition": 32,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_buteo",
+      "koreanPattern": "부터",
+      "deckLevel": 1,
+      "lesson": 5,
+      "globalPosition": 33,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_kkaji",
+      "koreanPattern": "까지",
+      "deckLevel": 1,
+      "lesson": 5,
+      "globalPosition": 34,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_jeone",
+      "koreanPattern": "전에",
+      "deckLevel": 1,
+      "lesson": 5,
+      "globalPosition": 35,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_hue",
+      "koreanPattern": "후에",
+      "deckLevel": 1,
+      "lesson": 5,
+      "globalPosition": 36,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_asseoyo",
+      "koreanPattern": "-았어요/-었어요",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 37,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_s_irregular",
+      "koreanPattern": "ㅅ irregular: 짓다 → 지어요",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 38,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_asseoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_asseoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo",
+        "gp_asseoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_h_irregular",
+      "koreanPattern": "ㅎ irregular: 파랗다 → 파래요",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 39,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_asseoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_asseoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo",
+        "gp_eun_modifier"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_l_deletion",
+      "koreanPattern": "ㄹ deletion before ㄴ/ㅂ/ㅅ",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 40,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_asseoyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_asseoyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_seumnida",
+        "gp_eusi_honorific"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eun_modifier",
+      "koreanPattern": "-(으)ㄴ",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 41,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_man",
+      "koreanPattern": "만",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 42,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_hago",
+      "koreanPattern": "하고",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 43,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_wa_gwa",
+      "koreanPattern": "와/과 (and / with nouns)",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 44,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_hago; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_hago"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_hago",
+        "gp_gap_irang"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_irang",
+      "koreanPattern": "(이)랑 (and / with)",
+      "deckLevel": 1,
+      "lesson": 6,
+      "globalPosition": 45,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_hago; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_hago"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gap_wa_gwa",
+        "gp_hago"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eusi_honorific",
+      "koreanPattern": "-(으)시-",
+      "deckLevel": 1,
+      "lesson": 7,
+      "globalPosition": 46,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_euseyo",
+        "gp_ayo_eoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_euseyo",
+      "koreanPattern": "-(으)세요",
+      "deckLevel": 1,
+      "lesson": 7,
+      "globalPosition": 47,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eusi_honorific",
+        "gp_a_juseyo",
+        "gp_ji_maseyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_subject_kkeseo",
+      "koreanPattern": "께서 (honorific subject)",
+      "deckLevel": 1,
+      "lesson": 7,
+      "globalPosition": 48,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_euseyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_euseyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_eusi_honorific",
+        "gp_i_ga",
+        "gp_gap_recipient_kke"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_recipient_kke",
+      "koreanPattern": "께 (to a respected person)",
+      "deckLevel": 1,
+      "lesson": 7,
+      "globalPosition": 49,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_euseyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_euseyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gap_recipient_ege_hante",
+        "gp_gap_subject_kkeseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_a_juseyo",
+      "koreanPattern": "-아/어 주세요",
+      "deckLevel": 1,
+      "lesson": 7,
+      "globalPosition": 50,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_euseyo",
+        "gp_ji_maseyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_aya_hada",
+      "koreanPattern": "-아/어야 하다",
+      "deckLevel": 1,
+      "lesson": 7,
+      "globalPosition": 51,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_go_sipda",
+      "koreanPattern": "-고 싶다",
+      "deckLevel": 1,
+      "lesson": 7,
+      "globalPosition": 52,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eul_su_issda",
+      "koreanPattern": "-(으)ㄹ 수 있다",
+      "deckLevel": 1,
+      "lesson": 8,
+      "globalPosition": 53,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_mos"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eunikka",
+      "koreanPattern": "-(으)니까",
+      "deckLevel": 1,
+      "lesson": 8,
+      "globalPosition": 54,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_aseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_aseo",
+      "koreanPattern": "-아/어서",
+      "deckLevel": 1,
+      "lesson": 8,
+      "globalPosition": 55,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eunikka"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_geuraeseo",
+      "koreanPattern": "그래서",
+      "deckLevel": 1,
+      "lesson": 8,
+      "globalPosition": 56,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eumyeon",
+      "koreanPattern": "-(으)면",
+      "deckLevel": 1,
+      "lesson": 9,
+      "globalPosition": 57,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_jiman",
+      "koreanPattern": "-지만",
+      "deckLevel": 1,
+      "lesson": 9,
+      "globalPosition": 58,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_hajiman"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_hajiman",
+      "koreanPattern": "하지만",
+      "deckLevel": 1,
+      "lesson": 9,
+      "globalPosition": 59,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_jiman"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_go_seq",
+      "koreanPattern": "-고",
+      "deckLevel": 1,
+      "lesson": 10,
+      "globalPosition": 60,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_hago"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eulgeyo",
+      "koreanPattern": "-(으)ㄹ게요",
+      "deckLevel": 1,
+      "lesson": 10,
+      "globalPosition": 61,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_geoyeyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eul_geoyeyo",
+      "koreanPattern": "-(으)ㄹ 거예요",
+      "deckLevel": 1,
+      "lesson": 10,
+      "globalPosition": 62,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eulgeyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_neyo",
+      "koreanPattern": "-네요",
+      "deckLevel": 1,
+      "lesson": 11,
+      "globalPosition": 63,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_jiyo",
+      "koreanPattern": "-지요/죠",
+      "deckLevel": 1,
+      "lesson": 11,
+      "globalPosition": 64,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_n_geos_gatda",
+      "koreanPattern": "-ㄴ 것 같다",
+      "deckLevel": 1,
+      "lesson": 11,
+      "globalPosition": 65,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eun_modifier"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eulkkayo",
+      "koreanPattern": "-(으)ㄹ까요?",
+      "deckLevel": 2,
+      "lesson": 12,
+      "globalPosition": 66,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eullaeyo",
+      "koreanPattern": "-(으)ㄹ래요",
+      "deckLevel": 2,
+      "lesson": 12,
+      "globalPosition": 67,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_get_intention",
+      "koreanPattern": "-겠- (speaker's intention)",
+      "deckLevel": 2,
+      "lesson": 12,
+      "globalPosition": 68,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_eullaeyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_eullaeyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_eulgeyo",
+        "gp_eul_geoyeyo",
+        "gp_gap_get_inference"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_get_inference",
+      "koreanPattern": "-겠- (guess / inference)",
+      "deckLevel": 2,
+      "lesson": 12,
+      "globalPosition": 69,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_eullaeyo; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_eullaeyo"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gap_get_intention",
+        "gp_eul_geot_gatda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_euryeogo_hada",
+      "koreanPattern": "-(으)려고 하다",
+      "deckLevel": 2,
+      "lesson": 12,
+      "globalPosition": 70,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eureo_gada",
+      "koreanPattern": "-(으)러 가다",
+      "deckLevel": 2,
+      "lesson": 12,
+      "globalPosition": 71,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eupsida",
+      "koreanPattern": "-(으)ㅂ시다",
+      "deckLevel": 2,
+      "lesson": 12,
+      "globalPosition": 72,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_seumnida",
+      "koreanPattern": "-ㅂ니다/-습니다",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 73,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ayo_eoyo",
+        "gp_imnida_imnikka"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_seumnikka",
+      "koreanPattern": "-ㅂ니까/-습니까?",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 74,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_imnida_imnikka"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_plain_declarative",
+      "koreanPattern": "-ㄴ다/-는다 (plain statements)",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 75,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_seumnikka; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_seumnikka"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_seumnida",
+        "gp_ayo_eoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_imnida_imnikka",
+      "koreanPattern": "N입니다 / N입니까?",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 76,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ieyo_yeyo",
+        "gp_seumnida",
+        "gp_seumnikka"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_honorific_special_verbs",
+      "koreanPattern": "Special honorific verbs: 계시다 / 드시다 / 주무시다",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 77,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_imnida_imnikka; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_imnida_imnikka"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_eusi_honorific",
+        "gp_gap_subject_kkeseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eodo_doeda",
+      "koreanPattern": "-아/어도 되다",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 78,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_benefactive_a_juda",
+      "koreanPattern": "-아/어 주다 (do for someone)",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 79,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_eodo_doeda; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_eodo_doeda"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_a_juseyo",
+        "gp_gap_recipient_ege_hante"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eumyeon_an_doeda",
+      "koreanPattern": "-(으)면 안 되다",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 80,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ji_maseyo",
+      "koreanPattern": "-지 마세요",
+      "deckLevel": 2,
+      "lesson": 13,
+      "globalPosition": 81,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gi_nominal",
+      "koreanPattern": "-기",
+      "deckLevel": 2,
+      "lesson": 14,
+      "globalPosition": 82,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_go_naseo",
+      "koreanPattern": "-고 나서",
+      "deckLevel": 2,
+      "lesson": 14,
+      "globalPosition": 83,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_seq"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eun_hue",
+      "koreanPattern": "-(으)ㄴ 후에",
+      "deckLevel": 2,
+      "lesson": 14,
+      "globalPosition": 84,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_hue"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gi_jeone",
+      "koreanPattern": "-기 전에",
+      "deckLevel": 2,
+      "lesson": 14,
+      "globalPosition": 85,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_jeone"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eul_ttae",
+      "koreanPattern": "-(으)ㄹ 때",
+      "deckLevel": 2,
+      "lesson": 14,
+      "globalPosition": 86,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_go_itda",
+      "koreanPattern": "-고 있다",
+      "deckLevel": 2,
+      "lesson": 15,
+      "globalPosition": 87,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_resultative_eo_itda",
+      "koreanPattern": "-아/어 있다 (state after an action)",
+      "deckLevel": 2,
+      "lesson": 15,
+      "globalPosition": 88,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_go_itda; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_go_itda"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_itda",
+        "gp_eojida"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_neun_jung",
+      "koreanPattern": "-는 중이다",
+      "deckLevel": 2,
+      "lesson": 15,
+      "globalPosition": 89,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_seq"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_geona",
+      "koreanPattern": "-거나",
+      "deckLevel": 2,
+      "lesson": 15,
+      "globalPosition": 90,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ina_choice",
+      "koreanPattern": "(이)나",
+      "deckLevel": 2,
+      "lesson": 15,
+      "globalPosition": 91,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_neun_modifier",
+      "koreanPattern": "-는 N",
+      "deckLevel": 2,
+      "lesson": 16,
+      "globalPosition": 92,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eun_past_modifier",
+      "koreanPattern": "-(으)ㄴ N (action)",
+      "deckLevel": 2,
+      "lesson": 16,
+      "globalPosition": 93,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eun_modifier"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eul_future_modifier",
+      "koreanPattern": "-(으)ㄹ N",
+      "deckLevel": 2,
+      "lesson": 16,
+      "globalPosition": 94,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_neun_geot",
+      "koreanPattern": "-는 것",
+      "deckLevel": 2,
+      "lesson": 16,
+      "globalPosition": 95,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eoboda",
+      "koreanPattern": "-아/어 보다",
+      "deckLevel": 2,
+      "lesson": 17,
+      "globalPosition": 96,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eun_jeok",
+      "koreanPattern": "-(으)ㄴ 적이 있다",
+      "deckLevel": 2,
+      "lesson": 17,
+      "globalPosition": 97,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eobon_jeok",
+      "koreanPattern": "-아/어 본 적이 있다",
+      "deckLevel": 2,
+      "lesson": 17,
+      "globalPosition": 98,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_giro_hada",
+      "koreanPattern": "-기로 하다",
+      "deckLevel": 2,
+      "lesson": 17,
+      "globalPosition": 99,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eul_geot_gatda",
+      "koreanPattern": "-(으)ㄹ 것 같다",
+      "deckLevel": 2,
+      "lesson": 17,
+      "globalPosition": 100,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_n_geos_gatda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gi_ttaemune",
+      "koreanPattern": "-기 때문에",
+      "deckLevel": 2,
+      "lesson": 18,
+      "globalPosition": 101,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_aseo",
+        "gp_eunikka"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_neunde",
+      "koreanPattern": "-는데",
+      "deckLevel": 2,
+      "lesson": 18,
+      "globalPosition": 102,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eunde",
+      "koreanPattern": "-(으)ㄴ데",
+      "deckLevel": 2,
+      "lesson": 18,
+      "globalPosition": 103,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_inde",
+      "koreanPattern": "-(이)ㄴ데",
+      "deckLevel": 2,
+      "lesson": 18,
+      "globalPosition": 104,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eumyeonseo",
+      "koreanPattern": "-(으)면서",
+      "deckLevel": 2,
+      "lesson": 18,
+      "globalPosition": 105,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eojida",
+      "koreanPattern": "-아/어지다",
+      "deckLevel": 2,
+      "lesson": 19,
+      "globalPosition": 106,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ge_adverb",
+      "koreanPattern": "-게",
+      "deckLevel": 2,
+      "lesson": 19,
+      "globalPosition": 107,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_ge_doeda",
+      "koreanPattern": "-게 되다",
+      "deckLevel": 2,
+      "lesson": 19,
+      "globalPosition": 108,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eoduda",
+      "koreanPattern": "-아/어 두다",
+      "deckLevel": 2,
+      "lesson": 19,
+      "globalPosition": 109,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_boda_compare",
+      "koreanPattern": "보다",
+      "deckLevel": 2,
+      "lesson": 20,
+      "globalPosition": 110,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_cheoreom",
+      "koreanPattern": "처럼",
+      "deckLevel": 2,
+      "lesson": 20,
+      "globalPosition": 111,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_euro_means",
+      "koreanPattern": "(으)로",
+      "deckLevel": 2,
+      "lesson": 20,
+      "globalPosition": 112,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_mada",
+      "koreanPattern": "마다",
+      "deckLevel": 2,
+      "lesson": 20,
+      "globalPosition": 113,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_bakke",
+      "koreanPattern": "밖에",
+      "deckLevel": 2,
+      "lesson": 20,
+      "globalPosition": 114,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eobeorida",
+      "koreanPattern": "-아/어 버리다",
+      "deckLevel": 2,
+      "lesson": 21,
+      "globalPosition": 115,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_eodo_concession",
+      "koreanPattern": "-아/어도",
+      "deckLevel": 2,
+      "lesson": 21,
+      "globalPosition": 116,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eumyeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_indefinite_negation",
+      "koreanPattern": "아무도 / 아무것도 + negative",
+      "deckLevel": 2,
+      "lesson": 21,
+      "globalPosition": 117,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_eodo_concession; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_eodo_concession"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_an",
+        "gp_eopseoyo",
+        "gp_mos"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_geureonde",
+      "koreanPattern": "그런데",
+      "deckLevel": 2,
+      "lesson": 21,
+      "globalPosition": 118,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_hajiman"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_go_nan_hue",
+      "koreanPattern": "-고 난 후에",
+      "deckLevel": 2,
+      "lesson": 21,
+      "globalPosition": 119,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_seq"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_aseo_sequence",
+      "koreanPattern": "-아/어서 (sequence)",
+      "deckLevel": 2,
+      "lesson": 21,
+      "globalPosition": 120,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_aseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_neundago_hada",
+      "koreanPattern": "-ㄴ/는다고 하다",
+      "deckLevel": 2,
+      "lesson": 22,
+      "globalPosition": 121,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_dago_hada_adj",
+      "koreanPattern": "-다고 하다 (adjective)",
+      "deckLevel": 2,
+      "lesson": 22,
+      "globalPosition": 122,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_irago_hada",
+      "koreanPattern": "(이)라고 하다",
+      "deckLevel": 2,
+      "lesson": 22,
+      "globalPosition": 123,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_dagoyo",
+      "koreanPattern": "-다고요?",
+      "deckLevel": 2,
+      "lesson": 22,
+      "globalPosition": 124,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_daga",
+      "koreanPattern": "-다가",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 125,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_seq"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eonota",
+      "koreanPattern": "-아/어 놓다",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 126,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eoduda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_passive_suffix",
+      "koreanPattern": "Passive verb forms: 열리다 / 닫히다",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 127,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_eonota; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_eonota"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_eojida",
+        "gp_gap_passive_eojida"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_passive_eojida",
+      "koreanPattern": "-아/어지다 (passive / spontaneous result)",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 128,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_eonota; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_eonota"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_eojida",
+        "gp_gap_passive_suffix"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_causative_suffix",
+      "koreanPattern": "Causative verb pairs: 먹이다 / 재우다",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 129,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_eonota; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_eonota"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gap_ge_hada_action"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_ge_hada_action",
+      "koreanPattern": "-게 하다 (make / let someone do)",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 130,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_eonota; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_eonota"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gap_causative_suffix",
+        "gp_gap_ge_hada_state"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_ge_hada_state",
+      "koreanPattern": "-게 하다 (cause a state)",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 131,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_eonota; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_eonota"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gap_ge_hada_action",
+        "gp_ge_adverb"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eogada",
+      "koreanPattern": "-아/어 가다 / 오다",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 132,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ge_doeda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_neun_dongan",
+      "koreanPattern": "-는 동안",
+      "deckLevel": 3,
+      "lesson": 23,
+      "globalPosition": 133,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eumyeonseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_neun_pyeon",
+      "koreanPattern": "-(으)ㄴ/는 편이다",
+      "deckLevel": 3,
+      "lesson": 24,
+      "globalPosition": 134,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_go_sipeohada",
+      "koreanPattern": "-고 싶어 하다 (someone else's wishes)",
+      "deckLevel": 3,
+      "lesson": 24,
+      "globalPosition": 135,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_neun_pyeon; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_neun_pyeon"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_sipda",
+        "gp_gap_ge_hada_action"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_na_boda",
+      "koreanPattern": "-나 보다 / -(으)ㄴ가 보다 (seems likely)",
+      "deckLevel": 3,
+      "lesson": 24,
+      "globalPosition": 136,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_neun_pyeon; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_neun_pyeon"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_geot_gatda",
+        "gp_gap_deoragoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eoboida",
+      "koreanPattern": "-아/어 보이다",
+      "deckLevel": 3,
+      "lesson": 24,
+      "globalPosition": 137,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eoboda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_euljido",
+      "koreanPattern": "-(으)ㄹ지도 모르다",
+      "deckLevel": 3,
+      "lesson": 24,
+      "globalPosition": 138,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_geot_gatda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eultende",
+      "koreanPattern": "-(으)ㄹ 텐데",
+      "deckLevel": 3,
+      "lesson": 24,
+      "globalPosition": 139,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_eultenikka"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eultenikka",
+      "koreanPattern": "-(으)ㄹ 테니까",
+      "deckLevel": 3,
+      "lesson": 25,
+      "globalPosition": 140,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_eultende"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eulppeon",
+      "koreanPattern": "-(으)ㄹ 뻔하다",
+      "deckLevel": 3,
+      "lesson": 25,
+      "globalPosition": 141,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_eosseoya"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eoyagetda",
+      "koreanPattern": "-아/어야겠다",
+      "deckLevel": 3,
+      "lesson": 25,
+      "globalPosition": 142,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_aya_hada"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_euljul",
+      "koreanPattern": "-(으)ㄹ 줄 알다/모르다",
+      "deckLevel": 3,
+      "lesson": 25,
+      "globalPosition": 143,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_su_issda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_jamaja",
+      "koreanPattern": "-자마자",
+      "deckLevel": 3,
+      "lesson": 26,
+      "globalPosition": 144,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_naseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_dorok",
+      "koreanPattern": "-도록 (purpose)",
+      "deckLevel": 3,
+      "lesson": 26,
+      "globalPosition": 145,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_euryeogo_hada"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eulsurok",
+      "koreanPattern": "-(으)ㄹ수록",
+      "deckLevel": 3,
+      "lesson": 26,
+      "globalPosition": 146,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eumyeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_dabonikka",
+      "koreanPattern": "-다 보니까",
+      "deckLevel": 3,
+      "lesson": 26,
+      "globalPosition": 147,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_ge_doeda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_neurago",
+      "koreanPattern": "-느라고",
+      "deckLevel": 3,
+      "lesson": 27,
+      "globalPosition": 148,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_aseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_barame",
+      "koreanPattern": "-는 바람에",
+      "deckLevel": 3,
+      "lesson": 27,
+      "globalPosition": 149,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_neun_tase",
+        "gp_t2l3_deokbune"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_deokbune",
+      "koreanPattern": "-(으)ㄴ/는 덕분에",
+      "deckLevel": 3,
+      "lesson": 27,
+      "globalPosition": 150,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_barame"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_daesine",
+      "koreanPattern": "-는 대신에",
+      "deckLevel": 3,
+      "lesson": 27,
+      "globalPosition": 151,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_geona"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_banmyeone",
+      "koreanPattern": "-(으)ㄴ/는 반면에",
+      "deckLevel": 3,
+      "lesson": 28,
+      "globalPosition": 152,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_jiman"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_neunji",
+      "koreanPattern": "-(으)ㄴ/는지 알다/모르다",
+      "deckLevel": 3,
+      "lesson": 28,
+      "globalPosition": 153,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_neun_geot"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_deon",
+      "koreanPattern": "-던",
+      "deckLevel": 3,
+      "lesson": 28,
+      "globalPosition": 154,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_eotdeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l3_eotdeon",
+      "koreanPattern": "-았/었던",
+      "deckLevel": 3,
+      "lesson": 28,
+      "globalPosition": 155,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_deon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_deoragoyo",
+      "koreanPattern": "-더라고요 (what I found firsthand)",
+      "deckLevel": 3,
+      "lesson": 28,
+      "globalPosition": 156,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l3_eotdeon; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l3_eotdeon"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_deoni",
+        "gp_t2l4_eotdeoni"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_janayo",
+      "koreanPattern": "-잖아요",
+      "deckLevel": 4,
+      "lesson": 29,
+      "globalPosition": 157,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_geodeunyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_geodeunyo",
+      "koreanPattern": "-거든요",
+      "deckLevel": 4,
+      "lesson": 29,
+      "globalPosition": 158,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_janayo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_deoni",
+      "koreanPattern": "-더니",
+      "deckLevel": 4,
+      "lesson": 29,
+      "globalPosition": 159,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_eotdeoni"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_gap_eum_written_nominal",
+      "koreanPattern": "-(으)ㅁ (written nominalization)",
+      "deckLevel": 4,
+      "lesson": 29,
+      "globalPosition": 160,
+      "scope": "grammar",
+      "evidenceStatus": "coverage_source_named; item-specific primary entry and nuance not verified",
+      "evidence": [],
+      "whyAtThisStage": "Editorial placement after gp_t2l4_deoni; prerequisite/usage order pending educator audit",
+      "prerequisitesToVerify": [
+        "gp_t2l4_deoni"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_gi_nominal",
+        "gp_neun_geot"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eotdeoni",
+      "koreanPattern": "-았/었더니",
+      "deckLevel": 4,
+      "lesson": 29,
+      "globalPosition": 161,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_deoni"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_neun_cheok",
+      "koreanPattern": "-(으)ㄴ/는 척하다",
+      "deckLevel": 4,
+      "lesson": 30,
+      "globalPosition": 162,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eulliga",
+      "koreanPattern": "-(으)ㄹ 리가 없다",
+      "deckLevel": 4,
+      "lesson": 30,
+      "globalPosition": 163,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_euljido"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eulsupakke",
+      "koreanPattern": "-(으)ㄹ 수밖에 없다",
+      "deckLevel": 4,
+      "lesson": 30,
+      "globalPosition": 164,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_su_issda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eun_chaero",
+      "koreanPattern": "-(으)ㄴ 채로",
+      "deckLevel": 4,
+      "lesson": 30,
+      "globalPosition": 165,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eoduda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eulmanhada",
+      "koreanPattern": "-(으)ㄹ 만하다",
+      "deckLevel": 4,
+      "lesson": 31,
+      "globalPosition": 166,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_su_issda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eobwatja",
+      "koreanPattern": "-아/어 봤자",
+      "deckLevel": 4,
+      "lesson": 31,
+      "globalPosition": 167,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_eodo_soyongeopda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_neun_tase",
+      "koreanPattern": "-(으)ㄴ/는 탓에",
+      "deckLevel": 4,
+      "lesson": 31,
+      "globalPosition": 168,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_barame"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_neun_gime",
+      "koreanPattern": "-는 김에",
+      "deckLevel": 4,
+      "lesson": 31,
+      "globalPosition": 169,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_daesine"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eulkkabwa",
+      "koreanPattern": "-(으)ㄹ까 봐",
+      "deckLevel": 4,
+      "lesson": 32,
+      "globalPosition": 170,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_euljido"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_neun_semi",
+      "koreanPattern": "-(으)ㄴ/는 셈이다",
+      "deckLevel": 4,
+      "lesson": 32,
+      "globalPosition": 171,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_neun_pyeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_neun_dedaga",
+      "koreanPattern": "-(으)ㄴ/는 데다가",
+      "deckLevel": 4,
+      "lesson": 32,
+      "globalPosition": 172,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_banmyeone"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eosseoya",
+      "koreanPattern": "-았/었어야 하다",
+      "deckLevel": 4,
+      "lesson": 32,
+      "globalPosition": 173,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_eoyagetda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eotdeoramyeon",
+      "koreanPattern": "-았/었더라면",
+      "deckLevel": 4,
+      "lesson": 33,
+      "globalPosition": 174,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_asseoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_deorado",
+      "koreanPattern": "-더라도",
+      "deckLevel": 4,
+      "lesson": 33,
+      "globalPosition": 175,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eodo_concession"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_neun_han",
+      "koreanPattern": "-는 한",
+      "deckLevel": 4,
+      "lesson": 33,
+      "globalPosition": 176,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eumyeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_neuni",
+      "koreanPattern": "-느니",
+      "deckLevel": 4,
+      "lesson": 33,
+      "globalPosition": 177,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_eulbaeya"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_jago_hada",
+      "koreanPattern": "-자고 하다",
+      "deckLevel": 4,
+      "lesson": 34,
+      "globalPosition": 178,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eupsida"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_eurago_hada",
+      "koreanPattern": "-(으)라고 하다",
+      "deckLevel": 4,
+      "lesson": 34,
+      "globalPosition": 179,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_euseyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_nyago_hada",
+      "koreanPattern": "-냐고 하다",
+      "deckLevel": 4,
+      "lesson": 34,
+      "globalPosition": 180,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_neundago_hada"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l4_daeyo",
+      "koreanPattern": "-대요 (contracted report)",
+      "deckLevel": 4,
+      "lesson": 34,
+      "globalPosition": 181,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_neundago_hada"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_euro_inhae",
+      "koreanPattern": "N(으)로 인해(서)",
+      "deckLevel": 5,
+      "lesson": 35,
+      "globalPosition": 182,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_gi_ttaemune"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_eumeurosseo",
+      "koreanPattern": "-(으)ㅁ으로써",
+      "deckLevel": 5,
+      "lesson": 35,
+      "globalPosition": 183,
+      "scope": "grammar",
+      "evidenceStatus": "official_component_contrast_verified; full-form placement and original sentences pending",
+      "evidence": [
+        {
+          "source": "National Institute of Korean Language, 온라인가나다, 2024-11-21",
+          "url": "https://www.korean.go.kr/front/onlineQna/onlineQnaView.do?mn_id=216&pageIndex=1&qna_seq=306389",
+          "locator": "answer distinguishing -로써 (means/tool) vs -로서 (role/capacity)",
+          "evidenceScope": "official means/role component distinction; does NOT independently verify Munpro's -(으)ㅁ nominalization staging or example naturalness"
+        }
+      ],
+      "whyAtThisStage": "Builds on earlier -(으)ㅁ nominalization and practices written explanation of means; placement is a pedagogical hypothesis, not an official TOPIK-level mapping.",
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_euro_means"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_e_ttaraseo",
+      "koreanPattern": "N에 따라(서)",
+      "deckLevel": 5,
+      "lesson": 35,
+      "globalPosition": 184,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_eulsurok"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_neun_ba",
+      "koreanPattern": "-(으)ㄴ/는 바",
+      "deckLevel": 5,
+      "lesson": 35,
+      "globalPosition": 185,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_bawa_gachi"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_neun_mankeum",
+      "koreanPattern": "-(으)ㄴ/는 만큼",
+      "deckLevel": 5,
+      "lesson": 36,
+      "globalPosition": 186,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_eulsurok"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_neun_beob",
+      "koreanPattern": "-(으)ㄴ/는 법이다",
+      "deckLevel": 5,
+      "lesson": 36,
+      "globalPosition": 187,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_ge_maryeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_ge_maryeon",
+      "koreanPattern": "-게 마련이다",
+      "deckLevel": 5,
+      "lesson": 36,
+      "globalPosition": 188,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_neun_beob"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_eul_ttareum",
+      "koreanPattern": "-(으)ㄹ 따름이다",
+      "deckLevel": 5,
+      "lesson": 36,
+      "globalPosition": 189,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_man"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_euljirado",
+      "koreanPattern": "-(으)ㄹ지라도",
+      "deckLevel": 5,
+      "lesson": 37,
+      "globalPosition": 190,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_deorado"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_eulmangjeong",
+      "koreanPattern": "-(으)ㄹ망정",
+      "deckLevel": 5,
+      "lesson": 37,
+      "globalPosition": 191,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l6_euljieonjeong"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_eundeul",
+      "koreanPattern": "-(으)ㄴ들",
+      "deckLevel": 5,
+      "lesson": 37,
+      "globalPosition": 192,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_euljirado"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_eulbaeya",
+      "koreanPattern": "-(으)ㄹ 바에야",
+      "deckLevel": 5,
+      "lesson": 37,
+      "globalPosition": 193,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l6_neuni_charari"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_gineunkeonyeong",
+      "koreanPattern": "-기는커녕",
+      "deckLevel": 5,
+      "lesson": 38,
+      "globalPosition": 194,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l6_gosahago"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_eulgyeoreul",
+      "koreanPattern": "-(으)ㄹ 겨를이 없다",
+      "deckLevel": 5,
+      "lesson": 38,
+      "globalPosition": 195,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eopseoyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_giga_museopge",
+      "koreanPattern": "-기가 무섭게",
+      "deckLevel": 5,
+      "lesson": 38,
+      "globalPosition": 196,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_jamaja"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_jocha",
+      "koreanPattern": "N조차",
+      "deckLevel": 5,
+      "lesson": 38,
+      "globalPosition": 197,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_do"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_de_bihae",
+      "koreanPattern": "-(으)ㄴ/는 데 비해",
+      "deckLevel": 5,
+      "lesson": 39,
+      "globalPosition": 198,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_banmyeone"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_neun_daero",
+      "koreanPattern": "-는 대로 (immediately)",
+      "deckLevel": 5,
+      "lesson": 39,
+      "globalPosition": 199,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_jamaja"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_bawa_gachi",
+      "koreanPattern": "-(으)ㄴ/는 바와 같이",
+      "deckLevel": 5,
+      "lesson": 39,
+      "globalPosition": 200,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_neun_ba"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_e_bulgwahada",
+      "koreanPattern": "N에 불과하다",
+      "deckLevel": 5,
+      "lesson": 39,
+      "globalPosition": 201,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_man"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_goja_hada",
+      "koreanPattern": "-고자 하다",
+      "deckLevel": 5,
+      "lesson": 40,
+      "globalPosition": 202,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_euryeogo_hada"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_go_malda",
+      "koreanPattern": "-고 말다",
+      "deckLevel": 5,
+      "lesson": 40,
+      "globalPosition": 203,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eobeorida"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_eodo_soyongeopda",
+      "koreanPattern": "-아/어도 소용없다",
+      "deckLevel": 5,
+      "lesson": 40,
+      "globalPosition": 204,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_eobwatja"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l5_gi_sipsang",
+      "koreanPattern": "-기 십상이다",
+      "deckLevel": 5,
+      "lesson": 40,
+      "globalPosition": 205,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_ge_maryeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_euro_malmiama",
+      "koreanPattern": "N(으)로 말미암아",
+      "deckLevel": 6,
+      "lesson": 41,
+      "globalPosition": 206,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_euro_inhae"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_makronhago",
+      "koreanPattern": "N을/를 막론하고",
+      "deckLevel": 6,
+      "lesson": 41,
+      "globalPosition": 207,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_e_ttaraseo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_geoniwa",
+      "koreanPattern": "-거니와",
+      "deckLevel": 6,
+      "lesson": 41,
+      "globalPosition": 208,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_neun_dedaga"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_gie_ireuda",
+      "koreanPattern": "-기에 이르다",
+      "deckLevel": 6,
+      "lesson": 41,
+      "globalPosition": 209,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_go_malda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_euljieonjeong",
+      "koreanPattern": "-(으)ㄹ지언정",
+      "deckLevel": 6,
+      "lesson": 42,
+      "globalPosition": 210,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_eulmangjeong"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_gineun_hade",
+      "koreanPattern": "-기는 하되",
+      "deckLevel": 6,
+      "lesson": 42,
+      "globalPosition": 211,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_jiman"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_dason_chideorado",
+      "koreanPattern": "-다손 치더라도",
+      "deckLevel": 6,
+      "lesson": 42,
+      "globalPosition": 212,
+      "scope": "grammar",
+      "evidenceStatus": "official_form_morphology_verified; original Munpro sentences await educator review",
+      "evidence": [
+        {
+          "source": "National Institute of Korean Language, 새국어생활 16(2), pp. 181–182 (2006)",
+          "url": "https://www.korean.go.kr/nkview/nklife/2006_2/2006_0214.pdf",
+          "locator": "pp. 181–182, -다손/-ㄴ다손/-는다손 exposition",
+          "evidenceScope": "official form-specific attachment distinction for descriptive and action predicates, NOT Munpro card naturalness or lesson placement"
+        }
+      ],
+      "whyAtThisStage": "A high-register argumentative concession revisiting familiar descriptive/action present-tense inflection; level assignment remains editorial.",
+      "prerequisitesToVerify": [
+        "distinguish descriptive vs action predicate",
+        "familiarity with -ㄴ다/-는다 declaratives"
+      ],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_deorado"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_giroseoni",
+      "koreanPattern": "-기로서니",
+      "deckLevel": 6,
+      "lesson": 42,
+      "globalPosition": 213,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_euljirado"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_neuni_charari",
+      "koreanPattern": "-느니 차라리",
+      "deckLevel": 6,
+      "lesson": 43,
+      "globalPosition": 214,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_neuni"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_gosahago",
+      "koreanPattern": "N은/는 고사하고",
+      "deckLevel": 6,
+      "lesson": 43,
+      "globalPosition": 215,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_gineunkeonyeong"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_euryeoya",
+      "koreanPattern": "-(으)려야 -(으)ㄹ 수 없다",
+      "deckLevel": 6,
+      "lesson": 43,
+      "globalPosition": 216,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_su_issda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_euna_mana",
+      "koreanPattern": "-(으)나 마나",
+      "deckLevel": 6,
+      "lesson": 43,
+      "globalPosition": 217,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_eobwatja"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_gi_jjagi",
+      "koreanPattern": "-기 짝이 없다",
+      "deckLevel": 6,
+      "lesson": 44,
+      "globalPosition": 218,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_e_bulgwahada"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_gi_ilsu",
+      "koreanPattern": "-기 일쑤이다",
+      "deckLevel": 6,
+      "lesson": 44,
+      "globalPosition": 219,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_gi_sipsang"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_da_motae",
+      "koreanPattern": "-다 못해",
+      "deckLevel": 6,
+      "lesson": 44,
+      "globalPosition": 220,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_gineunkeonyeong"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_eodaeda",
+      "koreanPattern": "-아/어 대다",
+      "deckLevel": 6,
+      "lesson": 44,
+      "globalPosition": 221,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_go_itda"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_dasipi_hada",
+      "koreanPattern": "-다시피 하다",
+      "deckLevel": 6,
+      "lesson": 45,
+      "globalPosition": 222,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l6_dasipi"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_dasipi",
+      "koreanPattern": "-다시피 (as you can see)",
+      "deckLevel": 6,
+      "lesson": 45,
+      "globalPosition": 223,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l6_dasipi_hada"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_gie_mangjeong",
+      "koreanPattern": "-기에 망정이지",
+      "deckLevel": 6,
+      "lesson": 45,
+      "globalPosition": 224,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_eulppeon"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_neunga_hamyeon",
+      "koreanPattern": "-는가 하면",
+      "deckLevel": 6,
+      "lesson": 45,
+      "globalPosition": 225,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_banmyeone"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_gi_nareum",
+      "koreanPattern": "-기 나름이다",
+      "deckLevel": 6,
+      "lesson": 46,
+      "globalPosition": 226,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l5_neun_mankeum"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_eul_beopdo",
+      "koreanPattern": "-(으)ㄹ 법도 하다",
+      "deckLevel": 6,
+      "lesson": 46,
+      "globalPosition": 227,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l4_eulliga"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_eurira",
+      "koreanPattern": "-(으)리라",
+      "deckLevel": 6,
+      "lesson": 46,
+      "globalPosition": 228,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_eul_geoyeyo"
+      ],
+      "nativeEducatorReview": "pending"
+    },
+    {
+      "pointId": "gp_t2l6_noramyeon",
+      "koreanPattern": "-노라면",
+      "deckLevel": 6,
+      "lesson": 46,
+      "globalPosition": 229,
+      "scope": "grammar",
+      "evidenceStatus": "pending_item_level_source_check",
+      "evidence": [],
+      "whyAtThisStage": null,
+      "prerequisitesToVerify": [],
+      "nearNeighborContrastsToVerify": [
+        "gp_t2l3_dabonikka"
+      ],
+      "nativeEducatorReview": "pending"
+    }
+  ]
+}

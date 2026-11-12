@@ -19,14 +19,17 @@
  * Run:  bun scripts/port-content.ts
  * Output: mobile/src/content/topik1-level1.json
  *         mobile/src/content/topik1-level2.json
+ *         mobile/src/content/topik2-level3.json … topik2-level6.json
  */
 import { allLessons as level1Lessons } from '../prisma/seed-data/topik1-level1';
 import { level1Additions } from '../prisma/seed-data/topik1-level1/additions';
 import { allLessons as level2Lessons } from '../prisma/seed-data/topik1-level2';
-import { writeFileSync } from 'node:fs';
+import { writeFileSync, readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { LessonSeed } from '../prisma/seed-data/types';
+import { applyGrammarExpansions } from './curriculum-overlay.mjs';
+import { applyFlaggedCardFixes } from './flagged-card-overrides.mjs';
 
 const contentDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'mobile', 'src', 'content');
 
@@ -65,18 +68,33 @@ function portLevel(
 	console.log(`  wrote ${outPath}`);
 }
 
-portLevel(
-	level1,
-	{ id: 'deck_topik1_level1', title: 'TOPIK I Level 1', slug: 'topik1-level1', topikLevel: 'topik1-1', level: 1 },
-	'Level 1 was authored by Nicholas with basic Korean, then audited and reorganised into a learner-first curriculum on 2026-11-09 (41 sentence corrections, 12 translation-only fixes, invalid alternate answers removed, grammar points reordered so polite verb conjugation precedes object-particle production). See docs/planning/korean-curriculum-overhaul-2026-11-09.md. A further pass added two gap grammar points (noun negation N이/가 아니다 at position 2, subject honorific -(으)시-) and a teaching guide for every point (prisma/seed-data/teaching-guides/), applied by teachLesson() at the lesson boundary: each description is the guide\'s plain-English meaning, with three notes (formation, worked example, common trap) prepended. Plus the Level 1 additions in prisma/seed-data/topik1-level1/additions.ts (worked examples + variant practice cards, from the Codex "Make Level 1 lessons and reviews reliable" patch, 2026-11-08). Not independently reviewed by a Korean educator; treat as a curated draft, not vetted teaching content.',
-	'prisma/seed-data/topik1-level1/lesson-01.ts … lesson-11.ts + additions.ts',
-	'topik1-level1.json',
-);
-
-portLevel(
-	level2Lessons,
-	{ id: 'deck_topik1_level2', title: 'TOPIK I Level 2', slug: 'topik-level-2', topikLevel: 'topik1-2', level: 2 },
-	'Level 2 was authored fresh in the learner-first curriculum overhaul on 2026-11-09 (see docs/planning/korean-curriculum-overhaul-2026-11-09.md). A further pass added one gap grammar point (formal noun copula N입니다/입니까?) and a teaching guide for every point (prisma/seed-data/teaching-guides/), applied by teachLesson() at the lesson boundary. Lesson 22 (reported speech) is labelled an optional bridge — it sits near or beyond the usual TOPIK I beginner boundary. -(으)ㄹ지라도 and written nominalization -(으)ㅁ were deliberately omitted as higher-level material. Not independently reviewed by a Korean educator; treat as a curated draft, not vetted teaching content.',
-	'prisma/seed-data/topik1-level2/lesson-12.ts … lesson-22.ts',
-	'topik1-level2.json',
-);
+/**
+ * Assemble the existing six source decks, then insert grammar-system gaps
+ * by stable point ID. Generated JSON is always a single reproducible output.
+ * Individual number, time and counter words are reserved for vocab decks.
+ */
+const originalLevel1 = JSON.parse(readFileSync(join(contentDir, 'topik1-level1.json'), 'utf8'));
+const originalLevel2 = JSON.parse(readFileSync(join(contentDir, 'topik1-level2.json'), 'utf8'));
+const rawBundles = [
+  { ...originalLevel1, lessons: level1 },
+  { ...originalLevel2, lessons: level2Lessons },
+  ...[3, 4, 5, 6].map(level => JSON.parse(readFileSync(
+    join(dirname(fileURLToPath(import.meta.url)), '..', 'prisma', 'seed-data', 'topik2', `level-${level}.json`), 'utf8',
+  ))),
+];
+const gapBundles = [1, 2, 3, 4].map(level => JSON.parse(readFileSync(
+  join(dirname(fileURLToPath(import.meta.url)), '..', 'prisma', 'seed-data', 'grammar-expansion', `level-${level}.json`), 'utf8',
+)));
+const expanded = applyGrammarExpansions(rawBundles, gapBundles);
+const reviewManifest = JSON.parse(readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'prisma', 'seed-data', 'review-qa', 'flagged-card-fixes.json'), 'utf8'));
+const reviewed = applyFlaggedCardFixes(expanded, reviewManifest);
+reviewed.forEach((bundle, index) => {
+  const level = index + 1;
+  portLevel(
+    bundle.lessons,
+    bundle.deck,
+    bundle.provenance,
+    bundle.source,
+    level <= 2 ? `topik1-level${level}.json` : `topik2-level${level}.json`,
+  );
+});

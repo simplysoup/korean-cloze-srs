@@ -16,6 +16,8 @@
 import { readFileSync } from 'node:fs';
 import { join, dirname } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { applyGrammarExpansions } from './curriculum-overlay.mjs';
+import { applyFlaggedCardFixes } from './flagged-card-overrides.mjs';
 
 const contentDir = join(dirname(fileURLToPath(import.meta.url)), '..', 'mobile', 'src', 'content');
 const errors = [];
@@ -38,8 +40,12 @@ function flattenAll(bundles) {
 }
 
 const levels = [
-  { file: 'topik1-level1.json', level: 1, lessons: 11, gps: 50, cards: 184, examples: 113, posMin: 1, posMax: 50 },
-  { file: 'topik1-level2.json', level: 2, lessons: 11, gps: 52, cards: 156, examples: 104, posMin: 51, posMax: 102 },
+  { file: 'topik1-level1.json', level: 1, lessons: 11, gps: 65, cards: 229, examples: 143, posMin: 1, posMax: 65 },
+  { file: 'topik1-level2.json', level: 2, lessons: 11, gps: 59, cards: 177, examples: 118, posMin: 66, posMax: 124 },
+  { file: 'topik2-level3.json', level: 3, lessons: 6, gps: 32, cards: 96, examples: 64, posMin: 125, posMax: 156 },
+  { file: 'topik2-level4.json', level: 4, lessons: 6, gps: 25, cards: 75, examples: 50, posMin: 157, posMax: 181 },
+  { file: 'topik2-level5.json', level: 5, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 182, posMax: 205 },
+  { file: 'topik2-level6.json', level: 6, lessons: 6, gps: 24, cards: 72, examples: 48, posMin: 206, posMax: 229 },
 ];
 
 const bundles = levels.map((spec) => {
@@ -55,6 +61,26 @@ const bundles = levels.map((spec) => {
   return { ...spec, data, lessons, gps, cards, examples };
 });
 
+// The checked-in app content for TOPIK II must match its authored source
+// byte-for-byte after canonical JSON serialization. Avoid editing generated
+// mobile JSON by hand; run 'bun scripts/port-content.ts' instead.
+const expandedSources = applyGrammarExpansions([
+  bundles[0].data, // Level 1 and 2 were already ported and expanded
+  bundles[1].data,
+  ...[3, 4, 5, 6].map(level => JSON.parse(readFileSync(
+    join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'topik2', `level-${level}.json`), 'utf8',
+  ))),
+], [3, 4].map(level => JSON.parse(readFileSync(
+  join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'grammar-expansion', `level-${level}.json`), 'utf8',
+))));
+const reviewManifest = JSON.parse(readFileSync(join(contentDir, '..', '..', '..', 'prisma', 'seed-data', 'review-qa', 'flagged-card-fixes.json'), 'utf8'));
+const reviewedSources = applyFlaggedCardFixes(expandedSources, reviewManifest);
+for (const level of [3, 4, 5, 6]) {
+  const expected = reviewedSources[level - 1];
+  const actual = bundles[level - 1].data;
+  check(JSON.stringify(expected) === JSON.stringify(actual), `Level ${level}: generated mobile JSON differs from assembled authored source`);
+}
+
 const all = flattenAll(bundles);
 const gpById = new Map(all.map(({ gp }) => [gp.id, gp]));
 const positionById = new Map(all.map(({ gp, position }) => [gp.id, position]));
@@ -65,6 +91,25 @@ const dup = (id, kind) => {
 };
 
 for (const { gp, position, level } of all) {
+  if (level >= 3) {
+    check(gp.category !== 'grammar pattern' && gp.category.trim().length > 2,
+      `${gp.id}: category must describe grammatical function`);
+    check(gp.description.trim().length >= 85 && gp.description !== gp.hint,
+      `${gp.id}: explanation must go beyond the one-line hint`);
+    check(gp.structurePattern.trim().length > gp.title.trim().length,
+      `${gp.id}: structure must show how the pattern attaches`);
+    const noteByTitle = new Map((gp.notes ?? []).map((note) => [note.title, note.content]));
+    for (const title of ['Build it step by step', 'Worked example', 'Common trap']) {
+      check((noteByTitle.get(title) ?? '').length >= 40,
+        `${gp.id}: missing or unhelpfully brief ${title}`);
+    }
+    check((noteByTitle.get('Worked example') ?? '').includes(gp.lessonExamples[0]?.fullSentence ?? ''),
+      `${gp.id}: teaching walkthrough must use a real worked sentence`);
+    check(new Set([...gp.lessonExamples, ...gp.cards].map((c) => c.fullSentence)).size ===
+      gp.lessonExamples.length + gp.cards.length,
+      `${gp.id}: review card must be an unseen Korean sentence, not a reused example`);
+  }
+
   dup(gp.id, 'grammarPoint');
   check(gp.lessonExamples.length >= 2, `${gp.id}: only ${gp.lessonExamples.length} lesson examples (need >= 2)`);
   check(gp.cards.length >= 3, `${gp.id}: only ${gp.cards.length} cloze cards (need >= 3)`);
@@ -75,11 +120,19 @@ for (const { gp, position, level } of all) {
   for (const ex of gp.lessonExamples) {
     dup(ex.id, 'lessonExample');
     check(ex.fullSentence.includes(ex.answer), `${ex.id}: answer ${JSON.stringify(ex.answer)} not in sentence ${JSON.stringify(ex.fullSentence)}`);
+    check(ex.sentenceWithBlank.split('___').length === 2 &&
+      ex.sentenceWithBlank.replace('___', ex.answer) === ex.fullSentence,
+      `${ex.id}: worked cloze must reconstruct the exact Korean sentence`);
     check(typeof ex.englishHint === 'string' && ex.englishHint.length > 0, `${ex.id}: englishHint is not a non-empty string`);
   }
   for (const card of gp.cards) {
     dup(card.id, 'clozeCard');
+    check(!gp.id.startsWith('gp_gap_') || typeof card.vocabBaseForm === 'string' && card.vocabBaseForm.trim().length > 0,
+      `${card.id}: grammar-gap cards must expose the dictionary/noun base`);
     check(card.fullSentence.includes(card.answer), `${card.id}: answer ${JSON.stringify(card.answer)} not in sentence ${JSON.stringify(card.fullSentence)}`);
+    check(card.sentenceWithBlank.split('___').length === 2 &&
+      card.sentenceWithBlank.replace('___', card.answer) === card.fullSentence,
+      `${card.id}: review cloze must reconstruct the exact Korean sentence`);
     check(card.sentenceWithBlank.includes('___'), `${card.id}: sentenceWithBlank has no ___ blank`);
     check(typeof card.englishHint === 'string' && card.englishHint.length > 0, `${card.id}: englishHint is not a non-empty string`);
     const spec = levels[level - 1];
@@ -102,11 +155,11 @@ for (const { gp, position, level } of all) {
   }
 }
 
-// Positions are continuous 1-102 across both bundles in file order.
+// Positions are continuous 1-198 across all six bundles in file order.
 const positions = all.map(({ position }) => position);
 check(
-  positions.length === 102 && positions.every((p, i) => p === i + 1),
-  `global positions are not continuous 1-102 (got ${positions.length} points)`,
+  positions.length === 229 && positions.every((p, i) => p === i + 1),
+  `global positions are not continuous 1-229 (got ${positions.length} points)`,
 );
 
 if (errors.length > 0) {
@@ -115,4 +168,4 @@ if (errors.length > 0) {
   process.exit(1);
 }
 const totals = bundles.map((b) => `${b.file}: ${b.lessons.length} lessons, ${b.gps.length} GPs, ${b.cards.length} cards, ${b.examples.length} examples`).join('\n  ');
-console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-102`);
+console.log(`OK: ${totals}\n  cross-bundle: no duplicate ids, positions continuous 1-229`);

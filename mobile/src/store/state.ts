@@ -45,6 +45,11 @@ export interface WebState {
   doc: SyncDocument;
   /** Server sync version this device last synced to (0 = never). */
   lastSyncedVersion: number;
+  /** The user id the lastSyncedVersion belongs to. The version is
+   * per-account: when the logged-in user changes, the version is
+   * reset to 0 so the next push uses expectedVersion 0 and the pull
+   * establishes the new account's version. Null = never synced. */
+  lastSyncedUserId: string | null;
   /** ISO timestamp of the last successful sync, or null. */
   lastSyncedAt: string | null;
   /** True when local state changed since the last successful push. */
@@ -114,6 +119,7 @@ const IDB_DOC_KEY = 'state-v1';
 interface PersistedState {
   doc: SyncDocument;
   lastSyncedVersion: number;
+  lastSyncedUserId: string | null;
   lastSyncedAt: string | null;
   syncDirty: boolean;
 }
@@ -170,6 +176,7 @@ function newState(): WebState {
     user: null,
     doc: emptyDoc(),
     lastSyncedVersion: 0,
+    lastSyncedUserId: null,
     lastSyncedAt: null,
     syncDirty: false,
     deviceId: '',
@@ -302,6 +309,7 @@ export async function persistNow(): Promise<void> {
     await idbPut({
       doc: s.doc,
       lastSyncedVersion: s.lastSyncedVersion,
+      lastSyncedUserId: s.lastSyncedUserId,
       lastSyncedAt: s.lastSyncedAt,
       syncDirty: s.syncDirty,
     });
@@ -349,6 +357,28 @@ export function getLastSyncedVersion(): number {
 
 export function setLastSyncedVersion(v: number): void {
   getState().lastSyncedVersion = v;
+  schedulePersist();
+}
+
+/** The user id the lastSyncedVersion belongs to (null = never synced). */
+export function getLastSyncedUserId(): string | null {
+  return getState().lastSyncedUserId;
+}
+
+export function setLastSyncedUserId(userId: string | null): void {
+  getState().lastSyncedUserId = userId;
+  schedulePersist();
+}
+
+/**
+ * Record a successful sync against the server version: the version and
+ * the user it belongs to, together. Callers set both so a later
+ * account change is detectable.
+ */
+export function setSyncedVersion(version: number, userId: string | null): void {
+  const s = getState();
+  s.lastSyncedVersion = version;
+  s.lastSyncedUserId = userId;
   schedulePersist();
 }
 
@@ -486,11 +516,25 @@ export async function initStore(): Promise<StoreInit> {
     if (cached) {
       s.doc = cached.doc;
       s.lastSyncedVersion = cached.lastSyncedVersion;
+      // Older caches predate per-account version tracking.
+      s.lastSyncedUserId = cached.lastSyncedUserId ?? null;
       s.lastSyncedAt = cached.lastSyncedAt;
       s.syncDirty = cached.syncDirty;
     }
   } catch {
     // No cache — start empty and pull from the server below.
+  }
+
+  // The cached version belongs to one account. When the logged-in user
+  // is a different account, the version is meaningless for them — reset
+  // it so the next push uses expectedVersion 0 and the pull establishes
+  // the new account's version. (Full per-account doc isolation is the
+  // account-scoped web state work, issue #10; this only keeps the
+  // version from being misattributed across accounts.)
+  if (s.user && s.lastSyncedUserId && s.user.id !== s.lastSyncedUserId) {
+    s.lastSyncedVersion = 0;
+    s.lastSyncedUserId = null;
+    schedulePersist();
   }
 
   // Server pull when there is a token (authoritative, merged in).
@@ -501,6 +545,7 @@ export async function initStore(): Promise<StoreInit> {
       if (pulled.ok && pulled.payload && pulled.version > s.lastSyncedVersion) {
         mergeServerDoc(pulled.payload);
         s.lastSyncedVersion = pulled.version;
+        s.lastSyncedUserId = s.user?.id ?? null;
         // The merged state goes back up on the next push (syncNow).
         s.syncDirty = true;
         schedulePersist();
@@ -508,6 +553,7 @@ export async function initStore(): Promise<StoreInit> {
         // Never synced before: take the server doc wholesale.
         s.doc = pulled.payload;
         s.lastSyncedVersion = pulled.version;
+        s.lastSyncedUserId = s.user?.id ?? null;
         schedulePersist();
       }
     } catch {

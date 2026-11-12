@@ -1,126 +1,94 @@
-/**
- * Seed-content validation as a Jest test (same rules as
- * scripts/validate-content.mjs, so CI catches a bad content port).
- * Level 1 was audited and reorganised into a learner-first curriculum
- * on 2026-11-09; Level 2 was authored fresh in the same overhaul
- * (docs/planning/korean-curriculum-overhaul-2026-11-09.md). A further
- * pass added three gap grammar points (noun negation, subject honorific,
- * formal noun copula) and a teaching guide for every point
- * (prisma/seed-data/teaching-guides/), applied at the lesson boundary
- * by teachLesson(): each point's description is the guide's plain-English
- * meaning, and three notes (formation, worked example, common trap) are
- * prepended to the point's own notes.
- */
-import bundle1 from '../src/content/topik1-level1.json';
-import bundle2 from '../src/content/topik1-level2.json';
+/** In-app six-deck seed integrity, including source-level grammar gap integrations. */
+import b1 from '../src/content/topik1-level1.json';
+import b2 from '../src/content/topik1-level2.json';
+import b3 from '../src/content/topik2-level3.json';
+import b4 from '../src/content/topik2-level4.json';
+import b5 from '../src/content/topik2-level5.json';
+import b6 from '../src/content/topik2-level6.json';
 import { flattenContent, type ContentBundle } from '../src/content/types';
 
-const l1 = flattenContent(bundle1 as unknown as ContentBundle).grammarPoints.map((g) => ({ ...g, level: 1 }));
-const l2 = flattenContent(bundle2 as unknown as ContentBundle).grammarPoints.map((g) => ({ ...g, level: 2 }));
+const bundles = [b1,b2,b3,b4,b5,b6];
+const expected = [
+  { points: 65, examples: 143, cards: 229, start: 1, end: 65, lessons: 11 },
+  { points: 59, examples: 118, cards: 177, start: 66, end: 124, lessons: 11 },
+  { points: 32, examples: 64, cards: 96, start: 125, end: 156, lessons: 6 },
+  { points: 25, examples: 50, cards: 75, start: 157, end: 181, lessons: 6 },
+  { points: 24, examples: 48, cards: 72, start: 182, end: 205, lessons: 6 },
+  { points: 24, examples: 48, cards: 72, start: 206, end: 229, lessons: 6 },
+];
+const all = bundles.flatMap((bundle, i) =>
+  flattenContent(bundle as unknown as ContentBundle).grammarPoints.map(entry => ({
+    ...entry, level: i + 1, position: expected[i].start + entry.position - 1,
+  })),
+);
+const cards = all.flatMap(({ gp }) => gp.cards);
+const examples = all.flatMap(({ gp }) => gp.lessonExamples);
+const allIds = new Set(all.map(({ gp }) => gp.id));
 
-// Global positions run across both bundles in order (Level 1: 1-50,
-// Level 2: 51-102), matching the validator.
-const all = [...l1, ...l2].map((entry, i) => ({ ...entry, position: i + 1 }));
-const grammarPoints = all;
-const cards = grammarPoints.flatMap(({ gp }) => gp.cards);
-const examples = grammarPoints.flatMap(({ gp }) => gp.lessonExamples);
-const l1Cards = l1.flatMap(({ gp }) => gp.cards);
-const l1Examples = l1.flatMap(({ gp }) => gp.lessonExamples);
-const l2Cards = l2.flatMap(({ gp }) => gp.cards);
-const l2Examples = l2.flatMap(({ gp }) => gp.lessonExamples);
-
-describe('seed content counts', () => {
-  it('Level 1 has 11 lessons, 50 grammar points, 184 cloze cards, 113 lesson examples', () => {
-    expect(bundle1.lessons.length).toBe(11);
-    expect(l1.length).toBe(50);
-    expect(l1Cards.length).toBe(184);
-    expect(l1Examples.length).toBe(113);
+describe('grammar source coverage across six decks', () => {
+  it('has expected levels, worked examples and cards, without changing the original point IDs', () => {
+    bundles.forEach((bundle, i) => {
+      const points = flattenContent(bundle as unknown as ContentBundle).grammarPoints.map(x => x.gp);
+      expect(bundle.lessons.length).toBe(expected[i].lessons);
+      expect(points.length).toBe(expected[i].points);
+      expect(points.flatMap(g => g.lessonExamples).length).toBe(expected[i].examples);
+      expect(points.flatMap(g => g.cards).length).toBe(expected[i].cards);
+    });
+    expect(all.length).toBe(229);
+    expect(cards.length).toBe(721);
+    expect(examples.length).toBe(471);
+    expect(allIds.has('gp_ieyo_yeyo')).toBe(true);
+    expect(allIds.has('gp_gap_b_irregular')).toBe(true);
+    expect(allIds.has('gp_gap_passive_suffix')).toBe(true);
   });
 
-  it('Level 2 has 11 lessons, 52 grammar points, 156 cloze cards, 104 lesson examples', () => {
-    expect(bundle2.lessons.length).toBe(11);
-    expect(l2.length).toBe(52);
-    expect(l2Cards.length).toBe(156);
-    expect(l2Examples.length).toBe(104);
+  it('uses 229 continuous one-based positions in six levels', () => {
+    expect(all.map(x => x.position)).toEqual(Array.from({ length: 229 }, (_, i) => i + 1));
   });
 
-  it('global positions are continuous 1-102', () => {
-    expect(all.map((g) => g.position)).toEqual(Array.from({ length: 102 }, (_, i) => i + 1));
-  });
-});
-
-describe('seed content integrity', () => {
-  it('every cloze card answer appears in its sentence', () => {
-    for (const card of cards) {
-      expect(card.fullSentence).toContain(card.answer);
-      expect(card.sentenceWithBlank).toContain('___');
-    }
-  });
-
-  /**
-   * The English hint is a plain string, with no highlighting. (Build 25
-   * removed it: English often has no equivalent for Korean particles —
-   * 은/는, 이/가, 을/를 — so any highlighted English word is a guess.)
-   */
-  it('englishHint is a plain unhighlighted string', () => {
-    for (const item of [...cards, ...examples]) {
-      expect(typeof item.englishHint).toBe('string');
-      expect(item.englishHint.length).toBeGreaterThan(0);
-    }
-    // The translations themselves are unchanged by the removal (and by
-    // the 2026-11-09 audit, which did not touch these three).
-    expect(cards.find((c) => c.id === 'cc_ieyo_01')!.englishHint).toBe('I am a student.');
-    expect(cards.find((c) => c.id === 'cc_ieyo_03')!.englishHint).toBe("It's a teacher.");
-    expect(examples.find((e) => e.id === 'le_eun_neun_01')!.englishHint).toBe('As for me, I am a student.');
-  });
-
-  it('every grammar point has at least 2 lesson examples and 3 cloze cards', () => {
-    for (const { gp } of grammarPoints) {
-      expect(gp.lessonExamples.length).toBeGreaterThanOrEqual(2);
-      expect(gp.cards.length).toBeGreaterThanOrEqual(3);
-    }
-  });
-
-  it('has no duplicate ids across both levels', () => {
-    const ids = [
-      ...grammarPoints.map(({ gp }) => gp.id),
-      ...cards.map((c) => c.id),
-      ...examples.map((e) => e.id),
-    ];
+  it('uses unique stable IDs for point, example, and review card', () => {
+    const ids = [...all.map(({ gp }) => gp.id), ...cards.map(c => c.id), ...examples.map(e => e.id)];
     expect(new Set(ids).size).toBe(ids.length);
   });
 
-  it('every related point id and extra-target id exists', () => {
-    const gpIds = new Set(grammarPoints.map(({ gp }) => gp.id));
-    for (const { gp } of grammarPoints) {
-      for (const id of gp.relatedPointIds ?? []) expect(gpIds.has(id)).toBe(true);
-      for (const card of gp.cards) {
-        for (const t of card.extraTargets ?? []) expect(gpIds.has(t.grammarPointId)).toBe(true);
+  it('every cloze reconstructs exactly and every card has a plain-English explanation', () => {
+    for (const c of [...cards, ...examples]) {
+      expect(c.sentenceWithBlank.split('___').length).toBe(2);
+      expect(c.sentenceWithBlank.replace('___', c.answer)).toBe(c.fullSentence);
+      expect(typeof c.englishHint).toBe('string');
+      expect(c.englishHint.trim().length).toBeGreaterThan(0);
+    }
+    expect(cards.find(c=>c.id==='cc_ieyo_01')!.englishHint).toBe('I am a student.');
+    expect(cards.find(c=>c.id==='cc_ieyo_03')!.englishHint).toBe("It's a teacher.");
+  });
+
+  it('every point explains meaning, formation, worked example and the common trap', () => {
+    for (const { gp } of all) {
+      expect(gp.description.length).toBeGreaterThan(0);
+      expect(gp.lessonExamples.length).toBeGreaterThanOrEqual(2);
+      expect(gp.cards.length).toBeGreaterThanOrEqual(3);
+      const titles = (gp.notes ?? []).map(x => x.title);
+      for (const name of ['Build it step by step','Worked example','Common trap']) {
+        expect(titles).toContain(name);
       }
     }
   });
 
-  it('every grammar point carries the three teaching notes (formation, worked example, trap)', () => {
-    // teachLesson() prepends these at the lesson boundary, before the
-    // point's own notes. If the port ever bypasses it, this fails.
-    for (const { gp } of grammarPoints) {
-      const titles = (gp.notes ?? []).map((n) => n.title);
-      expect(titles).toContain('Build it step by step');
-      expect(titles).toContain('Worked example');
-      expect(titles).toContain('Common trap');
-      expect(gp.description.length).toBeGreaterThan(0);
-    }
-  });
-
-  it('every card introducedAtPosition is in its level range and matches its point', () => {
-    for (const { gp, level, position } of grammarPoints) {
-      const [min, max] = level === 1 ? [1, 50] : [51, 102];
+  it('all related targets exist and card positions reflect owning and extra targets', () => {
+    const positions = new Map(all.map(x => [x.gp.id,x.position] as const));
+    for (const { gp,level,position } of all) {
+      for (const id of gp.relatedPointIds ?? []) expect(allIds.has(id)).toBe(true);
+      const spec = expected[level-1];
       for (const card of gp.cards) {
-        expect(card.introducedAtPosition).toBeGreaterThanOrEqual(min);
-        expect(card.introducedAtPosition).toBeLessThanOrEqual(max);
-        if (!(card.extraTargets ?? []).length) {
-          expect(card.introducedAtPosition).toBe(position);
-        }
+        const targets = (card.extraTargets ?? []).map(x => {
+          expect(allIds.has(x.grammarPointId)).toBe(true);
+          return positions.get(x.grammarPointId)!;
+        });
+        expect(card.introducedAtPosition).toBe(Math.max(position,...targets));
+        expect(card.introducedAtPosition).toBeGreaterThanOrEqual(spec.start);
+        // Multi-target cards may draw on a later deck, so they may exceed
+        // their owning deck's end; a single-target card never does.
+        if (!targets.length) expect(card.introducedAtPosition).toBeLessThanOrEqual(spec.end);
       }
     }
   });
