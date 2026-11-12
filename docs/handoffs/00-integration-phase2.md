@@ -221,3 +221,52 @@ unknown namespaces, and retry with a bounded policy, with dirty-state
 safety on 409 exhaustion / errors / logout / account switch. Issue #9
 stays OPEN until that is integrated and staging browser E2E passes.
 All 8 flags remain OFF; PR #8 stays a draft.
+
+---
+
+## Addendum — client CAS protocol implemented and verified (2026-11-12)
+
+**Operator:** Muse, at the owner's direction ("handle the last remaining
+piece before production" — the client side of the sync protocol).
+
+**Change (commit `1ded630`, integration branch):** the web client now
+speaks the server's compare-and-swap protocol.
+- `lib/api.ts`: `syncPush` sends the `expectedVersion` last pulled and
+  returns the HTTP status, so the caller can tell 409/428/413/429
+  apart. `setApiBase()` lets tests run the real client against a real
+  backend (the app always uses the same-origin proxy).
+- `store/sync.ts`: on 409, re-pull, merge with the never-lose-a-review
+  rules, and retry with the fresh version (max 3 attempts). When
+  retries run out, local state stays dirty for the next sync. 428,
+  413, 429, 5xx, and offline never clear dirty state.
+- `store/state.ts`: the server version is tracked per account
+  (`lastSyncedUserId`, persisted) and reset to 0 when the logged-in
+  user changes, so a version is never misattributed across accounts.
+- Account epoch guard: the user id + token are captured at sync start
+  and re-checked before every state mutation, so a logout / account
+  switch mid-sync cannot write the previous account's data into the
+  new one.
+
+**Verification:**
+- 9 new Jest protocol tests (`__tests__/sync-cas.test.ts`): 231/231
+  total pass. Typecheck and lint clean. Expo export OK.
+- End-to-end against the live staging server (fixed backend), via an
+  SSH forward, with synthetic `@qa.invalid` users: 8/8 checks pass —
+  happy path (push with expectedVersion, version advances, dirty
+  cleared), two-device merge (both devices' logs survive), and account
+  isolation (a second account sees no snapshot). Staging DB back to
+  0/0/0. The E2E test is kept in the repo
+  (`__tests__/sync-cas-staging.e2e.test.ts`) and is skipped unless
+  `MUNPRO_E2E_STAGING=1` with tokens is set.
+
+**Production is still not deployed.** The client protocol and the
+fixed staging server now agree, so the sync release gate (issue #9)
+is unblocked on the protocol side. Remaining before a production
+rollout: the Phase 2 PRs are still open (#19–#25, including #21
+account-scoped web state, which is the full per-account IndexedDB
+isolation — the protocol's version reset covers the version, not the
+cached doc), the release-gates branch (#25) still needs its 3
+cross-account isolation tests to go green after #21 merges, manual
+release tests are unrun, and native is excluded until tested. PR #8
+stays a draft; no merge to main and no production deploy without
+explicit owner authorization.
