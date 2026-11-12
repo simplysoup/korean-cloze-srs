@@ -175,3 +175,49 @@ actual staging process:
 (live build-36 client sends no `expectedVersion`, so the patch would
 reject its pushes with 428). All 8 flags remain OFF. Issue #9 still OPEN.
 PR #20 still OPEN; PR #8 still a draft. Production untouched and healthy.
+
+---
+
+## Addendum — sync defects fixed on staging; production untouched (2026-11-12)
+
+**Operator:** Muse, at the owner's direction ("fix the reported issues").
+
+**Fixed server:** `server.cas-fixed.js` (SHA-256
+`a92e000d63f137bee9930ac74176be1623edfbe202b0e0ecfdcc8b4328115460`),
+kept in the operator's workspace (`~/workspace/korean-auth-deploy/`).
+Changes vs the original: required integer `expectedVersion` on every
+sync push (absent → 428 `precondition-required`, invalid → 400);
+atomic SQLite compare-and-swap (`UPDATE ... WHERE user_id = ? AND
+version = ?`, mismatch → 409 `version-conflict`, first push uses
+`expectedVersion: 0` → version 1); top-level namespaces the client
+omits are preserved from the stored snapshot (`{...stored, ...incoming}`),
+so an older client cannot erase `vocabularyProgress`; oversized bodies
+no longer destroy the connection — the socket stays open and the push
+returns structured 413 `payload-too-large`.
+
+**Verification:** 11/11 checks in isolation (disposable temp dir, fresh
+DB, no `.env`), then 11/11 live on staging (run ID `e8dd87701f6a`):
+precondition enforced (428), stale version rejected (409), vocabulary
+retained, concurrent race has exactly one winner (200 + 409), the
+409 loser's re-pull/union/retry preserves both reviews, stale replay
+rejected (409, newer data survives), oversized payload returns 413,
+invalid version returns 400. Sanitized report at
+`~/korean-auth-staging/staging-audit-sanitized.json`.
+
+**Staging deployment:** original staging `server.js` backed up as
+`~/korean-auth-staging/server.js.pre-cas` (SHA-256 `7bba0c25…`). Staging
+process restarted (PID 1971915 → 2318423) and now runs the fixed file
+on `127.0.0.1:28769`; health ok; staging DB back to 0/0/0.
+
+**Production is untouched** (still the original code, PID 1810270,
+`127.0.0.1:28768`, health ok) — correctly so, because the live
+build-36 client sends no `expectedVersion` and would get 428 on the
+fixed server.
+
+**Still required before production:** the client protocol update —
+persist the server version from pull, send `expectedVersion` on every
+push, and on 409 re-pull, deterministically union by stable ID, preserve
+unknown namespaces, and retry with a bounded policy, with dirty-state
+safety on 409 exhaustion / errors / logout / account switch. Issue #9
+stays OPEN until that is integrated and staging browser E2E passes.
+All 8 flags remain OFF; PR #8 stays a draft.
